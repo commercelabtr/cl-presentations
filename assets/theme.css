@@ -342,6 +342,84 @@ p { font-size: 1.6cqw; line-height: 1.55; color: var(--ink-soft); margin: 0 0 1.
 
 .divider-dot { color: var(--red); }
 
+/* ---------- Topology / zone diagram ------------------------------------- */
+.topo { display: flex; flex-direction: column; gap: 1cqh; width: 100%; }
+.zone {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.2cqh 1.1cqw;
+  background: var(--bone);
+}
+.zone__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1cqw;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.9cqh;
+}
+.zone__head .cidr {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.92cqw;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--muted-2);
+}
+.chips { display: flex; flex-wrap: wrap; gap: 0.6cqw; }
+.chip {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.02cqw;
+  letter-spacing: 0.01em;
+  padding: 0.65cqh 0.95cqw;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.chip b { color: var(--ink); font-weight: 700; }
+.chip small { color: var(--muted-2); font-weight: 500; font-family: var(--sans); }
+.chip--red { border-color: var(--red); color: var(--red); background: #fff; }
+.chip--ink { background: var(--ink); color: #fff; border-color: var(--ink); }
+.chip--ink b { color: #fff; }
+.chip--ink small { color: rgba(255, 255, 255, 0.72); }
+.zone--public { background: #fbf2f0; border-color: #f0d8d3; }
+.zone--data { background: var(--ink-card); border-color: #303030; }
+.zone--data .chip { background: #262626; border-color: #3a3a3a; color: #cfcdc8; }
+.zone--data .chip b { color: #fff; }
+.zone--data .zone__head { color: #ff6b6e; }
+.zone--data .zone__head .cidr { color: #8e8c88; }
+
+/* Compact edge flow used above the zone diagram */
+.edgeflow { display: flex; align-items: center; gap: 0.4cqw; margin-bottom: 1cqh; flex-wrap: nowrap; }
+.edgeflow .step {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1cqw;
+  letter-spacing: 0.04em;
+  padding: 0.6cqh 0.85cqw;
+  border-radius: 6px;
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  white-space: nowrap;
+}
+.edgeflow .step--red { background: var(--red); color: #fff; border-color: var(--red); }
+.edgeflow .step--ink { background: var(--ink); color: #fff; border-color: var(--ink); }
+.edgeflow .sep { color: var(--red); font-weight: 800; font-size: 1.1cqw; }
+
+/* Two-tone metric callouts on dark cards */
+.kpi-strip { display: flex; gap: 2.6cqw; flex-wrap: wrap; }
+.kpi { display: flex; flex-direction: column; gap: 0.3cqh; }
+.kpi .k { font-family: var(--display); font-weight: 800; font-size: 2.4cqw; color: var(--red); line-height: 1; }
+.kpi .v { font-size: 1.05cqw; color: var(--muted); max-width: 16cqw; line-height: 1.35; }
+
 /* ---------- Floating toolbar (screen only) ------------------------------ */
 .toolbar {
   position: fixed;
