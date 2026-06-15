@@ -677,7 +677,7 @@
       </div>
       <div class="topo">
         <div class="zone zone--public">
-          <div class="zone__head"><span>Public subnet · Prod VPC</span><span class="cidr">10.30.0.0/16</span></div>
+          <div class="zone__head"><span>Public subnet · Prod VPC</span><span class="cidr">internet-facing</span></div>
           <div class="chips">
             <span class="chip chip--red">Public ALB</span>
             <span class="chip">pfSense VPN <small>MFA</small></span>
@@ -728,8 +728,8 @@
         <div>
           <div class="eyebrow-num" style="margin-bottom:1.2cqh;">VPC &amp; SUBNET LAYOUT</div>
           <ul class="flist">
-            <li><b>Default VPC</b> <span style="color:var(--muted-2)">172.31.0.0/16</span> — basic services</li>
-            <li><b>Prod VPC</b> <span style="color:var(--muted-2)">10.30.0.0/16</span> — hardened, separated services</li>
+            <li><b>Default VPC</b> — basic shared services</li>
+            <li><b>Dedicated production VPC</b> — hardened, separated services</li>
             <li><b>Private container / database / general</b> subnets — fully closed to the internet</li>
             <li><b>Public subnet</b> — VPN &amp; FTP only, IP-restricted + MFA</li>
           </ul>
