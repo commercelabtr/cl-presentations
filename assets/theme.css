@@ -1,0 +1,385 @@
+/* ==========================================================================
+   CommerceLab — Presentation Theme
+   Shared design system for all CommerceLab decks.
+   Brand: ink #1A1A1A · signal red #D02C2F
+   Canvas: fixed 16:9 slides, container-query typography, print = 1 slide/page
+   ========================================================================== */
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #2b2b2b;
+  --red: #d02c2f;
+  --red-deep: #a81f22;
+  --paper: #ffffff;
+  --bone: #f6f4f0;
+  --bone-2: #efece6;
+  --muted: #6c6a66;
+  --muted-2: #9a9893;
+  --line: #e4e1da;
+  --line-strong: #cfccc4;
+  --ink-card: #1f1f1f;
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --display: "Manrope", var(--sans);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #2a2926;
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Deck layout (screen) ---------------------------------------- */
+.deck {
+  width: min(100vw, calc(100vh * 16 / 9));
+  margin: 0 auto;
+  padding: 28px 0 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  container-type: size;
+  background: var(--paper);
+  color: var(--ink);
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+}
+
+/* Inner padding frame, sized in container units so it scales perfectly */
+.slide__inner {
+  position: absolute;
+  inset: 0;
+  padding: 7.2cqh 7cqw 9cqh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Typography (all in cqw so it scales with the slide) --------- */
+.kicker {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.35cqw;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0 0 2.4cqh;
+  display: flex;
+  align-items: center;
+  gap: 1.1cqw;
+}
+.kicker::before {
+  content: "";
+  width: 3.4cqw;
+  height: 2px;
+  background: var(--red);
+  display: inline-block;
+}
+
+h1.slide-title,
+h2.slide-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 4.6cqw;
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+  margin: 0 0 2.2cqh;
+  color: var(--ink);
+}
+.slide-title .accent { color: var(--red); }
+
+.lead {
+  font-size: 1.95cqw;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 64cqw;
+  margin: 0 0 2.4cqh;
+  font-weight: 400;
+}
+
+p { font-size: 1.6cqw; line-height: 1.55; color: var(--ink-soft); margin: 0 0 1.4cqh; }
+
+.body-text { font-size: 1.55cqw; line-height: 1.6; color: var(--ink-soft); }
+
+/* ---------- Footer / chrome -------------------------------------------- */
+.slide__footer {
+  position: absolute;
+  left: 7cqw;
+  right: 7cqw;
+  bottom: 4.4cqh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05cqw;
+  letter-spacing: 0.06em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+}
+.slide__footer .brand { display: flex; align-items: center; gap: 0.8cqw; font-weight: 600; }
+.slide__footer .brand img { height: 1.9cqh; width: auto; }
+.slide__footer .conf { color: var(--muted-2); }
+.slide__no { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--muted); }
+
+.hairline {
+  height: 1px;
+  background: var(--line);
+  border: 0;
+  margin: 0;
+}
+
+/* ---------- Reusable components ----------------------------------------- */
+.grid { display: grid; gap: 1.8cqw; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+  background: var(--bone);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 2.3cqh 1.8cqw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9cqh;
+}
+.card h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.7cqw;
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.card p { font-size: 1.32cqw; line-height: 1.5; color: var(--muted); margin: 0; }
+.card .ix {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.3cqw;
+  color: var(--red);
+  letter-spacing: 0.05em;
+}
+
+.card--dark { background: var(--ink-card); border-color: #303030; }
+.card--dark h3 { color: #fff; }
+.card--dark p { color: #b9b7b2; }
+.card--accent { border-left: 3px solid var(--red); }
+
+/* Feature list with red ticks */
+.flist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.25cqh; }
+.flist li {
+  position: relative;
+  padding-left: 2.4cqw;
+  font-size: 1.5cqw;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.flist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55cqh;
+  width: 0.85cqw;
+  height: 0.85cqw;
+  background: var(--red);
+  border-radius: 2px;
+}
+.flist li b { color: var(--ink); font-weight: 600; }
+
+/* Stats */
+.stat-row { display: flex; gap: 3.4cqw; flex-wrap: wrap; }
+.stat { display: flex; flex-direction: column; gap: 0.4cqh; }
+.stat .num { font-family: var(--display); font-weight: 800; font-size: 4cqw; color: var(--red); line-height: 1; letter-spacing: -0.02em; }
+.stat .lab { font-size: 1.2cqw; color: var(--muted); line-height: 1.35; max-width: 17cqw; }
+
+/* Pills / tags */
+.pillrow { display: flex; flex-wrap: wrap; gap: 0.8cqw; }
+.pill {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.18cqw;
+  letter-spacing: 0.02em;
+  padding: 0.7cqh 1.2cqw;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  background: var(--paper);
+}
+.pill--solid { background: var(--ink); color: #fff; border-color: var(--ink); }
+.pill--red { background: var(--red); color: #fff; border-color: var(--red); }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4cqw; flex: 1; align-content: center; }
+.two-col--wide { grid-template-columns: 1.15fr 0.85fr; }
+.fill { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+.eyebrow-num {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.3cqw;
+  color: var(--red);
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Cover & section divider (dark slides) ----------------------- */
+.slide--ink { background: var(--ink); color: #fff; }
+.slide--ink .slide-title { color: #fff; }
+.slide--ink .lead { color: #c7c5c0; }
+.slide--ink .kicker { color: #ff6b6e; }
+.slide--ink .kicker::before { background: #ff6b6e; }
+.slide--ink .slide__footer { color: #7e7c78; }
+.slide--ink .slide__no { color: #9a9893; }
+.slide--ink .hairline { background: #333; }
+
+.slide--cover .slide__inner { justify-content: center; }
+.cover-logo { height: 4.6cqh; width: auto; margin-bottom: 6cqh; }
+.cover-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 5.4cqw;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 2.6cqh;
+  max-width: 74cqw;
+}
+.cover-title .accent { color: var(--red); }
+.cover-sub { font-size: 2cqw; color: #c7c5c0; max-width: 56cqw; line-height: 1.45; }
+.cover-meta {
+  margin-top: 6cqh;
+  display: flex;
+  gap: 2.4cqw;
+  font-family: var(--display);
+  font-size: 1.2cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8e8c88;
+}
+.cover-meta span { color: #fff; }
+
+/* Section divider big index */
+.divider-index {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 9cqw;
+  color: var(--red);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1cqh;
+}
+
+/* ---------- Simple CSS diagram blocks ----------------------------------- */
+.stack { display: flex; flex-direction: column; gap: 1.1cqh; width: 100%; }
+.layer {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.5cqh 1.4cqw;
+  background: var(--bone);
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+}
+.layer .tag {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.05cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+  min-width: 13cqw;
+}
+.layer .desc { font-size: 1.3cqw; color: var(--ink-soft); }
+.layer--ink { background: var(--ink-card); border-color: #303030; }
+.layer--ink .desc { color: #cfcdc8; }
+.layer--ink .tag { color: #ff6b6e; }
+
+/* Flow row (event pipeline / state machine) */
+.flow { display: flex; align-items: stretch; gap: 0; width: 100%; }
+.flow .node {
+  flex: 1;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  border-radius: 6px;
+  padding: 1.6cqh 0.6cqw;
+  text-align: center;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.2cqw;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4cqh;
+}
+.flow .node small { font-family: var(--sans); font-weight: 400; font-size: 0.95cqw; color: var(--muted); letter-spacing: 0; text-transform: none; }
+.flow .arrow {
+  align-self: center;
+  width: 2.4cqw;
+  text-align: center;
+  color: var(--red);
+  font-size: 1.6cqw;
+  font-weight: 700;
+}
+.flow .node--red { background: var(--red); color: #fff; border-color: var(--red); }
+.flow .node--red small { color: rgba(255,255,255,0.8); }
+.flow .node--ink { background: var(--ink); color: #fff; border-color: var(--ink); }
+.flow .node--ink small { color: #b9b7b2; }
+
+/* Left rail label for content slides */
+.rail { display: flex; flex-direction: column; gap: 1.6cqh; }
+
+.note { font-size: 1.15cqw; color: var(--muted); line-height: 1.5; }
+.note b { color: var(--ink); }
+
+.divider-dot { color: var(--red); }
+
+/* ---------- Floating toolbar (screen only) ------------------------------ */
+.toolbar {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  gap: 8px;
+  z-index: 50;
+  font-family: var(--sans);
+}
+.toolbar button {
+  background: var(--ink);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.toolbar button:hover { background: var(--red); }
+
+/* ---------- Print: one slide per page, exact ---------------------------- */
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  html, body { background: #fff; }
+  .toolbar { display: none !important; }
+  .deck { width: 1280px; max-width: none; margin: 0; padding: 0; gap: 0; }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    border-radius: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+  .slide:last-child { break-after: auto; page-break-after: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
