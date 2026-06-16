@@ -303,9 +303,8 @@
         <div class="card card--accent"><h3>MACH-enabled</h3><p>Microservices(Domain driven), API-first, cloud-native, headless — without the operational sprawl.</p></div>
         <div class="card card--accent"><h3>PBC</h3><p>Packaged Business Capabilities — each product is independently deployable &amp; composable.</p></div>
         <div class="card card--accent"><h3>Modular Monolith</h3><p>Strong module boundaries with the simplicity and performance of a single deployable.</p></div>
-        <div class="card card--accent"><h3>Highly Extensible</h3><p>Built for solving complex business problems without spoil products.</p></div>
+        <div class="card card--accent"><h3>Highly Extensible</h3><p>Built for solving complex business problems without spoil product core.</p></div>
       </div>
-      <p class="note">A pragmatic blend: the flexibility of composable commerce with the operational efficiency of a well-bounded modular core.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
@@ -495,11 +494,40 @@
     </div>
   </section>
 
-  <!-- 18 — STATE MACHINE -->
+
+  <!-- 19 — RULE / EVALUATION / ACTION ENGINE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Rule · Evaluation · Action engines</span>
+      <h2 class="slide-title">Business logic that ops teams control</h2>
+      <div class="flow" style="margin:1.6cqh 0 2.4cqh;">
+        <div class="node">Rule Engine<small>Microsoft Rules Engine</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Evaluation Engine<small>score, best-choice…</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Action Engine<small>execute outcome</small></div>
+      </div>
+      <div class="two-col" style="flex:1; align-content:start;">
+        <p class="body-text">A super-flexible rule engine — built on the <b>Microsoft Rules Engine</b> — expresses any complex scenario; the evaluation engine scores options with a best-choice (and similar) mechanism; the action engine executes the result. The same rule · evaluation · action infrastructure is reused everywhere across the platform — sourcing, campaigns, payments, dispatch and content.</p>
+        <ul class="flist">
+          <li><b>Sourcing</b> — score-based allocation by cost, satisfaction, capacity</li>
+          <li><b>Campaigns</b> — priority groups &amp; best-choice selection</li>
+          <li><b>Payments &amp; dispatch</b> — rule-based routing &amp; scoring</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">18 / 42</span>
+    </div>
+  </section>
+
+    <!-- 18 — STATE MACHINE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">State machine</span>
-      <h2 class="slide-title">Every entity, a governed lifecycle</h2>
+      <h2 class="slide-title">Every entity, status a governed lifecycle</h2>
       <div class="flow" style="margin:2.4cqh 0 1cqh;">
         <div class="node">Created</div>
         <div class="arrow">&rarr;</div>
@@ -539,33 +567,6 @@
     </div>
   </section>
 
-  <!-- 19 — RULE / EVALUATION / ACTION ENGINE -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Rule · Evaluation · Action engines</span>
-      <h2 class="slide-title">Business logic that ops teams control</h2>
-      <div class="flow" style="margin:1.6cqh 0 2.4cqh;">
-        <div class="node">Rule Engine<small>Microsoft Rules Engine</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--red">Evaluation Engine<small>score, best-choice…</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Action Engine<small>execute outcome</small></div>
-      </div>
-      <div class="two-col" style="flex:1; align-content:start;">
-        <p class="body-text">A super-flexible rule engine — built on the <b>Microsoft Rules Engine</b> — expresses any complex scenario; the evaluation engine scores options with a best-choice (and similar) mechanism; the action engine executes the result. The same rule · evaluation · action infrastructure is reused everywhere across the platform — sourcing, campaigns, payments, dispatch and content.</p>
-        <ul class="flist">
-          <li><b>Sourcing</b> — score-based allocation by cost, satisfaction, capacity</li>
-          <li><b>Campaigns</b> — priority groups &amp; best-choice selection</li>
-          <li><b>Payments &amp; dispatch</b> — rule-based routing &amp; scoring</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">18 / 42</span>
-    </div>
-  </section>
 
   <!-- 20 — TOGGLE + USER EXIT -->
   <section class="slide">
