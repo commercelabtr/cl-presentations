@@ -197,6 +197,17 @@ p { font-size: 1.6cqw; line-height: 1.55; color: var(--ink-soft); margin: 0 0 1.
 }
 .flist li b { color: var(--ink); font-weight: 600; }
 
+/* Leadership team cards */
+.team-grid { gap: 1.2cqh 1.8cqw; flex: 1; align-content: center; }
+.team-card { padding: 1.3cqh 1.4cqw; gap: 0.35cqh; }
+.team-card .name { font-family: var(--display); font-weight: 700; font-size: 1.4cqw; color: var(--ink); letter-spacing: -0.01em; line-height: 1.1; }
+.team-card .role { font-size: 1.05cqw; font-weight: 600; color: var(--red); margin-top: 0.1cqh; }
+.team-card .tlist { list-style: none; margin: 0.4cqh 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.4cqh; }
+.team-card .tlist li { position: relative; padding-left: 1.4cqw; font-size: 1.0cqw; line-height: 1.25; color: var(--ink-soft); }
+.team-card .tlist li::before { content: ""; position: absolute; left: 0; top: 0.45cqh; width: 0.55cqw; height: 0.55cqw; background: var(--red); border-radius: 2px; }
+.team-card .tlist li b { color: var(--ink); font-weight: 600; }
+.team-card .edu { margin-top: auto; padding-top: 0.55cqh; font-size: 0.92cqw; color: var(--muted); border-top: 1px solid var(--line); }
+
 /* Stats */
 .stat-row { display: flex; gap: 3.4cqw; flex-wrap: wrap; }
 .stat { display: flex; flex-direction: column; gap: 0.4cqh; }
