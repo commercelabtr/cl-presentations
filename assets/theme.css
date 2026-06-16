@@ -498,6 +498,8 @@ p { font-size: 1.6cqw; line-height: 1.55; color: var(--ink-soft); margin: 0 0 1.
   right: 18px;
   bottom: 18px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   gap: 8px;
   z-index: 50;
   font-family: var(--sans);
@@ -513,14 +515,72 @@ p { font-size: 1.6cqw; line-height: 1.55; color: var(--ink-soft); margin: 0 0 1.
   cursor: pointer;
   letter-spacing: 0.02em;
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
 }
 .toolbar button:hover { background: var(--red); }
+.toolbar button svg { width: 14px; height: 14px; display: block; }
+
+/* ---------- Present (fullscreen) mode ----------------------------------- */
+body.present { background: #000; overflow: hidden; }
+body.present .deck {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+body.present .slide { display: none; }
+body.present .slide.is-active {
+  display: block;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+  box-shadow: none;
+  border-radius: 0;
+}
+body.present .toolbar { display: none; }
+
+/* Present-mode progress + exit hint */
+.present-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: var(--red);
+  z-index: 60;
+  transition: width 0.25s ease;
+  display: none;
+}
+body.present .present-bar { display: block; }
+.present-hint {
+  position: fixed;
+  right: 16px;
+  bottom: 12px;
+  z-index: 60;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.04em;
+  display: none;
+  pointer-events: none;
+}
+body.present .present-hint { display: block; }
 
 /* ---------- Print: one slide per page, exact ---------------------------- */
 @media print {
   @page { size: 1280px 720px; margin: 0; }
   html, body { background: #fff; }
   .toolbar { display: none !important; }
+  .present-bar, .present-hint { display: none !important; }
   .deck { width: 1280px; max-width: none; margin: 0; padding: 0; gap: 0; }
   .slide {
     width: 1280px;
