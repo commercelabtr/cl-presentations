@@ -384,8 +384,8 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">State machine</span>
-      <h2 class="slide-title">Every order, a governed lifecycle</h2>
-      <div class="flow" style="margin:2.4cqh 0;">
+      <h2 class="slide-title">Every entity, a governed lifecycle</h2>
+      <div class="flow" style="margin:2.4cqh 0 1cqh;">
         <div class="node">Created</div>
         <div class="arrow">&rarr;</div>
         <div class="node">Sourced</div>
@@ -398,8 +398,18 @@
         <div class="arrow">&rarr;</div>
         <div class="node node--ink">Closed</div>
       </div>
+      <div class="hook-band">
+        <div class="hook-band__tag">On every transition</div>
+        <div class="hook-band__flow">
+          <span class="hook-step">Evaluate<small>internal &amp; external systems</small></span>
+          <span class="hook-plus">+</span>
+          <span class="hook-step">Act<small>re-source · split · route</small></span>
+          <span class="hook-plus">+</span>
+          <span class="hook-step">Notify<small>events &amp; webhooks</small></span>
+        </div>
+      </div>
       <div class="two-col" style="flex:1; align-content:center;">
-        <p class="body-text">Order, delivery, cancellation and return states are modelled as explicit, validated transitions. Invalid moves are impossible by construction — guaranteeing consistency across channels and integrations.</p>
+        <p class="body-text">Order, delivery, cancellation and return states are modelled as explicit, validated transitions. Invalid moves are impossible by construction — guaranteeing consistency across channels and integrations. Every transition is a hook: we can evaluate against internal &amp; external systems and notify the change downstream.</p>
         <ul class="flist">
           <li><b>Dynamic workflow</b> — states &amp; transitions configured per tenant</li>
           <li><b>Rule-engine driven</b> — re-source, cancel, split, partial-ship</li>
@@ -420,14 +430,14 @@
       <span class="kicker">Rule · Evaluation · Action engines</span>
       <h2 class="slide-title">Business logic that ops teams control</h2>
       <div class="flow" style="margin:1.6cqh 0 2.4cqh;">
-        <div class="node">Rule Engine<small>define conditions</small></div>
+        <div class="node">Rule Engine<small>Microsoft Rules Engine</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--red">Evaluation Engine<small>score &amp; best-choice</small></div>
+        <div class="node node--red">Evaluation Engine<small>score, best-choice…</small></div>
         <div class="arrow">&rarr;</div>
         <div class="node node--ink">Action Engine<small>execute outcome</small></div>
       </div>
       <div class="two-col" style="flex:1; align-content:start;">
-        <p class="body-text">A super-flexible rule engine expresses any complex scenario; the evaluation engine scores options with a best-choice mechanism; the action engine executes the result — across sourcing, campaigns, payments, dispatch and content.</p>
+        <p class="body-text">A super-flexible rule engine — built on the <b>Microsoft Rules Engine</b> — expresses any complex scenario; the evaluation engine scores options with a best-choice (and similar) mechanism; the action engine executes the result. The same rule · evaluation · action infrastructure is reused everywhere across the platform — sourcing, campaigns, payments, dispatch and content.</p>
         <ul class="flist">
           <li><b>Sourcing</b> — score-based allocation by cost, satisfaction, capacity</li>
           <li><b>Campaigns</b> — priority groups &amp; best-choice selection</li>
@@ -975,8 +985,8 @@
         <div class="cell"><img src="logos/highfive.svg" alt="HighFive" /></div>
         <div class="cell"><img src="logos/klaud.svg" alt="Klaud" /></div>
         <div class="cell"><img src="logos/fila.png" alt="Fila" /></div>
-        <div class="cell"><img src="logos/lee.png" alt="Lee" /></div>
-        <div class="cell"><img src="logos/wrangler.png" alt="Wrangler" /></div>
+        <div class="cell"><img src="logos/stevemadden.png" alt="Steve Madden" /></div>
+        <div class="cell"><img src="logos/on.png" alt="On" /></div>
       </div>
       <p class="note">Global and regional retail, fashion, QSR and marketplace brands running their commerce operations on CommerceLab.</p>
     </div>

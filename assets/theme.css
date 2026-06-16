@@ -334,6 +334,39 @@ p { font-size: 1.6cqw; line-height: 1.55; color: var(--ink-soft); margin: 0 0 1.
 .flow .node--ink { background: var(--ink); color: #fff; border-color: var(--ink); }
 .flow .node--ink small { color: #b9b7b2; }
 
+/* Transition hook band (state machine) */
+.hook-band {
+  display: flex;
+  align-items: center;
+  gap: 1.4cqw;
+  margin: 0 0 1.6cqh;
+  padding: 1cqh 1.2cqw;
+  border: 1px dashed var(--red);
+  border-radius: 8px;
+  background: rgba(208, 44, 47, 0.04);
+}
+.hook-band__tag {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.95cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  white-space: nowrap;
+}
+.hook-band__flow { display: flex; align-items: center; gap: 1.4cqw; flex: 1; }
+.hook-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2cqh;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.15cqw;
+  color: var(--ink);
+}
+.hook-step small { font-family: var(--sans); font-weight: 400; font-size: 0.95cqw; color: var(--muted); }
+.hook-plus { color: var(--red); font-weight: 700; font-size: 1.3cqw; }
+
 /* Left rail label for content slides */
 .rail { display: flex; flex-direction: column; gap: 1.6cqh; }
 
