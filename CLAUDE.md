@@ -129,3 +129,4 @@ Decks are public-but-unlisted — never add a deck index to `index.html` or the 
 | GUID | Topic | Audience | Date |
 |------|-------|----------|------|
 | `1ffeab01-f6f7-4a79-a64b-bc001da4dda1` | Platform & infrastructure overview | Investor | 2025 |
+| `d1f4983d-a621-4a60-8dbc-75df3519d49c` | MrDIY Türkiye e-commerce platform — architecture & implementation (TR, deck + docs.html) | Customer | 2026 |
