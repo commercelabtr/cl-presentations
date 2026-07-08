@@ -63,15 +63,16 @@
 </header>
 
 <h2><span class="no">1.</span>Yönetici özeti</h2>
-<p>Bu doküman, MrDIY Türkiye'nin e-ticaret operasyonunu uçtan uca taşıyacak platformun hedef mimarisini, sistem topolojisini, veri akışlarını ve uygulama planını tanımlar. Çözüm; <b>Webshop, OMS, WMS, TMS, PIM, CMS ve Payment Gateway</b> bileşenlerinden oluşur ve <b>Cube ERP</b> (ürün, fiyat, muhasebe) ile <b>Logo</b> (e-irsaliye, e-fatura) sistemlerine tam entegre çalışır.</p>
+<p>Bu doküman, MrDIY Türkiye'nin e-ticaret operasyonunu uçtan uca taşıyacak platformun hedef mimarisini, sistem topolojisini, veri akışlarını ve uygulama planını tanımlar. Çözüm; <b>Appshop, Webshop, OMS, WMS, TMS, PIM, CMS ve Payment Gateway</b> bileşenlerinden oluşur ve <b>Cube ERP</b> (ürün, fiyat, muhasebe) ile <b>Logo</b> (e-irsaliye, e-fatura) sistemlerine tam entegre çalışır.</p>
 <p>Önyüz <b>Next.js 16</b>, backend servisleri <b>.NET 10</b> üzerinde geliştirilir. Tüm bileşenler CommerceLab'in çok kiracılı, bulut-doğal ürün ailesinin parçasıdır ve Kubernetes üzerinde konteyner olarak çalışır.</p>
 
 <h2><span class="no">2.</span>Kapsam ve bileşenler</h2>
 <table>
   <tr><th>Bileşen</th><th>Rol</th><th>Öne çıkan yetenekler</th></tr>
+  <tr><td><b>Appshop</b></td><td>Mobil satış kanalı</td><td>iOS ve Android için native uygulamalar; ortak Headless API, push notification, mobil ödeme</td></tr>
   <tr><td><b>Webshop</b></td><td>Online satış kanalı</td><td>Next.js 16, SSR/ISR, headless mimari, yüksek Core Web Vitals</td></tr>
-  <tr><td><b>PIM</b></td><td>Ürün bilgi yönetimi</td><td>Ürün master, varyant/bundle desteği, esnek taksonomi, veri kalitesi kuralları</td></tr>
-  <tr><td><b>CMS</b></td><td>İçerik yönetimi</td><td>Headless CMS, dinamik komponent yapısı, zamanlanmış içerik, DAM</td></tr>
+  <tr><td><b>PIM</b></td><td>Ürün bilgi yönetimi</td><td>Ürünlerin içerikleriyle birlikte yönetimi: ürün master, varyant/bundle, esnek taksonomi, zengin ürün içeriği, veri kalitesi kuralları</td></tr>
+  <tr><td><b>CMS</b></td><td>İçerik yönetimi</td><td>App ve webshop için anasayfa, landing page ve kampanya vitrinleri; headless, dinamik komponent, zamanlanmış içerik, DAM</td></tr>
   <tr><td><b>Payment Gateway</b></td><td>Tahsilat &amp; checkout</td><td>Çoklu PSP/banka, dinamik yönlendirme, fraud yönetimi, failover</td></tr>
   <tr><td><b>OMS</b></td><td>Sipariş &amp; envanter yönetimi</td><td>Dağıtık sipariş yönetimi, dinamik sourcing, gerçek zamanlı satılabilir stok</td></tr>
   <tr><td><b>WMS</b></td><td>Depo yönetimi</td><td>Mal kabul, put-away, toplama/sortlama/paketleme, sevkiyat, sayım</td></tr>
@@ -96,6 +97,7 @@
 <h3>4.1 Kanallar (public)</h3>
 <ul>
   <li><b>Webshop</b> — Next.js 16; CDN + edge cache arkasında.</li>
+  <li><b>Appshop</b> — iOS ve Android native uygulamalar; ortak Headless API üzerinden çalışır.</li>
   <li><b>Yönetim panelleri</b> — PIM, CMS, OMS, WMS, TMS back-office arayüzleri (SSO ile).</li>
 </ul>
 <h3>4.2 Uygulama katmanı</h3>
@@ -121,23 +123,23 @@
 
 <h2><span class="no">5.</span>Veri akışları</h2>
 
-<h3>5.1 Katalog &amp; içerik akışı</h3>
+<h3>5.1 Ürün &amp; fiyat akışı</h3>
 <div class="flow">
-  <div class="node">Cube ERP<small>ürün master · fiyat</small></div><div class="arrow">→</div>
-  <div class="node node--red">PIM<small>zenginleştirme · taksonomi</small></div><div class="arrow">→</div>
-  <div class="node">CMS<small>içerik · vitrin</small></div><div class="arrow">→</div>
-  <div class="node">Elasticsearch<small>arama indeksi</small></div><div class="arrow">→</div>
-  <div class="node node--ink">Webshop</div>
+  <div class="node">Kaynak: Cube ERP<small>ürün &amp; fiyat senkron (opsiyonel)</small></div><div class="arrow">→</div>
+  <div class="node node--red">PIM<small>ürün &amp; fiyat ana verisi · varyant · taksonomi</small></div><div class="arrow">→</div>
+  <div class="node">Yayın &amp; kural<small>veri kalitesi · fiyat &amp; kampanya</small></div><div class="arrow">→</div>
+  <div class="node node--ink">Webshop &amp; Appshop</div>
 </div>
 <ul>
-  <li>İlk yükleme batch ile; sonrası event bazlı delta senkronizasyon.</li>
+  <li><b>İki besleme modeli.</b> Ürün ve fiyat ister Cube ERP entegrasyonuyla otomatik senkron gelir, ister doğrudan PIM'de manuel/toplu yaratılır; iki model bir arada da kullanılabilir.</li>
+  <li><b>Merkezî fiyat yönetimi.</b> Liste fiyatı, indirimli fiyat ve kampanya fiyatları PIM'de tek noktadan yönetilir; kanal ve segment bazlı fiyatlandırma desteklenir.</li>
+  <li>İlk yükleme batch ile; sonrası ürün/fiyat senkronizasyonu zamanlanmış job'larla (belirlenen saatlerde) veya istenildiğinde manuel tetiklemeyle çalışır.</li>
   <li>Eksik görsel/fiyat/kategori bilgisi olan ürünler PIM yayın kuralları ile bloklanır.</li>
-  <li>Ürün detay ve liste yanıtları Redis + ISR ile katmanlı önbelleklenir.</li>
 </ul>
 
 <h3>5.2 Sipariş &amp; fulfillment akışı</h3>
 <div class="flow">
-  <div class="node">Webshop<small>checkout</small></div><div class="arrow">→</div>
+  <div class="node">Webshop &amp; Appshop<small>checkout</small></div><div class="arrow">→</div>
   <div class="node">Payment GW<small>tahsilat · fraud</small></div><div class="arrow">→</div>
   <div class="node node--red">OMS<small>sourcing · rezerv</small></div><div class="arrow">→</div>
   <div class="node">WMS<small>pick · pack · ship</small></div><div class="arrow">→</div>
@@ -169,7 +171,7 @@
   <div class="node">WMS<small>fiziki stok · depo hareketleri</small></div><div class="arrow">→</div>
   <div class="node node--red">OMS Envanter<small>satılabilir stok</small></div><div class="arrow">→</div>
   <div class="node">Kanal stoğu<small>kural &amp; tampon</small></div><div class="arrow">→</div>
-  <div class="node node--ink">Webshop</div>
+  <div class="node node--ink">Webshop &amp; Appshop</div>
 </div>
 <ul>
   <li>WMS hareketleri (mal kabul, sayım, sevkiyat) anlık olarak OMS envanterine işlenir; fiziki stoğun sahibi WMS'tir.</li>
@@ -181,8 +183,8 @@
 <h2><span class="no">6.</span>Entegrasyon detayları</h2>
 <table>
   <tr><th>Sistem</th><th>Yön</th><th>Veri / Olay</th><th>Yöntem</th></tr>
-  <tr><td rowspan="3">Cube ERP</td><td>İçeri</td><td>Ürün master, barkod, kategori</td><td>Batch (ilk yükleme) + delta event</td></tr>
-  <tr><td>İçeri</td><td>Fiyat listeleri</td><td>Delta event / zamanlanmış</td></tr>
+  <tr><td rowspan="3">Cube ERP</td><td>İçeri</td><td>Ürün master, barkod, kategori</td><td>Batch (ilk yükleme) + zamanlanmış job / manuel tetik</td></tr>
+  <tr><td>İçeri</td><td>Fiyat listeleri</td><td>Zamanlanmış job / manuel tetik</td></tr>
   <tr><td>Dışarı</td><td>Satış, iade, stok hareketleri, muhasebe kayıtları</td><td>Event bazlı</td></tr>
   <tr><td rowspan="2">Logo</td><td>Dışarı</td><td>E-irsaliye (sevkiyat onayında)</td><td>API — senkron + retry</td></tr>
   <tr><td>Dışarı</td><td>E-fatura / e-arşiv (faturalama olayında)</td><td>API — senkron + retry</td></tr>
@@ -217,18 +219,41 @@
   <tr><th>İş paketi</th><th>Sorumlu</th></tr>
   <tr><td>Genel koordinasyon · çözüm topolojisi · mimari</td><td>İsmail Danacı</td></tr>
   <tr><td>Proje yönetimi · planlama · paydaş iletişimi</td><td>Polat Özdemir</td></tr>
-  <tr><td>Frontend / Next.js 16 storefront</td><td>Furkan İlgen</td></tr>
+  <tr><td>UI/UX · tasarım ve genel frontend yönetimi</td><td>Furkan İlgen</td></tr>
+  <tr><td>Geliştirme (Next.js · iOS · Android)</td><td>Alper Özçelik · Mehmet Ali Alagöz · Burak Selçuk · Amir Daliri</td></tr>
+  <tr><td>PIM · ürün ve içerik yönetimi</td><td>Yasin Teker · Hüseyin Kucur · Ali Hazar</td></tr>
+  <tr><td>OMS · sipariş ve envanter</td><td>Erkan Özer · Sertaç Yalçınkaya</td></tr>
   <tr><td>WMS &amp; Fulfillment</td><td>Arif Kula</td></tr>
-  <tr><td>Entegrasyonlar (Cube · Logo · PSP · kargo)</td><td>Erkan Özer / Yasin Teker</td></tr>
+  <tr><td>TMS · kargo entegrasyonları</td><td>Mehmet Çırak · Tan Çırpıcıoğlu</td></tr>
 </table>
-<h3>9.2 Fazlar (14 hafta)</h3>
+<h3>9.2 Fazlar (20 Temmuz 2026 → Ocak 2027)</h3>
 <table>
   <tr><th>Faz</th><th>Hafta</th><th>Kapsam</th></tr>
-  <tr><td>Faz 1 — Temel</td><td>H1–H3</td><td>Çözüm topolojisi, mimari kararlar, test/prod ortam kurulumu, proje planı</td></tr>
-  <tr><td>Faz 2 — Yapım</td><td>H3–H8</td><td>PIM/CMS kurulumu, storefront geliştirme, Cube ERP entegrasyonu, Payment GW</td></tr>
-  <tr><td>Faz 3 — Operasyon</td><td>H5–H11</td><td>OMS/WMS/TMS devreye alma, Logo entegrasyonu, kargo entegrasyonları</td></tr>
-  <tr><td>Faz 4 — Doğrulama</td><td>H11–H13</td><td>Uçtan uca test, veri doğrulama, performans testi, kullanıcı eğitimi</td></tr>
-  <tr><td>Go-Live</td><td>H14</td><td>Kademeli açılış (soft-launch → tam açılış) + 2 hafta hypercare</td></tr>
+  <tr><td>Faz 1 — Planlama & Mimari</td><td>H1–H9</td><td>Çözüm topolojisi, sistem mimarisi & servis envanteri, test/prod ortam kurulumu, proje planı; kickoff & çalıştaylar proje boyunca paralel</td></tr>
+  <tr><td>Faz 2 — Tasarım & Yapım</td><td>H3–H17</td><td>UI/UX tasarım sistemi, PIM kurulumu & ürün verisi, CMS içerik/vitrin, Cube ERP & Logo entegrasyonları, Payment GW/PSP</td></tr>
+  <tr><td>Faz 3 — Operasyon</td><td>H8–H20</td><td>OMS devreye alma, WMS kurulumu & fulfillment, TMS kurgu & kargo entegrasyonları</td></tr>
+  <tr><td>Faz 4 — Webshop & Doğrulama</td><td>H15–H22</td><td>Webshop UI/UX ve geliştirme, uçtan uca test & veri doğrulama, eğitim</td></tr>
+  <tr><td>Go-Live</td><td>H21–H25</td><td>iOS & Android geliştirme, kademeli açılış; canlı: 2027 ilk hafta (04.01.2027) + hypercare</td></tr>
+</table>
+<h3>9.3 Kickoff &amp; çalıştaylar</h3>
+<p>Projeye hızlı ve doğru başlamak için ilk fazda aşağıdaki başlıklar atölye ve karar toplantılarıyla netleştirilir:</p>
+<table>
+  <tr><th>Başlık</th><th>Kapsam</th></tr>
+  <tr><td>Tasarım brief</td><td>Web Shop ve App Shop tasarım brief'lerinin hazırlanması</td></tr>
+  <tr><td>Entegrasyon</td><td>Cube ERP · Logo · e-irsaliye &amp; e-fatura entegrasyon kapsamı</td></tr>
+  <tr><td>Operasyon (WMS &amp; TMS)</td><td>Kargo firmalarının belirlenmesi; stok planlama (initial allocation &amp; replenishment); mal kabul, adresleme, wave profilleme, toplama, sorting, paketleme, kargolama ve iade süreçlerinin tasarımı</td></tr>
+  <tr><td>Commerce</td><td>Onsite marketing araçları (Insider, Persona vb.); SEO/GEO isterleri; GTM; analytics (GA4, Firebase); cookie consent; İYS (communication consent); ödeme servis sağlayıcıları (banka/iyzico/PSP, masterpass, kart saklama); notification provider</td></tr>
+  <tr><td>PIM &amp; Catalog</td><td>Ürünün nereden yaratılacağı ve içerikle nasıl zenginleştirileceği</td></tr>
+  <tr><td>Pazarlama</td><td>Analytics, SEO/GEO ve onsite marketing tool kurulumları (ajans koordinasyonu)</td></tr>
+</table>
+
+<h3>9.4 Proje yönetimi &amp; Servicedesk</h3>
+<p><b>Proje yönetimi.</b> Geliştirme ve süreçler maddeler halinde iş paketlerine bölünür; haftalık veya iki haftalık sprint'lerle yürütülür. Her sprint net kapsam, önceliklendirme ve düzenli demo içerir; böylece ilerleme şeffaf ve teslim öngörülebilir olur.</p>
+<p><b>Servicedesk.</b> Canlı öncesi ve sonrası tüm destek talepleri ServiceDesk üzerinden tek merkezde kayıt altına alınır ve uçtan uca izlenir. Müşteri, talebini portal veya <b>servicedesk@commercelab.com.tr</b> adresi üzerinden oluşturabilir; takip ve haberleşme aynı talep üzerinden sürdürülür.</p>
+<table>
+  <tr><th>Kanal</th><th>Adres</th></tr>
+  <tr><td>Servicedesk portalı</td><td>https://hebiar.atlassian.net/servicedesk/customer/portal/3</td></tr>
+  <tr><td>E-posta</td><td>servicedesk@commercelab.com.tr</td></tr>
 </table>
 
 <h2><span class="no">10.</span>Riskler ve varsayımlar</h2>

@@ -9,6 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/theme.css" />
+<style>
+  .compact-cards .card { padding: 1.5cqh 1.3cqw; gap: 0.5cqh; }
+  .compact-cards .card p { font-size: 1.18cqw; line-height: 1.4; }
+  .compact-cards .card h3 { font-size: 1.55cqw; }
+  .card--dark .flist li { color: rgba(255,255,255,.86); }
+  .card--dark .flist b { color: #fff; }
+</style>
 </head>
 <body>
 <div class="deck">
@@ -19,7 +26,7 @@
       <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
       <span class="kicker">MrDIY Türkiye</span>
       <h1 class="cover-title">E-Ticaret Platformu<br />Çözüm Mimarisi &amp; <span class="accent">Uygulama Planı</span></h1>
-      <p class="cover-sub">Webshop, OMS, WMS, TMS, PIM, CMS ve Payment Gateway'i tek bir platformda birleştiren; Cube ERP ve Logo ile uçtan uca entegre çalışan kurumsal e-ticaret mimarisi.</p>
+      <p class="cover-sub">Appshop &amp; Webshop, OMS, WMS, TMS, PIM, CMS ve Payment Gateway'i tek bir platformda birleştiren; Cube ERP ve Logo ile uçtan uca entegre çalışan kurumsal e-ticaret mimarisi.</p>
       <div class="cover-meta">
         <div>Çözüm Topolojisi · Veri Akışları · Yol Haritası</div>
       </div>
@@ -27,7 +34,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">1 / 17</span>
+      <span class="slide__no">1 / 19</span>
     </div>
   </section>
 
@@ -36,10 +43,12 @@
     <div class="slide__inner">
       <span class="kicker">Amaç &amp; kapsam</span>
       <h2 class="slide-title">MrDIY Türkiye için <span class="accent">uçtan uca</span> ticaret altyapısı</h2>
-      <p class="lead">Satıştan teslimata tüm operasyonu tek platformda yöneten, ERP ve resmî belge süreçleriyle tam entegre bir e-ticaret ekosistemi kuruyoruz.</p>
-      <div class="grid grid-3" style="flex:1; align-content:center; gap:1.6cqh 1.6cqw;">
-        <div class="card"><div class="ix">Satış</div><h3>Webshop</h3><p>Next.js 16 tabanlı, headless mimaride modern ve hızlı bir online mağaza deneyimi.</p></div>
-        <div class="card"><div class="ix">Ürün &amp; içerik</div><h3>PIM + CMS</h3><p>Ürün ana verisi, kategori ağacı, zengin içerik ve kampanya vitrinlerinin tek noktadan yönetimi.</p></div>
+      <p class="lead" style="font-size:1.5cqw; margin-bottom:0.6cqh;">Satıştan teslimata tüm operasyonu tek platformda yöneten, ERP ve resmî belge süreçleriyle tam entegre bir e-ticaret ekosistemi.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
+        <div class="card"><div class="ix">Mobil satış</div><h3>Appshop</h3><p>iOS ve Android için native teknolojilerle geliştirilen mobil alışveriş uygulamaları.</p></div>
+        <div class="card"><div class="ix">Web satış</div><h3>Webshop</h3><p>Next.js 16 tabanlı, headless mimaride modern ve hızlı bir online mağaza deneyimi.</p></div>
+        <div class="card"><div class="ix">Ürün</div><h3>PIM</h3><p>Ürünlerin içerikleriyle birlikte yönetimi: ana veri, varyant, taksonomi ve zengin ürün içeriği.</p></div>
+        <div class="card"><div class="ix">İçerik</div><h3>CMS</h3><p>App ve webshop için anasayfa, landing page ve kampanya vitrinlerinin düzenlenmesi.</p></div>
         <div class="card"><div class="ix">Ödeme</div><h3>Payment Gateway</h3><p>PSP ve banka entegrasyonları, akıllı kart kabulü ve fraud yönetimiyle güvenli tahsilat.</p></div>
         <div class="card"><div class="ix">Sipariş</div><h3>OMS</h3><p>Dağıtık sipariş yönetimi, gerçek zamanlı stok ve dinamik sourcing algoritmaları.</p></div>
         <div class="card"><div class="ix">Depo</div><h3>WMS</h3><p>Mal kabul, toplama, paketleme ve sevkiyatı kapsayan depo operasyon yönetimi.</p></div>
@@ -50,7 +59,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">2 / 17</span>
+      <span class="slide__no">2 / 19</span>
     </div>
   </section>
 
@@ -58,11 +67,11 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Çözüm bileşenleri</span>
-      <h2 class="slide-title">CommerceLab ürün ailesinden <span class="accent">7 bileşen</span>, tek platform</h2>
+      <h2 class="slide-title">CommerceLab ürün ailesinden <span class="accent">tüm bileşenler</span>, tek platform</h2>
       <p class="lead">Her bileşen bağımsız ölçeklenen, çok kiracılı (multi-tenant) ve bulut-doğal bir PBC — birlikte tam bir Commerce ERP oluşturur.</p>
       <div class="stack" style="flex:1; justify-content:center;">
-        <div class="layer"><span class="tag">Deneyim</span><span class="desc"><b>Webshop</b> — Next.js 16 storefront · Headless Experience Layer üzerinden API tabanlı</span></div>
-        <div class="layer"><span class="tag">Core commerce</span><span class="desc"><b>PIM</b> ürün ana verisi &amp; taksonomi · <b>CMS</b> içerik &amp; vitrin · <b>Payment Gateway</b> tahsilat &amp; fraud</span></div>
+        <div class="layer"><span class="tag">Deneyim</span><span class="desc"><b>Appshop</b> (native iOS &amp; Android) &amp; <b>Webshop</b> (Next.js 16) — Headless Experience Layer üzerinden API tabanlı</span></div>
+        <div class="layer"><span class="tag">Core commerce</span><span class="desc"><b>PIM</b> ürün + ürün içeriği · <b>CMS</b> anasayfa &amp; landing page · <b>Payment Gateway</b> tahsilat &amp; fraud</span></div>
         <div class="layer layer--ink"><span class="tag">Operasyon</span><span class="desc"><b>OMS</b> sipariş &amp; envanter · <b>WMS</b> depo &amp; fulfillment · <b>TMS</b> kargo &amp; dağıtım</span></div>
         <div class="layer"><span class="tag">Entegrasyon</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — Cube ERP · Logo · PSP'ler · kargo firmaları</span></div>
       </div>
@@ -70,7 +79,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">3 / 17</span>
+      <span class="slide__no">3 / 19</span>
     </div>
   </section>
 
@@ -84,7 +93,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">4 / 17</span>
+      <span class="slide__no">4 / 19</span>
     </div>
   </section>
 
@@ -94,7 +103,7 @@
       <span class="kicker">Hedef mimari</span>
       <h2 class="slide-title">Katmanlı, <span class="accent">headless</span> ve olay güdümlü</h2>
       <div class="stack" style="flex:1; justify-content:center;">
-        <div class="layer"><span class="tag">Storefront</span><span class="desc"><b>Next.js 16</b> — SSR/ISR, App Router, edge cache · web &amp; mobil web tek kod tabanı</span></div>
+        <div class="layer"><span class="tag">Storefront</span><span class="desc"><b>Webshop</b> Next.js 16 (SSR/ISR, App Router, edge cache) &amp; <b>Appshop</b> native iOS/Android — ortak Headless API</span></div>
         <div class="layer"><span class="tag">API katmanı</span><span class="desc"><b>Headless Experience Layer</b> — GraphQL / REST · kimlik doğrulama · rate limiting · BFF deseni</span></div>
         <div class="layer"><span class="tag">Servisler</span><span class="desc"><b>.NET 10</b> mikroservisleri — PIM · CMS · Payment GW · OMS · WMS · TMS · Campaign · CRM</span></div>
         <div class="layer layer--ink"><span class="tag">Orkestrasyon</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — event-driven akışlar · RabbitMQ · auto-fix &amp; failover</span></div>
@@ -105,7 +114,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">5 / 17</span>
+      <span class="slide__no">5 / 19</span>
     </div>
   </section>
 
@@ -119,8 +128,8 @@
           <div class="zone__head">Kanallar<span class="cidr">public</span></div>
           <div class="chips">
             <span class="chip chip--red"><b>Webshop</b> Next.js 16</span>
-            <span class="chip"><b>Yönetim panelleri</b> PIM · CMS · OMS · WMS</span>
-            <span class="chip"><b>Müşteri</b> hesap · sipariş takip</span>
+            <span class="chip chip--red"><b>Appshop</b> iOS &amp; Android native</span>
+            <span class="chip"><b>Yönetim panelleri</b> PIM · CMS · OMS · WMS · TMS</span>
           </div>
         </div>
         <div class="zone">
@@ -160,7 +169,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">6 / 17</span>
+      <span class="slide__no">6 / 19</span>
     </div>
   </section>
 
@@ -181,7 +190,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">7 / 17</span>
+      <span class="slide__no">7 / 19</span>
     </div>
   </section>
 
@@ -195,7 +204,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">8 / 17</span>
+      <span class="slide__no">8 / 19</span>
     </div>
   </section>
 
@@ -203,29 +212,27 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Akış 1</span>
-      <h2 class="slide-title">Katalog &amp; içerik akışı</h2>
-      <p class="lead">Ürün ana verisi Cube ERP'den doğar; PIM'de zenginleşir, CMS ile vitrine taşınır.</p>
+      <h2 class="slide-title">Ürün &amp; fiyat akışı</h2>
+      <p class="lead">Ürün ve fiyat bilgisi ister Cube ERP'den entegrasyonla beslenir, ister doğrudan PIM üzerinde yaratılıp yönetilir — iki model de desteklenir, birlikte de çalışır.</p>
       <div class="flow" style="margin-top:2cqh;">
-        <div class="node">Cube ERP<small>ürün master · barkod · fiyat</small></div>
+        <div class="node">Kaynak: Cube ERP<small>ürün &amp; fiyat senkron (opsiyonel)</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--red">PIM<small>zenginleştirme · taksonomi · varyant</small></div>
+        <div class="node node--red">PIM<small>ürün &amp; fiyat ana verisi · varyant · taksonomi</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node">CMS<small>içerik · vitrin · kampanya sayfaları</small></div>
+        <div class="node">Yayın &amp; kural<small>veri kalitesi · fiyat &amp; kampanya kontrolü</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node">Elasticsearch<small>arama &amp; listeleme indeksi</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Webshop<small>Next.js 16 storefront</small></div>
+        <div class="node node--ink">Webshop &amp; Appshop<small>satış kanalları</small></div>
       </div>
       <ul class="flist" style="margin-top:3cqh;">
-        <li><b>Delta senkron.</b> Cube'dan gelen ürün/fiyat değişiklikleri event bazlı olarak PIM'e akar; toplu ilk yükleme ayrı batch ile yapılır.</li>
-        <li><b>Yayın kuralları.</b> Eksik görsel, fiyat veya kategori bilgisi olan ürünler yayına çıkmaz; PIM veri kalitesini garanti eder.</li>
-        <li><b>Önbellekleme.</b> Ürün detay ve listeleme yanıtları Redis + ISR ile katmanlı önbelleklenir.</li>
+        <li><b>İki besleme modeli.</b> Ürün ve fiyat ister Cube ERP entegrasyonuyla otomatik senkron gelir, ister doğrudan PIM'de manuel/toplu yaratılır; ikisi bir arada da kullanılabilir.</li>
+        <li><b>Merkezî fiyat yönetimi.</b> Liste fiyatı, indirimli fiyat ve kampanya fiyatları PIM'de tek noktadan yönetilir; kanal ve segment bazlı fiyatlandırma desteklenir.</li>
+        <li><b>Yayın kuralları &amp; senkron.</b> Ürün/fiyat senkronizasyonu zamanlanmış job'larla (belirlenen saatlerde) veya istenildiğinde manuel tetiklemeyle çalışır; eksik görsel, fiyat veya kategori bilgisi olan ürün yayına çıkmaz.</li>
       </ul>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">9 / 17</span>
+      <span class="slide__no">9 / 19</span>
     </div>
   </section>
 
@@ -236,7 +243,7 @@
       <h2 class="slide-title">Sipariş &amp; <span class="accent">fulfillment</span> akışı</h2>
       <p class="lead">Sepetten teslimata tüm yaşam döngüsü; her adım event ile bir sonrakini tetikler.</p>
       <div class="flow" style="margin-top:2cqh;">
-        <div class="node">Webshop<small>sepet &amp; checkout</small></div>
+        <div class="node">Webshop &amp; Appshop<small>sepet &amp; checkout</small></div>
         <div class="arrow">&rarr;</div>
         <div class="node">Payment GW<small>tahsilat · fraud kontrol</small></div>
         <div class="arrow">&rarr;</div>
@@ -257,14 +264,14 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">10 / 17</span>
+      <span class="slide__no">10 / 19</span>
     </div>
   </section>
 
   <!-- 11 — BELGE AKIŞI -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Akış 3</span>
+      <span class="kicker">Akış 3 (!Netleştirilecek)</span>
       <h2 class="slide-title">İrsaliye, fatura &amp; <span class="accent">muhasebe</span> akışı</h2>
       <p class="lead">Resmî belge süreçleri Logo üzerinden, muhasebe mutabakatı Cube ERP üzerinden yürür.</p>
       <div class="flow" style="margin-top:2cqh;">
@@ -288,7 +295,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">11 / 17</span>
+      <span class="slide__no">11 / 19</span>
     </div>
   </section>
 
@@ -305,7 +312,7 @@
         <div class="arrow">&rarr;</div>
         <div class="node">Kanal stoğu<small>kanal bazlı kural &amp; tampon</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Webshop<small>gerçek zamanlı müsaitlik</small></div>
+        <div class="node node--ink">Webshop &amp; Appshop<small>gerçek zamanlı müsaitlik</small></div>
       </div>
       <div class="grid grid-3" style="margin-top:2.4cqh;">
         <div class="card"><div class="ix">Gerçek zamanlı</div><p>WMS hareketleri (mal kabul, sayım, sevkiyat) anında OMS envanterine işlenir; webshop stale stok göstermez.</p></div>
@@ -316,7 +323,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">12 / 17</span>
+      <span class="slide__no">12 / 19</span>
     </div>
   </section>
 
@@ -330,7 +337,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">13 / 17</span>
+      <span class="slide__no">13 / 19</span>
     </div>
   </section>
 
@@ -351,7 +358,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">14 / 17</span>
+      <span class="slide__no">14 / 19</span>
     </div>
   </section>
 
@@ -360,52 +367,114 @@
     <div class="slide__inner">
       <span class="kicker">Proje organizasyonu</span>
       <h2 class="slide-title">Alan sahipliğine dayalı <span class="accent">ekip yapısı</span></h2>
-      <div class="grid grid-3" style="flex:1; align-content:center; gap:1.6cqh 1.6cqw;">
-        <div class="card card--dark"><div class="ix">Çözüm liderliği</div><h3>İsmail Danacı</h3><p>Genel koordinasyon, çözüm topolojisi, mimari kararlar ve ortam kurulumları.</p></div>
-        <div class="card card--dark"><div class="ix">Proje yönetimi</div><h3>Polat Özdemir</h3><p>Proje planı, koordinasyon, paydaş iletişimi, risk ve ilerleme takibi.</p></div>
-        <div class="card"><div class="ix">Frontend</div><h3>Furkan İlgen</h3><p>Next.js 16 storefront, UI/UX, performans ve yayın öncesi optimizasyon.</p></div>
-        <div class="card"><div class="ix">WMS &amp; Fulfillment</div><h3>Arif Kula</h3><p>Depo süreç tasarımı, WMS konfigürasyonu, fulfillment ve iade akışları.</p></div>
-        <div class="card"><div class="ix">Entegrasyonlar</div><h3>Erkan Özer · Yasin Teker</h3><p>Cube ERP, Logo, PSP ve kargo entegrasyonları; orchestration akışları.</p></div>
-      </div>
-      <p class="note">Her iş paketi tek bir sahibe raporlar; haftalık durum toplantısı ve ortak proje planı (Sheets) üzerinden takip edilir.</p>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
+        <div class="card card--dark"><div class="ix">Çözüm liderliği</div><h3>İsmail Danacı</h3><p>Genel koordinasyon, çözüm topolojisi ve mimari kararlar.</p></div>
+        <div class="card card--dark"><div class="ix">Proje yönetimi</div><h3>Polat Özdemir</h3><p>Proje planı, paydaş iletişimi, risk ve ilerleme takibi.</p></div>
+        <div class="card"><div class="ix">UI/UX</div><h3>Furkan İlgen</h3><p>Tasarım ve genel frontend yönetimi.</p></div>
+        <div class="card"><div class="ix">Webshop (Next.js) &amp; Appshop ( iOS · Android)</div><h3>Alper Özçelik · Mehmet Ali Alagöz · Burak Selçuk · Amir Daliri</h3><p>Webshop ve native app geliştirme.</p></div>
+        <div class="card"><div class="ix">PIM</div><h3>Yasin Teker · Hüseyin Kucur · Ali Hazar</h3><p>Ürün ve içerik yönetimi.</p></div>
+        <div class="card"><div class="ix">OMS</div><h3>Erkan Özer · Sertaç Yalçınkaya</h3><p>Sipariş ve envanter yönetimi.</p></div>
+        <div class="card"><div class="ix">WMS &amp; Fulfillment</div><h3>Arif Kula</h3><p>Depo süreçleri, fulfillment ve iade akışları.</p></div>
+        <div class="card"><div class="ix">TMS</div><h3>Mehmet Çırak · Tan Çırpıcıoğlu</h3><p>Kargo entegrasyonları ve dağıtım.</p></div>
+        <div class="card"><div class="ix">Payment GW & Campaign Engine</div><h3>Gökhan Koçak</h3><p>Ödeme ve kampanyalar</p></div>
+
+    </div>
+      <p class="note">Her iş paketi tek bir sahibe raporlar; haftalık durum toplantısı ve ortak proje planı (Jira ve Sheets) üzerinden takip edilir.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">15 / 17</span>
+      <span class="slide__no">15 / 19</span>
     </div>
   </section>
 
-  <!-- 16 — YOL HARİTASI -->
+  <!-- 16 — KICKOFF ÇALIŞTAYLARI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kickoff &amp; çalıştaylar</span>
+      <h2 class="slide-title">Başlangıçta netleşmesi gereken <span class="accent">başlıklar</span></h2>
+      <p class="lead">Projeye hızlı ve doğru başlamak için ilk fazda yürütülecek atölye ve karar başlıkları.</p>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card"><div class="ix">Tasarım brief</div><h3>Arayüz &amp; UX</h3><p>Web Shop ve App Shop tasarım brief'lerinin hazırlanması.</p></div>
+        <div class="card"><div class="ix">Entegrasyon</div><h3>ERP &amp; belge</h3><p>Cube ERP · Logo · e-irsaliye &amp; e-fatura entegrasyon kapsamı.</p></div>
+        <div class="card card--dark"><div class="ix">Operasyon · WMS &amp; TMS</div><h3>Depo &amp; sevkiyat</h3><p>Kargo firmalarının belirlenmesi · stok planlama (initial allocation &amp; replenishment) · mal kabul → adresleme → toplama → paketleme → iade kurgusu.</p></div>
+        <div class="card"><div class="ix">Commerce</div><h3>Araç &amp; servisler</h3><p>Onsite marketing (Insider vb.) · SEO/GEO · GTM · Analytics (GA4, Firebase) · cookie consent · İYS · PSP'ler · notification.</p></div>
+        <div class="card"><div class="ix">PIM &amp; Catalog</div><h3>Ürün yönetimi</h3><p>Ürün nereden yaratılacak ve içerikle nasıl zenginleştirilecek?</p></div>
+        <div class="card"><div class="ix">Pazarlama</div><h3>Kurulumlar</h3><p>Analytics, SEO/GEO ve onsite marketing tool kurulumları (ajans koordinasyonu).</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">16 / 19</span>
+    </div>
+  </section>
+
+  <!-- 17 — YOL HARİTASI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Yol haritası</span>
-      <h2 class="slide-title">14 haftada <span class="accent">canlıya</span></h2>
+      <h2 class="slide-title">Temmuz 2026 → <span class="accent">Ocak 2027</span></h2>
       <div class="flow" style="margin-top:2cqh;">
-        <div class="node">Faz 1 · H1–H3<small>topoloji · mimari · ortam kurulumu</small></div>
+        <div class="node">Faz 1 · H1–H9<small>topoloji · mimari · ortam · kickoff & çalıştaylar</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node">Faz 2 · H3–H8<small>PIM/CMS kurulumu · storefront geliştirme · Cube entegrasyonu</small></div>
+        <div class="node">Faz 2 · H3–H17<small>UI/UX tasarım · PIM/CMS · Cube & Logo entegrasyonları</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--red">Faz 3 · H5–H11<small>OMS/WMS/TMS devreye alma · Logo entegrasyonu</small></div>
+        <div class="node node--red">Faz 3 · H8–H20<small>OMS/WMS/TMS operasyon · ödeme & kargo</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node">Faz 4 · H11–H13<small>uçtan uca test · veri doğrulama · eğitim</small></div>
+        <div class="node">Faz 4 · H15–H22<small>Webshop geliştirme · uçtan uca test</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Go-Live · H14<small>kademeli açılış · hypercare</small></div>
+        <div class="node node--ink">Go-Live · H21–H25<small>iOS & Android · kademeli açılış</small></div>
       </div>
       <ul class="flist" style="margin-top:3cqh;">
-        <li><b>Paralel ilerleme.</b> Frontend, entegrasyon ve operasyon iş paketleri Faz 2'den itibaren paralel yürür.</li>
-        <li><b>Erken entegrasyon.</b> Cube ve Logo bağlantıları ilk fazlarda kurulur; son haftaya entegrasyon sürprizi bırakılmaz.</li>
-        <li><b>Kademeli açılış.</b> Soft-launch ile sınırlı trafik üzerinde doğrulama, ardından tam açılış ve 2 hafta hypercare.</li>
+        <li><b>Paralel ilerleme.</b> Tasarım, PIM/CMS, entegrasyon ve operasyon iş paketleri paralel yürür; kickoff ve çalıştaylar proje boyunca devam eder.</li>
+        <li><b>Erken entegrasyon.</b> Cube ve Logo bağlantıları erken kurulur; son haftaya entegrasyon sürprizi bırakılmaz.</li>
+        <li><b>Kademeli açılış.</b> Webshop canlıya alınır, ardından mobil uygulamalar devreye girer; Go-Live 2027'nin ilk haftasında.</li>
       </ul>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">16 / 17</span>
+      <span class="slide__no">17 / 19</span>
     </div>
   </section>
 
-  <!-- 17 — KAPANIŞ -->
+  <!-- 18 — PROJE YÖNETİMİ & SERVICEDESK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Proje yönetimi &amp; Servicedesk</span>
+      <h2 class="slide-title">Şeffaf <span class="accent">yönetişim</span> ve sürekli destek</h2>
+      <p class="lead">İş takibinden canlı sonrası desteğe kadar tüm süreç, ölçülebilir ve izlenebilir araçlarla yürütülür.</p>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
+        <div class="card">
+          <div class="ix">Proje yönetimi</div>
+          <h3>Sprint bazlı ilerleme</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Geliştirme ve süreçler maddelendirilerek iş paketlerine bölünür.</li>
+            <li>Haftalık / iki haftalık <b>sprint'ler</b>; net kapsam, önceliklendirme ve düzenli demo.</li>
+            <li>Şeffaf ilerleme ve öngörülebilir teslim; her sprintte ölçülebilir çıktı.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Servicedesk</div>
+          <h3>Tek merkezden destek</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Tüm destek talepleri <b>ServiceDesk</b>'te kayıt altına alınır, uçtan uca izlenir.</li>
+            <li>Talep açma: portal veya <b>servicedesk@commercelab.com.tr</b>.</li>
+            <li>Talep üzerinden durum takibi ve haberleşme sürdürülür.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>ServiceDesk portalı:</b> https://hebiar.atlassian.net/servicedesk/customer/portal/3 — talepler daha sağlıklı kayda geçer, takip ve iletişim tek kanaldan yürür.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">18 / 19</span>
+    </div>
+  </section>
+
+  <!-- 19 — KAPANIŞ -->
   <section class="slide slide--ink slide--cover">
     <div class="slide__inner">
       <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
@@ -419,7 +488,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">17 / 17</span>
+      <span class="slide__no">19 / 19</span>
     </div>
   </section>
 
