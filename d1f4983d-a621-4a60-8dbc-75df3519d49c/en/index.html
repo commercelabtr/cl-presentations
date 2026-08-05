@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CommerceLab — MrDIY Türkiye E-Commerce Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../assets/theme.css" />
+<style>
+  .compact-cards .card { padding: 1.5cqh 1.3cqw; gap: 0.5cqh; }
+  .compact-cards .card p { font-size: 1.18cqw; line-height: 1.4; }
+  .compact-cards .card h3 { font-size: 1.55cqw; }
+  .card--dark .flist li { color: rgba(255,255,255,.86); }
+  .card--dark .flist b { color: #fff; }
+  .slide--diagram .diagram-wrap { flex:1; display:flex; align-items:center; justify-content:center; margin-top:1.5cqh; }
+  .slide--diagram .cflow { display:flex; align-items:center; justify-content:center; width:100%; }
+  .slide--diagram .cflow-node { min-width:15ch; min-height:9.5cqh; padding:2cqh 1.8cqw; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:var(--paper); border:1px solid var(--line-strong); border-radius:8px; font-family:var(--display); font-weight:600; font-size:1.5cqw; color:var(--ink); }
+  .slide--diagram .cflow-node small { margin-top:0.5cqh; font-family:var(--sans); font-weight:400; font-size:1.15cqw; color:var(--muted); }
+  .slide--diagram .cflow-node--hub { background:var(--red); border-color:var(--red-deep); color:#ffffff; }
+  .slide--diagram .cflow-arrow { position:relative; flex:1; max-width:15cqw; height:2px; background:var(--ink); }
+  .slide--diagram .cflow-arrow--r::after { content:''; position:absolute; right:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:9px solid var(--ink); }
+  .slide--diagram .cflow-arrow--l::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
+  .slide--diagram .cflow-label { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-weight:400; font-size:1.15cqw; color:var(--muted); }
+  .slide--diagram .cflow-stack { display:flex; flex-direction:column; align-items:center; gap:3.5cqh; width:100%; }
+  .slide--diagram .cflow-note { max-width:64cqw; padding:2cqh 2.2cqw; border:1px solid var(--line); border-left:3px solid var(--red); border-radius:6px; background:var(--paper); font-family:var(--sans); font-size:1.3cqw; line-height:1.5; color:var(--ink); text-align:left; }
+  .slide--diagram .qwrap { width:100%; display:flex; flex-direction:column; align-items:stretch; gap:3cqh; }
+  .slide--diagram .qflow { display:flex; align-items:center; justify-content:center; width:100%; }
+  .slide--diagram .qgroup { position:relative; display:flex; flex-direction:column; align-items:center; padding:3cqh 2.4cqw; border:1.5px solid var(--red); border-radius:10px; background:rgba(208,44,47,.05); }
+  .slide--diagram .qgroup__label { position:absolute; top:-3.8cqh; left:50%; transform:translateX(-50%); font-family:var(--display); font-weight:600; font-size:1.2cqw; color:var(--red); white-space:nowrap; }
+  .slide--diagram .qbox { min-width:14ch; padding:1.5cqh 1.4cqw; text-align:center; background:var(--paper); border:1px solid var(--line-strong); border-radius:8px; font-family:var(--display); font-weight:600; font-size:1.45cqw; color:var(--ink); }
+  .slide--diagram .qbox--hub { background:var(--red); border-color:var(--red-deep); color:#ffffff; }
+  .slide--diagram .qva { position:relative; width:2px; height:7cqh; margin:0.6cqh 0; background:var(--ink); }
+  .slide--diagram .qva::after { content:''; position:absolute; left:50%; bottom:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-top:9px solid var(--ink); }
+  .slide--diagram .qva--both::before { content:''; position:absolute; left:50%; top:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:9px solid var(--ink); }
+  .slide--diagram .qva__label { position:absolute; left:1.3cqw; top:40%; transform:translateY(-50%); white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
+  .slide--diagram .qlinks { position:relative; flex:1; max-width:26cqw; display:flex; flex-direction:column; gap:5cqh; }
+  .slide--diagram .qlinks::after { content:''; position:absolute; right:5cqw; top:1px; bottom:1px; width:2px; background:var(--ink); }
+  .slide--diagram .qlink { position:relative; height:2px; background:var(--ink); margin-right:5cqw; }
+  .slide--diagram .qlink--full { margin-right:0; }
+  .slide--diagram .qlink::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
+  .slide--diagram .qlink__label, .slide--diagram .qget { position:absolute; top:50%; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.5cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); z-index:1; }
+  .slide--diagram .qlink__label { left:45%; }
+  .slide--diagram .qget { left:auto; right:0.6cqw; transform:translateY(-50%); font-weight:600; color:var(--ink); }
+  .slide--diagram .qbottom { position:relative; height:2px; margin:0 6cqw; background:var(--ink); }
+  .slide--diagram .qbottom::after { content:''; position:absolute; right:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:9px solid var(--ink); }
+  .slide--diagram .qwrap { position:relative; padding-bottom:16cqh; }
+  .slide--diagram .qpath span { position:absolute; background:var(--ink); }
+  .slide--diagram .qpath .qp-v1 { left:var(--qp-left); top:var(--qp-v1top,36.5cqh); height:calc(49cqh - var(--qp-v1top,36.5cqh)); width:2px; }
+  .slide--diagram .qpath .qp-h { left:var(--qp-left); right:var(--qp-right); top:49cqh; height:2px; }
+  .slide--diagram .qpath .qp-v2 { right:var(--qp-right); top:var(--qp-v2top,23.4cqh); height:calc(49cqh - var(--qp-v2top,23.4cqh)); width:2px; }
+  .slide--diagram .qpath .qp-v2::after { content:''; position:absolute; left:50%; top:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:9px solid var(--ink); }
+  .slide--diagram .qpath .qp-label { top:49cqh; left:50%; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 01 — COVER -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">MrDIY Türkiye</span>
+      <h1 class="cover-title">E-Commerce Platform<br />Solution Architecture &amp; <span class="accent">Implementation Plan</span></h1>
+      <p class="cover-sub">An enterprise e-commerce architecture that unifies Appshop &amp; Webshop, OMS, WMS, TMS, PIM, CMS and the Payment Gateway on a single platform; end-to-end integrated with Qube ERP and Logo.</p>
+      <div class="cover-meta">
+        <div>Solution Topology · Data Flows · Roadmap</div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">1 / 19</span>
+    </div>
+  </section>
+
+  <!-- 02 — PURPOSE & SCOPE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Purpose &amp; scope</span>
+      <h2 class="slide-title">An <span class="accent">end-to-end</span> commerce infrastructure for MrDIY Türkiye</h2>
+      <p class="lead" style="font-size:1.5cqw; margin-bottom:0.6cqh;">An e-commerce ecosystem that manages the entire operation from sale to delivery on one platform, fully integrated with ERP and official document processes.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
+        <div class="card"><div class="ix">Mobile sales</div><h3>Appshop</h3><p>Mobile shopping apps built with native technologies for iOS and Android.</p></div>
+        <div class="card"><div class="ix">Web sales</div><h3>Webshop</h3><p>A modern, fast online store experience built on Next.js 16 with a headless architecture.</p></div>
+        <div class="card"><div class="ix">Product</div><h3>PIM</h3><p>Managing products together with their content: master data, variants, taxonomy and rich product content.</p></div>
+        <div class="card"><div class="ix">Content</div><h3>CMS</h3><p>Managing home pages, landing pages and campaign showcases for the app and webshop.</p></div>
+        <div class="card"><div class="ix">Payment</div><h3>Payment Gateway</h3><p>Secure collection with PSP and bank integrations, smart card acceptance and fraud management.</p></div>
+        <div class="card"><div class="ix">Order</div><h3>OMS</h3><p>Distributed order management, real-time stock and dynamic sourcing algorithms.</p></div>
+        <div class="card"><div class="ix">Warehouse</div><h3>WMS</h3><p>Warehouse operations covering goods receipt, picking, packing and shipping.</p></div>
+        <div class="card"><div class="ix">Transport</div><h3>TMS</h3><p>Multi-carrier integration, rule-based dispatch and delivery tracking.</p></div>
+      </div>
+      <p class="note"><b>Integration backbone:</b> OMS + WMS integrate with <b>Qube ERP</b> for product/price/accounting, and with <b>Logo</b> for e-waybill and e-invoice.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">2 / 19</span>
+    </div>
+  </section>
+
+  <!-- 03 — PLATFORM COMPONENTS -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Solution components</span>
+      <h2 class="slide-title"><span class="accent">All components</span> from the CommerceLab product family, one platform</h2>
+      <p class="lead">Each component is an independently scaling, multi-tenant and cloud-native PBC — together they form a complete Commerce ERP.</p>
+      <div class="stack" style="flex:1; justify-content:center;">
+        <div class="layer"><span class="tag">Experience</span><span class="desc"><b>Appshop</b> (native iOS &amp; Android) &amp; <b>Webshop</b> (Next.js 16) — API-based via the Headless Experience Layer</span></div>
+        <div class="layer"><span class="tag">Core commerce</span><span class="desc"><b>PIM</b> product + product content · <b>CMS</b> home &amp; landing pages · <b>Payment Gateway</b> collection &amp; fraud</span></div>
+        <div class="layer layer--ink"><span class="tag">Operations</span><span class="desc"><b>OMS</b> orders &amp; inventory · <b>WMS</b> warehouse &amp; fulfillment · <b>TMS</b> shipping &amp; distribution</span></div>
+        <div class="layer"><span class="tag">Integration</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — Qube ERP · Logo · PSPs · carriers</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">3 / 19</span>
+    </div>
+  </section>
+
+  <!-- 04 — SECTION I -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">I</div>
+      <h2 class="slide-title">Architecture &amp; Topology</h2>
+      <p class="lead">Layers, services and data infrastructure — the full picture of the system.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">4 / 19</span>
+    </div>
+  </section>
+
+  <!-- 05 — TARGET ARCHITECTURE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Target architecture</span>
+      <h2 class="slide-title">Layered, <span class="accent">headless</span> and event-driven</h2>
+      <div class="stack" style="flex:1; justify-content:center;">
+        <div class="layer"><span class="tag">Storefront</span><span class="desc"><b>Webshop</b> Next.js 16 (SSR/ISR, App Router, edge cache) &amp; <b>Appshop</b> native iOS/Android — shared Headless API</span></div>
+        <div class="layer"><span class="tag">API layer</span><span class="desc"><b>Headless Experience Layer</b> — GraphQL / REST · authentication · rate limiting · BFF pattern</span></div>
+        <div class="layer"><span class="tag">Services</span><span class="desc"><b>.NET 10</b> microservices — PIM · CMS · Payment GW · OMS · WMS · TMS · Campaign · CRM</span></div>
+        <div class="layer layer--ink"><span class="tag">Orchestration</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — event-driven flows · RabbitMQ · auto-fix &amp; failover</span></div>
+        <div class="layer"><span class="tag">Data</span><span class="desc">PostgreSQL · MSSQL · MongoDB · Redis · Elasticsearch — purpose-fit storage per service</span></div>
+        <div class="layer"><span class="tag">External systems</span><span class="desc"><b>Qube ERP</b> (product, price, accounting) · <b>Logo</b> (e-waybill, e-invoice) · PSPs · carriers</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">5 / 19</span>
+    </div>
+  </section>
+
+  <!-- 06 — SOLUTION TOPOLOGY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Solution topology</span>
+      <h2 class="slide-title">System map</h2>
+      <div class="topo" style="flex:1; justify-content:center;">
+        <div class="zone zone--public">
+          <div class="zone__head">Channels<span class="cidr">public</span></div>
+          <div class="chips">
+            <span class="chip chip--red"><b>Webshop</b> Next.js 16</span>
+            <span class="chip chip--red"><b>Appshop</b> iOS &amp; Android native</span>
+            <span class="chip"><b>Admin panels</b> PIM · CMS · OMS · WMS · TMS</span>
+          </div>
+        </div>
+        <div class="zone">
+          <div class="zone__head">Application layer<span class="cidr">.NET 10 · Kubernetes</span></div>
+          <div class="chips">
+            <span class="chip"><b>PIM</b> catalog</span>
+            <span class="chip"><b>CMS</b> content</span>
+            <span class="chip chip--red"><b>OMS</b> orders &amp; inventory</span>
+            <span class="chip"><b>WMS</b> warehouse</span>
+            <span class="chip"><b>TMS</b> shipping</span>
+            <span class="chip"><b>Payment GW</b> collection</span>
+            <span class="chip chip--ink"><b>Orchestration</b> integration hub</span>
+          </div>
+        </div>
+        <div class="zone zone--data">
+          <div class="zone__head">Data layer<span class="cidr">managed / cluster</span></div>
+          <div class="chips">
+            <span class="chip"><b>PostgreSQL</b> transactional</span>
+            <span class="chip"><b>MSSQL</b> PIM data</span>
+            <span class="chip"><b>MongoDB</b> content &amp; documents</span>
+            <span class="chip"><b>Redis</b> cache &amp; session</span>
+            <span class="chip"><b>RabbitMQ</b> event bus</span>
+            <span class="chip"><b>Elasticsearch</b> search &amp; logs</span>
+          </div>
+        </div>
+        <div class="zone">
+          <div class="zone__head">External systems<span class="cidr">integration</span></div>
+          <div class="chips">
+            <span class="chip chip--red"><b>Qube ERP</b> product · price · accounting</span>
+            <span class="chip chip--red"><b>Logo</b> e-waybill · e-invoice</span>
+            <span class="chip"><b>PSPs / banks</b></span>
+            <span class="chip"><b>Carriers</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">6 / 19</span>
+    </div>
+  </section>
+
+  <!-- 07 — TECHNOLOGY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Technology stack</span>
+      <h2 class="slide-title">Modern, proven, <span class="accent">scalable</span></h2>
+      <div class="grid grid-3" style="flex:1; align-content:center; gap:1.6cqh 1.6cqw;">
+        <div class="card card--accent"><div class="ix">Frontend</div><h3>Next.js 16</h3><p>High Core Web Vitals scores with App Router, React Server Components, ISR and edge caching.</p></div>
+        <div class="card card--accent"><div class="ix">Backend</div><h3>.NET 10</h3><p>C# microservices; high throughput, strong type safety and a mature ecosystem. The same core as CommerceLab's entire product family.</p></div>
+        <div class="card"><div class="ix">Data</div><h3>Polyglot persistence</h3><p>PostgreSQL, MSSQL, MongoDB, Redis, Elasticsearch — each service uses the store best suited to its needs.</p></div>
+        <div class="card"><div class="ix">Messaging</div><h3>RabbitMQ</h3><p>Event-driven architecture; loose coupling between services and resilient asynchronous flows.</p></div>
+        <div class="card"><div class="ix">Infrastructure</div><h3>Kubernetes · AWS</h3><p>Container-based deployment, auto-scaling, environment-based isolation (test / prod).</p></div>
+        <div class="card"><div class="ix">Observability</div><h3>Logs &amp; APM</h3><p>Centralized logging, metrics and tracing; proactive monitoring with New Relic &amp; Grafana.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">7 / 19</span>
+    </div>
+  </section>
+
+  <!-- 08 — SECTION II -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">II</div>
+      <h2 class="slide-title">Data Flows</h2>
+      <p class="lead">From catalog to delivery, from order to invoice — the journey of data across systems.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">8 / 19</span>
+    </div>
+  </section>
+
+  <!-- 09 — CATALOG FLOW -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Flow 1</span>
+      <h2 class="slide-title">Product &amp; price flow</h2>
+      <p class="lead">Product and price data can be fed from Qube ERP via integration, or created and managed directly in PIM — both models are supported and can run together.</p>
+      <div class="flow" style="margin-top:2cqh;">
+        <div class="node">Source: Qube ERP<small>product &amp; price sync (optional)</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">PIM<small>product &amp; price master data · variants · taxonomy</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Publish &amp; rules<small>data quality · price &amp; campaign checks</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Webshop &amp; Appshop<small>sales channels</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3cqh;">
+        <li><b>Two feeding models.</b> Products and prices can either sync automatically via Qube ERP integration, or be created manually/in bulk directly in PIM; both can be used together.</li>
+        <li><b>Centralized price management.</b> List price, discounted price and campaign prices are managed from a single point in PIM; channel- and segment-based pricing is supported.</li>
+        <li><b>Publishing rules &amp; sync.</b> Product/price synchronization runs via scheduled jobs (at defined times) or on-demand manual triggers; products missing images, price or category information are not published.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">9 / 19</span>
+    </div>
+  </section>
+
+  <!-- 10 — FLOW 1 · DIAGRAM -->
+  <section class="slide slide--diagram">
+    <div class="slide__inner">
+      <span class="kicker">Flow 1 · diagram</span>
+      <h2 class="slide-title">Product creation &amp; <span class="accent">price source</span></h2>
+      <p class="lead">Products and prices are created in PIM (via the web UI or Excel); price can optionally also be fed from Qube.</p>
+      <div class="diagram-wrap">
+        <div class="cflow">
+          <div class="cflow-node">PIM UI<small>Web / Excel</small></div>
+          <div class="cflow-arrow cflow-arrow--r"><span class="cflow-label">Product / Price</span></div>
+          <div class="cflow-node cflow-node--hub">CommerceLab PIM</div>
+          <div class="cflow-arrow cflow-arrow--l"><span class="cflow-label">Price (Optional)</span></div>
+          <div class="cflow-node">QUBE</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">10 / 20</span>
+    </div>
+  </section>
+
+  <!-- 10 — ORDER FLOW -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Flow 2</span>
+      <h2 class="slide-title">Order &amp; <span class="accent">fulfillment</span> flow</h2>
+      <p class="lead">The entire lifecycle from cart to delivery; each step triggers the next via events.</p>
+      <div class="flow" style="margin-top:2cqh;">
+        <div class="node">Webshop &amp; Appshop<small>cart &amp; checkout</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Payment GW<small>collection · fraud check</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">OMS<small>order capture · sourcing · stock reservation</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">WMS<small>picking · packing · shipping</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">TMS<small>carrier selection · label · tracking</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Delivery<small>customer notification</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3cqh;">
+        <li><b>Dynamic sourcing.</b> OMS routes the order to the right warehouse based on cost, stock and capacity; it splits it if needed (split shipment).</li>
+        <li><b>Status management.</b> Order, cancellation and return statuses are managed by a rule engine; every transition is reflected to the webshop and the customer.</li>
+        <li><b>Returns line.</b> Reverse logistics runs back through the same chain: TMS return shipment → WMS goods receipt → OMS stock &amp; return approval → Payment GW refund.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">10 / 19</span>
+    </div>
+  </section>
+
+  <!-- 11 — DOCUMENT FLOW -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Flow 3 (!To be clarified)</span>
+      <h2 class="slide-title">Waybill, invoice &amp; <span class="accent">accounting</span> flow</h2>
+      <p class="lead">Official document processes run through Logo, and accounting reconciliation runs through Qube ERP.</p>
+      <div class="flow" style="margin-top:2cqh;">
+        <div class="node">WMS<small>shipment confirmation</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Logo<small>e-waybill</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">OMS<small>invoice trigger</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Logo<small>e-invoice / e-archive</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Qube ERP<small>accounting entry · reconciliation</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3cqh;">
+        <li><b>E-waybill.</b> When a shipment is finalized in WMS, the waybill is automatically created in Logo and ready before loading onto the vehicle.</li>
+        <li><b>E-invoice / e-archive.</b> The correct document type is selected automatically by customer type (corporate/individual); the invoice is sent to the customer by email.</li>
+        <li><b>Reconciliation.</b> Order, collection and invoice data are matched in Qube ERP with daily reconciliation reports; discrepancies are detected automatically.</li>
+        <li><b>Cancellation &amp; return documents.</b> When a return is approved, the return invoice runs back through the same line.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">11 / 19</span>
+    </div>
+  </section>
+
+  <!-- 12 — STOCK & PRICE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Flow 4</span>
+      <h2 class="slide-title">Stock &amp; price synchronization</h2>
+      <p class="lead">Single source of truth principle: price comes from Qube, physical stock is managed in WMS, and salable stock is calculated in OMS.</p>
+      <div class="flow" style="margin-top:2cqh;">
+        <div class="node">WMS<small>physical stock · warehouse movements</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">OMS Inventory<small>salable stock · reservation · blocking</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Channel stock<small>channel-based rules &amp; buffer</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Webshop &amp; Appshop<small>real-time availability</small></div>
+      </div>
+      <div class="grid grid-3" style="margin-top:2.4cqh;">
+        <div class="card"><div class="ix">Real-time</div><p>WMS movements (goods receipt, count, shipment) are instantly reflected to OMS inventory; the webshop never shows stale stock.</p></div>
+        <div class="card"><div class="ix">Bidirectional</div><p>Price lists are taken from Qube ERP; sales, returns and stock movements are fed back to Qube ERP.</p></div>
+        <div class="card"><div class="ix">Safety</div><p>Oversell risk is minimized with channel-based safety stock and a rule engine.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">12 / 19</span>
+    </div>
+  </section>
+
+  <!-- 13 — GOOD RECEIVING PROCESS · DIAGRAM -->
+  <section class="slide slide--diagram">
+    <div class="slide__inner">
+      <span class="kicker">Flow 4 · diagram</span>
+      <h2 class="slide-title">Good receiving <span class="accent">process</span></h2>
+      <p class="lead">Goods receipt data from Qube is transferred to CL WMS; outbound data is fed back to WMS after ScanPack.</p>
+      <div class="diagram-wrap">
+        <div class="cflow-stack">
+          <div class="cflow">
+            <div class="cflow-node">Qube<small>ERP</small></div>
+            <div class="cflow-arrow cflow-arrow--r"><span class="cflow-label">Goods receipt</span></div>
+            <div class="cflow-node cflow-node--hub">CL WMS</div>
+          </div>
+          <p class="cflow-note">After the ScanPack operation, once the UPDATE button is pressed, the outbound data is transferred to the WMS system (SKU, barcode, qty).</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">13 / 21</span>
+    </div>
+  </section>
+
+  <!-- 14 — STOCK SYNCHRONIZATION · DIAGRAM -->
+  <section class="slide slide--diagram">
+    <div class="slide__inner">
+      <span class="kicker">Flow 4 · diagram</span>
+      <h2 class="slide-title">Stock &amp; <span class="accent">Qube</span> synchronization</h2>
+      <p class="lead">Qube can retrieve Total Stock, Available Stock and Reserved Stock information from CommerceLab OMS and WMS (optional). WMS movements are fed back to Qube through Qube Adjustment services.</p>
+      <div class="diagram-wrap">
+        <div class="qwrap" style="--qp-left:23.4cqw; --qp-right:20.9cqw; --qp-v1top:40.6cqh; --qp-v2top:25.4cqh;">
+          <div class="qflow">
+            <div class="qgroup">
+              <span class="qgroup__label">CommerceLab</span>
+              <div class="qbox">Sales Channel</div>
+              <div class="qva qva--both"><span class="qva__label">Orders</span></div>
+              <div class="qbox">OMS</div>
+              <div class="qva qva--both"></div>
+              <div class="qbox">WMS</div>
+            </div>
+            <div class="qlinks">
+              <div class="qlink"><span class="qlink__label">Total Stock</span></div>
+              <div class="qlink qlink--full"><span class="qlink__label">Available Stock</span><span class="qget">GET</span></div>
+              <div class="qlink"><span class="qlink__label">Reserved Stock</span></div>
+            </div>
+            <div class="qbox">QUBE</div>
+          </div>
+          <div class="qpath">
+            <span class="qp-v1"></span>
+            <span class="qp-h"></span>
+            <span class="qp-v2"></span>
+            <span class="qp-label">Qube Adjustment Services</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">15 / 22</span>
+    </div>
+  </section>
+
+  <!-- 13 — SECTION III -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">III</div>
+      <h2 class="slide-title">Implementation Plan</h2>
+      <p class="lead">Integration strategy, project organization and roadmap.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">13 / 19</span>
+    </div>
+  </section>
+
+  <!-- 14 — INTEGRATION ARCHITECTURE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Integration architecture</span>
+      <h2 class="slide-title">One hub, <span class="accent">resilient</span> integrations</h2>
+      <p class="lead">All external system connections are managed through the Integration &amp; Orchestration Manager — no point-to-point connections.</p>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 2cqw;">
+        <div class="card card--accent"><div class="ix">Qube ERP</div><h3>Product · price · accounting</h3><p>Product master data and price lists inbound; sales, returns and stock movements outbound. Batch initial load + event-based delta synchronization.</p></div>
+        <div class="card card--accent"><div class="ix">Logo</div><h3>E-waybill · e-invoice</h3><p>Shipment and invoicing events trigger document creation; document statuses (approved, rejected) are fed back.</p></div>
+        <div class="card"><div class="ix">PSPs &amp; banks</div><h3>Payment Gateway</h3><p>Multi-PSP support, dynamic routing and failover; collection reconciliation is automatic.</p></div>
+        <div class="card"><div class="ix">Carriers</div><h3>TMS hub</h3><p>20+ ready-made carrier integrations; rule-based dispatch, label generation and end-to-end tracking.</p></div>
+      </div>
+      <p class="note"><b>Resilience:</b> Integration-sourced single points of failure are eliminated with an auto-fix module, failover management and detailed logging.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">14 / 19</span>
+    </div>
+  </section>
+
+  <!-- 15 — PROJECT ORGANIZATION -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Project organization</span>
+      <h2 class="slide-title">A <span class="accent">team structure</span> based on domain ownership</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
+        <div class="card card--dark"><div class="ix">Solution leadership</div><h3>İsmail Danacı</h3><p>Overall coordination, solution topology and architectural decisions.</p></div>
+        <div class="card card--dark"><div class="ix">Project management</div><h3>Polat Özdemir</h3><p>Project plan, stakeholder communication, risk and progress tracking.</p></div>
+        <div class="card"><div class="ix">UI/UX</div><h3>Furkan İlgen</h3><p>Design and overall frontend management.</p></div>
+        <div class="card"><div class="ix">Webshop (Next.js) &amp; Appshop ( iOS · Android)</div><h3>Alper Özçelik · Mehmet Ali Alagöz · Burak Selçuk · Amir Daliri</h3><p>Webshop and native app development.</p></div>
+        <div class="card"><div class="ix">PIM</div><h3>Yasin Teker · Hüseyin Kucur · Ali Hazar</h3><p>Product and content management.</p></div>
+        <div class="card"><div class="ix">OMS</div><h3>Erkan Özer · Sertaç Yalçınkaya</h3><p>Order and inventory management.</p></div>
+        <div class="card"><div class="ix">WMS &amp; Fulfillment</div><h3>Arif Kula</h3><p>Warehouse processes, fulfillment and return flows.</p></div>
+        <div class="card"><div class="ix">TMS</div><h3>Mehmet Çırak · Tan Çırpıcıoğlu</h3><p>Carrier integrations and distribution.</p></div>
+        <div class="card"><div class="ix">Payment GW &amp; Campaign Engine</div><h3>Gökhan Koçak</h3><p>Payments and campaigns</p></div>
+
+    </div>
+      <p class="note">Each work package reports to a single owner; tracked via weekly status meetings and a shared project plan (Jira and Sheets).</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">15 / 19</span>
+    </div>
+  </section>
+
+  <!-- 16 — KICKOFF WORKSHOPS -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kickoff &amp; workshops</span>
+      <h2 class="slide-title">Topics to be clarified at the <span class="accent">start</span></h2>
+      <p class="lead">Workshops and decision topics to run in the first phase for a fast and correct project start.</p>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card"><div class="ix">Design brief</div><h3>UI &amp; UX</h3><p>Preparation of the Web Shop and App Shop design briefs.</p></div>
+        <div class="card"><div class="ix">Integration</div><h3>ERP &amp; documents</h3><p>Qube ERP · Logo · e-waybill &amp; e-invoice integration scope.</p></div>
+        <div class="card card--dark"><div class="ix">Operations · WMS &amp; TMS</div><h3>Warehouse &amp; shipping</h3><p>Selecting carriers · stock planning (initial allocation &amp; replenishment) · goods receipt → putaway → picking → packing → returns design.</p></div>
+        <div class="card"><div class="ix">Commerce</div><h3>Tools &amp; services</h3><p>Onsite marketing (Insider, etc.) · SEO/GEO · GTM · Analytics (GA4, Firebase) · cookie consent · İYS · PSPs · notifications.</p></div>
+        <div class="card"><div class="ix">PIM &amp; Catalog</div><h3>Product management</h3><p>Where will products be created and how will they be enriched with content?</p></div>
+        <div class="card"><div class="ix">Marketing</div><h3>Setups</h3><p>Analytics, SEO/GEO and onsite marketing tool setups (agency coordination).</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">16 / 19</span>
+    </div>
+  </section>
+
+  <!-- 17 — ROADMAP -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Roadmap</span>
+      <h2 class="slide-title">July 2026 → <span class="accent">January 2027</span></h2>
+      <div class="flow" style="margin-top:2cqh;">
+        <div class="node">Phase 1 · W1–W9<small>topology · architecture · environment · kickoff &amp; workshops</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Phase 2 · W3–W24<small>UI/UX design · PIM &amp; CMS · Qube &amp; Logo integrations</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Phase 3 · W8–W20<small>OMS/WMS/TMS operations · payment &amp; shipping</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Phase 4 · W9–W23<small>Webshop development · commerce &amp; analytics · end-to-end testing</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Mobile &amp; Go-Live · W16–W25<small>iOS &amp; Android · training · phased launch</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3cqh;">
+        <li><b>Parallel progress.</b> Design, PIM/CMS, integration and operations work packages run in parallel; kickoff and workshops continue throughout the project.</li>
+        <li><b>Early integration.</b> Qube and Logo connections are established early; no integration surprises are left for the final week.</li>
+        <li><b>Phased launch.</b> The webshop goes live first, followed by the mobile apps; Go-Live in the first week of 2027.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">17 / 19</span>
+    </div>
+  </section>
+
+  <!-- 18 — PROJECT MANAGEMENT & SERVICEDESK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Project management &amp; Servicedesk</span>
+      <h2 class="slide-title">Transparent <span class="accent">governance</span> and continuous support</h2>
+      <p class="lead">From task tracking to post-go-live support, the entire process is run with measurable and traceable tools.</p>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
+        <div class="card">
+          <div class="ix">Project management</div>
+          <h3>Sprint-based progress</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Development and processes are itemized and broken down into work packages.</li>
+            <li>Weekly / biweekly <b>sprints</b>; clear scope, prioritization and regular demos.</li>
+            <li>Transparent progress and predictable delivery; measurable output every sprint.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Servicedesk</div>
+          <h3>Support from a single center</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>All support requests are recorded in <b>ServiceDesk</b> and tracked end to end.</li>
+            <li>Opening a request: via the portal or <b>servicedesk@commercelab.com.tr</b>.</li>
+            <li>Status tracking and communication continue via the request.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>ServiceDesk portal:</b> https://hebiar.atlassian.net/servicedesk/customer/portal/3 — requests are recorded more reliably, and tracking and communication run through a single channel.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">18 / 19</span>
+    </div>
+  </section>
+
+  <!-- 19 — CLOSING -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">Thank you</span>
+      <h1 class="cover-title">Let's <span class="accent">build</span> together</h1>
+      <p class="cover-sub">We are ready for the platform that will carry MrDIY Türkiye's e-commerce operation end to end.</p>
+      <div class="cover-meta">
+        <div>Windowist Tower, Maslak — İstanbul · info@commercelab.com.tr · +90 212 214 73 90</div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">19 / 19</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="toolbar">
+  <button id="presentBtn" title="Present (fullscreen)">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    Present
+  </button>
+  <button onclick="window.print()">Download PDF</button>
+</div>
+<div class="present-bar" id="presentBar"></div>
+<div class="present-hint">← → navigate · click advances · Esc exits</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ startOnLoad: true, securityLevel: 'loose', themeVariables: { fontSize: '20px' }, flowchart: { htmlLabels: true, curve: 'step', padding: 18, nodeSpacing: 60, rankSpacing: 72 } });
+  }
+</script>
+<script>
+  // Keyboard navigation between slides
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    // Auto-number slide footers so inserting slides never requires manual renumbering
+    slides.forEach(function (s, i) {
+      var n = s.querySelector('.slide__no');
+      if (n) n.textContent = (i + 1) + ' / ' + slides.length;
+    });
+    function current() {
+      var mid = window.innerHeight / 2, best = 0, bestD = Infinity;
+      slides.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      return best;
+    }
+
+    // ----- Present (fullscreen) mode -----
+    var bar = document.getElementById('presentBar');
+    var presenting = false;
+    var idx = 0;
+
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      bar.style.width = ((idx + 1) / slides.length * 100) + '%';
+    }
+    function go(delta) {
+      idx = Math.min(slides.length - 1, Math.max(0, idx + delta));
+      render();
+    }
+    function enter() {
+      idx = current();
+      presenting = true;
+      document.body.classList.add('present');
+      render();
+      var el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen().catch(function(){});
+    }
+    function exit() {
+      presenting = false;
+      document.body.classList.remove('present');
+      slides.forEach(function (s) { s.classList.remove('is-active'); });
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+      slides[idx].scrollIntoView({ block: 'center' });
+    }
+
+    document.getElementById('presentBtn').addEventListener('click', enter);
+
+    // Leaving fullscreen (e.g. Esc) exits present mode
+    document.addEventListener('fullscreenchange', function () {
+      if (!document.fullscreenElement && presenting) exit();
+    });
+
+    // Click anywhere advances while presenting
+    document.querySelector('.deck').addEventListener('click', function () {
+      if (presenting) go(1);
+    });
+
+    window.addEventListener('keydown', function (e) {
+      if (presenting) {
+        if (e.key === 'Escape') { e.preventDefault(); exit(); return; }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') {
+          e.preventDefault(); go(-1); return;
+        }
+        // any other key advances
+        e.preventDefault(); go(1); return;
+      }
+      // ----- Normal scroll mode -----
+      var i = current();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        if (i < slides.length - 1) slides[i + 1].scrollIntoView({ behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        if (i > 0) slides[i - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
