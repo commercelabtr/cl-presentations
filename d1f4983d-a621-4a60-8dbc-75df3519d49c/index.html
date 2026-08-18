@@ -63,10 +63,10 @@
   .slide--diagram .qwrap { position:relative; padding-bottom:16cqh; }
   .slide--diagram .qpath span { position:absolute; background:var(--ink); }
   .slide--diagram .qpath .qp-v1 { left:var(--qp-left); top:var(--qp-v1top,36.5cqh); height:calc(49cqh - var(--qp-v1top,36.5cqh)); width:2px; }
-  .slide--diagram .qpath .qp-h { left:var(--qp-left); right:var(--qp-right); top:49cqh; height:2px; }
-  .slide--diagram .qpath .qp-v2 { right:var(--qp-right); top:var(--qp-v2top,23.4cqh); height:calc(49cqh - var(--qp-v2top,23.4cqh)); width:2px; }
+  .slide--diagram .qpath .qp-h { left:var(--qp-left); right:calc(var(--qp-right) - 2.5cqw); top:49cqh; height:2px; }
+  .slide--diagram .qpath .qp-v2 { right:calc(var(--qp-right) - 2.5cqw); top:var(--qp-v2top,23.4cqh); height:calc(49cqh - var(--qp-v2top,23.4cqh)); width:2px; }
   .slide--diagram .qpath .qp-v2::after { content:''; position:absolute; left:50%; top:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:9px solid var(--ink); }
-  .slide--diagram .qpath .qp-label { top:49cqh; left:50%; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
+  .slide--diagram .qpath .qp-label { top:49cqh; left:61cqw; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
   .slide--diagram .qpath .qt-h { left:var(--qp-topleft); right:var(--qp-right); top:var(--qp-topy); height:2px; }
   .slide--diagram .qpath .qt-h::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
   .slide--diagram .qpath .qt-v { right:var(--qp-right); top:var(--qp-topy); height:calc(var(--qp-qubetop) - var(--qp-topy)); width:2px; }
@@ -75,8 +75,8 @@
   .slide--diagram .qpath .qg1-h { left:var(--qp-topleft); right:calc(var(--qp-right) + 2.5cqw); top:var(--qp-gy1); height:2px; }
   .slide--diagram .qpath .qg1-h::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
   .slide--diagram .qpath .qg1-v { right:calc(var(--qp-right) + 2.5cqw); top:var(--qp-v2top); height:calc(var(--qp-gy1) - var(--qp-v2top)); width:2px; }
-  .slide--diagram .qpath .qg2-h { left:var(--qp-topleft); right:calc(var(--qp-right) - 2.5cqw); top:var(--qp-gy2); height:2px; }
-  .slide--diagram .qpath .qg2-v { right:calc(var(--qp-right) - 2.5cqw); top:var(--qp-v2top); height:calc(var(--qp-gy2) - var(--qp-v2top)); width:2px; }
+  .slide--diagram .qpath .qg2-h { left:var(--qp-topleft); right:var(--qp-right); top:var(--qp-gy2); height:2px; }
+  .slide--diagram .qpath .qg2-v { right:var(--qp-right); top:var(--qp-v2top); height:calc(var(--qp-gy2) - var(--qp-v2top)); width:2px; }
   .slide--diagram .qpath .qg2-v::after { content:''; position:absolute; left:50%; top:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:9px solid var(--ink); }
   .slide--diagram .qpath .qg-label { left:61cqw; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
   .slide--diagram .qpath .qg-label1 { top:var(--qp-gy1); }
@@ -449,7 +449,7 @@
       <span class="kicker">Akış 4 · diyagram</span>
       <h2 class="slide-title">Tüm <span class="accent">Entegrasyonlar</span></h2>
       <div class="diagram-wrap">
-        <div class="qwrap" style="--qp-left:37.1cqw; --qp-right:7.1cqw; --qp-v1top:41cqh; --qp-v2top:27.8cqh; --qp-topleft:46.4cqw; --qp-topy:13.2cqh; --qp-qubetop:20.7cqh; --qp-gy1:35.5cqh; --qp-gy2:39.5cqh;">
+        <div class="qwrap" style="--qp-left:37.1cqw; --qp-right:7.1cqw; --qp-v1top:41cqh; --qp-v2top:27.8cqh; --qp-topleft:46.4cqw; --qp-topy:13.2cqh; --qp-qubetop:20.7cqh; --qp-gy1:36.2cqh; --qp-gy2:39.4cqh;">
           <div class="qflow">
             <div class="qside">
               <div class="qside__row">
