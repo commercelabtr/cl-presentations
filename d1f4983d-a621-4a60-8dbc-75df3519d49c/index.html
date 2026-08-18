@@ -72,6 +72,15 @@
   .slide--diagram .qpath .qt-v { right:var(--qp-right); top:var(--qp-topy); height:calc(var(--qp-qubetop) - var(--qp-topy)); width:2px; }
   .slide--diagram .qpath .qt-label { top:var(--qp-topy); left:61cqw; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
   .slide--diagram .qpath .qt-get { top:var(--qp-topy); right:calc(var(--qp-right) + 1cqw); transform:translateY(-50%); background:var(--paper); padding:0 0.5cqw; white-space:nowrap; font-family:var(--sans); font-weight:600; font-size:1.1cqw; color:var(--ink); }
+  .slide--diagram .qpath .qg1-h { left:var(--qp-topleft); right:calc(var(--qp-right) + 2.5cqw); top:var(--qp-gy1); height:2px; }
+  .slide--diagram .qpath .qg1-h::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
+  .slide--diagram .qpath .qg1-v { right:calc(var(--qp-right) + 2.5cqw); top:var(--qp-v2top); height:calc(var(--qp-gy1) - var(--qp-v2top)); width:2px; }
+  .slide--diagram .qpath .qg2-h { left:var(--qp-topleft); right:calc(var(--qp-right) - 2.5cqw); top:var(--qp-gy2); height:2px; }
+  .slide--diagram .qpath .qg2-v { right:calc(var(--qp-right) - 2.5cqw); top:var(--qp-v2top); height:calc(var(--qp-gy2) - var(--qp-v2top)); width:2px; }
+  .slide--diagram .qpath .qg2-v::after { content:''; position:absolute; left:50%; top:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:9px solid var(--ink); }
+  .slide--diagram .qpath .qg-label { left:61cqw; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
+  .slide--diagram .qpath .qg-label1 { top:var(--qp-gy1); }
+  .slide--diagram .qpath .qg-label2 { top:var(--qp-gy2); }
 </style>
 </head>
 <body>
@@ -440,7 +449,7 @@
       <span class="kicker">Akış 4 · diyagram</span>
       <h2 class="slide-title">Tüm <span class="accent">Entegrasyonlar</span></h2>
       <div class="diagram-wrap">
-        <div class="qwrap" style="--qp-left:37.1cqw; --qp-right:7.1cqw; --qp-v1top:41cqh; --qp-v2top:27.8cqh; --qp-topleft:46.4cqw; --qp-topy:13.2cqh; --qp-qubetop:20.7cqh;">
+        <div class="qwrap" style="--qp-left:37.1cqw; --qp-right:7.1cqw; --qp-v1top:41cqh; --qp-v2top:27.8cqh; --qp-topleft:46.4cqw; --qp-topy:13.2cqh; --qp-qubetop:20.7cqh; --qp-gy1:35.5cqh; --qp-gy2:39.5cqh;">
           <div class="qflow">
             <div class="qside">
               <div class="qside__row">
@@ -471,10 +480,16 @@
             <span class="qp-v1"></span>
             <span class="qp-h"></span>
             <span class="qp-v2"></span>
-            <span class="qp-label">Qube Adjustment Services</span>
+            <span class="qp-label">Qube Adjustment Services (Opsiyonel)</span>
             <span class="qt-h"></span>
             <span class="qt-v"></span>
             <span class="qt-label">Fiyat (opsiyonel)</span>
+            <span class="qg1-h"></span>
+            <span class="qg1-v"></span>
+            <span class="qg-label qg-label1">Mal kabul (ASN)</span>
+            <span class="qg2-h"></span>
+            <span class="qg2-v"></span>
+            <span class="qg-label qg-label2">Mal kabul onayı</span>
           </div>
         </div>
       </div>
