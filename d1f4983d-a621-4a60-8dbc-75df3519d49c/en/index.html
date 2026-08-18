@@ -24,6 +24,10 @@
   .slide--diagram .cflow-arrow--r::after { content:''; position:absolute; right:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:9px solid var(--ink); }
   .slide--diagram .cflow-arrow--l::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
   .slide--diagram .cflow-label { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-weight:400; font-size:1.15cqw; color:var(--muted); }
+  .slide--diagram .cflow-pair { flex:1; max-width:24cqw; display:flex; flex-direction:column; justify-content:center; gap:7cqh; }
+  .slide--diagram .cflow-pair .cflow-arrow { flex:none; max-width:none; width:100%; }
+  .slide--diagram .cflow-label--top { top:auto; bottom:calc(100% + 0.8cqh); transform:translateX(-50%); background:none; padding:0; }
+  .slide--diagram .cflow-label--bottom { top:calc(100% + 0.8cqh); transform:translateX(-50%); background:none; padding:0; }
   .slide--diagram .cflow-stack { display:flex; flex-direction:column; align-items:center; gap:3.5cqh; width:100%; }
   .slide--diagram .cflow-note { max-width:64cqw; padding:2cqh 2.2cqw; border:1px solid var(--line); border-left:3px solid var(--red); border-radius:6px; background:var(--paper); font-family:var(--sans); font-size:1.3cqw; line-height:1.5; color:var(--ink); text-align:left; }
   .slide--diagram .qwrap { width:100%; display:flex; flex-direction:column; align-items:stretch; gap:3cqh; }
@@ -32,10 +36,20 @@
   .slide--diagram .qgroup__label { position:absolute; top:-3.8cqh; left:50%; transform:translateX(-50%); font-family:var(--display); font-weight:600; font-size:1.2cqw; color:var(--red); white-space:nowrap; }
   .slide--diagram .qbox { min-width:14ch; padding:1.5cqh 1.4cqw; text-align:center; background:var(--paper); border:1px solid var(--line-strong); border-radius:8px; font-family:var(--display); font-weight:600; font-size:1.45cqw; color:var(--ink); }
   .slide--diagram .qbox--hub { background:var(--red); border-color:var(--red-deep); color:#ffffff; }
+  .slide--diagram .qflow > .qbox { position:relative; top:2cqh; }
+  .slide--diagram .qside { display:flex; flex-direction:column; justify-content:center; gap:10cqh; }
+  .slide--diagram .qrow { display:flex; align-items:stretch; gap:1cqw; }
+  .slide--diagram .qbox--sm { min-width:7ch; padding:1.5cqh 1cqw; font-size:1.35cqw; }
+  .slide--diagram .qside__row { display:flex; align-items:center; }
+  .slide--diagram .qbox--side { min-width:0; flex:1; font-size:1.3cqw; }
+  .slide--diagram .qarrow-l { position:relative; width:11cqw; height:2px; background:var(--ink); }
+  .slide--diagram .qarrow-l::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
+  .slide--diagram .qarrow-l__label { position:absolute; left:44%; top:-0.8cqh; transform:translate(-50%,-100%); white-space:nowrap; font-family:var(--sans); font-size:1.05cqw; color:var(--muted); }
   .slide--diagram .qva { position:relative; width:2px; height:7cqh; margin:0.6cqh 0; background:var(--ink); }
   .slide--diagram .qva::after { content:''; position:absolute; left:50%; bottom:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-top:9px solid var(--ink); }
   .slide--diagram .qva--both::before { content:''; position:absolute; left:50%; top:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:9px solid var(--ink); }
-  .slide--diagram .qva__label { position:absolute; left:1.3cqw; top:40%; transform:translateY(-50%); white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
+  .slide--diagram .qva__label { position:absolute; left:2cqw; top:40%; transform:translateY(-50%); white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
+  .slide--diagram .qva__label--l { left:auto; right:2cqw; }
   .slide--diagram .qlinks { position:relative; top:1.6cqh; flex:1; max-width:26cqw; display:flex; flex-direction:column; gap:5cqh; }
   .slide--diagram .qlinks::after { content:''; position:absolute; right:5cqw; top:1px; bottom:1px; width:2px; background:var(--ink); }
   .slide--diagram .qlink { position:relative; height:2px; background:var(--ink); margin-right:5cqw; }
@@ -56,7 +70,7 @@
   .slide--diagram .qpath .qt-h { left:var(--qp-topleft); right:var(--qp-right); top:var(--qp-topy); height:2px; }
   .slide--diagram .qpath .qt-h::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
   .slide--diagram .qpath .qt-v { right:var(--qp-right); top:var(--qp-topy); height:calc(var(--qp-qubetop) - var(--qp-topy)); width:2px; }
-  .slide--diagram .qpath .qt-label { top:var(--qp-topy); left:45%; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
+  .slide--diagram .qpath .qt-label { top:var(--qp-topy); left:61cqw; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.6cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); }
   .slide--diagram .qpath .qt-get { top:var(--qp-topy); right:calc(var(--qp-right) + 1cqw); transform:translateY(-50%); background:var(--paper); padding:0 0.5cqw; white-space:nowrap; font-family:var(--sans); font-weight:600; font-size:1.1cqw; color:var(--ink); }
 </style>
 </head>
@@ -337,9 +351,9 @@
   <!-- 11 — DOCUMENT FLOW -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Flow 3 (!To be clarified)</span>
+      <span class="kicker">Flow 3</span>
       <h2 class="slide-title">Waybill, invoice &amp; <span class="accent">accounting</span> flow</h2>
-      <p class="lead">Official document processes run through Logo, and accounting reconciliation runs through Qube ERP.</p>
+      <p class="lead">Official document processes run through Logo, and accounting reconciliation runs through ERP (SAP).</p>
       <div class="flow" style="margin-top:2cqh;">
         <div class="node">WMS<small>shipment confirmation</small></div>
         <div class="arrow">&rarr;</div>
@@ -347,14 +361,14 @@
         <div class="arrow">&rarr;</div>
         <div class="node">OMS<small>invoice trigger</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--red">Logo<small>e-invoice / e-archive</small></div>
+        <div class="node node--red">E-invoice / e-archive</div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Qube ERP<small>accounting entry · reconciliation</small></div>
+        <div class="node node--ink">ERP (SAP)<small>accounting entry · reconciliation</small></div>
       </div>
       <ul class="flist" style="margin-top:3cqh;">
         <li><b>E-waybill.</b> When a shipment is finalized in WMS, the waybill is automatically created in Logo and ready before loading onto the vehicle.</li>
         <li><b>E-invoice / e-archive.</b> The correct document type is selected automatically by customer type (corporate/individual); the invoice is sent to the customer by email.</li>
-        <li><b>Reconciliation.</b> Order, collection and invoice data are matched in Qube ERP with daily reconciliation reports; discrepancies are detected automatically.</li>
+        <li><b>Reconciliation.</b> Order, collection and invoice data are matched in ERP (SAP) with daily reconciliation reports; discrepancies are detected automatically.</li>
         <li><b>Cancellation &amp; return documents.</b> When a return is approved, the return invoice runs back through the same line.</li>
       </ul>
     </div>
@@ -403,7 +417,10 @@
         <div class="cflow-stack">
           <div class="cflow">
             <div class="cflow-node">Qube<small>ERP</small></div>
-            <div class="cflow-arrow cflow-arrow--r"><span class="cflow-label">Goods receipt</span></div>
+            <div class="cflow-pair">
+              <div class="cflow-arrow cflow-arrow--r"><span class="cflow-label cflow-label--top">Good Receipt (ASN)</span></div>
+              <div class="cflow-arrow cflow-arrow--l"><span class="cflow-label cflow-label--bottom">Good Receipt Confirmation</span></div>
+            </div>
             <div class="cflow-node cflow-node--hub">CL WMS</div>
           </div>
           <p class="cflow-note">After the ScanPack operation, once the UPDATE button is pressed, the outbound data is transferred to the WMS system (SKU, barcode, qty).</p>
@@ -421,16 +438,25 @@
   <section class="slide slide--diagram">
     <div class="slide__inner">
       <span class="kicker">Flow 4 · diagram</span>
-      <h2 class="slide-title" style="font-size:3.1cqw; margin-bottom:1.6cqh;">Stock / Sales / Returns &amp; <span class="accent">Qube</span> synchronization</h2>
-      <p class="lead" style="font-size:1.5cqw; max-width:74cqw; margin-bottom:1.6cqh;">Qube can retrieve Total Stock, Available Stock and Reserved Stock information from CommerceLab OMS and WMS (optional). Actual sales and return movements are retrieved by Qube. WMS movements are fed back to Qube through Qube Adjustment services.</p>
+      <h2 class="slide-title">All <span class="accent">Integrations</span></h2>
       <div class="diagram-wrap">
-        <div class="qwrap" style="--qp-left:23.4cqw; --qp-right:20.9cqw; --qp-v1top:40.6cqh; --qp-v2top:25.4cqh; --qp-topleft:32.6cqw; --qp-topy:13.4cqh; --qp-qubetop:18.5cqh;">
+        <div class="qwrap" style="--qp-left:37.3cqw; --qp-right:7cqw; --qp-v1top:41cqh; --qp-v2top:27.8cqh; --qp-topleft:46.5cqw; --qp-topy:13.2cqh; --qp-qubetop:20.7cqh;">
           <div class="qflow">
+            <div class="qside">
+              <div class="qside__row">
+                <div class="qbox qbox--side">E-Invoice / E-Waybill</div>
+                <div class="qarrow-l"></div>
+              </div>
+              <div class="qside__row">
+                <div class="qbox qbox--side">Local ERP (SAP/Logo)</div>
+                <div class="qarrow-l"><span class="qarrow-l__label">Sales &amp; Returns</span></div>
+              </div>
+            </div>
             <div class="qgroup">
               <span class="qgroup__label">CommerceLab</span>
               <div class="qbox">Sales Channel</div>
-              <div class="qva qva--both"><span class="qva__label">Orders</span></div>
-              <div class="qbox">OMS</div>
+              <div class="qva qva--both"><span class="qva__label qva__label--l">Orders</span><span class="qva__label">Products</span></div>
+              <div class="qrow"><div class="qbox qbox--sm">OMS</div><div class="qbox qbox--sm">PIM</div></div>
               <div class="qva qva--both"></div>
               <div class="qbox">WMS</div>
             </div>
@@ -448,8 +474,7 @@
             <span class="qp-label">Qube Adjustment Services</span>
             <span class="qt-h"></span>
             <span class="qt-v"></span>
-            <span class="qt-label">Sales / Returns</span>
-            <span class="qt-get">GET</span>
+            <span class="qt-label">Price (optional)</span>
           </div>
         </div>
       </div>
