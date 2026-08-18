@@ -92,7 +92,7 @@
       <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
       <span class="kicker">MrDIY Türkiye</span>
       <h1 class="cover-title">E-Commerce Platform<br />Solution Architecture &amp; <span class="accent">Implementation Plan</span></h1>
-      <p class="cover-sub">An enterprise e-commerce architecture that unifies Appshop &amp; Webshop, OMS, WMS, TMS, PIM, CMS and the Payment Gateway on a single platform; end-to-end integrated with Qube ERP and Logo.</p>
+      <p class="cover-sub">An enterprise e-commerce architecture that unifies Appshop &amp; Webshop, OMS, WMS, TMS, PIM, CMS and the Payment Gateway on a single platform; end-to-end integrated with Qube ERP and Local ERP (SAP/Logo).</p>
       <div class="cover-meta">
         <div>Solution Topology · Data Flows · Roadmap</div>
       </div>
@@ -120,7 +120,7 @@
         <div class="card"><div class="ix">Warehouse</div><h3>WMS</h3><p>Warehouse operations covering goods receipt, picking, packing and shipping.</p></div>
         <div class="card"><div class="ix">Transport</div><h3>TMS</h3><p>Multi-carrier integration, rule-based dispatch and delivery tracking.</p></div>
       </div>
-      <p class="note"><b>Integration backbone:</b> OMS + WMS integrate with <b>Qube ERP</b> for product/price/accounting, and with <b>Logo</b> for e-waybill and e-invoice.</p>
+      <p class="note"><b>Integration backbone:</b> OMS + WMS integrate with <b>Qube ERP</b> and with <b>Local ERP (SAP/Logo)</b>.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
@@ -139,7 +139,7 @@
         <div class="layer"><span class="tag">Experience</span><span class="desc"><b>Appshop</b> (native iOS &amp; Android) &amp; <b>Webshop</b> (Next.js 16) — API-based via the Headless Experience Layer</span></div>
         <div class="layer"><span class="tag">Core commerce</span><span class="desc"><b>PIM</b> product + product content · <b>CMS</b> home &amp; landing pages · <b>Payment Gateway</b> collection &amp; fraud</span></div>
         <div class="layer layer--ink"><span class="tag">Operations</span><span class="desc"><b>OMS</b> orders &amp; inventory · <b>WMS</b> warehouse &amp; fulfillment · <b>TMS</b> shipping &amp; distribution</span></div>
-        <div class="layer"><span class="tag">Integration</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — Qube ERP · Logo · PSPs · carriers</span></div>
+        <div class="layer"><span class="tag">Integration</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — Qube ERP · Local ERP (SAP/Logo) · PSPs · carriers</span></div>
       </div>
     </div>
     <div class="slide__footer">
@@ -174,7 +174,7 @@
         <div class="layer"><span class="tag">Services</span><span class="desc"><b>.NET 10</b> microservices — PIM · CMS · Payment GW · OMS · WMS · TMS · Campaign · CRM</span></div>
         <div class="layer layer--ink"><span class="tag">Orchestration</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — event-driven flows · RabbitMQ · auto-fix &amp; failover</span></div>
         <div class="layer"><span class="tag">Data</span><span class="desc">PostgreSQL · MSSQL · MongoDB · Redis · Elasticsearch — purpose-fit storage per service</span></div>
-        <div class="layer"><span class="tag">External systems</span><span class="desc"><b>Qube ERP</b> (product, price, accounting) · <b>Logo</b> (e-waybill, e-invoice) · PSPs · carriers</span></div>
+        <div class="layer"><span class="tag">External systems</span><span class="desc"><b>Qube ERP</b> · <b>Local ERP (SAP/Logo)</b> (e-waybill, e-invoice integrator) · PSPs · carriers</span></div>
       </div>
     </div>
     <div class="slide__footer">
@@ -224,8 +224,9 @@
         <div class="zone">
           <div class="zone__head">External systems<span class="cidr">integration</span></div>
           <div class="chips">
-            <span class="chip chip--red"><b>Qube ERP</b> product · price · accounting</span>
-            <span class="chip chip--red"><b>Logo</b> e-waybill · e-invoice</span>
+            <span class="chip chip--red"><b>Qube ERP</b></span>
+            <span class="chip chip--red"><b>Local ERP (SAP/Logo)</b></span>
+            <span class="chip chip--red"><b>E-waybill · e-invoice integrator</b></span>
             <span class="chip"><b>PSPs / banks</b></span>
             <span class="chip"><b>Carriers</b></span>
           </div>
@@ -362,7 +363,7 @@
     <div class="slide__inner">
       <span class="kicker">Flow 3</span>
       <h2 class="slide-title">Waybill, invoice &amp; <span class="accent">accounting</span> flow</h2>
-      <p class="lead">Official document processes run through Logo, and accounting reconciliation runs through ERP (SAP).</p>
+      <p class="lead">Official document processes run through Logo, and accounting reconciliation runs through Local ERP (SAP/Logo).</p>
       <div class="flow" style="margin-top:2cqh;">
         <div class="node">WMS<small>shipment confirmation</small></div>
         <div class="arrow">&rarr;</div>
@@ -372,12 +373,12 @@
         <div class="arrow">&rarr;</div>
         <div class="node node--red">E-invoice / e-archive</div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--ink">ERP (SAP)<small>accounting entry · reconciliation</small></div>
+        <div class="node node--ink">Local ERP (SAP/Logo)<small>accounting entry · reconciliation</small></div>
       </div>
       <ul class="flist" style="margin-top:3cqh;">
-        <li><b>E-waybill.</b> When a shipment is finalized in WMS, the waybill is automatically created in Logo and ready before loading onto the vehicle.</li>
+        <li><b>E-waybill.</b> When a shipment is finalized in WMS, the waybill is created automatically and ready before loading onto the vehicle.</li>
         <li><b>E-invoice / e-archive.</b> The correct document type is selected automatically by customer type (corporate/individual); the invoice is sent to the customer by email.</li>
-        <li><b>Reconciliation.</b> Order, collection and invoice data are matched in ERP (SAP) with daily reconciliation reports; discrepancies are detected automatically.</li>
+        <li><b>Reconciliation.</b> Order, collection and invoice data are matched in Local ERP (SAP/Logo) with daily reconciliation reports; discrepancies are detected automatically.</li>
         <li><b>Cancellation &amp; return documents.</b> When a return is approved, the return invoice runs back through the same line.</li>
       </ul>
     </div>
@@ -405,7 +406,7 @@
       </div>
       <div class="grid grid-3" style="margin-top:2.4cqh;">
         <div class="card"><div class="ix">Real-time</div><p>WMS movements (goods receipt, count, shipment) are instantly reflected to OMS inventory; the webshop never shows stale stock.</p></div>
-        <div class="card"><div class="ix">Bidirectional</div><p>Price lists are taken from Qube ERP; sales, returns and stock movements are fed back to Qube ERP.</p></div>
+        <div class="card"><div class="ix">Bidirectional</div><p>Price lists are taken from Qube ERP; sales and returns are fed back to Local ERP, and stock movements to Qube ERP.</p></div>
         <div class="card"><div class="ix">Safety</div><p>Oversell risk is minimized with channel-based safety stock and a rule engine.</p></div>
       </div>
     </div>
@@ -522,8 +523,8 @@
       <h2 class="slide-title">One hub, <span class="accent">resilient</span> integrations</h2>
       <p class="lead">All external system connections are managed through the Integration &amp; Orchestration Manager — no point-to-point connections.</p>
       <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 2cqw;">
-        <div class="card card--accent"><div class="ix">Qube ERP</div><h3>Product · price · accounting</h3><p>Product master data and price lists inbound; sales, returns and stock movements outbound. Batch initial load + event-based delta synchronization.</p></div>
-        <div class="card card--accent"><div class="ix">Logo</div><h3>E-waybill · e-invoice</h3><p>Shipment and invoicing events trigger document creation; document statuses (approved, rejected) are fed back.</p></div>
+        <div class="card card--accent"><h3>Product · price · accounting</h3><p>Product master data and price lists inbound; sales, returns and stock movements outbound. Batch initial load + event-based delta synchronization.</p></div>
+        <div class="card card--accent"><h3>E-waybill · e-invoice</h3><p>Shipment and invoicing events trigger document creation; document statuses (approved, rejected) are fed back.</p></div>
         <div class="card"><div class="ix">PSPs &amp; banks</div><h3>Payment Gateway</h3><p>Multi-PSP support, dynamic routing and failover; collection reconciliation is automatic.</p></div>
         <div class="card"><div class="ix">Carriers</div><h3>TMS hub</h3><p>20+ ready-made carrier integrations; rule-based dispatch, label generation and end-to-end tracking.</p></div>
       </div>

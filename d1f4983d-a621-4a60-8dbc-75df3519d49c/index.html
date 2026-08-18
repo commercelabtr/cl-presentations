@@ -92,7 +92,7 @@
       <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
       <span class="kicker">MrDIY Türkiye</span>
       <h1 class="cover-title">E-Ticaret Platformu<br />Çözüm Mimarisi &amp; <span class="accent">Uygulama Planı</span></h1>
-      <p class="cover-sub">Appshop &amp; Webshop, OMS, WMS, TMS, PIM, CMS ve Payment Gateway'i tek bir platformda birleştiren; Qube ERP ve Logo ile uçtan uca entegre çalışan kurumsal e-ticaret mimarisi.</p>
+      <p class="cover-sub">Appshop &amp; Webshop, OMS, WMS, TMS, PIM, CMS ve Payment Gateway'i tek bir platformda birleştiren; Qube ERP ve Local Erp (SAP/Logo) ile uçtan uca entegre çalışan kurumsal e-ticaret mimarisi.</p>
       <div class="cover-meta">
         <div>Çözüm Topolojisi · Veri Akışları · Yol Haritası</div>
       </div>
@@ -120,7 +120,7 @@
         <div class="card"><div class="ix">Depo</div><h3>WMS</h3><p>Mal kabul, toplama, paketleme ve sevkiyatı kapsayan depo operasyon yönetimi.</p></div>
         <div class="card"><div class="ix">Taşıma</div><h3>TMS</h3><p>Çoklu kargo firması entegrasyonu, kural bazlı dispatch ve teslimat takibi.</p></div>
       </div>
-      <p class="note"><b>Entegrasyon omurgası:</b> OMS + WMS, ürün/fiyat/muhasebe için <b>Qube ERP</b> ile; e-irsaliye ve e-fatura için <b>Logo</b> ile entegre çalışır.</p>
+      <p class="note"><b>Entegrasyon omurgası:</b> OMS + WMS, <b>Qube ERP</b> ve <b>Local Erp (SAP/Logo)</b> ile entegre çalışır.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
@@ -139,7 +139,7 @@
         <div class="layer"><span class="tag">Deneyim</span><span class="desc"><b>Appshop</b> (native iOS &amp; Android) &amp; <b>Webshop</b> (Next.js 16) — Headless Experience Layer üzerinden API tabanlı</span></div>
         <div class="layer"><span class="tag">Core commerce</span><span class="desc"><b>PIM</b> ürün + ürün içeriği · <b>CMS</b> anasayfa &amp; landing page · <b>Payment Gateway</b> tahsilat &amp; fraud</span></div>
         <div class="layer layer--ink"><span class="tag">Operasyon</span><span class="desc"><b>OMS</b> sipariş &amp; envanter · <b>WMS</b> depo &amp; fulfillment · <b>TMS</b> kargo &amp; dağıtım</span></div>
-        <div class="layer"><span class="tag">Entegrasyon</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — Qube ERP · Logo · PSP'ler · kargo firmaları</span></div>
+        <div class="layer"><span class="tag">Entegrasyon</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — Qube ERP · Local Erp (SAP/Logo) · PSP'ler · kargo firmaları</span></div>
       </div>
     </div>
     <div class="slide__footer">
@@ -174,7 +174,7 @@
         <div class="layer"><span class="tag">Servisler</span><span class="desc"><b>.NET 10</b> mikroservisleri — PIM · CMS · Payment GW · OMS · WMS · TMS · Campaign · CRM</span></div>
         <div class="layer layer--ink"><span class="tag">Orkestrasyon</span><span class="desc"><b>Integration &amp; Orchestration Manager</b> — event-driven akışlar · RabbitMQ · auto-fix &amp; failover</span></div>
         <div class="layer"><span class="tag">Veri</span><span class="desc">PostgreSQL · MSSQL · MongoDB · Redis · Elasticsearch — servis başına amaca uygun depolama</span></div>
-        <div class="layer"><span class="tag">Harici sistemler</span><span class="desc"><b>Qube ERP</b> (ürün, fiyat, muhasebe) · <b>Logo</b> (e-irsaliye, e-fatura) · PSP'ler · kargo firmaları</span></div>
+        <div class="layer"><span class="tag">Harici sistemler</span><span class="desc"><b>Qube ERP</b> · <b>Local Erp (SAP/Logo)</b> (e-irsaliye, e-fatura entegratörü) · PSP'ler · kargo firmaları</span></div>
       </div>
     </div>
     <div class="slide__footer">
@@ -224,8 +224,9 @@
         <div class="zone">
           <div class="zone__head">Harici sistemler<span class="cidr">entegrasyon</span></div>
           <div class="chips">
-            <span class="chip chip--red"><b>Qube ERP</b> ürün · fiyat · muhasebe</span>
-            <span class="chip chip--red"><b>Logo</b> e-irsaliye · e-fatura</span>
+            <span class="chip chip--red"><b>Qube ERP</b></span>
+            <span class="chip chip--red"><b>Local Erp (SAP/Logo)</b></span>
+            <span class="chip chip--red"><b>E-irsaliye · e-fatura entegratörü</b></span>
             <span class="chip"><b>PSP / bankalar</b></span>
             <span class="chip"><b>Kargo firmaları</b></span>
           </div>
@@ -362,7 +363,7 @@
     <div class="slide__inner">
       <span class="kicker">Akış 3</span>
       <h2 class="slide-title">İrsaliye, fatura &amp; <span class="accent">muhasebe</span> akışı</h2>
-      <p class="lead">Resmî belge süreçleri Logo üzerinden, muhasebe mutabakatı ERP (SAP) üzerinden yürür.</p>
+      <p class="lead">Resmî belge süreçleri Logo üzerinden, muhasebe mutabakatı Local Erp (SAP/Logo) üzerinden yürür.</p>
       <div class="flow" style="margin-top:2cqh;">
         <div class="node">WMS<small>sevkiyat onayı</small></div>
         <div class="arrow">&rarr;</div>
@@ -372,12 +373,12 @@
         <div class="arrow">&rarr;</div>
         <div class="node node--red">E-fatura / e-arşiv</div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--ink">ERP (SAP)<small>muhasebe kaydı · mutabakat</small></div>
+        <div class="node node--ink">Local Erp (SAP/Logo)<small>muhasebe kaydı · mutabakat</small></div>
       </div>
       <ul class="flist" style="margin-top:3cqh;">
-        <li><b>E-irsaliye.</b> WMS'te sevkiyat kesinleştiğinde irsaliye Logo'da otomatik oluşur ve araca yüklenmeden önce hazırdır.</li>
+        <li><b>E-irsaliye.</b> WMS'te sevkiyat kesinleştiğinde irsaliye otomatik oluşur ve araca yüklenmeden önce hazırdır.</li>
         <li><b>E-fatura / e-arşiv.</b> Müşteri tipine göre (kurumsal/bireysel) doğru belge tipi otomatik seçilir; fatura müşteriye e-posta ile iletilir.</li>
-        <li><b>Mutabakat.</b> Sipariş, tahsilat ve fatura verileri ERP (SAP)'de günlük mutabakat raporlarıyla eşleştirilir; farklar otomatik tespit edilir.</li>
+        <li><b>Mutabakat.</b> Sipariş, tahsilat ve fatura verileri Local Erp (SAP/Logo)'de günlük mutabakat raporlarıyla eşleştirilir; farklar otomatik tespit edilir.</li>
         <li><b>İptal &amp; iade belgeleri.</b> İade onaylandığında iade faturası aynı hattan geri işler.</li>
       </ul>
     </div>
@@ -405,7 +406,7 @@
       </div>
       <div class="grid grid-3" style="margin-top:2.4cqh;">
         <div class="card"><div class="ix">Gerçek zamanlı</div><p>WMS hareketleri (mal kabul, sayım, sevkiyat) anında OMS envanterine işlenir; webshop stale stok göstermez.</p></div>
-        <div class="card"><div class="ix">Çift yönlü</div><p>Fiyat listeleri Qube ERP'den alınır; satış, iade ve stok hareketleri Qube ERP'ye geri bildirilir.</p></div>
+        <div class="card"><div class="ix">Çift yönlü</div><p>Fiyat listeleri Qube ERP'den alınır; satış, iade Local Erp'ye ve stok hareketleri Qube ERP'ye geri bildirilir.</p></div>
         <div class="card"><div class="ix">Emniyet</div><p>Kanal bazlı emniyet stoğu ve kural motoru ile oversell riski minimize edilir.</p></div>
       </div>
     </div>
@@ -457,7 +458,7 @@
                 <div class="qarrow-l"></div>
               </div>
               <div class="qside__row">
-                <div class="qbox qbox--side">Yerel ERP (SAP/Logo)</div>
+                <div class="qbox qbox--side">Local Erp (SAP/Logo)</div>
                 <div class="qarrow-l"><span class="qarrow-l__label">Satış &amp; İade</span></div>
               </div>
             </div>
@@ -522,8 +523,8 @@
       <h2 class="slide-title">Tek hub, <span class="accent">dayanıklı</span> entegrasyonlar</h2>
       <p class="lead">Tüm dış sistem bağlantıları Integration &amp; Orchestration Manager üzerinden yönetilir — nokta-noktaya bağlantı yok.</p>
       <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 2cqw;">
-        <div class="card card--accent"><div class="ix">Qube ERP</div><h3>Ürün · fiyat · muhasebe</h3><p>Ürün ana verisi ve fiyat listeleri içeri; satış, iade ve stok hareketleri dışarı. Batch ilk yükleme + event bazlı delta senkronizasyon.</p></div>
-        <div class="card card--accent"><div class="ix">Logo</div><h3>E-irsaliye · e-fatura</h3><p>Sevkiyat ve faturalama olayları belge oluşturmayı tetikler; belge durumları (onay, red) geri beslenir.</p></div>
+        <div class="card card--accent"><h3>Ürün · fiyat · muhasebe</h3><p>Ürün ana verisi ve fiyat listeleri içeri; satış, iade ve stok hareketleri dışarı. Batch ilk yükleme + event bazlı delta senkronizasyon.</p></div>
+        <div class="card card--accent"><h3>E-irsaliye · e-fatura</h3><p>Sevkiyat ve faturalama olayları belge oluşturmayı tetikler; belge durumları (onay, red) geri beslenir.</p></div>
         <div class="card"><div class="ix">PSP &amp; bankalar</div><h3>Payment Gateway</h3><p>Çoklu PSP desteği, dinamik yönlendirme ve failover; tahsilat mutabakatı otomatik.</p></div>
         <div class="card"><div class="ix">Kargo firmaları</div><h3>TMS hub</h3><p>20+ hazır kargo entegrasyonu; kural bazlı dispatch, etiket üretimi ve uçtan uca takip.</p></div>
       </div>
