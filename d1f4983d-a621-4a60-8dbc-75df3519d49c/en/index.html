@@ -42,7 +42,9 @@
   .slide--diagram .qbox--sm { min-width:7ch; padding:1.5cqh 1cqw; font-size:1.35cqw; }
   .slide--diagram .qside__row { display:flex; align-items:center; }
   .slide--diagram .qbox--side { min-width:0; flex:1; font-size:1.3cqw; }
-  .slide--diagram .qarrow-l { position:relative; width:11cqw; height:2px; background:var(--ink); }
+  .slide--diagram .qbox--side small { display:block; margin-top:0.4cqh; font-family:var(--sans); font-weight:400; font-size:1.05cqw; color:var(--muted); }
+  .slide--diagram .qbox small { display:block; margin-top:0.3cqh; font-family:var(--sans); font-weight:400; font-size:0.85cqw; color:var(--muted); }
+  .slide--diagram .qarrow-l { position:relative; width:9cqw; height:2px; background:var(--ink); }
   .slide--diagram .qarrow-l::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
   .slide--diagram .qarrow-l__label { position:absolute; left:44%; top:-0.8cqh; transform:translate(-50%,-100%); white-space:nowrap; font-family:var(--sans); font-size:1.05cqw; color:var(--muted); }
   .slide--diagram .qva { position:relative; width:2px; height:7cqh; margin:0.6cqh 0; background:var(--ink); }
@@ -54,8 +56,9 @@
   .slide--diagram .qlinks::after { content:''; position:absolute; right:5cqw; top:1px; bottom:1px; width:2px; background:var(--ink); }
   .slide--diagram .qlink { position:relative; height:2px; background:var(--ink); margin-right:5cqw; }
   .slide--diagram .qlink--full { margin-right:0; }
+  .slide--diagram .qlinks--single::after { content:none; }
   .slide--diagram .qlink::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
-  .slide--diagram .qlink__label, .slide--diagram .qget { position:absolute; top:50%; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.5cqw; white-space:nowrap; font-family:var(--sans); font-size:1.1cqw; color:var(--muted); z-index:1; }
+  .slide--diagram .qlink__label, .slide--diagram .qget { position:absolute; top:50%; transform:translate(-50%,-50%); background:var(--paper); padding:0 0.5cqw; white-space:nowrap; font-family:var(--sans); font-size:0.95cqw; color:var(--muted); z-index:1; }
   .slide--diagram .qlink__label { left:45%; }
   .slide--diagram .qget { left:auto; right:0.6cqw; transform:translateY(-50%); font-weight:600; color:var(--ink); }
   .slide--diagram .qbottom { position:relative; height:2px; margin:0 6cqw; background:var(--ink); }
@@ -450,12 +453,12 @@
       <span class="kicker">Flow 4 · diagram</span>
       <h2 class="slide-title">All <span class="accent">Integrations</span></h2>
       <div class="diagram-wrap">
-        <div class="qwrap" style="--qp-left:37.3cqw; --qp-right:7cqw; --qp-v1top:41cqh; --qp-v2top:27.8cqh; --qp-topleft:46.5cqw; --qp-topy:13.2cqh; --qp-qubetop:20.7cqh; --qp-gy1:36.2cqh; --qp-gy2:39.4cqh;">
+        <div class="qwrap" style="--qp-left:40.4cqw; --qp-right:6.5cqw; --qp-v1top:42.6cqh; --qp-v2top:28.6cqh; --qp-topleft:48.2cqw; --qp-topy:13.2cqh; --qp-qubetop:21.4cqh; --qp-gy1:36.2cqh; --qp-gy2:39.4cqh;">
           <div class="qflow">
             <div class="qside">
               <div class="qside__row">
-                <div class="qbox qbox--side">E-Invoice / E-Waybill</div>
-                <div class="qarrow-l"></div>
+                <div class="qbox qbox--side">E-Invoice / E-Waybill<small>E-Integrator</small></div>
+                <div class="qarrow-l"><span class="qarrow-l__label">async</span></div>
               </div>
               <div class="qside__row">
                 <div class="qbox qbox--side">Local ERP (SAP/Logo)</div>
@@ -464,16 +467,14 @@
             </div>
             <div class="qgroup">
               <span class="qgroup__label">CommerceLab</span>
-              <div class="qbox">Sales Channel</div>
+              <div class="qbox">Sales Channel<small>Web/App Shop + Payment Gateway</small></div>
               <div class="qva qva--both"><span class="qva__label qva__label--l">Orders</span><span class="qva__label">Products</span></div>
               <div class="qrow"><div class="qbox qbox--sm">OMS</div><div class="qbox qbox--sm">PIM</div></div>
               <div class="qva qva--both"></div>
-              <div class="qbox">WMS</div>
+              <div class="qrow"><div class="qbox qbox--sm">TMS</div><div class="qbox qbox--sm">WMS</div></div>
             </div>
-            <div class="qlinks">
-              <div class="qlink"><span class="qlink__label">Total Stock</span></div>
-              <div class="qlink qlink--full"><span class="qlink__label">Available Stock</span><span class="qget">GET</span></div>
-              <div class="qlink"><span class="qlink__label">Reserved Stock</span></div>
+            <div class="qlinks qlinks--single">
+              <div class="qlink qlink--full"><span class="qlink__label">Total / Available / Reserved Stock</span><span class="qget">GET</span></div>
             </div>
             <div class="qbox">QUBE</div>
           </div>
@@ -481,7 +482,7 @@
             <span class="qp-v1"></span>
             <span class="qp-h"></span>
             <span class="qp-v2"></span>
-            <span class="qp-label">Qube Adjustment Services (Optional)</span>
+            <span class="qp-label">Qube Inventory Adjustment Services (Optional)</span>
             <span class="qt-h"></span>
             <span class="qt-v"></span>
             <span class="qt-label">Price (optional)</span>
