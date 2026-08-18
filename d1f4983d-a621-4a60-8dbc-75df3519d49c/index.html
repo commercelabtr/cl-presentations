@@ -37,7 +37,7 @@
   .slide--diagram .qbox { min-width:14ch; padding:1.5cqh 1.4cqw; text-align:center; background:var(--paper); border:1px solid var(--line-strong); border-radius:8px; font-family:var(--display); font-weight:600; font-size:1.45cqw; color:var(--ink); }
   .slide--diagram .qbox--hub { background:var(--red); border-color:var(--red-deep); color:#ffffff; }
   .slide--diagram .qflow > .qbox { position:relative; top:2cqh; }
-  .slide--diagram .qside { display:flex; flex-direction:column; justify-content:center; gap:10cqh; }
+  .slide--diagram .qside { display:flex; flex-direction:column; justify-content:center; gap:4cqh; }
   .slide--diagram .qrow { display:flex; align-items:stretch; gap:1cqw; }
   .slide--diagram .qbox--sm { min-width:7ch; padding:1.5cqh 1cqw; font-size:1.35cqw; }
   .slide--diagram .qside__row { display:flex; align-items:center; }
@@ -46,6 +46,7 @@
   .slide--diagram .qbox small { display:block; margin-top:0.3cqh; font-family:var(--sans); font-weight:400; font-size:0.85cqw; color:var(--muted); }
   .slide--diagram .qarrow-l { position:relative; width:9cqw; height:2px; background:var(--ink); }
   .slide--diagram .qarrow-l::before { content:''; position:absolute; left:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-right:9px solid var(--ink); }
+  .slide--diagram .qarrow-l--both::after { content:''; position:absolute; right:-1px; top:50%; transform:translateY(-50%); border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:9px solid var(--ink); }
   .slide--diagram .qarrow-l__label { position:absolute; left:44%; top:-0.8cqh; transform:translate(-50%,-100%); white-space:nowrap; font-family:var(--sans); font-size:1.05cqw; color:var(--muted); }
   .slide--diagram .qva { position:relative; width:2px; height:7cqh; margin:0.6cqh 0; background:var(--ink); }
   .slide--diagram .qva::after { content:''; position:absolute; left:50%; bottom:-1px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-top:9px solid var(--ink); }
@@ -457,12 +458,20 @@
           <div class="qflow">
             <div class="qside">
               <div class="qside__row">
+                <div class="qbox qbox--side">Bankalar</div>
+                <div class="qarrow-l qarrow-l--both"></div>
+              </div>
+              <div class="qside__row">
                 <div class="qbox qbox--side">E-Fatura / E-İrsaliye<small>E-Integrator</small></div>
                 <div class="qarrow-l"><span class="qarrow-l__label">async</span></div>
               </div>
               <div class="qside__row">
                 <div class="qbox qbox--side">Local Erp (SAP/Logo)</div>
                 <div class="qarrow-l"><span class="qarrow-l__label">Satış &amp; İade</span></div>
+              </div>
+              <div class="qside__row">
+                <div class="qbox qbox--side">Kargo Firmaları</div>
+                <div class="qarrow-l qarrow-l--both"></div>
               </div>
             </div>
             <div class="qgroup">
