@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CommerceLab — Civil PIM Çözümü</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+  .compact-cards .card { padding: 1.6cqh 1.3cqw; gap: 0.5cqh; }
+  .compact-cards .card p { font-size: 1.18cqw; line-height: 1.42; }
+  .compact-cards .card h3 { font-size: 1.55cqw; }
+  .card--dark .flist li { color: rgba(255,255,255,.86); }
+  .card--dark .flist b { color: #fff; }
+  .card .flist { gap: 1.45cqh; }
+  .card .flist li { font-size: 1.36cqw; }
+
+  /* Çözüm diyagramı (SVG) */
+  .dg-wrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .dg-wrap svg { width: 100%; height: 100%; display: block; }
+  .dg-t { font-family: var(--display); font-weight: 700; font-size: 17px; fill: var(--ink); }
+  .dg-t--big { font-size: 23px; font-weight: 800; }
+  .dg-t--w { fill: #fff; }
+  .dg-s { font-family: var(--sans); font-size: 12.5px; fill: var(--muted); }
+  .dg-s--w { fill: rgba(255,255,255,.78); }
+  .dg-l { font-family: var(--sans); font-size: 12.5px; fill: var(--muted); }
+  .dg-zone { font-family: var(--display); font-weight: 700; font-size: 11.5px; letter-spacing: .16em; }
+  .dg-box { fill: #ffffff; stroke: #cfccc4; stroke-width: 1.2; }
+  .dg-ink { fill: #1a1a1a; }
+  .dg-red { fill: #d02c2f; }
+  .dg-line { stroke: #1a1a1a; stroke-width: 2; fill: none; }
+
+  /* Katalog grafiği */
+  .cat-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 3.2cqw; flex: 1; align-items: center; }
+  .bars { display: flex; flex-direction: column; gap: 1.05cqh; }
+  .bars__legend { display: flex; gap: 1.8cqw; font-size: 1.05cqw; color: var(--muted); margin-bottom: 0.8cqh; }
+  .bars__legend span { display: inline-flex; align-items: center; gap: 0.5cqw; }
+  .bars__legend i { width: 0.9cqw; height: 0.9cqw; border-radius: 2px; display: inline-block; }
+  .bar { display: grid; grid-template-columns: 11.5cqw 1fr 5cqw 6.2cqw; align-items: center; gap: 0.8cqw; }
+  .bar__name { font-family: var(--display); font-weight: 600; font-size: 1.2cqw; color: var(--ink); }
+  .bar__track { display: flex; gap: 2px; height: 2.6cqh; }
+  .bar__seg { height: 100%; }
+  .bar__seg:first-child { border-radius: 4px 0 0 4px; }
+  .bar__seg:last-child { border-radius: 0 4px 4px 0; }
+  .bar__seg:only-child { border-radius: 4px; }
+  .seg-civil { background: var(--ink); }
+  .seg-other { background: var(--red); }
+  .bar__val { font-size: 1.12cqw; color: var(--ink-soft); font-variant-numeric: tabular-nums; text-align: right; }
+  .bar__mv { font-family: var(--display); font-weight: 700; font-size: 0.9cqw; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+  .cat-side { display: flex; flex-direction: column; gap: 2.6cqh; }
+  .cat-side .stat .num { font-size: 3.3cqw; }
+  .cat-side .stat .lab { max-width: 26cqw; }
+
+  /* Tespit → çözüm eşleşmesi */
+  .pairs { display: grid; grid-template-columns: 1fr 2.4cqw 1fr; flex: 1; align-content: center; row-gap: 1.3cqh; }
+  .pairs__h { font-family: var(--display); font-weight: 700; font-size: 1.05cqw; letter-spacing: .16em; text-transform: uppercase; color: var(--muted-2); padding-bottom: 0.4cqh; }
+  .pairs__h--r { color: var(--red); }
+  .pairs__a, .pairs__b { padding: 1.5cqh 1.4cqw; border-radius: 8px; font-size: 1.25cqw; line-height: 1.42; }
+  .pairs__a { background: var(--bone); border: 1px solid var(--line); color: var(--ink-soft); }
+  .pairs__b { background: var(--paper); border: 1px solid var(--line-strong); border-left: 3px solid var(--red); color: var(--ink-soft); }
+  .pairs b { color: var(--ink); font-weight: 600; }
+  .pairs__arrow { align-self: center; text-align: center; color: var(--red); font-weight: 700; font-size: 1.6cqw; }
+
+  /* Değişiklik farkı (diff) örneği */
+  .diff { background: var(--paper); border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+  .diff__head { display: flex; justify-content: space-between; align-items: center; padding: 1.3cqh 1.3cqw; background: var(--ink); color: #fff; font-family: var(--display); font-weight: 700; font-size: 1.15cqw; }
+  .diff__head small { font-family: var(--sans); font-weight: 400; color: #b9b7b2; font-size: 0.95cqw; }
+  .diff table { width: 100%; border-collapse: collapse; }
+  .diff th { text-align: left; font-family: var(--display); font-weight: 700; font-size: 0.9cqw; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-2); padding: 1cqh 1.3cqw 0.6cqh; }
+  .diff td { padding: 1cqh 1.3cqw; font-size: 1.12cqw; border-top: 1px solid var(--line); color: var(--ink-soft); vertical-align: top; }
+  .diff td.old { color: var(--muted-2); text-decoration: line-through; }
+  .diff td.new { color: var(--ink); font-weight: 600; }
+  .diff .flag { display: inline-block; margin-left: 0.5cqw; font-family: var(--display); font-weight: 700; font-size: 0.8cqw; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+
+  /* Kural seviyeleri */
+  .levels { display: flex; gap: 0.6cqw; margin: 1cqh 0 3.2cqh; }
+  .levels .lv { flex: 1; padding: 1.2cqh 1cqw; border: 1px solid var(--line-strong); border-radius: 6px; text-align: center; font-family: var(--display); font-weight: 700; font-size: 1.2cqw; }
+  .levels .lv small { display: block; font-family: var(--sans); font-weight: 400; font-size: 0.95cqw; color: var(--muted); margin-top: 0.3cqh; }
+  .rules { width: 100%; border-collapse: collapse; }
+  .rules th { text-align: left; font-family: var(--display); font-weight: 700; font-size: 0.95cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-2); padding: 0 1cqw 0.9cqh 0; border-bottom: 1px solid var(--line-strong); }
+  .rules td { padding: 1.7cqh 1cqw 1.7cqh 0; font-size: 1.35cqw; color: var(--ink-soft); border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.4; }
+  .rules td:first-child { font-family: var(--display); font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .rules td.act { color: var(--red); font-weight: 600; white-space: nowrap; }
+
+  /* Kapsam karşılama tablosu */
+  .xtable { width: 100%; border-collapse: collapse; margin-top: 1cqh; }
+  .xtable th { text-align: left; font-family: var(--display); font-weight: 700; font-size: 0.92cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-2); padding: 0 1cqw 0.8cqh 0; border-bottom: 1px solid var(--line-strong); }
+  .xtable td { padding: 0.95cqh 1cqw 0.95cqh 0; font-size: 1.13cqw; color: var(--ink-soft); border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.38; }
+  .xtable td:first-child { font-family: var(--display); font-weight: 700; color: var(--ink); }
+  .st { display: inline-block; white-space: nowrap; font-family: var(--display); font-weight: 700; font-size: 0.85cqw; letter-spacing: .06em; text-transform: uppercase; padding: 0.35cqh 0.6cqw; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--ink-soft); }
+  .st--dev { border-color: var(--red); color: var(--red); }
+  .st--talk { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+  /* Sorumluluk ayrımı */
+  .own { display: grid; grid-template-columns: 1fr 1fr; gap: 2cqw; flex: 1; align-content: center; }
+  .own__col { border-radius: 8px; padding: 1.8cqh 1.8cqw; }
+  .own .flist { gap: 0.9cqh; }
+  .own .flist li { font-size: 1.35cqw; }
+  .own__col--cl { background: var(--paper); border: 1px solid var(--line-strong); border-top: 3px solid var(--red); }
+  .own__col--civil { background: var(--bone-2); border: 1px solid var(--line); }
+  .own__col h3 { font-family: var(--display); font-weight: 800; font-size: 1.75cqw; margin: 0 0 0.4cqh; }
+  .own__col .who { font-family: var(--display); font-weight: 700; font-size: 1cqw; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 1cqh; }
+  .own__col--civil .who { color: var(--muted); }
+  .own__col--civil .flist li::before { background: var(--muted-2); }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 01 — KAPAK -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">Civil</span>
+      <h1 class="cover-title">Tedarikçiden kanala,<br />ürün verisi <span class="accent">tek kaynaktan</span></h1>
+      <p class="cover-sub">ERP'nin önünde konumlanan merkezi PIM katmanı: ürün verisini toplar, doğrular, zenginleştirir ve tüm satış kanallarına dağıtır.</p>
+      <div class="cover-meta">
+        <div>Hedefler · Çözüm mimarisi · Süreçler · Yetkinlikler · Uygulama planı</div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">1 / 28</span>
+    </div>
+  </section>
+
+  <!-- 02 — HEDEFLER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Amaç</span>
+      <h2 class="slide-title">ERP'nin önünde <span class="accent">merkezi</span> PIM</h2>
+      <p class="lead" style="font-size:1.5cqw; margin-bottom:0.6cqh;">Civil'in PIM ile ulaşmak istediği sekiz sonuç — çözümün her parçası bunlardan birine hizmet eder.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
+        <div class="card card--dark"><div class="ix">01</div><h3>Tek kaynak</h3><p>Tüm ürün verisi tek noktada yönetilir; kopya ve çelişkili kayıt kalmaz.</p></div>
+        <div class="card"><div class="ix">02</div><h3>Doğru ve zengin veri</h3><p>Ürün ve katalog verisi doğrulanır, eksikleri ölçülerek tamamlanır.</p></div>
+        <div class="card"><div class="ix">03</div><h3>Ortak platform</h3><p>Tedarikçi ve Civil aynı platformda buluşur; veri kaynağında girilir.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Yasal doğruluk</h3><p>Tedarikçi, tedarikçi grubu, ürün ve ürün grubu seviyesinde iş kuralı ve kontrol.</p></div>
+        <div class="card"><div class="ix">05</div><h3>Sade bir ERP</h3><p>ERP yalnızca transactional master olarak kalır; içerik yükü PIM'e taşınır.</p></div>
+        <div class="card"><div class="ix">06</div><h3>Tüm kanallar</h3><p>E-ticaret, pazaryerleri, POS ve pazarlama kanalları tek kaynaktan beslenir.</p></div>
+        <div class="card"><div class="ix">07</div><h3>Otomasyon &amp; AI</h3><p>İş kuralları, iş akışları ve AI fonksiyonları uygun her noktada devrede.</p></div>
+        <div class="card"><div class="ix">08</div><h3>Fazlı büyüme</h3><p>PIM ile başlayıp B2B süreçlerin fazlar halinde taşınabileceği bir zemin.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">2 / 28</span>
+    </div>
+  </section>
+
+  <!-- 03 — PIM'İN ROLÜ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">PIM'in sistemdeki rolü</span>
+      <h2 class="slide-title">Veri ERP'ye <span class="accent">doğrulanmış</span> girer</h2>
+      <div class="flow" style="margin-top:1.4cqh;">
+        <div class="node">Tedarikçi<small>panel veya API ile veri girişi</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">PIM<small>doğrulama · zenginleştirme · kural</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Onay<small>satın alma &amp; kategori</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">ERP<small>ürünleştirme · güncelleme</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Satış kanalları<small>e-ticaret · pazaryeri · POS</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3.4cqh;">
+        <li><b>ERP öncesi kalite kapısı.</b> Veri ERP'ye ulaşmadan doğrulanır ve zenginleştirilir; hatalı kayıt kaynağında durdurulur.</li>
+        <li><b>Tedarikçi paneli.</b> Tedarikçiler yeni ürünü ve güncellemeleri kendileri girer; Civil ekipleri onaylar.</li>
+        <li><b>Onay ve versiyon kontrolü.</b> Her değişiklik versiyonlanır, kimin neyi ne zaman onayladığı izlenir.</li>
+        <li><b>Grup bazlı iş kuralları.</b> Tedarikçi ve ürün grubuna göre numune, kalite ve tedarikçi kontrolü akışları.</li>
+        <li><b>Kanallara dağıtım.</b> Onaylı ürün kartı Nebim, e-ticaret, pazaryerleri ve POS'a tek kaynaktan yayılır.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">3 / 28</span>
+    </div>
+  </section>
+
+  <!-- 04 — NEDEN COMMERCELAB PIM -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Neden CommerceLab PIM</span>
+      <h2 class="slide-title">Perakende için <span class="accent">tasarlandı</span></h2>
+      <div class="two-col two-col--wide">
+        <ul class="flist">
+          <li><b>Bulut-doğal SaaS.</b> Çok kiracılı, bağımsız ölçeklenen bir PBC; kurulum ve altyapı yükü Civil'de değil.</li>
+          <li><b>Her ürün tipi.</b> Tekil, varyantlı, bundle, configurable, dijital ve hizmet ürünleri aynı modelde.</li>
+          <li><b>Esnek veri modeli.</b> Nitelik ve veri tipi eklemek geliştirme gerektirmez; kategori bazlı nitelik setleri.</li>
+          <li><b>Kural ve iş akışı motoru.</b> Aktivasyon, onay, yayın ve arşiv adımları kurallarla yönetilir.</li>
+          <li><b>Kanala hazır.</b> CL ComHub ile pazaryeri eşleme ve yayın hazır; nokta-noktaya entegrasyon yazılmaz.</li>
+          <li><b>Ürün şirketi.</b> Tek sürüm, versiyon karmaşası yok; vendor lock-in yaratmayan açık API.</li>
+        </ul>
+        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+          <div class="stat"><span class="num">%25</span><span class="lab" style="color:#b9b7b2; max-width:none;">iade oranında düşüş potansiyeli — daha net ve doğru ürün bilgisiyle</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">n</span><span class="lab" style="color:#b9b7b2; max-width:none;">seviye taksonomi, sınırsız SKU, nitelik ve kullanıcı</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">100+</span><span class="lab" style="color:#b9b7b2; max-width:none;">perakendecide edinilmiş ekip deneyimi</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">4 / 28</span>
+    </div>
+  </section>
+
+  <!-- 05 — REFERANSLAR -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Referanslar</span>
+      <h2 class="slide-title">Önde gelen markaların <span class="accent">ticaret altyapısı</span></h2>
+      <div class="logowall">
+        <div class="cell"><img src="logos/skechers.svg" alt="Skechers" /></div>
+        <div class="cell"><img src="logos/decathlon.png" alt="Decathlon" /></div>
+        <div class="cell"><img src="logos/asics.png" alt="Asics" /></div>
+        <div class="cell"><img src="logos/brooks.png" alt="Brooks" /></div>
+        <div class="cell"><img src="logos/hunter.svg" alt="Hunter" /></div>
+        <div class="cell"><img src="logos/a101.png" alt="A101" /></div>
+        <div class="cell"><img src="logos/madamecoco.svg" alt="Madame Coco" /></div>
+        <div class="cell"><img src="logos/kfc.png" alt="KFC" /></div>
+        <div class="cell"><img src="logos/hdholding.svg" alt="HD Holding" /></div>
+        <div class="cell"><img src="logos/gracebrands.svg" alt="Grace Brands" /></div>
+        <div class="cell"><img src="logos/sochic.jpg" alt="So Chic" /></div>
+        <div class="cell"><img src="logos/highfive.svg" alt="HighFive" /></div>
+        <div class="cell"><img src="logos/klaud.svg" alt="Klaud" /></div>
+        <div class="cell"><img src="logos/fila.png" alt="Fila" /></div>
+        <div class="cell"><img src="logos/stevemadden.png" alt="Steve Madden" /></div>
+        <div class="cell"><img src="logos/on.png" alt="On" /></div>
+      </div>
+      <p class="note">Perakende, moda, spor ve hızlı servis markaları ticaret operasyonlarını CommerceLab üzerinde yürütüyor.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">5 / 28</span>
+    </div>
+  </section>
+
+  <!-- 06 — BÖLÜM I -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">I</div>
+      <h2 class="slide-title">Çözüm Mimarisi</h2>
+      <p class="lead">Bileşenler, kapsam sınırı ve bugünkü katalogdan çıkan ilk bulgular.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">6 / 28</span>
+    </div>
+  </section>
+
+  <!-- 07 — ÇÖZÜM DİYAGRAMI -->
+  <section class="slide">
+    <div class="slide__inner" style="padding-bottom:8cqh;">
+      <span class="kicker">Çözüm mimarisi</span>
+      <h2 class="slide-title">CommerceLab PIM <span class="accent">çözümü</span></h2>
+      <div class="dg-wrap">
+        <svg viewBox="0 0 1100 420" role="img" aria-label="Tedarikçiler tedarikçi yönetim platformu üzerinden, Civil ekipleri doğrudan CL PIM'e veri girer. CL PIM Civil ERP ile çift yönlü çalışır ve ürün kartını CL ComHub üzerinden satış kanallarına dağıtır. Civil ERP ve OMS stok, fiyat, sipariş ve faturayı kendi kanallarına taşır.">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a" />
+            </marker>
+          </defs>
+
+          <!-- Bölgeler -->
+          <text class="dg-zone" x="0" y="14" fill="#d02c2f">KAPSAM · COMMERCELAB</text>
+          <line x1="752" y1="0" x2="752" y2="420" stroke="#9a9893" stroke-width="1.5" stroke-dasharray="2 5" />
+          <rect x="770" y="0" width="330" height="420" rx="8" fill="#efece6" />
+          <text class="dg-zone" x="788" y="26" fill="#6c6a66">CIVIL MEVCUT SİSTEMLERİ</text>
+
+          <!-- Tedarikçiler -->
+          <rect class="dg-box" x="10" y="44" width="180" height="90" rx="8" />
+          <text class="dg-t" x="100" y="84" text-anchor="middle">Tedarikçiler</text>
+          <text class="dg-s" x="100" y="107" text-anchor="middle">Tedarikçi 1 … N</text>
+
+          <!-- Tedarikçi yönetim platformu -->
+          <rect class="dg-ink" x="270" y="44" width="260" height="90" rx="8" />
+          <text class="dg-t dg-t--w" x="400" y="82" text-anchor="middle">CL Tedarikçi Platformu</text>
+          <text class="dg-s dg-s--w" x="400" y="105" text-anchor="middle">supplier &amp; vendor · panel · API</text>
+
+          <!-- Civil ekipleri -->
+          <rect class="dg-box" x="10" y="196" width="180" height="90" rx="8" />
+          <text class="dg-t" x="100" y="236" text-anchor="middle">Civil ekipleri</text>
+          <text class="dg-s" x="100" y="259" text-anchor="middle">satın alma · kategori · e-com</text>
+
+          <!-- CL PIM -->
+          <rect class="dg-red" x="310" y="196" width="180" height="90" rx="8" />
+          <text class="dg-t dg-t--w dg-t--big" x="400" y="238" text-anchor="middle">CL PIM</text>
+          <text class="dg-s dg-s--w" x="400" y="261" text-anchor="middle">tek ürün kaynağı</text>
+
+          <!-- CL ComHub -->
+          <rect class="dg-ink" x="310" y="330" width="180" height="72" rx="8" />
+          <text class="dg-t dg-t--w" x="400" y="361" text-anchor="middle">CL ComHub</text>
+          <text class="dg-s dg-s--w" x="400" y="382" text-anchor="middle">kanal yayın hub'ı</text>
+
+          <!-- Satış kanalları (PIM) -->
+          <rect class="dg-box" x="560" y="330" width="176" height="72" rx="8" />
+          <text class="dg-t" x="648" y="361" text-anchor="middle">Satış kanalları</text>
+          <text class="dg-s" x="648" y="382" text-anchor="middle">e-ticaret · pazaryeri · POS</text>
+
+          <!-- Civil ERP -->
+          <rect class="dg-box" x="786" y="196" width="142" height="90" rx="8" />
+          <text class="dg-t" x="857" y="236" text-anchor="middle">Civil ERP</text>
+          <text class="dg-s" x="857" y="259" text-anchor="middle">transactional master</text>
+
+          <!-- OMS -->
+          <rect class="dg-box" x="962" y="196" width="126" height="90" rx="8" />
+          <text class="dg-t" x="1025" y="236" text-anchor="middle">OMS</text>
+          <text class="dg-s" x="1025" y="259" text-anchor="middle">sipariş &amp; stok</text>
+
+          <!-- SC (Civil) -->
+          <rect class="dg-box" x="950" y="336" width="150" height="66" rx="8" />
+          <text class="dg-t" x="1025" y="364" text-anchor="middle">Satış kanalları</text>
+          <text class="dg-s" x="1025" y="384" text-anchor="middle">SC 1 … N</text>
+
+          <!-- Oklar -->
+          <line class="dg-line" x1="190" y1="89" x2="268" y2="89" marker-end="url(#ah)" />
+           <text class="dg-l" x="229" y="80" text-anchor="middle">veri girişi</text>
+
+          <line class="dg-line" x1="400" y1="134" x2="400" y2="194" marker-end="url(#ah)" />
+          <text class="dg-l" x="410" y="169">ürün verisi</text>
+
+          <line class="dg-line" x1="190" y1="241" x2="308" y2="241" marker-end="url(#ah)" />
+          <text class="dg-l" x="249" y="232" text-anchor="middle">zenginleştirme</text>
+
+          <line class="dg-line" x1="492" y1="241" x2="784" y2="241" marker-start="url(#ah)" marker-end="url(#ah)" />
+          <text class="dg-l" x="620" y="231" text-anchor="middle">onaylı ürün kartı</text>
+          <text class="dg-l" x="620" y="262" text-anchor="middle">ürünleştirme · güncelleme</text>
+
+          <line class="dg-line" x1="930" y1="241" x2="960" y2="241" marker-start="url(#ah)" marker-end="url(#ah)" />
+
+          <line class="dg-line" x1="1025" y1="286" x2="1025" y2="334" marker-end="url(#ah)" />
+          <text class="dg-l" x="1012" y="315" text-anchor="end">stok · fiyat · sipariş · fatura</text>
+
+          <line class="dg-line" x1="400" y1="286" x2="400" y2="328" marker-end="url(#ah)" />
+
+          <line class="dg-line" x1="490" y1="366" x2="558" y2="366" marker-end="url(#ah)" />
+          <text class="dg-l" x="524" y="356" text-anchor="middle">ürün kartı</text>
+        </svg>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">7 / 28</span>
+    </div>
+  </section>
+
+  <!-- 08 — KAPSAM SINIRI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kapsam sınırı</span>
+      <h2 class="slide-title">Ürün kartı PIM'de, <span class="accent">işlem</span> ERP'de</h2>
+      <p class="lead" style="font-size:1.6cqw; margin-bottom:1.2cqh;">Her veri tek bir sistemde yaşar: PIM ürünün ne olduğunu, Civil'in mevcut sistemleri nasıl satıldığını yönetir.</p>
+      <div class="own">
+        <div class="own__col own__col--cl">
+          <div class="who">CommerceLab · bu projenin kapsamı</div>
+          <h3>Ürün bilgisi</h3>
+          <ul class="flist" style="margin-top:1.2cqh;">
+            <li><b>Ürün ana verisi</b> — nitelikler, varyantlar, barkod, yasal alanlar</li>
+            <li><b>Taksonomi ve kategori</b> — kategori ağacı, nitelik setleri, facet'ler</li>
+            <li><b>İçerik ve medya</b> — açıklama, görsel, video, teknik doküman</li>
+            <li><b>Tedarikçi platformu</b> — veri girişi, onay ve versiyon akışları</li>
+            <li><b>Kanal yayını</b> — CL ComHub ile kanal bazlı ürün kartı</li>
+          </ul>
+        </div>
+        <div class="own__col own__col--civil">
+          <div class="who">Civil · mevcut sistemler</div>
+          <h3>İşlem verisi</h3>
+          <ul class="flist" style="margin-top:1.2cqh;">
+            <li><b>Civil ERP</b> — ürünleştirme, ürün kodu, alış ve muhasebe kaydı</li>
+            <li><b>OMS</b> — stok, fiyat, sipariş ve fatura</li>
+            <li><b>Kanallara işlem akışı</b> — stok ve fiyat kanallara OMS üzerinden gider</li>
+            <li><b>Entegrasyon noktası</b> — PIM ile ERP arasında çift yönlü, tek bağlantı</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">8 / 28</span>
+    </div>
+  </section>
+
+  <!-- 09 — KATALOG ÖN ANALİZİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Katalog ön analizi</span>
+      <h2 class="slide-title">Opsiyonların %37'si <span class="accent">tedarikçiden</span></h2>
+      <div class="cat-grid">
+        <div class="bars" role="table" aria-label="Kategori bazında opsiyon sayısı: Civil ve diğer tedarikçi">
+          <div class="bars__legend">
+            <span><i class="seg-civil"></i>Civil</span>
+            <span><i class="seg-other"></i>Diğer tedarikçi</span>
+            <span style="margin-left:auto;">Toplam opsiyon</span>
+          </div>
+          <div class="bar" role="row"><span class="bar__name">Erkek çocuk</span><div class="bar__track" style="width:100%"><div class="bar__seg seg-civil" style="flex:2600" title="Civil: 2.600"></div><div class="bar__seg seg-other" style="flex:498" title="Diğer: 498"></div></div><span class="bar__val">3.098</span><span></span></div>
+          <div class="bar" role="row"><span class="bar__name">Kız çocuk</span><div class="bar__track" style="width:95.5%"><div class="bar__seg seg-civil" style="flex:2500" title="Civil: 2.500"></div><div class="bar__seg seg-other" style="flex:459" title="Diğer: 459"></div></div><span class="bar__val">2.959</span><span></span></div>
+          <div class="bar" role="row"><span class="bar__name">Bebek</span><div class="bar__track" style="width:87.7%"><div class="bar__seg seg-civil" style="flex:2240" title="Civil: 2.240"></div><div class="bar__seg seg-other" style="flex:478" title="Diğer: 478"></div></div><span class="bar__val">2.718</span><span></span></div>
+          <div class="bar" role="row"><span class="bar__name">Oyuncak</span><div class="bar__track" style="width:41%"><div class="bar__seg seg-other" style="flex:1" title="Diğer: 1.271"></div></div><span class="bar__val">1.271</span><span class="bar__mv">MV uygun</span></div>
+          <div class="bar" role="row"><span class="bar__name">Araç &amp; gereç</span><div class="bar__track" style="width:16.4%"><div class="bar__seg seg-other" style="flex:1" title="Diğer: 508"></div></div><span class="bar__val">508</span><span class="bar__mv">MV uygun</span></div>
+          <div class="bar" role="row"><span class="bar__name">Ayakkabı</span><div class="bar__track" style="width:13.6%"><div class="bar__seg seg-civil" style="flex:230" title="Civil: 230"></div><div class="bar__seg seg-other" style="flex:192" title="Diğer: 192"></div></div><span class="bar__val">422</span><span></span></div>
+          <div class="bar" role="row"><span class="bar__name">Beslenme</span><div class="bar__track" style="width:13.4%"><div class="bar__seg seg-other" style="flex:1" title="Diğer: 416"></div></div><span class="bar__val">416</span><span class="bar__mv">MV uygun</span></div>
+          <div class="bar" role="row"><span class="bar__name">Banyo &amp; sağlık</span><div class="bar__track" style="width:10.5%"><div class="bar__seg seg-other" style="flex:1" title="Diğer: 324"></div></div><span class="bar__val">324</span><span class="bar__mv">MV uygun</span></div>
+          <div class="bar" role="row"><span class="bar__name">Anne &amp; hamile</span><div class="bar__track" style="width:5.9%"><div class="bar__seg seg-other" style="flex:1" title="Diğer: 183"></div></div><span class="bar__val">183</span><span class="bar__mv">MV uygun</span></div>
+          <div class="bar" role="row"><span class="bar__name">Bebek bezi</span><div class="bar__track" style="width:5.1%"><div class="bar__seg seg-civil" style="flex:28" title="Civil: 28"></div><div class="bar__seg seg-other" style="flex:129" title="Diğer: 129"></div></div><span class="bar__val">157</span><span class="bar__mv">MV uygun</span></div>
+        </div>
+        <div class="cat-side">
+          <div class="stat"><span class="num">12.056</span><span class="lab">opsiyon, 10 ana kategoride</span></div>
+          <div class="stat"><span class="num">4.458</span><span class="lab">opsiyon (%37) Civil dışı tedarikçilerden — tedarikçi platformunun doğal kullanıcıları</span></div>
+          <div class="stat"><span class="num">6</span><span class="lab">kategori multi-vendor modeline uygun</span></div>
+          <p class="note" style="margin:0;"><b>Kategoriye özel alanlar:</b> beslenmede son kullanma tarihi; beslenme, banyo &amp; sağlık ve bebek bezinde abonelik; çocuk giyimde 0–16 yaş aralığı.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">9 / 28</span>
+    </div>
+  </section>
+
+  <!-- 10 — KATALOG TESPİTLERİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Katalog tespitleri</span>
+      <h2 class="slide-title">Bugünkü sorunlar, <span class="accent">PIM'deki karşılığı</span></h2>
+      <div class="pairs">
+        <div class="pairs__h">Tespit</div><div></div><div class="pairs__h pairs__h--r">PIM ile</div>
+
+        <div class="pairs__a"><b>Merchandising kategorisi yok.</b> En çok satanlar, hero ürünler, indirimdekiler ve yeniler vitrinde ayrı kategori olarak yer almıyor.</div>
+        <div class="pairs__arrow">&rarr;</div>
+        <div class="pairs__b"><b>Kural bazlı ve algoritmik kategori.</b> Satış, indirim ve yenilik kuralıyla kendini güncelleyen kategoriler ve koleksiyonlar.</div>
+
+        <div class="pairs__a"><b>Beden ve filtre değerleri çok ve karışık.</b> Aynı anlamı taşıyan değerler ayrı seçenek olarak listeleniyor.</div>
+        <div class="pairs__arrow">&rarr;</div>
+        <div class="pairs__b"><b>Lookup ve facet yönetimi.</b> Değerler referans listeden seçilir, eşdeğerler birleştirilir; kategori bazında hangi filtrenin görüneceği belirlenir.</div>
+
+        <div class="pairs__a"><b>Kategori ile filtre tutarsız.</b> Bebek › Eşofman altı kategorisi 324 ürün gösterirken filtre 191 ürün getiriyor.</div>
+        <div class="pairs__arrow">&rarr;</div>
+        <div class="pairs__b"><b>Kural bazlı kategori-ürün ataması.</b> Kategori üyeliği nitelikten türetilir; kategori ve filtre aynı veriden beslenir.</div>
+
+        <div class="pairs__a"><b>Breadcrumb ve canonical.</b> Birden fazla yoldan erişilen ürünlerde gezinme ve SEO etkisi incelenecek.</div>
+        <div class="pairs__arrow">&rarr;</div>
+        <div class="pairs__b"><b>SEO uyumlu kategori ağacı.</b> Birincil kategori, menü ve gezinme yönetimi PIM'den; canonical tek kaynaktan üretilir.</div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">10 / 28</span>
+    </div>
+  </section>
+
+  <!-- 11 — BÖLÜM II -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">II</div>
+      <h2 class="slide-title">Civil PIM Modeli</h2>
+      <p class="lead">İlk tanımlamadan güncellemeye, kural katmanından KPI'lara — ürün verisinin yaşam döngüsü.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">11 / 28</span>
+    </div>
+  </section>
+
+  <!-- 12 — İLK TANIMLAMA -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Süreç 1</span>
+      <h2 class="slide-title">Yeni ürünün <span class="accent">ilk tanımlaması</span></h2>
+      <p class="lead">Ürün tedarikçide doğar, kurallardan ve onaylardan geçerek ERP'ye ve kanallara ulaşır.</p>
+      <div class="flow" style="margin-top:1.4cqh;">
+        <div class="node">Veri girişi<small>tedarikçi paneli veya API</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Zorunlu alanlar<small>foto · menşei · içerik · GTIN</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">İş kuralları<small>numune · kalite · tedarikçi kontrolü</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Onay<small>satın alma &amp; kategori</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">ERP<small>ürünleştirme</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">E-com onay<small>yayın</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3.2cqh;">
+        <li><b>Eksik ürün ilerlemez.</b> Zorunlu alanlar kategoriye göre tanımlanır; tamamlanmayan ürün onaya gönderilemez.</li>
+        <li><b>Kural, tedarikçiye ve ürün grubuna göre.</b> Yeni tedarikçi için numune, belirli gruplar için kalite kontrol adımı akışa otomatik eklenir.</li>
+        <li><b>Onaylar paralel değil, sıralı.</b> Satın alma ve kategori onayı ERP ürünleştirmesinden önce; e-ticaret onayı yayından önce.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">12 / 28</span>
+    </div>
+  </section>
+
+  <!-- 13 — GÜNCELLEME -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Süreç 2</span>
+      <h2 class="slide-title">Değişiklik görünür, <span class="accent">onaylanır</span>, yayılır</h2>
+      <div class="flow" style="margin-top:0.6cqh;">
+        <div class="node">Tedarikçi<small>değişiklik bildirir</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Diff<small>eski ve yeni değer yan yana</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Onay akışı<small>alana göre onaylayan</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Kanallar<small>otomatik güncellenir</small></div>
+      </div>
+      <div class="two-col" style="grid-template-columns: 1.05fr 0.95fr; gap:2.6cqw;">
+        <div class="diff">
+          <div class="diff__head">Kız çocuk sweatshirt <small>örnek değişiklik talebi</small></div>
+          <table>
+            <tr><th>Alan</th><th>Mevcut</th><th>Yeni</th></tr>
+            <tr><td>Menşei<span class="flag">Kritik</span></td><td class="old">Türkiye</td><td class="new">Bangladeş</td></tr>
+            <tr><td>Elyaf içeriği<span class="flag">Kritik</span></td><td class="old">%100 pamuk</td><td class="new">%95 pamuk, %5 elastan</td></tr>
+            <tr><td>Görsel</td><td class="old">4 görsel</td><td class="new">6 görsel</td></tr>
+            <tr><td>Açıklama</td><td class="old">v3</td><td class="new">v4</td></tr>
+          </table>
+        </div>
+        <ul class="flist">
+          <li><b>Alan bazlı onay.</b> Menşei ve elyaf içeriği gibi yasal alanlar kategori onayına düşer; açıklama değişikliği e-ticarete.</li>
+          <li><b>Her değişiklik bir versiyon.</b> Kim, neyi, ne zaman değiştirdi ve kim onayladı; önceki sürüme dönülebilir.</li>
+          <li><b>Onay sonrası yayılım.</b> Onaylanan değer ERP'ye ve ComHub üzerinden tüm kanallara aynı anda yansır.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">13 / 28</span>
+    </div>
+  </section>
+
+  <!-- 14 — İŞ KURALLARI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kural katmanı</span>
+      <h2 class="slide-title">Yasal ve kritik bilgi <span class="accent">kuralla</span> korunur</h2>
+      <div class="levels">
+        <div class="lv">Tedarikçi<small>tek tedarikçiye özel</small></div>
+        <div class="lv">Tedarikçi grubu<small>yerli · ithal · yeni</small></div>
+        <div class="lv">Ürün grubu<small>kategori ve alt kategori</small></div>
+        <div class="lv">Ürün<small>tekil istisna</small></div>
+      </div>
+      <table class="rules">
+        <tr><th>Kapsam</th><th>Kural</th><th>Sonuç</th></tr>
+        <tr><td>Beslenme</td><td>Son kullanma tarihi ve içerik bilgisi girilmeden ürün kaydedilemez.</td><td class="act">Zorunlu alan</td></tr>
+        <tr><td>Tekstil ürünleri</td><td>Elyaf içeriği ve menşei eksik ya da değişmişse kategori onayı istenir.</td><td class="act">Onaya düşer</td></tr>
+        <tr><td>Çocuk giyim</td><td>Yaş aralığı 0–16 ile sınırlı; beden, yaş grubuyla tutarlı olmalı.</td><td class="act">Uyarı</td></tr>
+        <tr><td>Yeni tedarikçi</td><td>İlk ürünlerde numune ve kalite kontrol adımı akışa eklenir.</td><td class="act">Ek adım</td></tr>
+        <tr><td>Bebek bezi · banyo</td><td>Abonelik uygunluğu işaretlenen ürün abonelik kanalına açılır.</td><td class="act">Kanal kuralı</td></tr>
+      </table>
+      <p class="note" style="margin-top:1.4cqh;">Örnekler Civil kataloğundan türetildi; kural kataloğu kickoff çalıştaylarında birlikte tamamlanır. Kurallar arayüzden yönetilir, geliştirme gerektirmez.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">14 / 28</span>
+    </div>
+  </section>
+
+  <!-- 15 — KPI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">KPI &amp; kontrol</span>
+      <h2 class="slide-title">Veri kalitesi <span class="accent">ölçülür</span>, sonra yönetilir</h2>
+      <p class="lead">Beş gösterge, PIM panosunda kategori, tedarikçi ve ekip kırılımında izlenir.</p>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--accent"><div class="ix">Zenginlik</div><h3>Katalog zenginlik puanı</h3><p>Ürün başına doldurulmuş nitelik, görsel ve içerik oranı; kategori hedefiyle karşılaştırılır.</p></div>
+        <div class="card card--accent"><div class="ix">Kalite</div><h3>Kategori veri kalite skoru</h3><p>Kategorinin zorunlu alan doluluğu ve kural ihlali sayısı; en zayıf kategori görünür olur.</p></div>
+        <div class="card"><div class="ix">Güncellik</div><h3>Güncel olmayan ürün oranı</h3><p>Belirlenen süre içinde gözden geçirilmemiş veya tedarikçi teyidi yenilenmemiş ürünler.</p></div>
+        <div class="card"><div class="ix">Görsel</div><h3>Görsel uyumsuzluk oranı</h3><p>Eksik, standart dışı ölçüde ya da ürün verisiyle çelişen görseller.</p></div>
+        <div class="card"><div class="ix">Hız</div><h3>Onay süresi &amp; SLA</h3><p>Ortalama onay süresi ve SLA içinde tamamlanan onayların oranı; ekip ve adım bazında.</p></div>
+        <div class="card card--dark"><div class="ix">Aksiyon</div><h3>Zenginleştirme görevleri</h3><p>Eşiğin altına düşen ürünler için ilgili tedarikçiye veya ekibe otomatik görev açılır.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">15 / 28</span>
+    </div>
+  </section>
+
+  <!-- 16 — BÖLÜM III -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">III</div>
+      <h2 class="slide-title">CommerceLab PIM Yetkinlikleri</h2>
+      <p class="lead">Veri modelinden kanal yayınına, otomasyondan AI'a — platformun sunduğu yetenekler.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">16 / 28</span>
+    </div>
+  </section>
+
+  <!-- 17 — VERİ MODELİ & KATEGORİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Veri yönetimi &amp; kategori</span>
+      <h2 class="slide-title">Esnek model, <span class="accent">sınırsız</span> derinlik</h2>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 2cqw;">
+        <div class="card">
+          <div class="ix">Veri yönetimi (MDM)</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>n seviye taksonomi</b> ve taksonomi seviyesinde nitelik ataması</li>
+            <li><b>Esnek veri modeli</b> (entity-attribute-value), kullanıcı tanımlı veri tipleri</li>
+            <li><b>Her ürün tipi:</b> tekil, varyant, bundle, configurable, dijital, hizmet</li>
+            <li><b>Ana ürün – varyant</b> ilişkisi; ana üründeki değişiklik varyantlara yansır</li>
+            <li><b>Lookup ve referans veri</b>, otomatik nitelik ve değer ataması</li>
+            <li><b>Multi-enabled:</b> dil, lokasyon, para birimi, katalog ve kategori</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ix">Kategori</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>Kategori bazlı</b> nitelik ve nitelik setleri</li>
+            <li><b>Kural bazlı</b> kategori-ürün ataması</li>
+            <li><b>Algoritmik</b> kategori-ürün ataması (çok satan, yeni, indirimde)</li>
+            <li><b>SEO uyumlu</b> kategori ağacı</li>
+            <li><b>Menü ve navigasyon</b> yönetimi</li>
+            <li><b>Filtre ve facet</b> yönetimi; kanal bazlı kategori yapısı</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">17 / 28</span>
+    </div>
+  </section>
+
+  <!-- 18 — KATALOG, İÇERİK & ZENGİNLEŞTİRME -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Katalog · içerik · zenginleştirme</span>
+      <h2 class="slide-title">Doğru ürün, doğru içerikle, <span class="accent">eksiksiz</span></h2>
+      <div class="grid grid-3" style="flex:1; align-content:center; gap:1.6cqh 1.6cqw;">
+        <div class="card">
+          <div class="ix">Katalog yönetimi</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>Hiyerarşik</b> katalog</li>
+            <li><b>Include / exclude</b> listeleri</li>
+            <li><b>Koleksiyon</b> yönetimi</li>
+            <li><b>Kanal bazlı</b> katalog</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ix">İçerik &amp; dijital varlık</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>Görsel ve video</b>, sıralı yerleşim</li>
+            <li><b>Teknik doküman</b> — kılavuz, yıkama talimatı</li>
+            <li><b>Görsel dönüşümü</b> — boyut, format</li>
+            <li><b>CDN</b> entegrasyonu, metadata</li>
+            <li><b>Varlık versiyonlama</b></li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Zenginleştirme</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>Ürün ve katalog skoru</b></li>
+            <li><b>Doluluk skoru</b> — 10 nitelikten 5'i dolu: %50</li>
+            <li><b>Eksik veri raporları</b></li>
+            <li><b>Zenginleştirme görevleri</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">18 / 28</span>
+    </div>
+  </section>
+
+  <!-- 19 — WORKFLOW & KURAL MOTORU -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Workflow · kural motoru · otomasyon</span>
+      <h2 class="slide-title">Süreci <span class="accent">operasyon ekibi</span> tasarlar</h2>
+      <p class="lead">İş akışları ve kurallar arayüzden tanımlanır; yeni bir onay adımı eklemek bir yazılım projesi değildir.</p>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 2cqw;">
+        <div class="card card--accent">
+          <div class="ix">Workflow &amp; onay</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>Rol bazlı erişim</b> — görüntüleme ve düzenleme yetkisi alan bazında</li>
+            <li><b>Workflow tasarımı</b> ve çok adımlı onay süreçleri</li>
+            <li><b>Görev ataması</b>, departmanlar arası iş yönetimi</li>
+            <li><b>Durum bildirimleri</b> — ürün durumu değişince ilgili ekip haberdar</li>
+          </ul>
+        </div>
+        <div class="card card--accent">
+          <div class="ix">Kural motoru &amp; otomasyon</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>Rule engine</b> — koşul, eylem ve öncelik</li>
+            <li><b>Otomatik kategori atama</b> ve nitelik doldurma</li>
+            <li><b>Workflow tetikleyicileri</b> — alan değişikliği, eşik, zaman</li>
+            <li><b>Otomatik yayın kuralları</b> — eksik ürün yayına çıkmaz</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">19 / 28</span>
+    </div>
+  </section>
+
+  <!-- 20 — KANAL & TOPLU VERİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kanal yayını &amp; toplu veri</span>
+      <h2 class="slide-title">Her kanala <span class="accent">kendi</span> ürün kartı</h2>
+      <div class="flow" style="margin-top:0.8cqh;">
+        <div class="node node--red">CL PIM<small>tek ürün kaynağı</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">CL ComHub<small>eşleme · dönüştürme · yayın</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">E-ticaret<small>web &amp; mobil</small></div>
+        <div class="node" style="margin-left:0.6cqw;">Pazaryerleri<small>Trendyol · Hepsiburada · Amazon</small></div>
+        <div class="node" style="margin-left:0.6cqw;">POS &amp; pazarlama<small>mağaza · ürün feed'leri</small></div>
+      </div>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 2cqw;">
+        <div class="card">
+          <div class="ix">Kanal ve yayın yönetimi</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>Kanal bazlı</b> ürün verisi, nitelik seti ve içerik</li>
+            <li><b>Pazaryeri eşleme</b> — kategori, nitelik ve değer</li>
+            <li><b>Kanal bazlı fiyat</b> desteği</li>
+            <li><b>Planlı yayın</b> ve otomatik güncelleme</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ix">Toplu veri yönetimi</div>
+          <ul class="flist" style="margin-top:0.6cqh;">
+            <li><b>Toplu içe ve dışa aktarım</b></li>
+            <li><b>Excel, CSV, XML, JSON</b> desteği</li>
+            <li><b>Toplu düzenleme</b> — yüzlerce ürüne tek seferde</li>
+            <li><b>Açık API</b> — ERP ve üçüncü parti sistemler</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">20 / 28</span>
+    </div>
+  </section>
+
+  <!-- 21 — AI -->
+  <section class="slide slide--ink">
+    <div class="slide__inner">
+      <span class="kicker">AI katmanı · geliştirme aşamasında</span>
+      <h2 class="slide-title">Taslağı AI, <span class="accent">kararı</span> ekip verir</h2>
+      <p class="lead">AI içeriği hazırlar, hatayı yakalar, düzeltmeyi önerir; son söz her zaman onay akışındadır.</p>
+      <div class="grid grid-3" style="flex:1; align-content:center; gap:1.6cqh 1.6cqw;">
+        <div class="card card--dark"><div class="ix">Üretim</div><h3>İçerik oluşturma</h3><p>Görselden ürün içeriği; marka tonunda, SEO ve GEO uyumlu açıklama.</p></div>
+        <div class="card card--dark"><div class="ix">Sınıflandırma</div><h3>Kategori &amp; nitelik</h3><p>Sınıflandırma, kategori bazlı nitelik ve değer önerisi; pazaryeri eşlemeleri.</p></div>
+        <div class="card card--dark"><div class="ix">Kontrol</div><h3>Hata tespiti &amp; öneri</h3><p>Eksik alan tespiti, kategori uyumsuzluk alarmı; mavi ürünün pembe girilmesi gibi çelişkilerde düzeltme önerisi.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">21 / 28</span>
+    </div>
+  </section>
+
+  <!-- 22 — FONKSİYONEL KAPSAM -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Fonksiyonel kapsam</span>
+      <h2 class="slide-title">44 gereksinimin <span class="accent">35'i</span> standart</h2>
+      <div class="stat-row" style="margin-bottom:1.6cqh;">
+        <div class="stat"><span class="num">35</span><span class="lab">standart ürün yeteneği</span></div>
+        <div class="stat"><span class="num">3</span><span class="lab">proje kapsamında uyarlama</span></div>
+        <div class="stat"><span class="num">3</span><span class="lab">AI — geliştirme aşamasında</span></div>
+        <div class="stat"><span class="num">3</span><span class="lab">kapsamı birlikte netleşecek</span></div>
+      </div>
+      <table class="xtable">
+        <tr><th style="width:26%">Gereksinim</th><th>Yaklaşım</th><th style="width:15%">Durum</th></tr>
+        <tr><td>Görev yönetimi</td><td>Draft ve düzenleme modları için görevler; IAYS ile entegre özel süreç</td><td><span class="st">Uyarlama</span></td></tr>
+        <tr><td>Ürün ve medya arama</td><td>SKU, etiket, anahtar kelime ve dosya adı araması; ihtiyaca göre ek geliştirme</td><td><span class="st">Uyarlama</span></td></tr>
+        <tr><td>AI içerik · hata tespiti · düzeltme</td><td>Marka tonunda açıklama, çelişki uyarısı ve düzeltme önerisi</td><td><span class="st st--dev">Geliştirmede</span></td></tr>
+        <tr><td>Barkod havuzu (EAN13)</td><td>Satın alınan barkodların havuzdan otomatik atanması</td><td><span class="st st--talk">Netleşecek</span></td></tr>
+        <tr><td>Performans &amp; davranış analizi</td><td>Kanal performansı ve kullanıcı davranışının PIM'e yansıtılması</td><td><span class="st st--talk">Netleşecek</span></td></tr>
+      </table>
+      <p class="note" style="margin-top:1.2cqh;">Tedarikçilerin kendi ürünlerini yönetmesi CL Tedarikçi Platformu ile standart karşılanır. Kalem kalem eşleşme: <b>ek doküman (docs.html)</b>.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">22 / 28</span>
+    </div>
+  </section>
+
+  <!-- 23 — BÖLÜM IV -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">IV</div>
+      <h2 class="slide-title">Uygulama Planı</h2>
+      <p class="lead">Fazlar, başlangıçta netleşecek kararlar, ekip ve yönetişim.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">23 / 28</span>
+    </div>
+  </section>
+
+  <!-- 24 — YOL HARİTASI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Yol haritası</span>
+      <h2 class="slide-title">Beş fazda <span class="accent">canlıya</span></h2>
+      <div class="flow" style="margin-top:1.4cqh;">
+        <div class="node">Faz 1 · Keşif<small>çalıştaylar · veri modeli · taksonomi · kural kataloğu</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Faz 2 · Kurulum<small>PIM kurulumu · mevcut ürünlerin yüklenmesi · facet temizliği</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Faz 3 · Tedarikçi<small>tedarikçi platformu · zorunlu alanlar · onay akışları</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Faz 4 · Entegrasyon<small>Civil ERP ürünleştirme · ComHub kanal yayını</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Faz 5 · Canlı<small>KPI panosu · AI zenginleştirme · kademeli geçiş</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3.2cqh;">
+        <li><b>Önce veri modeli.</b> Kategori ağacı, nitelik setleri ve yasal alanlar ilk fazda kararlaştırılır; sonraki her adım bu modele dayanır.</li>
+        <li><b>Mevcut katalog ilk günden içeride.</b> 12 bin opsiyon PIM'e yüklenir, filtre ve beden değerleri bu sırada normalize edilir.</li>
+        <li><b>Tedarikçiler kademeli.</b> Pilot tedarikçi grubuyla başlanır, akış oturdukça diğer tedarikçiler platforma alınır.</li>
+        <li><b>Süreler kickoff'ta.</b> Faz süreleri keşif çalıştayları sonunda ortak plana bağlanır.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">24 / 28</span>
+    </div>
+  </section>
+
+  <!-- 25 — KICKOFF BAŞLIKLARI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kickoff &amp; çalıştaylar</span>
+      <h2 class="slide-title">Kickoff'ta netleşecek <span class="accent">kararlar</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--dark"><div class="ix">Veri modeli</div><h3>Alanlar &amp; kategoriler</h3><p>Kategori bazlı nitelik setleri, zorunlu ve yasal alanlar, merchandising kategorileri.</p></div>
+        <div class="card"><div class="ix">ERP entegrasyonu</div><h3>Ürünleştirme</h3><p>ERP'ye hangi alanların gideceği, ürün kodunun nerede üretileceği, geri besleme.</p></div>
+        <div class="card"><div class="ix">Onay akışları</div><h3>Roller &amp; SLA</h3><p>Satın alma, kategori ve e-ticaret rolleri; adım bazında onay süreleri.</p></div>
+        <div class="card"><div class="ix">Tedarikçiler</div><h3>Onboarding</h3><p>Pilot grup, panel ya da API tercihi; numune ve kalite kontrol süreçleri.</p></div>
+        <div class="card"><div class="ix">Kanallar</div><h3>Yayın kapsamı</h3><p>E-ticaret, pazaryerleri, POS ve pazarlama feed'leri; kanal bazlı içerik ihtiyacı.</p></div>
+        <div class="card"><div class="ix">Açık başlıklar</div><h3>Barkod &amp; IAYS</h3><p>EAN13 barkod havuzu, IAYS görev entegrasyonu, performans raporlama kapsamı.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">25 / 28</span>
+    </div>
+  </section>
+
+  <!-- 26 — EKİP -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Proje organizasyonu</span>
+      <h2 class="slide-title">PIM'e odaklı, <span class="accent">tek sahipli</span> ekip</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--dark"><div class="ix">Çözüm liderliği</div><h3>İsmail Danacı</h3><p>Genel koordinasyon, çözüm mimarisi ve kapsam kararları.</p></div>
+        <div class="card card--dark"><div class="ix">Proje yönetimi</div><h3>Polat Özdemir</h3><p>Proje planı, paydaş iletişimi, risk ve ilerleme takibi.</p></div>
+        <div class="card"><div class="ix">PIM</div><h3>Yasin Teker · Hüseyin Kucur · Ali Hazar</h3><p>Veri modeli, kurallar, iş akışları, tedarikçi platformu ve entegrasyon.</p></div>
+      </div>
+      <p class="note">Her iş paketi tek bir sahibe raporlar; haftalık durum toplantısı ve ortak proje planı üzerinden takip edilir.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">26 / 28</span>
+    </div>
+  </section>
+
+  <!-- 27 — PROJE YÖNETİMİ & SERVICEDESK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Proje yönetimi &amp; Servicedesk</span>
+      <h2 class="slide-title">Şeffaf <span class="accent">yönetişim</span> ve sürekli destek</h2>
+      <p class="lead">İş takibinden canlı sonrası desteğe kadar tüm süreç ölçülebilir ve izlenebilir araçlarla yürür.</p>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
+        <div class="card">
+          <div class="ix">Proje yönetimi</div>
+          <h3>Sprint bazlı ilerleme</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Geliştirme ve süreçler iş paketlerine bölünür.</li>
+            <li>Haftalık / iki haftalık <b>sprint'ler</b>; net kapsam, önceliklendirme ve düzenli demo.</li>
+            <li>Her sprintte ölçülebilir çıktı, öngörülebilir teslim.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Servicedesk</div>
+          <h3>Tek merkezden destek</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Tüm destek talepleri <b>ServiceDesk</b>'te kayıt altına alınır, uçtan uca izlenir.</li>
+            <li>Talep açma: portal veya <b>servicedesk@commercelab.com.tr</b>.</li>
+            <li>Durum takibi ve haberleşme talep üzerinden sürer.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">27 / 28</span>
+    </div>
+  </section>
+
+  <!-- 28 — KAPANIŞ -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">Teşekkürler</span>
+      <h1 class="cover-title">Ürün verisini <span class="accent">birlikte</span> kuralım</h1>
+      <p class="cover-sub">Civil'in tedarikçiden kanala tüm ürün verisini tek kaynaktan yöneteceği PIM için hazırız.</p>
+      <div class="cover-meta">
+        <div>Windowist Tower, Maslak — İstanbul · info@commercelab.com.tr · +90 212 214 73 90</div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">28 / 28</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="toolbar">
+  <button id="presentBtn" title="Present (fullscreen)">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    Present
+  </button>
+  <button onclick="window.print()">Download PDF</button>
+</div>
+<div class="present-bar" id="presentBar"></div>
+<div class="present-hint">← → navigate · click advances · Esc exits</div>
+
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    // Footer numaraları otomatik — slayt eklemek elle numaralandırma gerektirmez
+    slides.forEach(function (s, i) {
+      var n = s.querySelector('.slide__no');
+      if (n) n.textContent = (i + 1) + ' / ' + slides.length;
+    });
+    function current() {
+      var mid = window.innerHeight / 2, best = 0, bestD = Infinity;
+      slides.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      return best;
+    }
+
+    var bar = document.getElementById('presentBar');
+    var presenting = false;
+    var idx = 0;
+
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      bar.style.width = ((idx + 1) / slides.length * 100) + '%';
+    }
+    function go(delta) {
+      idx = Math.min(slides.length - 1, Math.max(0, idx + delta));
+      render();
+    }
+    function enter() {
+      idx = current();
+      presenting = true;
+      document.body.classList.add('present');
+      render();
+      var el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen().catch(function(){});
+    }
+    function exit() {
+      presenting = false;
+      document.body.classList.remove('present');
+      slides.forEach(function (s) { s.classList.remove('is-active'); });
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+      slides[idx].scrollIntoView({ block: 'center' });
+    }
+
+    document.getElementById('presentBtn').addEventListener('click', enter);
+    document.addEventListener('fullscreenchange', function () {
+      if (!document.fullscreenElement && presenting) exit();
+    });
+    document.querySelector('.deck').addEventListener('click', function () {
+      if (presenting) go(1);
+    });
+
+    window.addEventListener('keydown', function (e) {
+      if (presenting) {
+        if (e.key === 'Escape') { e.preventDefault(); exit(); return; }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') {
+          e.preventDefault(); go(-1); return;
+        }
+        e.preventDefault(); go(1); return;
+      }
+      var i = current();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        if (i < slides.length - 1) slides[i + 1].scrollIntoView({ behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        if (i > 0) slides[i - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
+</script>
+</body>
+</html>

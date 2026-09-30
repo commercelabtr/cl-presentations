@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Civil PIM — Fonksiyonel Kapsam Eşleşmesi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1A1A1A; --red: #D02C2F; --red-deep: #A81F22; --paper: #FFFFFF;
+    --bone: #F6F4F0; --muted: #6C6A66; --line: #E4E1DA;
+    --display: 'Manrope', sans-serif; --sans: 'Inter', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.65; font-size: 16px; }
+  .doc { max-width: 880px; margin: 0 auto; padding: 56px 32px 96px; }
+  header.doc-head { border-bottom: 3px solid var(--ink); padding-bottom: 28px; margin-bottom: 40px; }
+  header.doc-head img { height: 30px; margin-bottom: 22px; }
+  .kicker { font-family: var(--display); font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 10px; }
+  h1 { font-family: var(--display); font-weight: 800; font-size: 34px; line-height: 1.2; letter-spacing: -0.02em; }
+  .meta { color: var(--muted); font-size: 13px; margin-top: 12px; }
+  h2 { font-family: var(--display); font-weight: 800; font-size: 23px; margin: 48px 0 16px; padding-top: 24px; border-top: 1px solid var(--line); letter-spacing: -0.01em; }
+  h2 .no { color: var(--red); margin-right: 10px; }
+  h3 { font-family: var(--display); font-weight: 700; font-size: 17px; margin: 26px 0 10px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 16px 22px; }
+  li { margin-bottom: 7px; }
+  b { font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14.5px; }
+  th { font-family: var(--display); font-weight: 700; text-align: left; background: var(--ink); color: #fff; padding: 10px 12px; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--bone); }
+  .callout { background: var(--bone); border-left: 4px solid var(--red); border-radius: 4px; padding: 14px 18px; margin: 18px 0; font-size: 15px; }
+  .flow { display: flex; align-items: stretch; gap: 0; margin: 20px 0 26px; flex-wrap: wrap; }
+  .flow .node { flex: 1; min-width: 120px; border: 1px solid #d8d5cd; background: var(--paper); border-radius: 6px; padding: 12px 8px; text-align: center; font-family: var(--display); font-weight: 700; font-size: 13px; }
+  .flow .node small { display: block; font-family: var(--sans); font-weight: 400; font-size: 11.5px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+  .flow .arrow { align-self: center; padding: 0 8px; color: var(--red); font-weight: 800; font-size: 16px; }
+  .flow .node--red { background: var(--red); border-color: var(--red); color: #fff; }
+  .flow .node--red small { color: rgba(255,255,255,0.85); }
+  .flow .node--ink { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .flow .node--ink small { color: #b9b7b2; }
+  code { font-size: 13.5px; background: var(--bone); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; }
+  footer.doc-foot { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12.5px; display: flex; justify-content: space-between; }
+  @media print {
+    body { font-size: 12px; }
+    .doc { padding: 0; max-width: none; }
+    h2 { break-after: avoid; }
+    .flow, table, .callout { break-inside: avoid; }
+  }
+  .st { display:inline-block; white-space:nowrap; font-family:var(--display); font-weight:700; font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:4px; border:1px solid #cfccc4; color:#2b2b2b; }
+  .st--dev { border-color: var(--red); color: var(--red); }
+  .st--talk { background: var(--ink); border-color: var(--ink); color:#fff; }
+  td.grp { font-family: var(--display); font-weight: 700; background: var(--bone) !important; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<header class="doc-head">
+  <img src="../assets/commercelab-logo.svg" alt="CommerceLab" />
+  <span class="kicker">Ek doküman · Gizli</span>
+  <h1>Civil PIM<br />Fonksiyonel Kapsam Eşleşmesi</h1>
+  <div class="meta">Sürüm 1.0 · Ekim 2026 · CommerceLab E-Ticaret Çözümleri A.Ş.</div>
+</header>
+
+<h2><span class="no">1.</span>Özet</h2>
+<p>Bu doküman, Civil'in "PIM Sistemi – Fonksiyonel Kapsam ve Yetkinlikler" listesindeki 44 gereksinimi CommerceLab PIM yetenekleriyle kalem kalem eşleştirir.</p>
+<table>
+  <tr><th>Durum</th><th>Anlamı</th><th>Adet</th></tr>
+  <tr><td><span class="st">Standart</span></td><td>Ürünün mevcut yeteneği; konfigürasyonla devreye alınır.</td><td>35</td></tr>
+  <tr><td><span class="st">Uyarlama</span></td><td>Proje kapsamında Civil'e özel süreç veya ek geliştirme ile karşılanır.</td><td>3</td></tr>
+  <tr><td><span class="st st--dev">Geliştirmede</span></td><td>AI katmanında geliştirme aşamasında olan yetenek.</td><td>3</td></tr>
+  <tr><td><span class="st st--talk">Netleşecek</span></td><td>Kapsamı kickoff çalıştaylarında birlikte netleşecek başlık.</td><td>3</td></tr>
+</table>
+
+<h2><span class="no">2.</span>Gereksinim eşleşmesi</h2>
+<table>
+  <tr><th style="width:30%">Gereksinim</th><th>CommerceLab PIM karşılığı</th><th style="width:14%">Durum</th></tr>
+  <tr><td class="grp" colspan="3">Genel</td></tr>
+  <tr><td><b>Sınırsız SKU</b></td><td>Ürün sayısına bağlı lisans veya teknik sınır yok.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Sınırsız kullanıcı</b></td><td>Kullanıcı sayısına bağlı sınır yok; tedarikçi kullanıcıları dahil.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Rol ve yetki tanımlama</b></td><td>Rol bazlı erişim; görüntüleme ve düzenleme yetkisi alan ve ekran bazında.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td class="grp" colspan="3">Çok kanallı yayınlama</td></tr>
+  <tr><td><b>Çoklu kanal desteği</b></td><td>E-ticaret, mobil, pazaryeri, POS ve pazarlama kanallarına CL ComHub ile yayın.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Satış kanalı bazlı özelleştirme</b></td><td>Kanal bazlı ürün verisi, nitelik seti ve içerik farklılaştırma.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Kanal bazlı kategori yapısı</b></td><td>Her kanal için ayrı kategori ağacı ve pazaryeri kategori eşlemesi.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td class="grp" colspan="3">Globale uyum</td></tr>
+  <tr><td><b>Çoklu dil desteği</b></td><td>Multi-language ürün içeriği ve nitelik değerleri.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Yerel pazar özelleştirmesi</b></td><td>Multi-locale, multi-currency ve multi-catalog yapısıyla pazar bazlı veri.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td class="grp" colspan="3">İş akışı ve görev yönetimi</td></tr>
+  <tr><td><b>Görev yönetimi</b></td><td>Draft ve düzenleme modları için görevler; IAYS ile entegre özel süreç olarak kurgulanır.</td><td><span class="st">Uyarlama</span></td></tr>
+  <tr><td><b>Departmanlar arası iş yönetimi</b></td><td>Satın alma, kategori, e-ticaret ve pazarlama ekipleri aynı ürün üzerinde rol bazlı çalışır.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>İş akışlarının otomasyonu</b></td><td>Workflow tasarımı, görev ataması, onay süreçleri ve workflow tetikleyicileri.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Durum değişikliği bildirimleri</b></td><td>Ürün durumu değiştiğinde ilgili ekip ve tedarikçiye bildirim.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td class="grp" colspan="3">Ürün bilgisi</td></tr>
+  <tr><td><b>Zorunlu alan belirleme</b></td><td>Kategori ve ürün grubu bazında zorunlu alan kuralları.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Görsel ekleme</b></td><td>Sıralı görsel yönetimi, dönüşüm (boyut, format) ve CDN.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Video ekleme</b></td><td>Ürün videoları dijital varlık yönetimi içinde.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Sınırsız ürün özelliği</b></td><td>Esnek (EAV) veri modeli, kullanıcı tanımlı nitelik ve veri tipleri.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Kategoriler ve alt kategoriler</b></td><td>Kategori bazlı nitelik setleriyle kategori yönetimi.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Hiyerarşik yapı</b></td><td>n seviye taksonomi; SEO uyumlu kategori ağacı, menü ve navigasyon.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Sınırsız kategori ve derinlik</b></td><td>Kategori sayısı ve derinliğinde sınır yok.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Varyant ekleme ve gruplama</b></td><td>Varyantlı, bundle ve configurable ürün tipleri.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Ana ürün – varyant ilişkisi</b></td><td>Ana üründeki değişiklik varyantlara tutarlı şekilde yansır.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Geçmiş bilgilere erişim</b></td><td>Versiyonlama ve değişiklik tarihçesi.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Duygusal etiket</b></td><td>Kullanıcı tanımlı nitelik ve lookup listesi olarak (hafif, kalın vb.).</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Barkod ekleme</b></td><td>Ürün ve varyant seviyesinde barkod / GTIN alanı.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Lot barkod ekleme</b></td><td>Lot barkodu ürün niteliği olarak tutulur.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td class="grp" colspan="3">İçerik yönetimi</td></tr>
+  <tr><td><b>Toplu düzenleme</b></td><td>Mass edit ile aynı değişikliğin çok sayıda ürüne tek seferde uygulanması.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Çoklu dosya türüyle içe aktarma</b></td><td>Excel, CSV, XML ve JSON ile toplu içe ve dışa aktarım.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Teknik bilgi ve kılavuz ekleme</b></td><td>PDF, docx gibi dokümanların dijital varlık olarak ürüne bağlanması.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>AI destekli içerik oluşturma</b></td><td>Görselden içerik, marka tonunda SEO/GEO uyumlu açıklama.</td><td><span class="st st--dev">Geliştirmede</span></td></tr>
+  <tr><td class="grp" colspan="3">Gelişmiş filtreleme ve arama</td></tr>
+  <tr><td><b>Görsel ve medya arama</b></td><td>Dosya adı ve metadata ile arama; ihtiyaca göre ek geliştirme.</td><td><span class="st">Uyarlama</span></td></tr>
+  <tr><td><b>Ürün genelinde arama</b></td><td>SKU, etiket ve anahtar kelime araması; ihtiyaca göre ek geliştirme.</td><td><span class="st">Uyarlama</span></td></tr>
+  <tr><td class="grp" colspan="3">Tedarikçi yönetimi</td></tr>
+  <tr><td><b>Tedarikçilerin kendi ürünlerini yönetmesi</b></td><td>CL Tedarikçi Platformu (Supplier / Vendor Management): panel ve API ile veri girişi, onay akışı.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td class="grp" colspan="3">Entegrasyon</td></tr>
+  <tr><td><b>API ve 3. parti entegrasyonlar</b></td><td>Dış kullanıma açık API; Civil ERP ile çift yönlü entegrasyon.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Pazaryeri entegrasyonları</b></td><td>CL ComHub ile Trendyol, Hepsiburada, Amazon, Google Shopping vb. eşleme.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Satış kanallarını otomatik güncelleme</b></td><td>Onaylanan değişiklik kanallara otomatik ve planlı yayınla yansır.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td class="grp" colspan="3">Veri kalitesi ve doğruluk</td></tr>
+  <tr><td><b>Zenginleştirme doluluk kontrolü</b></td><td>Nitelik doluluk skoru (10 nitelikten 5'i dolu: %50), ürün ve katalog skoru.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>AI destekli hatalı bilgi tespiti</b></td><td>Eksik alan tespiti, kategori uyumsuzluk alarmı, çelişkili değer uyarısı.</td><td><span class="st st--dev">Geliştirmede</span></td></tr>
+  <tr><td><b>AI destekli düzeltme önerisi</b></td><td>Hatalı girilen bilgi için düzeltme önerisi.</td><td><span class="st st--dev">Geliştirmede</span></td></tr>
+  <tr><td class="grp" colspan="3">Analitik ve raporlama</td></tr>
+  <tr><td><b>Performans takibi</b></td><td>Kullanıcı tanımlama performansı KPI'larla izlenir; kanal performansının kapsamı birlikte netleşecek.</td><td><span class="st st--talk">Netleşecek</span></td></tr>
+  <tr><td><b>Veri kalitesi raporları</b></td><td>Eksik veri raporları, kategori kalite skoru, zenginlik puanı.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Kullanıcı davranış analizi</b></td><td>Kanal ve 3. taraf platform davranış verisinin PIM'e yansıtılması; kapsam netleşecek.</td><td><span class="st st--talk">Netleşecek</span></td></tr>
+  <tr><td class="grp" colspan="3">Yedekleme ve veri güvenliği</td></tr>
+  <tr><td><b>Otomatik yedekleme</b></td><td>Bulut altyapısında düzenli otomatik yedekleme.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Versiyon saklama</b></td><td>Değişiklik geçmişi ve önceki sürüme dönüş.</td><td><span class="st">Standart</span></td></tr>
+  <tr><td><b>Barkod yönetimi (EAN13 havuzu)</b></td><td>Satın alınan barkodların havuzdan atanması; iş kuralları birlikte tanımlanacak.</td><td><span class="st st--talk">Netleşecek</span></td></tr>
+</table>
+
+<div class="callout"><b>Not:</b> Tedarikçi yönetimi CL Tedarikçi Platformu ile, kanal yayını CL ComHub ile karşılanır; ikisi de çözüm kapsamındadır. Stok, fiyat, sipariş ve fatura Civil'in mevcut ERP ve OMS sistemlerinde kalır.</div>
+
+<footer class="doc-foot"><span>CommerceLab · Windowist Tower, Maslak — İstanbul</span><span>info@commercelab.com.tr · +90 212 214 73 90</span></footer>
+</div>
+</body>
+</html>
