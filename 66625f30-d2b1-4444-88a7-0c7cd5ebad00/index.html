@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CommerceLab — e-bebek OMS · InStore · TMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+  .compact-cards .card { padding: 1.6cqh 1.3cqw; gap: 0.5cqh; }
+  .compact-cards .card p { font-size: 1.18cqw; line-height: 1.42; }
+  .compact-cards .card h3 { font-size: 1.55cqw; }
+  .card--dark .flist li { color: rgba(255,255,255,.86); }
+  .card--dark .flist b { color: #fff; }
+  .card .flist { gap: 1.3cqh; }
+  .card .flist li { font-size: 1.3cqw; }
+
+  /* Canlı demo bağlantısı */
+  .demo { margin-top: auto; padding-top: 1.6cqh; font-size: 1.02cqw; color: var(--muted); }
+  .demo b { font-family: var(--display); font-weight: 700; font-size: 0.9cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-right: 0.6cqw; }
+  .demo a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line-strong); margin-right: 1.2cqw; }
+
+  /* Ölçüm tablosu */
+  .xtable { width: 100%; border-collapse: collapse; }
+  .xtable th { text-align: left; font-family: var(--display); font-weight: 700; font-size: 0.92cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-2); padding: 0 1cqw 0.8cqh 0; border-bottom: 1px solid var(--line-strong); }
+  .xtable th.r, .xtable td.r { text-align: right; }
+  .xtable td { padding: 1.05cqh 1cqw 1.05cqh 0; font-size: 1.25cqw; color: var(--ink-soft); border-bottom: 1px solid var(--line); vertical-align: middle; font-variant-numeric: tabular-nums; }
+  .xtable td:first-child { font-family: var(--display); font-weight: 700; color: var(--ink); }
+  .xtable td.hl { color: var(--red); font-weight: 600; }
+  .xtable td small { color: var(--muted); font-size: 0.95cqw; }
+
+  .measure { display: grid; grid-template-columns: 1.7fr 1fr; gap: 3cqw; flex: 1; align-items: center; }
+  .measure .side { display: flex; flex-direction: column; gap: 2.4cqh; }
+  .measure .side .stat .num { font-size: 3.1cqw; }
+  .measure .side .stat .lab { max-width: 24cqw; }
+
+  /* Kural boyutları */
+  .levels { display: flex; gap: 0.6cqw; margin: 1.2cqh 0 3cqh; }
+  .levels .lv { flex: 1; padding: 1.3cqh 1cqw; border: 1px solid var(--line-strong); border-radius: 6px; text-align: center; font-family: var(--display); font-weight: 700; font-size: 1.25cqw; background: var(--paper); }
+  .levels .lv small { display: block; font-family: var(--sans); font-weight: 400; font-size: 0.95cqw; color: var(--muted); margin-top: 0.3cqh; }
+  .levels .lv--red { border-color: var(--red); border-top: 3px solid var(--red); }
+
+  .carriers { display: flex; flex-wrap: wrap; gap: 0.7cqh 0.6cqw; }
+  .carriers span { font-size: 1.05cqw; color: var(--ink-soft); border: 1px solid var(--line-strong); border-radius: 4px; padding: 0.45cqh 0.7cqw; background: var(--paper); }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- KAPAK -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">e-bebek</span>
+      <h1 class="cover-title">Her siparişi <span class="accent">en doğru noktadan</span> karşılayın</h1>
+      <p class="cover-sub">Stoğu tek havuzda yöneten, siparişi en uygun depo ya da mağazaya yönlendiren ve kapıya kadar izleyen omnichannel sipariş ve teslimat omurgası.</p>
+      <div class="cover-meta">
+        <div>OMS · InStore · ComHub &amp; Control Tower · TMS · Pazaryeri platformu</div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">1 / 28</span>
+    </div>
+  </section>
+
+  <!-- ÜRÜN HARİTASI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Çözüm haritası</span>
+      <h2 class="slide-title">Kanaldan kapıya <span class="accent">tek akış</span></h2>
+      <p class="lead">Beş ürün aynı sipariş ve stok verisi üzerinde çalışır; aralarında nokta-noktaya entegrasyon yazılmaz.</p>
+      <div class="stack" style="flex:1; justify-content:center;">
+        <div class="layer"><span class="tag">Satış kanalları</span><span class="desc">Web · mobil uygulama · mağaza · Trendyol, Hepsiburada, Amazon, N11 ve diğer pazaryerleri</span></div>
+        <div class="layer layer--ink"><span class="tag">ComHub</span><span class="desc">Entegrasyon ve orkestrasyon · Control Tower ile ürün, stok, sipariş ve fiyat tutarlılığı</span></div>
+        <div class="layer"><span class="tag">OMS</span><span class="desc">Kurumsal envanter · emniyet stoku · sipariş kaynaklama · otomatik sipariş yönetimi</span></div>
+        <div class="layer"><span class="tag">InStore</span><span class="desc">Mağazadan gönderim · tıkla-al · transfer · mağaza satışı ve POS</span></div>
+        <div class="layer"><span class="tag">TMS</span><span class="desc">30+ kargo · checkout · dispatch · etiket · iade · mutabakat</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">2 / 28</span>
+    </div>
+  </section>
+
+  <!-- REFERANSLAR -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Referanslar</span>
+      <h2 class="slide-title">Önde gelen markaların <span class="accent">ticaret altyapısı</span></h2>
+      <div class="logowall">
+        <div class="cell"><img src="logos/skechers.svg" alt="Skechers" /></div>
+        <div class="cell"><img src="logos/decathlon.png" alt="Decathlon" /></div>
+        <div class="cell"><img src="logos/asics.png" alt="Asics" /></div>
+        <div class="cell"><img src="logos/brooks.png" alt="Brooks" /></div>
+        <div class="cell"><img src="logos/hunter.svg" alt="Hunter" /></div>
+        <div class="cell"><img src="logos/a101.png" alt="A101" /></div>
+        <div class="cell"><img src="logos/madamecoco.svg" alt="Madame Coco" /></div>
+        <div class="cell"><img src="logos/kfc.png" alt="KFC" /></div>
+        <div class="cell"><img src="logos/hdholding.svg" alt="HD Holding" /></div>
+        <div class="cell"><img src="logos/gracebrands.svg" alt="Grace Brands" /></div>
+        <div class="cell"><img src="logos/sochic.jpg" alt="So Chic" /></div>
+        <div class="cell"><img src="logos/highfive.svg" alt="HighFive" /></div>
+        <div class="cell"><img src="logos/klaud.svg" alt="Klaud" /></div>
+        <div class="cell"><img src="logos/fila.png" alt="Fila" /></div>
+        <div class="cell"><img src="logos/stevemadden.png" alt="Steve Madden" /></div>
+        <div class="cell"><img src="logos/on.png" alt="On" /></div>
+      </div>
+      <p class="note">Perakende, moda, spor ve hızlı servis markaları sipariş, stok ve teslimat operasyonlarını CommerceLab üzerinde yürütüyor.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">3 / 28</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM I — OMS -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">I</div>
+      <h2 class="slide-title">Sipariş Yönetimi · OMS</h2>
+      <p class="lead">Kurumsal envanter, emniyet stoku, sipariş kaynaklama ve sipariş otomasyonu.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">4 / 28</span>
+    </div>
+  </section>
+
+  <!-- KURUMSAL ENVANTER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Enterprise Inventory Management</span>
+      <h2 class="slide-title">Tüm stok <span class="accent">tek havuzda</span>, her kanal için hazır</h2>
+      <div class="two-col two-col--wide">
+        <ul class="flist">
+          <li><b>Tek stok görünümü.</b> Merkez depo, e-ticaret deposu, mağazalar ve tedarikçi stoğu aynı envanterde; her kanal ne satabileceğini buradan okur.</li>
+          <li><b>Ticarete açık stok.</b> Fiziksel ve sanal stok, satış alanı ve arka depo ayrımıyla segmentlenir; bloke ve rezerve miktar ayrı izlenir.</li>
+          <li><b>Delta ve toplu güncelleme.</b> ERP, mağaza ve sipariş hareketleri saniyeler içinde kanal stoğuna yansır.</li>
+          <li><b>Karşılama tipleri.</b> Müşteriye sevk, mağazadan teslim, drop shipment, flow through ve transfer aynı modelde.</li>
+          <li><b>Servis olarak envanter.</b> Bulut-doğal, çok kiracılı; altyapı ve ölçekleme yükü e-bebek'te değil.</li>
+        </ul>
+        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+          <div class="stat"><span class="num">~20K+</span><span class="lab" style="color:#b9b7b2; max-width:none;">sipariş / gün, platform genelinde</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">480M+</span><span class="lab" style="color:#b9b7b2; max-width:none;">API isteği / ay</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">%99,99</span><span class="lab" style="color:#b9b7b2; max-width:none;">erişilebilirlik</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">5 / 28</span>
+    </div>
+  </section>
+
+  <!-- KPI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Hız &amp; sağlamlık · KPI</span>
+      <h2 class="slide-title">Operasyon <span class="accent">ölçülerek</span> yönetilir</h2>
+      <p class="lead">Konsoldaki operasyon raporları dönem seçilerek çalıştırılır, mail ile düzenli gönderilir.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
+        <div class="card card--dark"><div class="ix">Sourcing</div><h3>Yok satma oranı</h3><p>İlk kaynaklama denemesinde stok bulunamayan sipariş satırı oranı.</p></div>
+        <div class="card"><div class="ix">Sipariş</div><h3>İptal oranı</h3><p>Satır bazında iptal oranı, iptal süreleri ve sebepleri.</p></div>
+        <div class="card"><div class="ix">Sipariş</div><h3>İade oranı</h3><p>İade oranı, en çok iade edilen ürünler ve iade sebepleri.</p></div>
+        <div class="card"><div class="ix">Satış</div><h3>En çok satanlar</h3><p>SKU ve opsiyon bazında adet ve net ciro.</p></div>
+        <div class="card"><div class="ix">Akış</div><h3>Sipariş akış süreleri</h3><p>Sipariş, fatura, kargo ve teslim süreleri; hedefe uyum, kargo kırılımı.</p></div>
+        <div class="card"><div class="ix">Mağaza &amp; depo</div><h3>Toplama iptali</h3><p>Depo ve mağaza toplama iptalleri, sebep ve kullanıcı kırılımı.</p></div>
+        <div class="card"><div class="ix">Mağaza</div><h3>Toplayıcı performansı</h3><p>Mağaza toplayıcılarının hız ve faturalama performansı.</p></div>
+        <div class="card"><div class="ix">Kargo</div><h3>Kargo çağrı süreleri</h3><p>Kargoya iletme, etiket alma ve iptal bildirimi; bizde ve kargoda geçen süre.</p></div>
+      </div>
+      <p class="demo"><b>Canlı demo</b><a href="https://console.rw.hebiar.com/owner/reports">Konsol › Altyapı raporları</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">6 / 28</span>
+    </div>
+  </section>
+
+  <!-- VERİ AKIŞ HIZI — SİPARİŞ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Veri akış hızı · sipariş</span>
+      <h2 class="slide-title">Sipariş kanaldan OMS'e <span class="accent">saniyeler</span> içinde</h2>
+      <div class="measure">
+        <table class="xtable">
+          <thead><tr><th>Kanal</th><th class="r">Sipariş</th><th class="r">Medyan</th><th class="r">p90</th><th class="r">Ortalama*</th></tr></thead>
+          <tbody>
+            <tr><td>Web</td><td class="r">32.852</td><td class="r hl">1 sn</td><td class="r">1,7 sn</td><td class="r">1,2 sn</td></tr>
+            <tr><td>Trendyol</td><td class="r">17.395</td><td class="r hl">49 sn</td><td class="r">92 sn</td><td class="r">58 sn</td></tr>
+            <tr><td>Hepsiburada</td><td class="r">5.802</td><td class="r hl">49 sn</td><td class="r">76 sn</td><td class="r">93 sn</td></tr>
+            <tr><td>Mağaza (InStore)</td><td class="r">5.287</td><td class="r hl">2,6 dk</td><td class="r">4,2 dk</td><td class="r">3,1 dk</td></tr>
+            <tr><td>N11</td><td class="r">1.629</td><td class="r hl">32 sn</td><td class="r">59 sn</td><td class="r">34 sn</td></tr>
+            <tr><td>Amazon <small>· satıcı gönderimli</small></td><td class="r">1.098</td><td class="r hl">9–34 dk</td><td class="r">12–37 dk</td><td class="r">13–40 dk</td></tr>
+          </tbody>
+        </table>
+        <div class="side">
+          <div class="stat"><span class="num">~64 bin</span><span class="lab">sipariş, son 30 gün, canlı bir perakende müşterisi</span></div>
+          <div class="stat"><span class="num">%99</span><span class="lab">Trendyol, Hepsiburada ve N11 siparişlerinin 5 dakika içinde OMS'te olması</span></div>
+          <p class="note" style="margin:0;">Ölçüm: kanaldaki sipariş tarihi → OMS kaydı. Pazaryeri süresi kanalın sipariş yayınlama döngüsünü içerir; Amazon siparişleri kanal tarafında periyodik açılır. *24 saati aşan tekil gecikmeler hariç.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">7 / 28</span>
+    </div>
+  </section>
+
+  <!-- VERİ AKIŞ HIZI — STOK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Veri akış hızı · stok</span>
+      <h2 class="slide-title">Stok değişimi kanala <span class="accent">bir dakikanın altında</span></h2>
+      <div class="flow" style="margin-top:0.6cqh;">
+        <div class="node">Stok hareketi<small>ERP · mağaza · sipariş blokajı</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Envanter (INV)<small>kanal stoğu hesaplanır · medyan ~4 sn</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">ComHub<small>dakikalık gönderim turu · sıfır stok anında</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Satış kanalı<small>web · pazaryerleri</small></div>
+      </div>
+      <div class="measure" style="margin-top:2.2cqh;">
+        <table class="xtable">
+          <thead><tr><th>Kanal</th><th class="r">Stok değişimi / gün</th><th class="r">Medyan</th><th class="r">p90</th></tr></thead>
+          <tbody>
+            <tr><td>Web</td><td class="r">45.248</td><td class="r hl">40 sn</td><td class="r">97 sn</td></tr>
+            <tr><td>Trendyol</td><td class="r">39.620</td><td class="r hl">41 sn</td><td class="r">100 sn</td></tr>
+            <tr><td>Hepsiburada</td><td class="r">38.068</td><td class="r hl">42 sn</td><td class="r">103 sn</td></tr>
+            <tr><td>N11</td><td class="r">38.554</td><td class="r hl">49 sn</td><td class="r">148 sn</td></tr>
+            <tr><td>Amazon</td><td class="r">13.221</td><td class="r hl">46 sn</td><td class="r">115 sn</td></tr>
+          </tbody>
+        </table>
+        <div class="side">
+          <div class="stat"><span class="num">&lt;1 sn</span><span class="lab">sıfıra düşen ya da kritik seviyedeki stok, ComHub'a ulaştıktan sonra kanala gider (medyan)</span></div>
+          <p class="note" style="margin:0;">Ölçüm: stok değişiminin envantere girişi → aynı SKU'nun ilgili kanala gönderimi, son 24 saat, canlı bir perakende müşterisi.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">8 / 28</span>
+    </div>
+  </section>
+
+  <!-- EMNİYET STOKU -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Çok seviyeli emniyet stoku</span>
+      <h2 class="slide-title">Fazla satışı <span class="accent">kanal kanal</span> önleyin</h2>
+      <p class="lead">Emniyet stoku kanala gönderilen miktardan düşülür; kural altı boyutun her birleşiminde tanımlanabilir.</p>
+      <div class="levels">
+        <div class="lv lv--red">Kanal<small>web · pazaryeri · mağaza</small></div>
+        <div class="lv">Kural grubu<small>kanal grupları</small></div>
+        <div class="lv">Kaynak<small>şirket · tedarikçi</small></div>
+        <div class="lv">Depo<small>DC · mağaza</small></div>
+        <div class="lv">SKU<small>tekil ürün</small></div>
+        <div class="lv">SKU grubu<small>ürün hiyerarşisi</small></div>
+      </div>
+      <ul class="flist">
+        <li><b>Koşullu kurallar.</b> Stok aralığına göre (alt ve üst sınır) farklı emniyet miktarı; az kalan üründe kanal daha erken kapanır.</li>
+        <li><b>Kümülatif seviye.</b> Depo, kural grubu ve toplam seviyesi birlikte açılabilir; kurallar üst üste uygulanır.</li>
+        <li><b>Karantina.</b> Sorunlu stok kural tipiyle satıştan çekilir, fiziksel stok bozulmaz.</li>
+        <li><b>Anında etki.</b> Dört adımlı sihirbazla eklenen kural aktif olduğu an kanal stoklarını yeniden hesaplar.</li>
+      </ul>
+      <p class="demo"><b>Canlı demo</b><a href="https://console.rw.hebiar.com/inventory/safety-rules?page=1&amp;pageSize=100&amp;dir=desc">Konsol › Envanter › Emniyet stoku kuralları</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">9 / 28</span>
+    </div>
+  </section>
+
+  <!-- YOLDAKİ SİPARİŞ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Yoldaki sipariş yönetimi</span>
+      <h2 class="slide-title">Sipariş yoldayken stok <span class="accent">kilitli</span> kalır</h2>
+      <div class="flow" style="margin-top:1.4cqh;">
+        <div class="node">Sipariş alındı<small>stok rezerve edilir</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Kaynak atandı<small>rezervasyon lokasyona taşınır</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Toplama &amp; paket<small>bloke miktar izlenir</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Sevk<small>stok kesin düşülür</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">İptal / iade<small>rezervasyon serbest bırakılır</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3.2cqh;">
+        <li><b>Gelişmiş rezervasyon.</b> Yoldaki siparişlerin miktarı kanal stoğundan düşülür; aynı ürün iki kez satılmaz.</li>
+        <li><b>Fark yakalama.</b> Rezervasyon ile fiziksel stok arasındaki farklar izlenir, otomatik düzeltilir ve bildirilir.</li>
+        <li><b>Kanal tutarlılığı.</b> Pazaryerinde açık kalan ama OMS'te iptal olmuş siparişler Control Tower'da ayrıca yakalanır.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">10 / 28</span>
+    </div>
+  </section>
+
+  <!-- SOURCING -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Order Sourcing · Distributed Order Management</span>
+      <h2 class="slide-title">Her sipariş için <span class="accent">en uygun</span> lokasyon</h2>
+      <div class="two-col two-col--wide">
+        <ul class="flist">
+          <li><b>Skor tabanlı atama.</b> Aday depo ve mağazalar maliyet, müşteri memnuniyeti ve operasyon kapasitesine göre puanlanır.</li>
+          <li><b>Ölçütler.</b> Depo önceliği, müşteriye yakınlık, stok seviyesi, stok satış hızı, lokasyonun iş yükü ve günlük atama sayısı.</li>
+          <li><b>Maliyet modeli.</b> Elleçleme, paketleme noktası, kargo maliyeti ve şehirler arası mesafe tek hesapta.</li>
+          <li><b>Kodsuz kural motoru.</b> Algoritma konsoldan yapılandırılır; özel ihtiyaçlar eklentiyle eklenir.</li>
+        </ul>
+        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+          <div class="stat"><span class="num">%10–20</span><span class="lab" style="color:#b9b7b2; max-width:none;">gelir artışı potansiyeli — daha az yok satma, daha çok karşılanan sipariş</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">1 → n</span><span class="lab" style="color:#b9b7b2; max-width:none;">sipariş tek lokasyondan ya da paketlere bölünerek karşılanır</span></div>
+        </div>
+      </div>
+      <p class="demo"><b>Canlı demo</b><a href="https://console.rw.hebiar.com/oms/AyarSihirbazi_mock">Konsol › OMS › Sourcing ayar sihirbazı</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">11 / 28</span>
+    </div>
+  </section>
+
+  <!-- SOURCING NASIL ÇALIŞIR -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Sourcing nasıl çalışır</span>
+      <h2 class="slide-title">Yapılandır, <span class="accent">simüle et</span>, canlıya al</h2>
+      <div class="flow" style="margin-top:1.2cqh;">
+        <div class="node">Sipariş<small>kalemler · teslimat adresi · kanal</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Aday lokasyonlar<small>stoğu olan depo ve mağazalar</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Skorlama<small>kural · maliyet · kapasite</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Paket planı<small>tek paket ya da bölünmüş</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Atama<small>toplama emri lokasyona</small></div>
+      </div>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw; margin-top:2.4cqh;">
+        <div class="card card--accent"><div class="ix">Konfigürasyon</div><h3>Kanal ve lokasyon bazında</h3><p>Hangi kanal hangi kaynaklardan beslenir, paketleme noktası ve kargo maliyetleri konsoldan tanımlanır.</p></div>
+        <div class="card card--accent"><div class="ix">Simülasyon</div><h3>Siparişe dokunmadan</h3><p>Varsayılan ve alternatif senaryo, 100'e kadar sonuç; olasılık, paket ve kalem düzeyinde maliyet karşılaştırması.</p></div>
+        <div class="card card--accent"><div class="ix">Müdahale</div><h3>Tetikle ya da elle ata</h3><p>Gerektiğinde sourcing yeniden tetiklenir ya da operasyon ekibi lokasyonu elle seçer.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">12 / 28</span>
+    </div>
+  </section>
+
+  <!-- OTOMATİK SİPARİŞ YÖNETİMİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Automated Order Cart Management</span>
+      <h2 class="slide-title">Bölme, kısmi sevk ve iptal <span class="accent">kuralla</span> yürür</h2>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
+        <div class="card">
+          <div class="ix">Split &amp; kısmi sevkiyat</div>
+          <h3>Tek sipariş, birden çok paket</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Tek lokasyonda tamamlanamayan sipariş <b>paketlere bölünür</b>, her paket kendi lokasyonundan çıkar.</li>
+            <li>Hazır olan kalem <b>bekletilmeden</b> sevk edilir; kalan kalemler ayrı paketle izlenir.</li>
+            <li>Kendi web siteniz ve <b>desteklenen pazaryerlerinde</b> aynı mantık.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Otomatik iptal</div>
+          <h3>Bulunamayan ürün beklemez</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Toplamada bulunamayan kalem iptal edilir, sipariş <b>başka kaynağa</b> yönlendirilir.</li>
+            <li>Müşteri iptal talepleri paket durumuna göre <b>otomatik onaylanır</b> ya da reddedilir.</li>
+            <li>İptal sebepleri ve süreleri KPI raporuna akar.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="demo"><b>Canlı demo</b><a href="https://console.rw.hebiar.com/oms/orders/SKE3681224?tab=packages">Web siparişi · paketler</a><a href="https://console.rw.hebiar.com/oms/orders/TRY11728681194?tab=packages">Trendyol siparişi · paketler</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">13 / 28</span>
+    </div>
+  </section>
+
+  <!-- SİPARİŞ İŞ AKIŞI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Sipariş iş akışı</span>
+      <h2 class="slide-title">Süreç e-bebek'e göre <span class="accent">şekillenir</span></h2>
+      <div class="flow" style="margin-top:1.4cqh;">
+        <div class="node">Oluştu</div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Kaynak atandı</div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Ayrıldı</div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Karşılandı</div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Kargoda</div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Kapandı</div>
+      </div>
+      <ul class="flist" style="margin-top:3.4cqh;">
+        <li><b>Tenant bazında durum makinesi.</b> Durumlar ve aralarındaki geçişler e-bebek'in sürecine göre tanımlanır.</li>
+        <li><b>Geçiş başına aksiyon.</b> Her geçişte başarı, uyarı ve hata aksiyonları: bildirim, ERP çağrısı, yeniden deneme.</li>
+        <li><b>Görsel akış tasarımı · yol haritası.</b> n8n tabanlı akış editörüyle iş birimleri kendi otomasyonlarını kurabilecek.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">14 / 28</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM II — INSTORE -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">II</div>
+      <h2 class="slide-title">Mağaza · InStore</h2>
+      <p class="lead">Mağazayı bir karşılama noktasına ve satış kanalına dönüştüren uygulama.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">15 / 28</span>
+    </div>
+  </section>
+
+  <!-- INSTORE FULFILLMENT -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Instore omnichannel fulfillment &amp; B2B</span>
+      <h2 class="slide-title">Her mağaza bir <span class="accent">mini depo</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--dark"><div class="ix">Mağazadan gönderim</div><h3>Topla, paketle, sevk et</h3><p>Telefonla toplama, üç adımlı kalite kontrolü, mağaza fişi ve kargo etiketi aynı akışta.</p></div>
+        <div class="card"><div class="ix">Tıkla-al</div><h3>Doğrulama koduyla teslim</h3><p>Web'den verilen sipariş mağazada hazırlanır, müşteriye kodla teslim edilir.</p></div>
+        <div class="card"><div class="ix">Transfer</div><h3>Mağazalar arası</h3><p>Mağazaya sevk ve mağazalar arası transfer, irsaliyeli koli kabulüyle izlenir.</p></div>
+        <div class="card"><div class="ix">Kargoya teslim</div><h3>Teslimat fişi</h3><p>Fiş açılır, paketler okutulur, kargoya teslim fotoğraf ve video kaydıyla raporlanır.</p></div>
+        <div class="card"><div class="ix">Mağazadan iade</div><h3>Tıkla-al iadesi</h3><p>Online verilen tıkla-al siparişinin iadesi mağazada alınır ve OMS'e işlenir.</p></div>
+        <div class="card"><div class="ix">B2B</div><h3>Kurumsal sevkiyatlar</h3><p>Toplu ve kurumsal siparişler aynı toplama, paketleme ve sevk akışını kullanır.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">16 / 28</span>
+    </div>
+  </section>
+
+  <!-- INSTORE COMMERCE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Instore commerce · sipariş &amp; satış</span>
+      <h2 class="slide-title">Rafta olmayan ürün de <span class="accent">satılır</span></h2>
+      <div class="two-col two-col--wide">
+        <ul class="flist">
+          <li><b>Sabit ve mobil POS.</b> Kasada ya da reyonda satış; SoftPOS ile telefonda NFC kartla ödeme, nakit ve sadakat puanı.</li>
+          <li><b>Sonsuz raf.</b> Mağazada bulunmayan ürün başka depo ya da mağazadan siparişe çevrilir, satış kaybolmaz.</li>
+          <li><b>Omni sepet ve müşteri geçmişi.</b> Satış danışmanı müşterinin online ve mağaza alışverişlerini birlikte görür.</li>
+          <li><b>İade ve değişim.</b> Kısmi ve tam iade, kanaldan bağımsız değişim.</li>
+          <li><b>Mağaza operasyonu.</b> Stok sayımı ve düzeltme, etiket basımı, mağazalar arası transfer.</li>
+        </ul>
+        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+          <div class="stat"><span class="num">1</span><span class="lab" style="color:#b9b7b2; max-width:none;">uygulama: satış, toplama, teslim ve sayım aynı cihazda</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">0</span><span class="lab" style="color:#b9b7b2; max-width:none;">ayrı entegrasyon: mağaza siparişi OMS'e doğrudan düşer</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">17 / 28</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM III — COMHUB -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">III</div>
+      <h2 class="slide-title">ComHub &amp; Control Tower</h2>
+      <p class="lead">Tüm satış kanallarıyla tek noktadan entegrasyon ve sürekli tutarlılık kontrolü.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">18 / 28</span>
+    </div>
+  </section>
+
+  <!-- COMHUB -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">ComHub · Advanced Integration &amp; Orchestration</span>
+      <h2 class="slide-title">Tüm pazaryerlerine <span class="accent">tek noktadan</span></h2>
+      <div class="two-col two-col--wide">
+        <ul class="flist">
+          <li><b>Tek entegrasyon.</b> Ürün, stok, fiyat ve sipariş trafiği tüm kanallar için ComHub'dan geçer; her pazaryerine ayrı entegrasyon yazılmaz.</li>
+          <li><b>Hıza göre dinamik çağrı.</b> Kritik stok anında, diğer güncellemeler dakikalık turlarla kanala gider.</li>
+          <li><b>Tanımsız eşleme.</b> Ürün seviyesinde tek tek tanım gerekmeden kategori ve nitelik eşlenir.</li>
+          <li><b>Kanal bazlı emniyet stoku.</b> Kanal × ürün hiyerarşisi kırılımında ayrı tampon.</li>
+          <li><b>Otomatik düzeltme.</b> Kanal ile kaynak arasındaki stok, fiyat, sipariş ve durum farkları yakalanır ve düzeltilir.</li>
+        </ul>
+        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+          <div class="stat"><span class="num">%35</span><span class="lab" style="color:#b9b7b2; max-width:none;">operasyonel verimlilik artışına kadar</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">1</span><span class="lab" style="color:#b9b7b2; max-width:none;">entegrasyon noktası: Trendyol, Hepsiburada, Amazon, N11, Google Shopping ve diğerleri</span></div>
+        </div>
+      </div>
+      <p class="demo"><b>Canlı demo</b><a href="https://console.rw.hebiar.com/comhub">Konsol › ComHub</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">19 / 28</span>
+    </div>
+  </section>
+
+  <!-- CONTROL TOWER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Control Tower</span>
+      <h2 class="slide-title">Kanalda yanlış olan <span class="accent">müşteriden önce</span> görülür</h2>
+      <p class="lead">Kaynak sistem (OMS, PIM) ile her satış kanalı sürekli karşılaştırılır; fark şiddetine göre önceliklenir ve düzeltilir.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
+        <div class="card"><div class="ix">Ürün</div><h3>Yayın sağlığı</h3><p>Kanalda kilitli, kara listede ya da reddedilmiş ürünler.</p></div>
+        <div class="card card--dark"><div class="ix">Envanter</div><h3>Stok farkı</h3><p>Stokta yokken satışta, stokta varken kapalı ya da fazla stok gösteren ürünler.</p></div>
+        <div class="card"><div class="ix">Sipariş &amp; durum</div><h3>Sipariş uyumu</h3><p>Pazaryerinde olup OMS'te olmayan, OMS'te iptal olup kanalda açık kalan, uzun bekleyen siparişler.</p></div>
+        <div class="card"><div class="ix">Fiyat</div><h3>Fiyat farkı</h3><p>Kaynaktaki fiyat ile kanalda yayındaki fiyatın karşılaştırması.</p></div>
+      </div>
+      <ul class="flist" style="margin-top:2cqh;">
+        <li><b>Şiddet seviyesi ve rozet.</b> Fatal, kritik ve uyarı; düzeltme durumu gönderildi, düzeltildi ya da başarısız olarak izlenir.</li>
+        <li><b>Saatlik özet.</b> Kontrollerin gerçekten koştuğu da raporlanır, özet ekibe mail ile gider.</li>
+      </ul>
+      <p class="demo"><b>Canlı demo</b><a href="https://console.rw.hebiar.com/comhub/control-tower">Konsol › ComHub › Control Tower</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">20 / 28</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM IV — TMS -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">IV</div>
+      <h2 class="slide-title">Teslimat Yönetimi · TMS</h2>
+      <p class="lead">Checkout'tan mutabakata kadar tüm kargo süreçleri tek platformda.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">21 / 28</span>
+    </div>
+  </section>
+
+  <!-- TMS HUB -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Hub for all couriers</span>
+      <h2 class="slide-title">30+ kargo, <span class="accent">tek entegrasyon</span></h2>
+      <div class="two-col two-col--wide">
+        <div style="display:flex; flex-direction:column; gap:2.4cqh;">
+          <div class="carriers">
+            <span>Aras</span><span>Yurtiçi</span><span>MNG</span><span>PTT</span><span>UPS</span><span>Sürat</span><span>HepsiJET</span><span>DPD</span><span>Sendeo</span><span>Horoz</span><span>Kolay Gelsin</span><span>Scotty</span><span>Jetizz</span><span>Kargoist</span><span>KargomSende</span><span>PackUpp</span><span>PudoBox</span><span>Netlog</span><span>BirGündeKargo</span><span>Bovo</span><span>Dinçer</span><span>Fillo</span><span>Gelal</span><span>Murathan</span><span>TemKurye</span><span>Qurye</span><span>…</span>
+          </div>
+          <ul class="flist">
+            <li><b>Tüm servis tipleri.</b> Standart, aynı gün, ertesi gün, randevulu (9–13 · 13–18 · 18–23), moto kurye, tıkla-al ve teslim noktası.</li>
+            <li><b>Kapıda ödeme.</b> Nakit ve kartla kapıda tahsilat destekli kargolarla.</li>
+            <li><b>Yeni kargo iki haftada.</b> Platforma eklenen her kargo firması tüm müşteriler için hazır olur.</li>
+          </ul>
+        </div>
+        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+          <div class="stat"><span class="num">%10–20</span><span class="lab" style="color:#b9b7b2; max-width:none;">taşıma giderinde tasarruf</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">%20</span><span class="lab" style="color:#b9b7b2; max-width:none;">teslimat performansında iyileşme</span></div>
+        </div>
+      </div>
+      <p class="demo"><b>Canlı demo</b><a href="https://webclient.tms.prod.hebiar.com/carrier">TMS › Kargolar</a><a href="https://webclient.tms.prod.hebiar.com/carrierDeliveryType">TMS › Servis tipleri</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">22 / 28</span>
+    </div>
+  </section>
+
+  <!-- CHECKOUT & DISPATCH -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Checkout &amp; dispatch service</span>
+      <h2 class="slide-title">Doğru kargo, <span class="accent">doğru fiyata</span></h2>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
+        <div class="card">
+          <div class="ix">Checkout servisi</div>
+          <h3>Müşteriye doğru seçenek</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Adres, müşteri segmenti ve sepete göre <b>uygun teslimat seçenekleri</b>.</li>
+            <li>Her seçenek için <b>fiyatlı</b> kargo ve servis listesi.</li>
+            <li>Aynı gün ve randevulu teslimat, uygun bölgede otomatik açılır.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Dispatch servisi</div>
+          <h3>Kargo seçimi otomatik</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li><b>Kural tabanlı:</b> kanal, segment, lokasyon, sepet ve hacme göre öncelik.</li>
+            <li><b>Performans ve maliyet tabanlı:</b> kargo firmasının teslim performansı ile desi-mesafe maliyeti dengelenir.</li>
+            <li>Dinamik desi, firma başına kota, kara liste; gerektiğinde adres ve kargo elle değişir.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="demo"><b>Canlı demo</b><a href="https://webclient.tms.prod.hebiar.com/checkoutpreview">TMS › Checkout önizleme</a><a href="https://webclient.tms.prod.hebiar.com/consignmentconfiguration">TMS › Sevk yapılandırması</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">23 / 28</span>
+    </div>
+  </section>
+
+  <!-- ETİKET, TAKİP, İADE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Label · tracking · RMA</span>
+      <h2 class="slide-title">Tek etiket, <span class="accent">uçtan uca</span> takip</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--accent">
+          <div class="ix">Etiket servisi</div>
+          <h3>Her kargoya tek format</h3>
+          <p>Kargo firmasından bağımsız tek etiket; kendi tasarımınız, PDF, ZPL ve PNG çıktı, çevrimdışı yazdırma, e-fatura entegrasyonu.</p>
+        </div>
+        <div class="card card--accent">
+          <div class="ix">Takip &amp; raporlama</div>
+          <h3>Tüm gönderiler tek ekranda</h3>
+          <p>Gerçek zamanlı durum takibi; açık gönderi raporu Excel'e alınarak kargo firmasıyla mutabakatta kullanılır.</p>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">İade yönetimi · RMA</div>
+          <h3>İade de bir gönderi</h3>
+          <p>Müşteri iadesi, tedarikçiye iade ve pazaryeri iadeleri aynı kurallarla; iade kargosu ve kodu otomatik.</p>
+        </div>
+      </div>
+      <p class="demo"><b>Canlı demo</b><a href="https://webclient.tms.prod.hebiar.com/shipment">TMS › Gönderiler</a><a href="https://webclient.tms.prod.hebiar.com/returnconfiguration">TMS › İade yapılandırması</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">24 / 28</span>
+    </div>
+  </section>
+
+  <!-- MUTABAKAT -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Reconciliation</span>
+      <h2 class="slide-title">Kargo faturası <span class="accent">kontrol edilerek</span> ödenir</h2>
+      <div class="flow" style="margin-top:1.4cqh;">
+        <div class="node">Kargo verisi<small>fatura · desi · teslim zamanı</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Eşleştirme<small>gönderi bazında TMS kaydıyla</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Fark &amp; SLA<small>maliyet farkı · gecikme</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Tazmin<small>talep kargo firmasına</small></div>
+      </div>
+      <ul class="flist" style="margin-top:3.2cqh;">
+        <li><b>Maliyet mutabakatı.</b> Faturalanan desi ve tutar, anlaşmalı fiyat ve ölçülen desiyle karşılaştırılır.</li>
+        <li><b>Performans ve SLA.</b> Kargo firması bazında teslim süresi ve hedefe uyum; dispatch kararlarına geri beslenir.</li>
+        <li><b>Tazmin süreci.</b> Hasarlı, kayıp ya da geciken gönderi için tazmin talebi gönderi kaydından oluşturulur.</li>
+      </ul>
+      <p class="demo"><b>Canlı demo</b><a href="https://webclient.tms.prod.hebiar.com/reconciliationdata">TMS › Mutabakat verisi</a><a href="https://webclient.tms.prod.hebiar.com/tazmin/create/19772727">TMS › Tazmin talebi</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">25 / 28</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM V — PAZARYERİ -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">V</div>
+      <h2 class="slide-title">Satış Kanalı &amp; Pazaryeri Platformu</h2>
+      <p class="lead">Satıcı ve operatör modeliyle kendi pazaryerinizi işletin.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">26 / 28</span>
+    </div>
+  </section>
+
+  <!-- PAZARYERİ PLATFORMU -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Seller / operator platform</span>
+      <h2 class="slide-title">Satıcı ağı da <span class="accent">aynı omurgada</span></h2>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
+        <div class="card">
+          <div class="ix">Tüm satış kanalları için hub</div>
+          <h3>Operatör ve satıcı</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li>Satıcı onayı, uyum takibi ve <b>otomatik ürün onayı</b>.</li>
+            <li>Merkezi katalog; satıcı siparişleri OMS akışına <b>otomatik</b> düşer.</li>
+            <li>Satıcı panelinde sipariş, etiket, kargo değişimi, iptal ve iade; lokasyon başına anlaşmalı kargo.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Mutabakat</div>
+          <h3>Satıcıyla hesap net</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li><b>Gecikme:</b> SLA'yı aşan siparişler gün sayısıyla izlenir.</li>
+            <li><b>İptal ve iade:</b> talep, onay ve iade paketi RMA koduyla.</li>
+            <li><b>Ödeme:</b> çok taraflı ödeme dağıtımı.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="demo"><b>Canlı demo</b><a href="https://console.rw.hebiar.com/vendor-operator/vendors?page=1&amp;pageSize=25&amp;dir=desc">Konsol › Pazaryeri › Satıcılar</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">27 / 28</span>
+    </div>
+  </section>
+
+  <!-- KAPANIŞ -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">Teşekkürler</span>
+      <h1 class="cover-title">Siparişten teslimata <span class="accent">birlikte</span> kuralım</h1>
+      <p class="cover-sub">e-bebek'in web, uygulama, mağaza ve pazaryeri siparişlerini tek stok havuzundan karşılayacağı omurga için hazırız.</p>
+      <div class="cover-meta">
+        <div>Windowist Tower, Maslak — İstanbul · info@commercelab.com.tr · +90 212 214 73 90</div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">28 / 28</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="toolbar">
+  <button id="presentBtn" title="Present (fullscreen)">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    Present
+  </button>
+  <button onclick="window.print()">Download PDF</button>
+</div>
+<div class="present-bar" id="presentBar"></div>
+<div class="present-hint">← → navigate · click advances · Esc exits</div>
+
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    // Footer numaraları otomatik — slayt eklemek elle numaralandırma gerektirmez
+    slides.forEach(function (s, i) {
+      var n = s.querySelector('.slide__no');
+      if (n) n.textContent = (i + 1) + ' / ' + slides.length;
+    });
+    function current() {
+      var mid = window.innerHeight / 2, best = 0, bestD = Infinity;
+      slides.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      return best;
+    }
+
+    var bar = document.getElementById('presentBar');
+    var presenting = false;
+    var idx = 0;
+
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      bar.style.width = ((idx + 1) / slides.length * 100) + '%';
+    }
+    function go(delta) {
+      idx = Math.min(slides.length - 1, Math.max(0, idx + delta));
+      render();
+    }
+    function enter() {
+      idx = current();
+      presenting = true;
+      document.body.classList.add('present');
+      render();
+      var el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen().catch(function(){});
+    }
+    function exit() {
+      presenting = false;
+      document.body.classList.remove('present');
+      slides.forEach(function (s) { s.classList.remove('is-active'); });
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+      slides[idx].scrollIntoView({ block: 'center' });
+    }
+
+    document.getElementById('presentBtn').addEventListener('click', enter);
+    document.addEventListener('fullscreenchange', function () {
+      if (!document.fullscreenElement && presenting) exit();
+    });
+    document.querySelector('.deck').addEventListener('click', function () {
+      if (presenting) go(1);
+    });
+
+    window.addEventListener('keydown', function (e) {
+      if (presenting) {
+        if (e.key === 'Escape') { e.preventDefault(); exit(); return; }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') {
+          e.preventDefault(); go(-1); return;
+        }
+        e.preventDefault(); go(1); return;
+      }
+      var i = current();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        if (i < slides.length - 1) slides[i + 1].scrollIntoView({ behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        if (i > 0) slides[i - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
