@@ -32,6 +32,8 @@
   .xtable td.hl { color: var(--red); font-weight: 600; }
   .xtable td small { color: var(--muted); font-size: 0.95cqw; }
 
+  .xtable--lg th { font-size: 1.05cqw; padding-bottom: 1.2cqh; }
+  .xtable--lg td { font-size: 1.75cqw; padding: 2.4cqh 1cqw 2.4cqh 0; }
   .measure { display: grid; grid-template-columns: 1.7fr 1fr; gap: 3cqw; flex: 1; align-items: center; }
   .measure .side { display: flex; flex-direction: column; gap: 2.4cqh; }
   .measure .side .stat .num { font-size: 3.1cqw; }
@@ -195,21 +197,17 @@
       <span class="kicker">Veri akış hızı · sipariş</span>
       <h2 class="slide-title">Sipariş kanaldan OMS'e <span class="accent">saniyeler</span> içinde</h2>
       <div class="measure">
-        <table class="xtable">
-          <thead><tr><th>Kanal</th><th class="r">Sipariş</th><th class="r">Medyan</th><th class="r">p90</th><th class="r">Ortalama*</th></tr></thead>
+        <table class="xtable xtable--lg">
+          <thead><tr><th>Kanal</th><th class="r">Medyan</th><th class="r">p90</th><th class="r">Ortalama*</th></tr></thead>
           <tbody>
-            <tr><td>Web</td><td class="r">32.852</td><td class="r hl">1 sn</td><td class="r">1,7 sn</td><td class="r">1,2 sn</td></tr>
-            <tr><td>Trendyol</td><td class="r">17.395</td><td class="r hl">49 sn</td><td class="r">92 sn</td><td class="r">58 sn</td></tr>
-            <tr><td>Hepsiburada</td><td class="r">5.802</td><td class="r hl">49 sn</td><td class="r">76 sn</td><td class="r">93 sn</td></tr>
-            <tr><td>Mağaza (InStore)</td><td class="r">5.287</td><td class="r hl">2,6 dk</td><td class="r">4,2 dk</td><td class="r">3,1 dk</td></tr>
-            <tr><td>N11</td><td class="r">1.629</td><td class="r hl">32 sn</td><td class="r">59 sn</td><td class="r">34 sn</td></tr>
-            <tr><td>Amazon <small>· satıcı gönderimli</small></td><td class="r">1.098</td><td class="r hl">9–34 dk</td><td class="r">12–37 dk</td><td class="r">13–40 dk</td></tr>
+            <tr><td>Web</td><td class="r hl">1 sn</td><td class="r">1,7 sn</td><td class="r">1,2 sn</td></tr>
+            <tr><td>Trendyol</td><td class="r hl">49 sn</td><td class="r">92 sn</td><td class="r">58 sn</td></tr>
+            <tr><td>Hepsiburada</td><td class="r hl">49 sn</td><td class="r">76 sn</td><td class="r">93 sn</td></tr>
           </tbody>
         </table>
         <div class="side">
-          <div class="stat"><span class="num">~64 bin</span><span class="lab">sipariş, son 30 gün, canlı bir perakende müşterisi</span></div>
-          <div class="stat"><span class="num">%99</span><span class="lab">Trendyol, Hepsiburada ve N11 siparişlerinin 5 dakika içinde OMS'te olması</span></div>
-          <p class="note" style="margin:0;">Ölçüm: kanaldaki sipariş tarihi → OMS kaydı. Pazaryeri süresi kanalın sipariş yayınlama döngüsünü içerir; Amazon siparişleri kanal tarafında periyodik açılır. *24 saati aşan tekil gecikmeler hariç.</p>
+          <div class="stat"><span class="num">%99</span><span class="lab">Trendyol ve Hepsiburada siparişlerinin 5 dakika içinde OMS'te olması</span></div>
+          <p class="note" style="margin:0;">Ölçüm: kanaldaki sipariş tarihi → OMS kaydı, son 30 gün, canlı bir perakende müşterisi. Pazaryeri süresi kanalın sipariş yayınlama döngüsünü içerir. *24 saati aşan tekil gecikmeler hariç.</p>
         </div>
       </div>
     </div>
