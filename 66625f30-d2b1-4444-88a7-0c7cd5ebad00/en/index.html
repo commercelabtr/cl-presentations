@@ -47,6 +47,45 @@
 
   .carriers { display: flex; flex-wrap: wrap; gap: 0.7cqh 0.6cqw; }
   .carriers span { font-size: 1.05cqw; color: var(--ink-soft); border: 1px solid var(--line-strong); border-radius: 4px; padding: 0.45cqh 0.7cqw; background: var(--paper); }
+
+  /* Kahraman KPI ızgarası (koyu slayt) */
+  .hero-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.2cqh 3cqw; flex: 1; align-content: center; }
+  .hk { border-top: 1px solid #3a3a3a; padding-top: 1.6cqh; display: flex; flex-direction: column; gap: 0.6cqh; }
+  .hk .n { font-family: var(--display); font-weight: 800; font-size: 4.4cqw; line-height: 1; color: #fff; letter-spacing: -0.02em; }
+  .hk .n em { font-style: normal; font-size: 2cqw; color: #b9b7b2; margin-left: 0.4cqw; letter-spacing: 0; }
+  .hk--red .n { color: var(--red); }
+  .hk .l { font-size: 1.2cqw; color: #b9b7b2; line-height: 1.4; max-width: 24cqw; }
+  .hk .l b { color: #fff; font-weight: 600; }
+
+  /* Order-to-door yolculuğu */
+  .journey { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.4cqw; flex: 1; align-content: center; }
+  .j { border-top: 3px solid var(--ink); padding-top: 1.6cqh; display: flex; flex-direction: column; gap: 0.7cqh; }
+  .j--red { border-top-color: var(--red); }
+  .j .ix { font-family: var(--display); font-weight: 700; font-size: 0.9cqw; letter-spacing: .16em; text-transform: uppercase; color: var(--red); }
+  .j h3 { font-family: var(--display); font-weight: 800; font-size: 1.75cqw; margin: 0; color: var(--ink); line-height: 1.15; }
+  .j .n { font-family: var(--display); font-weight: 800; font-size: 2.9cqw; color: var(--red); line-height: 1.05; margin-top: 1cqh; }
+  .j .n small { display: block; font-family: var(--sans); font-weight: 400; font-size: 1.05cqw; color: var(--muted); margin-top: 0.5cqh; }
+  .j p { font-size: 1.22cqw; color: var(--ink-soft); line-height: 1.45; margin: 0.8cqh 0 0; }
+
+  /* Zamanlı hat (stok) */
+  .flow .node .t { font-family: var(--display); font-weight: 800; font-size: 2.2cqw; color: var(--red); line-height: 1; margin: 0.4cqh 0 0.2cqh; letter-spacing: -0.01em; }
+  .flow .node--red .t, .flow .node--ink .t { color: #fff; }
+
+  /* İki büyük ölçüm kartı */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8cqw; }
+  .duo .m { border: 1px solid var(--line-strong); border-radius: 8px; padding: 2.2cqh 1.8cqw; background: var(--paper); display: flex; flex-direction: column; gap: 0.6cqh; }
+  .duo .m--ink { background: var(--ink); border-color: var(--ink); }
+  .duo .m .ix { font-family: var(--display); font-weight: 700; font-size: 0.95cqw; letter-spacing: .16em; text-transform: uppercase; color: var(--red); }
+  .duo .m .n { font-family: var(--display); font-weight: 800; font-size: 5cqw; line-height: 1; color: var(--ink); letter-spacing: -0.02em; }
+  .duo .m--ink .n { color: #fff; }
+  .duo .m .l { font-size: 1.2cqw; color: var(--muted); }
+  .duo .m--ink .l { color: #b9b7b2; }
+
+  /* Maliyet bileşenleri */
+  .costs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2cqw; }
+  .costs .c { border-left: 3px solid var(--red); padding: 0.4cqh 0 0.4cqh 1cqw; }
+  .costs .c h3 { font-family: var(--display); font-weight: 800; font-size: 1.4cqw; margin: 0 0 0.4cqh; }
+  .costs .c p { font-size: 1.08cqw; color: var(--muted); margin: 0; line-height: 1.4; }
 </style>
 </head>
 <body>
@@ -56,38 +95,60 @@
   <section class="slide slide--ink slide--cover">
     <div class="slide__inner">
       <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
-      <span class="kicker">e-bebek</span>
-      <h1 class="cover-title">Fulfil every order from <span class="accent">the right place</span></h1>
-      <p class="cover-sub">An omnichannel order and delivery backbone that keeps stock in one pool, routes each order to the best warehouse or store and tracks it to the customer's door.</p>
+      <span class="kicker">e-bebek · Unified Commerce</span>
+      <h1 class="cover-title">Faster delivery.<br /><span class="accent">Lower</span> cost-to-serve.</h1>
+      <p class="cover-sub">One backbone that captures every order in seconds, syncs stock in milliseconds, ships each order from the fastest and cheapest node and audits every carrier invoice down to the last cent.</p>
       <div class="cover-meta">
-        <div>OMS · InStore · ComHub &amp; Control Tower · TMS · Marketplace platform</div>
+        <div>Order capture · Real-time inventory · Intelligent sourcing · Fulfilment · Last-mile · Reconciliation</div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">1 / 28</span>
+      <span class="slide__no">1 / 29</span>
     </div>
   </section>
 
-  <!-- SOLUTION MAP -->
+  <!-- WHY -->
+  <section class="slide slide--ink">
+    <div class="slide__inner">
+      <span class="kicker">Why CommerceLab</span>
+      <h2 class="slide-title">Speed or cost? <span class="accent">Both.</span></h2>
+      <p class="lead">Most platforms make you choose. CommerceLab raises speed at every step of the order while pushing cost-to-serve down.</p>
+      <div class="hero-kpis">
+        <div class="hk"><span class="n">1.2<em>s</em></span><span class="l"><b>Own.com</b> order in the OMS</span></div>
+        <div class="hk"><span class="n">26<em>s</em></span><span class="l"><b>Marketplace</b> order in the OMS</span></div>
+        <div class="hk"><span class="n">150<em>ms</em></span><span class="l"><b>Stock calculation</b> — safety stock, on-transit and reservations included</span></div>
+        <div class="hk"><span class="n">700<em>ms</em></span><span class="l"><b>Sourcing</b> decision per order</span></div>
+        <div class="hk"><span class="n">925<em>ms</em></span><span class="l"><b>Own.com</b> stock notification</span></div>
+        <div class="hk hk--red"><span class="n">0.02%</span><span class="l"><b>Out-of-stock rate</b> across all channels</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">2 / 29</span>
+    </div>
+  </section>
+
+  <!-- ORDER-TO-DOOR -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Solution map</span>
-      <h2 class="slide-title">From channel to door, <span class="accent">one flow</span></h2>
-      <p class="lead">Five products work on the same order and stock data; no point-to-point integration between them.</p>
-      <div class="stack" style="flex:1; justify-content:center;">
-        <div class="layer"><span class="tag">Sales channels</span><span class="desc">Web · mobile app · stores · Trendyol, Hepsiburada, Amazon, N11 and other marketplaces</span></div>
-        <div class="layer layer--ink"><span class="tag">ComHub</span><span class="desc">Integration and orchestration · Control Tower for product, stock, order and price consistency</span></div>
-        <div class="layer"><span class="tag">OMS</span><span class="desc">Enterprise inventory · safety stock · order sourcing · automated order management</span></div>
-        <div class="layer"><span class="tag">InStore</span><span class="desc">Ship from store · click &amp; collect · transfers · in-store sales and POS</span></div>
-        <div class="layer"><span class="tag">TMS</span><span class="desc">30+ carriers · checkout · dispatch · labels · returns · reconciliation</span></div>
+      <span class="kicker">Order-to-door</span>
+      <h2 class="slide-title">Order to door, <span class="accent">every step</span> optimised</h2>
+      <div class="journey">
+        <div class="j"><span class="ix">01 · Capture</span><h3>Capture the order</h3><span class="n">1.2 s<small>own.com · marketplaces 26 s</small></span><p>Every channel in one order flow.</p></div>
+        <div class="j"><span class="ix">02 · Sync</span><h3>Sync the stock</h3><span class="n">150 ms<small>calculation · 925 ms own.com</small></span><p>Real-time stock from source to channel.</p></div>
+        <div class="j j--red"><span class="ix">03 · Source</span><h3>Intelligent sourcing</h3><span class="n">700 ms<small>per order</small></span><p>The fastest, cheapest ship-from node.</p></div>
+        <div class="j"><span class="ix">04 · Fulfil</span><h3>Store &amp; warehouse</h3><span class="n">1 app<small>InStore</small></span><p>Ship-from-store, click &amp; collect and in-store sales.</p></div>
+        <div class="j"><span class="ix">05 · Ship</span><h3>Best-fit carrier</h3><span class="n">30+<small>carriers · integrated final label</small></span><p>Chosen automatically on price and performance.</p></div>
+        <div class="j"><span class="ix">06 · Reconcile</span><h3>Audit to the cent</h3><span class="n">10–20%<small>transport cost savings</small></span><p>What to pay, what to dispute — ready list.</p></div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">2 / 28</span>
+      <span class="slide__no">3 / 29</span>
     </div>
   </section>
 
@@ -95,7 +156,7 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">References</span>
-      <h2 class="slide-title">Commerce infrastructure for <span class="accent">leading brands</span></h2>
+      <h2 class="slide-title">Industry leaders run on <span class="accent">this backbone</span></h2>
       <div class="logowall">
         <div class="cell"><img src="../logos/skechers.svg" alt="Skechers" /></div>
         <div class="cell"><img src="../logos/decathlon.png" alt="Decathlon" /></div>
@@ -114,44 +175,128 @@
         <div class="cell"><img src="../logos/stevemadden.png" alt="Steve Madden" /></div>
         <div class="cell"><img src="../logos/on.png" alt="On" /></div>
       </div>
-      <p class="note">Retail, fashion, sports and quick-service brands run their order, stock and delivery operations on CommerceLab.</p>
+      <p class="note">Retail, fashion, sports and quick-service brands fulfil more than 20,000 orders a day on CommerceLab.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">3 / 28</span>
+      <span class="slide__no">4 / 29</span>
     </div>
   </section>
 
-  <!-- PART I — OMS -->
+  <!-- PART I -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">I</div>
-      <h2 class="slide-title">Order Management · OMS</h2>
-      <p class="lead">Enterprise inventory, safety stock, order sourcing and order automation.</p>
+      <h2 class="slide-title">Speed of Signal</h2>
+      <p class="lead">Orders and stock flow from source to channel in real time.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">4 / 28</span>
+      <span class="slide__no">5 / 29</span>
+    </div>
+  </section>
+
+  <!-- ORDER CAPTURE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Order capture</span>
+      <h2 class="slide-title">In the OMS <span class="accent">the moment</span> it's placed</h2>
+      <div class="duo" style="margin-top:1cqh;">
+        <div class="m m--ink"><span class="ix">Own.com · web &amp; app</span><span class="n">1.2 s</span><span class="l">for an order to reach the OMS</span></div>
+        <div class="m"><span class="ix">Marketplaces</span><span class="n">26 s</span><span class="l">Trendyol, Hepsiburada, Amazon, N11 — channel to OMS</span></div>
+      </div>
+      <ul class="flist" style="margin-top:3cqh;">
+        <li><b>One flow, every channel.</b> Web, app, store and marketplace orders in the same OMS, under the same rules.</li>
+        <li><b>Instant reservation.</b> Stock locks the moment an order lands; the same item is never sold twice.</li>
+        <li><b>No lost orders.</b> Any order on a channel but missing from the OMS is caught by Control Tower.</li>
+      </ul>
+      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/comhub">Console › ComHub</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">6 / 29</span>
+    </div>
+  </section>
+
+  <!-- REAL-TIME INVENTORY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Real-time inventory sync</span>
+      <h2 class="slide-title">Stock from source to channel <span class="accent">in milliseconds</span></h2>
+      <div class="flow" style="margin-top:1.6cqh;">
+        <div class="node">Source<span class="t">ERP</span><small>store · warehouse · order</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Change calculation<span class="t">150 ms</span><small>safety stock · on-transit · reservation</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Own.com<span class="t">925 ms</span><small>web &amp; app notification</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Critical stock<span class="t">1.2 s</span><small>marketplaces · 2 units or fewer</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">General stock<span class="t">6 s</span><small>marketplace notification</small></div>
+      </div>
+      <div class="two-col two-col--wide" style="margin-top:3cqh;">
+        <ul class="flist">
+          <li><b>Net stock first, then the channel.</b> Safety stock, in-transit orders and reservations are deducted before the sellable quantity goes out.</li>
+          <li><b>Critical stock in the fast lane.</b> Items close to zero skip the queue and close on marketplaces in 1.2 seconds.</li>
+          <li><b>Delta updates.</b> Only changed SKUs move, so the line never clogs even at thousands of changes per hour.</li>
+        </ul>
+        <div class="card card--dark" style="justify-content:center; padding:3cqh 2.2cqw;">
+          <div class="stat"><span class="num">0.02%</span><span class="lab" style="color:#b9b7b2; max-width:none;">out-of-stock rate across all channels</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">7 / 29</span>
+    </div>
+  </section>
+
+  <!-- ZERO OVERSELL -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Zero oversell</span>
+      <h2 class="slide-title"><span class="accent">Zero tolerance</span> for overselling</h2>
+      <p class="lead">Multi-level safety stock protects what each channel sees; rules combine any of six dimensions.</p>
+      <div class="levels">
+        <div class="lv lv--red">Channel<small>web · marketplace · store</small></div>
+        <div class="lv">Rule group<small>channel groups</small></div>
+        <div class="lv">Source<small>company · supplier</small></div>
+        <div class="lv">Warehouse<small>DC · store</small></div>
+        <div class="lv">SKU<small>single item</small></div>
+        <div class="lv">SKU group<small>product hierarchy</small></div>
+      </div>
+      <ul class="flist">
+        <li><b>Conditional buffers.</b> Safety quantity varies with stock range; low-stock items close on risky channels first.</li>
+        <li><b>On-transit &amp; reservation.</b> Quantities on in-flight orders stay locked until shipped; gaps are fixed and reported automatically.</li>
+        <li><b>Cumulative levels and quarantine.</b> Warehouse, rule group and total levels work together; problem stock leaves sale with one rule.</li>
+      </ul>
+      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/inventory/safety-rules?page=1&amp;pageSize=100&amp;dir=desc">Console › Inventory › Safety stock rules</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">8 / 29</span>
     </div>
   </section>
 
   <!-- ENTERPRISE INVENTORY -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Enterprise Inventory Management</span>
-      <h2 class="slide-title">All stock in <span class="accent">one pool</span>, ready for every channel</h2>
+      <span class="kicker">Enterprise Inventory · IaaS</span>
+      <h2 class="slide-title">One stock pool, <span class="accent">unlimited</span> locations</h2>
       <div class="two-col two-col--wide">
         <ul class="flist">
-          <li><b>Single stock view.</b> Central warehouse, e-commerce warehouse, stores and supplier stock in one inventory; every channel reads what it can sell from here.</li>
-          <li><b>Available-to-trade stock.</b> Physical and virtual stock, sales floor and back room segmented; blocked and reserved quantities tracked separately.</li>
-          <li><b>Delta and bulk updates.</b> ERP, store and order movements reach channel stock within seconds.</li>
-          <li><b>Fulfilment types.</b> Ship to customer, store pickup, drop shipment, flow through and transfer in one model.</li>
-          <li><b>Inventory as a service.</b> Cloud-native and multi-tenant; infrastructure and scaling stay off e-bebek's plate.</li>
+          <li><b>Single source of truth.</b> Central warehouse, e-commerce warehouse, every store and supplier stock in one inventory.</li>
+          <li><b>Available-to-promise.</b> Physical, virtual, sales floor and back room separated into what can truly be sold.</li>
+          <li><b>Every fulfilment model.</b> Ship to customer, store pickup, drop shipment, flow through and transfer in one model.</li>
+          <li><b>Inventory as a Service.</b> Cloud-native and multi-tenant; scale and infrastructure stay off e-bebek's plate.</li>
         </ul>
         <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
-          <div class="stat"><span class="num">~20K+</span><span class="lab" style="color:#b9b7b2; max-width:none;">orders / day across the platform</span></div>
+          <div class="stat"><span class="num">20K+</span><span class="lab" style="color:#b9b7b2; max-width:none;">orders / day across the platform</span></div>
           <div class="hairline" style="background:#333;"></div>
           <div class="stat"><span class="num">480M+</span><span class="lab" style="color:#b9b7b2; max-width:none;">API requests / month</span></div>
           <div class="hairline" style="background:#333;"></div>
@@ -162,236 +307,182 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">5 / 28</span>
+      <span class="slide__no">9 / 29</span>
     </div>
   </section>
 
-  <!-- KPI -->
+  <!-- COMHUB -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Speed &amp; reliability · KPIs</span>
-      <h2 class="slide-title">Operations run <span class="accent">by the numbers</span></h2>
-      <p class="lead">Operational reports in the console run for any period and can be mailed on a schedule.</p>
+      <span class="kicker">ComHub · Integration &amp; Orchestration</span>
+      <h2 class="slide-title">Every marketplace, <span class="accent">one connection</span></h2>
+      <div class="two-col two-col--wide">
+        <ul class="flist">
+          <li><b>Connect once, sell everywhere.</b> Product, stock, price and order traffic through one point; no separate integration per marketplace.</li>
+          <li><b>Speed-aware orchestration.</b> Critical stock goes out instantly through the fast lane; other updates in efficient batches.</li>
+          <li><b>Mapping-free publishing.</b> Categories and attributes map without per-product setup.</li>
+          <li><b>Channel buffers.</b> Separate safety stock by channel × product hierarchy.</li>
+        </ul>
+        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+          <div class="stat"><span class="num">35%</span><span class="lab" style="color:#b9b7b2; max-width:none;">up to this much gain in operational efficiency</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">1</span><span class="lab" style="color:#b9b7b2; max-width:none;">integration point: Trendyol, Hepsiburada, Amazon, N11, Google Shopping and more</span></div>
+        </div>
+      </div>
+      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/comhub">Console › ComHub</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">10 / 29</span>
+    </div>
+  </section>
+
+  <!-- CONTROL TOWER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Control Tower</span>
+      <h2 class="slide-title">Self-healing channels: errors caught <span class="accent">before customers</span> see them</h2>
       <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
-        <div class="card card--dark"><div class="ix">Sourcing</div><h3>Out-of-stock rate</h3><p>Share of order lines with no stock found on the first sourcing attempt.</p></div>
-        <div class="card"><div class="ix">Orders</div><h3>Cancellation rate</h3><p>Line-level cancellation rate, time to cancel and reasons.</p></div>
-        <div class="card"><div class="ix">Orders</div><h3>Return rate</h3><p>Return rate, most-returned products and return reasons.</p></div>
-        <div class="card"><div class="ix">Sales</div><h3>Best sellers</h3><p>Units and net revenue by SKU and option.</p></div>
-        <div class="card"><div class="ix">Flow</div><h3>Order flow times</h3><p>Order, invoice, shipment and delivery times; target compliance by carrier.</p></div>
-        <div class="card"><div class="ix">Store &amp; warehouse</div><h3>Picking cancellations</h3><p>Warehouse and store picking cancellations by reason and user.</p></div>
-        <div class="card"><div class="ix">Store</div><h3>Picker performance</h3><p>Speed and invoicing performance of store pickers.</p></div>
-        <div class="card"><div class="ix">Carrier</div><h3>Carrier call times</h3><p>Hand-over, label retrieval and cancellation notice; time spent with us and with the carrier.</p></div>
+        <div class="card"><div class="ix">Product</div><h3>Listing health</h3><p>Products locked, blacklisted or rejected on a channel.</p></div>
+        <div class="card card--dark"><div class="ix">Inventory</div><h3>Stock gaps</h3><p>On sale without stock, closed with stock, or showing overstock.</p></div>
+        <div class="card"><div class="ix">Order &amp; status</div><h3>Order alignment</h3><p>On the channel but missing in the OMS, cancelled in the OMS but open on the channel, long waits.</p></div>
+        <div class="card"><div class="ix">Price</div><h3>Price gaps</h3><p>Source price continuously compared with the live channel price.</p></div>
       </div>
-      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/owner/reports">Console › Infrastructure reports</a></p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">6 / 28</span>
-    </div>
-  </section>
-
-  <!-- DATA FLOW SPEED — ORDERS -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Data flow speed · orders</span>
-      <h2 class="slide-title">Orders reach the OMS <span class="accent">within seconds</span></h2>
-      <div class="measure">
-        <table class="xtable xtable--lg">
-          <thead><tr><th>Channel</th><th class="r">Median</th><th class="r">p90</th><th class="r">Average*</th></tr></thead>
-          <tbody>
-            <tr><td>Web</td><td class="r hl">1 s</td><td class="r">1.7 s</td><td class="r">1.2 s</td></tr>
-            <tr><td>Trendyol</td><td class="r hl">29 s</td><td class="r">92 s</td><td class="r">58 s</td></tr>
-            <tr><td>Hepsiburada</td><td class="r hl">32 s</td><td class="r">76 s</td><td class="r">93 s</td></tr>
-          </tbody>
-        </table>
-        <div class="side">
-          <div class="stat"><span class="num">99%</span><span class="lab">of Trendyol and Hepsiburada orders are in the OMS within 5 minutes</span></div>
-          <p class="note" style="margin:0;">Measured from order date on the channel to OMS record, last 30 days, a live retail customer. Marketplace times include the channel's own order publishing cycle. *Excluding isolated delays over 24 hours.</p>
-        </div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">7 / 28</span>
-    </div>
-  </section>
-
-  <!-- DATA FLOW SPEED — STOCK -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Data flow speed · stock</span>
-      <h2 class="slide-title">Stock changes reach channels in <span class="accent">under a minute</span></h2>
-      <div class="flow" style="margin-top:0.6cqh;">
-        <div class="node">Stock movement<small>ERP · store · order block</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Inventory (INV)<small>channel stock computed · median ~4 s</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--red">ComHub<small>one-minute dispatch cycle · zero stock instantly</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Sales channel<small>web · marketplaces</small></div>
-      </div>
-      <div class="measure" style="margin-top:2.2cqh;">
-        <table class="xtable">
-          <thead><tr><th>Channel</th><th class="r">Stock changes / day</th><th class="r">Median</th><th class="r">p90</th></tr></thead>
-          <tbody>
-            <tr><td>Web</td><td class="r">45,248</td><td class="r hl">40 s</td><td class="r">97 s</td></tr>
-            <tr><td>Trendyol</td><td class="r">39,620</td><td class="r hl">41 s</td><td class="r">100 s</td></tr>
-            <tr><td>Hepsiburada</td><td class="r">38,068</td><td class="r hl">42 s</td><td class="r">103 s</td></tr>
-            <tr><td>N11</td><td class="r">38,554</td><td class="r hl">49 s</td><td class="r">148 s</td></tr>
-            <tr><td>Amazon</td><td class="r">13,221</td><td class="r hl">46 s</td><td class="r">115 s</td></tr>
-          </tbody>
-        </table>
-        <div class="side">
-          <div class="stat"><span class="num">&lt;1 s</span><span class="lab">for zero or critical stock to go from ComHub to the channel (median)</span></div>
-          <p class="note" style="margin:0;">Measured from a stock change entering inventory to the same SKU being sent to the channel, last 24 hours, a live retail customer.</p>
-        </div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">8 / 28</span>
-    </div>
-  </section>
-
-  <!-- SAFETY STOCK -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Multi-level safety stock</span>
-      <h2 class="slide-title">Prevent overselling <span class="accent">channel by channel</span></h2>
-      <p class="lead">Safety stock is deducted from what each channel sees; rules can combine any of six dimensions.</p>
-      <div class="levels">
-        <div class="lv lv--red">Channel<small>web · marketplace · store</small></div>
-        <div class="lv">Rule group<small>channel groups</small></div>
-        <div class="lv">Source<small>company · supplier</small></div>
-        <div class="lv">Warehouse<small>DC · store</small></div>
-        <div class="lv">SKU<small>single item</small></div>
-        <div class="lv">SKU group<small>product hierarchy</small></div>
-      </div>
-      <ul class="flist">
-        <li><b>Conditional rules.</b> Different buffers by stock range (lower and upper bound); low-stock items close on a channel earlier.</li>
-        <li><b>Cumulative levels.</b> Warehouse, rule group and total levels can run together; rules stack.</li>
-        <li><b>Quarantine.</b> Problem stock is pulled from sale by rule type without touching physical stock.</li>
-        <li><b>Instant effect.</b> A rule added through the four-step wizard recalculates channel stock as soon as it is active.</li>
+      <ul class="flist" style="margin-top:2cqh;">
+        <li><b>Prioritised by severity, fixed automatically.</b> Fatal, critical, warning; every fix tracked as sent, corrected or failed.</li>
+        <li><b>Hourly summary.</b> Whether each check actually ran is reported too; the team hears about issues without opening a dashboard.</li>
       </ul>
-      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/inventory/safety-rules?page=1&amp;pageSize=100&amp;dir=desc">Console › Inventory › Safety stock rules</a></p>
+      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/comhub/control-tower">Console › ComHub › Control Tower</a></p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">9 / 28</span>
+      <span class="slide__no">11 / 29</span>
     </div>
   </section>
 
-  <!-- IN-TRANSIT ORDERS -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">In-transit order management</span>
-      <h2 class="slide-title">Stock stays <span class="accent">locked</span> while the order is on its way</h2>
-      <div class="flow" style="margin-top:1.4cqh;">
-        <div class="node">Order received<small>stock reserved</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Source assigned<small>reservation moves to location</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Pick &amp; pack<small>blocked quantity tracked</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--red">Ship<small>stock finally deducted</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Cancel / return<small>reservation released</small></div>
-      </div>
-      <ul class="flist" style="margin-top:3.2cqh;">
-        <li><b>Advanced reservation.</b> Quantities on in-flight orders are deducted from channel stock; the same item is never sold twice.</li>
-        <li><b>Discrepancy handling.</b> Gaps between reservations and physical stock are monitored, corrected automatically and reported.</li>
-        <li><b>Channel consistency.</b> Orders cancelled in the OMS but still open on a marketplace are caught separately by Control Tower.</li>
-      </ul>
+  <!-- PART II -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">II</div>
+      <h2 class="slide-title">Intelligent Sourcing</h2>
+      <p class="lead">Every order, within milliseconds, to the fastest and lowest-cost node.</p>
     </div>
     <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">10 / 28</span>
+      <span class="slide__no">12 / 29</span>
     </div>
   </section>
 
   <!-- SOURCING -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Order Sourcing · Distributed Order Management</span>
-      <h2 class="slide-title">The <span class="accent">best location</span> for every order</h2>
-      <div class="two-col two-col--wide">
+      <span class="kicker">Distributed Order Management</span>
+      <h2 class="slide-title">Every order routed <span class="accent">in 700 ms</span></h2>
+      <p class="lead">Sourcing weighs speed and cost in the same equation; the order leaves from the fastest and cheapest location.</p>
+      <div class="costs" style="margin-top:1.4cqh;">
+        <div class="c"><h3>Shipping cost</h3><p>Volumetric weight, distance and carrier rate; the real cost of shipping from each location.</p></div>
+        <div class="c"><h3>Operating cost</h3><p>Handling, picking, packing and transfer; the gap between store and warehouse.</p></div>
+        <div class="c"><h3>Holding cost</h3><p>Where keeping stock costs more; slow-moving stock is cleared first.</p></div>
+        <div class="c"><h3>Speed &amp; SLA</h3><p>Proximity to the customer, location workload and daily capacity; the promised delivery time.</p></div>
+      </div>
+      <div class="two-col two-col--wide" style="margin-top:3cqh;">
         <ul class="flist">
-          <li><b>Score-based allocation.</b> Candidate warehouses and stores are scored on cost, customer satisfaction and operational capacity.</li>
-          <li><b>Criteria.</b> Warehouse priority, proximity to the customer, stock level, sell-through, location workload and daily assignment count.</li>
-          <li><b>Cost model.</b> Handling, packing point, carrier cost and inter-city distance in one calculation.</li>
-          <li><b>No-code rule engine.</b> The algorithm is configured in the console; special needs are added as plugins.</li>
+          <li><b>Score-based decisions.</b> Every candidate location is scored; the best score wins, and the order is split when needed.</li>
+          <li><b>No-code rule engine.</b> Weights and priorities change in the console; custom algorithms plug in.</li>
         </ul>
-        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+        <div class="card card--dark" style="justify-content:center; padding:3cqh 2.2cqw;">
           <div class="stat"><span class="num">10–20%</span><span class="lab" style="color:#b9b7b2; max-width:none;">revenue uplift potential — fewer stock-outs, more orders fulfilled</span></div>
-          <div class="hairline" style="background:#333;"></div>
-          <div class="stat"><span class="num">1 → n</span><span class="lab" style="color:#b9b7b2; max-width:none;">an order ships from one location or is split into packages</span></div>
         </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">13 / 29</span>
+    </div>
+  </section>
+
+  <!-- MULTI-ALGORITHM -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Multi-algorithm sourcing</span>
+      <h2 class="slide-title">Not one algorithm — <span class="accent">a choice of strategies</span></h2>
+      <div class="flow" style="margin-top:1.2cqh;">
+        <div class="node">Order<small>lines · address · channel</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Candidates<small>warehouses and stores with stock</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Strategy &amp; score<span class="t">700 ms</span><small>rules · cost · speed</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Package plan<small>single package or split</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Allocation<small>pick order to location</small></div>
+      </div>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw; margin-top:2.4cqh;">
+        <div class="card card--accent"><div class="ix">Multiple algorithms</div><h3>By channel and segment</h3><p>Default, user-defined and channel-specific strategies; formulas at line, package and order level.</p></div>
+        <div class="card card--accent"><div class="ix">Simulation</div><h3>Test before going live</h3><p>Up to 100 scenarios without touching the order; cost compared at option, package and line level.</p></div>
+        <div class="card card--accent"><div class="ix">You stay in control</div><h3>Re-trigger or assign</h3><p>Sourcing re-runs when needed, or the operations team picks the location in one click.</p></div>
       </div>
       <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/oms/AyarSihirbazi_mock">Console › OMS › Sourcing setup wizard</a></p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">11 / 28</span>
+      <span class="slide__no">14 / 29</span>
     </div>
   </section>
 
-  <!-- HOW SOURCING WORKS -->
+  <!-- PRODUCT ALLOCATION -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">How sourcing works</span>
-      <h2 class="slide-title">Configure, <span class="accent">simulate</span>, go live</h2>
-      <div class="flow" style="margin-top:1.2cqh;">
-        <div class="node">Order<small>lines · delivery address · channel</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Candidates<small>warehouses and stores with stock</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--red">Scoring<small>rules · cost · capacity</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Package plan<small>single or split</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Allocation<small>pick order to location</small></div>
-      </div>
-      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw; margin-top:2.4cqh;">
-        <div class="card card--accent"><div class="ix">Configuration</div><h3>By channel and location</h3><p>Which sources feed which channel, packing points and carrier costs are all set in the console.</p></div>
-        <div class="card card--accent"><div class="ix">Simulation</div><h3>Without touching the order</h3><p>Default and alternative scenarios, up to 100 results; cost compared at option, package and line level.</p></div>
-        <div class="card card--accent"><div class="ix">Intervention</div><h3>Re-trigger or assign manually</h3><p>Sourcing can be re-run when needed, or the operations team picks the location by hand.</p></div>
+      <span class="kicker">Intelligent Product Allocation</span>
+      <h2 class="slide-title">Best sellers in <span class="accent">the right place</span>, in the right quantity</h2>
+      <div class="two-col two-col--wide">
+        <ul class="flist">
+          <li><b>Sell-through drives the score.</b> Fast movers are fulfilled from the fastest and cheapest ship-from location.</li>
+          <li><b>Best-seller protection.</b> Separate buffers for top sellers by channel and location; shelves stay full on campaign days.</li>
+          <li><b>Slow stock clears first.</b> Stock in high holding-cost locations gets priority; store and warehouse stay balanced.</li>
+          <li><b>Run on data.</b> Best-seller and out-of-stock KPIs in the same console; the impact of every rule is measured immediately.</li>
+        </ul>
+        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
+          <div class="stat"><span class="num">0.02%</span><span class="lab" style="color:#b9b7b2; max-width:none;">out-of-stock — best sellers included, across all channels</span></div>
+          <div class="hairline" style="background:#333;"></div>
+          <div class="stat"><span class="num">SKU</span><span class="lab" style="color:#b9b7b2; max-width:none;">and option-level sell-through, units and net revenue</span></div>
+        </div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">12 / 28</span>
+      <span class="slide__no">15 / 29</span>
     </div>
   </section>
 
-  <!-- AUTOMATED ORDER MANAGEMENT -->
+  <!-- AUTO CART -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Automated Order Cart Management</span>
-      <h2 class="slide-title">Split, partial shipment and cancel <span class="accent">run on rules</span></h2>
+      <span class="kicker">Auto Cart Management</span>
+      <h2 class="slide-title">Touchless orders: <span class="accent">nobody waits</span></h2>
       <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
         <div class="card">
           <div class="ix">Split &amp; partial shipment</div>
-          <h3>One order, several packages</h3>
+          <h3>One order, several departures</h3>
           <ul class="flist" style="margin-top:0.4cqh;">
-            <li>An order that one location cannot complete is <b>split into packages</b>, each shipped from its own location.</li>
+            <li>An order one location can't complete is <b>split into packages</b>, each leaving from its own location.</li>
             <li>Ready items ship <b>without waiting</b>; the rest are tracked as separate packages.</li>
-            <li>Same logic on your own web store and <b>supported marketplaces</b>.</li>
+            <li>Same logic on own.com and <b>supported marketplaces</b>.</li>
           </ul>
         </div>
         <div class="card card--dark">
-          <div class="ix">Auto cancel</div>
-          <h3>Missing items don't wait</h3>
+          <div class="ix">Auto cancel &amp; re-source</div>
+          <h3>Missing item, new route</h3>
           <ul class="flist" style="margin-top:0.4cqh;">
-            <li>A line not found during picking is cancelled and the order is <b>re-sourced</b> to another location.</li>
-            <li>Customer cancellation requests are <b>approved or rejected automatically</b> based on package status.</li>
-            <li>Cancellation reasons and timing feed the KPI reports.</li>
+            <li>A line not found during picking is cancelled and the order is <b>re-sourced automatically</b>.</li>
+            <li>Cancellation requests are <b>approved or rejected automatically</b> by package status.</li>
+            <li>Every cancellation reason and time feeds the KPI reports.</li>
           </ul>
         </div>
       </div>
@@ -400,15 +491,15 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">13 / 28</span>
+      <span class="slide__no">16 / 29</span>
     </div>
   </section>
 
-  <!-- ORDER WORKFLOW -->
+  <!-- N8N WORKFLOW -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Order workflow</span>
-      <h2 class="slide-title">The process is <span class="accent">shaped</span> around e-bebek</h2>
+      <span class="kicker">Workflow · n8n</span>
+      <h2 class="slide-title">Design the process <span class="accent">without code</span></h2>
       <div class="flow" style="margin-top:1.4cqh;">
         <div class="node">Created</div>
         <div class="arrow">&rarr;</div>
@@ -423,50 +514,50 @@
         <div class="node node--ink">Closed</div>
       </div>
       <ul class="flist" style="margin-top:3.4cqh;">
-        <li><b>State machine per tenant.</b> States and transitions are defined around e-bebek's own process.</li>
-        <li><b>Actions on every transition.</b> Success, warning and error actions: notification, ERP call, retry.</li>
-        <li><b>Visual flow design · roadmap.</b> With an n8n-based flow editor, business teams will be able to build their own automations.</li>
+        <li><b>Visual flows with n8n.</b> Approval, notification, ERP and CRM steps by drag and drop; business teams build their own automations.</li>
+        <li><b>Event-driven.</b> Every state transition is a trigger, with separate actions for success, warning and error.</li>
+        <li><b>A state machine built for e-bebek.</b> States and transitions follow e-bebek's process, with no software release to wait for.</li>
       </ul>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">14 / 28</span>
+      <span class="slide__no">17 / 29</span>
     </div>
   </section>
 
-  <!-- PART II — INSTORE -->
+  <!-- PART III -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
-      <div class="divider-index">II</div>
-      <h2 class="slide-title">Stores · InStore</h2>
-      <p class="lead">The app that turns every store into a fulfilment point and a sales channel.</p>
+      <div class="divider-index">III</div>
+      <h2 class="slide-title">Store as a Hub</h2>
+      <p class="lead">With InStore, every store is both a fulfilment node and a sales channel.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">15 / 28</span>
+      <span class="slide__no">18 / 29</span>
     </div>
   </section>
 
-  <!-- INSTORE FULFILLMENT -->
+  <!-- INSTORE FULFILMENT -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Instore omnichannel fulfillment &amp; B2B</span>
-      <h2 class="slide-title">Every store a <span class="accent">mini warehouse</span></h2>
+      <span class="kicker">Instore omnichannel fulfilment &amp; B2B</span>
+      <h2 class="slide-title">Every store a <span class="accent">mini fulfilment centre</span></h2>
       <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
-        <div class="card card--dark"><div class="ix">Ship from store</div><h3>Pick, pack, ship</h3><p>Picking on a phone, three-step quality check, store receipt and carrier label in one flow.</p></div>
-        <div class="card"><div class="ix">Click &amp; collect</div><h3>Handover with a code</h3><p>Online orders are prepared in store and handed to the customer with a verification code.</p></div>
-        <div class="card"><div class="ix">Transfers</div><h3>Store to store</h3><p>Ship-to-store and inter-store transfers, tracked through parcel receipt with a dispatch note.</p></div>
-        <div class="card"><div class="ix">Carrier handover</div><h3>Delivery slip</h3><p>A slip is opened, parcels are scanned, and the handover is recorded with photo and video.</p></div>
-        <div class="card"><div class="ix">Store returns</div><h3>Click &amp; collect returns</h3><p>Returns of click &amp; collect orders are taken in store and posted to the OMS.</p></div>
-        <div class="card"><div class="ix">B2B</div><h3>Corporate shipments</h3><p>Bulk and corporate orders use the same pick, pack and ship flow.</p></div>
+        <div class="card card--dark"><div class="ix">Ship-from-store</div><h3>Pick, pack, ship</h3><p>Picking on a phone, three-step quality check, receipt and carrier label in one flow.</p></div>
+        <div class="card"><div class="ix">Click &amp; collect</div><h3>Handover by code</h3><p>Online orders are prepared in store and handed over with a verification code.</p></div>
+        <div class="card"><div class="ix">Transfers</div><h3>Store to store</h3><p>Ship-to-store and transfers tracked end to end through parcel receipt with a dispatch note.</p></div>
+        <div class="card"><div class="ix">Carrier handover</div><h3>Proof of handover</h3><p>Parcels are scanned and the handover is recorded with photo and video.</p></div>
+        <div class="card"><div class="ix">Store returns</div><h3>Click &amp; collect returns</h3><p>Returns of online orders are taken in store and posted to the OMS instantly.</p></div>
+        <div class="card"><div class="ix">B2B</div><h3>Corporate shipments</h3><p>Bulk and corporate orders run through the same pick, pack and ship flow.</p></div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">16 / 28</span>
+      <span class="slide__no">19 / 29</span>
     </div>
   </section>
 
@@ -474,114 +565,47 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Instore commerce · order &amp; sale</span>
-      <h2 class="slide-title">Sell what <span class="accent">isn't on the shelf</span></h2>
+      <h2 class="slide-title">Endless aisle: sell what <span class="accent">isn't on the shelf</span></h2>
       <div class="two-col two-col--wide">
         <ul class="flist">
-          <li><b>Fixed and mobile POS.</b> Sell at the till or on the floor; SoftPOS takes NFC card payments on a phone, plus cash and loyalty points.</li>
-          <li><b>Endless aisle.</b> An item missing in store becomes an order from another warehouse or store; the sale is not lost.</li>
-          <li><b>Omni basket and customer history.</b> Store staff see the customer's online and in-store purchases together.</li>
-          <li><b>Returns and exchanges.</b> Partial and full returns, exchanges regardless of channel.</li>
-          <li><b>Store operations.</b> Stock counts and adjustments, label printing, inter-store transfers.</li>
+          <li><b>Fixed and mobile POS.</b> Sell at the till or on the floor; SoftPOS takes NFC on a phone, plus cash and loyalty points.</li>
+          <li><b>Endless aisle.</b> An item missing in store becomes an order from another warehouse or store; the sale never walks out.</li>
+          <li><b>Clienteling.</b> Store staff see the customer's online and in-store history on one screen.</li>
+          <li><b>Returns and exchanges.</b> Channel-agnostic; partial or full.</li>
+          <li><b>Store operations.</b> Counts, adjustments, label printing and transfers on the same device.</li>
         </ul>
         <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
-          <div class="stat"><span class="num">1</span><span class="lab" style="color:#b9b7b2; max-width:none;">app: selling, picking, handover and counting on the same device</span></div>
+          <div class="stat"><span class="num">1</span><span class="lab" style="color:#b9b7b2; max-width:none;">app: selling, picking, handover and counting</span></div>
           <div class="hairline" style="background:#333;"></div>
-          <div class="stat"><span class="num">0</span><span class="lab" style="color:#b9b7b2; max-width:none;">extra integrations: store orders land in the OMS directly</span></div>
+          <div class="stat"><span class="num">0</span><span class="lab" style="color:#b9b7b2; max-width:none;">extra integrations: store orders land directly in the OMS</span></div>
         </div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">17 / 28</span>
+      <span class="slide__no">20 / 29</span>
     </div>
   </section>
 
-  <!-- PART III — COMHUB -->
-  <section class="slide slide--ink">
-    <div class="slide__inner" style="justify-content:center;">
-      <div class="divider-index">III</div>
-      <h2 class="slide-title">ComHub &amp; Control Tower</h2>
-      <p class="lead">One integration point for every sales channel, with continuous consistency checks.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">18 / 28</span>
-    </div>
-  </section>
-
-  <!-- COMHUB -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">ComHub · Advanced Integration &amp; Orchestration</span>
-      <h2 class="slide-title">Every marketplace from <span class="accent">a single point</span></h2>
-      <div class="two-col two-col--wide">
-        <ul class="flist">
-          <li><b>One integration.</b> Product, stock, price and order traffic for all channels flows through ComHub; no separate integration per marketplace.</li>
-          <li><b>Speed-aware calls.</b> Critical stock goes out instantly; other updates reach channels in one-minute cycles.</li>
-          <li><b>Definition-free mapping.</b> Categories and attributes are mapped without per-product setup.</li>
-          <li><b>Channel safety stock.</b> Separate buffers by channel × product hierarchy.</li>
-          <li><b>Auto-correction.</b> Stock, price, order and status gaps between channel and source are caught and fixed.</li>
-        </ul>
-        <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
-          <div class="stat"><span class="num">35%</span><span class="lab" style="color:#b9b7b2; max-width:none;">up to this much gain in operational efficiency</span></div>
-          <div class="hairline" style="background:#333;"></div>
-          <div class="stat"><span class="num">1</span><span class="lab" style="color:#b9b7b2; max-width:none;">integration point: Trendyol, Hepsiburada, Amazon, N11, Google Shopping and more</span></div>
-        </div>
-      </div>
-      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/comhub">Console › ComHub</a></p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">19 / 28</span>
-    </div>
-  </section>
-
-  <!-- CONTROL TOWER -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Control Tower</span>
-      <h2 class="slide-title">Spot channel errors <span class="accent">before customers do</span></h2>
-      <p class="lead">Source systems (OMS, PIM) are compared with every sales channel continuously; gaps are prioritised by severity and fixed.</p>
-      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
-        <div class="card"><div class="ix">Product</div><h3>Listing health</h3><p>Products locked, blacklisted or rejected on a channel.</p></div>
-        <div class="card card--dark"><div class="ix">Inventory</div><h3>Stock gaps</h3><p>Items on sale with no stock, closed with stock, or showing overstock.</p></div>
-        <div class="card"><div class="ix">Order &amp; status</div><h3>Order alignment</h3><p>Orders on a marketplace but missing in the OMS, cancelled in the OMS but open on the channel, long waits.</p></div>
-        <div class="card"><div class="ix">Price</div><h3>Price gaps</h3><p>Source price compared with the live price on each channel.</p></div>
-      </div>
-      <ul class="flist" style="margin-top:2cqh;">
-        <li><b>Severity and badges.</b> Fatal, critical and warning; fixes tracked as sent, corrected or failed.</li>
-        <li><b>Hourly summary.</b> Whether each check actually ran is reported too, and a summary is mailed to the team.</li>
-      </ul>
-      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/comhub/control-tower">Console › ComHub › Control Tower</a></p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">20 / 28</span>
-    </div>
-  </section>
-
-  <!-- PART IV — TMS -->
+  <!-- PART IV -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">IV</div>
-      <h2 class="slide-title">Transport Management · TMS</h2>
-      <p class="lead">Every carrier process, from checkout to reconciliation, on one platform.</p>
+      <h2 class="slide-title">Last-mile &amp; Reconciliation</h2>
+      <p class="lead">TMS picks the best-fit carrier, prints an integrated final label and audits every invoice to the cent.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">21 / 28</span>
+      <span class="slide__no">21 / 29</span>
     </div>
   </section>
 
   <!-- TMS HUB -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Hub for all couriers</span>
+      <span class="kicker">Carrier hub</span>
       <h2 class="slide-title">30+ carriers, <span class="accent">one integration</span></h2>
       <div class="two-col two-col--wide">
         <div style="display:flex; flex-direction:column; gap:2.4cqh;">
@@ -589,9 +613,9 @@
             <span>Aras</span><span>Yurtiçi</span><span>MNG</span><span>PTT</span><span>UPS</span><span>Sürat</span><span>HepsiJET</span><span>DPD</span><span>Sendeo</span><span>Horoz</span><span>Kolay Gelsin</span><span>Scotty</span><span>Jetizz</span><span>Kargoist</span><span>KargomSende</span><span>PackUpp</span><span>PudoBox</span><span>Netlog</span><span>BirGündeKargo</span><span>Bovo</span><span>Dinçer</span><span>Fillo</span><span>Gelal</span><span>Murathan</span><span>TemKurye</span><span>Qurye</span><span>…</span>
           </div>
           <ul class="flist">
-            <li><b>Every service type.</b> Standard, same day, next day, scheduled (9–13 · 13–18 · 18–23), moto courier, click &amp; collect and pickup points.</li>
+            <li><b>Every service type.</b> Standard, same-day, next-day, scheduled (9–13 · 13–18 · 18–23), moto courier, click &amp; collect and pickup points.</li>
             <li><b>Pay at door.</b> Cash and card on delivery with supporting carriers.</li>
-            <li><b>New carriers in two weeks.</b> Each carrier added to the platform becomes available to every customer.</li>
+            <li><b>New carriers in two weeks.</b> Every carrier added to the platform is ready for every customer.</li>
           </ul>
         </div>
         <div class="card card--dark" style="justify-content:center; gap:2.2cqh; padding:3.4cqh 2.4cqw;">
@@ -605,32 +629,32 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">22 / 28</span>
+      <span class="slide__no">22 / 29</span>
     </div>
   </section>
 
-  <!-- CHECKOUT & DISPATCH -->
+  <!-- DISPATCH -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Checkout &amp; dispatch service</span>
-      <h2 class="slide-title">The right carrier at <span class="accent">the right price</span></h2>
+      <span class="kicker">Checkout &amp; dispatch</span>
+      <h2 class="slide-title">Every parcel with <span class="accent">the best price/performance</span> carrier</h2>
       <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
         <div class="card">
           <div class="ix">Checkout service</div>
-          <h3>The right options for the customer</h3>
+          <h3>A delivery promise that converts</h3>
           <ul class="flist" style="margin-top:0.4cqh;">
-            <li><b>Delivery options</b> based on address, customer segment and basket.</li>
+            <li><b>The right delivery options</b> by address, segment and basket.</li>
             <li>A <b>priced</b> list of carriers and services for each option.</li>
-            <li>Same-day and scheduled delivery open automatically where available.</li>
+            <li>Same-day and scheduled delivery switch on automatically where available.</li>
           </ul>
         </div>
         <div class="card card--dark">
           <div class="ix">Dispatch service</div>
           <h3>Carrier selection on autopilot</h3>
           <ul class="flist" style="margin-top:0.4cqh;">
-            <li><b>Rule based:</b> priority by channel, segment, location, basket and volume.</li>
-            <li><b>Performance and cost based:</b> carrier delivery performance balanced against volumetric weight and distance cost.</li>
-            <li>Dynamic volumetric weight, per-carrier quotas, blacklists; address and carrier can be changed by hand.</li>
+            <li><b>Rule-based:</b> priority by channel, segment, location, basket and volume.</li>
+            <li><b>Performance &amp; cost-based:</b> each carrier's real delivery performance balanced against weight-distance cost.</li>
+            <li>Dynamic volumetric weight, carrier quotas and blacklists; one-click overrides for exceptions.</li>
           </ul>
         </div>
       </div>
@@ -639,30 +663,30 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">23 / 28</span>
+      <span class="slide__no">23 / 29</span>
     </div>
   </section>
 
-  <!-- LABEL, TRACKING, RETURNS -->
+  <!-- LABEL & TRACKING -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Label · tracking · RMA</span>
-      <h2 class="slide-title">One label, <span class="accent">end-to-end</span> tracking</h2>
+      <span class="kicker">Integrated final label · tracking · RMA</span>
+      <h2 class="slide-title">Integrated final label: <span class="accent">parcels move faster</span></h2>
       <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
-        <div class="card card--accent">
-          <div class="ix">Label service</div>
-          <h3>One format for every carrier</h3>
-          <p>A single carrier-independent label; your own design, PDF, ZPL and PNG output, offline printing, e-invoice integration.</p>
+        <div class="card card--dark">
+          <div class="ix">Integrated final label</div>
+          <h3>No relabelling at the branch</h3>
+          <p>The carrier's own label is printed at packing, so the parcel goes straight into the carrier network. PDF, ZPL, PNG; e-invoice integrated, offline printing.</p>
         </div>
         <div class="card card--accent">
           <div class="ix">Tracking &amp; reporting</div>
           <h3>Every shipment on one screen</h3>
-          <p>Real-time status tracking; the open-shipments report exports to Excel for reconciliation with the carrier.</p>
+          <p>Real-time status tracking; the open-shipments report exports to Excel, ready for carrier reconciliation.</p>
         </div>
-        <div class="card card--dark">
+        <div class="card card--accent">
           <div class="ix">Return management · RMA</div>
           <h3>A return is a shipment too</h3>
-          <p>Customer returns, returns to supplier and marketplace returns under the same rules; return carrier and code generated automatically.</p>
+          <p>Customer, supplier and marketplace returns under the same rules; return carrier and code generated automatically.</p>
         </div>
       </div>
       <p class="demo"><b>Live demo</b><a href="https://webclient.tms.prod.hebiar.com/shipment">TMS › Shipments</a><a href="https://webclient.tms.prod.hebiar.com/returnconfiguration">TMS › Return configuration</a></p>
@@ -670,57 +694,57 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">24 / 28</span>
+      <span class="slide__no">24 / 29</span>
     </div>
   </section>
 
   <!-- RECONCILIATION -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Reconciliation</span>
-      <h2 class="slide-title">Carrier invoices paid <span class="accent">after checking</span></h2>
+      <span class="kicker">Freight audit &amp; reconciliation</span>
+      <h2 class="slide-title">You decide <span class="accent">what the carrier gets paid</span></h2>
       <div class="flow" style="margin-top:1.4cqh;">
-        <div class="node">Carrier data<small>invoice · weight · delivery time</small></div>
+        <div class="node">Carrier invoice<small>weight · amount · delivery time</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node">Matching<small>per shipment against TMS record</small></div>
+        <div class="node">Shipment match<small>one-to-one with the TMS record</small></div>
         <div class="arrow">&rarr;</div>
         <div class="node node--red">Gaps &amp; SLA<small>cost difference · delay</small></div>
         <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Claims<small>filed with the carrier</small></div>
+        <div class="node node--ink">Pay · dispute · claim<small>ready list</small></div>
       </div>
       <ul class="flist" style="margin-top:3.2cqh;">
-        <li><b>Cost reconciliation.</b> Invoiced weight and amount checked against agreed rates and measured volumetric weight.</li>
-        <li><b>Performance and SLA.</b> Delivery time and target compliance by carrier, fed back into dispatch decisions.</li>
-        <li><b>Claims process.</b> Claims for damaged, lost or late shipments are raised from the shipment record.</li>
+        <li><b>Cost audit.</b> Invoiced weight and amount checked against contracted rates and measured volumetric weight; every overcharged shipment is flagged.</li>
+        <li><b>SLA audit.</b> Delivery time and target compliance by carrier, fed back into dispatch; poor performers lose volume.</li>
+        <li><b>Claims.</b> Claims for damaged, lost or late parcels are raised from the shipment record in one step.</li>
       </ul>
       <p class="demo"><b>Live demo</b><a href="https://webclient.tms.prod.hebiar.com/reconciliationdata">TMS › Reconciliation data</a><a href="https://webclient.tms.prod.hebiar.com/tazmin/create/19772727">TMS › Claim request</a></p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">25 / 28</span>
+      <span class="slide__no">25 / 29</span>
     </div>
   </section>
 
-  <!-- PART V — MARKETPLACE -->
+  <!-- PART V -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">V</div>
-      <h2 class="slide-title">Sales Channel &amp; Marketplace Platform</h2>
-      <p class="lead">Run your own marketplace with a seller and operator model.</p>
+      <h2 class="slide-title">Marketplace Platform</h2>
+      <p class="lead">Run your own marketplace on the same backbone, with a seller and operator model.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">26 / 28</span>
+      <span class="slide__no">26 / 29</span>
     </div>
   </section>
 
-  <!-- MARKETPLACE PLATFORM -->
+  <!-- MARKETPLACE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Seller / operator platform</span>
-      <h2 class="slide-title">Your seller network on <span class="accent">the same backbone</span></h2>
+      <h2 class="slide-title">Your seller network <span class="accent">at the same speed</span></h2>
       <div class="grid grid-2" style="flex:1; align-content:center; gap:1.6cqh 1.8cqw;">
         <div class="card">
           <div class="ix">Hub for all sales channels</div>
@@ -728,7 +752,7 @@
           <ul class="flist" style="margin-top:0.4cqh;">
             <li>Seller onboarding, compliance tracking and <b>automatic product approval</b>.</li>
             <li>Central catalogue; seller orders flow into the OMS <b>automatically</b>.</li>
-            <li>Seller panel for orders, labels, carrier changes, cancellations and returns; contracted carriers per location.</li>
+            <li>Seller panel for orders, labels, carrier changes, cancellations and returns.</li>
           </ul>
         </div>
         <div class="card card--dark">
@@ -736,7 +760,7 @@
           <h3>Clear accounts with sellers</h3>
           <ul class="flist" style="margin-top:0.4cqh;">
             <li><b>Delays:</b> orders past SLA tracked by days late.</li>
-            <li><b>Cancellations and returns:</b> request, approval and return package with an RMA code.</li>
+            <li><b>Cancellations and returns:</b> request, approval and RMA-coded return package.</li>
             <li><b>Payments:</b> multi-party payment distribution.</li>
           </ul>
         </div>
@@ -746,7 +770,32 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">27 / 28</span>
+      <span class="slide__no">27 / 29</span>
+    </div>
+  </section>
+
+  <!-- KPI CONSOLE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Measured, not assumed</span>
+      <h2 class="slide-title">Every KPI on <span class="accent">one console</span></h2>
+      <p class="lead">Operational reports run for any period and reach the team by scheduled mail.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.4cqw;">
+        <div class="card card--dark"><div class="ix">Sourcing</div><h3>Out-of-stock rate</h3><p>Lines with no stock found on the first sourcing attempt.</p></div>
+        <div class="card"><div class="ix">Orders</div><h3>Cancellation rate</h3><p>Line-level cancellation rate, timing and reasons.</p></div>
+        <div class="card"><div class="ix">Orders</div><h3>Return rate</h3><p>Most-returned products and return reasons.</p></div>
+        <div class="card"><div class="ix">Sales</div><h3>Best sellers</h3><p>Units and net revenue by SKU and option.</p></div>
+        <div class="card"><div class="ix">Flow</div><h3>Order flow times</h3><p>Order, invoice, shipment and delivery; target compliance by carrier.</p></div>
+        <div class="card"><div class="ix">Store &amp; warehouse</div><h3>Picking cancellations</h3><p>By reason and by user.</p></div>
+        <div class="card"><div class="ix">Store</div><h3>Picker performance</h3><p>Speed and invoicing performance of store pickers.</p></div>
+        <div class="card"><div class="ix">Carrier</div><h3>Carrier call times</h3><p>Hand-over, label and cancellation; time with us vs. with the carrier.</p></div>
+      </div>
+      <p class="demo"><b>Live demo</b><a href="https://console.rw.hebiar.com/owner/reports">Console › Infrastructure reports</a></p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">28 / 29</span>
     </div>
   </section>
 
@@ -755,8 +804,8 @@
     <div class="slide__inner">
       <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
       <span class="kicker">Thank you</span>
-      <h1 class="cover-title">Let's build order to delivery <span class="accent">together</span></h1>
-      <p class="cover-sub">Ready to give e-bebek one backbone that fulfils web, app, store and marketplace orders from a single stock pool.</p>
+      <h1 class="cover-title">Faster. Leaner.<br /><span class="accent">Together.</span></h1>
+      <p class="cover-sub">Every e-bebek order captured in seconds, shipped from the right node and audited to the last cent.</p>
       <div class="cover-meta">
         <div>Windowist Tower, Maslak — İstanbul · info@commercelab.com.tr · +90 212 214 73 90</div>
       </div>
@@ -764,7 +813,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">28 / 28</span>
+      <span class="slide__no">29 / 29</span>
     </div>
   </section>
 
