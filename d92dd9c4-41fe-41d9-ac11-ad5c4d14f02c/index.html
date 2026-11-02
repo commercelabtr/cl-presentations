@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CommerceLab — Shaya RFP yanıtı: tam teklif sunumu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+  .compact-cards .card { padding: 1.5cqh 1.3cqw; gap: 0.5cqh; }
+  .compact-cards .card p { font-size: 1.16cqw; line-height: 1.42; }
+  .compact-cards .card h3 { font-size: 1.5cqw; }
+  .card--dark .flist li { color: rgba(255,255,255,.86); }
+  .card--dark .flist b { color: #fff; }
+  .card .flist { gap: 1.1cqh; }
+  .card .flist li { font-size: 1.28cqw; }
+  .flist--tight { gap: 0.9cqh; }
+  .flist--tight li { font-size: 1.36cqw; }
+
+  /* Tablolar */
+  .xtable { width: 100%; border-collapse: collapse; margin-top: 0.6cqh; }
+  .xtable th { text-align: left; font-family: var(--display); font-weight: 700; font-size: 0.92cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-2); padding: 0 1cqw 0.7cqh 0; border-bottom: 1px solid var(--line-strong); }
+  .xtable td { padding: 0.85cqh 1cqw 0.85cqh 0; font-size: 1.12cqw; color: var(--ink-soft); border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.38; }
+  .xtable td:first-child { font-family: var(--display); font-weight: 700; color: var(--ink); }
+  .xtable td b { color: var(--ink); font-weight: 600; }
+  .xtable--dense td { padding: 0.62cqh 0.8cqw 0.62cqh 0; font-size: 1.04cqw; }
+  .st { display: inline-block; white-space: nowrap; font-family: var(--display); font-weight: 700; font-size: 0.82cqw; letter-spacing: .06em; text-transform: uppercase; padding: 0.3cqh 0.55cqw; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--ink-soft); }
+  .st--ok { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .st--todo { border-color: var(--red); color: var(--red); }
+  .st--plan { background: var(--bone-2); }
+
+  /* Topoloji diyagramı (SVG) */
+  .dg-wrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .dg-wrap svg { width: 100%; height: 100%; display: block; }
+  .dg-t { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
+  .dg-t--w { fill: #fff; }
+  .dg-s { font-family: var(--sans); font-size: 11.5px; fill: var(--muted); }
+  .dg-s--w { fill: rgba(255,255,255,.78); }
+  .dg-zone { font-family: var(--display); font-weight: 700; font-size: 10.5px; letter-spacing: .16em; fill: var(--red); }
+  .dg-box { fill: #ffffff; stroke: #cfccc4; stroke-width: 1.2; }
+  .dg-bone { fill: #f6f4f0; stroke: #e4e1da; stroke-width: 1; }
+  .dg-ink { fill: #1a1a1a; }
+  .dg-red { fill: #d02c2f; }
+  .dg-line { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+  .dg-line--m { stroke: #9a9893; stroke-width: 1.2; fill: none; }
+
+  /* Zaman planı */
+  .gantt { display: grid; grid-template-columns: 17cqw 1fr; row-gap: 0.45cqh; column-gap: 1cqw; align-items: center; }
+  .gantt__h { font-family: var(--display); font-weight: 700; font-size: 0.85cqw; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-2); }
+  .gantt__name { font-family: var(--display); font-weight: 600; font-size: 1.15cqw; color: var(--ink); line-height: 1.2; }
+  .gantt__name small { display: block; font-family: var(--sans); font-weight: 400; font-size: 0.92cqw; color: var(--muted); }
+  .gantt__track { position: relative; height: 2.2cqh; background: var(--bone); border: 1px solid var(--line); border-radius: 4px; }
+  .gantt__bar { position: absolute; top: 0.3cqh; bottom: 0.3cqh; background: var(--ink); border-radius: 3px; }
+  .gantt__bar--red { background: var(--red); }
+  .gantt__bar--soft { background: var(--muted-2); }
+  .gantt__scale { position: relative; height: 1.6cqh; }
+  .gantt__scale span { position: absolute; top: 0; font-size: 0.85cqw; color: var(--muted-2); transform: translateX(-50%); font-variant-numeric: tabular-nums; }
+
+  /* Süreç şeridi (change management) */
+  .steps { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.5cqw; }
+  .step-box { border: 1px solid var(--line-strong); border-radius: 6px; background: var(--paper); padding: 1.1cqh 0.7cqw; display: flex; flex-direction: column; gap: 0.35cqh; min-height: 11cqh; }
+  .step-box .n { font-family: var(--display); font-weight: 800; font-size: 1cqw; color: var(--red); letter-spacing: .06em; }
+  .step-box .t { font-family: var(--display); font-weight: 700; font-size: 1.08cqw; color: var(--ink); line-height: 1.15; }
+  .step-box .d { font-size: 0.9cqw; color: var(--muted); line-height: 1.3; }
+  .step-box--ink { background: var(--ink); border-color: var(--ink); }
+  .step-box--ink .t { color: #fff; }
+  .step-box--ink .d { color: #b9b7b2; }
+  .step-box--ink .n { color: #ff6b6e; }
+
+  .two-col .flist li { font-size: 1.32cqw; }
+  .hdr-sub { font-family: var(--display); font-weight: 700; font-size: 1.05cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 1cqh; }
+  .hdr-sub--ink { color: var(--ink); }
+  .mini-stats { display: flex; gap: 2.4cqw; flex-wrap: wrap; }
+  .mini-stats .stat .num { font-size: 2.9cqw; }
+  .mini-stats .stat .lab { font-size: 1.05cqw; max-width: 15cqw; }
+
+  .xtable--xdense td { padding: 0.42cqh 0.7cqw 0.42cqh 0; font-size: 0.96cqw; line-height: 1.3; }
+  .xtable--xdense th { font-size: 0.84cqw; padding-bottom: 0.5cqh; }
+  .xtable td.c { text-align: center; }
+  .kpi-strip .kpi .k { font-size: 2.3cqw; }
+  .cover-meta--wide { gap: 3cqw; }
+  .team-grid .card { padding: 1.1cqh 1.2cqw; }
+  .team-card .tlist li { font-size: 0.98cqw; }
+  .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2cqw; align-items: start; }
+  .logowall { margin-top: 1cqh; }
+  .ann { font-size: 0.98cqw; color: var(--muted); line-height: 1.4; margin-top: 0.9cqh; }
+  .ann b { color: var(--ink); }
+  .desc--pills { line-height: 2 !important; }
+  .desc--pills .pill { font-size: 0.92cqw; padding: 0.25cqh 0.65cqw; vertical-align: middle; white-space: nowrap; }
+  .suite { gap: 1.6cqh; margin-top: 1.2cqh !important; }
+  .suite .layer { padding-top: 1.7cqh; padding-bottom: 1.7cqh; }
+  .suite .desc { font-size: 1.36cqw; }
+
+</style>
+</head>
+<body>
+<div class="deck">
+
+    <!-- 01 — KAPAK -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">Alshaya Türkiye · <span lang="en">Victoria's Secret &amp; Bath &amp; Body Works</span></span>
+      <h1 class="cover-title">E-ticaret platformu geçişi:<br /><span class="accent">teklif sunumu</span></h1>
+      <p class="cover-sub">RFP ECOM-RFP-2026 teklif yapısının (§23.1) on iki bölümü ve zorunlu eklerin (§23.2) tamamına CommerceLab'ın yanıtı: şirket, çözüm, fonksiyonel uyum, mimari, entegrasyon, migrasyon, plan, SLA, ticari yapı, varsayımlar ve Infosec.</p>
+      <div class="cover-meta" style="margin-top:3.2cqh;">
+        <div>Teklif · <span>Kasım 2026</span></div>
+        <div>Sürüm · <span>v1</span></div>
+        <div>Hazırlayan · <span>Commerce Lab E-Ticaret Çözümleri A.Ş.</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">1 / 75</span>
+    </div>
+  </section>
+
+  <!-- 02 — TEKLİF HARİTASI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Teklif yapısı · RFP §23.1 ve §23.2</span>
+      <h2 class="slide-title">Bu sunum RFP'nin istediği <span class="accent">sırayla</span> ilerler</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>#</th><th>RFP bölümü</th><th>Bu sunumda</th><th>Durum</th></tr></thead>
+        <tbody>
+          <tr><td>01</td><td>Executive Summary</td><td>Ana mesaj, Shaya önceliklerine karşılık, başarı ölçütlerine taahhüt</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>02</td><td>Company Profile and References</td><td>Kim olduğumuz, farkımız, referans müşteriler, liderlik ekibi, yeterlilikler (§16)</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>03</td><td>Proposed Solution Overview</td><td>Kapsam ve sahiplik, platform bileşenleri, kanallar, ürün yetenekleri, checkout, omnichannel, raporlama</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>04</td><td>Functional Fit-Gap Response</td><td>69 gereksinimin özeti ve bölüm bazlı karşılıklar; tam matris Excel ekinde</td><td><span class="st st--ok">Hazır · ürün ekibi teyidi</span></td></tr>
+          <tr><td>05</td><td>Technical Architecture and Security</td><td>Hedef mimari, veri sahipliği, ilkeler, yığın, AWS topolojisi, güvenlik, ölçekleme</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>06</td><td>Integration Strategy</td><td>ComHub modeli, §8 alanları, §8.6 envanter eşlemesi, Control Tower, loyalty checkout</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>07</td><td>Data Migration Strategy</td><td>Kapsam, üç aktarım yolu, prova ve mutabakat, SEO geçişi</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Kapsam, metodoloji, zaman planı, kilometre taşları, RACI, ekip, test, risk, teslimatlar</td><td><span class="st st--plan">Süreler keşifte teyit</span></td></tr>
+          <tr><td>09</td><td>Support and SLA Proposal</td><td>KPI'lar, yük testi kanıtı, SLA tablosu, destek modeli, change management, DR</td><td><span class="st st--todo">DR test raporu temin edilecek</span></td></tr>
+          <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Ticari teklif yapısı (rakamlar ayrı dosyada), varsayım ve kapsam dışı listesi, Infosec kanıt paketi</td><td><span class="st st--plan">Rakamlar ticari dosyada</span></td></tr>
+          <tr><td>Ek</td><td>Zorunlu ekler (§23.2)</td><td>Son slaytta ek kayıt defteri: hangi ek nerede, durumu ne</td><td><span class="st st--ok">Hazır</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">2 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 01 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">01</div>
+      <span class="kicker">RFP §23.1 · 1</span>
+      <h2 class="slide-title">Yönetici özeti</h2>
+      <p class="lead">Mevcut ERP, OMS ve CRM yerinde kalır; iki markanın web, uygulama ve pazaryeri deneyimi tek composable platforma taşınır. Taahhütler canlı üretimden ölçülmüş değerlere dayanır.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">3 / 75</span>
+    </div>
+  </section>
+
+<!-- 04 — ANA MESAJ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Yönetici özeti · RFP §1</span>
+      <h2 class="slide-title">Yazılım değil, <span class="accent">dijital IT ekibiniz</span> gibi çalışan bir operasyon platformu</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--dark"><div class="ix">01</div><h3>RFP'nin tamamı, fazlasıyla</h3><p>Talep edilen her başlık standart platform yeteneğiyle karşılanır; metrik beklentileri canlı üretim ölçümleriyle belgelenir.</p></div>
+        <div class="card"><div class="ix">02</div><h3>Mevcut sistemler yerinde kalır</h3><p>WinRetail ürün, fiyat ve fiziksel stoğun; OMS sipariş yaşam döngüsünün; CRM müşteri ve sadakatin kaynağı olmaya devam eder. Biz deneyim ve orkestrasyon katmanıyız.</p></div>
+        <div class="card"><div class="ix">03</div><h3>Para kazandıran ortaklık</h3><p>Her sprint ölçülebilir iş çıktısı üretir; performans, dönüşüm ve operasyon KPI'ları tek konsolda izlenir.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Bugün istemediğiniz, yarın hazır</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, çoklu ülke ve para birimi aynı platformda açılır; yeniden platform değişikliği gerekmez.</p></div>
+        <div class="card"><div class="ix">05</div><h3>Yarı otonom operasyon</h3><p>ACOMS yol haritası ve MCP arayüzleri ile ticaret operasyonu danışman modundan tam yetki devrine kademeli taşınır.</p></div>
+        <div class="card"><div class="ix">06</div><h3>Kanıtlanmış altyapı</h3><p>%99,99 erişilebilirlik, ayda 480M+ API isteği, günde 20K+ sipariş; 16 kurumsal tenant tek platformda.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">4 / 75</span>
+    </div>
+  </section>
+
+  <!-- HEDEF KARŞILIKLARI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Shaya'nın hedefleri · RFP §3.1–3.2</span>
+      <h2 class="slide-title">Her hedefin platformda <span class="accent">somut bir karşılığı</span> var</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Hedef (RFP)</th><th>CommerceLab karşılığı</th></tr></thead>
+        <tbody>
+          <tr><td>Müşteri deneyimi ve dönüşümün iyileştirilmesi</td><td>Yeni tasarım sistemi ile Next.js web ve native iOS/Android; SSR + CDN ile 2 sn altı sayfa hedefi; arama, kişiselleştirme ve A/B testi altyapısı</td></tr>
+          <tr><td>Checkout'un sadeleştirilmesi, sadakat entegrasyonunun güçlenmesi</td><td>Guest, üye, express ve mobil checkout tek orkestrasyonda; puan + kart multi-tender; CRM provizyon akışı her adımda geri alınabilir</td></tr>
+          <tr><td>Sipariş ve müşteri görünümünün kanal bağımsız olması</td><td>Unified Order History: web, mobil, pazaryeri ve mağaza siparişleri tek ekranda; iade ve değişim talepleri OMS'e event ile</td></tr>
+          <tr><td>Omnichannel operasyon, operasyonel verimlilik ve maliyet</td><td>Click &amp; Collect, mağazada iade ve mağaza stoğu görünümü; Control Tower ile uyuşmazlıklar müşteriden önce yakalanır ve otomatik düzeltilir</td></tr>
+          <tr><td>Kampanya ve içerik yönetim hızı; mobil uygulamanın yeni tasarımı</td><td>Drag &amp; drop CMS web ve app için ortak; zamanlama, deeplink, app-only kampanya; uygulama güncellemesi gerektirmeden yayın</td></tr>
+          <tr><td>Yeni marka, ülke ve kanal açılımına hazır yapı; çoklu marka merkezi yönetimi</td><td>Çok kiracılı, multi-site/country/currency platform; ikinci marka yapılandırmayla açılır; B2B, marketplace operator ve agentic commerce aynı çekirdekte</td></tr>
+          <tr><td>API-first, headless/composable, bulut uyumlu, izlenebilir ve test edilebilir mimari</td><td>Her yetenek REST ve GraphQL ile açık PBC; AWS/EKS üzerinde otomatik ölçekleme; CI/CD, kalite kapıları, APM ve merkezi log; üretici bağımlılığı yok, tam export</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">5 / 75</span>
+    </div>
+  </section>
+
+  <!-- BAŞARI ÖLÇÜTLERİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Başarı ölçütleri · RFP §3.3 ve §11.1</span>
+      <h2 class="slide-title">Taahhütler <span class="accent">ölçülmüş</span> değerlere dayanır</h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>KPI</th><th>RFP hedefi</th><th>Bugün ölçülen</th><th>Shaya taahhüdü ve ölçüm</th></tr></thead>
+        <tbody>
+          <tr><td>Uptime</td><td>≥ %99,9 aylık</td><td>%99,99 platform erişilebilirliği</td><td>≥ %99,9 aylık, planlı bakım hariç; Uptime Kuma + UptimeRobot raporu</td></tr>
+          <tr><td>Ana sayfa ve PDP yükleme</td><td>&lt; 2 sn</td><td>SSR + CDN, çalışma anında render yok</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm aracı (Lighthouse / CrUX) keşifte mutabık kalınır</td></tr>
+          <tr><td>Checkout yükleme</td><td>&lt; 3 sn</td><td>Kritik adımlar önbellekli API üzerinden; API p95 250 ms</td><td>&lt; 3 sn; New Relic Browser ile adım bazlı izleme</td></tr>
+          <tr><td>Peak yük</td><td>Hacim tahminine göre, yük ve stres testiyle</td><td>Kampanya profili ×4 stres, ×8 sıçrama; hata 0</td><td>280K oturum/gün ve 5K/saat işlem hedefinin katlarıyla go-live ve her kampanya öncesi test</td></tr>
+          <tr><td>Go-live'da açık kritik hata</td><td>0</td><td>Go/No-Go kriteri</td><td>Critical = 0; High için yazılı workaround; M7 paketi Steering Committee onayında</td></tr>
+          <tr><td>UAT</td><td>Onaylı kritik iş senaryoları tamam</td><td>Marka ekipleriyle senaryo bazlı UAT</td><td>M6 UAT Sign-Off; senaryo listesi keşifte birlikte yazılır</td></tr>
+        </tbody>
+      </table>
+      <p class="ann"><b>Kaynaklar:</b> New Relic APM (Apdex 0,95, ortalama 379 ms), Uptime Kuma, k6 yük testi Ekim 2026. Ayrıntılar 09. bölümde.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">6 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 02 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">02</div>
+      <span class="kicker">RFP §23.1 · 2 ve §16</span>
+      <h2 class="slide-title">Şirket profili ve referanslar</h2>
+      <p class="lead">Perakendecilerin içinden gelen bir ekip, kendi geliştirdiği uçtan uca ticaret ve operasyon platformu, Türkiye'nin önde gelen markalarında canlı kurulumlar.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">7 / 75</span>
+    </div>
+  </section>
+
+  <!-- KİM OLDUĞUMUZ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kim olduğumuz</span>
+      <h2 class="slide-title">Kurumsal müşteriler için <span class="accent">tek platformda</span> ticaret ve operasyon</h2>
+      <div class="two-col two-col--wide" style="flex:1; align-content:center;">
+        <div>
+          <p class="body-text">CommerceLab, bulut tabanlı kurumsal bir Commerce &amp; Supply Chain platformudur. Tüm satış kanallarını, iş modellerini ve operasyon ihtiyaçlarını tek, esnek ve ölçeklenebilir sistemden yönetir: bir Commerce ERP / işletim sistemi.</p>
+          <ul class="flist flist--tight" style="margin-top:1.4cqh;">
+            <li><b>Vizyon:</b> dijital ticaret ve operasyonda önde gelen platform sağlayıcısı olmak.</li>
+            <li><b>Misyon:</b> müşterilerimizin satış potansiyelini en üst düzeye çıkarırken operasyonel mükemmelliği en düşük maliyetle sağlamak.</li>
+            <li><b>Şirket:</b> Commerce Lab E-Ticaret Çözümleri A.Ş. · Windowist Tower, Maslak, İstanbul · kurucu ortakları tarafından yönetilen yazılım ürün şirketi.</li>
+          </ul>
+        </div>
+        <div class="stat-row" style="flex-direction:column; gap:2.2cqh;">
+          <div class="stat"><span class="num">360°</span><span class="lab">satış ve tedarik zinciri yaşam döngüsünün tamamı: headless commerce, PIM, CMS, ödeme, CRM, kampanya, pazaryeri, OMS, TMS, WMS</span></div>
+          <div class="stat"><span class="num">30+</span><span class="lab">uzman; Türkiye'nin önde gelen 100+ perakendecisinde edinilmiş deneyim</span></div>
+          <div class="stat"><span class="num">16</span><span class="lab">kurumsal tenant tek çok kiracılı SaaS platformunda; günde 20K+ sipariş, ayda 480M+ API isteği</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">8 / 75</span>
+    </div>
+  </section>
+
+  <!-- NEDEN FARKLIYIZ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Konumlandırma</span>
+      <h2 class="slide-title">Neden <span class="accent">farklıyız</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card"><div class="ix">01</div><h3>360° kapsama</h3><p>Ticaret ve tedarik zinciri yığınının tamamını kapsayan, en üst düzeyde genişletilebilir ürünler. Bugün kullanmadığınız modül yarın aynı platformda açılır.</p></div>
+        <div class="card"><div class="ix">02</div><h3>Operatörler tarafından kuruldu</h3><p>Boyner, Beymen, Koton ve Demsa'da e-ticaret ve IT'yi kurmuş ekip; her ürün kararında sahadan gelen perakende deneyimi.</p></div>
+        <div class="card card--dark"><div class="ix">03</div><h3>Satış × operasyon</h3><p>Satmak ile teslim etmek arasındaki boşluğu uçtan uca kapatırız: deneyim katmanından sipariş, stok ve lojistiğe.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Genişletilmiş ekibiniz</h3><p>Özel ihtiyaçlar terzi işi karşılanır; dijital IT departmanınız gibi çalışır, yazılım teslim edip çekilmeyiz. Her sprint ölçülebilir iş çıktısı üretir.</p></div>
+        <div class="card"><div class="ix">05</div><h3>Üretici bağımlılığı yok</h3><p>Sürüm karmaşası yaratmayan, kapalı ekosisteme hapsetmeyen ürün şirketi; Open API ve tam export ile veri ve URL'ler her zaman sizindir.</p></div>
+        <div class="card"><div class="ix">06</div><h3>AI ile çalışan platform</h3><p>Ürünün içinde (AI PIM, arama, conversational commerce) ve ürünü geliştirirken (AI destekli kod, test ve review); ACOMS ile yarı otonom operasyon yol haritası.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">9 / 75</span>
+    </div>
+  </section>
+
+  <!-- REFERANSLAR -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Referans müşteriler</span>
+      <h2 class="slide-title">Moda, ayakkabı, ev, perakende ve <span class="accent">QSR</span> markaları aynı platformda</h2>
+      <div class="logowall">
+        <div class="cell"><img src="logos/skechers.svg" alt="Skechers" /></div>
+        <div class="cell"><img src="logos/decathlon.png" alt="Decathlon" /></div>
+        <div class="cell"><img src="logos/asics.png" alt="Asics" /></div>
+        <div class="cell"><img src="logos/brooks.png" alt="Brooks" /></div>
+        <div class="cell"><img src="logos/hunter.svg" alt="Hunter" /></div>
+        <div class="cell"><img src="logos/a101.png" alt="A101" /></div>
+        <div class="cell"><img src="logos/madamecoco.svg" alt="Madame Coco" /></div>
+        <div class="cell"><img src="logos/kfc.png" alt="KFC" /></div>
+        <div class="cell"><img src="logos/hdholding.svg" alt="HD Holding" /></div>
+        <div class="cell"><img src="logos/gracebrands.svg" alt="Grace Brands" /></div>
+        <div class="cell"><img src="logos/sochic.jpg" alt="So Chic" /></div>
+        <div class="cell"><img src="logos/highfive.svg" alt="HighFive" /></div>
+        <div class="cell"><img src="logos/klaud.svg" alt="Klaud" /></div>
+        <div class="cell"><img src="logos/fila.png" alt="Fila" /></div>
+        <div class="cell"><img src="logos/stevemadden.png" alt="Steve Madden" /></div>
+        <div class="cell"><img src="logos/on.png" alt="On" /></div>
+      </div>
+      <p class="note" style="margin-top:1.2cqh;"><b>RFP §16 referans tablosu</b> (marka, ülke/sektör, kapsam, go-live, iletişim kişisi) ve müşteri paylaşım izinleri ayrı ekte verilir. Global markaların Türkiye operasyonları, çok markalı gruplar ve pazaryeri satıcıları aynı çok kiracılı platformda çalışır.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">10 / 75</span>
+    </div>
+  </section>
+
+  <!-- LİDERLİK EKİBİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Liderlik ekibi</span>
+      <h2 class="slide-title">Sahadan gelen liderlik, <span class="accent">20+ kişilik</span> mühendislik ekibi</h2>
+      <div class="grid grid-3 team-grid">
+        <div class="card team-card">
+          <div class="name">Onur Kemer</div><div class="role">Kurucu ortak · CEO</div>
+          <ul class="tlist"><li><b>25 yıl</b> sektör deneyimi</li><li>Boyner, Demsa ve Koton'da IT ve e-ticaret departmanlarını kurdu ve yönetti</li><li>Boyner Yazılım ve İş Geliştirme liderliği</li><li>ERP ve üretim planlama mühendisliği (iCron, Ariva)</li></ul>
+          <div class="edu">YTÜ Bilgisayar Mühendisliği, 2002</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">İsmail Danacı</div><div class="role">Kurucu ortak · CTO</div>
+          <ul class="tlist"><li><b>20 yıl</b> sektör deneyimi</li><li>CommerceLab e-ticaret platformunu (v1) inşa etti</li><li>Boyner ve Koton e-ticaret altyapısı</li><li>Boyner POS sistemleri · ERP mühendisliği (Bilteks)</li></ul>
+          <div class="edu">Sakarya Üniversitesi, Bilgisayar Programcılığı, 2008</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">Arif Kula</div><div class="role">CPO · Ürün Direktörü</div>
+          <ul class="tlist"><li><b>32 yıl</b> sektör deneyimi</li><li>Boyner CTO (3 yıl) · Beymen CTO (12 yıl)</li><li>Boyner IT Müdürü (8 yıl)</li><li>DorukNet, yazılım mühendisi (4 yıl)</li></ul>
+          <div class="edu">İTÜ Matematik Mühendisliği, 1992</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">Hakan Gürses</div><div class="role">Yazılım Geliştirme Müdürü · Mimar</div>
+          <ul class="tlist"><li><b>21 yıl</b> deneyim</li><li>CommerceLab e-ticaret platformunu (v1) inşa etti</li><li>Pazaryeri entegrasyon platformu (Altınyıldız)</li><li>Boyner CRM · Medical Park akış verisi işleme</li></ul>
+          <div class="edu">Yeditepe Bilgisayar Müh., 2005 · Doğuş Üniv. doktora, 2014</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">Faruk Öksüz</div><div class="role">Yazılım Geliştirme Müdürü · Mimar</div>
+          <ul class="tlist"><li><b>30 yıl</b> sektör deneyimi</li><li>IBM POS sistemleri, Yazılım Geliştirme Direktörü (14 yıl)</li><li>Kampanya sistemleri · sadakat · dağıtık veri</li><li>Pfizer yazılım müdürü</li></ul>
+          <div class="edu">ODTÜ Bilgisayar Mühendisliği, 1999</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">Gökhan Koçak</div><div class="role">Yazılım Geliştirme Müdürü · Mimar</div>
+          <ul class="tlist"><li><b>22 yıl</b> deneyim</li><li>CommerceLab e-ticaret platformunu (v1) inşa etti</li><li>5px Yazılım ve Proje, kurucu ortak</li><li>RND E-Ticaret Çözümleri CTO · 30 e-ticaret sistemi devreye aldı</li></ul>
+          <div class="edu">Uludağ Üniversitesi, 2004</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">11 / 75</span>
+    </div>
+  </section>
+
+  <!-- YETERLİLİKLER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Tedarikçi yeterlilikleri · RFP §16</span>
+      <h2 class="slide-title">RFP §16'nın istediği <span class="accent">yedi başlık</span></h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Başlık</th><th>Yanıt</th></tr></thead>
+        <tbody>
+          <tr><td>Şirket profili ve sahiplik yapısı</td><td>Commerce Lab E-Ticaret Çözümleri A.Ş., İstanbul; kurucu ortakları (CEO, CTO) tarafından yönetilen yazılım ürün şirketi; Teknopark Ar-Ge projeleri (ACOMS)</td></tr>
+          <tr><td>Platform ve teknoloji yetkinlikleri</td><td>Kendi geliştirdiği 10 PBC'lik ürün ailesi; .NET, PostgreSQL, MongoDB, Redis, Elasticsearch, RabbitMQ, GraphQL, Kubernetes/AWS; Next.js web ve native mobil</td></tr>
+          <tr><td>Türkiye ve uluslararası teslimat kapasitesi</td><td>İstanbul merkezli 30+ kişilik ekip; BestCloudForme ile 7/24 operasyon; multi-country ve multi-currency platform, global markaların Türkiye operasyonları canlıda</td></tr>
+          <tr><td>Moda, kozmetik, perakende ve omnichannel referansları</td><td>Ayakkabı ve giyim (Skechers, Brooks, Hunter, Steve Madden, On, Fila, Asics, Decathlon), ev (Madame Coco), perakende (A101), QSR (KFC), çok markalı gruplar (HD Holding, Grace Brands); Click &amp; Collect, ship-from-store ve mağaza iadesi canlı</td></tr>
+          <tr><td>Benzer hacim, entegrasyon ve migrasyon deneyimi</td><td>Platform geneli günde 20K+ sipariş, ayda 480M+ API isteği; ERP, OMS, CRM, PSP ve 20+ kargo entegrasyonu; farklı platformlardan katalog, müşteri ve sipariş geçmişi geçişleri</td></tr>
+          <tr><td>Ürün yol haritası ve Ar-Ge yaklaşımı</td><td>ACOMS otonom ticaret operasyonu (kural → optimizasyon → istatistik → ML), AI PIM, conversational commerce, MCP/agentic arayüzler; haftada birden çok üretim sürümü</td></tr>
+          <tr><td>Finansal ve operasyonel sürdürülebilirlik</td><td>Yinelenen SaaS gelir modeli, 16 kurumsal tenant, kendi ürünü üzerinde kendi ekibi; bağımsız denetim ve finansal belgeler talep halinde paylaşılır</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">12 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 03 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">03</div>
+      <span class="kicker">RFP §23.1 · 3 ve §5</span>
+      <h2 class="slide-title">Önerilen çözüm</h2>
+      <p class="lead">Deneyim ve orkestrasyon katmanı bizde; ürün, stok, sipariş ve müşteri kayıt sistemleri sizde kalır. Her kanal tek Commerce Platform üzerinden servis alır.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">13 / 75</span>
+    </div>
+  </section>
+
+  <!-- KAPSAM VE SAHİPLİK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Çözüm kapsamı ve sistem sahipliği · RFP §5</span>
+      <h2 class="slide-title">Ne biz yapıyoruz, ne <span class="accent">yerinde kalıyor</span></h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>Bileşen</th><th>CommerceLab rolü</th><th>Mevcut sistem / sahiplik</th><th>Teklif durumu</th></tr></thead>
+        <tbody>
+          <tr><td>Web ve mobil uygulama</td><td>Deneyim, sepet, checkout, hesap; iki marka için ayrı site ve app</td><td>Marka dijital kanalları (Ticimax'tan geçiş)</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+          <tr><td>Katalog / PIM</td><td>Zenginleştirme, varyant, medya, kanal içeriği, yayın</td><td>WinRetail ürün, fiyat ve kategori ana verisi</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+          <tr><td>İçerik / CMS</td><td>Drag &amp; drop sayfa, banner, landing, blog; web + app</td><td>—</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+          <tr><td>Siparişler</td><td>Oluşturma, OMS'e devir, durum görünümü, Unified Order History</td><td>Retail Markup OMS: yaşam döngüsü, satılabilir stok, kargo, iade</td><td><span class="st st--ok">Entegrasyon</span></td></tr>
+          <tr><td>Müşteri ve sadakat</td><td>Operasyonel müşteri deneyimi: hesap, adres, izin, istek listesi</td><td>CRM: müşteri master, puan, tier, kupon, kampanya kuralı</td><td><span class="st st--ok">Entegrasyon</span></td></tr>
+          <tr><td>Kampanya ve promosyon</td><td>Sepet seviyesi kural motoru; CRM kurallarını tekrarlamaz, tamamlar</td><td>CRM kampanya ve kupon yönetimi</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+          <tr><td>Ödeme</td><td>Ödeme orkestrasyonu, 3D, fraud, multi-tender, mutabakat</td><td>PSP ve bankalar</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+          <tr><td>Pazaryeri</td><td>Marketplace Seller: ürün kartı, stok, fiyat, sipariş</td><td>Trendyol, Hepsiburada, Amazon</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+          <tr><td>OMS · WMS · TMS kurulumu</td><td>Teklif dışı; ileride aynı platformda açılabilir</td><td>Mevcut sistemler</td><td><span class="st st--plan">Kapsam dışı</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">14 / 75</span>
+    </div>
+  </section>
+
+  <!-- PLATFORM BİLEŞENLERİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Platform bileşenleri</span>
+      <h2 class="slide-title">On paketlenmiş ürün, <span class="accent">tek ekosistem</span>; Shaya için altısı kapsamda</h2>
+      <div class="stack suite" style="margin-top:0.4cqh;">
+        <div class="layer"><span class="tag">Kanallar</span><span class="desc">WebShop (Next.js) · AppShop (native iOS, Android) · pazaryeri · ileride POS, chat, voice, agentic</span></div>
+        <div class="layer layer--ink"><span class="tag">Deneyim</span><span class="desc">Headless Experience Layer: ayrık, omnichannel storefront ve native uygulamalar; REST / GraphQL</span></div>
+        <div class="layer"><span class="tag">Orkestrasyon</span><span class="desc">Commerce Dispatch Engine: her satın alma bağlamını (marka, kanal, segment) doğru yeteneğe yönlendirir</span></div>
+        <div class="layer"><span class="tag">Core commerce</span><span class="desc desc--pills"><span class="pill pill--solid">PIM / Katalog</span> <span class="pill pill--solid">Headless CMS</span> <span class="pill pill--solid">Kampanya motoru</span> <span class="pill pill--solid">Payment / Checkout</span> <span class="pill pill--solid">Operasyonel CRM</span> <span class="pill pill--solid">Marketplace Seller</span> <span class="pill">Marketplace Operator</span></span></div>
+        <div class="layer"><span class="tag">Tedarik zinciri</span><span class="desc desc--pills"><span class="pill">OMS</span> <span class="pill">TMS</span> <span class="pill">WMS</span> &nbsp;Shaya'da kapsam dışı; Retail Markup OMS entegre edilir, ileride aynı platformda açılır</span></div>
+        <div class="layer layer--ink"><span class="tag">Entegrasyon</span><span class="desc">ComHub · Orchestration Manager · Control Tower: ERP, OMS, CRM, PSP, pazaryeri, kargo, pazarlama, analitik</span></div>
+      </div>
+      <p class="ann"><b>Koyu rozet</b> teklif kapsamındaki PBC'ler; açık rozet aynı platformda hazır, Shaya için opsiyon. Her PBC bağımsız sürümlenen bir Packaged Business Capability'dir.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">15 / 75</span>
+    </div>
+  </section>
+
+  <!-- KANAL KATMANI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kanal katmanı · RFP §5.1.1</span>
+      <h2 class="slide-title">Dört kanal, <span class="accent">tek Commerce Platform</span></h2>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card"><div class="ix">Web</div><h3>Next.js · responsive · PWA</h3><p>SSR ve statik üretim; ürün listesi, fiyat ve linkler ilk HTML'de. Çalışma anında render yok, JAMstack dağıtım, CDN önünde. Marka başına ayrı tasarım ve domain.</p></div>
+        <div class="card"><div class="ix">iOS</div><h3>Native uygulama</h3><p>Aynı GraphQL API; yeni tasarıma geçiş kapsamda. CMS bileşenleri uygulama güncellemesi gerektirmeden yayınlanır; deeplink, push, Adjust attribution.</p></div>
+        <div class="card"><div class="ix">Android</div><h3>Native uygulama</h3><p>iOS ile ortak bileşen sözleşmesi; app-only kampanya ve banner; in-app browser ile dış link; mağaza bulucu ve Click &amp; Collect akışları.</p></div>
+        <div class="card card--dark"><div class="ix">Pazaryeri</div><h3>Trendyol · Hepsiburada · Amazon</h3><p>Marketplace Seller ile çift yönlü: ürün kartı, stok, fiyat ve sipariş. Kanal bazlı emniyet stoğu, mutabakat ve otomatik düzeltme; sipariş platformda oluşur, OMS'e devredilir.</p></div>
+      </div>
+      <p class="note"><b>Tüm kanallar</b> aynı katalog, stok, fiyat, kampanya ve müşteri servislerini kullanır; kanal bazlı görünürlük ve içerik farkı konsoldan yönetilir (RFP §6.1 yayın ve görünürlük).</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">16 / 75</span>
+    </div>
+  </section>
+
+  <!-- YETKİNLİK ALANLARI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Commerce Platform yetkinlikleri · RFP §5.1.1.1</span>
+      <h2 class="slide-title">RFP'nin istediği beş yetkinlik alanı ve <span class="accent">sahibi modül</span></h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Alan (RFP)</th><th>İstenen</th><th>Nasıl karşılanır</th><th>Modül</th></tr></thead>
+        <tbody>
+          <tr><td>Customer Experience</td><td>Üyelik, OTP/sosyal hızlı giriş, hesap ve adres yönetimi, e-arşiv fatura, sadakat ve kampanya ekranları, favori ve istek listesi, fiyat/stok bildirimi</td><td>Hesap merkezi tek ekran; Google, Apple ve OTP (SMS/WhatsApp) girişi; favori ürünlerde fiyat düşüşü ve stok yenilenmesinde push/e-posta; sadakat ekranları CRM servisleriyle</td><td>Operasyonel CRM · AppShop</td></tr>
+          <tr><td>Commerce Services</td><td>PLP (sonsuz kaydırma/sayfalama, hızlı sepet ve favori, stoksuzları sona taşıma), PDP (zengin medya, varyant, yorum), sınırsız kategori derinliği, çoklu kategori, kategori bazlı dinamik filtre, çoklu seçim, sepet</td><td>Searchindising ile kategoriye göre değişen facet seti; kural tabanlı sıralama ve stoksuz ürün politikası; ürün birden fazla kategoriye bağlanır; varyant görsel ve stoğa göre değişir</td><td>PIM · Search · Headless Experience</td></tr>
+          <tr><td>Checkout</td><td>Ödeme orkestrasyonu, sipariş oluşturma</td><td>Guest, üye, express ve mobil checkout; multi-tender; CRM puan provizyonu; sipariş OMS'e event ile devredilir</td><td>Payment / Checkout</td></tr>
+          <tr><td>Sales Aftercare</td><td>Sipariş görüntüleme ve takip, iade ve değişim talebi, durum görüntüleme</td><td>Unified Order History (web, mobil, pazaryeri, mağaza); iade/değişim talebi platformda açılır, OMS'te işlenir, statü geri akar</td><td>Headless Experience · ComHub</td></tr>
+          <tr><td>Business Services</td><td>CMS, PIM, raporlama, dashboard</td><td>Tek yönetim konsolu: rol bazlı yetki, onay akışı, audit log; satış, sipariş, loyalty ve operasyon panoları; Power BI ve veri ambarı aktarımı</td><td>CMS · PIM · Konsol</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">17 / 75</span>
+    </div>
+  </section>
+
+  <!-- ÜRÜN YETENEKLERİ I -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Ürün yetenekleri I</span>
+      <h2 class="slide-title">PIM, arama ve <span class="accent">içerik</span></h2>
+      <div class="grid grid-3" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card">
+          <div class="ix">PIM / Katalog</div><h3>Ürün verisi tek yerden</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li><b>Her ürün tipi</b>: varyant, bundle, konfigüre edilebilir, dijital, hizmet.</li>
+            <li><b>Model koduyla otomatik varyant</b>; renk swatch'ları ve ilişkili ürünler karşılıklı güncellenir.</li>
+            <li><b>Kural tabanlı kategori</b> ve menü yönetimi; include/exclude listeleriyle karmaşık katalog.</li>
+            <li><b>Yaşam döngüsü</b>: workflow ve kural motoruyla aktivasyon, deaktivasyon, arşiv.</li>
+            <li><b>Toplu işlem</b>: Excel + eşleme profili, hata raporu, mükerrer kontrolü; feed yönetimi.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Arama · Searchindising</div><h3>Elasticsearch üzerinde</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li><b>Akıllı arama</b> ve otomatik tamamlama; synonym, typo tolerance, anahtar kelime yönetimi.</li>
+            <li><b>Kategori bazlı facet</b>, çoklu seçim, filtre içinde arama; SEO dostu facet URL'leri.</li>
+            <li><b>Search merchandising</b>: sabitleme, kural, zero-result yönetimi.</li>
+            <li><b>Analitik</b>: arama terimi, dönüşüm ve sonuçsuz arama raporları.</li>
+            <li><b>Vektörel arama</b> ve conversational commerce modülleri hazır.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ix">Headless CMS</div><h3>Web ve app için tek panel</h3>
+          <ul class="flist" style="margin-top:0.4cqh;">
+            <li><b>Drag &amp; drop</b> bileşen yerleşimi: banner, slider, ürün gridi, story; kod gerektirmez.</li>
+            <li><b>Zamanlama</b>: saat bazında yayın başlangıç/bitiş, anlık aktif/pasif.</li>
+            <li><b>Omnichannel yayın</b>: PLP, landing ve blog içeriği web, iOS ve Android'de aynı anda; uygulama güncellemesi gerekmez.</li>
+            <li><b>Deeplink ve linkleme</b>: her sayfa için otomatik iOS/Android deeplink; iç ve dış link, in-app browser.</li>
+            <li><b>Rol, onay, audit log</b>, önizleme, versiyon ve geri alma; dil ve lokasyon bazlı içerik.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">18 / 75</span>
+    </div>
+  </section>
+
+  <!-- ÜRÜN YETENEKLERİ II -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Ürün yetenekleri II</span>
+      <h2 class="slide-title">Kampanya, ödeme, müşteri ve <span class="accent">pazaryeri</span></h2>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.3cqw;">
+        <div class="card">
+          <div class="ix">Kampanya motoru</div><h3>Kural ve aksiyon motoru</h3>
+          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
+            <li><b>Omnichannel</b> kampanya bağlamı: kanal, segment, sepet, lokasyon.</li>
+            <li><b>Best-choice</b> mekanizması ve öncelik grupları.</li>
+            <li><b>Event-action</b> çekirdek: kullanım, kazanım, mesaj, özel aksiyon.</li>
+            <li><b>CRM ve loyalty</b> entegrasyonu; harici kupon ve gift card.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Payment / Checkout</div><h3>Ödeme orkestrasyonu</h3>
+          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
+            <li><b>Tüm büyük PSP'ler</b>; dinamik yönlendirme, failover.</li>
+            <li><b>Kural tabanlı zorunlu 3D</b>, fraud skorlama, kart saklama tokenization ile.</li>
+            <li><b>Multi-tender</b>: puan + kart, gift card, kupon, BNPL, taksit.</li>
+            <li><b>Auto-fix</b> ve mutabakat; başarısız ödeme raporları.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ix">Operasyonel CRM</div><h3>Müşteri ve hesap</h3>
+          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
+            <li><b>Kayıt ve kimlik</b>: OTP, sosyal giriş, SSO seçenekleri.</li>
+            <li><b>Profil, adres defteri</b>, sipariş geçmişi, istek listesi, iletişim tercihleri.</li>
+            <li><b>Entegre izin yönetimi</b> (KVKK, İYS), anonimleştirme ve hesap silme.</li>
+            <li><b>Segmentasyon</b>: kural ve yaşam döngüsü bazlı; harici loyalty ile çalışır.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ix">Marketplace Seller</div><h3>Uçtan uca pazaryeri</h3>
+          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
+            <li><b>Tek noktadan</b> tüm pazaryerleri; ürün bazlı tanım gerektirmez.</li>
+            <li><b>Dinamik çağrı hızı</b> sipariş, stok ve fiyat değişim hızına göre.</li>
+            <li><b>Kanal ve hiyerarşi bazlı emniyet stoğu</b>; stok ve fiyat farkı otomatik düzeltme.</li>
+            <li><b>Mutabakat</b>: gecikme, iptal, ödeme, iade.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">19 / 75</span>
+    </div>
+  </section>
+
+  <!-- CHECKOUT VE ÖDEME -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Checkout ve ödeme · RFP §5.1.2.7</span>
+      <h2 class="slide-title">Dört checkout modeli, altı ödeme türü, <span class="accent">tek orkestrasyon</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card"><div class="ix">Checkout modelleri</div><h3>Guest · üye · express · mobil</h3><p>Aynı orkestrasyon; adres, fatura ve teslimat seçenekleri (adrese, mağazaya, Click &amp; Collect) kanal ve segmente göre. Stok ve fiyat sipariş anında OMS available stoğu ve ERP fiyatıyla doğrulanır.</p></div>
+        <div class="card card--dark"><div class="ix">Ödeme türleri</div><h3>Kredi kartı · banka kartı · puan · hediye kartı · kupon · BNPL</h3><p>Multi-tender: puan + kredi kartı, puan + banka kartı, puan + hediye kartı aynı siparişte. Kısmi iade ve iptalde ödeme kırılımı korunur, her araç kendi kanalına iade edilir.</p></div>
+        <div class="card"><div class="ix">Loyalty-driven checkout</div><h3>CRM servisleri sepet içinde</h3><p>Harcanabilir puan sorgusu, Point Provision, Remove Provision, Finish Transaction; kupon provizyonu ve iptali. Puan kararı CRM'de kalır, platform yalnızca orkestre eder; CRM yanıt vermezse kartla ödeme sürer.</p></div>
+        <div class="card"><div class="ix">Güvenlik</div><h3>3D Secure ve fraud</h3><p>Kural tabanlı zorunlu 3D (tutar, segment, kart tipi, risk skoru); fraud skorlama; kart saklama PSP tokenization ile, kart verisi platformda tutulmaz. Sanal POS failover ile ikinci PSP'ye geçiş.</p></div>
+        <div class="card"><div class="ix">Personel programı</div><h3>Retter entegrasyonu</h3><p>Personel doğrulama, bakiye sorgulama ve harcama bildirimi checkout adımına bağlanır; iade ve iptalde bakiye geri yüklenir. Servis sözleşmesi keşifte netleştirilir.</p></div>
+        <div class="card"><div class="ix">Mutabakat</div><h3>Ödeme tutarlılığı</h3><p>PSP, banka ve sipariş kayıtları günlük mutabakat; tutarsızlıkta auto-fix ve Control Tower uyarısı. İptal, iade ve kısmi iade PSP'ye otomatik iletilir.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">20 / 75</span>
+    </div>
+  </section>
+
+  <!-- SİPARİŞ VE İADE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Sipariş, iade ve değişim · RFP §5.1.2.5–5.1.2.9</span>
+      <h2 class="slide-title">Sipariş OMS'te yaşar, müşteri <span class="accent">tek ekranda</span> görür</h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Platformun yaptığı</div>
+          <ul class="flist flist--tight">
+            <li><b>Dijital siparişler</b> (web, mobil, pazaryeri) platformda oluşur, oluşur oluşmaz OMS'e event ile devredilir; teslim onayı gelmeden kapanmaz.</li>
+            <li><b>Unified Order History</b>: web, mobil, pazaryeri ve OMS'te oluşan mağaza siparişleri müşteriye tek listede; durumlar OMS'ten geri akar.</li>
+            <li><b>Kargo bilgisi</b> OMS'ten alınır; takip numarası ve durum müşteri ekranında ve bildirimlerde (JetSMS, e-posta, push).</li>
+            <li><b>İade ve değişim talebi</b> platformda açılır: tam/kısmi iade, tam/kısmi değişim, beden, renk ve ürün değişimi; iade uygunluğu PIM'den.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">OMS'in sahibi olduğu, bizim gösterdiğimiz</div>
+          <ul class="flist flist--tight">
+            <li><b>Sipariş orkestrasyonu</b>, dağıtım, paket ve sevkiyat, kargo entegrasyonları, mağaza siparişleri, available inventory.</li>
+            <li><b>İstisna yönetimi</b>: kargo hasarı, operasyonel hata, yanlış ürün, iadeye kapalı ürün ve memnuniyet süreçleri OMS kurallarıyla; yetkili kullanıcı istisnası audit trail'de.</li>
+            <li><b>Statü geri akışı</b>: iade ve değişim durum güncellemeleri event ile platforma; fatura saatte bir; müşteri bildirimi platformdan tetiklenir.</li>
+            <li><b>Control Tower</b> iki taraf arasındaki her farkı (kanalda var OMS'te yok, OMS'te iptal kanalda açık) raporlar ve düzeltir.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>Overselling önleme:</b> satış kararı yalnız OMS available stoğuyla verilir; OMS'e henüz ulaşmamış ve pending siparişler platform tarafında düşülür; kampanya zirvesi ve entegrasyon gecikmesinde kritik stok hızlı şeritte kanala kapatılır.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">21 / 75</span>
+    </div>
+  </section>
+
+  <!-- OMNICHANNEL -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Omnichannel · RFP §7</span>
+      <h2 class="slide-title">Üç omnichannel fonksiyon, üçü de <span class="accent">konfigürasyonla</span></h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>ID</th><th>Fonksiyon · beklenen kapsam</th><th>Platformun rolü</th><th>OMS / mağaza rolü</th><th>Yanıt</th></tr></thead>
+        <tbody>
+          <tr><td>OM-01</td><td>Click &amp; Collect: mağaza seçimi, stok rezervasyonu, bildirim, teslim doğrulama</td><td>Checkout'ta mağaza seçimi ve mağaza stoğu; rezervasyon talebi OMS'e; hazır/teslim bildirimleri; teslim kodu</td><td>Rezervasyon, hazırlama ve teslim onayı OMS ve mağaza uygulamasında</td><td class="c"><span class="st st--ok">C</span></td></tr>
+          <tr><td>OM-02</td><td>Return To Store: online siparişin mağazada iadesi ve sistemlere aktarımı</td><td>Müşteri iade talebini açar, mağaza seçer; iade durumu ve geri ödeme müşteri ekranında</td><td>Mağaza iadeyi OMS'te kabul eder; ERP ve CRM'e aktarım OMS üzerinden; ödeme iadesi platform PGW ile</td><td class="c"><span class="st st--ok">C</span></td></tr>
+          <tr><td>OM-03</td><td>Store Stock Visibility: mağaza bazlı stok ve tahmini teslimat</td><td>PDP ve sepette mağaza bazlı stok ve tahmini teslim süresi; mağaza bulucu</td><td>Mağaza stoğu OMS'ten (ERP kaynaklı) event ile; emniyet stoğu kuralı kanalda</td><td class="c"><span class="st st--ok">C</span></td></tr>
+        </tbody>
+      </table>
+      <div class="grid grid-3 compact-cards" style="margin-top:1.4cqh; gap:1.1cqh 1.3cqw;">
+        <div class="card"><div class="ix">Hazır desenler</div><p>Reserve &amp; Collect, Click &amp; Collect, ship-from-store, mağazadan transfer ve shop-local akışları platformda canlı müşterilerde çalışıyor.</p></div>
+        <div class="card"><div class="ix">Entegrasyon tasarımı</div><p>Üç fonksiyon da Retail Markup OMS ile arayüz tasarımı gerektirir; mesaj sözleşmeleri keşif fazında yazılır, mock servislerle SIT erken başlar.</p></div>
+        <div class="card card--dark"><div class="ix">İleride</div><p>Mağaza içi sipariş, endless aisle ve clienteling modülleri aynı platformda; mağaza POS entegrasyonu istenirse Instore uygulaması açılır.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">22 / 75</span>
+    </div>
+  </section>
+
+  <!-- RAPORLAMA -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Raporlama ve analitik · RFP §5.1.2.10</span>
+      <h2 class="slide-title">Operasyon ekibinin ihtiyaç duyduğu göstergeler <span class="accent">tek konsolda</span></h2>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.3cqw;">
+        <div class="card"><div class="ix">Satış</div><h3>Kanal, marka, gün, saat</h3><p>Web, app ve pazaryeri bazında; iki marka ayrı ve birleşik; saatlik satış ve dönüşüm; kampanya dönemlerinde canlı izleme.</p></div>
+        <div class="card"><div class="ix">Sipariş</div><h3>Hacim, iptal, iade, değişim</h3><p>Sipariş hacmi ve ortalama sepet; iptal, iade ve değişim oranları kanal ve ürün bazında; OMS durumlarıyla birlikte.</p></div>
+        <div class="card"><div class="ix">Loyalty</div><h3>Puan, tier, kampanya</h3><p>Puan kullanım ve kazanımı, tier dağılımı, kampanya ve kupon performansı; CRM verisiyle birleşik görünüm.</p></div>
+        <div class="card card--dark"><div class="ix">Operasyon</div><h3>Control Tower panoları</h3><p>Sipariş durumu, entegrasyon sağlığı, stok tutarlılığı, kargo operasyonu; şiddet bazlı uyarı ve saatlik özet.</p></div>
+      </div>
+      <div class="two-col" style="margin-top:1.4cqh;">
+        <ul class="flist flist--tight">
+          <li><b>Dışa aktarım</b>: Power BI, veri ambarı ve data lake için zamanlanmış export ve API; GA4 data layer eksiksiz ve özelleştirilebilir.</li>
+          <li><b>Arama analitiği</b>: terim, sonuçsuz arama, dönüşüm; merchandising kararları için.</li>
+        </ul>
+        <ul class="flist flist--tight">
+          <li><b>Teknik KPI'lar</b> aynı yerde: sayfa ve API hızı, hata oranı, entegrasyon gecikmesi (New Relic, Grafana).</li>
+          <li><b>Bot ve AI crawler trafiği</b> raporlanır; crawl bütçesi analizi için sunucu loglarına erişim.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">23 / 75</span>
+    </div>
+  </section>
+
+  <!-- GELECEK HAZIRLIĞI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Gelecek hazırlığı</span>
+      <h2 class="slide-title">Bugün istemediğiniz, <span class="accent">yarın hazır</span></h2>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card"><div class="ix">Global</div><h3>Multi-country · currency · site</h3><p>Yeni ülke, para birimi, fiyat listesi ve depo platform değiştirmeden açılır; hreflang ve dil bazlı URL yapısı hazır.</p></div>
+        <div class="card"><div class="ix">İş modelleri</div><h3>B2B · B2B2C · marketplace operator</h3><p>Kurumsal satış, multi-vendor dropship ve satıcı onboarding aynı Commerce Dispatch Engine üzerinde.</p></div>
+        <div class="card card--dark"><div class="ix">ACOMS</div><h3>Yarı otonom operasyon</h3><p>Teknopark Ar-Ge projesi: günlük ticaret ve fulfilment kararları danışman modundan tam yetki devrine kademeli taşınır; kural → optimizasyon → istatistik → ML.</p></div>
+        <div class="card"><div class="ix">Agentic</div><h3>MCP ve conversational commerce</h3><p>Back-office fonksiyonları kontrollü MCP araçları olarak; LLM destekli operasyon; sesli ve sohbet tabanlı alışveriş kanalı.</p></div>
+      </div>
+      <p class="note"><b>Aynı platform, aynı sözleşme:</b> bu yetenekler ayrı proje değil, mevcut tenant üzerinde yapılandırma ve kısa entegrasyonla açılır. OMS, TMS ve WMS de istendiğinde aynı yolla eklenir.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">24 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 04 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">04</div>
+      <span class="kicker">RFP §23.1 · 4 ve §6–7</span>
+      <h2 class="slide-title">Fonksiyonel uyum (fit-gap)</h2>
+      <p class="lead">Altmış dokuz gereksinimin tamamı konfigürasyonla karşılanır. Bu bölüm her RFP bölümü için "nasıl" sorusunu yanıtlar; tam matris Excel ekindedir.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">25 / 75</span>
+    </div>
+  </section>
+
+  <!-- FİT-GAP ÖZETİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Fit-gap özeti · RFP §6, §7 ve Ek A</span>
+      <h2 class="slide-title">69 gereksinim, <span class="accent">69 konfigürasyon</span>; özel geliştirme yok</h2>
+      <div class="two-col two-col--wide" style="flex:1; align-content:center;">
+        <div>
+          <div class="stat-row" style="margin-bottom:2cqh;">
+            <div class="stat"><span class="num">69</span><span class="lab">gereksinim satırı</span></div>
+            <div class="stat"><span class="num">69</span><span class="lab">C · konfigürasyon ile</span></div>
+            <div class="stat"><span class="num">0</span><span class="lab">D geliştirme · T üçüncü taraf · N karşılanmıyor</span></div>
+          </div>
+          <table class="xtable xtable--xdense">
+            <thead><tr><th>RFP bölümü</th><th>Satır</th><th>Ana modül</th></tr></thead>
+            <tbody>
+              <tr><td>6.1 Ürün ve katalog yönetimi</td><td class="c">10</td><td>PIM / Katalog, Search, ComHub</td></tr>
+              <tr><td>6.2 Arama ve navigasyon</td><td class="c">5</td><td>Search / Headless Experience</td></tr>
+              <tr><td>6.3 Ürün detay, sepet ve checkout</td><td class="c">8</td><td>Payment / Checkout, Kampanya, CRM</td></tr>
+              <tr><td>6.5 İçerik, kampanya ve yönetim paneli</td><td class="c">6</td><td>Headless CMS / AppShop</td></tr>
+              <tr><td>6.6 SEO yönetimi (16 alt başlık)</td><td class="c">37</td><td>Headless Experience / SEO, CMS, PIM</td></tr>
+              <tr><td>7 Omnichannel</td><td class="c">3</td><td>Headless Experience, ComHub, OMS</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="card card--dark" style="margin-bottom:1.2cqh;">
+            <div class="ix">Yanıt kodu tanımı</div>
+            <h3>C = standart ürün, konfigürasyonla</h3>
+            <p>Hiçbir satır özel geliştirme, üçüncü taraf ürün ya da yol haritası gerektirmez. Sıralama algoritması (FR-TEXT-004) için proje özelinde özel kural eklenebilir; kupon ve gift card üçüncü taraf sistemdeyse (FR-023) entegrasyon kapsamdadır.</p>
+          </div>
+          <div class="card">
+            <div class="ix">Doğrulama durumu</div>
+            <p>Çoğu satır "doküman destekli"; arama, 3D/fraud, CMS drag &amp; drop ve deeplink satırları ürün ekibi teknik teyidinde; omnichannel satırları OMS arayüz tasarımına bağlı. §6.4 müşteri ve üyelik matriste satır olarak açılmamıştır; karşılığı ayrı slaytta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">26 / 75</span>
+    </div>
+  </section>
+
+  <!-- FİT 6.1 -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">6.1 Ürün ve katalog yönetimi · FR-TEXT-001…010</span>
+      <h2 class="slide-title">Ürün, katalog ve merchandising <span class="accent">tek panelden</span></h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Gereksinim</th><th>Nasıl karşılanır</th><th>Modül</th></tr></thead>
+        <tbody>
+          <tr><td>Merkezi ürün yönetimi; içe/dışa aktarım performansı</td><td>Oluşturma, toplu yükleme, nitelik yönetimi tek konsolda; 44K SKU için dakikalar mertebesinde toplu işlem, zamanlanmış export</td><td>PIM</td></tr>
+          <tr><td>Varyant ve ilişkili ürün; renk swatch otomatik</td><td>Model kodu veya eşleme alanıyla varyant ilişkisi otomatik; sonradan yüklenen renk aynı yapıya girer; ilişkili seri tek işlemle</td><td>PIM</td></tr>
+          <tr><td>Kategori atama: tekil, toplu, kural tabanlı</td><td>Ürün bir veya birden fazla kategoride; nitelik kurallarıyla otomatik atama, yeni ürünlere de uygulanır</td><td>PIM</td></tr>
+          <tr><td>Ürün sıralama: manuel + otomatik, sabitleme, stok durumu</td><td>Eklenme tarihi, satış adedi, stok gibi kriterlerle kural; sabitleme ve geri plana alma; proje özel algoritma plugin ile</td><td>Search</td></tr>
+          <tr><td>İade uygunluğu yönetimi</td><td>Ürün ve toplu düzeyde panelden; metin ve kural checkout ve iade ekranlarına yansır</td><td>PIM · ComHub</td></tr>
+          <tr><td>Etiket ve kampanya grupları; Excel ile toplu</td><td>Etiketler kategori ve kampanya tanımında kullanılır; Excel ile ekle/çıkar</td><td>Kampanya · PIM</td></tr>
+          <tr><td>Toplu işlem ve veri kontrolü; hata raporu; mükerrer önleme</td><td>Excel + eşleme profili; satır ve hücre bazında ihlal raporu; onaya kadar kayıt değişmez; anahtar alanla mükerrer kontrolü</td><td>PIM</td></tr>
+          <tr><td>Panel içi arama ve filtreleme; toplu işlem; export</td><td>Model kodu, SKU, barkod, kategori, renk, beden, stok, yayın durumu; filtrelenen küme üzerinde toplu işlem ve export</td><td>PIM · Search</td></tr>
+          <tr><td>Geliştirme ve değişiklik yönetimi; geri alma</td><td>Test ve UAT ortamında regresyon, LLM destekli dinamik testler; CI/CD ile ~1,5 dk deploy, aynı sürede rollback</td><td>Change mgmt</td></tr>
+          <tr><td>Ürün ve stok bilgisinin güncel gösterimi</td><td>Panel değişiklikleri event ile web ve app'e; stoksuz ürün kuralı anında uygulanır; Control Tower eski veriyi yakalar</td><td>ComHub · Control Tower</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">27 / 75</span>
+    </div>
+  </section>
+
+  <!-- FİT 6.2–6.3 -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">6.2 Arama ve navigasyon · 6.3 Ürün detay, sepet ve checkout</span>
+      <h2 class="slide-title">Aramadan ödemeye <span class="accent">on üç gereksinim</span></h2>
+      <div class="cols-2">
+        <table class="xtable xtable--xdense">
+          <thead><tr><th>6.2</th><th>Nasıl karşılanır</th></tr></thead>
+          <tbody>
+            <tr><td>FR-010 Akıllı arama, otomatik tamamlama</td><td>Searchindising; öneri, popüler ve son aramalar; vektörel arama ve conversational modül opsiyonel</td></tr>
+            <tr><td>FR-011 Filtre, facet, sıralama</td><td>Kategori bazlı facet seti, çoklu seçim, filtre içi arama, kural tabanlı sıralama</td></tr>
+            <tr><td>FR-012 Synonym, typo, anahtar kelime</td><td>Sözlük ve typo toleransı konsoldan; dil bazlı</td></tr>
+            <tr><td>FR-013 Search merchandising, zero-result</td><td>Sabitleme, kural, yönlendirme; sonuçsuz aramada alternatif öneri</td></tr>
+            <tr><td>FR-014 Arama analitiği</td><td>Terim, dönüşüm, sonuçsuz arama raporları; GA4 data layer</td></tr>
+          </tbody>
+        </table>
+        <table class="xtable xtable--xdense">
+          <thead><tr><th>6.3</th><th>Nasıl karşılanır</th></tr></thead>
+          <tbody>
+            <tr><td>FR-020 PDP zengin içerik, stok, teslimat</td><td>Çoklu görsel/video/360°, varyant, yorum; OMS stoğu ve mağaza bazlı teslim süresi</td></tr>
+            <tr><td>FR-021 Cross-sell, up-sell, alternatif</td><td>Kural ve davranış tabanlı öneri blokları; crawlable linkler</td></tr>
+            <tr><td>FR-022 Guest ve üye checkout</td><td>Guest, üye, express, mobil; tek orkestrasyon</td></tr>
+            <tr><td>FR-023 Kupon, gift card, puan</td><td>CRM kupon ve puan servisleri; gift card PSP/CRM; üçüncü taraf ise entegrasyon kapsamda</td></tr>
+            <tr><td>FR-024 Kampanya kuralları, promotion engine</td><td>Kural · değerlendirme · aksiyon motoru, best-choice; CRM kurallarını tamamlar</td></tr>
+            <tr><td>FR-025 Stok ve fiyat validasyonu</td><td>Sipariş anında OMS available stok ve ERP fiyatıyla doğrulama</td></tr>
+            <tr><td>FR-026 Adres, fatura, teslimat seçenekleri</td><td>Adres defteri, kurumsal fatura, teslimat ve Click &amp; Collect seçenekleri</td></tr>
+            <tr><td>FR-027 Fraud ve 3D Secure</td><td>Kural tabanlı zorunlu 3D, fraud skorlama, PSP failover</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">28 / 75</span>
+    </div>
+  </section>
+
+  <!-- FİT 6.4 -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">6.4 Müşteri ve üyelik yönetimi</span>
+      <h2 class="slide-title">Üyelikten hesap silmeye <span class="accent">yedi başlık</span></h2>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.2cqh 1.3cqw;">
+        <div class="card"><div class="ix">01</div><h3>Üyelik, giriş, hesap doğrulama</h3><p>E-posta/şifre, OTP (SMS, WhatsApp) ile saniyeler içinde giriş; Google ve Apple ID; cihaz ve oturum yönetimi. Müşteri master CRM'de, kimlik platformda.</p></div>
+        <div class="card"><div class="ix">02</div><h3>Profil ve adres defteri</h3><p>Fatura ve teslimat adresleri, kayıtlı kartlar (token), e-arşiv fatura PDF'leri tek ekranda; CRM ile profil ve izin senkronu.</p></div>
+        <div class="card card--dark"><div class="ix">03</div><h3>Personel ve yakını programı</h3><p>Retter ile personel doğrulama, bakiye sorgulama ve harcama bildirimi checkout'a bağlı; özel fiyat ve limit kuralları kampanya motorunda; iade ve iptalde bakiye geri yüklenir.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Sipariş, iade ve geri ödeme geçmişi</h3><p>Unified Order History; iade ve geri ödeme durumu OMS ve PGW'den; geçmiş Ticimax siparişleri salt okunur taşınır.</p></div>
+        <div class="card"><div class="ix">05</div><h3>İletişim izinleri, KVKK, preference center</h3><p>Kanal bazlı izinler (e-posta, SMS, push, arama); İYS entegrasyonu; Efilli çerez ve izin yönetimi; izin tarih ve kaynağı denetim izinde.</p></div>
+        <div class="card"><div class="ix">06</div><h3>Sosyal giriş ve SSO</h3><p>Google, Apple; istenirse kurumsal SSO (OIDC/SAML) personel programı için; tek kimlik tüm kanallarda.</p></div>
+        <div class="card"><div class="ix">07</div><h3>Hesap silme, anonimleştirme, veri sahipliği</h3><p>Self-servis hesap silme ve anonimleştirme akışı; KVKK veri talebi süreci; CRM'e silme/anonimleştirme eventi; saklama süreleri yapılandırılır.</p></div>
+        <div class="card"><div class="ix">Not</div><p>Bu bölüm RFP'de düz metin olduğundan matriste satır açılmamıştır; keşif fazında satırlara bölünür ve aynı yanıt kodu ile matrise eklenir.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">29 / 75</span>
+    </div>
+  </section>
+
+  <!-- FİT 6.5 -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">6.5 İçerik, kampanya ve yönetim paneli · FR-TEXT-011…016 ve ek maddeler</span>
+      <h2 class="slide-title">Marka ekipleri teknik destek olmadan <span class="accent">yayınlar</span></h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Gereksinim</th><th>Nasıl karşılanır</th><th>Durum</th></tr></thead>
+        <tbody>
+          <tr><td>Merkezi drag &amp; drop panel (web ve app)</td><td>Ana sayfa, landing ve app ekranlarındaki banner, slider, ürün listesi ve bileşenler sürükle-bırak ile yerleştirilir, sıralanır, boyutlandırılır</td><td><span class="st st--ok">C</span></td></tr>
+          <tr><td>Banner zamanlama ve durum yönetimi</td><td>Saat kırılımında yayın başlangıç/bitiş; anlık aktif/pasif; süresi dolan içerik otomatik kalkar</td><td><span class="st st--ok">C</span></td></tr>
+          <tr><td>Omnichannel içerik; app güncellemesi gerektirmeden</td><td>PLP, landing ve blog içeriği web, iOS ve Android'de eş zamanlı; bileşen sözleşmesi uygulamada hazır</td><td><span class="st st--ok">C</span></td></tr>
+          <tr><td>Deeplink yönetimi</td><td>Her sayfa için otomatik iOS/Android deeplink; push ve reklamdan doğrudan sayfaya</td><td><span class="st st--ok">C</span></td></tr>
+          <tr><td>İç ve dış linkleme; in-app browser</td><td>Kategori, ürün, sepet, hesap ve dış link; uygulama içi tarayıcı</td><td><span class="st st--ok">C</span></td></tr>
+          <tr><td>Çoklu dil ve lokasyon bazlı banner, menü, içerik</td><td>Dil, kur ve ülkeye göre içerik ve menü; aynı panelden</td><td><span class="st st--ok">C</span></td></tr>
+          <tr><td>Zengin medya ve video; 360° ve GIF</td><td>DAM ile yükleme, otomatik optimizasyon (WebP/AVIF, boyut); PLP ve PDP'de video</td><td><span class="st st--ok">Standart</span></td></tr>
+          <tr><td>App-only kampanya ve platform bazlı ayrıştırma</td><td>Görünürlük kuralı kanal bazında: yalnız web, yalnız app, her ikisi</td><td><span class="st st--ok">Standart</span></td></tr>
+          <tr><td>Rol bazlı yetki, onay akışı, audit log, önizleme, versiyon, geri alma</td><td>Rol ve onay akışı; her değişiklik kim/ne zaman; önizleme bağlantısı; sürüm geçmişi ve geri alma</td><td><span class="st st--ok">Standart</span></td></tr>
+          <tr><td>Segment, kanal ve lokasyona göre kişiselleştirme</td><td>Kural tabanlı içerik; CRM segmentleri ve Personaclick ile on-site kişiselleştirme</td><td><span class="st st--ok">Standart</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">30 / 75</span>
+    </div>
+  </section>
+
+  <!-- FİT 6.6 I -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">6.6 SEO yönetimi I · 6.6.1–6.6.8</span>
+      <h2 class="slide-title">URL, meta, canonical, facet, sitemap ve schema <span class="accent">panelden</span></h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Alt başlık</th><th>Nasıl karşılanır</th><th>Matris</th></tr></thead>
+        <tbody>
+          <tr><td>6.6.1 Yönlendirme ve URL</td><td>Tekil ve CSV ile toplu 301; regex/joker; zincir ve döngü tespiti; 301/302 seçimi; slug değişince otomatik 301; önek ve ID'siz özelleştirilebilir URL; hiyerarşi, Türkçe karakter, slash/harf/www ve HTTPS standardizasyonu sunucu seviyesinde; parametreli URL'ler indekse girmez</td><td>7 satır · C</td></tr>
+          <tr><td>6.6.2 Meta ve head</td><td>Her sayfa tipinde manuel title/description; {ÜrünAdı} - {Marka} gibi şablonlar; Excel/CSV toplu meta; H1 title'dan bağımsız; sayfa ve global head kodu; meta robots ve X-Robots-Tag; Open Graph ve Twitter Card; uzunluk ve mükerrer raporu</td><td>5 satır · C</td></tr>
+          <tr><td>6.6.3 Canonical ve indeksleme</td><td>Sayfa bazında manuel canonical, self-referencing varsayılan; varyant stratejisi seçilebilir; çoklu kategoride tek kanonik; filtre/sıralama/sayfalama kuralı; arama sayfası noindex; boş kategori ve stoksuz kuralı; gerçek 404/410, özel 404</td><td>2 satır · C</td></tr>
+          <tr><td>6.6.4 Faceted navigation</td><td>Filtreler crawlable &lt;a href&gt;, SSR'da; filtre bazında indeks/nofollow/noindex seçimi; statik facet URL'si; kombinasyon sayfasına özel title/H1/içerik; 3+ filtrede otomatik noindex; sıralamadan bağımsız tek URL; fiyat ve sıralama parametreleri kapatılabilir</td><td>6 satır · C</td></tr>
+          <tr><td>6.6.5 Sayfalama</td><td>Crawlable sayfa linkleri; sonsuz kaydırmanın yanında sayfalı yedek; ?page=1 canonical; SEO içeriği yalnız 1. sayfada; "Sayfa X" title eki</td><td>Standart</td></tr>
+          <tr><td>6.6.6 Sitemap ve robots</td><td>Ürün, kategori, marka, blog, görsel sitemap ayrı; index yapısı ve 50K bölme; noindex/stoksuz/yönlenen/404 hariç; doğru lastmod; robots.txt panelden; GPTBot, ClaudeBot, Google-Extended kuralları; llms.txt; IndexNow ve Search Console ping</td><td>3 satır · C</td></tr>
+          <tr><td>6.6.7 SEO içeriği</td><td>Kategori üst/alt zengin metin; HTML düzenlenebilir editör; devamını oku DOM'da; FAQ bloğu + schema; tedarikçiden bağımsız açıklama; marka sayfası içeriği; blog (WordPress entegre); landing page oluşturucu; yorumlar SSR</td><td>4 satır · C</td></tr>
+          <tr><td>6.6.8 Yapılandırılmış veri</td><td>Product, Offer, AggregateRating, Review; shippingDetails ve MerchantReturnPolicy; BreadcrumbList, Organization, WebSite, ItemList; FAQPage, Article, LocalBusiness; düzenleme, kapatma, özel JSON-LD; mükerrer önleme; Merchant Center ile tutarlılık</td><td>Standart</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">31 / 75</span>
+    </div>
+  </section>
+
+  <!-- FİT 6.6 II -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">6.6 SEO yönetimi II · 6.6.9–6.6.16</span>
+      <h2 class="slide-title">Hız, render, görsel, linkleme, yaşam döngüsü ve <span class="accent">taşınabilirlik</span></h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Alt başlık</th><th>Nasıl karşılanır</th><th>Matris</th></tr></thead>
+        <tbody>
+          <tr><td>6.6.9 Hız ve Core Web Vitals</td><td>Tema kodu üzerinde tam yetki; kullanılmayan JS/CSS modül bazında kapatılır; üçüncü parti script defer/async/tetikleyici; kritik CSS inline; WebP/AVIF ve srcset; LCP görseli lazy load dışı, fetchpriority; width/height; font preload ve swap; preconnect/dns-prefetch; CDN, HTTP/2–3, Brotli, cache header; düşük TTFB ve sayfa önbelleği; CLS'siz slider ve popup</td><td>3 satır · C</td></tr>
+          <tr><td>6.6.10 Render ve teknik altyapı</td><td>SSR: ürün listesi, fiyat, içerik ve linkler ilk HTML'de; JS kapalıyken temel içerik ve navigasyon; doğru 200/301/404/410/503; sunucu loglarına erişim; noindex ve şifreli staging; alt, ARIA, kontrast, klavye; HSTS ve güvenlik header'ları</td><td>3 satır · C</td></tr>
+          <tr><td>6.6.11 Görsel yönetimi</td><td>Alt metni ürün bazında ve toplu; SEO dostu dosya adı üretimi; görseller kendi domain/alt alan adında; görsel sitemap</td><td>Standart</td></tr>
+          <tr><td>6.6.12 İç linkleme ve navigasyon</td><td>Mega menü HTML'de crawlable; düzenlenebilir breadcrumb; ilgili ürün ve "bunu alanlar" blokları crawlable; footer ve menü panelden; içerik içi manuel link; kırık link raporu</td><td>Standart</td></tr>
+          <tr><td>6.6.13 Ürün yaşam döngüsü</td><td>Stoğu bitince yayında kal / stokta yok / alternatif öner; kalıcı kaldırmada 301, 404 veya 410; sezonluk sayfalar kalıcı URL ile; silmede otomatik yönlendirme önerisi</td><td>2 satır · C</td></tr>
+          <tr><td>6.6.14 Çoklu dil ve pazar</td><td>Hreflang otomatik ve düzenlenebilir; /en/, alt alan adı veya ccTLD seçimi; IP bazlı zorunlu yönlendirme yok; her dilde ayrı meta ve içerik</td><td>Standart</td></tr>
+          <tr><td>6.6.15 Ölçümleme ve entegrasyonlar</td><td>GA4, GTM, Search Console, Bing Webmaster; eksiksiz ve özelleştirilebilir e-ticaret data layer; Merchant Center ve ücretsiz listeleme feed'i; ürün, kategori ve meta için Open API; bot ve AI crawler raporu</td><td>1 satır · C</td></tr>
+          <tr><td>6.6.16 Yetki ve esneklik</td><td>Tema ve şablon dosyalarına erişim; SEO değişiklikleri destek talebi olmadan panelden; sürüm güncellemesi SEO ayarlarını sıfırlamaz, sürüm notları paylaşılır; ayrılırken URL listesi ve verilerin tam export'u</td><td>1 satır · C</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">32 / 75</span>
+    </div>
+  </section>
+
+  <!-- EK FAYDALAR -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">RFP dışı ek faydalar · Ek Faydalar sayfası</span>
+      <h2 class="slide-title">On üç ek yetkinlik, <span class="accent">ek lisans yok</span></h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Ek yetkinlik</th><th>CommerceLab yeteneği</th><th>Shaya için iş değeri</th><th>Ürün</th></tr></thead>
+        <tbody>
+          <tr><td>Multi-enabled global commerce</td><td>Çoklu ülke, marka, site, dil, para birimi, fiyat ve depo</td><td>Yeni pazarlara platform değiştirmeden genişleme</td><td>Commerce Platform</td></tr>
+          <tr><td>B2B / B2B2C / C2C</td><td>Kurumsal satış ve farklı ticaret modelleri</td><td>Yeni satış modelleri için mimari esneklik</td><td>Commerce Dispatch Engine</td></tr>
+          <tr><td>Marketplace Operator / dropshipping</td><td>Multi-vendor, satıcı onboarding, onay, katalog ve sipariş akışları</td><td>Stok yatırımı yapmadan üçüncü taraf satıcılarla büyüme</td><td>Marketplace Operator</td></tr>
+          <tr><td>Marketplace Seller operasyonu</td><td>Tek noktadan entegrasyon, kanal bazlı stok tamponu, mutabakat, otomatik düzeltme</td><td>Pazaryeri operasyon maliyeti ve veri tutarsızlığı azalır</td><td>Marketplace Seller</td></tr>
+          <tr><td>AI PIM / görselden ürün çıkarımı</td><td>Görselden nitelik çıkarımı, içerik üretimi, otomatik zenginleştirme</td><td>Ürün onboarding süresi kısalır</td><td>PIM + AI</td></tr>
+          <tr><td>ERP önünde PIM iş akışı</td><td>Tedarikçi ve merchandising ürün oluşturma/onay süreçleri</td><td>ERP öncesi ürün veri kalitesi</td><td>PIM + ComHub</td></tr>
+          <tr><td>MCP / agentic commerce</td><td>Back-office fonksiyonları kontrollü MCP araçları olarak</td><td>LLM agent destekli operasyon ve yeni ticaret arayüzleri</td><td>API / ComHub / AI</td></tr>
+          <tr><td>ACOMS / Commerce Operating System</td><td>Operasyonları birleşik görünümde orkestrasyon ve izleme</td><td>Çok kanallı operasyonda merkezi görünürlük</td><td>ACOMS / ComHub</td></tr>
+          <tr><td>Composable MACH / PBC</td><td>API-first, headless, cloud-native, modüler yetenekler</td><td>Daha düşük entegrasyon bağımlılığı, kademeli dönüşüm</td><td>Platform mimarisi</td></tr>
+          <tr><td>Gelişmiş kampanya kuralları</td><td>Event-action, best-choice, custom action, scripting, yaşam döngüsü segmentasyonu</td><td>Daha esnek promosyon ve kişiselleştirme</td><td>Kampanya motoru</td></tr>
+          <tr><td>Ödeme orkestrasyonu dayanıklılığı</td><td>Dinamik PSP yönlendirme, failover, auto-fix, fraud skorlama</td><td>Ödeme başarısı ve operasyonel süreklilik</td><td>Payment / Checkout</td></tr>
+          <tr><td>Omnichannel CRM entegrasyonu</td><td>Harici CRM ile müşteri master, loyalty, kupon, çek, gift card kullanımı</td><td>Mevcut sadakat yatırımı korunur</td><td>Operasyonel CRM</td></tr>
+          <tr><td>Mimariyle gelen güvenlik</td><td>Rol bazlı erişim, API güvenliği, şifreleme, izleme, yüksek erişilebilirlik</td><td>Kurumsal güvenlik ve süreklilik</td><td>Altyapı / güvenlik</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">33 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 05 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">05</div>
+      <span class="kicker">RFP §23.1 · 5 ve §11</span>
+      <h2 class="slide-title">Teknik mimari ve güvenlik</h2>
+      <p class="lead">İki markanın web ve uygulamalarını tek, çok kiracılı ve composable bir platformda; AWS üzerinde segmentli, sıfır güven ağında çalıştıran yapı.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">34 / 75</span>
+    </div>
+  </section>
+
+<!-- 35 — HEDEF MİMARİ (TOPOLOJİ) -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Hedef mimari</span>
+      <h2 class="slide-title">Shaya çözüm topolojisi: <span class="accent">deneyim bizde</span>, kayıt sistemleri sizde</h2>
+      <div class="dg-wrap">
+        <svg viewBox="0 0 1140 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Shaya hedef mimari">
+          <!-- Kanallar -->
+          <text x="20" y="22" class="dg-zone">KANALLAR</text>
+          <rect x="20" y="32" width="255" height="52" rx="6" class="dg-box"/><text x="147" y="54" text-anchor="middle" class="dg-t">Victoria's Secret</text><text x="147" y="72" text-anchor="middle" class="dg-s">WebShop · iOS · Android</text>
+          <rect x="295" y="32" width="255" height="52" rx="6" class="dg-box"/><text x="422" y="54" text-anchor="middle" class="dg-t">Bath &amp; Body Works</text><text x="422" y="72" text-anchor="middle" class="dg-s">WebShop · iOS · Android</text>
+          <rect x="570" y="32" width="255" height="52" rx="6" class="dg-box"/><text x="697" y="54" text-anchor="middle" class="dg-t">Pazaryerleri</text><text x="697" y="72" text-anchor="middle" class="dg-s">Trendyol · Hepsiburada · Amazon</text>
+          <rect x="845" y="32" width="275" height="52" rx="6" class="dg-bone"/><text x="982" y="54" text-anchor="middle" class="dg-t">Gelecek kanallar</text><text x="982" y="72" text-anchor="middle" class="dg-s">B2B · yeni ülke · agentic commerce</text>
+          <!-- Deneyim -->
+          <rect x="20" y="104" width="1100" height="44" rx="6" class="dg-ink"/>
+          <text x="570" y="123" text-anchor="middle" class="dg-t dg-t--w">Headless Experience Layer · Commerce Dispatch Engine (REST / GraphQL)</text>
+          <text x="570" y="140" text-anchor="middle" class="dg-s dg-s--w">tek tenant, iki marka: ayrı site, ayrı katalog görünümü, ortak yönetim konsolu</text>
+          <!-- PBC'ler -->
+          <text x="20" y="176" class="dg-zone">COMMERCELAB PBC'LERİ · TEKLİF KAPSAMI</text>
+          <g>
+            <rect x="20" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="105" y="209" text-anchor="middle" class="dg-t">PIM / Katalog</text><text x="105" y="227" text-anchor="middle" class="dg-s">zenginleştirme · kanal içeriği</text>
+            <rect x="206" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="291" y="209" text-anchor="middle" class="dg-t">Headless CMS</text><text x="291" y="227" text-anchor="middle" class="dg-s">drag &amp; drop · web + app</text>
+            <rect x="392" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="477" y="209" text-anchor="middle" class="dg-t">Kampanya motoru</text><text x="477" y="227" text-anchor="middle" class="dg-s">CRM kurallarını tamamlar</text>
+            <rect x="578" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="663" y="209" text-anchor="middle" class="dg-t">Payment / Checkout</text><text x="663" y="227" text-anchor="middle" class="dg-s">multi-tender · 3D · fraud</text>
+            <rect x="764" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="849" y="209" text-anchor="middle" class="dg-t">Operasyonel CRM</text><text x="849" y="227" text-anchor="middle" class="dg-s">hesap · izin · istek listesi</text>
+            <rect x="950" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="1035" y="209" text-anchor="middle" class="dg-t">Marketplace Seller</text><text x="1035" y="227" text-anchor="middle" class="dg-s">listeleme · stok · mutabakat</text>
+          </g>
+          <!-- ComHub -->
+          <rect x="20" y="262" width="1100" height="50" rx="6" class="dg-red"/>
+          <text x="570" y="283" text-anchor="middle" class="dg-t dg-t--w">ComHub · Integration &amp; Orchestration Manager · Control Tower</text>
+          <text x="570" y="301" text-anchor="middle" class="dg-s dg-s--w">API · event · eşleme/dönüşüm · retry · auto-fix · izleme · mutabakat</text>
+          <!-- Kayıt sistemleri -->
+          <text x="20" y="342" class="dg-zone">SHAYA KAYIT SİSTEMLERİ · YERİNDE KALIR</text>
+          <g>
+            <rect x="20" y="352" width="205" height="70" rx="6" class="dg-bone"/><text x="122" y="376" text-anchor="middle" class="dg-t">WinRetail ERP</text><text x="122" y="394" text-anchor="middle" class="dg-s">ürün · fiyat · fiziksel stok</text><text x="122" y="410" text-anchor="middle" class="dg-s">mağaza · finansal ana veri</text>
+            <rect x="243" y="352" width="205" height="70" rx="6" class="dg-bone"/><text x="345" y="376" text-anchor="middle" class="dg-t">Retail Markup OMS</text><text x="345" y="394" text-anchor="middle" class="dg-s">satılabilir stok · sipariş</text><text x="345" y="410" text-anchor="middle" class="dg-s">sevkiyat · iade · değişim</text>
+            <rect x="466" y="352" width="205" height="70" rx="6" class="dg-bone"/><text x="568" y="376" text-anchor="middle" class="dg-t">CRM / Loyalty</text><text x="568" y="394" text-anchor="middle" class="dg-s">müşteri · tier · puan</text><text x="568" y="410" text-anchor="middle" class="dg-s">kupon · kampanya kuralı</text>
+            <rect x="689" y="352" width="205" height="70" rx="6" class="dg-bone"/><text x="791" y="376" text-anchor="middle" class="dg-t">PSP / Bankalar</text><text x="791" y="394" text-anchor="middle" class="dg-s">sanal POS · tokenization</text><text x="791" y="410" text-anchor="middle" class="dg-s">gift card · BNPL</text>
+            <rect x="912" y="352" width="208" height="70" rx="6" class="dg-bone"/><text x="1016" y="376" text-anchor="middle" class="dg-t">Pazarlama &amp; servisler</text><text x="1016" y="394" text-anchor="middle" class="dg-s">GA4 · Adjust · Personaclick</text><text x="1016" y="410" text-anchor="middle" class="dg-s">Setrow · Efilli · İYS · JetSMS · Retter</text>
+          </g>
+          <!-- Bağlantı çizgileri -->
+          <line x1="147" y1="84" x2="147" y2="104" class="dg-line"/><line x1="422" y1="84" x2="422" y2="104" class="dg-line"/><line x1="697" y1="84" x2="697" y2="104" class="dg-line"/><line x1="982" y1="84" x2="982" y2="104" class="dg-line--m" stroke-dasharray="4 3"/>
+          <line x1="570" y1="148" x2="570" y2="186" class="dg-line"/>
+          <line x1="570" y1="242" x2="570" y2="262" class="dg-line"/>
+          <line x1="122" y1="312" x2="122" y2="352" class="dg-line"/><line x1="345" y1="312" x2="345" y2="352" class="dg-line"/><line x1="568" y1="312" x2="568" y2="352" class="dg-line"/><line x1="791" y1="312" x2="791" y2="352" class="dg-line"/><line x1="1016" y1="312" x2="1016" y2="352" class="dg-line"/>
+          <text x="570" y="455" text-anchor="middle" class="dg-s">Commerce Platform web, mobil ve pazaryeri siparişlerinin ve Unified Order History görünümünün sahibidir; satış kararı yalnızca OMS'ten gelen Available Inventory ile verilir.</text>
+        </svg>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">35 / 75</span>
+    </div>
+  </section>
+
+<!-- 36 — VERİ SAHİPLİĞİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Veri sahipliği · RFP §5.1.2</span>
+      <h2 class="slide-title">Her veri alanının <span class="accent">tek sahibi</span> var; platform ona göre tasarlanır</h2>
+      <div class="two-col" style="flex:1;">
+        <table class="xtable xtable--dense">
+          <thead><tr><th>Veri alanı</th><th>Sahip</th><th>Platformdaki rolü</th></tr></thead>
+          <tbody>
+            <tr><td>Product · Category · Brand · Price</td><td>WinRetail</td><td>Günlük tam + event bazlı delta alım; PIM yalnız zenginleştirir, ana veriyi değiştirmez</td></tr>
+            <tr><td>Physical Inventory</td><td>WinRetail</td><td>Bilgi amaçlı; satışta kullanılmaz</td></tr>
+            <tr><td>Available Inventory</td><td>OMS</td><td>Satış kararının tek kaynağı; OMS'e ulaşmamış siparişler platform tarafında düşülür</td></tr>
+            <tr><td>Web · Mobile · Marketplace Orders</td><td>Commerce Platform</td><td>Oluşturulur, event ile OMS'e devredilir; statü OMS'ten geri akar</td></tr>
+            <tr><td>Store Orders · Shipment · Return · Exchange</td><td>OMS</td><td>Platform görüntüler ve talep açar; operasyon OMS'te</td></tr>
+            <tr><td>Customer · Loyalty · Tier · Coupon · Campaign</td><td>CRM</td><td>Checkout'ta CRM servisleri çağrılır; kampanya motoru CRM kurallarını tekrarlamaz, tamamlar</td></tr>
+            <tr><td>Order History View</td><td>Commerce Platform</td><td>Web, mobil, pazaryeri ve mağaza siparişleri tek ekranda</td></tr>
+          </tbody>
+        </table>
+        <div>
+          <div class="card card--dark" style="margin-bottom:1.4cqh;">
+            <div class="ix">Tasarım kuralı</div>
+            <h3>Aynı kural iki sistemde yönetilmez</h3>
+            <p>Puan, kupon ve tier kararı CRM'de; sepet seviyesi promosyon, ücretsiz kargo ve hediye kuralları platformda. Hangisinin nerede kalacağı keşif fazında yazılı olarak sabitlenir.</p>
+          </div>
+          <div class="card">
+            <div class="ix">Overselling önleme</div>
+            <p>Eş zamanlı sipariş, kampanya zirvesi ve OMS gecikmesinde platform; OMS available stoğu, rezerve ve pending siparişleri birlikte değerlendirir. Kritik stok hızlı şeritte kanala kapatılır.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">36 / 75</span>
+    </div>
+  </section>
+
+<!-- 37 — MİMARİ İLKELER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Mimari ilkeler</span>
+      <h2 class="slide-title">Composable, çok kiracılı, <span class="accent">genişletilebilir</span></h2>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.4cqw;">
+        <div class="card"><div class="ix">MACH</div><h3>Microservice · API-first · Cloud-native · Headless</h3><p>Her yetenek REST ve GraphQL ile açık; sunum katmanı ticaret mantığından tamamen ayrık. Next.js tabanlı WebShop ve native iOS/Android uygulamalar aynı API'yi tüketir.</p></div>
+        <div class="card"><div class="ix">PBC</div><h3>Packaged Business Capability</h3><p>PIM, CMS, Payment, Kampanya, CRM ve Marketplace Seller birbirinden bağımsız sürümlenen, kendi veri ve API'sine sahip paketlerdir. Biri değişince diğeri etkilenmez.</p></div>
+        <div class="card card--dark"><div class="ix">Multi-tenant</div><h3>İki marka, tek platform</h3><p>Victoria's Secret ve Bath &amp; Body Works ayrı site, katalog ve tasarım; ortak yönetim, ortak entegrasyon, ortak raporlama. Yeni marka veya ülke yapılandırmayla açılır.</p></div>
+        <div class="card"><div class="ix">Extensible</div><h3>Çekirdeği bozmadan özelleştirme</h3><p>Toggle, kural motoru, user-exit, scripting ve plugin katmanları; Shaya'ya özel mantık sürüm yolundan çıkmadan eklenir. Üretici bağımlılığı yaratmayan, tam export alınabilir yapı.</p></div>
+      </div>
+      <div class="stack" style="margin-top:1.6cqh;">
+        <div class="layer"><span class="tag">Motorlar</span><span class="desc">Microsoft Rules Engine tabanlı kural · değerlendirme (best-choice) · aksiyon motoru; sourcing, kampanya, ödeme yönlendirme ve içerikte aynı altyapı.</span></div>
+        <div class="layer layer--ink"><span class="tag">Durum makinesi</span><span class="desc">Sipariş, ödeme, iade ve ürün yaşam döngüsü geçerli geçişlerle modellenir; her geçiş dış sistemle doğrulanır ve webhook/event ile duyurulur.</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">37 / 75</span>
+    </div>
+  </section>
+
+<!-- 38 — TEKNOLOJİ YIĞINI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Teknoloji yığını</span>
+      <h2 class="slide-title">Kanıtlanmış, modern, <span class="accent">açık</span> temeller</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card"><div class="ix">Runtime</div><h3>.NET / C#</h3><p>Uzun süreli desteklenen, yüksek performanslı çekirdek servisler.</p></div>
+        <div class="card"><div class="ix">Storefront</div><h3>Next.js · native iOS &amp; Android</h3><p>SSR ve statik üretim; ürün listesi, fiyat ve linkler ilk HTML'de. JAMstack dağıtım, çalışma anında render yok.</p></div>
+        <div class="card"><div class="ix">Veri</div><h3>PostgreSQL · MongoDB · Redis</h3><p>İlişkisel, doküman ve bellek içi; tenant bazlı izolasyon.</p></div>
+        <div class="card"><div class="ix">Arama</div><h3>Elasticsearch</h3><p>Facet, synonym, typo tolerance, merchandising; vektörel arama ve conversational commerce modülleri.</p></div>
+        <div class="card"><div class="ix">Mesajlaşma</div><h3>RabbitMQ</h3><p>Event ve komut veri yolu; asenkron akışlar zirveyi emer, hatayı izole eder.</p></div>
+        <div class="card"><div class="ix">Platform</div><h3>Docker · Kubernetes · AWS</h3><p>Amazon EKS, Karpenter ile düğüm ölçekleme, HPA; eu-central-1.</p></div>
+      </div>
+      <p class="note"><b>API:</b> REST ve GraphQL; ürün, kategori, meta, müşteri ve sipariş verisi dışarıdan toplu güncellenebilir, platformdan ayrılırken tam export alınır (RFP §6.6.15–16).</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">38 / 75</span>
+    </div>
+  </section>
+
+<!-- 39 — ÜRETİM TOPOLOJİSİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Üretim topolojisi</span>
+      <h2 class="slide-title">Platform, <span class="accent">AWS</span> üzerinde böyle çalışıyor</h2>
+      <div class="fill">
+      <div class="edgeflow">
+        <span class="step">Kullanıcı</span><span class="sep">&rsaquo;</span>
+        <span class="step">Cloudflare</span><span class="sep">&rsaquo;</span>
+        <span class="step">CloudFront</span><span class="sep">&rsaquo;</span>
+        <span class="step step--red">WAF</span><span class="sep">&rsaquo;</span>
+        <span class="step step--ink">ALB / Ingress</span>
+      </div>
+      <div class="topo">
+        <div class="zone zone--public">
+          <div class="zone__head"><span lang="en">Public subnet · Prod VPC</span><span class="cidr">internete açık tek yüzey</span></div>
+          <div class="chips">
+            <span class="chip chip--red">Public ALB</span>
+            <span class="chip">pfSense VPN <small>IP kısıtlı + MFA</small></span>
+            <span class="chip">NAT Gateway <small>yalnız çıkış</small></span>
+          </div>
+        </div>
+        <div class="zone">
+          <div class="zone__head"><span><span lang="en">Private container subnet</span> · uygulama katmanı</span><span class="cidr">EKS · private ALB</span></div>
+          <div class="chips">
+            <span class="chip chip--ink"><b>Amazon EKS</b> <small>namespace bazlı izolasyon</small></span>
+            <span class="chip">Private ALB</span>
+            <span class="chip">RabbitMQ <small>cluster</small></span>
+            <span class="chip">Jenkins</span>
+            <span class="chip">Nexus</span>
+            <span class="chip">Monitoring</span>
+          </div>
+        </div>
+        <div class="zone zone--data">
+          <div class="zone__head"><span><span lang="en">Private database subnet</span> · veri katmanı</span><span class="cidr">dışarıya kapalı</span></div>
+          <div class="chips">
+            <span class="chip"><b>RDS</b> <small>Multi-AZ · otomatik yedek</small></span>
+            <span class="chip">MongoDB <small>cluster · EBS snapshot</small></span>
+            <span class="chip">PostgreSQL <small>HA</small></span>
+            <span class="chip">ElastiCache · Redis</span>
+            <span class="chip">OpenSearch <small>2 cluster</small></span>
+          </div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:1.2cqh;"><b>Paylaşılan servisler:</b> S3 + CloudFront (statik varlık, denetim logu, CDN) · ECR (imaj tarama) · ACM · Athena · Vault (dinamik secret). DevOps erişimi yalnız Bitbucket ve VPN üzerinden.</p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">39 / 75</span>
+    </div>
+  </section>
+
+<!-- 40 — GÜVENLİK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Güvenlik ve uyum</span>
+      <h2 class="slide-title">Her katmanda <span class="accent">sıfır güven</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card"><div class="ix">Ağ</div><h3>Segmentli VPC</h3><p>Ayrı prod VPC; container, veritabanı ve genel subnet'ler internete kapalı. Uygulama bazlı security group, en az yetki, NAT üzerinden tek çıkış, VPC peering ve private link.</p></div>
+        <div class="card card--accent"><div class="ix">Uç</div><h3>16 katmanlı WAF</h3><p>AWS yönetilen kural setleri (Common, SQLi, IP reputation, Anonymous IP) + Fortinet tehdit kuralları; IP ve ülke bazlı oran sınırı, CAPTCHA, Cloudflare DDoS. Her karar CloudWatch'a loglanır.</p></div>
+        <div class="card"><div class="ix">Kimlik</div><h3>IAM · MFA · Vault</h3><p>Rol bazlı erişim, zorunlu MFA, dinamik secret yönetimi; IAM logları düzenli denetlenir. AWS Security Hub ile sürekli denetim ve otomatik iyileştirme.</p></div>
+        <div class="card"><div class="ix">Veri</div><h3>Şifreleme ve KVKK</h3><p>Aktarımda ve beklemede şifreleme; izin yönetimi, anonimleştirme ve hesap silme akışları; denetim izi. Kart verisi platformda tutulmaz, PSP tokenization kullanılır.</p></div>
+        <div class="card"><div class="ix">Uygulama</div><h3>Güvenli geliştirme</h3><p>Zorunlu code review, SonarQube statik analiz, imaj tarama, JWT/OAuth tabanlı API kimliği, gateway ve uygulama seviyesinde oran sınırı.</p></div>
+        <div class="card"><div class="ix">Yönetişim</div><h3>Pentest ve olay müdahale</h3><p>Düzenli sızma testi; müşteri özelinde anlaşmalı test. Olay müdahale ve kriz planı, üçüncü taraf risk yönetimi. Infosec soru seti ve kanıt paketi teklifle birlikte iletilir.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">40 / 75</span>
+    </div>
+  </section>
+
+<!-- 41 — ÖLÇEKLEME & GÖZLEMLENEBİLİRLİK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Ölçekleme ve gözlemlenebilirlik</span>
+      <h2 class="slide-title">Kampanya zirvesine hazır, <span class="accent">uçtan uca</span> izlenen</h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Talebe göre kapasite</div>
+          <ul class="flist flist--tight">
+            <li><b>Karpenter</b> dakikalar içinde düğüm ekler; Spot + On-Demand karışımı maliyeti düşürür, erişilebilirliği korur.</li>
+            <li><b>HPA</b> gerçek yüke göre pod ölçekler; kampanya öncesi kapasite planı ve ön ısıtma yapılır.</li>
+            <li><b>Çok katmanlı önbellek</b>: CDN, Redis, uygulama; JAMstack sayfalar çalışma anında render edilmez.</li>
+            <li><b>Rolling update</b> + readiness/liveness probe; yalnız sağlıklı pod trafik alır. Kesintisiz yayın.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">Gözlemlenebilirlik</div>
+          <ul class="flist flist--tight">
+            <li><b>APM</b>: New Relic; işlem, hata ve dış çağrı izleri.</li>
+            <li><b>Metrik</b>: Prometheus + Grafana, CloudWatch; düğüm, container ve altyapı.</li>
+            <li><b>Log</b>: iki OpenSearch cluster + CloudWatch Logs; merkezi arama, batch ve entegrasyon hata izleme.</li>
+            <li><b>Uptime</b>: Uptime Kuma, UptimeRobot, Blackbox Exporter.</li>
+            <li><b>Alarm</b>: Slack + Parny; 7/24 ilk müdahale BestCloudForme, kademeli eskalasyon geliştirme ekibine.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>İş KPI'ları da aynı yerde:</b> sipariş, stok tutarlılığı, entegrasyon durumu ve kargo operasyonu panoları konsolda; Power BI ve veri ambarına aktarım desteklenir (RFP §5.1.2.10, §11.3).</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">41 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 06 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">06</div>
+      <span class="kicker">RFP §23.1 · 6 ve §8</span>
+      <h2 class="slide-title">Entegrasyon stratejisi</h2>
+      <p class="lead">Nokta-noktaya bağlantı yok: her sistem ComHub'a bağlanır. Verinin gittiğinden ve işin yapıldığından emin olmak Control Tower'ın işidir.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">42 / 75</span>
+    </div>
+  </section>
+
+<!-- 43 — ENTEGRASYON İLKELERİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Entegrasyon modeli</span>
+      <h2 class="slide-title">Tek hub, <span class="accent">dayanıklı</span> entegrasyonlar</h2>
+      <p class="lead">RFP §8 her entegrasyon için sahip, yön, tetikleme, sıklık, hata yönetimi, güvenlik ve izleme ister. ComHub bunların hepsini tek yerde tanımlar.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card"><div class="ix">Tetikleme</div><h3>Event + batch</h3><p>Sipariş, iptal, iade ve stok değişimi event bazlı; ürün ana verisi günlük tam + delta. Hız gereksinimine göre dinamik çağrı sıklığı.</p></div>
+        <div class="card"><div class="ix">Dönüşüm</div><h3>Eşleme ve scripting</h3><p>Alan eşleme, lookup ve dönüşüm kuralları konsoldan; özel mantık için script ve plugin. Ürün seviyesinde tanım gerekmez.</p></div>
+        <div class="card card--dark"><div class="ix">Dayanıklılık</div><h3>Retry · failover · auto-fix</h3><p>Idempotent mesajlar, yeniden deneme kuyruğu, dead-letter ve replay; karşı sistem düştüğünde kuyruk bekler, veri kaybolmaz.</p></div>
+        <div class="card"><div class="ix">Güvenlik</div><h3>Kimlik ve izleme</h3><p>OAuth/JWT ya da mTLS, IP allow-list, secret'lar Vault'ta; her çağrı loglanır, hata ve gecikme panoda.</p></div>
+      </div>
+      <div class="flow" style="margin-top:1.6cqh;">
+        <div class="node">Kaynak sistem<small>WinRetail · OMS · CRM · PSP</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Adaptör<small>API · dosya · event</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">ComHub<small>eşleme · kural · kuyruk</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">PBC<small>PIM · OMS köprüsü · CRM</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Control Tower<small>doğrulama · auto-fix · rapor</small></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">43 / 75</span>
+    </div>
+  </section>
+
+  <!-- ENTEGRASYON ALANLARI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Entegrasyon alanları · RFP §8.1–8.5</span>
+      <h2 class="slide-title">Beş alan, her birinde <span class="accent">sahip, yön, tetikleme ve hata yönetimi</span> tanımlı</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Alan</th><th>RFP'nin istediği</th><th>Yaklaşım</th><th>Hata yönetimi · izleme</th></tr></thead>
+        <tbody>
+          <tr><td>8.1 ERP · WinRetail</td><td>Ürün, fiyat ve ürün nitelikleri</td><td>Günlük tam + değişim event'i; ana veri PIM'e, fiyat listesi kanala; eşleme ve lookup sözlükleri ComHub'da</td><td>Ürün sayısı ve fiyat farkı kontrolü; eksik nitelik raporu; yeniden deneme ve replay</td></tr>
+          <tr><td>8.2 OMS · Retail Markup</td><td>Sipariş oluşturma ve durum; iptal ve kısmi iptal; iade ve kısmi iade; mağaza siparişleri ve Click &amp; Collect</td><td>Idempotent sipariş devri (Pl→OMS event); durum, kargo, iade ve değişim güncellemeleri OMS→Pl event; fatura saatte 1; mağaza siparişleri görünüm için OMS'ten</td><td>Kanalda var OMS'te yok / OMS'te iptal kanalda açık kontrolleri; dead-letter ve replay; gecikme panosu</td></tr>
+          <tr><td>8.3 WMS ve lojistik</td><td>Stok hareketi ve rezervasyon; kargo etiketi ve takip; teslimat durumu ve bildirim; iade kargo</td><td>WMS doğrudan bağlanmaz: stok ve kargo OMS üzerinden gelir; iade kargo bildirimi kargo→Pl ve Pl→OMS event; müşteri bildirimi platformdan</td><td>Takip numarası olmayan sevk, teslim edilmemiş uzun bekleyen siparişler; bildirim teslim logları</td></tr>
+          <tr><td>8.4 CRM, loyalty ve marketing</td><td>Profil ve izin senkronu; segment ve kampanya tetikleme; puan kazanım, kullanım, iptal, düzeltme; event/behavioral veri</td><td>Checkout'ta SetTransaction, FinishTransaction, provizyon servisleri; izin senkronu çift yönlü; Personaclick ve Setrow'a event; GA4 ve Adjust data layer</td><td>Açık kalan provizyonlar; izin uyuşmazlığı; CRM yanıtsızlığında kuyruk ve degrade mod</td></tr>
+          <tr><td>8.5 Ödeme sistemleri</td><td>Sanal POS, kart saklama ve tokenization; 3D; gift card ve BNPL; iptal, iade, kısmi iade; mutabakat</td><td>Payment Gateway: PSP yönlendirme ve failover, kural tabanlı 3D, token saklama, gift card ve BNPL sağlayıcı adaptörleri; iade PSP'ye otomatik</td><td>Günlük mutabakat, tutarsızlıkta auto-fix; başarısız ödeme raporları; sertifikasyon ve negatif senaryo testleri</td></tr>
+        </tbody>
+      </table>
+      <p class="ann"><b>Güvenlik her alanda aynı:</b> OAuth/JWT veya mTLS, IP allow-list, secret'lar Vault'ta, her çağrı loglanır. Sorumluluk sınırı: Shaya tarafı sistemlerin API erişimi, test ortamı ve kimlik bilgileri Shaya ve iş ortaklarından; adaptör, eşleme ve izleme CommerceLab'dan.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">44 / 75</span>
+    </div>
+  </section>
+
+<!-- 45 — ENTEGRASYON ENVANTERİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Shaya entegrasyon envanteri · RFP §8.6</span>
+      <h2 class="slide-title">Envanterdeki her satırın ComHub'da <span class="accent">hazır bir deseni</span> var</h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>Entegrasyon grubu</th><th>Yön · tetikleme</th><th>ComHub deseni</th><th>Doğrulama</th></tr></thead>
+        <tbody>
+          <tr><td>WinRetail → Platform: ürün ana verisi, fiyat, nitelik</td><td>WR→Pl · günde 1 tam, değişim event</td><td>Ana veri alım adaptörü; PIM'de zenginleştirme, kanal yayını</td><td>Ürün sayısı ve fiyat farkı kontrolü</td></tr>
+          <tr><td>Platform ⇄ Pazaryeri: ürün kartı, stok, fiyat, sipariş</td><td>Pl→MP tam + event · MP→Pl event</td><td>Marketplace Seller; kanal bazlı emniyet stoğu, dinamik çağrı hızı</td><td>Stok, fiyat, sipariş uyuşmazlık kontrolü</td></tr>
+          <tr><td>OMS → Platform: mağaza/depo stoğu, kargo, iade ve değişim statüsü, fatura</td><td>OMS→Pl · event, fatura saatte 1</td><td>Durum makinesi geçişi; müşteri bildirimi tetikler</td><td>Kanalda var OMS'te yok siparişler</td></tr>
+          <tr><td>Platform → OMS: sipariş, MP sipariş bildirimi, iptal, değişim, iade kargo</td><td>Pl→OMS · event</td><td>Idempotent sipariş devri; teslim onayı gelmeden kapanmaz</td><td>OMS'te iptal, kanalda açık siparişler</td></tr>
+          <tr><td>CRM: SetTransaction, FinishTransaction, GetCampaignInfo, Provision/RemoveProvisionCoupon, GetCoupons, GetCustomerCampaign, son 30 gün en düşük fiyat</td><td>Çift yönlü · event; fiyat günde 1</td><td>Loyalty-driven checkout orkestrasyonu; puan provizyonu ve iptali ödeme durum makinesine bağlı</td><td>Provizyon açık kalan işlemler</td></tr>
+          <tr><td>Ödeme: sanal POS, gift card, BNPL, 3D, iptal/iade</td><td>Pl→Banka · event</td><td>Payment Gateway: PSP yönlendirme, failover, fraud skoru, mutabakat</td><td>Ödeme tutarsızlığı auto-fix</td></tr>
+          <tr><td>Retter personel doğrulama, bakiye, harcama bildirimi</td><td>Pl→Retter · event</td><td>Harici kimlik ve bakiye servisi adaptörü</td><td>Çağrı hata oranı</td></tr>
+          <tr><td>JetSMS, İYS, Personaclick, Setrow, GA4, Adjust, Efilli</td><td>Event · SDK</td><td>Communication ve pazarlama konnektörleri; data layer ve consent yönetimi</td><td>Teslim ve izin logları</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">45 / 75</span>
+    </div>
+  </section>
+
+<!-- 46 — CONTROL TOWER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Control Tower</span>
+      <h2 class="slide-title">Veri gitti mi, iş bitti mi: <span class="accent">müşteriden önce</span> biz görürüz</h2>
+      <p class="lead">Entegrasyonun çalışması yetmez; sonucunun doğru olması gerekir. Control Tower kaynak ile hedefi sürekli karşılaştırır, farkı önceliklendirir ve düzeltir.</p>
+      <div class="grid grid-4 compact-cards" style="gap:1.2cqh 1.4cqw;">
+        <div class="card"><div class="ix">Product</div><h3>Yayın sağlığı</h3><p>Kanalda kilitli, reddedilmiş ya da PIM'de olup kanalda olmayan ürünler.</p></div>
+        <div class="card card--dark"><div class="ix">Inventory</div><h3>Stok farkı</h3><p>Stoksuz satışta, stoklu kapalı ya da OMS'ten fazla görünen ürünler.</p></div>
+        <div class="card"><div class="ix">Order &amp; status</div><h3>Sipariş uyumu</h3><p>Kanalda olup OMS'te olmayan, OMS'te iptal olup kanalda açık kalan, uzun bekleyen siparişler.</p></div>
+        <div class="card"><div class="ix">Price</div><h3>Fiyat farkı</h3><p>WinRetail fiyatı ile web, uygulama ve pazaryeri yayın fiyatının sürekli karşılaştırması.</p></div>
+      </div>
+      <ul class="flist flist--tight" style="margin-top:1.8cqh;">
+        <li><b>Şiddete göre önceliklenir, otomatik düzeltilir.</b> Fatal, kritik ve uyarı seviyeleri; her düzeltme "gönderildi, düzeltildi, başarısız" olarak izlenir, geçmişi tutulur.</li>
+        <li><b>Kontrolün kendisi de izlenir.</b> Koşmayan ya da hata veren kontrol ayrı uyarı olarak çıkar; "0 uyuşmazlık" yanıltmaz.</li>
+        <li><b>Saatlik özet ve abonelik.</b> Operasyon ekibi e-posta ile haberdar olur; barkod ya da sipariş numarasıyla canlı stok ve sipariş sorgusu aynı ekranda.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">46 / 75</span>
+    </div>
+  </section>
+
+<!-- 47 — LOYALTY CHECKOUT ÖRNEĞİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Örnek akış · RFP §5.1.2.7</span>
+      <h2 class="slide-title">Puan + kart ile ödeme: <span class="accent">her adım geri alınabilir</span></h2>
+      <div class="flow" style="margin-top:1cqh;">
+        <div class="node">Sepet<small>CRM: harcanabilir puan, kampanya ve kupon sorgusu</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Puan provizyonu<small>CRM SetTransaction · Point Provision</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Kart tahsilatı<small>PGW: 3D, fraud skoru, PSP yönlendirme</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Sipariş<small>platformda oluşur, OMS'e event ile devredilir</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Kapanış<small>CRM FinishTransaction · stok düşümü</small></div>
+      </div>
+      <div class="two-col" style="margin-top:2.4cqh; flex:1; align-content:start;">
+        <div>
+          <div class="hdr-sub">Hata senaryoları</div>
+          <ul class="flist flist--tight">
+            <li><b>Kart reddedilirse</b> puan provizyonu otomatik kaldırılır (RemoveProvision); müşteri aynı sepetle devam eder.</li>
+            <li><b>CRM yanıt vermezse</b> puan adımı devre dışı kalır, kartla ödeme sürer; çağrı kuyruğa alınır, Control Tower açık provizyonları raporlar.</li>
+            <li><b>Kısmi iade</b>de ödeme kırılımı korunur: puan payı CRM'e, kart payı PSP'ye orantılı iade.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">Desteklenen bileşimler</div>
+          <ul class="flist flist--tight">
+            <li>Puan + kredi kartı · puan + banka kartı · puan + hediye kartı.</li>
+            <li>Kupon ve gift card ile birlikte kullanım; taksit ve BNPL seçenekleri.</li>
+            <li>Guest, registered, express ve mobil checkout aynı orkestrasyonu kullanır.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">47 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 07 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">07</div>
+      <span class="kicker">RFP §23.1 · 7 ve §9–10</span>
+      <h2 class="slide-title">Veri migrasyonu stratejisi</h2>
+      <p class="lead">Ticimax'tan geçişte üç aktarım yolu, prova migrasyonları, sayısal mutabakat ve geri dönüş planı. Kayıt sistemlerinde kalan veri taşınmaz, bağlanır.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">48 / 75</span>
+    </div>
+  </section>
+
+<!-- 49 — MİGRASYON KAPSAMI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kapsam ve sahiplik · RFP §9.1</span>
+      <h2 class="slide-title">Ne taşınır, ne <span class="accent">bağlanır</span></h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>Veri</th><th>Kaynak</th><th>Hedef</th><th>Yöntem</th><th>Not</th></tr></thead>
+        <tbody>
+          <tr><td>Ürün, kategori, marka</td><td>WinRetail (ana veri) + Ticimax (zenginleştirme)</td><td>PIM</td><td>ERP alımı + Excel/API ile içerik aktarımı</td><td>Varyant ilişkisi model koduyla otomatik kurulur; mükerrer kontrolü</td></tr>
+          <tr><td>İçerik, görsel, video, SEO metinleri</td><td>Ticimax</td><td>PIM · CMS</td><td>API/export → dönüşüm → toplu yükleme</td><td>Görsel dosya adı ve alt metni SEO dostu üretilir</td></tr>
+          <tr><td>Müşteri hesabı, adres, iletişim izni</td><td>Ticimax</td><td>Operasyonel CRM (müşteri master CRM'de kalır)</td><td>Open API ile eşlenmiş aktarım</td><td>Şifreler taşınamaz: ilk girişte OTP/sosyal giriş; KVKK izin tarih ve kaynağı korunur</td></tr>
+          <tr><td>Sipariş, iptal, iade, geri ödeme geçmişi</td><td>Ticimax (+ OMS)</td><td>Order History View</td><td>Arşiv aktarımı, ilişki bütünlüğü korunarak</td><td>Süresiz saklama; eski siparişler salt okunur, iade talebi OMS kuralına tabi</td></tr>
+          <tr><td>Loyalty bakiyesi ve hareketleri, tier, kupon</td><td>CRM</td><td>CRM'de kalır</td><td>Taşınmaz, servisle bağlanır</td><td>Kampanya tanımları kampanya motoru ve CRM arasında sahiplik tablosuna göre bölünür</td></tr>
+          <tr><td>URL envanteri, 301 kuralları, meta</td><td>Ticimax + crawl</td><td>SEO yönetimi</td><td>Eski→yeni eşleme dosyası, CSV ile toplu 301</td><td>Go-live öncesi staging'de crawl doğrulaması</td></tr>
+        </tbody>
+      </table>
+      <p class="note" style="margin-top:1cqh;"><b>Hacim (RFP §4.3):</b> 44 bin kayıtlı / 21 bin aktif SKU · 2,2 M üye · yıllık 450K sipariş. Bu hacim tek gecelik tam aktarım ve saatlik delta için uygundur.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">49 / 75</span>
+    </div>
+  </section>
+
+<!-- 50 — ÜÇ AKTARIM YOLU -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Aktarım yolları</span>
+      <h2 class="slide-title">Open API, Excel + eşleme profili, <span class="accent">ComHub dönüşümü</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--dark">
+          <div class="ix">Yol 1 · Open API</div>
+          <h3>Doğrudan API ile yükleme</h3>
+          <p>Ürün, kategori, nitelik, müşteri ve sipariş uçları; Ticimax export'u kaynak şemasına uygun paketlenir ve toplu gönderilir. Her kayıt için başarılı/başarısız sonuç ve hata nedeni döner.</p>
+        </div>
+        <div class="card">
+          <div class="ix">Yol 2 · Excel + eşleme profili</div>
+          <h3>Operasyon ekibinin kendi yapabildiği</h3>
+          <p>Şablon indir, dosya yükle, kolonları eşle, planı gör, gönder. Eşleme profili kaydedilir, sonraki yüklemede yeniden kullanılır. Satır ve hücre bazında kural ihlali raporu; gönderim onayına kadar hiçbir kayıt değişmez.</p>
+        </div>
+        <div class="card">
+          <div class="ix">Yol 3 · ComHub dönüşüm</div>
+          <h3>Dönüştürerek içeri alma</h3>
+          <p>Kaynak alanları hedef modele script ve lookup ile dönüştürülür; birim, beden, renk sözlükleri normalize edilir. Delta aktarım aynı hat üzerinden koşar, cutover gecesi yalnızca fark taşınır.</p>
+        </div>
+      </div>
+      <p class="note"><b>Seçim kuralı:</b> büyük ve tekrarlı setler Yol 1 veya 3; marka ekibinin düzelteceği içerik ve istisnalar Yol 2. Üçü de aynı doğrulama kurallarından geçer, aynı işlem geçmişine yazar.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">50 / 75</span>
+    </div>
+  </section>
+
+<!-- 51 — MİGRASYON SÜRECİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Yöntem ve kabul · RFP §9.2–9.3</span>
+      <h2 class="slide-title">Prova, mutabakat, delta, <span class="accent">geri dönüş</span></h2>
+      <div class="flow" style="margin-top:0.6cqh;">
+        <div class="node">1 · Envanter<small>kaynak tablo ve alan listesi</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">2 · Eşleme<small>alan bazlı mapping, dönüşüm kuralı</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">3 · Kalite<small>temizlik kuralları, mükerrer, eksik</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">4 · Prova<small>en az 2 tam deneme, süre ölçümü</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">5 · Mutabakat<small>sayı + alan bazlı örneklem</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">6 · Cutover<small>freeze, delta, Go/No-Go, rollback</small></div>
+      </div>
+      <div class="two-col" style="margin-top:2cqh; flex:1; align-content:start;">
+        <table class="xtable xtable--dense">
+          <thead><tr><th>Kontrol</th><th>Ölçüm</th><th>Kabul</th></tr></thead>
+          <tbody>
+            <tr><td>Kayıt sayısı</td><td>Kaynak ve hedef toplamları, tablo bazında</td><td>%100 ya da yazılı istisna</td></tr>
+            <tr><td>Alan doğruluğu</td><td>Otomatik karşılaştırma + rastgele örneklem</td><td>Mutabık kalınan eşik</td></tr>
+            <tr><td>Kritik müşteri verisi</td><td>Hesap, izin, adres</td><td>Kritik hata = 0</td></tr>
+            <tr><td>Sipariş geçmişi</td><td>Sipariş–iade–ödeme ilişkileri</td><td>İlişki bütünlüğü korunur</td></tr>
+          </tbody>
+        </table>
+        <ul class="flist flist--tight">
+          <li><b>Veri freeze</b> cutover öncesi kısa tutulur; delta aynı hattan saatlik koşar.</li>
+          <li><b>Rollback</b>: DNS ve uygulama yönlendirmesi eski platforma döner; yeni platformda oluşan siparişler OMS'te zaten olduğu için kaybolmaz.</li>
+          <li><b>Arşiv ve saklama</b>: kaynak export'u şifreli S3'te, KVKK saklama süresine göre tutulur.</li>
+          <li><b>Kampanya takvimi</b>: cutover blackout dışına planlanır.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">51 / 75</span>
+    </div>
+  </section>
+
+<!-- 52 — SEO MİGRASYONU -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">SEO geçişi · RFP §10</span>
+      <h2 class="slide-title">Organik trafik <span class="accent">kayıpsız</span> taşınır</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card"><div class="ix">Go-live öncesi</div><h3>Envanter ve eşleme</h3><p>Mevcut URL envanteri crawl ve Search Console ile çıkarılır; her URL yeni karşılığına eşlenir. Regex/joker kurallar, zincir ve döngü tespiti; 301/302 ayrımı.</p></div>
+        <div class="card card--accent"><div class="ix">Yapı</div><h3>Canonical, hreflang, schema</h3><p>Varyant canonical stratejisi, filtre ve sayfalama kuralları, Product/Offer/Breadcrumb/FAQ şemaları, sitemap index ve robots.txt panelden yönetilir; AI bot kuralları ve llms.txt.</p></div>
+        <div class="card"><div class="ix">Doğrulama</div><h3>Staging crawl</h3><p>Noindex ve şifre korumalı staging'de tam crawl; soft 404, kırık link, meta uzunluk ve mükerrer title raporları temizlenmeden Go/No-Go verilmez.</p></div>
+        <div class="card"><div class="ix">Go-live günü</div><h3>Yönlendirme ve ping</h3><p>301 kuralları açılır, sitemap gönderilir, IndexNow ve Search Console ping; CDN ve cache ısıtması.</p></div>
+        <div class="card"><div class="ix">Go-live sonrası</div><h3>İzleme planı</h3><p>İlk 8 hafta günlük: indeks sayısı, 404/410, crawl bütçesi, Core Web Vitals ve organik oturum trendi; sapmada düzeltme sprint'i.</p></div>
+        <div class="card card--dark"><div class="ix">Performans</div><h3>SSR + CDN</h3><p>Ürün listesi, fiyat ve linkler ilk HTML'de; WebP/AVIF, lazy load, font ve kritik CSS optimizasyonu; HTTP/2–3, Brotli, düşük TTFB.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">52 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 08 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">08</div>
+      <span class="kicker">RFP §23.1 · 8 ve §12–13, §17–22</span>
+      <h2 class="slide-title">Uygulama planı, zaman çizelgesi ve kaynaklar</h2>
+      <p class="lead">Standart bir WebShop + AppShop projesi: ticaret modülleri, pazaryeri ve ComHub entegrasyonları ile birlikte; kapılı fazlar, ölçülebilir sprint'ler, isimli ekip.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">53 / 75</span>
+    </div>
+  </section>
+
+<!-- 54 — PROJE KAPSAMI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Proje kapsamı</span>
+      <h2 class="slide-title">Standart WebShop + AppShop projesinin <span class="accent">içeriği</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card card--dark"><div class="ix">Kanallar</div><h3>WebShop · AppShop · Marketplace Seller</h3><p>İki marka için Next.js web, native iOS ve Android; Trendyol, Hepsiburada ve Amazon ile çift yönlü pazaryeri entegrasyonu.</p></div>
+        <div class="card"><div class="ix">Ticaret modülleri</div><h3>PIM · CMS · Payment Gateway · CRM · Kampanya</h3><p>Ürün zenginleştirme ve kanal yayını, drag &amp; drop içerik, çoklu PSP ödeme orkestrasyonu, operasyonel müşteri yönetimi, promosyon motoru.</p></div>
+        <div class="card"><div class="ix">ComHub</div><h3>Entegrasyonlar</h3><p>WinRetail ERP, Retail Markup OMS, CRM/Loyalty, PSP ve bankalar, Retter, pazarlama ve analitik kanalları (GA4, GTM, Adjust, Personaclick, Setrow, Efilli, İYS, JetSMS).</p></div>
+        <div class="card"><div class="ix">Deneyim</div><h3>UI/UX tasarım ve yeni mobil tasarım</h3><p>Marka brief'leriyle tasarım sistemi; web ve app için ortak bileşen kütüphanesi; erişilebilirlik (WCAG) kontrolleri.</p></div>
+        <div class="card"><div class="ix">Veri</div><h3>Migrasyon ve SEO geçişi</h3><p>Ürün, içerik, müşteri, sipariş geçmişi ve URL eşlemesi; prova ve mutabakat.</p></div>
+        <div class="card"><div class="ix">Kapsam dışı</div><h3>OMS · WMS · TMS kurulumu</h3><p>Mevcut sistemler yerinde kalır, entegrasyonları kapsamdadır. İleride istenirse aynı platformda açılır.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">54 / 75</span>
+    </div>
+  </section>
+
+<!-- 55 — METODOLOJİ & YÖNETİŞİM -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Metodoloji ve yönetişim · RFP §12, §19</span>
+      <h2 class="slide-title">Keşifle başlar, <span class="accent">sprint'lerle</span> ilerler, kapıdan geçer</h2>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.4cqh 1.8cqw;">
+        <div class="card">
+          <div class="ix">Teslimat modeli</div>
+          <h3>Hibrit: keşif ve tasarım kapılı, geliştirme agile</h3>
+          <ul class="flist" style="margin-top:0.3cqh;">
+            <li><b>Discovery &amp; fit-gap</b>: çalıştaylar, BRD, entegrasyon sözleşmeleri, migrasyon kapsamı; M2 Requirements Sign-Off.</li>
+            <li><b>Design authority</b>: mimari, güvenlik ve entegrasyon kararları kayıt altında; M3 onayı.</li>
+            <li><b>İki haftalık sprint'ler</b>, her sprint sonunda demo; öncelik ürün sahibiyle birlikte.</li>
+            <li><b>Change Request</b>: etki analizi (süre, maliyet, risk) → Change Control Board kararı.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Yönetişim ritmi</div>
+          <h3>RFP §19.2 ile birebir</h3>
+          <ul class="flist" style="margin-top:0.3cqh;">
+            <li><b>Haftalık</b> proje durum toplantısı: plan, RAID, kararlar; workstream sync'leri.</li>
+            <li><b>İki haftada bir</b> Steering Committee: eskalasyon ve bütçe kararları.</li>
+            <li><b>Go/No-Go</b> cutover öncesi yetkili karar grubu; M7 hazırlık paketi.</li>
+            <li><b>Araçlar</b>: Jira proje ve sprint panosu, Confluence dokümantasyon, ServiceDesk portalı, haftalık rapor.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>Teslimatlar (RFP §22)</b> faz bazında: Project Plan, BRD, Fit-Gap, Solution/Integration/Security Design, Data Migration Strategy, Configuration Workbook, Test Strategy ve SIT/UAT paketleri, Cutover Runbook, Rollback Plan, Stabilization ve Closure raporları.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">55 / 75</span>
+    </div>
+  </section>
+
+<!-- 56 — ZAMAN PLANI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Zaman planı · RFP §17 ile kıyaslı</span>
+      <h2 class="slide-title">Victoria's Secret <span class="accent">32. haftada</span> canlıda, Bath &amp; Body Works 6 hafta sonra</h2>
+      <div class="gantt" style="margin-top:0.6cqh;">
+        <div class="gantt__h">Faz</div>
+        <div class="gantt__scale"><span style="left:0%">H1</span><span style="left:20%">H8</span><span style="left:40%">H16</span><span style="left:60%">H24</span><span style="left:80%">H32</span><span style="left:100%">H40</span></div>
+        <div class="gantt__name">Keşif &amp; fit-gap<small>çalıştaylar · BRD · entegrasyon sözleşmeleri</small></div><div class="gantt__track"><div class="gantt__bar" style="left:0%; width:10%"></div></div>
+        <div class="gantt__name">Çözüm tasarımı<small>mimari · güvenlik · veri · UI/UX brief</small></div><div class="gantt__track"><div class="gantt__bar" style="left:5%; width:15%"></div></div>
+        <div class="gantt__name">Geliştirme &amp; konfigürasyon<small>WebShop · AppShop · PIM/CMS · PGW · ComHub · pazaryeri</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:10%; width:50%"></div></div>
+        <div class="gantt__name">Migrasyon provaları<small>2 tam prova · mutabakat · delta hattı</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--soft" style="left:32.5%; width:32.5%"></div></div>
+        <div class="gantt__name">SIT · UAT<small>SIT H22–H26 · UAT H26–H30 · performans ve güvenlik testi</small></div><div class="gantt__track"><div class="gantt__bar" style="left:52.5%; width:22.5%"></div></div>
+        <div class="gantt__name">Cutover &amp; Go-Live VS<small>runbook · freeze · delta · Go/No-Go</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:75%; width:5%"></div></div>
+        <div class="gantt__name">Hypercare VS · BBW go-live<small>8 hafta stabilizasyon · BBW aynı tenant modelinde H38</small></div><div class="gantt__track"><div class="gantt__bar" style="left:80%; width:20%"></div></div>
+      </div>
+      <ul class="flist flist--tight" style="margin-top:1.4cqh; gap:0.7cqh;">
+        <li><b>RFP temeli 50. hafta go-live</b>; önerilen plan ~18 hafta kısadır. Fark hazır PBC'ler ve ComHub desenlerinden gelir: konfigürasyon ağırlıklı, paralel iş paketleri, entegrasyon son haftaya bırakılmaz.</li>
+        <li><b>Süreler keşif çalıştayları sonunda</b> kaynak yüklü plan ve kritik yolla teyit edilir; kampanya takvimi (BF, SAS, TILI) blackout olarak işlenir.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">56 / 75</span>
+    </div>
+  </section>
+
+  <!-- KİLOMETRE TAŞLARI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kilometre taşları ve kabul kapıları · RFP §18</span>
+      <h2 class="slide-title">On kapı, her birinde <span class="accent">zorunlu kanıt</span> ve onaylayan</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>ID</th><th>Kilometre taşı</th><th>Zorunlu kanıt / teslimat</th><th>Onaylayan</th><th>Önerilen hafta</th></tr></thead>
+        <tbody>
+          <tr><td>M1</td><td>Project Kickoff</td><td>Proje planı, governance, iletişim planı, RAID</td><td>Sponsor / PM</td><td>H1</td></tr>
+          <tr><td>M2</td><td>Requirements Sign-Off</td><td>BRD, fit-gap, entegrasyon ve migrasyon kapsamı</td><td>Business Owner</td><td>H4</td></tr>
+          <tr><td>M3</td><td>Solution Design Approval</td><td>Mimari, güvenlik, entegrasyon ve veri tasarımı</td><td>Architecture / IT</td><td>H8</td></tr>
+          <tr><td>M4</td><td>Development Complete</td><td>Konfigürasyon, geliştirme, unit test, dokümantasyon</td><td>Vendor PM / Tech Lead</td><td>H22</td></tr>
+          <tr><td>M5</td><td>SIT Sign-Off</td><td>SIT sonuçları, defect durumu, regresyon</td><td>IT / QA</td><td>H26</td></tr>
+          <tr><td>M6</td><td>UAT Sign-Off</td><td>İş senaryoları, eğitim, iş birimi onayı</td><td>Business Owner</td><td>H30</td></tr>
+          <tr><td>M7</td><td>Go-Live Readiness</td><td>Cutover runbook, rollback, destek modeli, Go/No-Go paketi</td><td>Steering Committee</td><td>H31</td></tr>
+          <tr><td>M8</td><td>Infosec</td><td>Güvenlik tasarım onayı, pentest raporu ve kapanış aksiyonları, Infosec soru seti</td><td>Shaya güvenlik</td><td>H30</td></tr>
+          <tr><td>M9</td><td>Go-Live (VS)</td><td>Deployment, smoke test, işlem validasyonu</td><td>Business + IT</td><td>H32</td></tr>
+          <tr><td>M10</td><td>Hypercare Exit</td><td>Stabilizasyon raporu, açık konu planı, operasyon devri; BBW go-live H38</td><td>Service Owner</td><td>H40</td></tr>
+        </tbody>
+      </table>
+      <p class="ann"><b>Haftalar</b> önerilen 32 haftalık VS planına göredir; RFP temeli (H50) ile fark bir önceki slaytta açıklanır. Hiçbir kapı yazılı onay olmadan geçilmez; onaylar Jira'da kayıt altındadır.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">57 / 75</span>
+    </div>
+  </section>
+
+  <!-- RACI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Yönetişim ve RACI · RFP §19</span>
+      <h2 class="slide-title">Kim sorumlu, kim <span class="accent">hesap verir</span></h2>
+      <div class="two-col two-col--wide" style="flex:1; align-content:start;">
+        <table class="xtable xtable--xdense">
+          <thead><tr><th>Aktivite</th><th>Şirket iş birimi</th><th>CommerceLab</th><th>Şirket IT / Dijital</th><th>Procurement</th></tr></thead>
+          <tbody>
+            <tr><td>İş gereksinimlerinin sağlanması</td><td class="c">A/R</td><td class="c">C</td><td class="c">C</td><td class="c">I</td></tr>
+            <tr><td>Mevcut sistem analizi</td><td class="c">C</td><td class="c">A/R</td><td class="c">C</td><td class="c">C</td></tr>
+            <tr><td>Solution ve entegrasyon tasarımı</td><td class="c">C</td><td class="c">A/R</td><td class="c">A/C</td><td class="c">C</td></tr>
+            <tr><td>Güvenlik değerlendirmesi</td><td class="c">C</td><td class="c">R</td><td class="c">A/R</td><td class="c">I</td></tr>
+            <tr><td>Geliştirme ve konfigürasyon</td><td class="c">I</td><td class="c">A/R</td><td class="c">C</td><td class="c">I</td></tr>
+            <tr><td>SIT planlama ve yürütme</td><td class="c">C</td><td class="c">A/R</td><td class="c">R/C</td><td class="c">I</td></tr>
+            <tr><td>UAT senaryoları ve yürütme</td><td class="c">A/R</td><td class="c">C</td><td class="c">C</td><td class="c">I</td></tr>
+            <tr><td>Data migration</td><td class="c">C</td><td class="c">A/R</td><td class="c">R/C</td><td class="c">I</td></tr>
+            <tr><td>Cutover ve deployment</td><td class="c">C</td><td class="c">A/R</td><td class="c">R/C</td><td class="c">I</td></tr>
+            <tr><td>Go/No-Go kararı</td><td class="c">A/R</td><td class="c">C</td><td class="c">C</td><td class="c">I</td></tr>
+            <tr><td>Operasyon devri</td><td class="c">A/R</td><td class="c">R</td><td class="c">R/C</td><td class="c">I</td></tr>
+          </tbody>
+        </table>
+        <div>
+          <div class="card card--dark" style="margin-bottom:1.2cqh;">
+            <div class="ix">Yönetişim yapısı · §19.1</div>
+            <ul class="flist flist--tight" style="margin-top:0.3cqh;">
+              <li><b>Steering Committee</b>: strateji, bütçe, kritik risk, eskalasyon; iki haftada bir.</li>
+              <li><b>Project Management</b>: plan, kapsam, RAID, haftalık rapor.</li>
+              <li><b>Design Authority</b>: mimari, güvenlik ve entegrasyon kararları; ihtiyaca göre.</li>
+              <li><b>Workstream'ler</b>: Business, UX, Technology, Integration, Data, QA, Operations.</li>
+              <li><b>Change Control Board</b>: kapsam, süre ve maliyet etkili değişiklikler.</li>
+            </ul>
+          </div>
+          <p class="ann">RFP §19.3 matrisi olduğu gibi kabul edilir; nihai RACI proje başlangıcında isim bazlı güncellenir. R sorumlu, A hesap veren, C danışılan, I bilgilendirilen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">58 / 75</span>
+    </div>
+  </section>
+
+<!-- 59 — EKİP & KAYNAK PLANI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Ekip ve kaynak planı · RFP §20</span>
+      <h2 class="slide-title">Alan sahipliğine dayalı, <span class="accent">isimli</span> ekip</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.1cqh 1.3cqw;">
+        <div class="card card--dark"><div class="ix">Çözüm mimarı · %100</div><h3>İsmail Danacı</h3><p>Hedef mimari, entegrasyon ve veri tasarımı kararları; design authority.</p></div>
+        <div class="card card--dark"><div class="ix">Proje yöneticisi · %100</div><h3>Polat Özdemir</h3><p>Plan, kapsam, RAID, yönetişim ve raporlama.</p></div>
+        <div class="card"><div class="ix">İş analisti · %100</div><h3>Yasin Teker</h3><p>Gereksinim, süreç, fit-gap ve UAT senaryoları.</p></div>
+        <div class="card"><div class="ix">UI/UX</div><h3>Furkan İlgen</h3><p>Tasarım sistemi, marka brief'leri, frontend yönetimi.</p></div>
+        <div class="card"><div class="ix">WebShop &amp; AppShop</div><h3>Alper Özçelik · Mehmet Ali Alagöz · Burak Selçuk · Amir Daliri</h3><p>Next.js web, native iOS ve Android geliştirme.</p></div>
+        <div class="card"><div class="ix">PIM · CMS · migrasyon</div><h3>Hüseyin Kucur · Ali Hazar</h3><p>Ürün ve içerik yönetimi, veri eşleme ve aktarım.</p></div>
+        <div class="card"><div class="ix">Payment GW · kampanya · CRM</div><h3>Gökhan Koçak</h3><p>Ödeme orkestrasyonu, promosyon motoru, loyalty entegrasyonu.</p></div>
+        <div class="card"><div class="ix">ComHub · OMS/ERP entegrasyonu</div><h3>Erkan Özer · Sertaç Yalçınkaya</h3><p>WinRetail, OMS ve pazaryeri entegrasyonları.</p></div>
+        <div class="card"><div class="ix">QA · DevOps · güvenlik</div><h3>QA lideri · BestCloudForme DevOps · güvenlik uzmanı</h3><p>Test stratejisi ve yürütme; ortam, CI/CD; güvenlik tasarımı ve test aksiyonları.</p></div>
+      </div>
+      <p class="note"><b>Tahsis oranı, lokasyon, başlangıç tarihi ve yedekleme planı</b> her rol için özgeçmişlerle birlikte zorunlu ekte verilir; hypercare lideri go-live öncesi atanır.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">59 / 75</span>
+    </div>
+  </section>
+
+<!-- 60 — TEST & CUTOVER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Test ve cutover · RFP §13</span>
+      <h2 class="slide-title">Kritik hata sıfır olmadan <span class="accent">Go</span> yok</h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Test kapsamı</div>
+          <ul class="flist flist--tight">
+            <li><b>Unit ve component</b> testleri CI'da her commit'te; LLM destekli dinamik frontend ve backend testleri.</li>
+            <li><b>SIT</b>: ERP, OMS, CRM, PSP ve pazaryeri uçtan uca; mock servislerle erken başlar.</li>
+            <li><b>UAT</b>: marka ekipleriyle iş senaryoları; eğitim aynı fazda.</li>
+            <li><b>Performans</b>: k6 ile yük, stres ve spike; GA4 kampanya profiline göre kalibre.</li>
+            <li><b>Güvenlik</b>: pentest ve zafiyet taraması; cross-browser, cihaz ve erişilebilirlik testleri.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">Cutover ve rollback</div>
+          <ul class="flist flist--tight">
+            <li><b>Runbook</b>: görev, süre, bağımlılık ve sahip bazlı; saat saat prova edilir.</li>
+            <li><b>Go/No-Go kriterleri</b>: açık Critical = 0; High için yazılı workaround; migrasyon mutabakatı; SEO crawl temiz; smoke test geçti.</li>
+            <li><b>Rollback</b>: karar noktaları ve geri dönüş süresi runbook'ta; DNS ve yönlendirme ile eski platforma dönüş.</li>
+            <li><b>Hypercare</b>: 8 hafta, günlük stand-up, genişletilmiş destek saatleri; çıkış kriteri M10.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>Defect seviyeleri</b> RFP §13.2 ile aynı: Critical satış/ödeme durması · High sınırlı workaround · Medium planlı kapanış · Low backlog.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">60 / 75</span>
+    </div>
+  </section>
+
+  <!-- RİSK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Risk ve bağımlılık yönetimi · RFP §21</span>
+      <h2 class="slide-title">Riskler RAID günlüğünde, <span class="accent">sahibi ve kontrolü</span> ile</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Risk / bağımlılık</th><th>Beklenen kontrol (RFP)</th><th>CommerceLab önlemi</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Veri migrasyonu</td><td>Deneme migrasyonu, mutabakat, rollback</td><td>En az 2 tam prova; sayı ve alan bazlı mutabakat; delta hattı; DNS ile geri dönüş</td><td>CommerceLab + Shaya veri</td></tr>
+          <tr><td>SEO kaybı</td><td>URL mapping, crawl test, go-live izleme</td><td>Tam URL envanteri ve 301 eşlemesi; staging crawl; ilk 8 hafta günlük izleme ve düzeltme sprint'i</td><td>CommerceLab + Dijital</td></tr>
+          <tr><td>ERP / OMS bağımlılığı</td><td>Interface planı, mock servisler, entegre takvim</td><td>Keşifte arayüz sözleşmeleri; mock servislerle erken SIT; Retail Markup ve WinRetail ekipleriyle ortak takvim</td><td>Shaya IT + CommerceLab</td></tr>
+          <tr><td>Ödeme sistemleri</td><td>Sertifikasyon, negatif senaryo, mutabakat testi</td><td>PSP sertifikasyon planı; 3D, red, timeout ve kısmi iade senaryoları; ikinci PSP failover testi</td><td>CommerceLab + Finans / IT</td></tr>
+          <tr><td>Peak season geçişi</td><td>Blackout takvimi, kapasite, rollback planı</td><td>Black Friday, SAS, TILI blackout; go-live kampanya dışına; kampanya öncesi yük testi ve DR doğrulaması</td><td>Steering Committee</td></tr>
+          <tr><td>Kapsam değişikliği</td><td>Change control ve etki analizi</td><td>Etki analizi (süre, maliyet, risk) → CCB; standart/normal/acil sınıfları Jira'da</td><td>Shaya PM + CommerceLab PM</td></tr>
+          <tr><td>Kaynak sürekliliği</td><td>Named resources, replacement SLA</td><td>İsimli ekip ve her rol için yedek; değişiklikte 10 iş günü içinde eşdeğer kaynak, bilgi transferi kayıtlı</td><td>CommerceLab</td></tr>
+          <tr><td>Üçüncü taraf servisler (CRM, Retter, PSP, pazaryeri)</td><td>—</td><td>Test ortamı ve kimlik bilgileri keşifte talep listesi; gecikmeler RAID'de; degrade modlar tasarımda</td><td>Shaya + iş ortakları</td></tr>
+        </tbody>
+      </table>
+      <p class="ann"><b>RAID günlüğü</b> haftalık güncellenir: risk skoru, trend ve aksiyon sahibi; karar günlüğü ve açık konu listesi; bağımlılık planı ve eskalasyon matrisi Confluence'ta, Steering Committee'de gözden geçirilir.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">61 / 75</span>
+    </div>
+  </section>
+
+  <!-- TESLİMATLAR -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Teslimatlar · RFP §22</span>
+      <h2 class="slide-title">Faz başına <span class="accent">zorunlu teslimatlar</span>, kapılarla eşleşir</h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>Faz</th><th>Teslimatlar</th><th>Kapı</th></tr></thead>
+        <tbody>
+          <tr><td>Discovery</td><td>Project Plan · BRD · Fit-Gap Matrix (nihai) · As-Is Assessment · RAID · entegrasyon arayüz sözleşmeleri · migrasyon kapsamı</td><td>M1, M2</td></tr>
+          <tr><td>Design</td><td>Solution Design · Architecture Diagram · Integration Design · Security Design · Data Migration Strategy · UI/UX tasarım sistemi</td><td>M3</td></tr>
+          <tr><td>Build</td><td>Configuration Workbook · kaynak ve sürüm notları · Unit Test Evidence · Admin Documentation · eşleme profilleri</td><td>M4</td></tr>
+          <tr><td>Test</td><td>Test Strategy · SIT/UAT paketleri · Defect Reports · Performance Report (k6) · Security Report (pentest) · migrasyon mutabakat raporu</td><td>M5, M6, M8</td></tr>
+          <tr><td>Cutover</td><td>Cutover Runbook · Rollback Plan · Go-Live Checklist · Support Model · SEO go-live planı</td><td>M7, M9</td></tr>
+          <tr><td>Hypercare / Closure</td><td>Stabilization Report · Open Item Plan · Runbook · Knowledge Transfer · Closure Report · eğitim kayıtları</td><td>M10</td></tr>
+        </tbody>
+      </table>
+      <p class="ann"><b>Dokümantasyon ve bilgi transferi</b> (RFP §12): yönetim konsolu ve entegrasyon dokümanları Confluence'ta; marka ve operasyon ekiplerine rol bazlı eğitim UAT fazında; yardım içerikleri konsol içinde.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">62 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 09 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">09</div>
+      <span class="kicker">RFP §23.1 · 9 ve §14, §23.2 ekleri</span>
+      <h2 class="slide-title">Destek, SLA ve servis taahhütleri</h2>
+      <p class="lead">Taahhütler varsayım değil, canlı üretimden ölçüm: sayfa ve API hızı, entegrasyon hızı, erişilebilirlik, yük testi kanıtı; destek modeli, değişiklik yönetimi ve felaket kurtarma.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">63 / 75</span>
+    </div>
+  </section>
+
+<!-- 64 — PLATFORM KPI'LARI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Performans ve dayanıklılık KPI'ları</span>
+      <h2 class="slide-title">Canlı üretimde <span class="accent">ölçülmüş</span> değerler</h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:3.2cqh;">
+          <div class="stat"><span class="num">%99,99</span><span class="lab">platform erişilebilirliği (RFP hedefi ≥ %99,9)</span></div>
+          <div class="stat"><span class="num">379 ms</span><span class="lab">ortalama API yanıtı · Apdex 0,95 (New Relic)</span></div>
+          <div class="stat"><span class="num">480M+</span><span class="lab">API isteği / ay</span></div>
+          <div class="stat"><span class="num">20K+</span><span class="lab">sipariş / gün, platform geneli</span></div>
+        </div>
+        <table class="xtable xtable--dense">
+          <thead><tr><th>KPI</th><th>Ölçülen değer</th><th>Kaynak</th><th>Shaya taahhüdü</th></tr></thead>
+          <tbody>
+            <tr><td>Page speed · ana sayfa, PDP</td><td>SSR + CDN, çalışma anında render yok</td><td>Core Web Vitals · Lighthouse</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
+            <tr><td>Page speed · checkout</td><td>Kritik adımlar önbellekli API üzerinden</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
+            <tr><td>API speed</td><td>GraphQL p95 250 ms, p99 490 ms (kampanya zirvesi profili, sepet ve checkout dahil)</td><td>k6 + New Relic, Ekim 2026</td><td>p95 &lt; 500 ms, aylık raporlanır</td></tr>
+            <tr><td>Robustness · fonksiyonel uptime</td><td>%99,99; pod yeniden başlatma saniyeler, düğüm değişimi dakikalar</td><td>Uptime Kuma · UptimeRobot</td><td>≥ %99,9 aylık, planlı bakım hariç</td></tr>
+            <tr><td>Deploy ve geri alma süresi</td><td>Ortalama 1,5 dakika; rollback aynı sürede</td><td>Jenkins</td><td>Kesintisiz yayın</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">64 / 75</span>
+    </div>
+  </section>
+
+<!-- 65 — ENTEGRASYON HIZI & YÜK TESTİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Entegrasyon hızı ve yük testi kanıtı</span>
+      <h2 class="slide-title">Sipariş saniyeler, stok <span class="accent">milisaniyeler</span> içinde yerinde</h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Entegrasyon hızı · canlı müşteri ortamında ölçülmüş</div>
+          <div class="mini-stats" style="margin-bottom:1.4cqh;">
+            <div class="stat"><span class="num">1,2 sn</span><span class="lab">web/app siparişi OMS'te</span></div>
+            <div class="stat"><span class="num">26 sn</span><span class="lab">pazaryeri siparişi OMS'te</span></div>
+            <div class="stat"><span class="num">925 ms</span><span class="lab">stok değişimi kanala bildirildi</span></div>
+          </div>
+          <ul class="flist flist--tight">
+            <li><b>150 ms</b> stok hesabı: emniyet stoku, on-transit ve rezervasyon dahil.</li>
+            <li><b>%0,02</b> yok satma oranı, tüm kanallarda; kritik stok hızlı şeritte 1,2 sn'de kanalda kapanır.</li>
+            <li><b>Kayıp sipariş yok</b>: kanalda olup OMS'te olmayan sipariş Control Tower'da yakalanır.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">Yük testi · canlı üretim ortamı, Ekim 2026</div>
+          <ul class="flist flist--tight">
+            <li><b>Sınır değil, davranış test edildi.</b> Kapasite Karpenter ve HPA ile düğüm ve pod ekleyerek yatayda büyür; mimari bir üst sınır tanımlamaz. Hiçbir basamakta eşik aşılmadı, hata 0.</li>
+            <li><b>Kampanya zirvesi profili</b>: sepet ve checkout dahil gerçek davranış karışımında API p95 250 ms, p99 490 ms.</li>
+            <li><b>Stres ×4</b>: kampanya tepesinin saatlik üç katı trafik; sistem ek ölçekleme beklemeden toparlandı.</li>
+            <li><b>Anlık sıçrama ×8</b>: dakikada 11.800 istek (~200 istek/sn) birden geldiğinde sunucu p95 30–60 ms.</li>
+            <li><b>Profil GA4'ten</b>: 11.11 ve Black Friday saatlik ve dakikalık tepe oturumlarıyla kalibre.</li>
+          </ul>
+          <p class="note" style="margin-top:1.2cqh;">Shaya için aynı yöntem: 280.000 oturum/gün pik ve 5K/saat işlem hedefinin katlarıyla kampanya öncesi yük, stres ve sıçrama testi; kapasite planı ve rapor Steering Committee'ye sunulur.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">65 / 75</span>
+    </div>
+  </section>
+
+<!-- 66 — SLA TABLOSU -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">SLA tablosu · RFP §14</span>
+      <h2 class="slide-title">Olay seviyesine göre <span class="accent">müdahale</span> ve çözüm</h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>Seviye</th><th>Örnek etki</th><th>Yanıt</th><th>Teknik müdahale</th><th>Geçici çözüm</th><th>Kalıcı çözüm</th><th>RCA</th></tr></thead>
+        <tbody>
+          <tr><td>P1 · Critical</td><td>Site/app erişilemiyor, sipariş veya ödeme alınamıyor, puanla ödeme ve kampanya servisi hatası</td><td>5 dk</td><td>15 dk</td><td>30 dk</td><td>2 saat</td><td>24 saat</td></tr>
+          <tr><td>P2 · High</td><td>OMS entegrasyon kesintisi, siparişlerin aktarılmaması, kargo, sadakat ve stok servisleri</td><td>15 dk</td><td>30 dk</td><td>2 saat</td><td>8 saat</td><td>2 iş günü</td></tr>
+          <tr><td>P3 · Medium</td><td>CMS yayın, arama sonucu, yönetim paneli ve müşteri hesabı hataları</td><td>1 saat</td><td>2 saat</td><td>4 saat</td><td>1 iş günü</td><td>—</td></tr>
+          <tr><td>P4 · Low</td><td>UI, içerik, metin ve rapor talepleri</td><td>1 iş günü</td><td>—</td><td>3 iş günü</td><td>Planlı sürüm</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="grid grid-3 compact-cards" style="margin-top:1.4cqh; gap:1.1cqh 1.3cqw;">
+        <div class="card"><div class="ix">Nasıl karşılanır</div><p>P1/P2 alarmları otomatik açılır (Slack + Parny), 7/24 nöbet; BestCloudForme ilk müdahale, geliştirme ekibine kademeli eskalasyon. Yanıt süresi insan değil alarm hızıdır.</p></div>
+        <div class="card"><div class="ix">Destek modeli</div><p>L1 ticket ve kullanıcı desteği · L2 konfigürasyon, veri düzeltme, entegrasyon analizi · L3 RCA, debug, hotfix · L4 ürün bug, framework ve güvenlik yaması. Tek kanal: ServiceDesk portalı ve servicedesk@commercelab.com.tr.</p></div>
+        <div class="card card--dark"><div class="ix">Raporlama</div><p>Aylık servis raporu ve SLA review; problem yönetimi ve RCA kayıtları; release, patch ve upgrade takvimi; peak dönem destek ve kapasite planı; servis kredisi koşulları ticari teklifte.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">66 / 75</span>
+    </div>
+  </section>
+
+  <!-- DESTEK MODELİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Destek modeli · RFP §14 L1–L4</span>
+      <h2 class="slide-title">Dört seviye, tek kanal, <span class="accent">7/24 P1</span></h2>
+      <div class="two-col two-col--wide" style="flex:1; align-content:start;">
+        <table class="xtable xtable--xdense">
+          <thead><tr><th>Aktivite</th><th>L1</th><th>L2</th><th>L3</th><th>L4</th></tr></thead>
+          <tbody>
+            <tr><td>Ticket yönetimi</td><td class="c">●</td><td class="c">●</td><td class="c"></td><td class="c"></td></tr>
+            <tr><td>Kullanıcı desteği</td><td class="c">●</td><td class="c">●</td><td class="c"></td><td class="c"></td></tr>
+            <tr><td>Konfigürasyon</td><td class="c"></td><td class="c">●</td><td class="c">●</td><td class="c"></td></tr>
+            <tr><td>Veri düzeltme</td><td class="c"></td><td class="c">●</td><td class="c">●</td><td class="c"></td></tr>
+            <tr><td>Entegrasyon analizi</td><td class="c"></td><td class="c">●</td><td class="c">●</td><td class="c"></td></tr>
+            <tr><td>Root cause analysis</td><td class="c"></td><td class="c"></td><td class="c">●</td><td class="c">●</td></tr>
+            <tr><td>Kod debug</td><td class="c"></td><td class="c"></td><td class="c">●</td><td class="c">●</td></tr>
+            <tr><td>Hotfix geliştirme</td><td class="c"></td><td class="c"></td><td class="c">●</td><td class="c">●</td></tr>
+            <tr><td>Ürün bug düzeltme</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c">●</td></tr>
+            <tr><td>Framework değişikliği</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c">●</td></tr>
+            <tr><td>Güvenlik yaması</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c">●</td></tr>
+          </tbody>
+        </table>
+        <div>
+          <ul class="flist flist--tight">
+            <li><b>Kanal</b>: ServiceDesk portalı ve servicedesk@commercelab.com.tr; P1 için telefon ve WhatsApp hattı; her talep Jira'da, SLA sayacı otomatik.</li>
+            <li><b>Saatler</b>: L1–L2 iş günleri 09:00–18:00; P1/P2 7/24 nöbet (BestCloudForme ilk müdahale + CommerceLab L3); peak dönemlerde genişletilmiş saatler ve kapasite planı.</li>
+            <li><b>Ekip</b>: L1 destek uzmanı, L2 uygulama danışmanı, L3 alan sahibi geliştirici ve mimar, L4 ürün ekibi.</li>
+            <li><b>Problem yönetimi</b>: tekrarlayan olaylar problem kaydına; RCA 24 saat (P1) / 2 iş günü (P2).</li>
+            <li><b>Raporlama</b>: aylık servis raporu ve SLA review; release, patch ve upgrade takvimi; üçüncü taraf bağımlılık listesi.</li>
+          </ul>
+          <p class="ann">Hypercare (8 hafta): günlük stand-up, genişletilmiş saatler, proje ekibi destek ekibiyle birlikte; çıkışta M10 ve operasyon devri.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">67 / 75</span>
+    </div>
+  </section>
+
+<!-- 68 — CHANGE MANAGEMENT -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Change management prosedürü</span>
+      <h2 class="slide-title">Talepten geri alıma <span class="accent">sekiz adım</span>, hepsi izlenebilir</h2>
+      <div class="steps" style="margin-top:0.4cqh;">
+        <div class="step-box"><span class="n">01</span><span class="t">Talep</span><span class="d">ServiceDesk ya da sprint backlog'u; iş gerekçesi ve öncelik</span></div>
+        <div class="step-box"><span class="n">02</span><span class="t">Etki analizi</span><span class="d">ürün, stok, kategori, kampanya, sipariş ve entegrasyon etkisi; süre ve risk</span></div>
+        <div class="step-box"><span class="n">03</span><span class="t">Onay</span><span class="d">standart değişiklik sprint planında; kapsam/maliyet etkili ise CCB</span></div>
+        <div class="step-box"><span class="n">04</span><span class="t">Geliştirme</span><span class="d">Jira ticket'ına bağlı branch; pull request zorunlu</span></div>
+        <div class="step-box"><span class="n">05</span><span class="t">Kalite kapısı</span><span class="d">code review + AI destekli review, SonarQube, birim test, imaj tarama</span></div>
+        <div class="step-box"><span class="n">06</span><span class="t">Test ortamı</span><span class="d">test ve staging'de regresyon ve UAT; prod verisiyle doğrulama</span></div>
+        <div class="step-box step-box--ink"><span class="n">07</span><span class="t">Yayın</span><span class="d">Jenkins MPL ile rolling update, toggle ile kademeli açma; sürüm notu paylaşılır</span></div>
+        <div class="step-box"><span class="n">08</span><span class="t">Doğrulama · geri alma</span><span class="d">smoke test ve izleme; sorun varsa ~1,5 dk'da önceki imaja dönüş</span></div>
+      </div>
+      <div class="two-col" style="margin-top:2cqh; flex:1; align-content:start;">
+        <ul class="flist flist--tight">
+          <li><b>Değişiklik sınıfları</b>: standart (sprint içi, önceden onaylı), normal (CCB), acil (hotfix; sonradan CCB kaydı). Hepsi Jira'da izlenir.</li>
+          <li><b>Blackout takvimi</b>: Black Friday, SAS, TILI ve kampanya dönemlerinde yalnız acil değişiklik; öncesinde freeze ve kapasite kontrolü.</li>
+          <li><b>SEO ayarları</b> sürüm güncellemesinde sıfırlanmaz; sürüm notları her yayınla paylaşılır (RFP §6.6.16).</li>
+        </ul>
+        <div class="card">
+          <div class="ix">Kullanılan araçlar</div>
+          <p><b>Jira</b> sprint ve değişiklik kaydı · <b>ServiceDesk</b> talep ve SLA takibi · <b>Bitbucket</b> branch ve PR · <b>Jenkins + MPL</b> CI/CD · <b>SonarQube</b> statik analiz · <b>ECR</b> imaj tarama · <b>Vault</b> secret · <b>Confluence</b> sürüm notları ve runbook · <b>New Relic, Grafana, OpenSearch</b> yayın sonrası doğrulama.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">68 / 75</span>
+    </div>
+  </section>
+
+<!-- 69 — DISASTER RECOVERY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Felaket kurtarma · RFP §14 RPO/RTO</span>
+      <h2 class="slide-title">Yedekleme bugün var; Shaya hedefleri için <span class="accent">sürekli replika</span> eklenir</h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Mevcut DR mimarisi</div>
+          <ul class="flist flist--tight">
+            <li><b>Multi-AZ</b>: RDS otomatik failover; EKS düğümleri birden fazla erişilebilirlik bölgesinde.</li>
+            <li><b>Yedekler</b>: RDS otomatik yedek + manuel snapshot; MongoDB ve PostgreSQL için düzenli EBS snapshot; S3 versiyonlama.</li>
+            <li><b>Cross-region replication</b> ile verinin farklı bölgede kopyası; infrastructure-as-code ile ortamın yeniden kurulumu.</li>
+            <li><b>DR tatbikatları</b> BestCloudForme ile düzenli yapılır; kendini onaran küme (pod saniyeler, düğüm dakikalar).</li>
+          </ul>
+        </div>
+        <div>
+          <table class="xtable xtable--dense">
+            <thead><tr><th>Metrik</th><th>Shaya hedefi</th><th>Yaklaşım</th><th>Durum</th></tr></thead>
+            <tbody>
+              <tr><td>RPO</td><td>≤ 15 dk</td><td>RDS PITR (5 dk) + Mongo/PostgreSQL için ikinci bölgede sürekli replika</td><td><span class="st st--plan">Shaya kurulumu</span></td></tr>
+              <tr><td>RTO</td><td>≤ 2 saat</td><td>Warm standby EKS + IaC; DNS ve CDN yönlendirmesi</td><td><span class="st st--plan">Shaya kurulumu</span></td></tr>
+              <tr><td>Failover</td><td>≤ 2 saat</td><td>Runbook'lu, onaylı geçiş; kritik servisler önce</td><td><span class="st st--ok">Taahhüt</span></td></tr>
+              <tr><td>Failback</td><td>≤ 4 saat</td><td>Delta senkron sonrası kontrollü dönüş</td><td><span class="st st--ok">Taahhüt</span></td></tr>
+              <tr><td>DR testi</td><td>Yılda ≥ 2</td><td>Biri kampanya sezonu öncesi; rapor paylaşılır</td><td><span class="st st--ok">Taahhüt</span></td></tr>
+              <tr><td>Son DR test raporu</td><td>Teklif eki</td><td>BestCloudForme'dan temin edilip eklenecek</td><td><span class="st st--todo">Temin edilecek</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="note"><b>Kritik dönemler:</b> Black Friday ve kampanya öncesinde DR hazırlığı ayrıca doğrulanır; yedekleme ve replika gecikmesi panoda izlenir.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">69 / 75</span>
+    </div>
+  </section>
+
+  <!-- BÖLÜM 10–12 -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">10–12</div>
+      <span class="kicker">RFP §23.1 · 10, 11, 12 ve §15</span>
+      <h2 class="slide-title">Ticari teklif, varsayımlar ve Infosec</h2>
+      <p class="lead">Ticari teklifin yapısı ve TCO yaklaşımı; varsayımlar, bağımlılıklar ve kapsam dışı maddeler; bilgi güvenliği kanıt paketi. Rakamlar ayrı ticari dosyadadır.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">70 / 75</span>
+    </div>
+  </section>
+
+  <!-- TİCARİ YAPI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Ticari teklif yapısı · RFP §15</span>
+      <h2 class="slide-title">Tek seferlik ve tekrarlayan kalemler, <span class="accent">üç yıllık TCO</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card">
+          <div class="ix">Tek seferlik · §15.1</div><h3>Proje bedeli</h3>
+          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
+            <li>Discovery ve danışmanlık</li>
+            <li>Kurulum ve başlangıç bedelleri</li>
+            <li>Tasarım (UI/UX), geliştirme ve konfigürasyon: WebShop, AppShop, PIM, CMS, PGW, CRM, kampanya</li>
+            <li>Entegrasyonlar: ERP, OMS, CRM, PSP, pazaryeri, pazarlama ve analitik</li>
+            <li>Data migration, test ve kalite, eğitim ve bilgi transferi, go-live ve hypercare</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Tekrarlayan · §15.2</div><h3>Platform ve servis</h3>
+          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
+            <li>Platform / lisans bedeli (SaaS, tenant bazlı)</li>
+            <li>Hosting, CDN ve trafik (AWS, BestCloudForme operasyon)</li>
+            <li>Destek ve bakım (SLA seviyesine göre)</li>
+            <li>Monitoring ve ek servisler (APM, log, DR replika)</li>
+            <li>Upgrade, sürüm ve managed service</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ix">Fiyatlandırma şablonu · §15.3</div><h3>Kalem bazında</h3>
+          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
+            <li>Headless Commerce Platform · web sitesi · app · MP entegrasyonu · PIM</li>
+            <li>Entegrasyonlar · data migration · analiz · test · raporlama</li>
+            <li>Infosec · SLA ve bakım · yazılım geliştirme adam/gün</li>
+            <li>Her kalemde birim, adet, birim fiyat, toplam, varsayım/hariç</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>Rakamlar ayrı ticari dosyada</b>: vergi, kur ve endeksleme, ödeme planı (kilometre taşına bağlı), teklif geçerlilik süresi, üçüncü taraf maliyetleri ve 1./2./3. yıl TCO tablosu (lisans, kurulum, altyapı, destek, üçüncü taraf) hacim bantları ve büyüme senaryolarıyla.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">71 / 75</span>
+    </div>
+  </section>
+
+  <!-- VARSAYIMLAR -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Varsayımlar, bağımlılıklar ve kapsam dışı · RFP §23.1-11 ve Ek B</span>
+      <h2 class="slide-title">Teklifin dayandığı <span class="accent">varsayımlar</span> açık yazılır</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>ID</th><th>Tür</th><th>Açıklama</th><th>Etki</th><th>Owner / kapanış</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>Kapsam dışı</td><td>OMS, WMS ve TMS kurulumu teklif dışıdır; mevcut Retail Markup OMS ve WinRetail entegre edilir</td><td>Kapsam</td><td>Teklif beyanı</td></tr>
+          <tr><td>A2</td><td>Varsayım</td><td>Hacim verileri (44K/21K SKU, 2,2M üye, 450K sipariş, 70K/280K oturum) Victoria's Secret içindir; Bath &amp; Body Works hacmi keşifte teyit edilir</td><td>Kapasite, süre</td><td>Shaya · keşif</td></tr>
+          <tr><td>A3</td><td>Bağımlılık</td><td>WinRetail, OMS, CRM, Retter, PSP ve pazaryeri API erişimi, test ortamı ve kimlik bilgileri Shaya ve iş ortaklarından; gecikme planı etkiler</td><td>Takvim</td><td>Shaya IT · M2</td></tr>
+          <tr><td>A4</td><td>Varsayım</td><td>CRM müşteri master, puan, tier, kupon ve kampanya kurallarının; ERP ürün, fiyat ve fiziksel stoğun; OMS satılabilir stok ve sipariş yaşam döngüsünün sahibi olmaya devam eder</td><td>Tasarım</td><td>Keşif · M3</td></tr>
+          <tr><td>A5</td><td>Varsayım</td><td>Zaman planı (VS H32, BBW H38) keşif sonunda kaynak yüklü plan ve kritik yolla teyit edilir; kampanya dönemleri blackout</td><td>Takvim</td><td>CommerceLab PM · M2</td></tr>
+          <tr><td>A6</td><td>Bağımlılık</td><td>RPO ≤ 15 dk için Mongo ve PostgreSQL sürekli replika ve warm standby Shaya tenant'ı için kurulur; maliyeti tekrarlayan kalemlerde</td><td>Maliyet</td><td>CommerceLab + BestCloudForme</td></tr>
+          <tr><td>A7</td><td>Varsayım</td><td>Ticimax verisine export veya API ile erişim sağlanır; şifreler taşınmaz, ilk girişte OTP/sosyal giriş</td><td>Migrasyon</td><td>Shaya · M2</td></tr>
+          <tr><td>A8</td><td>Varsayım</td><td>Fit-gap matrisindeki "C" yanıtları ürün ekibi teknik teyidine tabidir; keşifte kanıt (demo/test ortamı) ile kapatılır</td><td>Kapsam</td><td>CommerceLab ürün · M2</td></tr>
+          <tr><td>A9</td><td>Kapsam dışı</td><td>Mağaza POS, mağaza içi donanım, WinRetail ve OMS tarafı geliştirmeler, üçüncü taraf lisansları (PSP, Personaclick, Setrow, Efilli, JetSMS) ve kampanya içerik üretimi</td><td>Kapsam</td><td>Teklif beyanı</td></tr>
+          <tr><td>A10</td><td>Açık konu</td><td>Son DR test raporu BestCloudForme'dan temin edilip eke konacak; Retter API sözleşmesi ve gift card sağlayıcısı keşifte netleşir</td><td>Ek</td><td>CommerceLab · teklif sonrası</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">72 / 75</span>
+    </div>
+  </section>
+
+  <!-- INFOSEC -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Infosec · RFP §23.1-12 ve §11.2</span>
+      <h2 class="slide-title">Güvenlik mimariden gelir, <span class="accent">kanıt paketi</span> teklifle birlikte</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card"><div class="ix">Duruş</div><h3>Sıfır güven, uçtan uca şifreleme</h3><p>Segmentli VPC, en az yetki security group'ları, 16 katmanlı WAF ve Cloudflare DDoS koruması; aktarımda ve beklemede şifreleme; IAM RBAC + zorunlu MFA; Vault ile dinamik secret; AWS Security Hub sürekli denetim.</p></div>
+        <div class="card"><div class="ix">Uygulama güvenliği</div><h3>Güvenli geliştirme yaşam döngüsü</h3><p>Zorunlu code review ve AI destekli review, SonarQube statik analiz, imaj tarama (ECR), bağımlılık güncellemeleri; JWT/OAuth API kimliği; oran sınırı; güvenlik header'ları (HSTS vb.).</p></div>
+        <div class="card card--dark"><div class="ix">Veri ve uyum</div><h3>KVKK · DPA · PCI kapsamı</h3><p>İzin yönetimi, anonimleştirme, hesap silme, denetim izi; veri işleme sözleşmesi (DPA) imzalanır; kart verisi platformda tutulmaz, PSP tokenization ile PCI kapsamı daraltılır; veri Türkiye dışına çıkmaz varsayımı keşifte teyit edilir (AWS eu-central-1).</p></div>
+        <div class="card"><div class="ix">Test ve denetim</div><h3>Pentest ve zafiyet yönetimi</h3><p>Düzenli sızma testi; Shaya için go-live öncesi bağımsız pentest ve bulgu kapanış raporu (M8); sürekli zafiyet taraması; üçüncü taraf risk yönetimi; erişim gözden geçirmeleri.</p></div>
+        <div class="card"><div class="ix">Operasyon</div><h3>Olay müdahale ve iş sürekliliği</h3><p>Olay müdahale ve kriz planı; 7/24 alarm ve eskalasyon; DR planı, RPO/RTO taahhütleri ve yılda iki tatbikat; güvenlik olaylarında bildirim süreleri SLA'da.</p></div>
+        <div class="card"><div class="ix">Kanıt paketi</div><h3>Teklif ekinde</h3><p>Altyapı Güvenlik Dokümanı (ağ, WAF kuralları, IAM, loglama), Infosec soru seti yanıtları, politika özetleri, son pentest özeti ve DR planı; Shaya güvenlik ekibinin ek soruları keşif başında yanıtlanır. Mimari güvenlik gözden geçirmesi ve yazılı onay üretim öncesi (M8).</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">73 / 75</span>
+    </div>
+  </section>
+
+  <!-- EK KAYIT DEFTERİ -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Zorunlu ekler · RFP §23.2</span>
+      <h2 class="slide-title">On iki ek, <span class="accent">her birinin yeri</span> ve durumu</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>Zorunlu ek</th><th>Nerede</th><th>Durum</th></tr></thead>
+        <tbody>
+          <tr><td>Doldurulmuş requirement / fit-gap matrisi</td><td>Excel eki (69 satır + 13 ek fayda + yanıt kodları); bu sunum bölüm 04</td><td><span class="st st--ok">Hazır · ürün ekibi teyidi</span></td></tr>
+          <tr><td>Detaylı proje planı ve kaynak planı</td><td>Bu sunum bölüm 08: zaman planı, kilometre taşları, RACI, isimli ekip; MS Project/Jira planı keşifte kaynak yüklü</td><td><span class="st st--plan">Keşifte detaylanır</span></td></tr>
+          <tr><td>TCO tablosu</td><td>Ticari dosya: 3 yıl lisans, kurulum, altyapı, destek, üçüncü taraf</td><td><span class="st st--plan">Ticari dosyada</span></td></tr>
+          <tr><td>SLA tablosu · performans ve dayanıklılık KPI'ları</td><td>Bu sunum bölüm 09: P1–P4 süreleri, KPI'lar, yük testi kanıtı</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>Change Management prosedürü</td><td>Bu sunum bölüm 09: sekiz adım ve araçlar</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>Disaster Recovery planı ve son DR test raporu</td><td>Bu sunum bölüm 09 DR slaytı; son test raporu BestCloudForme'dan</td><td><span class="st st--todo">Rapor temin edilecek</span></td></tr>
+          <tr><td>Referans listesi</td><td>Bölüm 02 referanslar; §16 tablosu ve iletişim izinleri ayrı ekte</td><td><span class="st st--plan">İzinler alınıyor</span></td></tr>
+          <tr><td>Ekip özgeçmişleri</td><td>Bölüm 08 ekip slaytı; özgeçmişler, tahsis, lokasyon, başlangıç ve yedek planı ayrı ekte</td><td><span class="st st--plan">Ek dosya</span></td></tr>
+          <tr><td>Varsayım ve kapsam dışı listesi</td><td>Bu sunum bölüm 10–12 (A1–A10)</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>Sözleşme istisnaları / redline listesi</td><td>Hukuk ekibi; sözleşme taslağı sonrası</td><td><span class="st st--plan">Sözleşme aşamasında</span></td></tr>
+          <tr><td>Infosec kanıt paketi</td><td>Altyapı Güvenlik Dokümanı, soru seti, pentest özeti</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>İmza ve teklif beyanı (Ek C)</td><td>Ticari dosya kapak yazısı</td><td><span class="st st--plan">Ticari dosyada</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">74 / 75</span>
+    </div>
+  </section>
+
+<!-- 75 — KAPANIŞ -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">Özet</span>
+      <h1 class="cover-title">İstediğiniz her şey burada,<br /><span class="accent">fazlasıyla</span></h1>
+      <p class="cover-sub">Mevcut ERP, OMS ve CRM'inizi değiştirmeden iki markanın dijital ticaretini modern, ölçülebilir ve genişletilebilir bir platforma taşıyoruz; sonra da dijital IT ekibiniz gibi yanınızda kalıyoruz.</p>
+      <div class="cover-meta">
+        <div>Windowist Tower, Maslak · <span>İstanbul</span></div>
+        <div><span lang="en">info@commercelab.com.tr</span></div>
+        <div><span>+90 212 214 73 90</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">75 / 75</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="toolbar">
+  <button id="presentBtn" type="button" title="Sunum modu (tam ekran)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+    Sun
+  </button>
+  <button type="button" onclick="window.print()" title="PDF olarak kaydet (Cmd/Ctrl+P)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+    PDF indir
+  </button>
+</div>
+<div class="present-bar" id="presentBar"></div>
+<div class="present-hint">Esc ile çık · ok tuşları / tık ile ilerle</div>
+
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    function current() {
+      var mid = window.innerHeight / 2, best = 0, bestD = Infinity;
+      slides.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      return best;
+    }
+    var bar = document.getElementById('presentBar');
+    var presenting = false;
+    var idx = 0;
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      bar.style.width = ((idx + 1) / slides.length * 100) + '%';
+    }
+    function go(delta) {
+      idx = Math.min(slides.length - 1, Math.max(0, idx + delta));
+      render();
+    }
+    function enter() {
+      idx = current();
+      presenting = true;
+      document.body.classList.add('present');
+      render();
+      var el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen().catch(function(){});
+    }
+    function exit() {
+      presenting = false;
+      document.body.classList.remove('present');
+      slides.forEach(function (s) { s.classList.remove('is-active'); });
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+      slides[idx].scrollIntoView({ block: 'center' });
+    }
+    document.getElementById('presentBtn').addEventListener('click', enter);
+    document.addEventListener('fullscreenchange', function () {
+      if (!document.fullscreenElement && presenting) exit();
+    });
+    document.querySelector('.deck').addEventListener('click', function () {
+      if (presenting) go(1);
+    });
+    window.addEventListener('keydown', function (e) {
+      if (presenting) {
+        if (e.key === 'Escape') { e.preventDefault(); exit(); return; }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') {
+          e.preventDefault(); go(-1); return;
+        }
+        e.preventDefault(); go(1); return;
+      }
+      var i = current();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        if (i < slides.length - 1) slides[i + 1].scrollIntoView({ behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        if (i > 0) slides[i - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
