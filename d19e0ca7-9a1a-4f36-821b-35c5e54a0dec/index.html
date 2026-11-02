@@ -877,7 +877,7 @@
           <tbody>
             <tr><td>Page speed · ana sayfa, PDP</td><td>SSR + CDN, çalışma anında render yok</td><td>Core Web Vitals · Lighthouse</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
             <tr><td>Page speed · checkout</td><td>Kritik adımlar önbellekli API üzerinden</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
-            <tr><td>API speed</td><td>GraphQL p95 250 ms, p99 490 ms (300 eşzamanlı ziyaretçi)</td><td>k6 + New Relic, Ekim 2026</td><td>p95 &lt; 500 ms, aylık raporlanır</td></tr>
+            <tr><td>API speed</td><td>GraphQL p95 250 ms, p99 490 ms (kampanya zirvesi profili, sepet ve checkout dahil)</td><td>k6 + New Relic, Ekim 2026</td><td>p95 &lt; 500 ms, aylık raporlanır</td></tr>
             <tr><td>Robustness · fonksiyonel uptime</td><td>%99,99; pod yeniden başlatma saniyeler, düğüm değişimi dakikalar</td><td>Uptime Kuma · UptimeRobot</td><td>≥ %99,9 aylık, planlı bakım hariç</td></tr>
             <tr><td>Deploy ve geri alma süresi</td><td>Ortalama 1,5 dakika; rollback aynı sürede</td><td>Jenkins</td><td>Kesintisiz yayın</td></tr>
           </tbody>
@@ -913,12 +913,13 @@
         <div>
           <div class="hdr-sub">Yük testi · canlı üretim ortamı, Ekim 2026</div>
           <ul class="flist flist--tight">
-            <li><b>300 eşzamanlı ziyaretçi</b>, sepet ve checkout akışı dahil: 4.783 istek, hata 0; API p95 250 ms.</li>
-            <li><b>Spike ×8</b>: dakikada 11.800 istek (~200 istek/sn) anlık sıçrama; sunucu p95 30–60 ms.</li>
-            <li><b>Zirve ×2 (20 dk)</b> ve stres ×4 geçti; HPA olmadan toparlandı.</li>
-            <li><b>Profil GA4'ten</b>: 11.11 ve Black Friday saatlik ve dakikalık tepe oturumlarıyla kalibre edilmiş gerçekçi davranış karışımı.</li>
+            <li><b>Sınır değil, davranış test edildi.</b> Kapasite Karpenter ve HPA ile düğüm ve pod ekleyerek yatayda büyür; mimari bir üst sınır tanımlamaz. Hiçbir basamakta eşik aşılmadı, hata 0.</li>
+            <li><b>Kampanya zirvesi profili</b>: sepet ve checkout dahil gerçek davranış karışımında API p95 250 ms, p99 490 ms.</li>
+            <li><b>Stres ×4</b>: kampanya tepesinin saatlik üç katı trafik; sistem ek ölçekleme beklemeden toparlandı.</li>
+            <li><b>Anlık sıçrama ×8</b>: dakikada 11.800 istek (~200 istek/sn) birden geldiğinde sunucu p95 30–60 ms.</li>
+            <li><b>Profil GA4'ten</b>: 11.11 ve Black Friday saatlik ve dakikalık tepe oturumlarıyla kalibre.</li>
           </ul>
-          <p class="note" style="margin-top:1.2cqh;">Shaya için aynı yöntem: 280.000 oturum/gün pik ve 5K/saat işlem hedefine göre kampanya öncesi yük ve stres testi; rapor Steering Committee'ye sunulur.</p>
+          <p class="note" style="margin-top:1.2cqh;">Shaya için aynı yöntem: 280.000 oturum/gün pik ve 5K/saat işlem hedefinin katlarıyla kampanya öncesi yük, stres ve sıçrama testi; kapasite planı ve rapor Steering Committee'ye sunulur.</p>
         </div>
       </div>
     </div>
