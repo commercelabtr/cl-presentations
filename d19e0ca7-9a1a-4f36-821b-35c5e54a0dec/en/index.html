@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CommerceLab — Shaya RFP: Architecture, Integration, Migration, Plan, SLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../assets/theme.css" />
+<style>
+  .compact-cards .card { padding: 1.5cqh 1.3cqw; gap: 0.5cqh; }
+  .compact-cards .card p { font-size: 1.16cqw; line-height: 1.42; }
+  .compact-cards .card h3 { font-size: 1.5cqw; }
+  .card--dark .flist li { color: rgba(255,255,255,.86); }
+  .card--dark .flist b { color: #fff; }
+  .card .flist { gap: 1.1cqh; }
+  .card .flist li { font-size: 1.28cqw; }
+  .flist--tight { gap: 0.9cqh; }
+  .flist--tight li { font-size: 1.36cqw; }
+
+  .xtable { width: 100%; border-collapse: collapse; margin-top: 0.6cqh; }
+  .xtable th { text-align: left; font-family: var(--display); font-weight: 700; font-size: 0.92cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-2); padding: 0 1cqw 0.7cqh 0; border-bottom: 1px solid var(--line-strong); }
+  .xtable td { padding: 0.85cqh 1cqw 0.85cqh 0; font-size: 1.12cqw; color: var(--ink-soft); border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.38; }
+  .xtable td:first-child { font-family: var(--display); font-weight: 700; color: var(--ink); }
+  .xtable td b { color: var(--ink); font-weight: 600; }
+  .xtable--dense td { padding: 0.62cqh 0.8cqw 0.62cqh 0; font-size: 1.04cqw; }
+  .st { display: inline-block; white-space: nowrap; font-family: var(--display); font-weight: 700; font-size: 0.82cqw; letter-spacing: .06em; text-transform: uppercase; padding: 0.3cqh 0.55cqw; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--ink-soft); }
+  .st--ok { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .st--todo { border-color: var(--red); color: var(--red); }
+  .st--plan { background: var(--bone-2); }
+
+  .dg-wrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .dg-wrap svg { width: 100%; height: 100%; display: block; }
+  .dg-t { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
+  .dg-t--w { fill: #fff; }
+  .dg-s { font-family: var(--sans); font-size: 11.5px; fill: var(--muted); }
+  .dg-s--w { fill: rgba(255,255,255,.78); }
+  .dg-zone { font-family: var(--display); font-weight: 700; font-size: 10.5px; letter-spacing: .16em; fill: var(--red); }
+  .dg-box { fill: #ffffff; stroke: #cfccc4; stroke-width: 1.2; }
+  .dg-bone { fill: #f6f4f0; stroke: #e4e1da; stroke-width: 1; }
+  .dg-ink { fill: #1a1a1a; }
+  .dg-red { fill: #d02c2f; }
+  .dg-line { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+  .dg-line--m { stroke: #9a9893; stroke-width: 1.2; fill: none; }
+
+  .gantt { display: grid; grid-template-columns: 17cqw 1fr; row-gap: 0.45cqh; column-gap: 1cqw; align-items: center; }
+  .gantt__h { font-family: var(--display); font-weight: 700; font-size: 0.85cqw; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-2); }
+  .gantt__name { font-family: var(--display); font-weight: 600; font-size: 1.15cqw; color: var(--ink); line-height: 1.2; }
+  .gantt__name small { display: block; font-family: var(--sans); font-weight: 400; font-size: 0.92cqw; color: var(--muted); }
+  .gantt__track { position: relative; height: 2.2cqh; background: var(--bone); border: 1px solid var(--line); border-radius: 4px; }
+  .gantt__bar { position: absolute; top: 0.3cqh; bottom: 0.3cqh; background: var(--ink); border-radius: 3px; }
+  .gantt__bar--red { background: var(--red); }
+  .gantt__bar--soft { background: var(--muted-2); }
+  .gantt__scale { position: relative; height: 1.6cqh; }
+  .gantt__scale span { position: absolute; top: 0; font-size: 0.85cqw; color: var(--muted-2); transform: translateX(-50%); font-variant-numeric: tabular-nums; }
+
+  .steps { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.5cqw; }
+  .step-box { border: 1px solid var(--line-strong); border-radius: 6px; background: var(--paper); padding: 1.1cqh 0.7cqw; display: flex; flex-direction: column; gap: 0.35cqh; min-height: 11cqh; }
+  .step-box .n { font-family: var(--display); font-weight: 800; font-size: 1cqw; color: var(--red); letter-spacing: .06em; }
+  .step-box .t { font-family: var(--display); font-weight: 700; font-size: 1.08cqw; color: var(--ink); line-height: 1.15; }
+  .step-box .d { font-size: 0.9cqw; color: var(--muted); line-height: 1.3; }
+  .step-box--ink { background: var(--ink); border-color: var(--ink); }
+  .step-box--ink .t { color: #fff; }
+  .step-box--ink .d { color: #b9b7b2; }
+  .step-box--ink .n { color: #ff6b6e; }
+
+  .team-compact .card { padding: 1.1cqh 1.2cqw; gap: 0.3cqh; }
+  .team-compact .card p { font-size: 1.08cqw; }
+  .two-col .flist li { font-size: 1.32cqw; }
+  .hdr-sub { font-family: var(--display); font-weight: 700; font-size: 1.05cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 1cqh; }
+  .mini-stats { display: flex; gap: 2.4cqw; flex-wrap: wrap; }
+  .mini-stats .stat .num { font-size: 2.9cqw; }
+  .mini-stats .stat .lab { font-size: 1.05cqw; max-width: 15cqw; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 01 — COVER -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">Alshaya Türkiye · Victoria's Secret &amp; Bath &amp; Body Works</span>
+      <h1 class="cover-title" style="font-size:4.6cqw;">Platform migration:<br />architecture, integration,<br />migration, plan and<br /><span class="accent">service commitments</span></h1>
+      <p class="cover-sub">CommerceLab's response to sections 5–8 of the RFP ECOM-RFP-2026 proposal structure and to the mandatory SLA/KPI, change management and disaster recovery attachments.</p>
+      <div class="cover-meta" style="margin-top:3.6cqh;">
+        <div>Proposal annex · <span>November 2026</span></div>
+        <div>Version · <span>Working draft v1</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">1 / 34</span>
+    </div>
+  </section>
+
+  <!-- 02 — WHAT THIS DECK COVERS -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Proposal structure · RFP §23</span>
+      <h2 class="slide-title">Where this deck sits in the <span class="accent">RFP</span></h2>
+      <p class="lead">It completes the technical and operational sections of the main proposal; the functional fit-gap matrix, commercial proposal and references are in the main document.</p>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>RFP section</th><th>In this deck</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>5 · Technical Architecture and Security</td><td>Target architecture, platform principles, AWS production topology, network and edge security, data tier, observability</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>6 · Integration Strategy</td><td>ComHub integration model, mapping of Shaya's integration inventory, resilience, Control Tower assurance that data arrived and work was done</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>7 · Data Migration Strategy</td><td>Scope and ownership, three loading paths (Open API · Excel + mapping · ComHub transformation), rehearsals and reconciliation, SEO migration</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>8 · Implementation Plan, Timeline, Resources</td><td>Standard WebShop + AppShop project scope, methodology, timeline, team and resource plan, testing and cutover</td><td><span class="st st--plan">Durations confirmed in discovery</span></td></tr>
+          <tr><td>Annex · SLA table, KPIs</td><td>Measured platform metrics, integration speed KPIs, load-test evidence, severity-based SLA, RPO/RTO</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>Annex · Change Management procedure</td><td>Eight-step change flow from request to rollback, and the tools used</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>Annex · Disaster Recovery plan + latest DR test report</td><td>Backup and DR architecture, closure plan for Shaya's targets</td><td><span class="st st--todo">Latest test report to be obtained</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">2 / 34</span>
+    </div>
+  </section>
+
+  <!-- 03 — KEY MESSAGE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Approach</span>
+      <h2 class="slide-title">Not software: an operations platform that works like <span class="accent">your digital IT team</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--dark"><div class="ix">01</div><h3>The whole RFP, and more</h3><p>Every requested item is met by standard platform capability; metric expectations are backed by live production measurements.</p></div>
+        <div class="card"><div class="ix">02</div><h3>Existing systems stay in place</h3><p>WinRetail remains the source of product, price and physical stock; the OMS owns the order lifecycle; the CRM owns customer and loyalty. We are the experience and orchestration layer.</p></div>
+        <div class="card"><div class="ix">03</div><h3>A partnership that makes money</h3><p>Every sprint produces a measurable business outcome; performance, conversion and operations KPIs are tracked in a single console.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Ready for what you have not asked for yet</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, multi-country and multi-currency open on the same platform; no re-platforming.</p></div>
+        <div class="card"><div class="ix">05</div><h3>Semi-autonomous operations</h3><p>The ACOMS roadmap and MCP interfaces move commerce operations step by step from advisory mode to full delegation.</p></div>
+        <div class="card"><div class="ix">06</div><h3>Proven infrastructure</h3><p>99.99% availability, 480M+ API requests a month, 20K+ orders a day; 16 enterprise tenants on one platform.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">3 / 34</span>
+    </div>
+  </section>
+
+  <!-- 04 — SECTION I -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">I</div>
+      <span class="kicker">RFP 23.1 · 5</span>
+      <h2 class="slide-title">Technical architecture and security</h2>
+      <p class="lead">Both brands' web and apps on a single multi-tenant, composable platform, running on AWS in a segmented, zero-trust network.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">4 / 34</span>
+    </div>
+  </section>
+
+  <!-- 05 — TARGET ARCHITECTURE (TOPOLOGY) -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Target architecture</span>
+      <h2 class="slide-title">Shaya solution topology: <span class="accent">experience with us</span>, systems of record with you</h2>
+      <div class="dg-wrap">
+        <svg viewBox="0 0 1140 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Shaya target architecture">
+          <text x="20" y="22" class="dg-zone">CHANNELS</text>
+          <rect x="20" y="32" width="255" height="52" rx="6" class="dg-box"/><text x="147" y="54" text-anchor="middle" class="dg-t">Victoria's Secret</text><text x="147" y="72" text-anchor="middle" class="dg-s">WebShop · iOS · Android</text>
+          <rect x="295" y="32" width="255" height="52" rx="6" class="dg-box"/><text x="422" y="54" text-anchor="middle" class="dg-t">Bath &amp; Body Works</text><text x="422" y="72" text-anchor="middle" class="dg-s">WebShop · iOS · Android</text>
+          <rect x="570" y="32" width="255" height="52" rx="6" class="dg-box"/><text x="697" y="54" text-anchor="middle" class="dg-t">Marketplaces</text><text x="697" y="72" text-anchor="middle" class="dg-s">Trendyol · Hepsiburada · Amazon</text>
+          <rect x="845" y="32" width="275" height="52" rx="6" class="dg-bone"/><text x="982" y="54" text-anchor="middle" class="dg-t">Future channels</text><text x="982" y="72" text-anchor="middle" class="dg-s">B2B · new country · agentic commerce</text>
+          <rect x="20" y="104" width="1100" height="44" rx="6" class="dg-ink"/>
+          <text x="570" y="123" text-anchor="middle" class="dg-t dg-t--w">Headless Experience Layer · Commerce Dispatch Engine (REST / GraphQL)</text>
+          <text x="570" y="140" text-anchor="middle" class="dg-s dg-s--w">one tenant, two brands: separate sites, separate catalog views, shared management console</text>
+          <text x="20" y="176" class="dg-zone">COMMERCELAB PBCs · PROPOSAL SCOPE</text>
+          <g>
+            <rect x="20" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="105" y="209" text-anchor="middle" class="dg-t">PIM / Catalog</text><text x="105" y="227" text-anchor="middle" class="dg-s">enrichment · channel content</text>
+            <rect x="206" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="291" y="209" text-anchor="middle" class="dg-t">Headless CMS</text><text x="291" y="227" text-anchor="middle" class="dg-s">drag &amp; drop · web + app</text>
+            <rect x="392" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="477" y="209" text-anchor="middle" class="dg-t">Campaign engine</text><text x="477" y="227" text-anchor="middle" class="dg-s">complements CRM rules</text>
+            <rect x="578" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="663" y="209" text-anchor="middle" class="dg-t">Payment / Checkout</text><text x="663" y="227" text-anchor="middle" class="dg-s">multi-tender · 3D · fraud</text>
+            <rect x="764" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="849" y="209" text-anchor="middle" class="dg-t">Operational CRM</text><text x="849" y="227" text-anchor="middle" class="dg-s">account · consent · wishlist</text>
+            <rect x="950" y="186" width="170" height="56" rx="6" class="dg-box"/><text x="1035" y="209" text-anchor="middle" class="dg-t">Marketplace Seller</text><text x="1035" y="227" text-anchor="middle" class="dg-s">listing · stock · reconciliation</text>
+          </g>
+          <rect x="20" y="262" width="1100" height="50" rx="6" class="dg-red"/>
+          <text x="570" y="283" text-anchor="middle" class="dg-t dg-t--w">ComHub · Integration &amp; Orchestration Manager · Control Tower</text>
+          <text x="570" y="301" text-anchor="middle" class="dg-s dg-s--w">API · events · mapping/transformation · retry · auto-fix · monitoring · reconciliation</text>
+          <text x="20" y="342" class="dg-zone">SHAYA SYSTEMS OF RECORD · STAY IN PLACE</text>
+          <g>
+            <rect x="20" y="352" width="205" height="70" rx="6" class="dg-bone"/><text x="122" y="376" text-anchor="middle" class="dg-t">WinRetail ERP</text><text x="122" y="394" text-anchor="middle" class="dg-s">product · price · physical stock</text><text x="122" y="410" text-anchor="middle" class="dg-s">store · financial master data</text>
+            <rect x="243" y="352" width="205" height="70" rx="6" class="dg-bone"/><text x="345" y="376" text-anchor="middle" class="dg-t">Retail Markup OMS</text><text x="345" y="394" text-anchor="middle" class="dg-s">available stock · orders</text><text x="345" y="410" text-anchor="middle" class="dg-s">shipment · return · exchange</text>
+            <rect x="466" y="352" width="205" height="70" rx="6" class="dg-bone"/><text x="568" y="376" text-anchor="middle" class="dg-t">CRM / Loyalty</text><text x="568" y="394" text-anchor="middle" class="dg-s">customer · tier · points</text><text x="568" y="410" text-anchor="middle" class="dg-s">coupon · campaign rules</text>
+            <rect x="689" y="352" width="205" height="70" rx="6" class="dg-bone"/><text x="791" y="376" text-anchor="middle" class="dg-t">PSPs / Banks</text><text x="791" y="394" text-anchor="middle" class="dg-s">virtual POS · tokenization</text><text x="791" y="410" text-anchor="middle" class="dg-s">gift card · BNPL</text>
+            <rect x="912" y="352" width="208" height="70" rx="6" class="dg-bone"/><text x="1016" y="376" text-anchor="middle" class="dg-t">Marketing &amp; services</text><text x="1016" y="394" text-anchor="middle" class="dg-s">GA4 · Adjust · Personaclick</text><text x="1016" y="410" text-anchor="middle" class="dg-s">Setrow · Efilli · İYS · JetSMS · Retter</text>
+          </g>
+          <line x1="147" y1="84" x2="147" y2="104" class="dg-line"/><line x1="422" y1="84" x2="422" y2="104" class="dg-line"/><line x1="697" y1="84" x2="697" y2="104" class="dg-line"/><line x1="982" y1="84" x2="982" y2="104" class="dg-line--m" stroke-dasharray="4 3"/>
+          <line x1="570" y1="148" x2="570" y2="186" class="dg-line"/>
+          <line x1="570" y1="242" x2="570" y2="262" class="dg-line"/>
+          <line x1="122" y1="312" x2="122" y2="352" class="dg-line"/><line x1="345" y1="312" x2="345" y2="352" class="dg-line"/><line x1="568" y1="312" x2="568" y2="352" class="dg-line"/><line x1="791" y1="312" x2="791" y2="352" class="dg-line"/><line x1="1016" y1="312" x2="1016" y2="352" class="dg-line"/>
+          <text x="570" y="455" text-anchor="middle" class="dg-s">The Commerce Platform owns web, mobile and marketplace orders and the Unified Order History view; selling decisions use only the Available Inventory supplied by the OMS.</text>
+        </svg>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">5 / 34</span>
+    </div>
+  </section>
+
+  <!-- 06 — DATA OWNERSHIP -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Data ownership · RFP §5.1.2</span>
+      <h2 class="slide-title">Every data domain has <span class="accent">one owner</span>; the platform is designed around it</h2>
+      <div class="two-col" style="flex:1;">
+        <table class="xtable xtable--dense">
+          <thead><tr><th>Data domain</th><th>Owner</th><th>Role on the platform</th></tr></thead>
+          <tbody>
+            <tr><td>Product · Category · Brand · Price</td><td>WinRetail</td><td>Daily full + event-based delta intake; PIM only enriches, never changes master data</td></tr>
+            <tr><td>Physical Inventory</td><td>WinRetail</td><td>Informational; not used for selling</td></tr>
+            <tr><td>Available Inventory</td><td>OMS</td><td>The single source for selling decisions; orders not yet in the OMS are deducted on the platform side</td></tr>
+            <tr><td>Web · Mobile · Marketplace Orders</td><td>Commerce Platform</td><td>Created here, handed to the OMS by event; status flows back from the OMS</td></tr>
+            <tr><td>Store Orders · Shipment · Return · Exchange</td><td>OMS</td><td>The platform displays and raises requests; operations run in the OMS</td></tr>
+            <tr><td>Customer · Loyalty · Tier · Coupon · Campaign</td><td>CRM</td><td>CRM services are called at checkout; the campaign engine complements CRM rules, never duplicates them</td></tr>
+            <tr><td>Order History View</td><td>Commerce Platform</td><td>Web, mobile, marketplace and store orders on one screen</td></tr>
+          </tbody>
+        </table>
+        <div>
+          <div class="card card--dark" style="margin-bottom:1.4cqh;">
+            <div class="ix">Design rule</div>
+            <h3>No rule is managed in two systems</h3>
+            <p>Points, coupon and tier decisions live in the CRM; basket-level promotions, free shipping and gift rules on the platform. Which lives where is fixed in writing during discovery.</p>
+          </div>
+          <div class="card">
+            <div class="ix">Overselling prevention</div>
+            <p>Under concurrent orders, campaign peaks and OMS delays the platform evaluates OMS available stock, reservations and pending orders together. Critical stock is closed on the channel through a fast lane.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">6 / 34</span>
+    </div>
+  </section>
+
+  <!-- 07 — ARCHITECTURE PRINCIPLES -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Architecture principles</span>
+      <h2 class="slide-title">Composable, multi-tenant, <span class="accent">extensible</span></h2>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.4cqw;">
+        <div class="card"><div class="ix">MACH</div><h3>Microservices · API-first · Cloud-native · Headless</h3><p>Every capability is exposed through REST and GraphQL; presentation is fully decoupled from commerce logic. The Next.js WebShop and native iOS/Android apps consume the same API.</p></div>
+        <div class="card"><div class="ix">PBC</div><h3>Packaged Business Capability</h3><p>PIM, CMS, Payment, Campaign, CRM and Marketplace Seller are independently versioned packages with their own data and API. Changing one does not affect the others.</p></div>
+        <div class="card card--dark"><div class="ix">Multi-tenant</div><h3>Two brands, one platform</h3><p>Victoria's Secret and Bath &amp; Body Works get separate sites, catalogs and designs; shared management, shared integrations, shared reporting. A new brand or country opens by configuration.</p></div>
+        <div class="card"><div class="ix">Extensible</div><h3>Customisation without forking the core</h3><p>Toggles, rule engine, user exits, scripting and plugin layers; Shaya-specific logic is added without leaving the upgrade path. No vendor lock-in, full export available.</p></div>
+      </div>
+      <div class="stack" style="margin-top:1.6cqh;">
+        <div class="layer"><span class="tag">Engines</span><span class="desc">Rule · evaluation (best-choice) · action engines on the Microsoft Rules Engine; the same infrastructure for sourcing, campaigns, payment routing and content.</span></div>
+        <div class="layer layer--ink"><span class="tag">State machine</span><span class="desc">Order, payment, return and product lifecycles are modelled as valid transitions; every transition is validated against external systems and announced via webhook/event.</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">7 / 34</span>
+    </div>
+  </section>
+
+  <!-- 08 — TECHNOLOGY STACK -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Technology stack</span>
+      <h2 class="slide-title">Proven, modern, <span class="accent">open</span> foundations</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card"><div class="ix">Runtime</div><h3>.NET / C#</h3><p>Long-term-supported, high-performance core services.</p></div>
+        <div class="card"><div class="ix">Storefront</div><h3>Next.js · native iOS &amp; Android</h3><p>SSR and static generation; product lists, prices and links in the first HTML. JAMstack delivery, no runtime rendering.</p></div>
+        <div class="card"><div class="ix">Data</div><h3>PostgreSQL · MongoDB · Redis</h3><p>Relational, document and in-memory; tenant-level isolation.</p></div>
+        <div class="card"><div class="ix">Search</div><h3>Elasticsearch</h3><p>Facets, synonyms, typo tolerance, merchandising; vector search and conversational commerce modules.</p></div>
+        <div class="card"><div class="ix">Messaging</div><h3>RabbitMQ</h3><p>Event and command bus; asynchronous flows absorb spikes and isolate failure.</p></div>
+        <div class="card"><div class="ix">Platform</div><h3>Docker · Kubernetes · AWS</h3><p>Amazon EKS, node scaling with Karpenter, HPA; eu-central-1.</p></div>
+      </div>
+      <p class="note"><b>API:</b> REST and GraphQL; product, category, meta, customer and order data can be bulk-updated from outside, and a full export is available when leaving the platform (RFP §6.6.15–16).</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">8 / 34</span>
+    </div>
+  </section>
+
+  <!-- 09 — PRODUCTION TOPOLOGY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Production topology</span>
+      <h2 class="slide-title">This is how the platform runs on <span class="accent">AWS</span></h2>
+      <div class="fill">
+      <div class="edgeflow">
+        <span class="step">User</span><span class="sep">&rsaquo;</span>
+        <span class="step">Cloudflare</span><span class="sep">&rsaquo;</span>
+        <span class="step">CloudFront</span><span class="sep">&rsaquo;</span>
+        <span class="step step--red">WAF</span><span class="sep">&rsaquo;</span>
+        <span class="step step--ink">ALB / Ingress</span>
+      </div>
+      <div class="topo">
+        <div class="zone zone--public">
+          <div class="zone__head"><span>Public subnet · Prod VPC</span><span class="cidr">the only internet-facing surface</span></div>
+          <div class="chips">
+            <span class="chip chip--red">Public ALB</span>
+            <span class="chip">pfSense VPN <small>IP-restricted + MFA</small></span>
+            <span class="chip">NAT Gateway <small>egress only</small></span>
+          </div>
+        </div>
+        <div class="zone">
+          <div class="zone__head"><span>Private container subnet · application tier</span><span class="cidr">EKS · private ALB</span></div>
+          <div class="chips">
+            <span class="chip chip--ink"><b>Amazon EKS</b> <small>namespace isolation</small></span>
+            <span class="chip">Private ALB</span>
+            <span class="chip">RabbitMQ <small>cluster</small></span>
+            <span class="chip">Jenkins</span>
+            <span class="chip">Nexus</span>
+            <span class="chip">Monitoring</span>
+          </div>
+        </div>
+        <div class="zone zone--data">
+          <div class="zone__head"><span>Private database subnet · data tier</span><span class="cidr">no public access</span></div>
+          <div class="chips">
+            <span class="chip"><b>RDS</b> <small>Multi-AZ · automated backups</small></span>
+            <span class="chip">MongoDB <small>cluster · EBS snapshots</small></span>
+            <span class="chip">PostgreSQL <small>HA</small></span>
+            <span class="chip">ElastiCache · Redis</span>
+            <span class="chip">OpenSearch <small>2 clusters</small></span>
+          </div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:1.2cqh;"><b>Shared services:</b> S3 + CloudFront (static assets, audit logs, CDN) · ECR (image scanning) · ACM · Athena · Vault (dynamic secrets). DevOps reaches the estate over Bitbucket and VPN only.</p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">9 / 34</span>
+    </div>
+  </section>
+
+  <!-- 10 — SECURITY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Security and compliance</span>
+      <h2 class="slide-title"><span class="accent">Zero trust</span> at every layer</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card"><div class="ix">Network</div><h3>Segmented VPC</h3><p>Dedicated production VPC; container, database and general subnets closed to the internet. Per-application security groups, least privilege, egress through NAT only, VPC peering and private links.</p></div>
+        <div class="card card--accent"><div class="ix">Edge</div><h3>16-layer WAF</h3><p>AWS managed rule sets (Common, SQLi, IP reputation, Anonymous IP) plus Fortinet threat rules; IP and country based rate limits, CAPTCHA, Cloudflare DDoS. Every decision logged to CloudWatch.</p></div>
+        <div class="card"><div class="ix">Identity</div><h3>IAM · MFA · Vault</h3><p>Role-based access, mandatory MFA, dynamic secret management; IAM logs audited regularly. AWS Security Hub for continuous audit and auto-remediation.</p></div>
+        <div class="card"><div class="ix">Data</div><h3>Encryption and KVKK/GDPR</h3><p>Encryption in transit and at rest; consent management, anonymisation and account deletion flows; audit trail. Card data never stored on the platform, PSP tokenization is used.</p></div>
+        <div class="card"><div class="ix">Application</div><h3>Secure development</h3><p>Mandatory code review, SonarQube static analysis, image scanning, JWT/OAuth based API identity, rate limiting at gateway and application level.</p></div>
+        <div class="card"><div class="ix">Governance</div><h3>Pentest and incident response</h3><p>Regular penetration testing; customer-specific tests by agreement. Incident response and crisis plan, third-party risk management. Infosec questionnaire and evidence pack delivered with the proposal.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">10 / 34</span>
+    </div>
+  </section>
+
+  <!-- 11 — SCALING & OBSERVABILITY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Scaling and observability</span>
+      <h2 class="slide-title">Ready for campaign peaks, observed <span class="accent">end to end</span></h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Capacity on demand</div>
+          <ul class="flist flist--tight">
+            <li><b>Karpenter</b> adds nodes within minutes; the Spot + On-Demand mix cuts cost while protecting availability.</li>
+            <li><b>HPA</b> scales pods on real load; capacity planning and warm-up before campaigns.</li>
+            <li><b>Multi-layer caching</b>: CDN, Redis, application; JAMstack pages are never rendered at runtime.</li>
+            <li><b>Rolling updates</b> with readiness/liveness probes; only healthy pods take traffic. Zero-downtime releases.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">Observability</div>
+          <ul class="flist flist--tight">
+            <li><b>APM</b>: New Relic; transaction, error and external-call traces.</li>
+            <li><b>Metrics</b>: Prometheus + Grafana, CloudWatch; node, container and infrastructure.</li>
+            <li><b>Logs</b>: two OpenSearch clusters + CloudWatch Logs; central search, batch and integration error tracking.</li>
+            <li><b>Uptime</b>: Uptime Kuma, UptimeRobot, Blackbox Exporter.</li>
+            <li><b>Alerting</b>: Slack + Parny; 24/7 first response by BestCloudForme, tiered escalation to the development team.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>Business KPIs in the same place:</b> order, stock consistency, integration status and shipping operation dashboards in the console; export to Power BI and the data warehouse is supported (RFP §5.1.2.10, §11.3).</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">11 / 34</span>
+    </div>
+  </section>
+
+  <!-- 12 — SECTION II -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">II</div>
+      <span class="kicker">RFP 23.1 · 6</span>
+      <h2 class="slide-title">Integration strategy</h2>
+      <p class="lead">No point-to-point connections: every system connects to ComHub. Making sure the data arrived and the work was done is Control Tower's job.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">12 / 34</span>
+    </div>
+  </section>
+
+  <!-- 13 — INTEGRATION PRINCIPLES -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Integration model</span>
+      <h2 class="slide-title">One hub, <span class="accent">resilient</span> integrations</h2>
+      <p class="lead">RFP §8 asks for owner, direction, trigger, frequency, error handling, security and monitoring per integration. ComHub defines all of them in one place.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card"><div class="ix">Trigger</div><h3>Event + batch</h3><p>Orders, cancellations, returns and stock changes are event-based; product master data daily full + delta. Dynamic call frequency by velocity.</p></div>
+        <div class="card"><div class="ix">Transformation</div><h3>Mapping and scripting</h3><p>Field mapping, lookups and transformation rules from the console; scripts and plugins for custom logic. No product-level definitions required.</p></div>
+        <div class="card card--dark"><div class="ix">Resilience</div><h3>Retry · failover · auto-fix</h3><p>Idempotent messages, retry queue, dead-letter and replay; when the counterpart is down the queue waits, no data is lost.</p></div>
+        <div class="card"><div class="ix">Security</div><h3>Identity and monitoring</h3><p>OAuth/JWT or mTLS, IP allow-lists, secrets in Vault; every call logged, errors and latency on the dashboard.</p></div>
+      </div>
+      <div class="flow" style="margin-top:1.6cqh;">
+        <div class="node">Source system<small>WinRetail · OMS · CRM · PSP</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Adapter<small>API · file · event</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">ComHub<small>mapping · rules · queue</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">PBC<small>PIM · OMS bridge · CRM</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Control Tower<small>verification · auto-fix · report</small></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">13 / 34</span>
+    </div>
+  </section>
+
+  <!-- 14 — INTEGRATION INVENTORY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Shaya integration inventory · RFP §8.6</span>
+      <h2 class="slide-title">Every row in the inventory has a <span class="accent">ready-made pattern</span> in ComHub</h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>Integration group</th><th>Direction · trigger</th><th>ComHub pattern</th><th>Verification</th></tr></thead>
+        <tbody>
+          <tr><td>WinRetail → Platform: product master, price, attributes</td><td>WR→Pl · daily full, change events</td><td>Master-data intake adapter; enrichment in PIM, channel publishing</td><td>Product count and price-difference checks</td></tr>
+          <tr><td>Platform ⇄ Marketplaces: product card, stock, price, orders</td><td>Pl→MP full + events · MP→Pl events</td><td>Marketplace Seller; channel-based safety stock, dynamic call velocity</td><td>Stock, price and order mismatch checks</td></tr>
+          <tr><td>OMS → Platform: store/warehouse stock, shipping, return and exchange status, invoice</td><td>OMS→Pl · events, invoice hourly</td><td>State-machine transition; triggers customer notifications</td><td>Orders on channel but missing in OMS</td></tr>
+          <tr><td>Platform → OMS: order, MP order notification, cancellation, exchange, return shipping</td><td>Pl→OMS · events</td><td>Idempotent order hand-off; not closed until delivery is acknowledged</td><td>Cancelled in OMS, still open on channel</td></tr>
+          <tr><td>CRM: SetTransaction, FinishTransaction, GetCampaignInfo, Provision/RemoveProvisionCoupon, GetCoupons, GetCustomerCampaign, lowest price of last 30 days</td><td>Bidirectional · events; price daily</td><td>Loyalty-driven checkout orchestration; point provisioning and release tied to the payment state machine</td><td>Transactions with open provisions</td></tr>
+          <tr><td>Payments: virtual POS, gift card, BNPL, 3D, cancellation/refund</td><td>Pl→Bank · events</td><td>Payment Gateway: PSP routing, failover, fraud scoring, reconciliation</td><td>Payment inconsistency auto-fix</td></tr>
+          <tr><td>Retter employee verification, balance, spend notification</td><td>Pl→Retter · events</td><td>External identity and balance service adapter</td><td>Call error rate</td></tr>
+          <tr><td>JetSMS, İYS, Personaclick, Setrow, GA4, Adjust, Efilli</td><td>Events · SDK</td><td>Communication and marketing connectors; data layer and consent management</td><td>Delivery and consent logs</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">14 / 34</span>
+    </div>
+  </section>
+
+  <!-- 15 — CONTROL TOWER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Control Tower</span>
+      <h2 class="slide-title">Did the data arrive, is the work done: we see it <span class="accent">before the customer</span></h2>
+      <p class="lead">An integration running is not enough; its outcome must be right. Control Tower compares source and target, then prioritises and fixes the gap.</p>
+      <div class="grid grid-4 compact-cards" style="gap:1.2cqh 1.4cqw;">
+        <div class="card"><div class="ix">Product</div><h3>Listing health</h3><p>Products locked or rejected on the channel, or present in PIM but missing on the channel.</p></div>
+        <div class="card card--dark"><div class="ix">Inventory</div><h3>Stock differences</h3><p>Selling without stock, closed with stock, or showing more than the OMS.</p></div>
+        <div class="card"><div class="ix">Order &amp; status</div><h3>Order consistency</h3><p>On channel but not in OMS, cancelled in OMS but open on channel, waiting too long.</p></div>
+        <div class="card"><div class="ix">Price</div><h3>Price differences</h3><p>Continuous comparison of the WinRetail price with the web, app and marketplace published price.</p></div>
+      </div>
+      <ul class="flist flist--tight" style="margin-top:1.4cqh; gap:0.7cqh;">
+        <li><b>Prioritised by severity, fixed automatically.</b> Fatal, critical and warning levels; every fix tracked as sent, fixed or failed, with history.</li>
+        <li><b>The checks themselves are monitored.</b> A check that did not run or errored raises its own alert; "0 mismatches" never misleads.</li>
+        <li><b>Hourly digest and subscriptions.</b> Operations is informed by e-mail; live stock and order lookup by barcode or order number on the same screen.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">15 / 34</span>
+    </div>
+  </section>
+
+  <!-- 16 — LOYALTY CHECKOUT EXAMPLE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Worked example · RFP §5.1.2.7</span>
+      <h2 class="slide-title">Points + card payment: <span class="accent">every step is reversible</span></h2>
+      <div class="flow" style="margin-top:1cqh;">
+        <div class="node">Basket<small>CRM: spendable points, campaign and coupon lookup</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Point provision<small>CRM SetTransaction · Point Provision</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Card capture<small>PGW: 3D, fraud score, PSP routing</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Order<small>created on the platform, handed to OMS by event</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Close<small>CRM FinishTransaction · stock deduction</small></div>
+      </div>
+      <div class="two-col" style="margin-top:2.4cqh; flex:1; align-content:start;">
+        <div>
+          <div class="hdr-sub">Failure scenarios</div>
+          <ul class="flist flist--tight">
+            <li><b>If the card is declined</b> the point provision is released automatically (RemoveProvision); the customer continues with the same basket.</li>
+            <li><b>If the CRM does not respond</b> the points step is disabled and card payment continues; the call is queued and Control Tower reports open provisions.</li>
+            <li><b>On partial refund</b> the tender split is preserved: the points share goes back to the CRM, the card share to the PSP, pro rata.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">Supported combinations</div>
+          <ul class="flist flist--tight">
+            <li>Points + credit card · points + debit card · points + gift card.</li>
+            <li>Combined use with coupons and gift cards; instalments and BNPL options.</li>
+            <li>Guest, registered, express and mobile checkout use the same orchestration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">16 / 34</span>
+    </div>
+  </section>
+
+  <!-- 17 — SECTION III -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">III</div>
+      <span class="kicker">RFP 23.1 · 7</span>
+      <h2 class="slide-title">Data migration strategy</h2>
+      <p class="lead">Three loading paths for the move from Ticimax, rehearsal migrations, numeric reconciliation and a rollback plan. Data that lives in systems of record is connected, not moved.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">17 / 34</span>
+    </div>
+  </section>
+
+  <!-- 18 — MIGRATION SCOPE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Scope and ownership · RFP §9.1</span>
+      <h2 class="slide-title">What moves, what gets <span class="accent">connected</span></h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>Data</th><th>Source</th><th>Target</th><th>Method</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Products, categories, brands</td><td>WinRetail (master data) + Ticimax (enrichment)</td><td>PIM</td><td>ERP intake + content transfer via Excel/API</td><td>Variant relations built automatically from the model code; duplicate checks</td></tr>
+          <tr><td>Content, images, video, SEO copy</td><td>Ticimax</td><td>PIM · CMS</td><td>API/export → transform → bulk load</td><td>Image file names and alt text generated SEO-friendly</td></tr>
+          <tr><td>Customer accounts, addresses, consents</td><td>Ticimax</td><td>Operational CRM (customer master stays in the CRM)</td><td>Mapped transfer via Open API</td><td>Passwords cannot move: OTP/social login on first visit; KVKK consent date and source preserved</td></tr>
+          <tr><td>Order, cancellation, return and refund history</td><td>Ticimax (+ OMS)</td><td>Order History View</td><td>Archive transfer with relational integrity</td><td>Unlimited retention; old orders read-only, return requests follow OMS rules</td></tr>
+          <tr><td>Loyalty balances and movements, tier, coupons</td><td>CRM</td><td>Stays in the CRM</td><td>Not moved, connected by service</td><td>Campaign definitions split between the campaign engine and the CRM per the ownership table</td></tr>
+          <tr><td>URL inventory, 301 rules, meta</td><td>Ticimax + crawl</td><td>SEO management</td><td>Old→new mapping file, bulk 301 via CSV</td><td>Crawl validation on staging before go-live</td></tr>
+        </tbody>
+      </table>
+      <p class="note" style="margin-top:1cqh;"><b>Volume (RFP §4.3):</b> 44K registered / 21K active SKUs · 2.2M members · 450K orders a year. This volume suits a single-night full transfer and hourly deltas.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">18 / 34</span>
+    </div>
+  </section>
+
+  <!-- 19 — THREE LOADING PATHS -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Loading paths</span>
+      <h2 class="slide-title">Open API, Excel + mapping profile, <span class="accent">ComHub transformation</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card card--dark">
+          <div class="ix">Path 1 · Open API</div>
+          <h3>Direct API loading</h3>
+          <p>Product, category, attribute, customer and order endpoints; the Ticimax export is packaged to the source schema and sent in bulk. Each record returns a success/failure result with the reason.</p>
+        </div>
+        <div class="card">
+          <div class="ix">Path 2 · Excel + mapping profile</div>
+          <h3>What the operations team can do themselves</h3>
+          <p>Download the template, upload the file, map the columns, review the plan, submit. The mapping profile is saved and reused next time. Row- and cell-level rule violation reports; nothing changes until submission is confirmed.</p>
+        </div>
+        <div class="card">
+          <div class="ix">Path 3 · ComHub transformation</div>
+          <h3>Transform on the way in</h3>
+          <p>Source fields are transformed to the target model with scripts and lookups; unit, size and colour dictionaries are normalised. Delta transfers run on the same line, so only the difference moves on cutover night.</p>
+        </div>
+      </div>
+      <p class="note"><b>Selection rule:</b> large, repetitive sets take Path 1 or 3; content and exceptions the brand team will correct take Path 2. All three pass the same validation rules and write to the same transaction history.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">19 / 34</span>
+    </div>
+  </section>
+
+  <!-- 20 — MIGRATION PROCESS -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Method and acceptance · RFP §9.2–9.3</span>
+      <h2 class="slide-title">Rehearsal, reconciliation, delta, <span class="accent">rollback</span></h2>
+      <div class="flow" style="margin-top:0.6cqh;">
+        <div class="node">1 · Inventory<small>source tables and fields</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">2 · Mapping<small>field-level mapping, transformation rules</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">3 · Quality<small>cleansing rules, duplicates, gaps</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">4 · Rehearsal<small>at least 2 full runs, timed</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">5 · Reconciliation<small>counts + field-level sampling</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">6 · Cutover<small>freeze, delta, Go/No-Go, rollback</small></div>
+      </div>
+      <div class="two-col" style="margin-top:2cqh; flex:1; align-content:start;">
+        <table class="xtable xtable--dense">
+          <thead><tr><th>Control</th><th>Measurement</th><th>Acceptance</th></tr></thead>
+          <tbody>
+            <tr><td>Record counts</td><td>Source and target totals, per table</td><td>100% or a written exception</td></tr>
+            <tr><td>Field accuracy</td><td>Automated comparison + random sampling</td><td>Agreed threshold</td></tr>
+            <tr><td>Critical customer data</td><td>Account, consent, address</td><td>Critical errors = 0</td></tr>
+            <tr><td>Order history</td><td>Order–return–payment relations</td><td>Relational integrity preserved</td></tr>
+          </tbody>
+        </table>
+        <ul class="flist flist--tight">
+          <li><b>Data freeze</b> kept short before cutover; deltas run hourly on the same line.</li>
+          <li><b>Rollback</b>: DNS and application routing return to the old platform; orders created on the new platform are already in the OMS, so nothing is lost.</li>
+          <li><b>Archive and retention</b>: the source export is kept in encrypted S3 for the KVKK retention period.</li>
+          <li><b>Campaign calendar</b>: cutover is planned outside blackout periods.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">20 / 34</span>
+    </div>
+  </section>
+
+  <!-- 21 — SEO MIGRATION -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">SEO migration · RFP §10</span>
+      <h2 class="slide-title">Organic traffic moves <span class="accent">without loss</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card"><div class="ix">Before go-live</div><h3>Inventory and mapping</h3><p>The current URL inventory is extracted by crawl and Search Console; every URL is mapped to its new counterpart. Regex/wildcard rules, chain and loop detection; 301 vs 302.</p></div>
+        <div class="card card--accent"><div class="ix">Structure</div><h3>Canonical, hreflang, schema</h3><p>Variant canonical strategy, filter and pagination rules, Product/Offer/Breadcrumb/FAQ schemas, sitemap index and robots.txt managed from the panel; AI bot rules and llms.txt.</p></div>
+        <div class="card"><div class="ix">Validation</div><h3>Staging crawl</h3><p>Full crawl on noindex, password-protected staging; no Go/No-Go until soft 404s, broken links, meta length and duplicate title reports are clean.</p></div>
+        <div class="card"><div class="ix">Go-live day</div><h3>Redirects and pings</h3><p>301 rules switched on, sitemap submitted, IndexNow and Search Console pings; CDN and cache warm-up.</p></div>
+        <div class="card"><div class="ix">After go-live</div><h3>Monitoring plan</h3><p>Daily for the first 8 weeks: index count, 404/410, crawl budget, Core Web Vitals and organic session trend; a correction sprint on any deviation.</p></div>
+        <div class="card card--dark"><div class="ix">Performance</div><h3>SSR + CDN</h3><p>Product lists, prices and links in the first HTML; WebP/AVIF, lazy load, font and critical CSS optimisation; HTTP/2–3, Brotli, low TTFB.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">21 / 34</span>
+    </div>
+  </section>
+
+  <!-- 22 — SECTION IV -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">IV</div>
+      <span class="kicker">RFP 23.1 · 8</span>
+      <h2 class="slide-title">Implementation plan, timeline and resources</h2>
+      <p class="lead">A standard WebShop + AppShop project: commerce modules, marketplace and ComHub integrations together, in measurable sprints.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">22 / 34</span>
+    </div>
+  </section>
+
+  <!-- 23 — PROJECT SCOPE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Project scope</span>
+      <h2 class="slide-title">What a standard WebShop + AppShop project <span class="accent">contains</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
+        <div class="card card--dark"><div class="ix">Channels</div><h3>WebShop · AppShop · Marketplace Seller</h3><p>Next.js web, native iOS and Android for both brands; bidirectional marketplace integration with Trendyol, Hepsiburada and Amazon.</p></div>
+        <div class="card"><div class="ix">Commerce modules</div><h3>PIM · CMS · Payment Gateway · CRM · Campaign</h3><p>Product enrichment and channel publishing, drag &amp; drop content, multi-PSP payment orchestration, operational customer management, promotion engine.</p></div>
+        <div class="card"><div class="ix">ComHub</div><h3>Integrations</h3><p>WinRetail ERP, Retail Markup OMS, CRM/Loyalty, PSPs and banks, Retter, marketing and analytics channels (GA4, GTM, Adjust, Personaclick, Setrow, Efilli, İYS, JetSMS).</p></div>
+        <div class="card"><div class="ix">Experience</div><h3>UI/UX design and the new mobile design</h3><p>Design system from the brand briefs; shared component library for web and app; accessibility (WCAG) checks.</p></div>
+        <div class="card"><div class="ix">Data</div><h3>Migration and SEO transition</h3><p>Products, content, customers, order history and URL mapping; rehearsals and reconciliation.</p></div>
+        <div class="card"><div class="ix">Out of scope</div><h3>OMS · WMS · TMS implementation</h3><p>Existing systems stay in place; their integrations are in scope. They can be opened on the same platform later if required.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">23 / 34</span>
+    </div>
+  </section>
+
+  <!-- 24 — METHODOLOGY & GOVERNANCE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Methodology and governance · RFP §12, §19</span>
+      <h2 class="slide-title">Starts with discovery, moves in <span class="accent">sprints</span>, passes through gates</h2>
+      <div class="grid grid-2" style="flex:1; align-content:center; gap:1.4cqh 1.8cqw;">
+        <div class="card">
+          <div class="ix">Delivery model</div>
+          <h3>Hybrid: gated discovery and design, agile build</h3>
+          <ul class="flist" style="margin-top:0.3cqh;">
+            <li><b>Discovery &amp; fit-gap</b>: workshops, BRD, integration contracts, migration scope; M2 Requirements Sign-Off.</li>
+            <li><b>Design authority</b>: architecture, security and integration decisions on record; M3 approval.</li>
+            <li><b>Two-week sprints</b> with a demo at the end of each; priorities set with the product owner.</li>
+            <li><b>Change Request</b>: impact analysis (time, cost, risk) → Change Control Board decision.</li>
+          </ul>
+        </div>
+        <div class="card card--dark">
+          <div class="ix">Governance rhythm</div>
+          <h3>One-to-one with RFP §19.2</h3>
+          <ul class="flist" style="margin-top:0.3cqh;">
+            <li><b>Weekly</b> project status: plan, RAID, decisions; workstream syncs.</li>
+            <li><b>Fortnightly</b> Steering Committee: escalation and budget decisions.</li>
+            <li><b>Go/No-Go</b> by the authorised decision group before cutover; M7 readiness pack.</li>
+            <li><b>Tools</b>: Jira project and sprint board, Confluence documentation, ServiceDesk portal, weekly report.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>Deliverables (RFP §22)</b> by phase: Project Plan, BRD, Fit-Gap, Solution/Integration/Security Design, Data Migration Strategy, Configuration Workbook, Test Strategy with SIT/UAT packs, Cutover Runbook, Rollback Plan, Stabilization and Closure reports.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">24 / 34</span>
+    </div>
+  </section>
+
+  <!-- 25 — TIMELINE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Timeline · compared with RFP §17</span>
+      <h2 class="slide-title">Victoria's Secret live in <span class="accent">week 32</span>, Bath &amp; Body Works 6 weeks later</h2>
+      <div class="gantt" style="margin-top:0.6cqh;">
+        <div class="gantt__h">Phase</div>
+        <div class="gantt__scale"><span style="left:0%">W1</span><span style="left:20%">W8</span><span style="left:40%">W16</span><span style="left:60%">W24</span><span style="left:80%">W32</span><span style="left:100%">W40</span></div>
+        <div class="gantt__name">Discovery &amp; fit-gap<small>workshops · BRD · integration contracts</small></div><div class="gantt__track"><div class="gantt__bar" style="left:0%; width:10%"></div></div>
+        <div class="gantt__name">Solution design<small>architecture · security · data · UI/UX brief</small></div><div class="gantt__track"><div class="gantt__bar" style="left:5%; width:15%"></div></div>
+        <div class="gantt__name">Build &amp; configuration<small>WebShop · AppShop · PIM/CMS · PGW · ComHub · marketplaces</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:10%; width:50%"></div></div>
+        <div class="gantt__name">Migration rehearsals<small>2 full runs · reconciliation · delta line</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--soft" style="left:32.5%; width:32.5%"></div></div>
+        <div class="gantt__name">SIT · UAT<small>SIT W22–W26 · UAT W26–W30 · performance and security tests</small></div><div class="gantt__track"><div class="gantt__bar" style="left:52.5%; width:22.5%"></div></div>
+        <div class="gantt__name">Cutover &amp; VS go-live<small>runbook · freeze · delta · Go/No-Go</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:75%; width:5%"></div></div>
+        <div class="gantt__name">VS hypercare · BBW go-live<small>8 weeks of stabilisation · BBW on the same tenant model in W38</small></div><div class="gantt__track"><div class="gantt__bar" style="left:80%; width:20%"></div></div>
+      </div>
+      <ul class="flist flist--tight" style="margin-top:1.4cqh; gap:0.7cqh;">
+        <li><b>The RFP baseline goes live in week 50</b>; this plan is ~18 weeks shorter thanks to ready PBCs and ComHub patterns: configuration-heavy, parallel work packages, integration never left to the last week.</li>
+        <li><b>Durations are confirmed after discovery</b> with a resource-loaded plan and critical path; campaign periods are blackout.</li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">25 / 34</span>
+    </div>
+  </section>
+
+  <!-- 26 — TEAM & RESOURCE PLAN -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Team and resource plan · RFP §20</span>
+      <h2 class="slide-title">A <span class="accent">named</span> team built on domain ownership</h2>
+      <div class="grid grid-3 compact-cards team-compact" style="flex:1; align-content:center; gap:0.8cqh 1.3cqw;">
+        <div class="card card--dark"><div class="ix">Solution architect · 100%</div><h3>İsmail Danacı</h3><p>Target architecture, integration and data design decisions; design authority.</p></div>
+        <div class="card card--dark"><div class="ix">Project manager · 100%</div><h3>Polat Özdemir</h3><p>Plan, scope, RAID, governance and reporting.</p></div>
+        <div class="card"><div class="ix">Business analyst · 100%</div><h3>Yasin Teker</h3><p>Requirements, processes, fit-gap and UAT scenarios.</p></div>
+        <div class="card"><div class="ix">UI/UX</div><h3>Furkan İlgen</h3><p>Design system, brand briefs, frontend management.</p></div>
+        <div class="card"><div class="ix">WebShop &amp; AppShop</div><h3>Alper Özçelik · Mehmet Ali Alagöz · Burak Selçuk · Amir Daliri</h3><p>Next.js web, native iOS and Android development.</p></div>
+        <div class="card"><div class="ix">PIM · CMS · migration</div><h3>Hüseyin Kucur · Ali Hazar</h3><p>Product and content management, data mapping and transfer.</p></div>
+        <div class="card"><div class="ix">Payment GW · campaign · CRM</div><h3>Gökhan Koçak</h3><p>Payment orchestration, promotion engine, loyalty integration.</p></div>
+        <div class="card"><div class="ix">ComHub · OMS/ERP integration</div><h3>Erkan Özer · Sertaç Yalçınkaya</h3><p>WinRetail, OMS and marketplace integrations.</p></div>
+        <div class="card"><div class="ix">QA · DevOps · security</div><h3>QA lead · BestCloudForme DevOps · security specialist</h3><p>Test strategy and execution; environments, CI/CD; security design and test actions.</p></div>
+      </div>
+      <p class="note"><b>Allocation, location, start date and backup plan</b> per role in the CV annex; hypercare lead assigned before go-live.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">26 / 34</span>
+    </div>
+  </section>
+
+  <!-- 27 — TESTING & CUTOVER -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Testing and cutover · RFP §13</span>
+      <h2 class="slide-title">No <span class="accent">Go</span> until critical defects are zero</h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Test scope</div>
+          <ul class="flist flist--tight">
+            <li><b>Unit and component</b> tests in CI on every commit; LLM-assisted dynamic frontend and backend tests.</li>
+            <li><b>SIT</b>: ERP, OMS, CRM, PSP and marketplaces end to end; starts early with mock services.</li>
+            <li><b>UAT</b>: business scenarios with the brand teams; training in the same phase.</li>
+            <li><b>Performance</b>: load, stress and spike with k6; calibrated to the GA4 campaign profile.</li>
+            <li><b>Security</b>: pentest and vulnerability scanning; cross-browser, device and accessibility tests.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">Cutover and rollback</div>
+          <ul class="flist flist--tight">
+            <li><b>Runbook</b>: task, duration, dependency and owner based; rehearsed hour by hour.</li>
+            <li><b>Go/No-Go criteria</b>: open Critical = 0; written workaround for High; migration reconciled; SEO crawl clean; smoke test passed.</li>
+            <li><b>Rollback</b>: decision points and return time in the runbook; back to the old platform via DNS and routing.</li>
+            <li><b>Hypercare</b>: 8 weeks, daily stand-up, extended support hours; exit criteria M10.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>Defect levels</b> as in RFP §13.2: Critical sales/payment outage · High limited workaround · Medium planned closure · Low backlog.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">27 / 34</span>
+    </div>
+  </section>
+
+  <!-- 28 — SECTION V -->
+  <section class="slide slide--ink">
+    <div class="slide__inner" style="justify-content:center;">
+      <div class="divider-index">V</div>
+      <span class="kicker">RFP 23.2 · mandatory attachments</span>
+      <h2 class="slide-title">SLA, KPIs, change management and disaster recovery</h2>
+      <p class="lead">Commitments are measured in live production, not assumed: page and API speed, integration speed, availability and load-test evidence.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">28 / 34</span>
+    </div>
+  </section>
+
+  <!-- 29 — PLATFORM KPIs -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Performance and robustness KPIs</span>
+      <h2 class="slide-title">Values <span class="accent">measured</span> in live production</h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:3.2cqh;">
+          <div class="stat"><span class="num">99.99%</span><span class="lab">platform availability (RFP target ≥ 99.9%)</span></div>
+          <div class="stat"><span class="num">379 ms</span><span class="lab">average API response · Apdex 0.95 (New Relic)</span></div>
+          <div class="stat"><span class="num">480M+</span><span class="lab">API requests / month</span></div>
+          <div class="stat"><span class="num">20K+</span><span class="lab">orders / day, platform-wide</span></div>
+        </div>
+        <table class="xtable xtable--dense">
+          <thead><tr><th>KPI</th><th>Measured value</th><th>Source</th><th>Commitment to Shaya</th></tr></thead>
+          <tbody>
+            <tr><td>Page speed · home, PDP</td><td>SSR + CDN, no runtime rendering</td><td>Core Web Vitals · Lighthouse</td><td>&lt; 2 s; device, network and measurement method agreed in discovery</td></tr>
+            <tr><td>Page speed · checkout</td><td>Critical steps over cached APIs</td><td>New Relic Browser</td><td>&lt; 3 s</td></tr>
+            <tr><td>API speed</td><td>GraphQL p95 250 ms, p99 490 ms (campaign-peak profile, basket and checkout included)</td><td>k6 + New Relic, October 2026</td><td>p95 &lt; 500 ms, reported monthly</td></tr>
+            <tr><td>Robustness · functional uptime</td><td>99.99%; pod restart in seconds, node replacement in minutes</td><td>Uptime Kuma · UptimeRobot</td><td>≥ 99.9% monthly, excluding planned maintenance</td></tr>
+            <tr><td>Deploy and rollback time</td><td>About 1.5 minutes on average; rollback in the same time</td><td>Jenkins</td><td>Zero-downtime releases</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">29 / 34</span>
+    </div>
+  </section>
+
+  <!-- 30 — INTEGRATION SPEED & LOAD TEST -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Integration speed and load-test evidence</span>
+      <h2 class="slide-title">Orders in seconds, stock in <span class="accent">milliseconds</span></h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Integration speed · measured in a live customer environment</div>
+          <div class="mini-stats" style="margin-bottom:1.4cqh;">
+            <div class="stat"><span class="num">1.2 s</span><span class="lab">web/app order in the OMS</span></div>
+            <div class="stat"><span class="num">26 s</span><span class="lab">marketplace order in the OMS</span></div>
+            <div class="stat"><span class="num">925 ms</span><span class="lab">stock change pushed to the channel</span></div>
+          </div>
+          <ul class="flist flist--tight">
+            <li><b>150 ms</b> stock calculation: safety stock, in-transit and reservations included.</li>
+            <li><b>0.02%</b> oversell rate across all channels; critical stock closes on the channel in 1.2 s via the fast lane.</li>
+            <li><b>No lost orders</b>: an order on the channel but not in the OMS is caught by Control Tower.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hdr-sub">Load test · live production environment, October 2026</div>
+          <ul class="flist flist--tight">
+            <li><b>Behaviour was tested, not a limit.</b> Capacity grows horizontally with Karpenter and HPA by adding nodes and pods; the architecture defines no upper bound. No threshold was crossed at any step, zero errors.</li>
+            <li><b>Campaign-peak profile</b>: basket and checkout included, realistic behaviour mix, API p95 250 ms, p99 490 ms.</li>
+            <li><b>Stress ×4</b>: three times the hourly campaign peak; the system recovered without waiting for extra scaling.</li>
+            <li><b>Spike ×8</b>: 11,800 requests a minute (~200 req/s) arriving at once; server p95 30–60 ms.</li>
+            <li><b>Profile from GA4</b>: calibrated with 11.11 and Black Friday hourly and per-minute peak sessions.</li>
+          </ul>
+          <p class="note" style="margin-top:1.2cqh;">Same method for Shaya: load, stress and spike tests before campaigns at multiples of the 280,000 sessions/day peak and 5K transactions/hour target; capacity plan and report presented to the Steering Committee.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">30 / 34</span>
+    </div>
+  </section>
+
+  <!-- 31 — SLA TABLE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">SLA table · RFP §14</span>
+      <h2 class="slide-title"><span class="accent">Response</span> and resolution by incident severity</h2>
+      <table class="xtable xtable--dense">
+        <thead><tr><th>Severity</th><th>Example impact</th><th>Response</th><th>Technical engagement</th><th>Workaround</th><th>Permanent fix</th><th>RCA</th></tr></thead>
+        <tbody>
+          <tr><td>P1 · Critical</td><td>Site/app unreachable, orders or payments failing, points payment and campaign service errors</td><td>5 min</td><td>15 min</td><td>30 min</td><td>2 hours</td><td>24 hours</td></tr>
+          <tr><td>P2 · High</td><td>OMS integration outage, orders not transferred, shipping, loyalty and stock services</td><td>15 min</td><td>30 min</td><td>2 hours</td><td>8 hours</td><td>2 business days</td></tr>
+          <tr><td>P3 · Medium</td><td>CMS publishing, search results, admin panel and customer account errors</td><td>1 hour</td><td>2 hours</td><td>4 hours</td><td>1 business day</td><td>—</td></tr>
+          <tr><td>P4 · Low</td><td>UI, content, copy and report requests</td><td>1 business day</td><td>—</td><td>3 business days</td><td>Planned release</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="grid grid-3 compact-cards" style="margin-top:1.4cqh; gap:1.1cqh 1.3cqw;">
+        <div class="card"><div class="ix">How it is met</div><p>P1/P2 alarms open automatically (Slack + Parny), 24/7 on-call; BestCloudForme first response, tiered escalation to the development team. Response time is alarm speed, not human speed.</p></div>
+        <div class="card"><div class="ix">Support model</div><p>L1 tickets and user support · L2 configuration, data correction, integration analysis · L3 RCA, debugging, hotfix · L4 product bugs, framework and security patches. One channel: the ServiceDesk portal and servicedesk@commercelab.com.tr.</p></div>
+        <div class="card card--dark"><div class="ix">Reporting</div><p>Monthly service report and SLA review; problem management and RCA records; release, patch and upgrade calendar; peak-season support and capacity plan; service credit terms in the commercial proposal.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">31 / 34</span>
+    </div>
+  </section>
+
+  <!-- 32 — CHANGE MANAGEMENT -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Change management procedure</span>
+      <h2 class="slide-title"><span class="accent">Eight steps</span> from request to rollback, all traceable</h2>
+      <div class="steps" style="margin-top:0.4cqh;">
+        <div class="step-box"><span class="n">01</span><span class="t">Request</span><span class="d">ServiceDesk or sprint backlog; business case and priority</span></div>
+        <div class="step-box"><span class="n">02</span><span class="t">Impact analysis</span><span class="d">effect on product, stock, category, campaign, orders and integrations; time and risk</span></div>
+        <div class="step-box"><span class="n">03</span><span class="t">Approval</span><span class="d">standard changes in the sprint plan; CCB if scope or cost is affected</span></div>
+        <div class="step-box"><span class="n">04</span><span class="t">Development</span><span class="d">branch linked to the Jira ticket; pull request mandatory</span></div>
+        <div class="step-box"><span class="n">05</span><span class="t">Quality gate</span><span class="d">code review + AI-assisted review, SonarQube, unit tests, image scanning</span></div>
+        <div class="step-box"><span class="n">06</span><span class="t">Test environment</span><span class="d">regression and UAT on test and staging; validation with production data</span></div>
+        <div class="step-box step-box--ink"><span class="n">07</span><span class="t">Release</span><span class="d">rolling update via Jenkins MPL, gradual enablement by toggle; release notes shared</span></div>
+        <div class="step-box"><span class="n">08</span><span class="t">Verify · roll back</span><span class="d">smoke test and monitoring; on any issue, back to the previous image in ~1.5 min</span></div>
+      </div>
+      <div class="two-col" style="margin-top:2cqh; flex:1; align-content:start;">
+        <ul class="flist flist--tight">
+          <li><b>Change classes</b>: standard (within the sprint, pre-approved), normal (CCB), emergency (hotfix; CCB record afterwards). All tracked in Jira.</li>
+          <li><b>Blackout calendar</b>: emergency changes only during Black Friday, SAS, TILI and campaign periods; freeze and capacity check beforehand.</li>
+          <li><b>SEO settings</b> are never reset by version upgrades; release notes shared with every release (RFP §6.6.16).</li>
+        </ul>
+        <div class="card">
+          <div class="ix">Tools used</div>
+          <p><b>Jira</b> sprint and change records · <b>ServiceDesk</b> requests and SLA tracking · <b>Bitbucket</b> branches and PRs · <b>Jenkins + MPL</b> CI/CD · <b>SonarQube</b> static analysis · <b>ECR</b> image scanning · <b>Vault</b> secrets · <b>Confluence</b> release notes and runbooks · <b>New Relic, Grafana, OpenSearch</b> post-release verification.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">32 / 34</span>
+    </div>
+  </section>
+
+  <!-- 33 — DISASTER RECOVERY -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Disaster recovery · RFP §14 RPO/RTO</span>
+      <h2 class="slide-title">Backups exist today; <span class="accent">continuous replicas</span> are added for Shaya's targets</h2>
+      <div class="two-col" style="flex:1; align-content:center;">
+        <div>
+          <div class="hdr-sub">Current DR architecture</div>
+          <ul class="flist flist--tight">
+            <li><b>Multi-AZ</b>: RDS automatic failover; EKS nodes across several availability zones.</li>
+            <li><b>Backups</b>: RDS automated backups + manual snapshots; regular EBS snapshots for MongoDB and PostgreSQL; S3 versioning.</li>
+            <li><b>Cross-region replication</b> keeps a copy of the data in another region; infrastructure-as-code rebuilds the environment.</li>
+            <li><b>DR drills</b> run regularly with BestCloudForme; self-healing cluster (pods in seconds, nodes in minutes).</li>
+          </ul>
+        </div>
+        <div>
+          <table class="xtable xtable--dense">
+            <thead><tr><th>Metric</th><th>Shaya target</th><th>Approach</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>RPO</td><td>≤ 15 min</td><td>RDS PITR (5 min) + continuous replica in a second region for Mongo/PostgreSQL</td><td><span class="st st--plan">Shaya setup</span></td></tr>
+              <tr><td>RTO</td><td>≤ 2 hours</td><td>Warm-standby EKS + IaC; DNS and CDN switch</td><td><span class="st st--plan">Shaya setup</span></td></tr>
+              <tr><td>Failover</td><td>≤ 2 hours</td><td>Runbook-driven, approved switch; critical services first</td><td><span class="st st--ok">Committed</span></td></tr>
+              <tr><td>Failback</td><td>≤ 4 hours</td><td>Controlled return after delta sync</td><td><span class="st st--ok">Committed</span></td></tr>
+              <tr><td>DR test</td><td>≥ 2 per year</td><td>One before the campaign season; report shared</td><td><span class="st st--ok">Committed</span></td></tr>
+              <tr><td>Latest DR test report</td><td>Proposal annex</td><td>To be obtained from BestCloudForme and attached</td><td><span class="st st--todo">To be obtained</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="note"><b>Critical periods:</b> DR readiness is verified separately before Black Friday and campaigns; backup and replica lag are monitored on the dashboard.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">33 / 34</span>
+    </div>
+  </section>
+
+  <!-- 34 — CLOSING -->
+  <section class="slide slide--ink slide--cover">
+    <div class="slide__inner">
+      <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+      <span class="kicker">Summary</span>
+      <h1 class="cover-title">Everything you asked for,<br /><span class="accent">and more</span></h1>
+      <p class="cover-sub">We move both brands' digital commerce to a modern, measurable and extensible platform without replacing your ERP, OMS or CRM; then we stay at your side like your own digital IT team.</p>
+      <div class="cover-meta">
+        <div>Windowist Tower, Maslak · <span>İstanbul</span></div>
+        <div><span>info@commercelab.com.tr</span></div>
+        <div><span>+90 212 214 73 90</span></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">34 / 34</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="toolbar">
+  <button id="presentBtn" type="button" title="Present (fullscreen)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+    Present
+  </button>
+  <button type="button" onclick="window.print()" title="Save as PDF (Cmd/Ctrl+P)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+    Download PDF
+  </button>
+</div>
+<div class="present-bar" id="presentBar"></div>
+<div class="present-hint">Esc to exit · arrow keys / click to advance</div>
+
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    function current() {
+      var mid = window.innerHeight / 2, best = 0, bestD = Infinity;
+      slides.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      return best;
+    }
+    var bar = document.getElementById('presentBar');
+    var presenting = false;
+    var idx = 0;
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      bar.style.width = ((idx + 1) / slides.length * 100) + '%';
+    }
+    function go(delta) {
+      idx = Math.min(slides.length - 1, Math.max(0, idx + delta));
+      render();
+    }
+    function enter() {
+      idx = current();
+      presenting = true;
+      document.body.classList.add('present');
+      render();
+      var el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen().catch(function(){});
+    }
+    function exit() {
+      presenting = false;
+      document.body.classList.remove('present');
+      slides.forEach(function (s) { s.classList.remove('is-active'); });
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+      slides[idx].scrollIntoView({ block: 'center' });
+    }
+    document.getElementById('presentBtn').addEventListener('click', enter);
+    document.addEventListener('fullscreenchange', function () {
+      if (!document.fullscreenElement && presenting) exit();
+    });
+    document.querySelector('.deck').addEventListener('click', function () {
+      if (presenting) go(1);
+    });
+    window.addEventListener('keydown', function (e) {
+      if (presenting) {
+        if (e.key === 'Escape') { e.preventDefault(); exit(); return; }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') {
+          e.preventDefault(); go(-1); return;
+        }
+        e.preventDefault(); go(1); return;
+      }
+      var i = current();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        if (i < slides.length - 1) slides[i + 1].scrollIntoView({ behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        if (i > 0) slides[i - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
