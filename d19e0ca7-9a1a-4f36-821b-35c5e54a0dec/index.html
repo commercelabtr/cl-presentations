@@ -85,7 +85,7 @@
   <section class="slide slide--ink slide--cover">
     <div class="slide__inner">
       <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
-      <span class="kicker">Alshaya Türkiye · Victoria's Secret &amp; Bath &amp; Body Works</span>
+      <span class="kicker">Alshaya Türkiye · <span lang="en">Victoria's Secret &amp; Bath &amp; Body Works</span></span>
       <h1 class="cover-title">Platform geçişi: mimari, entegrasyon,<br />migrasyon, plan ve<br /><span class="accent">servis taahhütleri</span></h1>
       <p class="cover-sub">RFP ECOM-RFP-2026 teklif yapısının 5–8. bölümleri ile zorunlu eklerden SLA/KPI, değişiklik yönetimi ve felaket kurtarma başlıklarına CommerceLab'ın yanıtı.</p>
       <div class="cover-meta" style="margin-top:3.6cqh;">
@@ -112,7 +112,7 @@
           <tr><td>5 · Technical Architecture and Security</td><td>Hedef mimari, platform ilkeleri, AWS üretim topolojisi, ağ ve uç güvenliği, veri katmanı, gözlemlenebilirlik</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>6 · Integration Strategy</td><td>ComHub entegrasyon modeli, Shaya entegrasyon envanterinin eşlemesi, dayanıklılık, Control Tower ile "veri gitti mi, iş bitti mi" güvencesi</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>7 · Data Migration Strategy</td><td>Kapsam ve sahiplik, üç aktarım yolu (Open API · Excel+eşleme · ComHub dönüşüm), prova ve mutabakat, SEO geçişi</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>8 · Implementation Plan, Timeline, Resources</td><td>Standart WebShop + AppShop projesi kapsamı, metodoloji, zaman planı, ekip ve kaynak planı, test ve cutover</td><td><span class="st st--plan">Süreler kickoff'ta teyit</span></td></tr>
+          <tr><td>8 · Implementation Plan, Timeline, Resources</td><td>Standart WebShop + AppShop projesi kapsamı, metodoloji, zaman planı, ekip ve kaynak planı, test ve cutover</td><td><span class="st st--plan">Süreler keşifte teyit</span></td></tr>
           <tr><td>Ek · SLA tablosu, KPI'lar</td><td>Ölçülmüş platform metrikleri, entegrasyon hızı KPI'ları, yük testi kanıtı, olay seviyesi bazlı SLA, RPO/RTO</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>Ek · Change Management prosedürü</td><td>Talepten geri alıma kadar sekiz adımlı değişiklik akışı ve kullanılan araçlar</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>Ek · Disaster Recovery planı + son DR test raporu</td><td>Yedekleme ve DR mimarisi, Shaya hedeflerine kapanış planı</td><td><span class="st st--todo">Son test raporu temin edilecek</span></td></tr>
@@ -316,7 +316,7 @@
       </div>
       <div class="topo">
         <div class="zone zone--public">
-          <div class="zone__head"><span>Public subnet · Prod VPC</span><span class="cidr">internete açık tek yüzey</span></div>
+          <div class="zone__head"><span lang="en">Public subnet · Prod VPC</span><span class="cidr">internete açık tek yüzey</span></div>
           <div class="chips">
             <span class="chip chip--red">Public ALB</span>
             <span class="chip">pfSense VPN <small>IP kısıtlı + MFA</small></span>
@@ -324,7 +324,7 @@
           </div>
         </div>
         <div class="zone">
-          <div class="zone__head"><span>Private container subnet · uygulama katmanı</span><span class="cidr">EKS · private ALB</span></div>
+          <div class="zone__head"><span><span lang="en">Private container subnet</span> · uygulama katmanı</span><span class="cidr">EKS · private ALB</span></div>
           <div class="chips">
             <span class="chip chip--ink"><b>Amazon EKS</b> <small>namespace bazlı izolasyon</small></span>
             <span class="chip">Private ALB</span>
@@ -335,7 +335,7 @@
           </div>
         </div>
         <div class="zone zone--data">
-          <div class="zone__head"><span>Private database subnet · veri katmanı</span><span class="cidr">dışarıya kapalı</span></div>
+          <div class="zone__head"><span><span lang="en">Private database subnet</span> · veri katmanı</span><span class="cidr">dışarıya kapalı</span></div>
           <div class="chips">
             <span class="chip"><b>RDS</b> <small>Multi-AZ · otomatik yedek</small></span>
             <span class="chip">MongoDB <small>cluster · EBS snapshot</small></span>
@@ -898,7 +898,7 @@
       <h2 class="slide-title">Sipariş saniyeler, stok <span class="accent">milisaniyeler</span> içinde yerinde</h2>
       <div class="two-col" style="flex:1; align-content:center;">
         <div>
-          <div class="hdr-sub">Integration speed · canlı müşteri ortamında ölçülmüş</div>
+          <div class="hdr-sub">Entegrasyon hızı · canlı müşteri ortamında ölçülmüş</div>
           <div class="mini-stats" style="margin-bottom:1.4cqh;">
             <div class="stat"><span class="num">1,2 sn</span><span class="lab">web/app siparişi OMS'te</span></div>
             <div class="stat"><span class="num">26 sn</span><span class="lab">pazaryeri siparişi OMS'te</span></div>
