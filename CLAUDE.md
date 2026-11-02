@@ -132,3 +132,4 @@ Decks are public-but-unlisted — never add a deck index to `index.html` or the 
 | `d1f4983d-a621-4a60-8dbc-75df3519d49c` | MrDIY Türkiye e-commerce platform — architecture & implementation (TR, deck + docs.html) | Customer | 2026 |
 | `616184e8-231e-4403-a04a-29c89be1f972` | Civil — PIM solution (TR, deck + docs.html coverage matrix) | Customer | 2026 |
 | `66625f30-d2b1-4444-88a7-0c7cd5ebad00` | e-bebek — OMS · InStore · ComHub · TMS · marketplace (TR + en/, demo links per slide) | Customer | 2026 |
+| `d19e0ca7-9a1a-4f36-821b-35c5e54a0dec` | Shaya (Alshaya TR · Victoria's Secret & Bath & Body Works) RFP response — architecture, integration, migration, plan, SLA/KPI, change mgmt, DR (TR + en/) | Customer | 2026 |
