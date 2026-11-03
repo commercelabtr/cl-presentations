@@ -95,6 +95,11 @@
   .suite { gap: 1.6cqh; margin-top: 1.2cqh !important; }
   .suite .layer { padding-top: 1.7cqh; padding-bottom: 1.7cqh; }
   .suite .desc { font-size: 1.36cqw; }
+  .suite--7 { gap: 1cqh; margin-top: 0.8cqh !important; }
+  .suite--7 .layer { padding-top: 1.1cqh; padding-bottom: 1.1cqh; }
+  .suite--7 .desc { font-size: 1.28cqw; }
+  .suite--7 .desc--pills .pill { font-size: 0.86cqw; padding: 0.2cqh 0.5cqw; }
+  .logowall { grid-template-columns: repeat(6, 1fr); }
 
   .suite { gap: 1.1cqh !important; }
   .suite .layer { padding-top: 1.2cqh !important; padding-bottom: 1.2cqh !important; }
@@ -106,7 +111,7 @@
 <body>
 <div class="deck">
 
-    <!-- 01 — COVER -->
+      <!-- 01 — COVER -->
   <section class="slide slide--ink slide--cover">
     <div class="slide__inner">
       <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
@@ -122,11 +127,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">1 / 95</span>
+      <span class="slide__no">1 / 85</span>
     </div>
   </section>
 
-  <!-- 02 — PROPOSAL MAP -->
+    <!-- 02 — PROPOSAL MAP -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Proposal structure · RFP §23.1 and §23.2</span>
@@ -135,27 +140,27 @@
         <thead><tr><th>#</th><th>RFP section</th><th>In this deck</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>01</td><td>Executive Summary</td><td>Key message, answers to Shaya's priorities, metrics summary (engagement, competitor comparison, system performance, integration speed)</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>02</td><td>Company Profile and References</td><td>Who we are, why we differ, reference customers, leadership team, qualifications (§16)</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>02</td><td>Company Profile and References</td><td>Who we are, why we differ, reference customers, leadership team</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>03</td><td>Proposed Solution Overview</td><td>Scope and ownership, platform components, channels, product capabilities, checkout, omnichannel, reporting, AI capabilities</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>04</td><td>Functional Fit-Gap Response</td><td>Summary of 69 requirements and section-by-section answers; full matrix in the Excel attachment</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>05</td><td>Technical Architecture and Security</td><td>Target architecture, data ownership, MACH-enabled · PBC · modular monolith · multi-tenant · extensibility and engines, stack, AWS topology, security, scaling</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>05</td><td>Technical Architecture and Security</td><td>Target architecture, data ownership, MACH-enabled · PBC · multi-tenant · extensibility and engines, stack, AWS topology, security, scaling</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>06</td><td>Integration Strategy</td><td>ComHub model, §8 areas, §8.6 inventory mapping, Control Tower, loyalty checkout</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>07</td><td>Data Migration Strategy</td><td>Scope, three loading paths, rehearsal and reconciliation, SEO migration</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Scope, methodology, 4-month timeline, milestones, RACI, team, testing, risks, deliverables</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>09</td><td>Support and SLA Proposal</td><td>Business and platform KPIs, site-speed comparison, load-test evidence, SLA table, support model, change management, DR and Multi-AZ architecture</td><td><span class="st st--ok">Ready · DR document attached</span></td></tr>
+          <tr><td>09</td><td>Support and SLA Proposal</td><td>Platform KPIs and commitments, SLA table, support model, change management, DR and Multi-AZ architecture</td><td><span class="st st--ok">Ready · DR document attached</span></td></tr>
           <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Commercial structure (figures in a separate file), assumptions and exclusions, Infosec evidence pack</td><td><span class="st st--plan">Figures in commercial file</span></td></tr>
-          <tr><td>Annex</td><td>Mandatory attachments (§23.2)</td><td>Register on the last slide: where each attachment is and its status</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>Annex</td><td>Mandatory attachments (§23.2)</td><td>Fit-gap matrix, project plan, reference table and CVs in separate files; the Multi-AZ DR document is linked from this deck</td><td><span class="st st--plan">Separate files</span></td></tr>
         </tbody>
       </table>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">2 / 95</span>
+      <span class="slide__no">2 / 85</span>
     </div>
   </section>
 
-  <!-- SECTION 01 -->
+    <!-- SECTION 01 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">01</div>
@@ -166,11 +171,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">3 / 95</span>
+      <span class="slide__no">3 / 85</span>
     </div>
   </section>
 
-<!-- 04 — KEY MESSAGE -->
+  <!-- 04 — KEY MESSAGE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Executive summary · RFP §1</span>
@@ -181,17 +186,17 @@
         <div class="card"><div class="ix">03</div><h3>A partnership that makes money</h3><p>Every sprint produces a measurable business outcome; performance, conversion and operations KPIs are tracked in a single console.</p></div>
         <div class="card"><div class="ix">04</div><h3>Ready for what you have not asked for yet</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, multi-country and multi-currency open on the same platform; no re-platforming.</p></div>
         <div class="card"><div class="ix">05</div><h3>An AI-powered platform</h3><p>APIs published as MCP, conversational operations, AI PIM, semantic search and agentic-commerce compatibility today; the ACOMS roadmap towards semi-autonomous operations.</p></div>
-        <div class="card"><div class="ix">06</div><h3>Proven infrastructure</h3><p>99.99% availability, $400M+ annual commerce volume, 20K+ orders a day; 16 enterprise tenants on one platform.</p></div>
+        <div class="card"><div class="ix">06</div><h3>Proven infrastructure</h3><p>99.99%+ availability, $400M+ annual commerce volume, 50K+ orders a day and 1B+ API requests a month on one platform.</p></div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">4 / 95</span>
+      <span class="slide__no">4 / 85</span>
     </div>
   </section>
 
-  <!-- OBJECTIVES -->
+    <!-- OBJECTIVES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Shaya's objectives · RFP §3.1–3.2</span>
@@ -212,11 +217,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">5 / 95</span>
+      <span class="slide__no">5 / 85</span>
     </div>
   </section>
 
-  <!-- METRICS SUMMARY — ENGAGEMENT -->
+    <!-- METRICS SUMMARY — ENGAGEMENT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metrics summary · Engagement</span>
@@ -230,15 +235,15 @@
         </div>
         <div class="two-col" style="flex:0; align-content:start;">
           <div>
-            <div class="hdr-sub">Page load · by page type</div>
+            <div class="hdr-sub">Page load · LCP p75, real users</div>
             <table class="xtable xtable--xdense">
-              <thead><tr><th>Page</th><th>Measured · p75</th><th>RFP target</th></tr></thead>
+              <thead><tr><th>Page</th><th>All sites · p75</th><th>Best site</th><th>RFP target</th></tr></thead>
               <tbody>
-                <tr><td>Home page</td><td><b>X.X s</b></td><td>&lt; 2 s</td></tr>
-                <tr><td>PLP · product listing</td><td><b>X.X s</b></td><td>—</td></tr>
-                <tr><td>PDP · product detail</td><td><b>X.X s</b></td><td>&lt; 2 s</td></tr>
-                <tr><td>Cart</td><td><b>X.X s</b></td><td>—</td></tr>
-                <tr><td>Checkout</td><td><b>X.X s</b></td><td>&lt; 3 s</td></tr>
+                <tr><td>Home page</td><td><b>1.3 s</b></td><td>0.9 s</td><td>&lt; 2 s</td></tr>
+                <tr><td>PLP · product listing</td><td><b>2.4 s</b></td><td>0.8 s</td><td>—</td></tr>
+                <tr><td>PDP · product detail</td><td><b>0.7 s</b></td><td>0.5 s</td><td>&lt; 2 s</td></tr>
+                <tr><td>Cart</td><td><b>1.3 s</b></td><td>0.9 s</td><td>—</td></tr>
+                <tr><td>Checkout</td><td><b>0.9 s</b></td><td>0.7 s</td><td>&lt; 3 s</td></tr>
               </tbody>
             </table>
           </div>
@@ -252,17 +257,17 @@
             </div>
           </div>
         </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, comparison of the periods before and after replatforming. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026, best-site value; oversell across all channels.</p>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, comparison of the periods before and after replatforming. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026, best-site value; oversell across all channels. Page load: New Relic Browser, real-user LCP p75, live sites, 27 October–3 November 2026.</p>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">6 / 95</span>
+      <span class="slide__no">6 / 85</span>
     </div>
   </section>
 
-  <!-- METRICS SUMMARY — COMPETITOR COMPARISON -->
+    <!-- METRICS SUMMARY — COMPETITOR COMPARISON -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metrics summary · Competitor comparison</span>
@@ -291,20 +296,20 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">7 / 95</span>
+      <span class="slide__no">7 / 85</span>
     </div>
   </section>
 
-  <!-- METRICS SUMMARY 1 — SYSTEM PERFORMANCE -->
+    <!-- METRICS SUMMARY 1 — SYSTEM PERFORMANCE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metrics summary · System performance</span>
       <h2 class="slide-title">Zero errors, <span class="accent">even at campaign peak</span></h2>
       <div class="fill">
         <div class="stat-row" style="justify-content:space-between; margin-bottom:2cqh;">
-          <div class="stat"><span class="num">99.99%</span><span class="lab">platform availability (RFP target ≥ 99.9%)</span></div>
-          <div class="stat"><span class="num">379 ms</span><span class="lab">average API response · Apdex 0.95 (New Relic)</span></div>
-          <div class="stat"><span class="num">480M+</span><span class="lab">API requests / month; 20K+ orders a day</span></div>
+          <div class="stat"><span class="num">99.99%+</span><span class="lab">platform availability (RFP target ≥ 99.9%)</span></div>
+          <div class="stat"><span class="num">379 ms</span><span class="lab">average API response · Apdex 0.98 (New Relic)</span></div>
+          <div class="stat"><span class="num">1B+</span><span class="lab">API requests / month; 50K+ orders a day</span></div>
           <div class="stat"><span class="num">1.5 min</span><span class="lab">average deploy; rollback in the same time</span></div>
         </div>
         <div class="hdr-sub">Latest load test · a Victoria's Secret–scale site · k6, live production environment, October 2026</div>
@@ -323,11 +328,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">8 / 95</span>
+      <span class="slide__no">8 / 85</span>
     </div>
   </section>
 
-  <!-- METRICS SUMMARY 3 — INTEGRATION SPEED -->
+    <!-- METRICS SUMMARY 3 — INTEGRATION SPEED -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metrics summary · Integration speed</span>
@@ -350,12 +355,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">9 / 95</span>
+      <span class="slide__no">9 / 85</span>
     </div>
   </section>
 
-
-  <!-- SECTION 02 -->
+    <!-- SECTION 02 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">02</div>
@@ -366,11 +370,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">10 / 95</span>
+      <span class="slide__no">10 / 85</span>
     </div>
   </section>
 
-  <!-- WHO WE ARE -->
+    <!-- WHO WE ARE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Who we are</span>
@@ -381,24 +385,24 @@
           <ul class="flist flist--tight" style="margin-top:1.4cqh;">
             <li><b>Vision:</b> to be one of the leading platform providers in digital commerce and operations.</li>
             <li><b>Mission:</b> help our customers maximise sales potential while achieving operational excellence at minimal cost.</li>
-            <li><b>Company:</b> Commerce Lab E-Ticaret Çözümleri A.Ş. · Windowist Tower, Maslak, İstanbul · a software product company run by its co-founders.</li>
+            <li><b>Company:</b> Commerce Lab E-Ticaret Çözümleri A.Ş. · two headquarters: Çanakkale Technopark and İstanbul (Windowist Tower, Maslak) · a software product company run by its co-founders.</li>
           </ul>
         </div>
         <div class="stat-row" style="flex-direction:column; gap:2cqh;">
           <div class="stat"><span class="num">30+</span><span class="lab">specialists; experience at 100+ leading retailers in Türkiye</span></div>
-          <div class="stat"><span class="num">$400M+</span><span class="lab">annual commerce volume (GMV) through the platform; 20K+ orders a day</span></div>
-          <div class="stat"><span class="num">16</span><span class="lab">enterprise tenants on one SaaS platform; 480M+ API requests a month, 99.99% availability</span></div>
+          <div class="stat"><span class="num">$400M+</span><span class="lab">annual commerce volume (GMV) through the platform; 50K+ orders a day</span></div>
+          <div class="stat"><span class="num">1B+</span><span class="lab">API requests a month on one SaaS platform; 99.99%+ availability</span></div>
         </div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">11 / 95</span>
+      <span class="slide__no">11 / 85</span>
     </div>
   </section>
 
-  <!-- WHY DIFFERENT -->
+    <!-- WHY DIFFERENT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Positioning</span>
@@ -415,11 +419,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">12 / 95</span>
+      <span class="slide__no">12 / 85</span>
     </div>
   </section>
 
-  <!-- REFERENCES -->
+    <!-- REFERENCES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Reference customers</span>
@@ -437,6 +441,7 @@
         <div class="cell"><img src="../logos/a101.png" alt="A101" /></div>
         <div class="cell"><img src="../logos/madamecoco.svg" alt="Madame Coco" /></div>
         <div class="cell"><img src="../logos/kfc.png" alt="KFC" /></div>
+        <div class="cell"><img src="../logos/pidem.svg" alt="Pidem" /></div>
         <div class="cell"><img src="../logos/hdholding.svg" alt="HD Holding" /></div>
         <div class="cell"><img src="../logos/fila.png" alt="Fila" /></div>
         <div class="cell"><img src="../logos/stevemadden.png" alt="Steve Madden" /></div>
@@ -447,15 +452,15 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">13 / 95</span>
+      <span class="slide__no">13 / 85</span>
     </div>
   </section>
 
-  <!-- LEADERSHIP -->
+    <!-- LEADERSHIP -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Leadership team</span>
-      <h2 class="slide-title">Hands-on leadership, <span class="accent">20+ engineers</span></h2>
+      <h2 class="slide-title">Hands-on leadership, <span class="accent">30+ engineers</span></h2>
       <div class="grid grid-3 team-grid">
         <div class="card team-card">
           <div class="name">Onur Kemer</div><div class="role">Co-founder · CEO</div>
@@ -492,36 +497,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">14 / 95</span>
+      <span class="slide__no">14 / 85</span>
     </div>
   </section>
 
-  <!-- QUALIFICATIONS -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Vendor qualifications · RFP §16</span>
-      <h2 class="slide-title">The <span class="accent">seven headings</span> RFP §16 asks for</h2>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>Heading</th><th>Response</th></tr></thead>
-        <tbody>
-          <tr><td>Company profile and ownership</td><td>Commerce Lab E-Ticaret Çözümleri A.Ş., İstanbul; a software product company run by its co-founders (CEO, CTO); Technopark R&amp;D projects (ACOMS)</td></tr>
-          <tr><td>Platform and technology competence</td><td>MACH-enabled architecture; own product family of 10 PBCs; .NET, PostgreSQL, MongoDB, Redis, Elasticsearch, RabbitMQ, GraphQL, Kubernetes/AWS; Next.js web and native mobile</td></tr>
-          <tr><td>Delivery capacity in Türkiye and abroad</td><td>İstanbul-based team of 30+; 24/7 operations with BestCloudForme; multi-country and multi-currency platform, global brands' Türkiye operations live</td></tr>
-          <tr><td>Fashion, cosmetics, retail and omnichannel references</td><td>Footwear and apparel (Skechers, Brooks, Hunter, Steve Madden, On, Fila, Asics, Decathlon), home (Madame Coco), retail (A101), QSR (KFC), multi-brand groups (HD Holding, Grace Brands); Click &amp; Collect, ship-from-store and store returns live</td></tr>
-          <tr><td>Similar volume, integration and migration experience</td><td>Platform-wide 20K+ orders a day, 480M+ API requests a month; ERP, OMS, CRM, PSP and 20+ carrier integrations; catalogue, customer and order-history migrations from different platforms</td></tr>
-          <tr><td>Product roadmap and R&amp;D approach</td><td>ACOMS autonomous commerce operations (rules → optimisation → statistics → ML), AI PIM, conversational commerce, MCP/agentic interfaces; several production releases a week</td></tr>
-          <tr><td>Financial and operational sustainability</td><td>Recurring SaaS revenue model, 16 enterprise tenants, own team on own product; independent audit and financial documents shared on request</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">15 / 95</span>
-    </div>
-  </section>
-
-  <!-- SECTION 03 -->
+    <!-- SECTION 03 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">03</div>
@@ -532,16 +512,16 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">16 / 95</span>
+      <span class="slide__no">15 / 85</span>
     </div>
   </section>
 
-  <!-- SCOPE AND OWNERSHIP -->
+    <!-- SCOPE AND OWNERSHIP -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Solution scope and system ownership · RFP §5</span>
       <h2 class="slide-title">What we do, what <span class="accent">stays in place</span></h2>
-      <table class="xtable xtable--dense">
+      <table class="xtable xtable--xdense">
         <thead><tr><th>Component</th><th>CommerceLab role</th><th>Existing system / ownership</th><th>Proposal status</th></tr></thead>
         <tbody>
           <tr><td>Web and mobile app</td><td>Experience, cart, checkout, account; separate site and app per brand</td><td>Brand digital channels (migrating from Ticimax)</td><td><span class="st st--ok">In scope</span></td></tr>
@@ -552,40 +532,43 @@
           <tr><td>Campaign and promotion</td><td>Cart-level rule engine; complements CRM rules rather than duplicating them</td><td>CRM campaign and coupon management</td><td><span class="st st--ok">In scope</span></td></tr>
           <tr><td>Payment</td><td>Payment orchestration, 3D, fraud, multi-tender, reconciliation</td><td>PSPs and banks</td><td><span class="st st--ok">In scope</span></td></tr>
           <tr><td>Marketplaces</td><td>Marketplace Seller: listings, stock, price, orders</td><td>Trendyol, Hepsiburada, Amazon</td><td><span class="st st--ok">In scope</span></td></tr>
-          <tr><td>OMS · WMS · TMS implementation</td><td>Out of scope; can be opened on the same platform later</td><td>Existing systems</td><td><span class="st st--plan">Out of scope</span></td></tr>
+          <tr><td>OMS</td><td>Partly included: the Inventory Engine syncs with the ERP and moves stock very fast; the InStore Commerce module (in-store selling and ordering) can also be used</td><td>Retail Markup OMS keeps the order lifecycle</td><td><span class="st st--ok">Partly included</span></td></tr>
+          <tr><td>TMS</td><td>Optional: dispatch, carrier notification, tracking and labelling</td><td>Existing carrier processes</td><td><span class="st st--plan">Optional</span></td></tr>
+          <tr><td>WMS</td><td>Out of scope</td><td>Existing warehouse system</td><td><span class="st st--plan">Out of scope</span></td></tr>
         </tbody>
       </table>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">17 / 95</span>
+      <span class="slide__no">16 / 85</span>
     </div>
   </section>
 
-  <!-- PLATFORM COMPONENTS -->
+    <!-- PLATFORM COMPONENTS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Platform components</span>
-      <h2 class="slide-title">Ten packaged products, <span class="accent">one ecosystem</span>; six in scope for Shaya</h2>
-      <div class="stack suite" style="margin-top:0.4cqh;">
+      <h2 class="slide-title">Ten products, <span class="accent">one ecosystem</span></h2>
+      <div class="stack suite suite--7">
         <div class="layer"><span class="tag">Channels</span><span class="desc">WebShop (Next.js) · AppShop (native iOS, Android) · marketplaces · later POS, chat, voice</span></div>
         <div class="layer layer--ink"><span class="tag">Experience</span><span class="desc">Headless Experience Layer: decoupled, omnichannel storefronts and native apps; REST / GraphQL</span></div>
         <div class="layer"><span class="tag">Orchestration</span><span class="desc">Commerce Dispatch Engine: routes every purchase context to the right capability</span></div>
         <div class="layer"><span class="tag">Core commerce</span><span class="desc desc--pills"><span class="pill pill--solid">PIM / Catalogue</span> <span class="pill pill--solid">Headless CMS</span> <span class="pill pill--solid">Campaign engine</span> <span class="pill pill--solid">Payment / Checkout</span> <span class="pill pill--solid">Operational CRM</span> <span class="pill pill--solid">Marketplace Seller</span> <span class="pill">Marketplace Operator</span></span></div>
-        <div class="layer"><span class="tag">Supply chain</span><span class="desc desc--pills"><span class="pill">OMS</span> <span class="pill">TMS</span> <span class="pill">WMS</span> &nbsp;Out of scope for Shaya; Retail Markup OMS is integrated, can open later</span></div>
+        <div class="layer"><span class="tag">Supply chain</span><span class="desc desc--pills"><span class="pill pill--solid">OMS · Inventory Engine, InStore Commerce</span> <span class="pill">TMS · optional</span> <span class="pill">WMS</span> &nbsp;OMS partly: ERP-synced stock, in-store sales; TMS optional: dispatch, notification, tracking, labels; WMS out of scope</span></div>
         <div class="layer layer--ink"><span class="tag">Integration</span><span class="desc">ComHub · Orchestration Manager · Control Tower: ERP, OMS, CRM, PSP, marketplaces, carriers, marketing</span></div>
+        <div class="layer"><span class="tag">AI</span><span class="desc">APIs published as MCP · conversational operations via LLM Socket · AI PIM · semantic search · conversational and agentic commerce (UCP / ACP) · <b>ACOMS</b>: roadmap to semi-autonomous operations</span></div>
       </div>
-      <p class="ann"><b>Dark badges</b> are the PBCs in the proposal scope; light badges are ready on the same platform, optional for Shaya. Each PBC is an independently versioned Packaged Business Capability.</p>
+      <p class="ann"><b>Dark badges</b> are the PBCs in the proposal scope: six PBCs plus OMS partly for Shaya; light badges are ready on the same platform, optional for Shaya. Each PBC is an independently versioned Packaged Business Capability.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">18 / 95</span>
+      <span class="slide__no">17 / 85</span>
     </div>
   </section>
 
-  <!-- CHANNEL LAYER -->
+    <!-- CHANNEL LAYER -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Channel layer · RFP §5.1.1</span>
@@ -601,11 +584,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">19 / 95</span>
+      <span class="slide__no">18 / 85</span>
     </div>
   </section>
 
-  <!-- CAPABILITY AREAS -->
+    <!-- CAPABILITY AREAS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Commerce Platform capabilities · RFP §5.1.1.1</span>
@@ -624,11 +607,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">20 / 95</span>
+      <span class="slide__no">19 / 85</span>
     </div>
   </section>
 
-  <!-- PRODUCT CAPABILITIES I -->
+    <!-- PRODUCT CAPABILITIES I -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Product capabilities I</span>
@@ -669,11 +652,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">21 / 95</span>
+      <span class="slide__no">20 / 85</span>
     </div>
   </section>
 
-  <!-- PRODUCT CAPABILITIES II -->
+    <!-- PRODUCT CAPABILITIES II -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Product capabilities II</span>
@@ -720,11 +703,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">22 / 95</span>
+      <span class="slide__no">21 / 85</span>
     </div>
   </section>
 
-  <!-- CHECKOUT AND PAYMENT -->
+    <!-- CHECKOUT AND PAYMENT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Checkout and payment · RFP §5.1.2.7</span>
@@ -741,11 +724,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">23 / 95</span>
+      <span class="slide__no">22 / 85</span>
     </div>
   </section>
 
-  <!-- ORDERS AND RETURNS -->
+    <!-- ORDERS AND RETURNS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Orders, returns and exchanges · RFP §5.1.2.5–5.1.2.9</span>
@@ -775,11 +758,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">24 / 95</span>
+      <span class="slide__no">23 / 85</span>
     </div>
   </section>
 
-  <!-- OMNICHANNEL -->
+    <!-- OMNICHANNEL -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Omnichannel · RFP §7</span>
@@ -801,11 +784,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">25 / 95</span>
+      <span class="slide__no">24 / 85</span>
     </div>
   </section>
 
-  <!-- REPORTING -->
+    <!-- REPORTING -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Reporting and analytics · RFP §5.1.2.10</span>
@@ -830,11 +813,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">26 / 95</span>
+      <span class="slide__no">25 / 85</span>
     </div>
   </section>
 
-  <!-- AI VISION -->
+    <!-- AI VISION -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">AI capabilities · proposed solution</span>
@@ -851,11 +834,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">27 / 95</span>
+      <span class="slide__no">26 / 85</span>
     </div>
   </section>
 
-  <!-- AI CAPABILITY LIST -->
+    <!-- AI CAPABILITY LIST -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">AI capabilities · list</span>
@@ -881,11 +864,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">28 / 95</span>
+      <span class="slide__no">27 / 85</span>
     </div>
   </section>
 
-  <!-- AI USAGE EXAMPLES -->
+    <!-- AI USAGE EXAMPLES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">AI capabilities · a day at Shaya</span>
@@ -917,17 +900,17 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">29 / 95</span>
+      <span class="slide__no">28 / 85</span>
     </div>
   </section>
 
-  <!-- FUTURE READINESS -->
+    <!-- FUTURE READINESS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Future readiness</span>
       <h2 class="slide-title">What you do not need today is <span class="accent">ready tomorrow</span></h2>
       <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
-        <div class="card"><div class="ix">Global</div><h3>Multi-country · currency · site</h3><p>New countries, currencies, price lists and warehouses open without changing platform; hreflang and language-based URL structure ready.</p></div>
+        <div class="card"><div class="ix">Global</div><h3>Multi-enabled: site · country · currency</h3><p>New countries, currencies, price lists and warehouses open without changing platform; hreflang and language-based URL structure ready.</p></div>
         <div class="card"><div class="ix">Business models</div><h3>B2B · B2B2C · marketplace operator</h3><p>Corporate sales, multi-vendor dropship and seller onboarding on the same Commerce Dispatch Engine.</p></div>
         <div class="card card--dark"><div class="ix">ACOMS</div><h3>Semi-autonomous operations</h3><p>Technopark R&amp;D project: daily trade and fulfilment decisions move gradually from advisory to full delegation; rules → optimisation → statistics → ML.</p></div>
         <div class="card"><div class="ix">Channels</div><h3>POS · chat · voice · AI agents</h3><p>Store POS, chat and voice shopping, and AI-agent orders via UCP/ACP are fed by the same Commerce Platform APIs; a new channel does not mean a new integration.</p></div>
@@ -937,11 +920,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">30 / 95</span>
+      <span class="slide__no">29 / 85</span>
     </div>
   </section>
 
-  <!-- SECTION 04 -->
+    <!-- SECTION 04 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">04</div>
@@ -952,11 +935,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">31 / 95</span>
+      <span class="slide__no">30 / 85</span>
     </div>
   </section>
 
-  <!-- FIT-GAP SUMMARY -->
+    <!-- FIT-GAP SUMMARY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Fit-gap summary · RFP §6, §7 and Annex A</span>
@@ -996,11 +979,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">32 / 95</span>
+      <span class="slide__no">31 / 85</span>
     </div>
   </section>
 
-  <!-- FIT 6.1 -->
+    <!-- FIT 6.1 -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.1 Product and catalogue management · FR-TEXT-001…010</span>
@@ -1024,11 +1007,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">33 / 95</span>
+      <span class="slide__no">32 / 85</span>
     </div>
   </section>
 
-  <!-- FIT 6.2–6.3 -->
+    <!-- FIT 6.2–6.3 -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.2 Search and navigation · 6.3 Product detail, cart and checkout</span>
@@ -1062,11 +1045,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">34 / 95</span>
+      <span class="slide__no">33 / 85</span>
     </div>
   </section>
 
-  <!-- FIT 6.4 -->
+    <!-- FIT 6.4 -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.4 Customer and membership management</span>
@@ -1085,11 +1068,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">35 / 95</span>
+      <span class="slide__no">34 / 85</span>
     </div>
   </section>
 
-  <!-- FIT 6.5 -->
+    <!-- FIT 6.5 -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.5 Content, campaign and admin panel · FR-TEXT-011…016 and additional items</span>
@@ -1113,11 +1096,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">36 / 95</span>
+      <span class="slide__no">35 / 85</span>
     </div>
   </section>
 
-  <!-- FIT 6.6 I -->
+    <!-- FIT 6.6 I -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.6 SEO management I · 6.6.1–6.6.8</span>
@@ -1139,11 +1122,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">37 / 95</span>
+      <span class="slide__no">36 / 85</span>
     </div>
   </section>
 
-  <!-- FIT 6.6 II -->
+    <!-- FIT 6.6 II -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.6 SEO management II · 6.6.9–6.6.16</span>
@@ -1165,11 +1148,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">38 / 95</span>
+      <span class="slide__no">37 / 85</span>
     </div>
   </section>
 
-  <!-- ADDITIONAL BENEFITS -->
+    <!-- ADDITIONAL BENEFITS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Additional benefits beyond the RFP · Ek Faydalar sheet</span>
@@ -1196,11 +1179,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">39 / 95</span>
+      <span class="slide__no">38 / 85</span>
     </div>
   </section>
 
-  <!-- SECTION 05 -->
+    <!-- SECTION 05 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">05</div>
@@ -1211,11 +1194,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">40 / 95</span>
+      <span class="slide__no">39 / 85</span>
     </div>
   </section>
 
-<!-- 38 — TARGET ARCHITECTURE (TOPOLOGY) -->
+  <!-- 40 — TARGET ARCHITECTURE (TOPOLOGY) -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Target architecture</span>
@@ -1261,11 +1244,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">41 / 95</span>
+      <span class="slide__no">40 / 85</span>
     </div>
   </section>
 
-<!-- 39 — DATA OWNERSHIP -->
+  <!-- 41 — DATA OWNERSHIP -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Data ownership · RFP §5.1.2</span>
@@ -1299,11 +1282,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">42 / 95</span>
+      <span class="slide__no">41 / 85</span>
     </div>
   </section>
 
-<!-- 40 — ARCHITECTURE PRINCIPLES -->
+  <!-- 42 — ARCHITECTURE PRINCIPLES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Architecture principles</span>
@@ -1322,11 +1305,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">43 / 95</span>
+      <span class="slide__no">42 / 85</span>
     </div>
   </section>
 
-  <!-- MACH-ENABLED -->
+    <!-- MACH-ENABLED -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">MACH-enabled architecture</span>
@@ -1347,11 +1330,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">44 / 95</span>
+      <span class="slide__no">43 / 85</span>
     </div>
   </section>
 
-  <!-- PBC -->
+    <!-- PBC -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Packaged Business Capabilities</span>
@@ -1367,35 +1350,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">45 / 95</span>
+      <span class="slide__no">44 / 85</span>
     </div>
   </section>
 
-  <!-- MODULAR MONOLITH -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Modular monolith · domain-based SOA</span>
-      <h2 class="slide-title">The pragmatic <span class="accent">middle ground</span>: microservice discipline, one deployable unit</h2>
-      <div class="two-col" style="flex:1; align-content:center;">
-        <div>
-          <p class="body-text">Within each PBC we apply a <b>modular-monolith</b> design: clear domain modules with enforced boundaries, deployed as a single, efficient unit. Microservice-grade separation of concerns without distributed-systems overhead, and the freedom to extract a module into its own service when scale demands it.</p>
-        </div>
-        <ul class="flist">
-          <li><b>Domain modules</b> map directly to commerce processes</li>
-          <li><b>Explicit contracts</b> between modules, no leaky coupling</li>
-          <li><b>Single deployable</b>: simpler ops, lower latency</li>
-          <li><b>Extract on demand</b>: promote a module to a service when justified</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">46 / 95</span>
-    </div>
-  </section>
-
-  <!-- MULTI-TENANT -->
+    <!-- MULTI-TENANT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Multi-tenant · multi-account</span>
@@ -1416,178 +1375,62 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">47 / 95</span>
+      <span class="slide__no">45 / 85</span>
     </div>
   </section>
 
-  <!-- EXTENSIBILITY -->
+  <!-- EXTENSIBILITY I -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Highly extensible</span>
-      <h2 class="slide-title">Customise <span class="accent">in-product</span> and cross-product</h2>
-      <p class="lead">A layered extensibility model tailors behaviour for any client, from a single toggle to a full custom integration, while keeping everyone on one upgradable platform.</p>
-      <div class="grid grid-3" style="flex:1; align-content:center;">
-        <div class="card card--accent"><h3>Configure</h3><p>Toggles, rules and evaluation policies; no code, instant change.</p></div>
-        <div class="card card--accent"><h3>Extend</h3><p>User exits, scripting and plugins; custom logic at defined points.</p></div>
-        <div class="card card--accent"><h3>Integrate</h3><p>Event-driven hooks and third-party connectors; across products.</p></div>
+      <span class="kicker">Highly extensible · mechanisms</span>
+      <h2 class="slide-title">Customise <span class="accent">in-product</span> and cross-product without forking the core</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card card--accent"><div class="ix">Configure</div><h3>Toggles and feature flags</h3><p>Capabilities switch on or off per tenant, environment or rollout wave; gradual releases and A/B experiments without redeployment. A feature enabled for VS can stay off for BBW.</p></div>
+        <div class="card card--accent"><div class="ix">Configure</div><h3>Rules and policies</h3><p>Rule, evaluation and action engines plus the state machine: business logic changes instantly, without code. Detail on the next slide.</p></div>
+        <div class="card"><div class="ix">Extend</div><h3>User exits</h3><p>Defined extension points inject custom logic at both the database layer (stored procedures) and the application layer; behaviour is tailored, the upgrade path is preserved.</p></div>
+        <div class="card"><div class="ix">Extend</div><h3>Scripting and plug-ins</h3><p>Lightweight scripts for field-level transforms in ComHub flows; a formal plugin architecture to add or replace capabilities, custom sourcing algorithms included.</p></div>
+        <div class="card"><div class="ix">Integrate</div><h3>Third-party connectors</h3><p>Ready connectors for marketplaces, PSPs, banks, carriers, ERP/MDM and BI systems; event-driven hooks work across products.</p></div>
+        <div class="card card--dark"><div class="ix">Inside</div><h3>Mediator · CQRS</h3><p>An in-process mediator decouples senders from handlers; clean, testable, CQRS-friendly flows. Extensions never touch core code.</p></div>
       </div>
-      <p class="note">Shaya-specific logic (loyalty rules, checkout steps, campaign exceptions) lives in these layers; platform releases keep flowing uninterrupted.</p>
+      <p class="note">Shaya-specific logic (loyalty rules, checkout steps, campaign exceptions) lives in these layers; the shared codebase is never forked and platform releases keep flowing uninterrupted.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">48 / 95</span>
+      <span class="slide__no">46 / 85</span>
     </div>
   </section>
 
-  <!-- EVENT DRIVEN -->
+  <!-- EXTENSIBILITY II -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Event-driven architecture</span>
-      <h2 class="slide-title">Loosely coupled, <span class="accent">reactive by default</span></h2>
-      <div class="flow" style="margin:2cqh 0 2.6cqh;">
+      <span class="kicker">Highly extensible · engines</span>
+      <h2 class="slide-title">Events, engines and the state machine: <span class="accent">behaviour by configuration</span></h2>
+      <div class="flow" style="margin:1.2cqh 0 1.6cqh;">
         <div class="node node--ink">Domain event<small>order placed</small></div>
         <div class="arrow">&rarr;</div>
         <div class="node node--red">Message bus<small>RabbitMQ</small></div>
         <div class="arrow">&rarr;</div>
+        <div class="node">Rule · evaluation · action<small>Microsoft Rules Engine</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">State transition<small>evaluate · act · notify</small></div>
+        <div class="arrow">&rarr;</div>
         <div class="node">Consumers<small>OMS · CRM · ComHub</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Side effects<small>notify · sync · fulfil</small></div>
       </div>
-      <div class="two-col" style="flex:1; align-content:start;">
-        <ul class="flist">
-          <li><b>Commands and events</b> decouple producers from consumers</li>
-          <li><b>Asynchronous</b> processing absorbs spikes and isolates failure</li>
-        </ul>
-        <ul class="flist">
-          <li><b>Auto-fix and notify</b> loops detect and reconcile inconsistencies</li>
-          <li><b>Replayable</b> flows for resilience and auditability</li>
-        </ul>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card"><div class="ix">Event-driven</div><h3>Loosely coupled, reactive by default</h3><p>Commands and events decouple producers from consumers; asynchronous processing absorbs spikes and isolates failure. Auto-fix-and-notify loops detect and reconcile inconsistencies; flows are replayable and auditable.</p></div>
+        <div class="card card--accent"><div class="ix">Engines</div><h3>Business logic that ops teams control</h3><p>A rule engine built on the Microsoft Rules Engine expresses any scenario; the evaluation engine scores options with best-choice and similar mechanisms; the action engine executes the result. The same infrastructure is reused for sourcing, campaigns, payments, dispatch and content.</p></div>
+        <div class="card"><div class="ix">State machine</div><h3>Every entity, every status: a governed lifecycle</h3><p>For orders, customers, products, payments, shipments and returns, states and transitions are explicit, validated moves; an invalid transition is impossible by construction. Every transition is evaluated against internal and external systems, acted on (re-source, split, route) and announced through events and webhooks; states are configured per tenant.</p></div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">49 / 95</span>
+      <span class="slide__no">47 / 85</span>
     </div>
   </section>
 
-  <!-- RULE ENGINE -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Rule · evaluation · action engines</span>
-      <h2 class="slide-title">Business logic that <span class="accent">ops teams control</span></h2>
-      <div class="flow" style="margin:1.6cqh 0 2.4cqh;">
-        <div class="node">Rule engine<small>Microsoft Rules Engine</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--red">Evaluation engine<small>score, best-choice…</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Action engine<small>execute outcome</small></div>
-      </div>
-      <div class="two-col" style="flex:1; align-content:start;">
-        <p class="body-text">A flexible rule engine built on the <b>Microsoft Rules Engine</b> expresses any complex scenario; the evaluation engine scores options with best-choice and similar mechanisms; the action engine executes the result. The same rule · evaluation · action infrastructure is reused everywhere on the platform: sourcing, campaigns, payments, dispatch and content.</p>
-        <ul class="flist">
-          <li><b>Sourcing</b>: score-based allocation by cost, satisfaction, capacity</li>
-          <li><b>Campaigns</b>: priority groups and best-choice selection</li>
-          <li><b>Payments and dispatch</b>: rule-based routing and scoring</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">50 / 95</span>
-    </div>
-  </section>
-
-  <!-- STATE MACHINE -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">State machine</span>
-      <h2 class="slide-title">Every entity, every status: a <span class="accent">governed</span> lifecycle</h2>
-      <div class="flow" style="margin:1.8cqh 0 1cqh;">
-        <div class="node">Created</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Sourced</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--red">Allocated</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Fulfilled</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Shipped</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Closed</div>
-      </div>
-      <div class="hook-band">
-        <div class="hook-band__tag">On every transition</div>
-        <div class="hook-band__flow">
-          <span class="hook-step">Evaluate<small>internal and external systems</small></span>
-          <span class="hook-plus">+</span>
-          <span class="hook-step">Act<small>re-source · split · route</small></span>
-          <span class="hook-plus">+</span>
-          <span class="hook-step">Notify<small>events and webhooks</small></span>
-        </div>
-      </div>
-      <div class="two-col" style="flex:1; align-content:center;">
-        <p class="body-text" style="font-size:1.32cqw;">The order lifecycle above is one example; the same state machine governs <b>any</b> entity on the platform: order, customer, product, payment, shipment, return. States and transitions are modelled as explicit, validated moves; an invalid transition is impossible by construction. Every transition is a hook: evaluated against internal and external systems, and announced downstream.</p>
-        <ul class="flist flist--tight">
-          <li><b>Dynamic workflow</b>: states and transitions configured per tenant</li>
-          <li><b>Rule-engine driven</b>: re-source, cancel, split, partial-ship</li>
-          <li><b>Fully integrated</b> status for order, delivery, cancel and return</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">51 / 95</span>
-    </div>
-  </section>
-
-  <!-- TOGGLES AND USER EXITS -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Toggles and user exits</span>
-      <h2 class="slide-title">Change <span class="accent">behaviour</span> without changing the core</h2>
-      <div class="two-col" style="flex:1; align-content:center;">
-        <div class="card">
-          <h3>Toggle-based structure</h3>
-          <p>Feature flags switch capabilities on or off per tenant, environment or rollout wave; safe, gradual releases and A/B experiments without redeployment. A feature enabled for VS can stay off for BBW.</p>
-        </div>
-        <div class="card card--accent">
-          <h3>User exits: database and code level</h3>
-          <p>Defined extension points let the client inject custom logic at both the database layer (stored procedures) and the application layer; behaviour is tailored while the upgrade path is preserved.</p>
-        </div>
-      </div>
-      <p class="note">The result: deep per-client customisation that never forks the shared codebase, so every tenant keeps receiving platform upgrades.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">52 / 95</span>
-    </div>
-  </section>
-
-  <!-- PLUGINS AND MEDIATOR -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Scripting · plugins · mediator</span>
-      <h2 class="slide-title">Extension mechanisms, <span class="accent">end to end</span></h2>
-      <div class="grid grid-4" style="flex:1; align-content:center;">
-        <div class="card"><h3>Scripting</h3><p>Lightweight scripts for data mapping, transformation and integration logic; field-level transforms in ComHub flows.</p></div>
-        <div class="card"><h3>Plug-ins</h3><p>A formal plugin architecture to add or replace capabilities, including custom sourcing algorithms.</p></div>
-        <div class="card"><h3>Third party</h3><p>Connectors to marketplaces, PSPs, banks, couriers, ERP/MDM and BI systems.</p></div>
-        <div class="card card--accent"><h3>Mediator</h3><p>An in-process mediator decouples senders from handlers; clean, testable, CQRS-friendly flows.</p></div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">53 / 95</span>
-    </div>
-  </section>
-
-  <!-- ENGINEERING PRACTICE -->
+    <!-- ENGINEERING PRACTICE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Engineering practice · CI/CD</span>
@@ -1627,11 +1470,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">54 / 95</span>
+      <span class="slide__no">48 / 85</span>
     </div>
   </section>
 
-<!-- 52 — TECHNOLOGY STACK -->
+  <!-- 49 — TECHNOLOGY STACK -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Technology stack</span>
@@ -1649,11 +1492,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">55 / 95</span>
+      <span class="slide__no">49 / 85</span>
     </div>
   </section>
 
-<!-- 53 — PRODUCTION TOPOLOGY -->
+  <!-- 50 — PRODUCTION TOPOLOGY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Production topology</span>
@@ -1703,11 +1546,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">56 / 95</span>
+      <span class="slide__no">50 / 85</span>
     </div>
   </section>
 
-<!-- 54 — SECURITY -->
+  <!-- 51 — SECURITY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Security and compliance</span>
@@ -1724,11 +1567,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">57 / 95</span>
+      <span class="slide__no">51 / 85</span>
     </div>
   </section>
 
-<!-- 55 — SCALING & OBSERVABILITY -->
+  <!-- 52 — SCALING & OBSERVABILITY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Scaling and observability</span>
@@ -1759,11 +1602,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">58 / 95</span>
+      <span class="slide__no">52 / 85</span>
     </div>
   </section>
 
-  <!-- SECTION 06 -->
+    <!-- SECTION 06 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">06</div>
@@ -1774,11 +1617,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">59 / 95</span>
+      <span class="slide__no">53 / 85</span>
     </div>
   </section>
 
-<!-- 57 — INTEGRATION PRINCIPLES -->
+  <!-- 54 — INTEGRATION PRINCIPLES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Integration model</span>
@@ -1805,11 +1648,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">60 / 95</span>
+      <span class="slide__no">54 / 85</span>
     </div>
   </section>
 
-  <!-- INTEGRATION AREAS -->
+    <!-- INTEGRATION AREAS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Integration areas · RFP §8.1–8.5</span>
@@ -1829,11 +1672,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">61 / 95</span>
+      <span class="slide__no">55 / 85</span>
     </div>
   </section>
 
-<!-- 59 — INTEGRATION INVENTORY -->
+  <!-- 56 — INTEGRATION INVENTORY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Shaya integration inventory · RFP §8.6</span>
@@ -1855,11 +1698,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">62 / 95</span>
+      <span class="slide__no">56 / 85</span>
     </div>
   </section>
 
-<!-- 60 — CONTROL TOWER -->
+  <!-- 57 — CONTROL TOWER -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Control Tower</span>
@@ -1880,11 +1723,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">63 / 95</span>
+      <span class="slide__no">57 / 85</span>
     </div>
   </section>
 
-<!-- 61 — LOYALTY CHECKOUT EXAMPLE -->
+  <!-- 58 — LOYALTY CHECKOUT EXAMPLE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Worked example · RFP §5.1.2.7</span>
@@ -1922,11 +1765,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">64 / 95</span>
+      <span class="slide__no">58 / 85</span>
     </div>
   </section>
 
-  <!-- SECTION 07 -->
+    <!-- SECTION 07 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">07</div>
@@ -1937,11 +1780,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">65 / 95</span>
+      <span class="slide__no">59 / 85</span>
     </div>
   </section>
 
-<!-- 63 — MIGRATION SCOPE -->
+  <!-- 60 — MIGRATION SCOPE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Scope and ownership · RFP §9.1</span>
@@ -1962,11 +1805,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">66 / 95</span>
+      <span class="slide__no">60 / 85</span>
     </div>
   </section>
 
-<!-- 64 — THREE LOADING PATHS -->
+  <!-- 61 — THREE LOADING PATHS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Loading paths</span>
@@ -1993,11 +1836,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">67 / 95</span>
+      <span class="slide__no">61 / 85</span>
     </div>
   </section>
 
-<!-- 65 — MIGRATION PROCESS -->
+  <!-- 62 — MIGRATION PROCESS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Method and acceptance · RFP §9.2–9.3</span>
@@ -2036,11 +1879,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">68 / 95</span>
+      <span class="slide__no">62 / 85</span>
     </div>
   </section>
 
-<!-- 66 — SEO MIGRATION -->
+  <!-- 63 — SEO MIGRATION -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">SEO migration · RFP §10</span>
@@ -2057,11 +1900,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">69 / 95</span>
+      <span class="slide__no">63 / 85</span>
     </div>
   </section>
 
-  <!-- SECTION 08 -->
+    <!-- SECTION 08 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">08</div>
@@ -2072,11 +1915,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">70 / 95</span>
+      <span class="slide__no">64 / 85</span>
     </div>
   </section>
 
-<!-- 68 — PROJECT SCOPE -->
+  <!-- 65 — PROJECT SCOPE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Project scope</span>
@@ -2093,11 +1936,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">71 / 95</span>
+      <span class="slide__no">65 / 85</span>
     </div>
   </section>
 
-<!-- 69 — METHODOLOGY & GOVERNANCE -->
+  <!-- 66 — METHODOLOGY & GOVERNANCE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Methodology and governance · RFP §12, §19</span>
@@ -2129,11 +1972,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">72 / 95</span>
+      <span class="slide__no">66 / 85</span>
     </div>
   </section>
 
-  <!-- TIMELINE -->
+    <!-- TIMELINE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Timeline · compared with RFP §17</span>
@@ -2157,11 +2000,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">73 / 95</span>
+      <span class="slide__no">67 / 85</span>
     </div>
   </section>
 
-  <!-- MILESTONES -->
+    <!-- MILESTONES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Milestones and acceptance gates · RFP §18</span>
@@ -2186,11 +2029,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">74 / 95</span>
+      <span class="slide__no">68 / 85</span>
     </div>
   </section>
 
-  <!-- RACI -->
+    <!-- RACI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Governance and RACI · RFP §19</span>
@@ -2230,11 +2073,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">75 / 95</span>
+      <span class="slide__no">69 / 85</span>
     </div>
   </section>
 
-<!-- 73 — TEAM & RESOURCE PLAN -->
+  <!-- 70 — TEAM & RESOURCE PLAN -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Team and resource plan · RFP §20</span>
@@ -2245,7 +2088,7 @@
         <div class="card"><div class="ix">Business analyst · 100%</div><h3>Yasin Teker</h3><p>Requirements, processes, fit-gap and UAT scenarios.</p></div>
         <div class="card"><div class="ix">UI/UX</div><h3>Furkan İlgen</h3><p>Design system, brand briefs, frontend management.</p></div>
         <div class="card"><div class="ix">WebShop &amp; AppShop</div><h3>Alper Özçelik · Mehmet Ali Alagöz · Burak Selçuk · Amir Daliri</h3><p>Next.js web, native iOS and Android development.</p></div>
-        <div class="card"><div class="ix">PIM · CMS · migration</div><h3>Hüseyin Kucur · Ali Hazar</h3><p>Product and content management, data mapping and transfer.</p></div>
+        <div class="card"><div class="ix">PIM · CMS · migration</div><h3>Ali Bulut · Ali Hazar</h3><p>Product and content management, data mapping and transfer.</p></div>
         <div class="card"><div class="ix">Payment GW · campaign · CRM</div><h3>Gökhan Koçak</h3><p>Payment orchestration, promotion engine, loyalty integration.</p></div>
         <div class="card"><div class="ix">ComHub · OMS/ERP integration</div><h3>Erkan Özer · Sertaç Yalçınkaya</h3><p>WinRetail, OMS and marketplace integrations.</p></div>
         <div class="card"><div class="ix">QA · DevOps · security</div><h3>QA lead · BestCloudForme DevOps · security specialist</h3><p>Test strategy and execution; environments, CI/CD; security design and test actions.</p></div>
@@ -2255,11 +2098,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">76 / 95</span>
+      <span class="slide__no">70 / 85</span>
     </div>
   </section>
 
-<!-- 74 — TESTING & CUTOVER -->
+  <!-- 71 — TESTING & CUTOVER -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Testing and cutover · RFP §13</span>
@@ -2290,11 +2133,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">77 / 95</span>
+      <span class="slide__no">71 / 85</span>
     </div>
   </section>
 
-  <!-- RISK -->
+    <!-- RISK -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Risk and dependency management · RFP §21</span>
@@ -2317,11 +2160,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">78 / 95</span>
+      <span class="slide__no">72 / 85</span>
     </div>
   </section>
 
-  <!-- DELIVERABLES -->
+    <!-- DELIVERABLES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Deliverables · RFP §22</span>
@@ -2342,11 +2185,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">79 / 95</span>
+      <span class="slide__no">73 / 85</span>
     </div>
   </section>
 
-  <!-- SECTION 09 -->
+    <!-- SECTION 09 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">09</div>
@@ -2357,30 +2200,31 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">80 / 95</span>
+      <span class="slide__no">74 / 85</span>
     </div>
   </section>
 
-<!-- 78 — PLATFORM KPIs -->
+  <!-- PLATFORM KPIs -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Performance and robustness KPIs</span>
-      <h2 class="slide-title">Values <span class="accent">measured</span> in live production</h2>
+      <h2 class="slide-title">Values <span class="accent">measured</span> in live production, and commitments</h2>
       <div class="fill">
-        <div class="stat-row" style="justify-content:space-between; margin-bottom:3.2cqh;">
-          <div class="stat"><span class="num">99.99%</span><span class="lab">platform availability (RFP target ≥ 99.9%)</span></div>
-          <div class="stat"><span class="num">379 ms</span><span class="lab">average API response · Apdex 0.95 (New Relic)</span></div>
-          <div class="stat"><span class="num">480M+</span><span class="lab">API requests / month</span></div>
-          <div class="stat"><span class="num">20K+</span><span class="lab">orders / day, platform-wide</span></div>
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:2.6cqh;">
+          <div class="stat"><span class="num">99.99%+</span><span class="lab">platform availability (RFP target ≥ 99.9%)</span></div>
+          <div class="stat"><span class="num">379 ms</span><span class="lab">average API response · Apdex 0.98 (New Relic)</span></div>
+          <div class="stat"><span class="num">1B+</span><span class="lab">API requests / month</span></div>
+          <div class="stat"><span class="num">50K+</span><span class="lab">orders / day, platform-wide</span></div>
         </div>
-        <table class="xtable xtable--dense">
+        <table class="xtable xtable--xdense">
           <thead><tr><th>KPI</th><th>Measured value</th><th>Source</th><th>Commitment to Shaya</th></tr></thead>
           <tbody>
-            <tr><td>Page speed · home, PDP</td><td>SSR + CDN, no runtime rendering</td><td>Core Web Vitals · Lighthouse</td><td>&lt; 2 s; device, network and measurement method agreed in discovery</td></tr>
-            <tr><td>Page speed · checkout</td><td>Critical steps over cached APIs</td><td>New Relic Browser</td><td>&lt; 3 s</td></tr>
-            <tr><td>API speed</td><td>GraphQL p95 250 ms, p99 490 ms (campaign-peak profile, basket and checkout included)</td><td>k6 + New Relic, October 2026</td><td>p95 &lt; 500 ms, reported monthly</td></tr>
-            <tr><td>Robustness · functional uptime</td><td>99.99%; pod restart in seconds, node replacement in minutes</td><td>Uptime Kuma · UptimeRobot</td><td>≥ 99.9% monthly, excluding planned maintenance</td></tr>
-            <tr><td>Deploy and rollback time</td><td>About 1.5 minutes on average; rollback in the same time</td><td>Jenkins</td><td>Zero-downtime releases</td></tr>
+            <tr><td>Page speed · home, PDP</td><td>Home <b>1.3 s</b> · PDP <b>0.7 s</b>; LCP p75, real users, all live sites</td><td>New Relic Browser · CrUX</td><td>&lt; 2 s; device, network and measurement method agreed in discovery</td></tr>
+            <tr><td>Page speed · cart, checkout</td><td>Cart <b>1.3 s</b> · checkout <b>0.9 s</b>; LCP p75, real users</td><td>New Relic Browser</td><td>&lt; 3 s</td></tr>
+            <tr><td>API speed</td><td>GraphQL p95 <b>250 ms</b>, p99 490 ms (campaign-peak profile); Apdex 0.98 (T 0.5 s) · 0.99 (T 1 s)</td><td>k6 + New Relic, October–November 2026</td><td>p95 &lt; 500 ms · Apdex ≥ 0.99; reported monthly</td></tr>
+            <tr><td>Payment completion · payment steps without a platform error</td><td><b>99.998%</b>; 1 platform error in 59K calls</td><td>New Relic PaymentGateway, 27 October–2 November 2026</td><td>≥ 99.999%</td></tr>
+            <tr><td>Robustness · functional uptime</td><td><b>99.99%+</b>; pod restart in seconds, node replacement in minutes</td><td>Uptime Kuma · UptimeRobot</td><td>≥ 99.9% monthly, excluding planned maintenance</td></tr>
+            <tr><td>Deploy and rollback time</td><td>About <b>1.5 minutes</b> on average; rollback in the same time</td><td>Jenkins</td><td>Zero-downtime releases</td></tr>
           </tbody>
         </table>
       </div>
@@ -2388,107 +2232,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">81 / 95</span>
+      <span class="slide__no">75 / 85</span>
     </div>
   </section>
 
-  <!-- BUSINESS KPIs -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Business KPIs · RFP §11.1 · live measurement, October 2026</span>
-      <h2 class="slide-title">Commercial outcome KPIs: <span class="accent">measured</span> value, priority, commitment</h2>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>KPI</th><th>Calculation / measurement</th><th>Live · Skechers · range of 7 sites</th><th>Priority</th><th>Shaya commitment</th></tr></thead>
-        <tbody>
-          <tr><td>Conversion Rate</td><td>Paid orders (OMS) / sessions (GA4)</td><td><b>2.2%</b> · 0.4–2.2%</td><td>Critical</td><td>Daily dashboard; the pre-migration baseline is preserved, improvement target set with the brand team</td></tr>
-          <tr><td>Search Success Rate</td><td>Users opening a product page after a search / users who searched (GA4 funnel)</td><td><b>78%</b> · 61–80%</td><td>Critical</td><td>Zero-result searches weekly; fixed with synonyms and merchandising rules</td></tr>
-          <tr><td>Add-to-Cart Rate</td><td>Sessions with an add-to-cart / total sessions (GA4)</td><td><b>7.9%</b> · 2.5–7.9%</td><td>High</td><td>PDP and listing changes measured with A/B tests</td></tr>
-          <tr><td>Checkout Completion Rate</td><td>Purchases / checkouts started (GA4 funnel)</td><td><b>62%</b> · 54–72%</td><td>Critical</td><td>Step-level funnel; drop-off tracked with New Relic Browser and GA4</td></tr>
-          <tr><td>Payment Success Rate</td><td>Customers who eventually paid / unique customers who attempted payment (bank declines included, OMS)</td><td><b>96.3%</b> · 92–97%</td><td>Critical</td><td>Tracked per PSP and card type; bank declines separated from platform errors</td></tr>
-          <tr><td><b>Payment Completion Rate</b></td><td>Payment-step calls completed without a platform error (New Relic, PGW + API)</td><td><b>99.998%</b> · 1 error in 59K calls</td><td>Critical</td><td><b>99.999%</b> · excluding bank and PSP declines; rule-based fallback POS on PSP outage</td></tr>
-        </tbody>
-      </table>
-      <p class="ann"><b>Sources:</b> GA4 (Skechers, Hunter, Klaud, Brooks, Sochic; 6 October–2 November 2026), OMS payment and order data for 7 sites (Skechers, Sochic, High5, Klaud, Hunter, GraceBrands, Brooks; same period), New Relic PaymentGateway and Hcapi (27 October–2 November). Conversion uses OMS orders; the GA4 purchase event sees ~60% of real orders because of cookie consent. 3.7% of customers who attempt payment are lost: 1.2% customer-caused (limit, card), 2.0% 3-D Secure / no-response abandonment, 0.15% system. The pre-migration baseline is taken from Shaya in discovery and compared daily for the first 30 days after go-live.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">82 / 95</span>
-    </div>
-  </section>
-
-  <!-- SITE SPEED COMPARISON -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Live site speed · market comparison</span>
-      <h2 class="slide-title">On real-user data, <span class="accent">2.7× ahead</span> of the main competitor</h2>
-      <div class="stat-row" style="justify-content:space-between; margin-bottom:1.6cqh;">
-        <div class="stat"><span class="num" style="font-size:3.4cqw; line-height:1.25;">All sites</span><span class="lab">every CommerceLab site passes mobile Core Web Vitals; 8% for the main competitor</span></div>
-        <div class="stat"><span class="num">1.0 s</span><span class="lab">median mobile LCP p75; main competitor 2.75 s</span></div>
-        <div class="stat"><span class="num">0.4 s</span><span class="lab">median mobile TTFB p75; main competitor 1.35 s</span></div>
-      </div>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>Measure · p75, real users</th><th>CommerceLab · all live sites</th><th>Main competitor · live sites</th><th>Google threshold</th></tr></thead>
-        <tbody>
-          <tr><td>Sites passing mobile Core Web Vitals</td><td>All sites</td><td>8%</td><td>LCP, INP and CLS all "good"</td></tr>
-          <tr><td>Sites passing desktop Core Web Vitals</td><td>71%</td><td>8%</td><td></td></tr>
-          <tr><td>Median mobile LCP</td><td>1.0 s</td><td>2.75 s</td><td>≤ 2.5 s</td></tr>
-          <tr><td>Median mobile INP</td><td>169 ms</td><td>241 ms</td><td>≤ 200 ms</td></tr>
-          <tr><td>Median mobile CLS</td><td>0.00</td><td>0.085</td><td>≤ 0.1</td></tr>
-          <tr><td>Median mobile TTFB</td><td>0.4 s</td><td>1.35 s</td><td>≤ 0.8 s</td></tr>
-          <tr><td>Median desktop LCP</td><td>0.8 s</td><td>1.9 s</td><td>≤ 2.5 s</td></tr>
-          <tr><td>Server first byte, lab measurement from the same network</td><td>51 ms</td><td>201 ms</td><td>—</td></tr>
-        </tbody>
-      </table>
-      <p class="note"><b>Source and method:</b> Google Chrome UX Report (CrUX) origin p75, 29 October 2026. CommerceLab's live fashion and retail sites versus fashion and retail sites in Türkiye running on the main competitor's infrastructure; same period and measurement for both groups. The gap comes largely from CDN-cached HTML and the Next.js frontstore. RFP target &lt; 2 s per page; live p75 1.0 s.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">83 / 95</span>
-    </div>
-  </section>
-
-<!-- 81 — INTEGRATION SPEED & LOAD TEST -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Integration speed and load-test evidence</span>
-      <h2 class="slide-title">Orders in seconds, stock in <span class="accent">milliseconds</span></h2>
-      <div class="two-col" style="flex:1; align-content:center;">
-        <div>
-          <div class="hdr-sub">Integration speed · measured in a live customer environment</div>
-          <div class="mini-stats" style="margin-bottom:1.4cqh;">
-            <div class="stat"><span class="num">1.2 s</span><span class="lab">web/app order in the OMS</span></div>
-            <div class="stat"><span class="num">26 s</span><span class="lab">marketplace order in the OMS</span></div>
-            <div class="stat"><span class="num">925 ms</span><span class="lab">stock change pushed to the channel</span></div>
-          </div>
-          <ul class="flist flist--tight">
-            <li><b>150 ms</b> stock calculation: safety stock, in-transit and reservations included.</li>
-            <li><b>0.02%</b> oversell rate across all channels; critical stock closes on the channel in 1.2 s via the fast lane.</li>
-            <li><b>No lost orders</b>: an order on the channel but not in the OMS is caught by Control Tower.</li>
-          </ul>
-        </div>
-        <div>
-          <div class="hdr-sub">Load test · live production environment, October 2026</div>
-          <ul class="flist flist--tight">
-            <li><b>Behaviour was tested, not a limit.</b> Capacity grows horizontally with Karpenter and HPA by adding nodes and pods; the architecture defines no upper bound. No threshold was crossed at any step, zero errors.</li>
-            <li><b>Campaign-peak profile</b>: basket and checkout included, realistic behaviour mix, API p95 250 ms, p99 490 ms.</li>
-            <li><b>Stress ×4</b>: three times the hourly campaign peak; the system recovered without waiting for extra scaling.</li>
-            <li><b>Spike ×8</b>: 11,800 requests a minute (~200 req/s) arriving at once; server p95 30–60 ms.</li>
-            <li><b>Profile from GA4</b>: calibrated with 11.11 and Black Friday hourly and per-minute peak sessions.</li>
-          </ul>
-          <p class="note" style="margin-top:1.2cqh;">Same method for Shaya: load, stress and spike tests before campaigns at multiples of the 280,000 sessions/day peak and 5K transactions/hour target; capacity plan and report presented to the Steering Committee.</p>
-        </div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">84 / 95</span>
-    </div>
-  </section>
-
-<!-- 82 — SLA TABLE -->
+  <!-- 76 — SLA TABLE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">SLA table · RFP §14</span>
@@ -2511,11 +2259,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">85 / 95</span>
+      <span class="slide__no">76 / 85</span>
     </div>
   </section>
 
-  <!-- SUPPORT MODEL -->
+    <!-- SUPPORT MODEL -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Support model · RFP §14 L1–L4</span>
@@ -2552,11 +2300,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">86 / 95</span>
+      <span class="slide__no">77 / 85</span>
     </div>
   </section>
 
-<!-- 84 — CHANGE MANAGEMENT -->
+  <!-- 78 — CHANGE MANAGEMENT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Change management procedure</span>
@@ -2586,11 +2334,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">87 / 95</span>
+      <span class="slide__no">78 / 85</span>
     </div>
   </section>
 
-<!-- 85 — DISASTER RECOVERY -->
+  <!-- 79 — DISASTER RECOVERY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Disaster recovery · RFP §14 RPO/RTO</span>
@@ -2624,11 +2372,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">88 / 95</span>
+      <span class="slide__no">79 / 85</span>
     </div>
   </section>
 
-  <!-- MULTI-AZ ARCHITECTURE -->
+    <!-- MULTI-AZ ARCHITECTURE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Multi-AZ architecture · <a href="../ek/CommerceLab-Multi-AZ-DR.pdf" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:0.25em;">BestCloudForme document, 3 November 2026</a></span>
@@ -2652,11 +2400,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">89 / 95</span>
+      <span class="slide__no">80 / 85</span>
     </div>
   </section>
 
-  <!-- SECTION 10–12 -->
+    <!-- SECTION 10–12 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">10–12</div>
@@ -2667,11 +2415,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">90 / 95</span>
+      <span class="slide__no">81 / 85</span>
     </div>
   </section>
 
-  <!-- COMMERCIAL STRUCTURE -->
+    <!-- COMMERCIAL STRUCTURE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Commercial proposal structure · RFP §15</span>
@@ -2712,11 +2460,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">91 / 95</span>
+      <span class="slide__no">82 / 85</span>
     </div>
   </section>
 
-  <!-- ASSUMPTIONS -->
+    <!-- ASSUMPTIONS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Assumptions, dependencies and exclusions · RFP §23.1-11 and Annex B</span>
@@ -2740,11 +2488,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">92 / 95</span>
+      <span class="slide__no">83 / 85</span>
     </div>
   </section>
 
-  <!-- INFOSEC -->
+    <!-- INFOSEC -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Infosec · RFP §23.1-12 and §11.2</span>
@@ -2761,41 +2509,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">93 / 95</span>
+      <span class="slide__no">84 / 85</span>
     </div>
   </section>
 
-  <!-- ANNEX REGISTER -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Mandatory attachments · RFP §23.2</span>
-      <h2 class="slide-title">Twelve attachments, <span class="accent">where each one is</span> and its status</h2>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>Mandatory attachment</th><th>Where</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>Completed requirement / fit-gap matrix</td><td>Excel attachment (69 rows + 13 additional benefits + response codes); this deck section 04</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>Detailed project plan and resource plan</td><td>This deck section 08: timeline, milestones, RACI, named team; resource-loaded MS Project/Jira plan in discovery</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>TCO table</td><td>Commercial file: 3-year licence, setup, infrastructure, support, third party</td><td><span class="st st--plan">In commercial file</span></td></tr>
-          <tr><td>SLA table · performance and robustness KPIs</td><td>This deck section 09: P1–P4 times, KPIs, load-test evidence</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>Change Management procedure</td><td>This deck section 09: eight steps and tools</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>Disaster Recovery plan and latest DR test report</td><td>This deck section 09 DR and Multi-AZ slides; <a href="../ek/CommerceLab-Multi-AZ-DR.pdf" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:0.25em;">BestCloudForme Multi-AZ DR document</a> (3 November 2026) attached; drill report with the annual test</td><td><span class="st st--ok">Ready · document attached</span></td></tr>
-          <tr><td>Reference list</td><td>Section 02 references; §16 table and contact permissions in a separate attachment</td><td><span class="st st--plan">Permissions in progress</span></td></tr>
-          <tr><td>Team CVs</td><td>Section 08 team slide; CVs, allocation, location, start date and backup plan in a separate attachment</td><td><span class="st st--plan">Separate file</span></td></tr>
-          <tr><td>Assumptions and exclusions list</td><td>This deck section 10–12 (A1–A10)</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>Contract exceptions / redline list</td><td>Legal team; after the draft contract</td><td><span class="st st--plan">At contract stage</span></td></tr>
-          <tr><td>Infosec evidence pack</td><td>Infrastructure Security Document, questionnaire, pentest summary</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>Signature and proposal statement (Annex C)</td><td>Commercial file cover letter</td><td><span class="st st--plan">In commercial file</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">94 / 95</span>
-    </div>
-  </section>
-
-<!-- 92 — CLOSING -->
+  <!-- 85 — CLOSING -->
   <section class="slide slide--ink slide--cover">
     <div class="slide__inner">
       <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
@@ -2811,9 +2529,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">95 / 95</span>
+      <span class="slide__no">85 / 85</span>
     </div>
   </section>
+
+  
 
 </div>
 
