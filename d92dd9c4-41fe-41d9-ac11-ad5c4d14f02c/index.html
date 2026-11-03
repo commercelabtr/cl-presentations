@@ -98,13 +98,18 @@
   .suite { gap: 1.6cqh; margin-top: 1.2cqh !important; }
   .suite .layer { padding-top: 1.7cqh; padding-bottom: 1.7cqh; }
   .suite .desc { font-size: 1.36cqw; }
+  .suite--7 { gap: 1cqh; margin-top: 0.8cqh !important; }
+  .suite--7 .layer { padding-top: 1.1cqh; padding-bottom: 1.1cqh; }
+  .suite--7 .desc { font-size: 1.28cqw; }
+  .suite--7 .desc--pills .pill { font-size: 0.86cqw; padding: 0.2cqh 0.5cqw; }
+  .logowall { grid-template-columns: repeat(6, 1fr); }
 
 </style>
 </head>
 <body>
 <div class="deck">
 
-    <!-- 01 — KAPAK -->
+      <!-- 01 — KAPAK -->
   <section class="slide slide--ink slide--cover">
     <div class="slide__inner">
       <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
@@ -120,11 +125,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">1 / 95</span>
+      <span class="slide__no">1 / 85</span>
     </div>
   </section>
 
-  <!-- 02 — TEKLİF HARİTASI -->
+    <!-- 02 — TEKLİF HARİTASI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Teklif yapısı · RFP §23.1 ve §23.2</span>
@@ -133,27 +138,27 @@
         <thead><tr><th>#</th><th>RFP bölümü</th><th>Bu sunumda</th><th>Durum</th></tr></thead>
         <tbody>
           <tr><td>01</td><td>Executive Summary</td><td>Ana mesaj, Shaya önceliklerine karşılık, metrik özeti (engagement, rakip karşılaştırması, sistem performansı, entegrasyon hızı)</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>02</td><td>Company Profile and References</td><td>Kim olduğumuz, farkımız, referans müşteriler, liderlik ekibi, yeterlilikler (§16)</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>02</td><td>Company Profile and References</td><td>Kim olduğumuz, farkımız, referans müşteriler, liderlik ekibi</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>03</td><td>Proposed Solution Overview</td><td>Kapsam ve sahiplik, platform bileşenleri, kanallar, ürün yetenekleri, checkout, omnichannel, raporlama, AI yetkinlikleri</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>04</td><td>Functional Fit-Gap Response</td><td>69 gereksinimin özeti ve bölüm bazlı karşılıklar; tam matris Excel ekinde</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>05</td><td>Technical Architecture and Security</td><td>Hedef mimari, veri sahipliği, MACH-enabled · PBC · modüler monolit · multi-tenant · genişletilebilirlik ve motorlar, yığın, AWS topolojisi, güvenlik, ölçekleme</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>05</td><td>Technical Architecture and Security</td><td>Hedef mimari, veri sahipliği, MACH-enabled · PBC · multi-tenant · genişletilebilirlik ve motorlar, yığın, AWS topolojisi, güvenlik, ölçekleme</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>06</td><td>Integration Strategy</td><td>ComHub modeli, §8 alanları, §8.6 envanter eşlemesi, Control Tower, loyalty checkout</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>07</td><td>Data Migration Strategy</td><td>Kapsam, üç aktarım yolu, prova ve mutabakat, SEO geçişi</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Kapsam, metodoloji, 4 aylık zaman planı, kilometre taşları, RACI, ekip, test, risk, teslimatlar</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>09</td><td>Support and SLA Proposal</td><td>İş ve platform KPI'ları, site hızı karşılaştırması, yük testi kanıtı, SLA tablosu, destek modeli, change management, DR ve Multi-AZ mimari</td><td><span class="st st--ok">Hazır · DR dokümanı ekte</span></td></tr>
+          <tr><td>09</td><td>Support and SLA Proposal</td><td>Platform KPI'ları ve taahhütler, SLA tablosu, destek modeli, change management, DR ve Multi-AZ mimari</td><td><span class="st st--ok">Hazır · DR dokümanı ekte</span></td></tr>
           <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Ticari teklif yapısı (rakamlar ayrı dosyada), varsayım ve kapsam dışı listesi, Infosec kanıt paketi</td><td><span class="st st--plan">Rakamlar ticari dosyada</span></td></tr>
-          <tr><td>Ek</td><td>Zorunlu ekler (§23.2)</td><td>Son slaytta ek kayıt defteri: hangi ek nerede, durumu ne</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>Ek</td><td>Zorunlu ekler (§23.2)</td><td>Fit-gap matrisi, proje planı, referans tablosu ve CV'ler ayrı dosyalarda; Multi-AZ DR dokümanı bu sunuma bağlı</td><td><span class="st st--plan">Ayrı dosyalar</span></td></tr>
         </tbody>
       </table>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">2 / 95</span>
+      <span class="slide__no">2 / 85</span>
     </div>
   </section>
 
-  <!-- BÖLÜM 01 -->
+    <!-- BÖLÜM 01 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">01</div>
@@ -164,11 +169,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">3 / 95</span>
+      <span class="slide__no">3 / 85</span>
     </div>
   </section>
 
-<!-- 04 — ANA MESAJ -->
+  <!-- 04 — ANA MESAJ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Yönetici özeti · RFP §1</span>
@@ -179,17 +184,17 @@
         <div class="card"><div class="ix">03</div><h3>Para kazandıran ortaklık</h3><p>Her sprint ölçülebilir iş çıktısı üretir; performans, dönüşüm ve operasyon KPI'ları tek konsolda izlenir.</p></div>
         <div class="card"><div class="ix">04</div><h3>Bugün istemediğiniz, yarın hazır</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, çoklu ülke ve para birimi aynı platformda açılır; yeniden platform değişikliği gerekmez.</p></div>
         <div class="card"><div class="ix">05</div><h3>AI ile çalışan platform</h3><p>MCP olarak yayınlanmış API'ler, konuşarak operasyon, AI PIM, semantik arama ve agentic commerce uyumu bugün; ACOMS ile yarı otonom operasyon yol haritası.</p></div>
-        <div class="card"><div class="ix">06</div><h3>Kanıtlanmış altyapı</h3><p>%99,99 erişilebilirlik, yılda 400M$+ ticaret hacmi, günde 20K+ sipariş; 16 kurumsal tenant tek platformda.</p></div>
+        <div class="card"><div class="ix">06</div><h3>Kanıtlanmış altyapı</h3><p>%99,99+ erişilebilirlik, yılda 400M$+ ticaret hacmi, günde 50K+ sipariş ve ayda 1B+ API isteği tek platformda.</p></div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">4 / 95</span>
+      <span class="slide__no">4 / 85</span>
     </div>
   </section>
 
-  <!-- HEDEF KARŞILIKLARI -->
+    <!-- HEDEF KARŞILIKLARI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Shaya'nın hedefleri · RFP §3.1–3.2</span>
@@ -210,11 +215,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">5 / 95</span>
+      <span class="slide__no">5 / 85</span>
     </div>
   </section>
 
-  <!-- METRİK ÖZETİ — ENGAGEMENT -->
+    <!-- METRİK ÖZETİ — ENGAGEMENT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metrik özeti · Engagement</span>
@@ -228,15 +233,15 @@
         </div>
         <div class="two-col" style="flex:0; align-content:start;">
           <div>
-            <div class="hdr-sub">Sayfa yüklenme · sayfa tipine göre</div>
+            <div class="hdr-sub">Sayfa yüklenme · LCP p75, gerçek kullanıcı</div>
             <table class="xtable xtable--xdense">
-              <thead><tr><th>Sayfa</th><th>Ölçülen · p75</th><th>RFP hedefi</th></tr></thead>
+              <thead><tr><th>Sayfa</th><th>Tüm siteler · p75</th><th>En iyi site</th><th>RFP hedefi</th></tr></thead>
               <tbody>
-                <tr><td>Ana sayfa</td><td><b>X,X sn</b></td><td>&lt; 2 sn</td></tr>
-                <tr><td>PLP · ürün listeleme</td><td><b>X,X sn</b></td><td>—</td></tr>
-                <tr><td>PDP · ürün detay</td><td><b>X,X sn</b></td><td>&lt; 2 sn</td></tr>
-                <tr><td>Sepet</td><td><b>X,X sn</b></td><td>—</td></tr>
-                <tr><td>Checkout</td><td><b>X,X sn</b></td><td>&lt; 3 sn</td></tr>
+                <tr><td>Ana sayfa</td><td><b>1,3 sn</b></td><td>0,9 sn</td><td>&lt; 2 sn</td></tr>
+                <tr><td>PLP · ürün listeleme</td><td><b>2,4 sn</b></td><td>0,8 sn</td><td>—</td></tr>
+                <tr><td>PDP · ürün detay</td><td><b>0,7 sn</b></td><td>0,5 sn</td><td>&lt; 2 sn</td></tr>
+                <tr><td>Sepet</td><td><b>1,3 sn</b></td><td>0,9 sn</td><td>—</td></tr>
+                <tr><td>Checkout</td><td><b>0,9 sn</b></td><td>0,7 sn</td><td>&lt; 3 sn</td></tr>
               </tbody>
             </table>
           </div>
@@ -250,17 +255,17 @@
             </div>
           </div>
         </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, replatform öncesi ve sonrası dönem karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026, en iyi site değeri; yok satma tüm kanallarda.</p>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, replatform öncesi ve sonrası dönem karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026, en iyi site değeri; yok satma tüm kanallarda. Sayfa yüklenme: New Relic Browser, gerçek kullanıcı LCP p75, canlı siteler, 27 Ekim–3 Kasım 2026.</p>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">6 / 95</span>
+      <span class="slide__no">6 / 85</span>
     </div>
   </section>
 
-  <!-- METRİK ÖZETİ — RAKİP KARŞILAŞTIRMASI -->
+    <!-- METRİK ÖZETİ — RAKİP KARŞILAŞTIRMASI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metrik özeti · Rakip karşılaştırması</span>
@@ -289,20 +294,20 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">7 / 95</span>
+      <span class="slide__no">7 / 85</span>
     </div>
   </section>
 
-  <!-- METRİK ÖZETİ 1 — SİSTEM PERFORMANSI -->
+    <!-- METRİK ÖZETİ 1 — SİSTEM PERFORMANSI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metrik özeti · Sistem performansı</span>
       <h2 class="slide-title">Kampanya zirvesinde de <span class="accent">sıfır hata</span></h2>
       <div class="fill">
         <div class="stat-row" style="justify-content:space-between; margin-bottom:2cqh;">
-          <div class="stat"><span class="num">%99,99</span><span class="lab">platform erişilebilirliği (RFP hedefi ≥ %99,9)</span></div>
-          <div class="stat"><span class="num">379 ms</span><span class="lab">ortalama API yanıtı · Apdex 0,95 (New Relic)</span></div>
-          <div class="stat"><span class="num">480M+</span><span class="lab">API isteği / ay; günde 20K+ sipariş</span></div>
+          <div class="stat"><span class="num">%99,99+</span><span class="lab">platform erişilebilirliği (RFP hedefi ≥ %99,9)</span></div>
+          <div class="stat"><span class="num">379 ms</span><span class="lab">ortalama API yanıtı · Apdex 0,98 (New Relic)</span></div>
+          <div class="stat"><span class="num">1B+</span><span class="lab">API isteği / ay; günde 50K+ sipariş</span></div>
           <div class="stat"><span class="num">1,5 dk</span><span class="lab">ortalama deploy; rollback aynı sürede</span></div>
         </div>
         <div class="hdr-sub">Son yük testi · Victoria's Secret ölçeğinde bir site · k6, canlı üretim ortamı, Ekim 2026</div>
@@ -321,11 +326,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">8 / 95</span>
+      <span class="slide__no">8 / 85</span>
     </div>
   </section>
 
-  <!-- METRİK ÖZETİ 3 — ENTEGRASYON HIZI -->
+    <!-- METRİK ÖZETİ 3 — ENTEGRASYON HIZI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metrik özeti · Entegrasyon hızı</span>
@@ -348,12 +353,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">9 / 95</span>
+      <span class="slide__no">9 / 85</span>
     </div>
   </section>
 
-
-  <!-- BÖLÜM 02 -->
+    <!-- BÖLÜM 02 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">02</div>
@@ -364,11 +368,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">10 / 95</span>
+      <span class="slide__no">10 / 85</span>
     </div>
   </section>
 
-  <!-- KİM OLDUĞUMUZ -->
+    <!-- KİM OLDUĞUMUZ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Kim olduğumuz</span>
@@ -379,24 +383,24 @@
           <ul class="flist flist--tight" style="margin-top:1.4cqh;">
             <li><b>Vizyon:</b> dijital ticaret ve operasyonda önde gelen platform sağlayıcısı olmak.</li>
             <li><b>Misyon:</b> müşterilerimizin satış potansiyelini en üst düzeye çıkarırken operasyonel mükemmelliği en düşük maliyetle sağlamak.</li>
-            <li><b>Şirket:</b> Commerce Lab E-Ticaret Çözümleri A.Ş. · Windowist Tower, Maslak, İstanbul · kurucu ortakları tarafından yönetilen yazılım ürün şirketi.</li>
+            <li><b>Şirket:</b> Commerce Lab E-Ticaret Çözümleri A.Ş. · iki merkez: Çanakkale Teknopark ve İstanbul (Windowist Tower, Maslak) · kurucu ortakları tarafından yönetilen yazılım ürün şirketi.</li>
           </ul>
         </div>
         <div class="stat-row" style="flex-direction:column; gap:2cqh;">
           <div class="stat"><span class="num">30+</span><span class="lab">uzman; Türkiye'nin önde gelen 100+ perakendecisinde deneyim</span></div>
-          <div class="stat"><span class="num">400M$+</span><span class="lab">yıllık ticaret hacmi (GMV) platform üzerinden; günde 20K+ sipariş</span></div>
-          <div class="stat"><span class="num">16</span><span class="lab">kurumsal tenant tek SaaS platformunda; ayda 480M+ API isteği, %99,99 erişilebilirlik</span></div>
+          <div class="stat"><span class="num">400M$+</span><span class="lab">yıllık ticaret hacmi (GMV) platform üzerinden; günde 50K+ sipariş</span></div>
+          <div class="stat"><span class="num">1B+</span><span class="lab">API isteği / ay tek SaaS platformunda; %99,99+ erişilebilirlik</span></div>
         </div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">11 / 95</span>
+      <span class="slide__no">11 / 85</span>
     </div>
   </section>
 
-  <!-- NEDEN FARKLIYIZ -->
+    <!-- NEDEN FARKLIYIZ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Konumlandırma</span>
@@ -413,11 +417,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">12 / 95</span>
+      <span class="slide__no">12 / 85</span>
     </div>
   </section>
 
-  <!-- REFERANSLAR -->
+    <!-- REFERANSLAR -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Referans müşteriler</span>
@@ -435,6 +439,7 @@
         <div class="cell"><img src="logos/a101.png" alt="A101" /></div>
         <div class="cell"><img src="logos/madamecoco.svg" alt="Madame Coco" /></div>
         <div class="cell"><img src="logos/kfc.png" alt="KFC" /></div>
+        <div class="cell"><img src="logos/pidem.svg" alt="Pidem" /></div>
         <div class="cell"><img src="logos/hdholding.svg" alt="HD Holding" /></div>
         <div class="cell"><img src="logos/fila.png" alt="Fila" /></div>
         <div class="cell"><img src="logos/stevemadden.png" alt="Steve Madden" /></div>
@@ -445,15 +450,15 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">13 / 95</span>
+      <span class="slide__no">13 / 85</span>
     </div>
   </section>
 
-  <!-- LİDERLİK EKİBİ -->
+    <!-- LİDERLİK EKİBİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Liderlik ekibi</span>
-      <h2 class="slide-title">Sahadan gelen liderlik, <span class="accent">20+ kişilik</span> mühendislik ekibi</h2>
+      <h2 class="slide-title">Sahadan gelen liderlik, <span class="accent">30+ kişilik</span> mühendislik ekibi</h2>
       <div class="grid grid-3 team-grid">
         <div class="card team-card">
           <div class="name">Onur Kemer</div><div class="role">Kurucu ortak · CEO</div>
@@ -490,36 +495,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">14 / 95</span>
+      <span class="slide__no">14 / 85</span>
     </div>
   </section>
 
-  <!-- YETERLİLİKLER -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Tedarikçi yeterlilikleri · RFP §16</span>
-      <h2 class="slide-title">RFP §16'nın istediği <span class="accent">yedi başlık</span></h2>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>Başlık</th><th>Yanıt</th></tr></thead>
-        <tbody>
-          <tr><td>Şirket profili ve sahiplik yapısı</td><td>Commerce Lab E-Ticaret Çözümleri A.Ş., İstanbul; kurucu ortakları (CEO, CTO) tarafından yönetilen yazılım ürün şirketi; Teknopark Ar-Ge projeleri (ACOMS)</td></tr>
-          <tr><td>Platform ve teknoloji yetkinlikleri</td><td>MACH-enabled yapı; kendi geliştirdiği 10 PBC'lik ürün ailesi; .NET, PostgreSQL, MongoDB, Redis, Elasticsearch, RabbitMQ, GraphQL, Kubernetes/AWS; Next.js web ve native mobil</td></tr>
-          <tr><td>Türkiye ve uluslararası teslimat kapasitesi</td><td>İstanbul merkezli 30+ kişilik ekip; BestCloudForme ile 7/24 operasyon; multi-country ve multi-currency platform, global markaların Türkiye operasyonları canlıda</td></tr>
-          <tr><td>Moda, kozmetik, perakende ve omnichannel referansları</td><td>Ayakkabı ve giyim (Skechers, Brooks, Hunter, Steve Madden, On, Fila, Asics, Decathlon), ev (Madame Coco), perakende (A101), QSR (KFC), çok markalı gruplar (HD Holding, Grace Brands); Click &amp; Collect, ship-from-store ve mağaza iadesi canlı</td></tr>
-          <tr><td>Benzer hacim, entegrasyon ve migrasyon deneyimi</td><td>Platform geneli günde 20K+ sipariş, ayda 480M+ API isteği; ERP, OMS, CRM, PSP ve 20+ kargo entegrasyonu; farklı platformlardan katalog, müşteri ve sipariş geçmişi geçişleri</td></tr>
-          <tr><td>Ürün yol haritası ve Ar-Ge yaklaşımı</td><td>ACOMS otonom ticaret operasyonu (kural → optimizasyon → istatistik → ML), AI PIM, conversational commerce, MCP/agentic arayüzler; haftada birden çok üretim sürümü</td></tr>
-          <tr><td>Finansal ve operasyonel sürdürülebilirlik</td><td>Yinelenen SaaS gelir modeli, 16 kurumsal tenant, kendi ürünü üzerinde kendi ekibi; bağımsız denetim ve finansal belgeler talep halinde paylaşılır</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">15 / 95</span>
-    </div>
-  </section>
-
-  <!-- BÖLÜM 03 -->
+    <!-- BÖLÜM 03 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">03</div>
@@ -530,16 +510,16 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">16 / 95</span>
+      <span class="slide__no">15 / 85</span>
     </div>
   </section>
 
-  <!-- KAPSAM VE SAHİPLİK -->
+    <!-- KAPSAM VE SAHİPLİK -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Çözüm kapsamı ve sistem sahipliği · RFP §5</span>
       <h2 class="slide-title">Ne biz yapıyoruz, ne <span class="accent">yerinde kalıyor</span></h2>
-      <table class="xtable xtable--dense">
+      <table class="xtable xtable--xdense">
         <thead><tr><th>Bileşen</th><th>CommerceLab rolü</th><th>Mevcut sistem / sahiplik</th><th>Teklif durumu</th></tr></thead>
         <tbody>
           <tr><td>Web ve mobil uygulama</td><td>Deneyim, sepet, checkout, hesap; iki marka için ayrı site ve app</td><td>Marka dijital kanalları (Ticimax'tan geçiş)</td><td><span class="st st--ok">Kapsamda</span></td></tr>
@@ -550,40 +530,43 @@
           <tr><td>Kampanya ve promosyon</td><td>Sepet seviyesi kural motoru; CRM kurallarını tekrarlamaz, tamamlar</td><td>CRM kampanya ve kupon yönetimi</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>Ödeme</td><td>Ödeme orkestrasyonu, 3D, fraud, multi-tender, mutabakat</td><td>PSP ve bankalar</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>Pazaryeri</td><td>Marketplace Seller: ürün kartı, stok, fiyat, sipariş</td><td>Trendyol, Hepsiburada, Amazon</td><td><span class="st st--ok">Kapsamda</span></td></tr>
-          <tr><td>OMS · WMS · TMS kurulumu</td><td>Teklif dışı; ileride aynı platformda açılabilir</td><td>Mevcut sistemler</td><td><span class="st st--plan">Kapsam dışı</span></td></tr>
+          <tr><td>OMS</td><td>Kısmen kapsamda: Inventory Engine ERP ile senkron çalışır, stok çok hızlı aktarılır; InStore Commerce modülü (mağazada satış ve sipariş) de kullanılabilir</td><td>Retail Markup OMS sipariş yaşam döngüsünün sahibi kalır</td><td><span class="st st--ok">Kısmen kapsamda</span></td></tr>
+          <tr><td>TMS</td><td>Opsiyonel: sevkiyat (dispatch), kargo bildirimi, takip ve etiketleme</td><td>Mevcut kargo süreçleri</td><td><span class="st st--plan">Opsiyonel</span></td></tr>
+          <tr><td>WMS</td><td>Teklif dışı</td><td>Mevcut depo sistemi</td><td><span class="st st--plan">Kapsam dışı</span></td></tr>
         </tbody>
       </table>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">17 / 95</span>
+      <span class="slide__no">16 / 85</span>
     </div>
   </section>
 
-  <!-- PLATFORM BİLEŞENLERİ -->
+    <!-- PLATFORM BİLEŞENLERİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Platform bileşenleri</span>
-      <h2 class="slide-title">On paketlenmiş ürün, <span class="accent">tek ekosistem</span>; Shaya için altısı kapsamda</h2>
-      <div class="stack suite" style="margin-top:0.4cqh;">
+      <h2 class="slide-title">On paketlenmiş ürün, <span class="accent">tek ekosistem</span></h2>
+      <div class="stack suite suite--7">
         <div class="layer"><span class="tag">Kanallar</span><span class="desc">WebShop (Next.js) · AppShop (native iOS, Android) · pazaryeri · ileride POS, chat, voice, agentic</span></div>
         <div class="layer layer--ink"><span class="tag">Deneyim</span><span class="desc">Headless Experience Layer: ayrık, omnichannel storefront ve native uygulamalar; REST / GraphQL</span></div>
         <div class="layer"><span class="tag">Orkestrasyon</span><span class="desc">Commerce Dispatch Engine: her satın alma bağlamını (marka, kanal, segment) doğru yeteneğe yönlendirir</span></div>
         <div class="layer"><span class="tag">Core commerce</span><span class="desc desc--pills"><span class="pill pill--solid">PIM / Katalog</span> <span class="pill pill--solid">Headless CMS</span> <span class="pill pill--solid">Kampanya motoru</span> <span class="pill pill--solid">Payment / Checkout</span> <span class="pill pill--solid">Operasyonel CRM</span> <span class="pill pill--solid">Marketplace Seller</span> <span class="pill">Marketplace Operator</span></span></div>
-        <div class="layer"><span class="tag">Tedarik zinciri</span><span class="desc desc--pills"><span class="pill">OMS</span> <span class="pill">TMS</span> <span class="pill">WMS</span> &nbsp;Shaya'da kapsam dışı; Retail Markup OMS entegre edilir, ileride aynı platformda açılır</span></div>
+        <div class="layer"><span class="tag">Tedarik zinciri</span><span class="desc desc--pills"><span class="pill pill--solid">OMS · Inventory Engine, InStore Commerce</span> <span class="pill">TMS · opsiyonel</span> <span class="pill">WMS</span> &nbsp;OMS kısmen: stok ERP ile senkron, mağazada satış; TMS opsiyon: sevkiyat, bildirim, takip, etiket; WMS kapsam dışı</span></div>
         <div class="layer layer--ink"><span class="tag">Entegrasyon</span><span class="desc">ComHub · Orchestration Manager · Control Tower: ERP, OMS, CRM, PSP, pazaryeri, kargo, pazarlama, analitik</span></div>
+        <div class="layer"><span class="tag">AI</span><span class="desc">MCP olarak yayınlı API'ler · LLM Socket ile konuşarak operasyon · AI PIM · semantik arama · conversational ve agentic commerce (UCP / ACP) · <b>ACOMS</b>: yarı otonom operasyon yol haritası</span></div>
       </div>
-      <p class="ann"><b>Koyu rozet</b> teklif kapsamındaki PBC'ler; açık rozet aynı platformda hazır, Shaya için opsiyon. Her PBC bağımsız sürümlenen bir Packaged Business Capability'dir.</p>
+      <p class="ann"><b>Koyu rozet</b> teklif kapsamındaki PBC'ler: Shaya için altı PBC ve OMS kısmen; açık rozet aynı platformda hazır, Shaya için opsiyon. Her PBC bağımsız sürümlenen bir Packaged Business Capability'dir.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">18 / 95</span>
+      <span class="slide__no">17 / 85</span>
     </div>
   </section>
 
-  <!-- KANAL KATMANI -->
+    <!-- KANAL KATMANI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Kanal katmanı · RFP §5.1.1</span>
@@ -599,11 +582,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">19 / 95</span>
+      <span class="slide__no">18 / 85</span>
     </div>
   </section>
 
-  <!-- YETKİNLİK ALANLARI -->
+    <!-- YETKİNLİK ALANLARI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Commerce Platform yetkinlikleri · RFP §5.1.1.1</span>
@@ -622,11 +605,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">20 / 95</span>
+      <span class="slide__no">19 / 85</span>
     </div>
   </section>
 
-  <!-- ÜRÜN YETENEKLERİ I -->
+    <!-- ÜRÜN YETENEKLERİ I -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Ürün yetenekleri I</span>
@@ -667,11 +650,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">21 / 95</span>
+      <span class="slide__no">20 / 85</span>
     </div>
   </section>
 
-  <!-- ÜRÜN YETENEKLERİ II -->
+    <!-- ÜRÜN YETENEKLERİ II -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Ürün yetenekleri II</span>
@@ -718,11 +701,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">22 / 95</span>
+      <span class="slide__no">21 / 85</span>
     </div>
   </section>
 
-  <!-- CHECKOUT VE ÖDEME -->
+    <!-- CHECKOUT VE ÖDEME -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Checkout ve ödeme · RFP §5.1.2.7</span>
@@ -739,11 +722,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">23 / 95</span>
+      <span class="slide__no">22 / 85</span>
     </div>
   </section>
 
-  <!-- SİPARİŞ VE İADE -->
+    <!-- SİPARİŞ VE İADE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Sipariş, iade ve değişim · RFP §5.1.2.5–5.1.2.9</span>
@@ -773,11 +756,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">24 / 95</span>
+      <span class="slide__no">23 / 85</span>
     </div>
   </section>
 
-  <!-- OMNICHANNEL -->
+    <!-- OMNICHANNEL -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Omnichannel · RFP §7</span>
@@ -799,11 +782,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">25 / 95</span>
+      <span class="slide__no">24 / 85</span>
     </div>
   </section>
 
-  <!-- RAPORLAMA -->
+    <!-- RAPORLAMA -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Raporlama ve analitik · RFP §5.1.2.10</span>
@@ -828,11 +811,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">26 / 95</span>
+      <span class="slide__no">25 / 85</span>
     </div>
   </section>
 
-  <!-- AI VİZYONU -->
+    <!-- AI VİZYONU -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">AI yetkinlikleri · önerilen çözüm</span>
@@ -849,11 +832,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">27 / 95</span>
+      <span class="slide__no">26 / 85</span>
     </div>
   </section>
 
-  <!-- AI YETKİNLİK LİSTESİ -->
+    <!-- AI YETKİNLİK LİSTESİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">AI yetkinlikleri · liste</span>
@@ -879,11 +862,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">28 / 95</span>
+      <span class="slide__no">27 / 85</span>
     </div>
   </section>
 
-  <!-- AI KULLANIM ÖRNEKLERİ -->
+    <!-- AI KULLANIM ÖRNEKLERİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">AI yetkinlikleri · Shaya'nın gününde</span>
@@ -915,17 +898,17 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">29 / 95</span>
+      <span class="slide__no">28 / 85</span>
     </div>
   </section>
 
-  <!-- GELECEK HAZIRLIĞI -->
+    <!-- GELECEK HAZIRLIĞI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Gelecek hazırlığı</span>
       <h2 class="slide-title">Bugün istemediğiniz, <span class="accent">yarın hazır</span></h2>
       <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
-        <div class="card"><div class="ix">Global</div><h3>Multi-country · currency · site</h3><p>Yeni ülke, para birimi, fiyat listesi ve depo platform değiştirmeden açılır; hreflang ve dil bazlı URL yapısı hazır.</p></div>
+        <div class="card"><div class="ix">Global</div><h3>Multi-enabled: site · ülke · para birimi</h3><p>Yeni ülke, para birimi, fiyat listesi ve depo platform değiştirmeden açılır; hreflang ve dil bazlı URL yapısı hazır.</p></div>
         <div class="card"><div class="ix">İş modelleri</div><h3>B2B · B2B2C · marketplace operator</h3><p>Kurumsal satış, multi-vendor dropship ve satıcı onboarding aynı Commerce Dispatch Engine üzerinde.</p></div>
         <div class="card card--dark"><div class="ix">ACOMS</div><h3>Yarı otonom operasyon</h3><p>Teknopark Ar-Ge projesi: günlük ticaret ve fulfilment kararları danışman modundan tam yetki devrine kademeli taşınır; kural → optimizasyon → istatistik → ML.</p></div>
         <div class="card"><div class="ix">Kanallar</div><h3>POS · sohbet · ses · AI agent'ları</h3><p>Mağaza POS, sohbet ve sesli alışveriş, UCP/ACP üzerinden AI agent siparişleri aynı Commerce Platform API'lerinden beslenir; yeni kanal yeni entegrasyon demek değildir.</p></div>
@@ -935,11 +918,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">30 / 95</span>
+      <span class="slide__no">29 / 85</span>
     </div>
   </section>
 
-  <!-- BÖLÜM 04 -->
+    <!-- BÖLÜM 04 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">04</div>
@@ -950,11 +933,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">31 / 95</span>
+      <span class="slide__no">30 / 85</span>
     </div>
   </section>
 
-  <!-- FİT-GAP ÖZETİ -->
+    <!-- FİT-GAP ÖZETİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Fit-gap özeti · RFP §6, §7 ve Ek A</span>
@@ -994,11 +977,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">32 / 95</span>
+      <span class="slide__no">31 / 85</span>
     </div>
   </section>
 
-  <!-- FİT 6.1 -->
+    <!-- FİT 6.1 -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.1 Ürün ve katalog yönetimi · FR-TEXT-001…010</span>
@@ -1022,11 +1005,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">33 / 95</span>
+      <span class="slide__no">32 / 85</span>
     </div>
   </section>
 
-  <!-- FİT 6.2–6.3 -->
+    <!-- FİT 6.2–6.3 -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.2 Arama ve navigasyon · 6.3 Ürün detay, sepet ve checkout</span>
@@ -1060,11 +1043,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">34 / 95</span>
+      <span class="slide__no">33 / 85</span>
     </div>
   </section>
 
-  <!-- FİT 6.4 -->
+    <!-- FİT 6.4 -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.4 Müşteri ve üyelik yönetimi</span>
@@ -1083,11 +1066,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">35 / 95</span>
+      <span class="slide__no">34 / 85</span>
     </div>
   </section>
 
-  <!-- FİT 6.5 -->
+    <!-- FİT 6.5 -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.5 İçerik, kampanya ve yönetim paneli · FR-TEXT-011…016 ve ek maddeler</span>
@@ -1111,11 +1094,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">36 / 95</span>
+      <span class="slide__no">35 / 85</span>
     </div>
   </section>
 
-  <!-- FİT 6.6 I -->
+    <!-- FİT 6.6 I -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.6 SEO yönetimi I · 6.6.1–6.6.8</span>
@@ -1137,11 +1120,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">37 / 95</span>
+      <span class="slide__no">36 / 85</span>
     </div>
   </section>
 
-  <!-- FİT 6.6 II -->
+    <!-- FİT 6.6 II -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">6.6 SEO yönetimi II · 6.6.9–6.6.16</span>
@@ -1163,11 +1146,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">38 / 95</span>
+      <span class="slide__no">37 / 85</span>
     </div>
   </section>
 
-  <!-- EK FAYDALAR -->
+    <!-- EK FAYDALAR -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">RFP dışı ek faydalar · Ek Faydalar sayfası</span>
@@ -1194,11 +1177,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">39 / 95</span>
+      <span class="slide__no">38 / 85</span>
     </div>
   </section>
 
-  <!-- BÖLÜM 05 -->
+    <!-- BÖLÜM 05 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">05</div>
@@ -1209,11 +1192,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">40 / 95</span>
+      <span class="slide__no">39 / 85</span>
     </div>
   </section>
 
-<!-- 38 — HEDEF MİMARİ (TOPOLOJİ) -->
+  <!-- 40 — HEDEF MİMARİ (TOPOLOJİ) -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Hedef mimari</span>
@@ -1265,11 +1248,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">41 / 95</span>
+      <span class="slide__no">40 / 85</span>
     </div>
   </section>
 
-<!-- 39 — VERİ SAHİPLİĞİ -->
+  <!-- 41 — VERİ SAHİPLİĞİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Veri sahipliği · RFP §5.1.2</span>
@@ -1303,11 +1286,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">42 / 95</span>
+      <span class="slide__no">41 / 85</span>
     </div>
   </section>
 
-<!-- 40 — MİMARİ İLKELER -->
+  <!-- 42 — MİMARİ İLKELER -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Mimari ilkeler</span>
@@ -1326,11 +1309,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">43 / 95</span>
+      <span class="slide__no">42 / 85</span>
     </div>
   </section>
 
-  <!-- MACH-ENABLED -->
+    <!-- MACH-ENABLED -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">MACH-enabled mimari</span>
@@ -1351,11 +1334,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">44 / 95</span>
+      <span class="slide__no">43 / 85</span>
     </div>
   </section>
 
-  <!-- PBC -->
+    <!-- PBC -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Packaged Business Capabilities</span>
@@ -1371,35 +1354,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">45 / 95</span>
+      <span class="slide__no">44 / 85</span>
     </div>
   </section>
 
-  <!-- MODÜLER MONOLİT -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Modüler monolit · domain tabanlı SOA</span>
-      <h2 class="slide-title">Pragmatik <span class="accent">orta yol</span>: mikroservis disiplini, tek deploy edilebilir birim</h2>
-      <div class="two-col" style="flex:1; align-content:center;">
-        <div>
-          <p class="body-text">Her PBC'nin içinde <b>modüler monolit</b> tasarımı uygulanır: sınırları zorunlu kılınmış net domain modülleri, tek ve verimli bir birim olarak deploy edilir. Dağıtık sistem yükü olmadan mikroservis seviyesinde sorumluluk ayrımı; ölçek gerektirdiğinde bir modül kendi servisine çıkarılır.</p>
-        </div>
-        <ul class="flist">
-          <li><b>Domain modülleri</b> doğrudan ticaret süreçlerine karşılık gelir</li>
-          <li><b>Açık sözleşmeler</b>: modüller arası sızdıran bağ yok</li>
-          <li><b>Tek deploy birimi</b>: daha basit operasyon, daha düşük gecikme</li>
-          <li><b>Talep üzerine ayrıştırma</b>: bir modül gerekçesi varsa servise terfi eder</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">46 / 95</span>
-    </div>
-  </section>
-
-  <!-- MULTI-TENANT -->
+    <!-- MULTI-TENANT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Multi-tenant · multi-account</span>
@@ -1420,178 +1379,62 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">47 / 95</span>
+      <span class="slide__no">45 / 85</span>
     </div>
   </section>
 
-  <!-- GENİŞLETİLEBİLİRLİK -->
+  <!-- GENİŞLETİLEBİLİRLİK I -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Yüksek genişletilebilirlik</span>
-      <h2 class="slide-title">Ürün içinde ve ürünler arasında <span class="accent">özelleştirme</span></h2>
-      <p class="lead">Katmanlı genişletme modeli, tek bir toggle'dan tam özel entegrasyona kadar her müşteri için davranışı uyarlar; herkes tek ve yükseltilebilir platformda kalır.</p>
-      <div class="grid grid-3" style="flex:1; align-content:center;">
-        <div class="card card--accent"><h3>Yapılandır</h3><p>Toggle'lar, kurallar ve değerlendirme politikaları; kod yok, anında değişiklik.</p></div>
-        <div class="card card--accent"><h3>Genişlet</h3><p>User exit, scripting ve plugin'ler; tanımlı noktalarda özel mantık.</p></div>
-        <div class="card card--accent"><h3>Entegre et</h3><p>Event tabanlı kancalar ve üçüncü taraf bağlayıcılar; ürünler arası.</p></div>
+      <span class="kicker">Yüksek genişletilebilirlik · mekanizmalar</span>
+      <h2 class="slide-title">Ürün içinde ve ürünler arasında <span class="accent">özelleştirme</span>, çekirdeği çatallamadan</h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card card--accent"><div class="ix">Yapılandır</div><h3>Toggle'lar ve feature flag'ler</h3><p>Yetenekler tenant, ortam veya yayın dalgası bazında açılır ya da kapanır; yeniden deploy olmadan kademeli yayın ve A/B deneyleri. VS'de açılan bir özellik BBW'de kapalı kalabilir.</p></div>
+        <div class="card card--accent"><div class="ix">Yapılandır</div><h3>Kurallar ve politikalar</h3><p>Kural, değerlendirme ve aksiyon motorları ile durum makinesi: iş mantığı kod yazmadan, anında değişir. Ayrıntı sonraki slaytta.</p></div>
+        <div class="card"><div class="ix">Genişlet</div><h3>User exit'ler</h3><p>Tanımlı genişletme noktaları: özel mantık hem veritabanı katmanında (stored procedure) hem uygulama katmanında enjekte edilir; davranış uyarlanır, yükseltme yolu korunur.</p></div>
+        <div class="card"><div class="ix">Genişlet</div><h3>Scripting ve plugin'ler</h3><p>ComHub akışlarında alan bazlı dönüşüm için hafif script'ler; yetenek eklemek veya değiştirmek için resmi plugin mimarisi, özel sourcing algoritmaları dahil.</p></div>
+        <div class="card"><div class="ix">Entegre et</div><h3>Üçüncü taraf bağlayıcılar</h3><p>Pazaryerleri, PSP'ler, bankalar, kargo firmaları, ERP/MDM ve BI sistemleri için hazır bağlayıcılar; event tabanlı kancalar ürünler arasında çalışır.</p></div>
+        <div class="card card--dark"><div class="ix">İçeride</div><h3>Mediator · CQRS</h3><p>Süreç içi mediator gönderenle işleyiciyi ayırır; temiz, test edilebilir, CQRS uyumlu akışlar. Genişletmeler çekirdek koda dokunmaz.</p></div>
       </div>
-      <p class="note">Shaya'ya özel mantık (sadakat kuralları, checkout adımları, kampanya istisnaları) bu katmanlarda yaşar; platform sürümleri kesintisiz alınmaya devam eder.</p>
+      <p class="note">Shaya'ya özel mantık (sadakat kuralları, checkout adımları, kampanya istisnaları) bu katmanlarda yaşar; paylaşılan kod tabanı çatallanmaz, platform sürümleri kesintisiz alınmaya devam eder.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">48 / 95</span>
+      <span class="slide__no">46 / 85</span>
     </div>
   </section>
 
-  <!-- EVENT TABANLI -->
+  <!-- GENİŞLETİLEBİLİRLİK II -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Event tabanlı mimari</span>
-      <h2 class="slide-title">Gevşek bağlı, <span class="accent">varsayılan olarak reaktif</span></h2>
-      <div class="flow" style="margin:2cqh 0 2.6cqh;">
+      <span class="kicker">Yüksek genişletilebilirlik · motorlar</span>
+      <h2 class="slide-title">Event'ler, motorlar ve durum makinesi: <span class="accent">davranış konfigürasyonla</span></h2>
+      <div class="flow" style="margin:1.2cqh 0 1.6cqh;">
         <div class="node node--ink">Domain event<small>sipariş oluştu</small></div>
         <div class="arrow">&rarr;</div>
         <div class="node node--red">Mesaj veri yolu<small>RabbitMQ</small></div>
         <div class="arrow">&rarr;</div>
+        <div class="node">Kural · değerlendirme · aksiyon<small>Microsoft Rules Engine</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Durum geçişi<small>değerlendir · uygula · bildir</small></div>
+        <div class="arrow">&rarr;</div>
         <div class="node">Tüketiciler<small>OMS · CRM · ComHub</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Yan etkiler<small>bildir · senkronla · teslim et</small></div>
       </div>
-      <div class="two-col" style="flex:1; align-content:start;">
-        <ul class="flist">
-          <li><b>Komut ve event'ler</b> üreticiyi tüketiciden ayırır</li>
-          <li><b>Asenkron</b> işleme zirveyi emer, hatayı izole eder</li>
-        </ul>
-        <ul class="flist">
-          <li><b>Otomatik düzelt ve bildir</b> döngüleri tutarsızlığı bulur ve giderir</li>
-          <li><b>Yeniden oynatılabilir</b> akışlar: dayanıklılık ve denetlenebilirlik</li>
-        </ul>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card"><div class="ix">Event tabanlı</div><h3>Gevşek bağlı, varsayılan olarak reaktif</h3><p>Komut ve event'ler üreticiyi tüketiciden ayırır; asenkron işleme zirveyi emer, hatayı izole eder. Otomatik düzelt-ve-bildir döngüleri tutarsızlığı bulur ve giderir; akışlar yeniden oynatılabilir ve denetlenebilir.</p></div>
+        <div class="card card--accent"><div class="ix">Motorlar</div><h3>Operasyon ekibinin kontrol ettiği iş mantığı</h3><p>Microsoft Rules Engine üzerine kurulu kural motoru her senaryoyu ifade eder; değerlendirme motoru seçenekleri skor ve best-choice ile puanlar; aksiyon motoru sonucu uygular. Aynı altyapı sourcing, kampanya, ödeme, sevkiyat ve içerikte yeniden kullanılır.</p></div>
+        <div class="card"><div class="ix">Durum makinesi</div><h3>Her varlık, her durum: yönetilen yaşam döngüsü</h3><p>Sipariş, müşteri, ürün, ödeme, sevkiyat ve iade için durumlar ve geçişler doğrulanmış hamlelerdir; geçersiz geçiş yapısal olarak imkânsızdır. Her geçişte iç ve dış sistemler değerlendirilir, aksiyon uygulanır (yeniden sourcing, bölme, yönlendirme) ve değişiklik event ve webhook ile duyurulur; durumlar tenant bazında yapılandırılır.</p></div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">49 / 95</span>
+      <span class="slide__no">47 / 85</span>
     </div>
   </section>
 
-  <!-- KURAL MOTORU -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Kural · değerlendirme · aksiyon motorları</span>
-      <h2 class="slide-title">Operasyon ekiplerinin <span class="accent">kontrol ettiği</span> iş mantığı</h2>
-      <div class="flow" style="margin:1.6cqh 0 2.4cqh;">
-        <div class="node">Kural motoru<small>Microsoft Rules Engine</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--red">Değerlendirme motoru<small>skor, best-choice…</small></div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Aksiyon motoru<small>sonucu uygular</small></div>
-      </div>
-      <div class="two-col" style="flex:1; align-content:start;">
-        <p class="body-text"><b>Microsoft Rules Engine</b> üzerine kurulu, her karmaşık senaryoyu ifade eden esnek bir kural motoru; değerlendirme motoru seçenekleri best-choice ve benzeri mekanizmalarla puanlar; aksiyon motoru sonucu uygular. Aynı kural · değerlendirme · aksiyon altyapısı platformun her yerinde yeniden kullanılır: sourcing, kampanya, ödeme, sevkiyat ve içerik.</p>
-        <ul class="flist">
-          <li><b>Sourcing</b>: maliyet, memnuniyet ve kapasiteye göre skor bazlı tahsis</li>
-          <li><b>Kampanya</b>: öncelik grupları ve best-choice seçimi</li>
-          <li><b>Ödeme ve sevkiyat</b>: kural bazlı yönlendirme ve skorlama</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">50 / 95</span>
-    </div>
-  </section>
-
-  <!-- DURUM MAKİNESİ -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Durum makinesi</span>
-      <h2 class="slide-title">Her varlık, her durum: <span class="accent">yönetilen</span> bir yaşam döngüsü</h2>
-      <div class="flow" style="margin:1.8cqh 0 1cqh;">
-        <div class="node">Oluştu</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Sourcing</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--red">Tahsis edildi</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Hazırlandı</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node">Kargolandı</div>
-        <div class="arrow">&rarr;</div>
-        <div class="node node--ink">Kapandı</div>
-      </div>
-      <div class="hook-band">
-        <div class="hook-band__tag">Her geçişte</div>
-        <div class="hook-band__flow">
-          <span class="hook-step">Değerlendir<small>iç ve dış sistemler</small></span>
-          <span class="hook-plus">+</span>
-          <span class="hook-step">Uygula<small>yeniden sourcing · böl · yönlendir</small></span>
-          <span class="hook-plus">+</span>
-          <span class="hook-step">Bildir<small>event ve webhook</small></span>
-        </div>
-      </div>
-      <div class="two-col" style="flex:1; align-content:center;">
-        <p class="body-text" style="font-size:1.32cqw;">Yukarıdaki sipariş döngüsü tek bir örnektir; aynı durum makinesi platformdaki <b>her</b> varlığı yönetir: sipariş, müşteri, ürün, ödeme, sevkiyat, iade. Durumlar ve geçişler açık, doğrulanmış hamleler olarak modellenir; geçersiz geçiş yapısal olarak imkânsızdır. Her geçiş bir kancadır: iç ve dış sistemlere karşı değerlendirilir, değişiklik aşağı sistemlere duyurulur.</p>
-        <ul class="flist flist--tight">
-          <li><b>Dinamik iş akışı</b>: durum ve geçişler tenant bazında yapılandırılır</li>
-          <li><b>Kural motoru güdümlü</b>: yeniden sourcing, iptal, bölme, kısmi sevk</li>
-          <li><b>Tam entegre</b> sipariş, teslimat, iptal ve iade durumu</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">51 / 95</span>
-    </div>
-  </section>
-
-  <!-- TOGGLE VE USER EXIT -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Toggle'lar ve user exit'ler</span>
-      <h2 class="slide-title">Çekirdeği değiştirmeden <span class="accent">davranışı</span> değiştirmek</h2>
-      <div class="two-col" style="flex:1; align-content:center;">
-        <div class="card">
-          <h3>Toggle tabanlı yapı</h3>
-          <p>Feature flag'ler yetenekleri tenant, ortam veya yayın dalgası bazında açar/kapatır; yeniden deploy olmadan güvenli, kademeli yayın ve A/B deneyleri. VS'de açılan bir özellik BBW'de kapalı kalabilir.</p>
-        </div>
-        <div class="card card--accent">
-          <h3>User exit'ler: veritabanı ve kod seviyesi</h3>
-          <p>Tanımlı genişletme noktaları, müşterinin özel mantığı hem veritabanı katmanında (stored procedure) hem uygulama katmanında enjekte etmesine izin verir; davranış uyarlanır, yükseltme yolu korunur.</p>
-        </div>
-      </div>
-      <p class="note">Sonuç: paylaşılan kod tabanını hiç çatallamayan derin müşteri özelleştirmesi; her tenant platform yükseltmelerini almaya devam eder.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">52 / 95</span>
-    </div>
-  </section>
-
-  <!-- PLUGIN VE MEDIATOR -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Scripting · plugin · mediator</span>
-      <h2 class="slide-title">Genişletme mekanizmaları, <span class="accent">uçtan uca</span></h2>
-      <div class="grid grid-4" style="flex:1; align-content:center;">
-        <div class="card"><h3>Scripting</h3><p>Veri eşleme, dönüştürme ve entegrasyon mantığı için hafif script'ler; ComHub akışlarında alan bazlı dönüşüm.</p></div>
-        <div class="card"><h3>Plugin'ler</h3><p>Yetenek eklemek veya değiştirmek için resmi plugin mimarisi; özel sourcing algoritmaları dahil.</p></div>
-        <div class="card"><h3>Üçüncü taraf</h3><p>Pazaryerleri, PSP'ler, bankalar, kargo firmaları, ERP/MDM ve BI sistemleri için bağlayıcılar.</p></div>
-        <div class="card card--accent"><h3>Mediator</h3><p>Süreç içi mediator gönderenle işleyiciyi ayırır; temiz, test edilebilir, CQRS uyumlu akışlar.</p></div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">53 / 95</span>
-    </div>
-  </section>
-
-  <!-- MÜHENDİSLİK PRATİĞİ -->
+    <!-- MÜHENDİSLİK PRATİĞİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Mühendislik pratiği · CI/CD</span>
@@ -1631,11 +1474,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">54 / 95</span>
+      <span class="slide__no">48 / 85</span>
     </div>
   </section>
 
-<!-- 52 — TEKNOLOJİ YIĞINI -->
+  <!-- 49 — TEKNOLOJİ YIĞINI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Teknoloji yığını</span>
@@ -1653,11 +1496,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">55 / 95</span>
+      <span class="slide__no">49 / 85</span>
     </div>
   </section>
 
-<!-- 53 — ÜRETİM TOPOLOJİSİ -->
+  <!-- 50 — ÜRETİM TOPOLOJİSİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Üretim topolojisi</span>
@@ -1707,11 +1550,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">56 / 95</span>
+      <span class="slide__no">50 / 85</span>
     </div>
   </section>
 
-<!-- 54 — GÜVENLİK -->
+  <!-- 51 — GÜVENLİK -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Güvenlik ve uyum</span>
@@ -1728,11 +1571,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">57 / 95</span>
+      <span class="slide__no">51 / 85</span>
     </div>
   </section>
 
-<!-- 55 — ÖLÇEKLEME & GÖZLEMLENEBİLİRLİK -->
+  <!-- 52 — ÖLÇEKLEME & GÖZLEMLENEBİLİRLİK -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Ölçekleme ve gözlemlenebilirlik</span>
@@ -1763,11 +1606,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">58 / 95</span>
+      <span class="slide__no">52 / 85</span>
     </div>
   </section>
 
-  <!-- BÖLÜM 06 -->
+    <!-- BÖLÜM 06 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">06</div>
@@ -1778,11 +1621,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">59 / 95</span>
+      <span class="slide__no">53 / 85</span>
     </div>
   </section>
 
-<!-- 57 — ENTEGRASYON İLKELERİ -->
+  <!-- 54 — ENTEGRASYON İLKELERİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Entegrasyon modeli</span>
@@ -1809,11 +1652,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">60 / 95</span>
+      <span class="slide__no">54 / 85</span>
     </div>
   </section>
 
-  <!-- ENTEGRASYON ALANLARI -->
+    <!-- ENTEGRASYON ALANLARI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Entegrasyon alanları · RFP §8.1–8.5</span>
@@ -1833,11 +1676,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">61 / 95</span>
+      <span class="slide__no">55 / 85</span>
     </div>
   </section>
 
-<!-- 59 — ENTEGRASYON ENVANTERİ -->
+  <!-- 56 — ENTEGRASYON ENVANTERİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Shaya entegrasyon envanteri · RFP §8.6</span>
@@ -1859,11 +1702,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">62 / 95</span>
+      <span class="slide__no">56 / 85</span>
     </div>
   </section>
 
-<!-- 60 — CONTROL TOWER -->
+  <!-- 57 — CONTROL TOWER -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Control Tower</span>
@@ -1884,11 +1727,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">63 / 95</span>
+      <span class="slide__no">57 / 85</span>
     </div>
   </section>
 
-<!-- 61 — LOYALTY CHECKOUT ÖRNEĞİ -->
+  <!-- 58 — LOYALTY CHECKOUT ÖRNEĞİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Örnek akış · RFP §5.1.2.7</span>
@@ -1926,11 +1769,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">64 / 95</span>
+      <span class="slide__no">58 / 85</span>
     </div>
   </section>
 
-  <!-- BÖLÜM 07 -->
+    <!-- BÖLÜM 07 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">07</div>
@@ -1941,11 +1784,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">65 / 95</span>
+      <span class="slide__no">59 / 85</span>
     </div>
   </section>
 
-<!-- 63 — MİGRASYON KAPSAMI -->
+  <!-- 60 — MİGRASYON KAPSAMI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Kapsam ve sahiplik · RFP §9.1</span>
@@ -1966,11 +1809,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">66 / 95</span>
+      <span class="slide__no">60 / 85</span>
     </div>
   </section>
 
-<!-- 64 — ÜÇ AKTARIM YOLU -->
+  <!-- 61 — ÜÇ AKTARIM YOLU -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Aktarım yolları</span>
@@ -1997,11 +1840,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">67 / 95</span>
+      <span class="slide__no">61 / 85</span>
     </div>
   </section>
 
-<!-- 65 — MİGRASYON SÜRECİ -->
+  <!-- 62 — MİGRASYON SÜRECİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Yöntem ve kabul · RFP §9.2–9.3</span>
@@ -2040,11 +1883,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">68 / 95</span>
+      <span class="slide__no">62 / 85</span>
     </div>
   </section>
 
-<!-- 66 — SEO MİGRASYONU -->
+  <!-- 63 — SEO MİGRASYONU -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">SEO geçişi · RFP §10</span>
@@ -2061,11 +1904,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">69 / 95</span>
+      <span class="slide__no">63 / 85</span>
     </div>
   </section>
 
-  <!-- BÖLÜM 08 -->
+    <!-- BÖLÜM 08 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">08</div>
@@ -2076,11 +1919,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">70 / 95</span>
+      <span class="slide__no">64 / 85</span>
     </div>
   </section>
 
-<!-- 68 — PROJE KAPSAMI -->
+  <!-- 65 — PROJE KAPSAMI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Proje kapsamı</span>
@@ -2097,11 +1940,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">71 / 95</span>
+      <span class="slide__no">65 / 85</span>
     </div>
   </section>
 
-<!-- 69 — METODOLOJİ & YÖNETİŞİM -->
+  <!-- 66 — METODOLOJİ & YÖNETİŞİM -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Metodoloji ve yönetişim · RFP §12, §19</span>
@@ -2133,11 +1976,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">72 / 95</span>
+      <span class="slide__no">66 / 85</span>
     </div>
   </section>
 
-  <!-- ZAMAN PLANI -->
+    <!-- ZAMAN PLANI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Zaman planı · RFP §17 ile kıyaslı</span>
@@ -2161,11 +2004,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">73 / 95</span>
+      <span class="slide__no">67 / 85</span>
     </div>
   </section>
 
-  <!-- KİLOMETRE TAŞLARI -->
+    <!-- KİLOMETRE TAŞLARI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Kilometre taşları ve kabul kapıları · RFP §18</span>
@@ -2190,11 +2033,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">74 / 95</span>
+      <span class="slide__no">68 / 85</span>
     </div>
   </section>
 
-  <!-- RACI -->
+    <!-- RACI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Yönetişim ve RACI · RFP §19</span>
@@ -2234,11 +2077,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">75 / 95</span>
+      <span class="slide__no">69 / 85</span>
     </div>
   </section>
 
-<!-- 73 — EKİP & KAYNAK PLANI -->
+  <!-- 70 — EKİP & KAYNAK PLANI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Ekip ve kaynak planı · RFP §20</span>
@@ -2249,7 +2092,7 @@
         <div class="card"><div class="ix">İş analisti · %100</div><h3>Yasin Teker</h3><p>Gereksinim, süreç, fit-gap ve UAT senaryoları.</p></div>
         <div class="card"><div class="ix">UI/UX</div><h3>Furkan İlgen</h3><p>Tasarım sistemi, marka brief'leri, frontend yönetimi.</p></div>
         <div class="card"><div class="ix">WebShop &amp; AppShop</div><h3>Alper Özçelik · Mehmet Ali Alagöz · Burak Selçuk · Amir Daliri</h3><p>Next.js web, native iOS ve Android geliştirme.</p></div>
-        <div class="card"><div class="ix">PIM · CMS · migrasyon</div><h3>Hüseyin Kucur · Ali Hazar</h3><p>Ürün ve içerik yönetimi, veri eşleme ve aktarım.</p></div>
+        <div class="card"><div class="ix">PIM · CMS · migrasyon</div><h3>Ali Bulut · Ali Hazar</h3><p>Ürün ve içerik yönetimi, veri eşleme ve aktarım.</p></div>
         <div class="card"><div class="ix">Payment GW · kampanya · CRM</div><h3>Gökhan Koçak</h3><p>Ödeme orkestrasyonu, promosyon motoru, loyalty entegrasyonu.</p></div>
         <div class="card"><div class="ix">ComHub · OMS/ERP entegrasyonu</div><h3>Erkan Özer · Sertaç Yalçınkaya</h3><p>WinRetail, OMS ve pazaryeri entegrasyonları.</p></div>
         <div class="card"><div class="ix">QA · DevOps · güvenlik</div><h3>QA lideri · BestCloudForme DevOps · güvenlik uzmanı</h3><p>Test stratejisi ve yürütme; ortam, CI/CD; güvenlik tasarımı ve test aksiyonları.</p></div>
@@ -2259,11 +2102,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">76 / 95</span>
+      <span class="slide__no">70 / 85</span>
     </div>
   </section>
 
-<!-- 74 — TEST & CUTOVER -->
+  <!-- 71 — TEST & CUTOVER -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Test ve cutover · RFP §13</span>
@@ -2294,11 +2137,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">77 / 95</span>
+      <span class="slide__no">71 / 85</span>
     </div>
   </section>
 
-  <!-- RİSK -->
+    <!-- RİSK -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Risk ve bağımlılık yönetimi · RFP §21</span>
@@ -2321,11 +2164,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">78 / 95</span>
+      <span class="slide__no">72 / 85</span>
     </div>
   </section>
 
-  <!-- TESLİMATLAR -->
+    <!-- TESLİMATLAR -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Teslimatlar · RFP §22</span>
@@ -2346,11 +2189,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">79 / 95</span>
+      <span class="slide__no">73 / 85</span>
     </div>
   </section>
 
-  <!-- BÖLÜM 09 -->
+    <!-- BÖLÜM 09 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">09</div>
@@ -2361,30 +2204,31 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">80 / 95</span>
+      <span class="slide__no">74 / 85</span>
     </div>
   </section>
 
-<!-- 78 — PLATFORM KPI'LARI -->
+  <!-- PLATFORM KPI'LARI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Performans ve dayanıklılık KPI'ları</span>
-      <h2 class="slide-title">Canlı üretimde <span class="accent">ölçülmüş</span> değerler</h2>
+      <h2 class="slide-title">Canlı üretimde <span class="accent">ölçülmüş</span> değerler ve taahhütler</h2>
       <div class="fill">
-        <div class="stat-row" style="justify-content:space-between; margin-bottom:3.2cqh;">
-          <div class="stat"><span class="num">%99,99</span><span class="lab">platform erişilebilirliği (RFP hedefi ≥ %99,9)</span></div>
-          <div class="stat"><span class="num">379 ms</span><span class="lab">ortalama API yanıtı · Apdex 0,95 (New Relic)</span></div>
-          <div class="stat"><span class="num">480M+</span><span class="lab">API isteği / ay</span></div>
-          <div class="stat"><span class="num">20K+</span><span class="lab">sipariş / gün, platform geneli</span></div>
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:2.6cqh;">
+          <div class="stat"><span class="num">%99,99+</span><span class="lab">platform erişilebilirliği (RFP hedefi ≥ %99,9)</span></div>
+          <div class="stat"><span class="num">379 ms</span><span class="lab">ortalama API yanıtı · Apdex 0,98 (New Relic)</span></div>
+          <div class="stat"><span class="num">1B+</span><span class="lab">API isteği / ay</span></div>
+          <div class="stat"><span class="num">50K+</span><span class="lab">sipariş / gün, platform geneli</span></div>
         </div>
-        <table class="xtable xtable--dense">
+        <table class="xtable xtable--xdense">
           <thead><tr><th>KPI</th><th>Ölçülen değer</th><th>Kaynak</th><th>Shaya taahhüdü</th></tr></thead>
           <tbody>
-            <tr><td>Page speed · ana sayfa, PDP</td><td>SSR + CDN, çalışma anında render yok</td><td>Core Web Vitals · Lighthouse</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
-            <tr><td>Page speed · checkout</td><td>Kritik adımlar önbellekli API üzerinden</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
-            <tr><td>API speed</td><td>GraphQL p95 250 ms, p99 490 ms (kampanya zirvesi profili, sepet ve checkout dahil)</td><td>k6 + New Relic, Ekim 2026</td><td>p95 &lt; 500 ms, aylık raporlanır</td></tr>
-            <tr><td>Robustness · fonksiyonel uptime</td><td>%99,99; pod yeniden başlatma saniyeler, düğüm değişimi dakikalar</td><td>Uptime Kuma · UptimeRobot</td><td>≥ %99,9 aylık, planlı bakım hariç</td></tr>
-            <tr><td>Deploy ve geri alma süresi</td><td>Ortalama 1,5 dakika; rollback aynı sürede</td><td>Jenkins</td><td>Kesintisiz yayın</td></tr>
+            <tr><td>Page speed · ana sayfa, PDP</td><td>Ana sayfa <b>1,3 sn</b> · PDP <b>0,7 sn</b>; LCP p75, gerçek kullanıcı, tüm canlı siteler</td><td>New Relic Browser · CrUX</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
+            <tr><td>Page speed · sepet, checkout</td><td>Sepet <b>1,3 sn</b> · checkout <b>0,9 sn</b>; LCP p75, gerçek kullanıcı</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
+            <tr><td>API speed</td><td>GraphQL p95 <b>250 ms</b>, p99 490 ms (kampanya zirvesi profili); Apdex 0,98 (T 0,5 sn) · 0,99 (T 1 sn)</td><td>k6 + New Relic, Ekim–Kasım 2026</td><td>p95 &lt; 500 ms · Apdex ≥ 0,99; aylık raporlanır</td></tr>
+            <tr><td>Payment completion · platform hatasız ödeme adımı</td><td><b>%99,998</b>; 59K çağrıda 1 platform hatası</td><td>New Relic PaymentGateway, 27 Ekim–2 Kasım 2026</td><td>≥ %99,999</td></tr>
+            <tr><td>Robustness · fonksiyonel uptime</td><td><b>%99,99+</b>; pod yeniden başlatma saniyeler, düğüm değişimi dakikalar</td><td>Uptime Kuma · UptimeRobot</td><td>≥ %99,9 aylık, planlı bakım hariç</td></tr>
+            <tr><td>Deploy ve geri alma süresi</td><td>Ortalama <b>1,5 dakika</b>; rollback aynı sürede</td><td>Jenkins</td><td>Kesintisiz yayın</td></tr>
           </tbody>
         </table>
       </div>
@@ -2392,107 +2236,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">81 / 95</span>
+      <span class="slide__no">75 / 85</span>
     </div>
   </section>
 
-  <!-- İŞ KPI'LARI -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">İş KPI'ları · RFP §11.1 · canlı ölçüm Ekim 2026</span>
-      <h2 class="slide-title">Ticari sonuç KPI'ları: <span class="accent">ölçülen</span> değer, öncelik, taahhüt</h2>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>KPI</th><th>Hesaplama / ölçüm</th><th>Canlı ölçüm · Skechers · 7 site aralığı</th><th>Öncelik</th><th>Shaya taahhüdü</th></tr></thead>
-        <tbody>
-          <tr><td>Conversion Rate</td><td>Ödenmiş sipariş (OMS) / oturum (GA4)</td><td><b>%2,2</b> · %0,4–2,2</td><td>Kritik</td><td>Günlük panoda; migrasyon sonrası baz korunur, iyileştirme hedefi marka ekibiyle</td></tr>
-          <tr><td>Search Success Rate</td><td>Arama sonrası ürün sayfası açan kullanıcı / arama yapan kullanıcı (GA4 huni)</td><td><b>%78</b> · %61–80</td><td>Kritik</td><td>Sıfır sonuç veren aramalar haftalık; eş anlamlı ve merchandising kurallarıyla düzeltilir</td></tr>
-          <tr><td>Add-to-Cart Rate</td><td>Sepete ürün eklenen oturum / toplam oturum (GA4)</td><td><b>%7,9</b> · %2,5–7,9</td><td>Yüksek</td><td>PDP ve listeleme değişiklikleri A/B testiyle ölçülür</td></tr>
-          <tr><td>Checkout Completion Rate</td><td>Satın alma / checkout başlatan (GA4 huni)</td><td><b>%62</b> · %54–72</td><td>Kritik</td><td>Adım bazlı huni; New Relic Browser ve GA4 ile terk oranı izlenir</td></tr>
-          <tr><td>Payment Success Rate</td><td>Sonunda ödeyen müşteri / ödeme deneyen tekil müşteri (banka redleri dahil, OMS)</td><td><b>%96,3</b> · %92–97</td><td>Kritik</td><td>PSP ve kart bazında izlenir; banka redleri platform hatasından ayrıştırılır</td></tr>
-          <tr><td><b>Payment Completion Rate</b></td><td>Platform hatası olmadan tamamlanan ödeme adımı çağrısı (New Relic, PGW + API)</td><td><b>%99,998</b> · 59K çağrıda 1 hata</td><td>Kritik</td><td><b>%99,999</b> · banka ve PSP redleri hariç; PSP arızasında kural tabanlı yedek POS</td></tr>
-        </tbody>
-      </table>
-      <p class="ann"><b>Kaynak:</b> GA4 (Skechers, Hunter, Klaud, Brooks, Sochic; 6 Ekim–2 Kasım 2026), OMS ödeme ve sipariş verisi 7 site (Skechers, Sochic, High5, Klaud, Hunter, GraceBrands, Brooks; aynı dönem), New Relic PaymentGateway ve Hcapi (27 Ekim–2 Kasım). Dönüşüm OMS siparişiyle hesaplanır; GA4 satın alma olayı çerez onayı nedeniyle gerçek siparişin ~%60'ını görür. Ödeme deneyen müşterilerin %3,7'si kaybedilir: %1,2 müşteri kaynaklı (limit, kart), %2,0 3D/yanıtsız terk, %0,15 sistem. Migrasyon öncesi baz keşifte Shaya'dan alınır, go-live sonrası ilk 30 gün günlük karşılaştırılır.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">82 / 95</span>
-    </div>
-  </section>
-
-  <!-- SİTE HIZI KARŞILAŞTIRMASI -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Canlı site hızı · pazar karşılaştırması</span>
-      <h2 class="slide-title">Gerçek kullanıcı verisinde ana rakibin <span class="accent">2,7 kat</span> önünde</h2>
-      <div class="stat-row" style="justify-content:space-between; margin-bottom:1.6cqh;">
-        <div class="stat"><span class="num" style="font-size:3.4cqw; line-height:1.25;">Tüm siteler</span><span class="lab">CommerceLab sitelerinin tamamı mobil Core Web Vitals'ı geçiyor; ana rakipte %8</span></div>
-        <div class="stat"><span class="num">1,0 sn</span><span class="lab">mobil LCP p75 medyanı; ana rakipte 2,75 sn</span></div>
-        <div class="stat"><span class="num">0,4 sn</span><span class="lab">mobil TTFB p75 medyanı; ana rakipte 1,35 sn</span></div>
-      </div>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>Ölçü · p75, gerçek kullanıcı</th><th>CommerceLab · tüm canlı siteler</th><th>Ana rakip · canlı siteler</th><th>Google eşiği</th></tr></thead>
-        <tbody>
-          <tr><td>Mobil Core Web Vitals geçen site</td><td>Tüm siteler</td><td>%8</td><td>LCP, INP ve CLS üçü birden "iyi"</td></tr>
-          <tr><td>Masaüstü Core Web Vitals geçen site</td><td>%71</td><td>%8</td><td></td></tr>
-          <tr><td>Mobil LCP medyan</td><td>1,0 sn</td><td>2,75 sn</td><td>≤ 2,5 sn</td></tr>
-          <tr><td>Mobil INP medyan</td><td>169 ms</td><td>241 ms</td><td>≤ 200 ms</td></tr>
-          <tr><td>Mobil CLS medyan</td><td>0,00</td><td>0,085</td><td>≤ 0,1</td></tr>
-          <tr><td>Mobil TTFB medyan</td><td>0,4 sn</td><td>1,35 sn</td><td>≤ 0,8 sn</td></tr>
-          <tr><td>Masaüstü LCP medyan</td><td>0,8 sn</td><td>1,9 sn</td><td>≤ 2,5 sn</td></tr>
-          <tr><td>Sunucu ilk bayt, aynı ağdan lab ölçümü</td><td>51 ms</td><td>201 ms</td><td>—</td></tr>
-        </tbody>
-      </table>
-      <p class="note"><b>Kaynak ve yöntem:</b> Google Chrome UX Report (CrUX) origin p75, 29 Ekim 2026. CommerceLab'in canlı moda ve perakende siteleri ile Türkiye'de ana rakibin altyapısında çalışan moda ve perakende siteleri; iki grupta da aynı dönem, aynı ölçüm. Fark büyük ölçüde CDN'de önbelleklenen HTML ve Next.js frontstore'dan gelir. RFP hedefi &lt; 2 sn sayfa; canlı p75 1,0 sn.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">83 / 95</span>
-    </div>
-  </section>
-
-<!-- 81 — ENTEGRASYON HIZI & YÜK TESTİ -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Entegrasyon hızı ve yük testi kanıtı</span>
-      <h2 class="slide-title">Sipariş saniyeler, stok <span class="accent">milisaniyeler</span> içinde yerinde</h2>
-      <div class="two-col" style="flex:1; align-content:center;">
-        <div>
-          <div class="hdr-sub">Entegrasyon hızı · canlı müşteri ortamında ölçülmüş</div>
-          <div class="mini-stats" style="margin-bottom:1.4cqh;">
-            <div class="stat"><span class="num">1,2 sn</span><span class="lab">web/app siparişi OMS'te</span></div>
-            <div class="stat"><span class="num">26 sn</span><span class="lab">pazaryeri siparişi OMS'te</span></div>
-            <div class="stat"><span class="num">925 ms</span><span class="lab">stok değişimi kanala bildirildi</span></div>
-          </div>
-          <ul class="flist flist--tight">
-            <li><b>150 ms</b> stok hesabı: emniyet stoku, on-transit ve rezervasyon dahil.</li>
-            <li><b>%0,02</b> yok satma oranı, tüm kanallarda; kritik stok hızlı şeritte 1,2 sn'de kanalda kapanır.</li>
-            <li><b>Kayıp sipariş yok</b>: kanalda olup OMS'te olmayan sipariş Control Tower'da yakalanır.</li>
-          </ul>
-        </div>
-        <div>
-          <div class="hdr-sub">Yük testi · canlı üretim ortamı, Ekim 2026</div>
-          <ul class="flist flist--tight">
-            <li><b>Sınır değil, davranış test edildi.</b> Kapasite Karpenter ve HPA ile düğüm ve pod ekleyerek yatayda büyür; mimari bir üst sınır tanımlamaz. Hiçbir basamakta eşik aşılmadı, hata 0.</li>
-            <li><b>Kampanya zirvesi profili</b>: sepet ve checkout dahil gerçek davranış karışımında API p95 250 ms, p99 490 ms.</li>
-            <li><b>Stres ×4</b>: kampanya tepesinin saatlik üç katı trafik; sistem ek ölçekleme beklemeden toparlandı.</li>
-            <li><b>Anlık sıçrama ×8</b>: dakikada 11.800 istek (~200 istek/sn) birden geldiğinde sunucu p95 30–60 ms.</li>
-            <li><b>Profil GA4'ten</b>: 11.11 ve Black Friday saatlik ve dakikalık tepe oturumlarıyla kalibre.</li>
-          </ul>
-          <p class="note" style="margin-top:1.2cqh;">Shaya için aynı yöntem: 280.000 oturum/gün pik ve 5K/saat işlem hedefinin katlarıyla kampanya öncesi yük, stres ve sıçrama testi; kapasite planı ve rapor Steering Committee'ye sunulur.</p>
-        </div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">84 / 95</span>
-    </div>
-  </section>
-
-<!-- 82 — SLA TABLOSU -->
+  <!-- 76 — SLA TABLOSU -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">SLA tablosu · RFP §14</span>
@@ -2515,11 +2263,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">85 / 95</span>
+      <span class="slide__no">76 / 85</span>
     </div>
   </section>
 
-  <!-- DESTEK MODELİ -->
+    <!-- DESTEK MODELİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Destek modeli · RFP §14 L1–L4</span>
@@ -2556,11 +2304,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">86 / 95</span>
+      <span class="slide__no">77 / 85</span>
     </div>
   </section>
 
-<!-- 84 — CHANGE MANAGEMENT -->
+  <!-- 78 — CHANGE MANAGEMENT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Change management prosedürü</span>
@@ -2590,11 +2338,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">87 / 95</span>
+      <span class="slide__no">78 / 85</span>
     </div>
   </section>
 
-<!-- 85 — DISASTER RECOVERY -->
+  <!-- 79 — DISASTER RECOVERY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Felaket kurtarma · RFP §14 RPO/RTO</span>
@@ -2628,11 +2376,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">88 / 95</span>
+      <span class="slide__no">79 / 85</span>
     </div>
   </section>
 
-  <!-- MULTI-AZ MİMARİ -->
+    <!-- MULTI-AZ MİMARİ -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Multi-AZ mimari · <a href="ek/CommerceLab-Multi-AZ-DR.pdf" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:0.25em;">BestCloudForme dokümanı, 3 Kasım 2026</a></span>
@@ -2656,11 +2404,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">89 / 95</span>
+      <span class="slide__no">80 / 85</span>
     </div>
   </section>
 
-  <!-- BÖLÜM 10–12 -->
+    <!-- BÖLÜM 10–12 -->
   <section class="slide slide--ink">
     <div class="slide__inner" style="justify-content:center;">
       <div class="divider-index">10–12</div>
@@ -2671,11 +2419,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">90 / 95</span>
+      <span class="slide__no">81 / 85</span>
     </div>
   </section>
 
-  <!-- TİCARİ YAPI -->
+    <!-- TİCARİ YAPI -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Ticari teklif yapısı · RFP §15</span>
@@ -2716,11 +2464,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">91 / 95</span>
+      <span class="slide__no">82 / 85</span>
     </div>
   </section>
 
-  <!-- VARSAYIMLAR -->
+    <!-- VARSAYIMLAR -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Varsayımlar, bağımlılıklar ve kapsam dışı · RFP §23.1-11 ve Ek B</span>
@@ -2744,11 +2492,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">92 / 95</span>
+      <span class="slide__no">83 / 85</span>
     </div>
   </section>
 
-  <!-- INFOSEC -->
+    <!-- INFOSEC -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Infosec · RFP §23.1-12 ve §11.2</span>
@@ -2765,41 +2513,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">93 / 95</span>
+      <span class="slide__no">84 / 85</span>
     </div>
   </section>
 
-  <!-- EK KAYIT DEFTERİ -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Zorunlu ekler · RFP §23.2</span>
-      <h2 class="slide-title">On iki ek, <span class="accent">her birinin yeri</span> ve durumu</h2>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>Zorunlu ek</th><th>Nerede</th><th>Durum</th></tr></thead>
-        <tbody>
-          <tr><td>Doldurulmuş requirement / fit-gap matrisi</td><td>Excel eki (69 satır + 13 ek fayda + yanıt kodları); bu sunum bölüm 04</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>Detaylı proje planı ve kaynak planı</td><td>Bu sunum bölüm 08: zaman planı, kilometre taşları, RACI, isimli ekip; MS Project/Jira planı keşifte kaynak yüklü</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>TCO tablosu</td><td>Ticari dosya: 3 yıl lisans, kurulum, altyapı, destek, üçüncü taraf</td><td><span class="st st--plan">Ticari dosyada</span></td></tr>
-          <tr><td>SLA tablosu · performans ve dayanıklılık KPI'ları</td><td>Bu sunum bölüm 09: P1–P4 süreleri, KPI'lar, yük testi kanıtı</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>Change Management prosedürü</td><td>Bu sunum bölüm 09: sekiz adım ve araçlar</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>Disaster Recovery planı ve son DR test raporu</td><td>Bu sunum bölüm 09 DR ve Multi-AZ slaytları; <a href="ek/CommerceLab-Multi-AZ-DR.pdf" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:0.25em;">BestCloudForme Multi-AZ DR dokümanı</a> (3 Kasım 2026) ekte; tatbikat raporu yıllık testle</td><td><span class="st st--ok">Hazır · doküman ekte</span></td></tr>
-          <tr><td>Referans listesi</td><td>Bölüm 02 referanslar; §16 tablosu ve iletişim izinleri ayrı ekte</td><td><span class="st st--plan">İzinler alınıyor</span></td></tr>
-          <tr><td>Ekip özgeçmişleri</td><td>Bölüm 08 ekip slaytı; özgeçmişler, tahsis, lokasyon, başlangıç ve yedek planı ayrı ekte</td><td><span class="st st--plan">Ek dosya</span></td></tr>
-          <tr><td>Varsayım ve kapsam dışı listesi</td><td>Bu sunum bölüm 10–12 (A1–A10)</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>Sözleşme istisnaları / redline listesi</td><td>Hukuk ekibi; sözleşme taslağı sonrası</td><td><span class="st st--plan">Sözleşme aşamasında</span></td></tr>
-          <tr><td>Infosec kanıt paketi</td><td>Altyapı Güvenlik Dokümanı, soru seti, pentest özeti</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>İmza ve teklif beyanı (Ek C)</td><td>Ticari dosya kapak yazısı</td><td><span class="st st--plan">Ticari dosyada</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Gizli</span>
-      <span class="slide__no">94 / 95</span>
-    </div>
-  </section>
-
-<!-- 92 — KAPANIŞ -->
+  <!-- 85 — KAPANIŞ -->
   <section class="slide slide--ink slide--cover">
     <div class="slide__inner">
       <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
@@ -2815,9 +2533,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">95 / 95</span>
+      <span class="slide__no">85 / 85</span>
     </div>
   </section>
+
+  
 
 </div>
 
