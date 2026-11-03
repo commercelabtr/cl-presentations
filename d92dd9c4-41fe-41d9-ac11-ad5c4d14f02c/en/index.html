@@ -74,6 +74,11 @@
   .mini-stats .stat .num { font-size: 2.9cqw; }
   .mini-stats .stat .lab { font-size: 1.05cqw; max-width: 15cqw; }
 
+  .ai-q { display: block; border-left: 3px solid var(--red); background: var(--bone-2); padding: 0.75cqh 0.9cqw; margin: 0.7cqh 0 0; font-size: 1.02cqw; line-height: 1.35; color: var(--ink); border-radius: 0 6px 6px 0; }
+  .ai-q small { display: block; color: var(--muted); font-size: 0.86cqw; margin-top: 0.3cqh; }
+  .ai-cards .card h3 { margin-bottom: 0.2cqh; }
+  .ai-flow { margin-top: 1.4cqh; }
+  .ai-flow .node { padding: 1cqh 1.1cqw; }
   .xtable--xdense td { padding: 0.42cqh 0.7cqw 0.42cqh 0; font-size: 0.96cqw; line-height: 1.3; }
   .xtable--xdense th { font-size: 0.84cqw; padding-bottom: 0.5cqh; }
   .xtable td.c { text-align: center; }
@@ -117,7 +122,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">1 / 75</span>
+      <span class="slide__no">1 / 78</span>
     </div>
   </section>
 
@@ -131,7 +136,7 @@
         <tbody>
           <tr><td>01</td><td>Executive Summary</td><td>Key message, answers to Shaya's priorities, commitment to success criteria</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>02</td><td>Company Profile and References</td><td>Who we are, why we differ, reference customers, leadership team, qualifications (§16)</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>03</td><td>Proposed Solution Overview</td><td>Scope and ownership, platform components, channels, product capabilities, checkout, omnichannel, reporting</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>03</td><td>Proposed Solution Overview</td><td>Scope and ownership, platform components, channels, product capabilities, checkout, omnichannel, reporting, AI capabilities</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>04</td><td>Functional Fit-Gap Response</td><td>Summary of 69 requirements and section-by-section answers; full matrix in the Excel attachment</td><td><span class="st st--ok">Ready · product sign-off</span></td></tr>
           <tr><td>05</td><td>Technical Architecture and Security</td><td>Target architecture, data ownership, principles, stack, AWS topology, security, scaling</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>06</td><td>Integration Strategy</td><td>ComHub model, §8 areas, §8.6 inventory mapping, Control Tower, loyalty checkout</td><td><span class="st st--ok">Ready</span></td></tr>
@@ -146,7 +151,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">2 / 75</span>
+      <span class="slide__no">2 / 78</span>
     </div>
   </section>
 
@@ -161,7 +166,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">3 / 75</span>
+      <span class="slide__no">3 / 78</span>
     </div>
   </section>
 
@@ -175,14 +180,14 @@
         <div class="card"><div class="ix">02</div><h3>Existing systems stay in place</h3><p>WinRetail remains the source of product, price and physical stock; the OMS owns the order lifecycle; the CRM owns customer and loyalty. We are the experience and orchestration layer.</p></div>
         <div class="card"><div class="ix">03</div><h3>A partnership that makes money</h3><p>Every sprint produces a measurable business outcome; performance, conversion and operations KPIs are tracked in a single console.</p></div>
         <div class="card"><div class="ix">04</div><h3>Ready for what you have not asked for yet</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, multi-country and multi-currency open on the same platform; no re-platforming.</p></div>
-        <div class="card"><div class="ix">05</div><h3>Semi-autonomous operations</h3><p>The ACOMS roadmap and MCP interfaces move commerce operations step by step from advisory mode to full delegation.</p></div>
+        <div class="card"><div class="ix">05</div><h3>An AI-powered platform</h3><p>APIs published as MCP, conversational operations, AI PIM, semantic search and agentic-commerce compatibility today; the ACOMS roadmap towards semi-autonomous operations.</p></div>
         <div class="card"><div class="ix">06</div><h3>Proven infrastructure</h3><p>99.99% availability, 480M+ API requests a month, 20K+ orders a day; 16 enterprise tenants on one platform.</p></div>
       </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">4 / 75</span>
+      <span class="slide__no">4 / 78</span>
     </div>
   </section>
 
@@ -207,7 +212,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">5 / 75</span>
+      <span class="slide__no">5 / 78</span>
     </div>
   </section>
 
@@ -232,7 +237,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">6 / 75</span>
+      <span class="slide__no">6 / 78</span>
     </div>
   </section>
 
@@ -247,7 +252,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">7 / 75</span>
+      <span class="slide__no">7 / 78</span>
     </div>
   </section>
 
@@ -275,7 +280,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">8 / 75</span>
+      <span class="slide__no">8 / 78</span>
     </div>
   </section>
 
@@ -296,7 +301,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">9 / 75</span>
+      <span class="slide__no">9 / 78</span>
     </div>
   </section>
 
@@ -328,7 +333,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">10 / 75</span>
+      <span class="slide__no">10 / 78</span>
     </div>
   </section>
 
@@ -373,7 +378,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">11 / 75</span>
+      <span class="slide__no">11 / 78</span>
     </div>
   </section>
 
@@ -398,7 +403,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">12 / 75</span>
+      <span class="slide__no">12 / 78</span>
     </div>
   </section>
 
@@ -413,7 +418,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">13 / 75</span>
+      <span class="slide__no">13 / 78</span>
     </div>
   </section>
 
@@ -440,7 +445,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">14 / 75</span>
+      <span class="slide__no">14 / 78</span>
     </div>
   </section>
 
@@ -462,7 +467,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">15 / 75</span>
+      <span class="slide__no">15 / 78</span>
     </div>
   </section>
 
@@ -482,7 +487,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">16 / 75</span>
+      <span class="slide__no">16 / 78</span>
     </div>
   </section>
 
@@ -505,7 +510,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">17 / 75</span>
+      <span class="slide__no">17 / 78</span>
     </div>
   </section>
 
@@ -550,7 +555,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">18 / 75</span>
+      <span class="slide__no">18 / 78</span>
     </div>
   </section>
 
@@ -601,7 +606,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">19 / 75</span>
+      <span class="slide__no">19 / 78</span>
     </div>
   </section>
 
@@ -622,7 +627,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">20 / 75</span>
+      <span class="slide__no">20 / 78</span>
     </div>
   </section>
 
@@ -656,7 +661,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">21 / 75</span>
+      <span class="slide__no">21 / 78</span>
     </div>
   </section>
 
@@ -682,7 +687,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">22 / 75</span>
+      <span class="slide__no">22 / 78</span>
     </div>
   </section>
 
@@ -711,7 +716,94 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">23 / 75</span>
+      <span class="slide__no">23 / 78</span>
+    </div>
+  </section>
+
+  <!-- AI VISION -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">AI capabilities · proposed solution</span>
+      <h2 class="slide-title">AI-powered commerce: from assistance to <span class="accent">autonomous operations</span></h2>
+      <p class="lead" style="font-size:1.5cqw; margin-bottom:1.2cqh; max-width:none;">The ACOMS vision: sales, marketing and operations move step by step from human-guided decisions to semi-autonomous and autonomous execution. The four areas run on the platform today; autonomy is built on top.</p>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card card--dark"><div class="ix">01</div><h3>Conversational control</h3><p>All APIs published as MCP; via the LLM Socket any operation runs in natural language, through the UI clickstream or the APIs. One assistant answers employee, marketplace and customer questions.</p></div>
+        <div class="card"><div class="ix">02</div><h3>Commerce intelligence</h3><p>Product, stock, price, content, campaign, traffic and behaviour data all queryable; with payment and technical logs, period-over-period commercial analysis and health checks.</p></div>
+        <div class="card"><div class="ix">03</div><h3>AI-powered product and operations</h3><p>Image-to-product PIM: classification, attributes, content and descriptions; automatic category tree and attribute mapping per channel; AI-assisted carrier selection and order sourcing.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Agentic-ready ecosystem</h3><p>Agentic commerce via Google UCP and OpenAI ACP; Claude Commerce Agent and Merchant Agent compatibility; business capabilities exposed to agents; first Turkish company in OnX.</p></div>
+      </div>
+      <p class="note"><b>The same AI layer</b> powers semantic search and conversational commerce for customers, and prompt-to-page design and publishing for content. The list and Shaya examples follow on the next two slides.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">24 / 78</span>
+    </div>
+  </section>
+
+  <!-- AI CAPABILITY LIST -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">AI capabilities · list</span>
+      <h2 class="slide-title">Twelve AI capabilities, <span class="accent">read for Shaya</span></h2>
+      <table class="xtable xtable--xdense xtable--xxdense">
+        <thead><tr><th>#</th><th>Capability</th><th>What it provides</th><th>For Shaya</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Conversational operations (MCP + LLM Socket)</td><td>All APIs published as MCP; operations run in natural language, via the UI clickstream or the APIs</td><td>Campaigns, price and stock fixes, order interventions without memorising screens</td><td><span class="st st--ok">On the platform</span></td></tr>
+          <tr><td>2</td><td>Ask anything</td><td>Answers employee, marketplace and customer questions from platform data</td><td>Team, marketplace operations and customer service work with one assistant</td><td><span class="st st--ok">On the platform</span></td></tr>
+          <tr><td>3</td><td>Commercial and technical analysis</td><td>Product, stock, price, content, campaign, traffic, behaviour, payment and technical logs; period comparison</td><td>Weekly trading-meeting data and site health check in a single question</td><td><span class="st st--ok">On the platform</span></td></tr>
+          <tr><td>4</td><td>AI PIM</td><td>Classification, attribute, content and description generation from images</td><td>Faster season launches and product onboarding across a 44K / 21K SKU catalogue</td><td><span class="st st--ok">On the platform</span></td></tr>
+          <tr><td>5</td><td>Channel mapping</td><td>Automatic category tree, attribute and attribute-value mapping per sales channel</td><td>No manual mapping when opening marketplaces and new channels</td><td><span class="st st--ok">On the platform</span></td></tr>
+          <tr><td>6</td><td>Semantic search</td><td>Meaning-based search and recommendations; synonyms and natural-language queries</td><td>Queries like "vanilla-scented gift set" return the right results</td><td><span class="st st--ok">On the platform</span></td></tr>
+          <tr><td>7</td><td>Conversational commerce</td><td>Chat and voice shopping, LLM-assisted customer assistant</td><td>Assisted shopping on web and app; lower customer-service load</td><td><span class="st st--ok">On the platform</span></td></tr>
+          <tr><td>8</td><td>Agentic commerce</td><td>Google UCP and OpenAI ACP compatibility; Claude Commerce Agent and Merchant Agent</td><td>Products are discoverable and purchasable inside AI agents' shopping flows</td><td><span class="st st--plan">Validate before contract</span></td></tr>
+          <tr><td>9</td><td>Agentic operations</td><td>Business capabilities exposed to agents; first Turkish company in OnX</td><td>Routine operational steps delegated to agents under approval</td><td><span class="st st--plan">Validate before contract</span></td></tr>
+          <tr><td>10</td><td>AI-assisted carrier selection</td><td>Per-order carrier recommendation (TMS)</td><td>Delivery-time and shipping-cost optimisation</td><td><span class="st st--plan">Optional module</span></td></tr>
+          <tr><td>11</td><td>AI-assisted sourcing</td><td>Recommendation of the stock location that fulfils each order</td><td>Store and warehouse sourcing decisions made on data</td><td><span class="st st--plan">Optional module</span></td></tr>
+          <tr><td>12</td><td>Prompt-to-page design</td><td>Prompt to page draft on the CMS component library; preview, approval, publishing</td><td>Campaign and landing pages go live without waiting in the design queue</td><td><span class="st st--plan">Via CMS · enabled in project</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">25 / 78</span>
+    </div>
+  </section>
+
+  <!-- AI USAGE EXAMPLES -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">AI capabilities · a day at Shaya</span>
+      <h2 class="slide-title">Ask, act, publish: <span class="accent">three examples</span></h2>
+      <div class="grid grid-3 compact-cards ai-cards" style="gap:1.3cqh 1.4cqw;">
+        <div class="card"><div class="ix">Trading team</div><h3>Analysis and action</h3>
+          <span class="ai-q">"Top 10 categories whose conversion dropped versus last week, and likely reasons?"<small>Analytics, payment and stock data compared across periods in one answer</small></span>
+          <span class="ai-q">"Draft a 20% basket campaign for the weekend."<small>Campaign draft via MCP; an authorised user approves, then it is published</small></span></div>
+        <div class="card"><div class="ix">Operations and IT</div><h3>Health check and reconciliation</h3>
+          <span class="ai-q">"Summarise yesterday's checkout errors between 14:00 and 16:00. Root cause?"<small>Technical logs, payment results and performance metrics read together</small></span>
+          <span class="ai-q">"List the price records that did not arrive from WinRetail today."<small>Control Tower data; missing records and retries on one screen</small></span></div>
+        <div class="card card--dark"><div class="ix">Customer</div><h3>Semantic search and assistant</h3>
+          <span class="ai-q">"A vanilla-scented body care set as a gift, on a budget."<small>Semantic search and conversational commerce; all the way to the basket in chat</small></span>
+          <span class="ai-q">An order placed through an AI agent<small>UCP / ACP compatible catalogue and checkout for agent shopping flows</small></span></div>
+      </div>
+      <div class="flow ai-flow">
+        <div class="node">Prompt<small>"New collection landing page"</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Draft<small>CMS component library</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node">Preview<small>web and app</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--red">Approval<small>role and workflow</small></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node node--ink">Publish<small>scheduled · audit log</small></div>
+      </div>
+      <p class="note"><b>You stay in control:</b> AI prepares the recommendation and the draft; every write passes through role permissions and the approval workflow and is written to the audit log. Data never leaves the tenant boundary.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">26 / 78</span>
     </div>
   </section>
 
@@ -724,14 +816,14 @@
         <div class="card"><div class="ix">Global</div><h3>Multi-country · currency · site</h3><p>New countries, currencies, price lists and warehouses open without changing platform; hreflang and language-based URL structure ready.</p></div>
         <div class="card"><div class="ix">Business models</div><h3>B2B · B2B2C · marketplace operator</h3><p>Corporate sales, multi-vendor dropship and seller onboarding on the same Commerce Dispatch Engine.</p></div>
         <div class="card card--dark"><div class="ix">ACOMS</div><h3>Semi-autonomous operations</h3><p>Technopark R&amp;D project: daily trade and fulfilment decisions move gradually from advisory to full delegation; rules → optimisation → statistics → ML.</p></div>
-        <div class="card"><div class="ix">Agentic</div><h3>MCP and conversational commerce</h3><p>Back-office functions as controlled MCP tools; LLM-assisted operations; voice and chat-based shopping channel.</p></div>
+        <div class="card"><div class="ix">Channels</div><h3>POS · chat · voice · AI agents</h3><p>Store POS, chat and voice shopping, and AI-agent orders via UCP/ACP are fed by the same Commerce Platform APIs; a new channel does not mean a new integration.</p></div>
       </div>
       <p class="note"><b>Same platform, same contract:</b> these capabilities are not separate projects; they open on the existing tenant through configuration and short integrations. OMS, TMS and WMS are added the same way when wanted.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">24 / 75</span>
+      <span class="slide__no">27 / 78</span>
     </div>
   </section>
 
@@ -746,7 +838,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">25 / 75</span>
+      <span class="slide__no">28 / 78</span>
     </div>
   </section>
 
@@ -790,7 +882,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">26 / 75</span>
+      <span class="slide__no">29 / 78</span>
     </div>
   </section>
 
@@ -818,7 +910,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">27 / 75</span>
+      <span class="slide__no">30 / 78</span>
     </div>
   </section>
 
@@ -856,7 +948,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">28 / 75</span>
+      <span class="slide__no">31 / 78</span>
     </div>
   </section>
 
@@ -879,7 +971,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">29 / 75</span>
+      <span class="slide__no">32 / 78</span>
     </div>
   </section>
 
@@ -907,7 +999,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">30 / 75</span>
+      <span class="slide__no">33 / 78</span>
     </div>
   </section>
 
@@ -933,7 +1025,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">31 / 75</span>
+      <span class="slide__no">34 / 78</span>
     </div>
   </section>
 
@@ -959,7 +1051,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">32 / 75</span>
+      <span class="slide__no">35 / 78</span>
     </div>
   </section>
 
@@ -990,7 +1082,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">33 / 75</span>
+      <span class="slide__no">36 / 78</span>
     </div>
   </section>
 
@@ -1005,11 +1097,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">34 / 75</span>
+      <span class="slide__no">37 / 78</span>
     </div>
   </section>
 
-<!-- 35 — TARGET ARCHITECTURE (TOPOLOGY) -->
+<!-- 38 — TARGET ARCHITECTURE (TOPOLOGY) -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Target architecture</span>
@@ -1055,11 +1147,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">35 / 75</span>
+      <span class="slide__no">38 / 78</span>
     </div>
   </section>
 
-<!-- 36 — DATA OWNERSHIP -->
+<!-- 39 — DATA OWNERSHIP -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Data ownership · RFP §5.1.2</span>
@@ -1093,11 +1185,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">36 / 75</span>
+      <span class="slide__no">39 / 78</span>
     </div>
   </section>
 
-<!-- 37 — ARCHITECTURE PRINCIPLES -->
+<!-- 40 — ARCHITECTURE PRINCIPLES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Architecture principles</span>
@@ -1116,11 +1208,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">37 / 75</span>
+      <span class="slide__no">40 / 78</span>
     </div>
   </section>
 
-<!-- 38 — TECHNOLOGY STACK -->
+<!-- 41 — TECHNOLOGY STACK -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Technology stack</span>
@@ -1138,11 +1230,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">38 / 75</span>
+      <span class="slide__no">41 / 78</span>
     </div>
   </section>
 
-<!-- 39 — PRODUCTION TOPOLOGY -->
+<!-- 42 — PRODUCTION TOPOLOGY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Production topology</span>
@@ -1192,11 +1284,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">39 / 75</span>
+      <span class="slide__no">42 / 78</span>
     </div>
   </section>
 
-<!-- 40 — SECURITY -->
+<!-- 43 — SECURITY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Security and compliance</span>
@@ -1213,11 +1305,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">40 / 75</span>
+      <span class="slide__no">43 / 78</span>
     </div>
   </section>
 
-<!-- 41 — SCALING & OBSERVABILITY -->
+<!-- 44 — SCALING & OBSERVABILITY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Scaling and observability</span>
@@ -1248,7 +1340,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">41 / 75</span>
+      <span class="slide__no">44 / 78</span>
     </div>
   </section>
 
@@ -1263,11 +1355,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">42 / 75</span>
+      <span class="slide__no">45 / 78</span>
     </div>
   </section>
 
-<!-- 43 — INTEGRATION PRINCIPLES -->
+<!-- 46 — INTEGRATION PRINCIPLES -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Integration model</span>
@@ -1294,7 +1386,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">43 / 75</span>
+      <span class="slide__no">46 / 78</span>
     </div>
   </section>
 
@@ -1318,11 +1410,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">44 / 75</span>
+      <span class="slide__no">47 / 78</span>
     </div>
   </section>
 
-<!-- 45 — INTEGRATION INVENTORY -->
+<!-- 48 — INTEGRATION INVENTORY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Shaya integration inventory · RFP §8.6</span>
@@ -1344,11 +1436,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">45 / 75</span>
+      <span class="slide__no">48 / 78</span>
     </div>
   </section>
 
-<!-- 46 — CONTROL TOWER -->
+<!-- 49 — CONTROL TOWER -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Control Tower</span>
@@ -1369,11 +1461,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">46 / 75</span>
+      <span class="slide__no">49 / 78</span>
     </div>
   </section>
 
-<!-- 47 — LOYALTY CHECKOUT EXAMPLE -->
+<!-- 50 — LOYALTY CHECKOUT EXAMPLE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Worked example · RFP §5.1.2.7</span>
@@ -1411,7 +1503,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">47 / 75</span>
+      <span class="slide__no">50 / 78</span>
     </div>
   </section>
 
@@ -1426,11 +1518,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">48 / 75</span>
+      <span class="slide__no">51 / 78</span>
     </div>
   </section>
 
-<!-- 49 — MIGRATION SCOPE -->
+<!-- 52 — MIGRATION SCOPE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Scope and ownership · RFP §9.1</span>
@@ -1451,11 +1543,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">49 / 75</span>
+      <span class="slide__no">52 / 78</span>
     </div>
   </section>
 
-<!-- 50 — THREE LOADING PATHS -->
+<!-- 53 — THREE LOADING PATHS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Loading paths</span>
@@ -1482,11 +1574,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">50 / 75</span>
+      <span class="slide__no">53 / 78</span>
     </div>
   </section>
 
-<!-- 51 — MIGRATION PROCESS -->
+<!-- 54 — MIGRATION PROCESS -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Method and acceptance · RFP §9.2–9.3</span>
@@ -1525,11 +1617,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">51 / 75</span>
+      <span class="slide__no">54 / 78</span>
     </div>
   </section>
 
-<!-- 52 — SEO MIGRATION -->
+<!-- 55 — SEO MIGRATION -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">SEO migration · RFP §10</span>
@@ -1546,7 +1638,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">52 / 75</span>
+      <span class="slide__no">55 / 78</span>
     </div>
   </section>
 
@@ -1561,11 +1653,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">53 / 75</span>
+      <span class="slide__no">56 / 78</span>
     </div>
   </section>
 
-<!-- 54 — PROJECT SCOPE -->
+<!-- 57 — PROJECT SCOPE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Project scope</span>
@@ -1582,11 +1674,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">54 / 75</span>
+      <span class="slide__no">57 / 78</span>
     </div>
   </section>
 
-<!-- 55 — METHODOLOGY & GOVERNANCE -->
+<!-- 58 — METHODOLOGY & GOVERNANCE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Methodology and governance · RFP §12, §19</span>
@@ -1618,11 +1710,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">55 / 75</span>
+      <span class="slide__no">58 / 78</span>
     </div>
   </section>
 
-<!-- 56 — TIMELINE -->
+<!-- 59 — TIMELINE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Timeline · compared with RFP §17</span>
@@ -1646,7 +1738,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">56 / 75</span>
+      <span class="slide__no">59 / 78</span>
     </div>
   </section>
 
@@ -1675,7 +1767,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">57 / 75</span>
+      <span class="slide__no">60 / 78</span>
     </div>
   </section>
 
@@ -1719,11 +1811,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">58 / 75</span>
+      <span class="slide__no">61 / 78</span>
     </div>
   </section>
 
-<!-- 59 — TEAM & RESOURCE PLAN -->
+<!-- 62 — TEAM & RESOURCE PLAN -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Team and resource plan · RFP §20</span>
@@ -1744,11 +1836,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">59 / 75</span>
+      <span class="slide__no">62 / 78</span>
     </div>
   </section>
 
-<!-- 60 — TESTING & CUTOVER -->
+<!-- 63 — TESTING & CUTOVER -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Testing and cutover · RFP §13</span>
@@ -1779,7 +1871,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">60 / 75</span>
+      <span class="slide__no">63 / 78</span>
     </div>
   </section>
 
@@ -1806,7 +1898,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">61 / 75</span>
+      <span class="slide__no">64 / 78</span>
     </div>
   </section>
 
@@ -1831,7 +1923,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">62 / 75</span>
+      <span class="slide__no">65 / 78</span>
     </div>
   </section>
 
@@ -1846,11 +1938,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">63 / 75</span>
+      <span class="slide__no">66 / 78</span>
     </div>
   </section>
 
-<!-- 64 — PLATFORM KPIs -->
+<!-- 67 — PLATFORM KPIs -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Performance and robustness KPIs</span>
@@ -1877,11 +1969,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">64 / 75</span>
+      <span class="slide__no">67 / 78</span>
     </div>
   </section>
 
-<!-- 65 — INTEGRATION SPEED & LOAD TEST -->
+<!-- 68 — INTEGRATION SPEED & LOAD TEST -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Integration speed and load-test evidence</span>
@@ -1916,11 +2008,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">65 / 75</span>
+      <span class="slide__no">68 / 78</span>
     </div>
   </section>
 
-<!-- 66 — SLA TABLE -->
+<!-- 69 — SLA TABLE -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">SLA table · RFP §14</span>
@@ -1943,7 +2035,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">66 / 75</span>
+      <span class="slide__no">69 / 78</span>
     </div>
   </section>
 
@@ -1984,11 +2076,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">67 / 75</span>
+      <span class="slide__no">70 / 78</span>
     </div>
   </section>
 
-<!-- 68 — CHANGE MANAGEMENT -->
+<!-- 71 — CHANGE MANAGEMENT -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Change management procedure</span>
@@ -2018,11 +2110,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">68 / 75</span>
+      <span class="slide__no">71 / 78</span>
     </div>
   </section>
 
-<!-- 69 — DISASTER RECOVERY -->
+<!-- 72 — DISASTER RECOVERY -->
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Disaster recovery · RFP §14 RPO/RTO</span>
@@ -2056,7 +2148,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">69 / 75</span>
+      <span class="slide__no">72 / 78</span>
     </div>
   </section>
 
@@ -2071,7 +2163,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">70 / 75</span>
+      <span class="slide__no">73 / 78</span>
     </div>
   </section>
 
@@ -2116,7 +2208,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">71 / 75</span>
+      <span class="slide__no">74 / 78</span>
     </div>
   </section>
 
@@ -2144,7 +2236,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">72 / 75</span>
+      <span class="slide__no">75 / 78</span>
     </div>
   </section>
 
@@ -2165,7 +2257,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">73 / 75</span>
+      <span class="slide__no">76 / 78</span>
     </div>
   </section>
 
@@ -2195,11 +2287,11 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">74 / 75</span>
+      <span class="slide__no">77 / 78</span>
     </div>
   </section>
 
-<!-- 75 — CLOSING -->
+<!-- 78 — CLOSING -->
   <section class="slide slide--ink slide--cover">
     <div class="slide__inner">
       <img class="cover-logo" src="../../assets/commercelab-logo-white.svg" alt="CommerceLab" />
@@ -2215,7 +2307,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">75 / 75</span>
+      <span class="slide__no">78 / 78</span>
     </div>
   </section>
 
