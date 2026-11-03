@@ -237,7 +237,7 @@
           <div>
             <div class="hdr-sub">Page load · LCP p75, real users</div>
             <table class="xtable xtable--xdense">
-              <thead><tr><th>Page</th><th>Best site · p75</th><th>RFP target</th></tr></thead>
+              <thead><tr><th>Page</th><th>Measured · p75</th><th>RFP target</th></tr></thead>
               <tbody>
                 <tr><td>Home page</td><td><b>0.9 s</b></td><td>&lt; 2 s</td></tr>
                 <tr><td>PLP · product listing</td><td><b>0.8 s</b></td><td>—</td></tr>
@@ -246,6 +246,7 @@
                 <tr><td>Checkout</td><td><b>0.7 s</b></td><td>&lt; 3 s</td></tr>
               </tbody>
             </table>
+            <p class="ann" style="margin-top:0.8cqh;"><b>Where the speed comes from:</b> API-level caching · SSR and static site rendering · stateless structure.</p>
           </div>
           <div>
             <div class="hdr-sub">UX success · shopping funnel</div>
@@ -257,7 +258,7 @@
             </div>
           </div>
         </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, comparison of the periods before and after replatforming. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026, best-site value; oversell across all channels. Page load: New Relic Browser, real-user LCP p75, best-site value, 27 October–3 November 2026.</p>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, comparison of the periods before and after replatforming. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026; oversell across all channels. Page load: New Relic Browser, real-user LCP p75, live sites, 27 October–3 November 2026.</p>
       </div>
     </div>
     <div class="slide__footer">
@@ -842,7 +843,7 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">AI capabilities · list</span>
-      <h2 class="slide-title">Twelve AI capabilities, <span class="accent">read for Shaya</span></h2>
+      <h2 class="slide-title">Thirteen AI capabilities, <span class="accent">read for Shaya</span></h2>
       <table class="xtable xtable--xdense xtable--xxdense">
         <thead><tr><th>#</th><th>Capability</th><th>What it provides</th><th>For Shaya</th><th>Status</th></tr></thead>
         <tbody>
@@ -858,6 +859,7 @@
           <tr><td>10</td><td>AI-assisted carrier selection</td><td>Per-order carrier recommendation (TMS)</td><td>Delivery-time and shipping-cost optimisation</td><td><span class="st st--plan">Optional module</span></td></tr>
           <tr><td>11</td><td>AI-assisted sourcing</td><td>Recommendation of the stock location that fulfils each order</td><td>Store and warehouse sourcing decisions made on data</td><td><span class="st st--plan">Optional module</span></td></tr>
           <tr><td>12</td><td>Prompt-to-page design</td><td>Prompt to page draft on the CMS component library; preview, approval, publishing</td><td>Campaign and landing pages go live without waiting in the design queue</td><td><span class="st st--plan">Via CMS · enabled in project</span></td></tr>
+          <tr><td>13</td><td>Intelligent product routing and reservation</td><td>AI routes products and stock across marketplaces and sales channels; channel-level stock reservation</td><td>Which product sells on which channel, and the stock reserved for it, decided from data</td><td><span class="st st--plan">Future · roadmap</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -2219,8 +2221,8 @@
         <table class="xtable xtable--xdense">
           <thead><tr><th>KPI</th><th>Measured value</th><th>Source</th><th>Commitment to Shaya</th></tr></thead>
           <tbody>
-            <tr><td>Page speed · home, PDP</td><td>Home <b>0.9 s</b> · PDP <b>0.5 s</b>; LCP p75, real users, best site</td><td>New Relic Browser · CrUX</td><td>&lt; 2 s; device, network and measurement method agreed in discovery</td></tr>
-            <tr><td>Page speed · cart, checkout</td><td>Cart <b>0.9 s</b> · checkout <b>0.7 s</b>; LCP p75, real users, best site</td><td>New Relic Browser</td><td>&lt; 3 s</td></tr>
+            <tr><td>Page speed · home, PDP</td><td>Home <b>0.9 s</b> · PDP <b>0.5 s</b>; LCP p75, real users</td><td>New Relic Browser · CrUX</td><td>&lt; 2 s; device, network and measurement method agreed in discovery</td></tr>
+            <tr><td>Page speed · cart, checkout</td><td>Cart <b>0.9 s</b> · checkout <b>0.7 s</b>; LCP p75, real users</td><td>New Relic Browser</td><td>&lt; 3 s</td></tr>
             <tr><td>API speed</td><td>GraphQL p95 <b>250 ms</b>, p99 490 ms (campaign-peak profile); Apdex 0.98 (T 0.5 s) · 0.99 (T 1 s)</td><td>k6 + New Relic, October–November 2026</td><td>p95 &lt; 500 ms · Apdex ≥ 0.99; reported monthly</td></tr>
             <tr><td>Payment completion · payment steps without a platform error</td><td><b>99.998%</b>; 1 platform error in 59K calls</td><td>New Relic PaymentGateway, 27 October–2 November 2026</td><td>≥ 99.999%</td></tr>
             <tr><td>Robustness · functional uptime</td><td><b>99.99%+</b>; pod restart in seconds, node replacement in minutes</td><td>Uptime Kuma · UptimeRobot</td><td>≥ 99.9% monthly, excluding planned maintenance</td></tr>
