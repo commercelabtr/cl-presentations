@@ -235,7 +235,7 @@
           <div>
             <div class="hdr-sub">Sayfa yüklenme · LCP p75, gerçek kullanıcı</div>
             <table class="xtable xtable--xdense">
-              <thead><tr><th>Sayfa</th><th>En iyi site · p75</th><th>RFP hedefi</th></tr></thead>
+              <thead><tr><th>Sayfa</th><th>Ölçülen · p75</th><th>RFP hedefi</th></tr></thead>
               <tbody>
                 <tr><td>Ana sayfa</td><td><b>0,9 sn</b></td><td>&lt; 2 sn</td></tr>
                 <tr><td>PLP · ürün listeleme</td><td><b>0,8 sn</b></td><td>—</td></tr>
@@ -244,6 +244,7 @@
                 <tr><td>Checkout</td><td><b>0,7 sn</b></td><td>&lt; 3 sn</td></tr>
               </tbody>
             </table>
+            <p class="ann" style="margin-top:0.8cqh;"><b>Hızın kaynağı:</b> API seviyesinde önbellekleme · SSR ve statik site rendering · stateless yapı.</p>
           </div>
           <div>
             <div class="hdr-sub">UX başarısı · alışveriş hunisi</div>
@@ -255,7 +256,7 @@
             </div>
           </div>
         </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, replatform öncesi ve sonrası dönem karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026, en iyi site değeri; yok satma tüm kanallarda. Sayfa yüklenme: New Relic Browser, gerçek kullanıcı LCP p75, en iyi site değeri, 27 Ekim–3 Kasım 2026.</p>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, replatform öncesi ve sonrası dönem karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026; yok satma tüm kanallarda. Sayfa yüklenme: New Relic Browser, gerçek kullanıcı LCP p75, canlı siteler, 27 Ekim–3 Kasım 2026.</p>
       </div>
     </div>
     <div class="slide__footer">
@@ -840,15 +841,15 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">AI yetkinlikleri · liste</span>
-      <h2 class="slide-title">On iki AI yetkinliği ve <span class="accent">Shaya için karşılığı</span></h2>
+      <h2 class="slide-title">On üç AI yetkinliği ve <span class="accent">Shaya için karşılığı</span></h2>
       <table class="xtable xtable--xdense">
         <thead><tr><th>#</th><th>Yetkinlik</th><th>Ne sağlar</th><th>Shaya için</th><th>Durum</th></tr></thead>
         <tbody>
           <tr><td>1</td><td>Konuşarak işlem (MCP + LLM Socket)</td><td>Tüm API'ler MCP olarak yayınlı; işlem doğal dille, ekran tıklama akışıyla veya API ile yapılır</td><td>Kampanya açma, fiyat ve stok düzeltme, sipariş müdahalesi ekran ezberi gerektirmez</td><td><span class="st st--ok">Platformda</span></td></tr>
           <tr><td>2</td><td>Her şeyi sor</td><td>Çalışan, pazaryeri ve müşteri sorularına platform verisi üzerinden yanıt</td><td>Ekip, pazaryeri operasyonu ve müşteri hizmetleri tek asistanla çalışır</td><td><span class="st st--ok">Platformda</span></td></tr>
           <tr><td>3</td><td>Ticari ve teknik analiz</td><td>Ürün, stok, fiyat, içerik, kampanya, ziyaret, davranış, ödeme ve teknik loglar; dönem karşılaştırmalı</td><td>Haftalık ticaret toplantısı verisi ve site sağlık kontrolü tek soruda</td><td><span class="st st--ok">Platformda</span></td></tr>
-          <tr><td>4</td><td>AI PIM</td><td>Fotoğraftan sınıflandırma, nitelik, içerik ve açıklama üretimi</td><td>44K / 21K SKU'luk katalogda sezon açılışı ve ürün onboarding'i hızlanır</td><td><span class="st st--ok">Platformda</span></td></tr>
-          <tr><td>5</td><td>Kanal eşlemesi</td><td>Satış kanalı başına otomatik kategori ağacı, nitelik ve nitelik değeri eşlemesi</td><td>Pazaryeri ve yeni kanal açılışında manuel eşleme kalkar</td><td><span class="st st--ok">Platformda</span></td></tr>
+          <tr><td>4</td><td>AI PIM</td><td>Fotoğraftan sınıflandırma, nitelik, içerik ve açıklama üretimi</td><td>44K / 21K SKU'luk katalogda sezon açılışı hızlanır</td><td><span class="st st--ok">Platformda</span></td></tr>
+          <tr><td>5</td><td>Kanal eşlemesi</td><td>Kanal başına otomatik kategori, nitelik ve değer eşlemesi</td><td>Pazaryeri ve yeni kanal açılışında manuel eşleme kalkar</td><td><span class="st st--ok">Platformda</span></td></tr>
           <tr><td>6</td><td>Semantik arama</td><td>Anlam tabanlı arama ve öneri; eş anlamlı ve doğal dil sorguları</td><td>"hediyelik vanilya kokulu set" gibi aramalar doğru sonuç verir</td><td><span class="st st--ok">Platformda</span></td></tr>
           <tr><td>7</td><td>Conversational commerce</td><td>Sohbet ve sesle alışveriş, LLM destekli müşteri asistanı</td><td>Web ve app'te asistanlı alışveriş; müşteri hizmetleri yükü azalır</td><td><span class="st st--ok">Platformda</span></td></tr>
           <tr><td>8</td><td>Agentic commerce</td><td>Google UCP ve OpenAI ACP uyumu; Claude Commerce Agent ve Merchant Agent</td><td>Ürünler AI agent'ların alışveriş akışlarında bulunur ve satılır</td><td><span class="st st--plan">Sözleşme öncesi teyit</span></td></tr>
@@ -856,6 +857,7 @@
           <tr><td>10</td><td>AI destekli kargo seçimi</td><td>Sipariş bazında kargo firması önerisi (TMS)</td><td>Teslimat süresi ve kargo maliyeti optimizasyonu</td><td><span class="st st--plan">İsteğe bağlı modül</span></td></tr>
           <tr><td>11</td><td>AI destekli sourcing</td><td>Siparişin hangi stok noktasından karşılanacağı önerisi</td><td>Mağaza ve depo sourcing kararı veriye dayalı verilir</td><td><span class="st st--plan">İsteğe bağlı modül</span></td></tr>
           <tr><td>12</td><td>Prompt ile sayfa tasarımı</td><td>CMS bileşen kütüphanesi üzerinde prompt'tan sayfa taslağı, önizleme, onay ve yayın</td><td>Kampanya ve landing sayfaları tasarım kuyruğu beklemeden yayına çıkar</td><td><span class="st st--plan">CMS ile · projede açılır</span></td></tr>
+          <tr><td>13</td><td>Akıllı ürün yönlendirme</td><td>Kanallar arasında AI ile ürün yönlendirme ve rezervasyon</td><td>Ürün–kanal eşleşmesi ve kanal stoğu veriye dayalı</td><td><span class="st st--plan">Gelecek · yol haritası</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -2223,8 +2225,8 @@
         <table class="xtable xtable--xdense">
           <thead><tr><th>KPI</th><th>Ölçülen değer</th><th>Kaynak</th><th>Shaya taahhüdü</th></tr></thead>
           <tbody>
-            <tr><td>Page speed · ana sayfa, PDP</td><td>Ana sayfa <b>0,9 sn</b> · PDP <b>0,5 sn</b>; LCP p75, gerçek kullanıcı, en iyi site</td><td>New Relic Browser · CrUX</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
-            <tr><td>Page speed · sepet, checkout</td><td>Sepet <b>0,9 sn</b> · checkout <b>0,7 sn</b>; LCP p75, gerçek kullanıcı, en iyi site</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
+            <tr><td>Page speed · ana sayfa, PDP</td><td>Ana sayfa <b>0,9 sn</b> · PDP <b>0,5 sn</b>; LCP p75, gerçek kullanıcı</td><td>New Relic Browser · CrUX</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
+            <tr><td>Page speed · sepet, checkout</td><td>Sepet <b>0,9 sn</b> · checkout <b>0,7 sn</b>; LCP p75, gerçek kullanıcı</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
             <tr><td>API speed</td><td>GraphQL p95 <b>250 ms</b>, p99 490 ms (kampanya zirvesi profili); Apdex 0,98 (T 0,5 sn) · 0,99 (T 1 sn)</td><td>k6 + New Relic, Ekim–Kasım 2026</td><td>p95 &lt; 500 ms · Apdex ≥ 0,99; aylık raporlanır</td></tr>
             <tr><td>Payment completion · platform hatasız ödeme adımı</td><td><b>%99,998</b>; 59K çağrıda 1 platform hatası</td><td>New Relic PaymentGateway, 27 Ekim–2 Kasım 2026</td><td>≥ %99,999</td></tr>
             <tr><td>Robustness · fonksiyonel uptime</td><td><b>%99,99+</b>; pod yeniden başlatma saniyeler, düğüm değişimi dakikalar</td><td>Uptime Kuma · UptimeRobot</td><td>≥ %99,9 aylık, planlı bakım hariç</td></tr>
