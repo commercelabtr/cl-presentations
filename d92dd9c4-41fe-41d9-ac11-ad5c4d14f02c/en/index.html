@@ -2281,20 +2281,20 @@
   <!-- BUSINESS KPIs -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Business KPIs · RFP §11.1</span>
-      <h2 class="slide-title">Commercial outcome KPIs: definition, priority and <span class="accent">commitment</span></h2>
-      <table class="xtable xtable--dense">
-        <thead><tr><th>KPI</th><th>Calculation / measurement</th><th>Priority</th><th>Shaya commitment</th></tr></thead>
+      <span class="kicker">Business KPIs · RFP §11.1 · live measurement, October 2026</span>
+      <h2 class="slide-title">Commercial outcome KPIs: <span class="accent">measured</span> value, priority, commitment</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>KPI</th><th>Calculation / measurement</th><th>Live · Skechers · range of 7 sites</th><th>Priority</th><th>Shaya commitment</th></tr></thead>
         <tbody>
-          <tr><td>Conversion Rate</td><td>Orders / sessions</td><td>Critical</td><td>Daily dashboard; the pre-migration baseline is preserved, the improvement target is set with the brand team</td></tr>
-          <tr><td>Search Success Rate</td><td>Searches ending in a successful product find / total searches</td><td>Critical</td><td>Zero-result searches reported weekly; fixed with synonyms and merchandising rules</td></tr>
-          <tr><td>Add-to-Cart Rate</td><td>Sessions with an add-to-cart / total sessions</td><td>High</td><td>PDP and listing changes measured with A/B tests</td></tr>
-          <tr><td>Checkout Completion Rate</td><td>Completed checkouts / started checkouts</td><td>Critical</td><td>Step-level funnel; drop-off per step tracked with New Relic Browser and GA4</td></tr>
-          <tr><td>Payment Success Rate</td><td>Successful payments / eligible payment attempts</td><td>Critical</td><td>Tracked per PSP, card type and instalment; bank declines separated from platform errors</td></tr>
-          <tr><td><b>Payment Completion Rate</b></td><td>Payment steps completed without a platform-caused interruption / transactions approved by the PSP</td><td>Critical</td><td><b>99.999%</b> · excluding bank and PSP declines; rule-based fallback to a backup POS on PSP outage</td></tr>
+          <tr><td>Conversion Rate</td><td>Paid orders (OMS) / sessions (GA4)</td><td><b>2.2%</b> · 0.4–2.2%</td><td>Critical</td><td>Daily dashboard; the pre-migration baseline is preserved, improvement target set with the brand team</td></tr>
+          <tr><td>Search Success Rate</td><td>Users opening a product page after a search / users who searched (GA4 funnel)</td><td><b>78%</b> · 61–80%</td><td>Critical</td><td>Zero-result searches weekly; fixed with synonyms and merchandising rules</td></tr>
+          <tr><td>Add-to-Cart Rate</td><td>Sessions with an add-to-cart / total sessions (GA4)</td><td><b>7.9%</b> · 2.5–7.9%</td><td>High</td><td>PDP and listing changes measured with A/B tests</td></tr>
+          <tr><td>Checkout Completion Rate</td><td>Purchases / checkouts started (GA4 funnel)</td><td><b>62%</b> · 54–72%</td><td>Critical</td><td>Step-level funnel; drop-off tracked with New Relic Browser and GA4</td></tr>
+          <tr><td>Payment Success Rate</td><td>Customers who eventually paid / unique customers who attempted payment (bank declines included, OMS)</td><td><b>96.3%</b> · 92–97%</td><td>Critical</td><td>Tracked per PSP and card type; bank declines separated from platform errors</td></tr>
+          <tr><td><b>Payment Completion Rate</b></td><td>Payment-step calls completed without a platform error (New Relic, PGW + API)</td><td><b>99.998%</b> · 1 error in 59K calls</td><td>Critical</td><td><b>99.999%</b> · excluding bank and PSP declines; rule-based fallback POS on PSP outage</td></tr>
         </tbody>
       </table>
-      <p class="ann"><b>Measurement:</b> console dashboards and GA4; 4-week pre-migration baselines are taken from Shaya in discovery and compared daily for the first 30 days after go-live (RFP §11.1, §11.3).</p>
+      <p class="ann"><b>Sources:</b> GA4 (Skechers, Hunter, Klaud, Brooks, Sochic; 6 October–2 November 2026), OMS payment and order data for 7 sites (Skechers, Sochic, High5, Klaud, Hunter, GraceBrands, Brooks; same period), New Relic PaymentGateway and Hcapi (27 October–2 November). Conversion uses OMS orders; the GA4 purchase event sees ~60% of real orders because of cookie consent. 3.7% of customers who attempt payment are lost: 1.2% customer-caused (limit, card), 2.0% 3-D Secure / no-response abandonment, 0.15% system. The pre-migration baseline is taken from Shaya in discovery and compared daily for the first 30 days after go-live.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>

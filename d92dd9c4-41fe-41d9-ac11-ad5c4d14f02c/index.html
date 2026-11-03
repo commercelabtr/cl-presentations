@@ -2285,20 +2285,20 @@
   <!-- İŞ KPI'LARI -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">İş KPI'ları · RFP §11.1</span>
-      <h2 class="slide-title">Ticari sonuç KPI'ları: tanım, öncelik ve <span class="accent">taahhüt</span></h2>
-      <table class="xtable xtable--dense">
-        <thead><tr><th>KPI</th><th>Hesaplama / ölçüm</th><th>Öncelik</th><th>Shaya taahhüdü</th></tr></thead>
+      <span class="kicker">İş KPI'ları · RFP §11.1 · canlı ölçüm Ekim 2026</span>
+      <h2 class="slide-title">Ticari sonuç KPI'ları: <span class="accent">ölçülen</span> değer, öncelik, taahhüt</h2>
+      <table class="xtable xtable--xdense">
+        <thead><tr><th>KPI</th><th>Hesaplama / ölçüm</th><th>Canlı ölçüm · Skechers · 7 site aralığı</th><th>Öncelik</th><th>Shaya taahhüdü</th></tr></thead>
         <tbody>
-          <tr><td>Conversion Rate</td><td>Sipariş / oturum</td><td>Kritik</td><td>Günlük panoda; migrasyon sonrası baz korunur, iyileştirme hedefi marka ekibiyle belirlenir</td></tr>
-          <tr><td>Search Success Rate</td><td>Başarılı ürün bulma ile sonuçlanan aramalar / toplam aramalar</td><td>Kritik</td><td>Sıfır sonuç veren aramalar haftalık raporlanır; eş anlamlı ve merchandising kurallarıyla düzeltilir</td></tr>
-          <tr><td>Add-to-Cart Rate</td><td>Sepete ürün eklenen oturum / toplam oturum</td><td>Yüksek</td><td>PDP ve listeleme değişiklikleri A/B testiyle ölçülür</td></tr>
-          <tr><td>Checkout Completion Rate</td><td>Tamamlanan checkout / başlayan checkout</td><td>Kritik</td><td>Adım bazlı huni; New Relic Browser ve GA4 ile her adımın terk oranı izlenir</td></tr>
-          <tr><td>Payment Success Rate</td><td>Başarılı ödeme / uygun ödeme denemesi</td><td>Kritik</td><td>PSP, kart tipi ve taksit bazında izlenir; banka redleri platform hatasından ayrıştırılır</td></tr>
-          <tr><td><b>Payment Completion Rate</b></td><td>Platform kaynaklı kesinti olmadan tamamlanan ödeme adımı / PSP'den onay dönen işlem</td><td>Kritik</td><td><b>%99,999</b> · banka ve PSP redleri hariç; PSP arızasında kural tabanlı yedek POS'a yönlendirme</td></tr>
+          <tr><td>Conversion Rate</td><td>Ödenmiş sipariş (OMS) / oturum (GA4)</td><td><b>%2,2</b> · %0,4–2,2</td><td>Kritik</td><td>Günlük panoda; migrasyon sonrası baz korunur, iyileştirme hedefi marka ekibiyle</td></tr>
+          <tr><td>Search Success Rate</td><td>Arama sonrası ürün sayfası açan kullanıcı / arama yapan kullanıcı (GA4 huni)</td><td><b>%78</b> · %61–80</td><td>Kritik</td><td>Sıfır sonuç veren aramalar haftalık; eş anlamlı ve merchandising kurallarıyla düzeltilir</td></tr>
+          <tr><td>Add-to-Cart Rate</td><td>Sepete ürün eklenen oturum / toplam oturum (GA4)</td><td><b>%7,9</b> · %2,5–7,9</td><td>Yüksek</td><td>PDP ve listeleme değişiklikleri A/B testiyle ölçülür</td></tr>
+          <tr><td>Checkout Completion Rate</td><td>Satın alma / checkout başlatan (GA4 huni)</td><td><b>%62</b> · %54–72</td><td>Kritik</td><td>Adım bazlı huni; New Relic Browser ve GA4 ile terk oranı izlenir</td></tr>
+          <tr><td>Payment Success Rate</td><td>Sonunda ödeyen müşteri / ödeme deneyen tekil müşteri (banka redleri dahil, OMS)</td><td><b>%96,3</b> · %92–97</td><td>Kritik</td><td>PSP ve kart bazında izlenir; banka redleri platform hatasından ayrıştırılır</td></tr>
+          <tr><td><b>Payment Completion Rate</b></td><td>Platform hatası olmadan tamamlanan ödeme adımı çağrısı (New Relic, PGW + API)</td><td><b>%99,998</b> · 59K çağrıda 1 hata</td><td>Kritik</td><td><b>%99,999</b> · banka ve PSP redleri hariç; PSP arızasında kural tabanlı yedek POS</td></tr>
         </tbody>
       </table>
-      <p class="ann"><b>Ölçüm:</b> konsol panoları ve GA4; migrasyon öncesi 4 haftalık baz değerler keşifte Shaya'dan alınır, go-live sonrası ilk 30 gün günlük karşılaştırılır (RFP §11.1, §11.3).</p>
+      <p class="ann"><b>Kaynak:</b> GA4 (Skechers, Hunter, Klaud, Brooks, Sochic; 6 Ekim–2 Kasım 2026), OMS ödeme ve sipariş verisi 7 site (Skechers, Sochic, High5, Klaud, Hunter, GraceBrands, Brooks; aynı dönem), New Relic PaymentGateway ve Hcapi (27 Ekim–2 Kasım). Dönüşüm OMS siparişiyle hesaplanır; GA4 satın alma olayı çerez onayı nedeniyle gerçek siparişin ~%60'ını görür. Ödeme deneyen müşterilerin %3,7'si kaybedilir: %1,2 müşteri kaynaklı (limit, kart), %2,0 3D/yanıtsız terk, %0,15 sistem. Migrasyon öncesi baz keşifte Shaya'dan alınır, go-live sonrası ilk 30 gün günlük karşılaştırılır.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
