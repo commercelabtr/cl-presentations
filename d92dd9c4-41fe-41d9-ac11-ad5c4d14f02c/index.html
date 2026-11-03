@@ -235,13 +235,13 @@
           <div>
             <div class="hdr-sub">Sayfa yüklenme · LCP p75, gerçek kullanıcı</div>
             <table class="xtable xtable--xdense">
-              <thead><tr><th>Sayfa</th><th>Tüm siteler · p75</th><th>En iyi site</th><th>RFP hedefi</th></tr></thead>
+              <thead><tr><th>Sayfa</th><th>En iyi site · p75</th><th>RFP hedefi</th></tr></thead>
               <tbody>
-                <tr><td>Ana sayfa</td><td><b>1,3 sn</b></td><td>0,9 sn</td><td>&lt; 2 sn</td></tr>
-                <tr><td>PLP · ürün listeleme</td><td><b>2,4 sn</b></td><td>0,8 sn</td><td>—</td></tr>
-                <tr><td>PDP · ürün detay</td><td><b>0,7 sn</b></td><td>0,5 sn</td><td>&lt; 2 sn</td></tr>
-                <tr><td>Sepet</td><td><b>1,3 sn</b></td><td>0,9 sn</td><td>—</td></tr>
-                <tr><td>Checkout</td><td><b>0,9 sn</b></td><td>0,7 sn</td><td>&lt; 3 sn</td></tr>
+                <tr><td>Ana sayfa</td><td><b>0,9 sn</b></td><td>&lt; 2 sn</td></tr>
+                <tr><td>PLP · ürün listeleme</td><td><b>0,8 sn</b></td><td>—</td></tr>
+                <tr><td>PDP · ürün detay</td><td><b>0,5 sn</b></td><td>&lt; 2 sn</td></tr>
+                <tr><td>Sepet</td><td><b>0,9 sn</b></td><td>—</td></tr>
+                <tr><td>Checkout</td><td><b>0,7 sn</b></td><td>&lt; 3 sn</td></tr>
               </tbody>
             </table>
           </div>
@@ -255,7 +255,7 @@
             </div>
           </div>
         </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, replatform öncesi ve sonrası dönem karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026, en iyi site değeri; yok satma tüm kanallarda. Sayfa yüklenme: New Relic Browser, gerçek kullanıcı LCP p75, canlı siteler, 27 Ekim–3 Kasım 2026.</p>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, replatform öncesi ve sonrası dönem karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026, en iyi site değeri; yok satma tüm kanallarda. Sayfa yüklenme: New Relic Browser, gerçek kullanıcı LCP p75, en iyi site değeri, 27 Ekim–3 Kasım 2026.</p>
       </div>
     </div>
     <div class="slide__footer">
@@ -2223,8 +2223,8 @@
         <table class="xtable xtable--xdense">
           <thead><tr><th>KPI</th><th>Ölçülen değer</th><th>Kaynak</th><th>Shaya taahhüdü</th></tr></thead>
           <tbody>
-            <tr><td>Page speed · ana sayfa, PDP</td><td>Ana sayfa <b>1,3 sn</b> · PDP <b>0,7 sn</b>; LCP p75, gerçek kullanıcı, tüm canlı siteler</td><td>New Relic Browser · CrUX</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
-            <tr><td>Page speed · sepet, checkout</td><td>Sepet <b>1,3 sn</b> · checkout <b>0,9 sn</b>; LCP p75, gerçek kullanıcı</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
+            <tr><td>Page speed · ana sayfa, PDP</td><td>Ana sayfa <b>0,9 sn</b> · PDP <b>0,5 sn</b>; LCP p75, gerçek kullanıcı, en iyi site</td><td>New Relic Browser · CrUX</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
+            <tr><td>Page speed · sepet, checkout</td><td>Sepet <b>0,9 sn</b> · checkout <b>0,7 sn</b>; LCP p75, gerçek kullanıcı, en iyi site</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
             <tr><td>API speed</td><td>GraphQL p95 <b>250 ms</b>, p99 490 ms (kampanya zirvesi profili); Apdex 0,98 (T 0,5 sn) · 0,99 (T 1 sn)</td><td>k6 + New Relic, Ekim–Kasım 2026</td><td>p95 &lt; 500 ms · Apdex ≥ 0,99; aylık raporlanır</td></tr>
             <tr><td>Payment completion · platform hatasız ödeme adımı</td><td><b>%99,998</b>; 59K çağrıda 1 platform hatası</td><td>New Relic PaymentGateway, 27 Ekim–2 Kasım 2026</td><td>≥ %99,999</td></tr>
             <tr><td>Robustness · fonksiyonel uptime</td><td><b>%99,99+</b>; pod yeniden başlatma saniyeler, düğüm değişimi dakikalar</td><td>Uptime Kuma · UptimeRobot</td><td>≥ %99,9 aylık, planlı bakım hariç</td></tr>
