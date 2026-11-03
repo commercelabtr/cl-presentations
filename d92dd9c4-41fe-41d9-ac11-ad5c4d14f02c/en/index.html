@@ -237,13 +237,13 @@
           <div>
             <div class="hdr-sub">Page load · LCP p75, real users</div>
             <table class="xtable xtable--xdense">
-              <thead><tr><th>Page</th><th>All sites · p75</th><th>Best site</th><th>RFP target</th></tr></thead>
+              <thead><tr><th>Page</th><th>Best site · p75</th><th>RFP target</th></tr></thead>
               <tbody>
-                <tr><td>Home page</td><td><b>1.3 s</b></td><td>0.9 s</td><td>&lt; 2 s</td></tr>
-                <tr><td>PLP · product listing</td><td><b>2.4 s</b></td><td>0.8 s</td><td>—</td></tr>
-                <tr><td>PDP · product detail</td><td><b>0.7 s</b></td><td>0.5 s</td><td>&lt; 2 s</td></tr>
-                <tr><td>Cart</td><td><b>1.3 s</b></td><td>0.9 s</td><td>—</td></tr>
-                <tr><td>Checkout</td><td><b>0.9 s</b></td><td>0.7 s</td><td>&lt; 3 s</td></tr>
+                <tr><td>Home page</td><td><b>0.9 s</b></td><td>&lt; 2 s</td></tr>
+                <tr><td>PLP · product listing</td><td><b>0.8 s</b></td><td>—</td></tr>
+                <tr><td>PDP · product detail</td><td><b>0.5 s</b></td><td>&lt; 2 s</td></tr>
+                <tr><td>Cart</td><td><b>0.9 s</b></td><td>—</td></tr>
+                <tr><td>Checkout</td><td><b>0.7 s</b></td><td>&lt; 3 s</td></tr>
               </tbody>
             </table>
           </div>
@@ -252,12 +252,12 @@
             <div class="mini-stats" style="gap:2cqh 2.4cqw;">
               <div class="stat"><span class="num">78%</span><span class="lab">search success; users moving from search to a product page</span></div>
               <div class="stat"><span class="num">7.9%</span><span class="lab">add to cart; sessions with an item added</span></div>
-              <div class="stat"><span class="num">62%</span><span class="lab">of checkouts started end in a purchase</span></div>
+              <div class="stat"><span class="num">73%</span><span class="lab">of checkouts started end in a purchase</span></div>
               <div class="stat"><span class="num">0.02%</span><span class="lab">oversell; an "out of stock" call after ordering is the exception</span></div>
             </div>
           </div>
         </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, comparison of the periods before and after replatforming. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026, best-site value; oversell across all channels. Page load: New Relic Browser, real-user LCP p75, live sites, 27 October–3 November 2026.</p>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, comparison of the periods before and after replatforming. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026, best-site value; oversell across all channels. Page load: New Relic Browser, real-user LCP p75, best-site value, 27 October–3 November 2026.</p>
       </div>
     </div>
     <div class="slide__footer">
@@ -2219,8 +2219,8 @@
         <table class="xtable xtable--xdense">
           <thead><tr><th>KPI</th><th>Measured value</th><th>Source</th><th>Commitment to Shaya</th></tr></thead>
           <tbody>
-            <tr><td>Page speed · home, PDP</td><td>Home <b>1.3 s</b> · PDP <b>0.7 s</b>; LCP p75, real users, all live sites</td><td>New Relic Browser · CrUX</td><td>&lt; 2 s; device, network and measurement method agreed in discovery</td></tr>
-            <tr><td>Page speed · cart, checkout</td><td>Cart <b>1.3 s</b> · checkout <b>0.9 s</b>; LCP p75, real users</td><td>New Relic Browser</td><td>&lt; 3 s</td></tr>
+            <tr><td>Page speed · home, PDP</td><td>Home <b>0.9 s</b> · PDP <b>0.5 s</b>; LCP p75, real users, best site</td><td>New Relic Browser · CrUX</td><td>&lt; 2 s; device, network and measurement method agreed in discovery</td></tr>
+            <tr><td>Page speed · cart, checkout</td><td>Cart <b>0.9 s</b> · checkout <b>0.7 s</b>; LCP p75, real users, best site</td><td>New Relic Browser</td><td>&lt; 3 s</td></tr>
             <tr><td>API speed</td><td>GraphQL p95 <b>250 ms</b>, p99 490 ms (campaign-peak profile); Apdex 0.98 (T 0.5 s) · 0.99 (T 1 s)</td><td>k6 + New Relic, October–November 2026</td><td>p95 &lt; 500 ms · Apdex ≥ 0.99; reported monthly</td></tr>
             <tr><td>Payment completion · payment steps without a platform error</td><td><b>99.998%</b>; 1 platform error in 59K calls</td><td>New Relic PaymentGateway, 27 October–2 November 2026</td><td>≥ 99.999%</td></tr>
             <tr><td>Robustness · functional uptime</td><td><b>99.99%+</b>; pod restart in seconds, node replacement in minutes</td><td>Uptime Kuma · UptimeRobot</td><td>≥ 99.9% monthly, excluding planned maintenance</td></tr>
