@@ -120,7 +120,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">1 / 92</span>
+      <span class="slide__no">1 / 95</span>
     </div>
   </section>
 
@@ -132,7 +132,7 @@
       <table class="xtable xtable--xdense">
         <thead><tr><th>#</th><th>RFP bölümü</th><th>Bu sunumda</th><th>Durum</th></tr></thead>
         <tbody>
-          <tr><td>01</td><td>Executive Summary</td><td>Ana mesaj, Shaya önceliklerine karşılık, başarı ölçütlerine taahhüt</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>01</td><td>Executive Summary</td><td>Ana mesaj, Shaya önceliklerine karşılık, metrik özeti (engagement, rakip karşılaştırması, sistem performansı, entegrasyon hızı)</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>02</td><td>Company Profile and References</td><td>Kim olduğumuz, farkımız, referans müşteriler, liderlik ekibi, yeterlilikler (§16)</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>03</td><td>Proposed Solution Overview</td><td>Kapsam ve sahiplik, platform bileşenleri, kanallar, ürün yetenekleri, checkout, omnichannel, raporlama, AI yetkinlikleri</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>04</td><td>Functional Fit-Gap Response</td><td>69 gereksinimin özeti ve bölüm bazlı karşılıklar; tam matris Excel ekinde</td><td><span class="st st--ok">Hazır</span></td></tr>
@@ -149,7 +149,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">2 / 92</span>
+      <span class="slide__no">2 / 95</span>
     </div>
   </section>
 
@@ -164,7 +164,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">3 / 92</span>
+      <span class="slide__no">3 / 95</span>
     </div>
   </section>
 
@@ -185,7 +185,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">4 / 92</span>
+      <span class="slide__no">4 / 95</span>
     </div>
   </section>
 
@@ -210,34 +210,148 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">5 / 92</span>
+      <span class="slide__no">5 / 95</span>
     </div>
   </section>
 
-  <!-- BAŞARI ÖLÇÜTLERİ -->
+  <!-- METRİK ÖZETİ — ENGAGEMENT -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Başarı ölçütleri · RFP §3.3 ve §11.1</span>
-      <h2 class="slide-title">Taahhütler <span class="accent">ölçülmüş</span> değerlere dayanır</h2>
-      <table class="xtable xtable--dense">
-        <thead><tr><th>KPI</th><th>RFP hedefi</th><th>Bugün ölçülen</th><th>Shaya taahhüdü ve ölçüm</th></tr></thead>
-        <tbody>
-          <tr><td>Uptime</td><td>≥ %99,9 aylık</td><td>%99,99 platform erişilebilirliği</td><td>≥ %99,9 aylık, planlı bakım hariç; Uptime Kuma + UptimeRobot raporu</td></tr>
-          <tr><td>Ana sayfa ve PDP yükleme</td><td>&lt; 2 sn</td><td>SSR + CDN, çalışma anında render yok</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm aracı (Lighthouse / CrUX) keşifte mutabık kalınır</td></tr>
-          <tr><td>Checkout yükleme</td><td>&lt; 3 sn</td><td>Kritik adımlar önbellekli API üzerinden; API p95 250 ms</td><td>&lt; 3 sn; New Relic Browser ile adım bazlı izleme</td></tr>
-          <tr><td>Peak yük</td><td>Hacim tahminine göre, yük ve stres testiyle</td><td>Kampanya profili ×4 stres, ×8 sıçrama; hata 0</td><td>280K oturum/gün ve 5K/saat işlem hedefinin katlarıyla go-live ve her kampanya öncesi test</td></tr>
-          <tr><td>Go-live'da açık kritik hata</td><td>0</td><td>Go/No-Go kriteri</td><td>Critical = 0; High için yazılı workaround; M7 paketi Steering Committee onayında</td></tr>
-          <tr><td>UAT</td><td>Onaylı kritik iş senaryoları tamam</td><td>Marka ekipleriyle senaryo bazlı UAT</td><td>M6 UAT Sign-Off; senaryo listesi keşifte birlikte yazılır</td></tr>
-        </tbody>
-      </table>
-      <p class="ann"><b>Kaynaklar:</b> New Relic APM (Apdex 0,95, ortalama 379 ms), Uptime Kuma, k6 yük testi Ekim 2026. Ayrıntılar 09. bölümde.</p>
+      <span class="kicker">Metrik özeti · Engagement</span>
+      <h2 class="slide-title">Replatform sonrası dönüşümde <span class="accent">+%35</span></h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:2.8cqh;">
+          <div class="stat"><span class="num">+%35</span><span class="lab">dönüşüm oranı artışı, replatform sonrası</span></div>
+          <div class="stat"><span class="num">+%7</span><span class="lab">ortalama sepet tutarı (AOV) artışı</span></div>
+          <div class="stat"><span class="num">%96,3</span><span class="lab">ödeme başarısı; ödeme deneyen müşterinin ödeyen oranı, banka redleri dahil</span></div>
+          <div class="stat"><span class="num">%99,998</span><span class="lab">platform hatası olmadan tamamlanan ödeme adımı</span></div>
+        </div>
+        <div class="two-col" style="flex:0; align-content:start;">
+          <div>
+            <div class="hdr-sub">Sayfa yüklenme · sayfa tipine göre</div>
+            <table class="xtable xtable--xdense">
+              <thead><tr><th>Sayfa</th><th>Ölçülen · p75</th><th>RFP hedefi</th></tr></thead>
+              <tbody>
+                <tr><td>Ana sayfa</td><td><b>X,X sn</b></td><td>&lt; 2 sn</td></tr>
+                <tr><td>PLP · ürün listeleme</td><td><b>X,X sn</b></td><td>—</td></tr>
+                <tr><td>PDP · ürün detay</td><td><b>X,X sn</b></td><td>&lt; 2 sn</td></tr>
+                <tr><td>Sepet</td><td><b>X,X sn</b></td><td>—</td></tr>
+                <tr><td>Checkout</td><td><b>X,X sn</b></td><td>&lt; 3 sn</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="hdr-sub">UX başarısı · alışveriş hunisi</div>
+            <div class="mini-stats" style="gap:2cqh 2.4cqw;">
+              <div class="stat"><span class="num">%78</span><span class="lab">arama başarısı; aramadan ürün sayfasına geçen kullanıcı</span></div>
+              <div class="stat"><span class="num">%7,9</span><span class="lab">sepete ekleme; ürün eklenen oturum</span></div>
+              <div class="stat"><span class="num">%62</span><span class="lab">checkout'u başlatıp satın alan</span></div>
+              <div class="stat"><span class="num">%0,02</span><span class="lab">yok satma; sipariş sonrası "stokta yok" haberi istisna</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, replatform öncesi ve sonrası dönem karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026, en iyi site değeri; yok satma tüm kanallarda.</p>
+      </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">6 / 92</span>
+      <span class="slide__no">6 / 95</span>
     </div>
   </section>
+
+  <!-- METRİK ÖZETİ — RAKİP KARŞILAŞTIRMASI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Metrik özeti · Rakip karşılaştırması</span>
+      <h2 class="slide-title">Gerçek kullanıcıda sayfa <span class="accent">1 saniyede</span> açılıyor</h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:2.4cqh;">
+          <div class="stat"><span class="num" style="font-size:3.4cqw; line-height:1.25;">Tüm siteler</span><span class="lab">mobil Core Web Vitals'ı geçiyor; ana rakipte %8</span></div>
+          <div class="stat"><span class="num">1,0 sn</span><span class="lab">mobil LCP; ana rakipte 2,75 sn</span></div>
+          <div class="stat"><span class="num">0,4 sn</span><span class="lab">mobil TTFB; ana rakipte 1,35 sn</span></div>
+          <div class="stat"><span class="num">169 ms</span><span class="lab">mobil INP; ana rakipte 241 ms</span></div>
+        </div>
+        <table class="xtable xtable--dense">
+          <thead><tr><th>Ölçü · p75, gerçek kullanıcı</th><th>CommerceLab · canlı siteler</th><th>Ana rakip · canlı siteler</th><th>Google eşiği</th></tr></thead>
+          <tbody>
+            <tr><td>Mobil Core Web Vitals geçen site</td><td><b>Tüm siteler</b></td><td>%8</td><td>LCP, INP ve CLS üçü birden "iyi"</td></tr>
+            <tr><td>Masaüstü Core Web Vitals geçen site</td><td><b>%71</b></td><td>%8</td><td></td></tr>
+            <tr><td>Mobil LCP</td><td><b>1,0 sn</b></td><td>2,75 sn</td><td>≤ 2,5 sn</td></tr>
+            <tr><td>Masaüstü LCP</td><td><b>0,8 sn</b></td><td>1,9 sn</td><td>≤ 2,5 sn</td></tr>
+            <tr><td>Mobil CLS</td><td><b>0,00</b></td><td>0,085</td><td>≤ 0,1</td></tr>
+            <tr><td>Sunucu ilk bayt, aynı ağdan lab ölçümü</td><td><b>51 ms</b></td><td>201 ms</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p class="ann">Google CrUX, origin medyanı, 29 Ekim 2026. CommerceLab'in canlı moda ve perakende siteleri ile Türkiye'deki ana rakip altyapısında çalışan moda ve perakende siteleri; aynı dönem, aynı ölçüm.</p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">7 / 95</span>
+    </div>
+  </section>
+
+  <!-- METRİK ÖZETİ 1 — SİSTEM PERFORMANSI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Metrik özeti · Sistem performansı</span>
+      <h2 class="slide-title">Kampanya zirvesinde de <span class="accent">sıfır hata</span></h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:2cqh;">
+          <div class="stat"><span class="num">%99,99</span><span class="lab">platform erişilebilirliği (RFP hedefi ≥ %99,9)</span></div>
+          <div class="stat"><span class="num">379 ms</span><span class="lab">ortalama API yanıtı · Apdex 0,95 (New Relic)</span></div>
+          <div class="stat"><span class="num">480M+</span><span class="lab">API isteği / ay; günde 20K+ sipariş</span></div>
+          <div class="stat"><span class="num">1,5 dk</span><span class="lab">ortalama deploy; rollback aynı sürede</span></div>
+        </div>
+        <div class="hdr-sub">Son yük testi · Victoria's Secret ölçeğinde bir site · k6, canlı üretim ortamı, Ekim 2026</div>
+        <div class="card card--accent" style="padding:1.2cqh 1.4cqw; margin-bottom:1.2cqh;"><p style="margin:0;">Test edilen günlük hacim <b>650K oturum ≈ 13K sipariş</b>; Shaya'nın 280K oturum/gün pik hedefinin 2,3 katı. <b>Bu bir limit değil</b>, test edilen hacimdir: kapasite Karpenter ve HPA ile yatayda büyür, mimari bir üst sınır tanımlamaz.</p></div>
+        <table class="xtable xtable--dense">
+          <thead><tr><th>Senaryo</th><th>Uygulanan yük</th><th>Gecikme</th><th>Hata</th><th>Sonuç</th></tr></thead>
+          <tbody>
+            <tr><td>Kampanya zirvesi profili</td><td>11.11 ve Black Friday saatlik tepesi; sepet ve checkout dahil gerçek davranış karışımı</td><td><b>API p95 250 ms · p99 490 ms</b></td><td><b>0</b></td><td>RFP hedefi p95 &lt; 500 ms'nin yarısında</td></tr>
+            <tr><td>Stres ×4</td><td>Kampanya tepesinin saatlik üç katı trafik</td><td>Hiçbir basamakta eşik aşılmadı</td><td><b>0</b></td><td>Ek ölçekleme beklemeden toparlandı</td></tr>
+            <tr><td>Anlık sıçrama ×8</td><td>Dakikada 11.800 istek (~200 istek/sn) birden</td><td><b>Sunucu p95 30–60 ms</b></td><td><b>0</b></td><td>Sıçrama hatasız karşılandı</td></tr>
+          </tbody>
+        </table>
+        <p class="ann"><b>Yöntem:</b> Yük profili GA4'teki 11.11 ve Black Friday saatlik ve dakikalık tepe oturumlarıyla kalibre edildi. Shaya için aynı test, 280.000 oturum/gün pik ve 5K/saat işlem hedefinin katlarıyla go-live ve her kampanya öncesi tekrarlanır.</p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">8 / 95</span>
+    </div>
+  </section>
+
+  <!-- METRİK ÖZETİ 3 — ENTEGRASYON HIZI -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Metrik özeti · Entegrasyon hızı</span>
+      <h2 class="slide-title">Kanaldaki sipariş <span class="accent">1,2 saniyede</span> OMS'te</h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:3.4cqh;">
+          <div class="stat"><span class="num">1,2 sn</span><span class="lab">web ve uygulama siparişi OMS'te</span></div>
+          <div class="stat"><span class="num">26 sn</span><span class="lab">pazaryeri siparişi OMS'te</span></div>
+          <div class="stat"><span class="num">925 ms</span><span class="lab">stok değişimi kanala bildirildi</span></div>
+          <div class="stat"><span class="num">150 ms</span><span class="lab">stok hesabı; emniyet stoku, yoldaki stok ve rezervasyon dahil</span></div>
+        </div>
+        <div class="grid grid-3 compact-cards">
+          <div class="card card--dark"><div class="ix">Yok satma</div><h3>%0,02, tüm kanallarda</h3><p>Stok her değişimde yeniden hesaplanır ve kanala itilir; satılan ürünün stokta olmaması istisna olarak kalır.</p></div>
+          <div class="card"><div class="ix">Hızlı şerit</div><h3>Kritik stok 1,2 sn'de kapanır</h3><p>Son adetlere düşen ürün sıradaki toplu güncellemeyi beklemez, öncelikli akışla kanalda satışa kapanır.</p></div>
+          <div class="card"><div class="ix">Control Tower</div><h3>Kayıp sipariş yok</h3><p>Kanalda olup OMS'te olmayan sipariş müşteriden önce yakalanır ve yeniden işlenir.</p></div>
+        </div>
+        <p class="ann" style="margin-top:2cqh;"><b>Kaynak:</b> canlı müşteri ortamı, ComHub ve OMS ölçümleri. Shaya'da WinRetail, OMS ve CRM akışları aynı ComHub desenleriyle kurulur; ayrıntılar 06. bölümde.</p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">9 / 95</span>
+    </div>
+  </section>
+
 
   <!-- BÖLÜM 02 -->
   <section class="slide slide--ink">
@@ -250,7 +364,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">7 / 92</span>
+      <span class="slide__no">10 / 95</span>
     </div>
   </section>
 
@@ -278,7 +392,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">8 / 92</span>
+      <span class="slide__no">11 / 95</span>
     </div>
   </section>
 
@@ -299,7 +413,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">9 / 92</span>
+      <span class="slide__no">12 / 95</span>
     </div>
   </section>
 
@@ -331,7 +445,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">10 / 92</span>
+      <span class="slide__no">13 / 95</span>
     </div>
   </section>
 
@@ -376,7 +490,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">11 / 92</span>
+      <span class="slide__no">14 / 95</span>
     </div>
   </section>
 
@@ -401,7 +515,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">12 / 92</span>
+      <span class="slide__no">15 / 95</span>
     </div>
   </section>
 
@@ -416,7 +530,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">13 / 92</span>
+      <span class="slide__no">16 / 95</span>
     </div>
   </section>
 
@@ -443,7 +557,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">14 / 92</span>
+      <span class="slide__no">17 / 95</span>
     </div>
   </section>
 
@@ -465,7 +579,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">15 / 92</span>
+      <span class="slide__no">18 / 95</span>
     </div>
   </section>
 
@@ -485,7 +599,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">16 / 92</span>
+      <span class="slide__no">19 / 95</span>
     </div>
   </section>
 
@@ -508,7 +622,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">17 / 92</span>
+      <span class="slide__no">20 / 95</span>
     </div>
   </section>
 
@@ -553,7 +667,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">18 / 92</span>
+      <span class="slide__no">21 / 95</span>
     </div>
   </section>
 
@@ -604,7 +718,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">19 / 92</span>
+      <span class="slide__no">22 / 95</span>
     </div>
   </section>
 
@@ -625,7 +739,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">20 / 92</span>
+      <span class="slide__no">23 / 95</span>
     </div>
   </section>
 
@@ -659,7 +773,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">21 / 92</span>
+      <span class="slide__no">24 / 95</span>
     </div>
   </section>
 
@@ -685,7 +799,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">22 / 92</span>
+      <span class="slide__no">25 / 95</span>
     </div>
   </section>
 
@@ -714,7 +828,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">23 / 92</span>
+      <span class="slide__no">26 / 95</span>
     </div>
   </section>
 
@@ -735,7 +849,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">24 / 92</span>
+      <span class="slide__no">27 / 95</span>
     </div>
   </section>
 
@@ -765,7 +879,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">25 / 92</span>
+      <span class="slide__no">28 / 95</span>
     </div>
   </section>
 
@@ -801,7 +915,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">26 / 92</span>
+      <span class="slide__no">29 / 95</span>
     </div>
   </section>
 
@@ -821,7 +935,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">27 / 92</span>
+      <span class="slide__no">30 / 95</span>
     </div>
   </section>
 
@@ -836,7 +950,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">28 / 92</span>
+      <span class="slide__no">31 / 95</span>
     </div>
   </section>
 
@@ -880,7 +994,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">29 / 92</span>
+      <span class="slide__no">32 / 95</span>
     </div>
   </section>
 
@@ -908,7 +1022,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">30 / 92</span>
+      <span class="slide__no">33 / 95</span>
     </div>
   </section>
 
@@ -946,7 +1060,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">31 / 92</span>
+      <span class="slide__no">34 / 95</span>
     </div>
   </section>
 
@@ -969,7 +1083,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">32 / 92</span>
+      <span class="slide__no">35 / 95</span>
     </div>
   </section>
 
@@ -997,7 +1111,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">33 / 92</span>
+      <span class="slide__no">36 / 95</span>
     </div>
   </section>
 
@@ -1023,7 +1137,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">34 / 92</span>
+      <span class="slide__no">37 / 95</span>
     </div>
   </section>
 
@@ -1049,7 +1163,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">35 / 92</span>
+      <span class="slide__no">38 / 95</span>
     </div>
   </section>
 
@@ -1080,7 +1194,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">36 / 92</span>
+      <span class="slide__no">39 / 95</span>
     </div>
   </section>
 
@@ -1095,7 +1209,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">37 / 92</span>
+      <span class="slide__no">40 / 95</span>
     </div>
   </section>
 
@@ -1151,7 +1265,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">38 / 92</span>
+      <span class="slide__no">41 / 95</span>
     </div>
   </section>
 
@@ -1189,7 +1303,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">39 / 92</span>
+      <span class="slide__no">42 / 95</span>
     </div>
   </section>
 
@@ -1212,7 +1326,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">40 / 92</span>
+      <span class="slide__no">43 / 95</span>
     </div>
   </section>
 
@@ -1237,7 +1351,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">41 / 92</span>
+      <span class="slide__no">44 / 95</span>
     </div>
   </section>
 
@@ -1257,7 +1371,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">42 / 92</span>
+      <span class="slide__no">45 / 95</span>
     </div>
   </section>
 
@@ -1281,7 +1395,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">43 / 92</span>
+      <span class="slide__no">46 / 95</span>
     </div>
   </section>
 
@@ -1306,7 +1420,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">44 / 92</span>
+      <span class="slide__no">47 / 95</span>
     </div>
   </section>
 
@@ -1326,7 +1440,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">45 / 92</span>
+      <span class="slide__no">48 / 95</span>
     </div>
   </section>
 
@@ -1358,7 +1472,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">46 / 92</span>
+      <span class="slide__no">49 / 95</span>
     </div>
   </section>
 
@@ -1386,7 +1500,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">47 / 92</span>
+      <span class="slide__no">50 / 95</span>
     </div>
   </section>
 
@@ -1430,7 +1544,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">48 / 92</span>
+      <span class="slide__no">51 / 95</span>
     </div>
   </section>
 
@@ -1454,7 +1568,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">49 / 92</span>
+      <span class="slide__no">52 / 95</span>
     </div>
   </section>
 
@@ -1473,7 +1587,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">50 / 92</span>
+      <span class="slide__no">53 / 95</span>
     </div>
   </section>
 
@@ -1517,7 +1631,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">51 / 92</span>
+      <span class="slide__no">54 / 95</span>
     </div>
   </section>
 
@@ -1539,7 +1653,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">52 / 92</span>
+      <span class="slide__no">55 / 95</span>
     </div>
   </section>
 
@@ -1593,7 +1707,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">53 / 92</span>
+      <span class="slide__no">56 / 95</span>
     </div>
   </section>
 
@@ -1614,7 +1728,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">54 / 92</span>
+      <span class="slide__no">57 / 95</span>
     </div>
   </section>
 
@@ -1649,7 +1763,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">55 / 92</span>
+      <span class="slide__no">58 / 95</span>
     </div>
   </section>
 
@@ -1664,7 +1778,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">56 / 92</span>
+      <span class="slide__no">59 / 95</span>
     </div>
   </section>
 
@@ -1695,7 +1809,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">57 / 92</span>
+      <span class="slide__no">60 / 95</span>
     </div>
   </section>
 
@@ -1719,7 +1833,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">58 / 92</span>
+      <span class="slide__no">61 / 95</span>
     </div>
   </section>
 
@@ -1745,7 +1859,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">59 / 92</span>
+      <span class="slide__no">62 / 95</span>
     </div>
   </section>
 
@@ -1770,7 +1884,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">60 / 92</span>
+      <span class="slide__no">63 / 95</span>
     </div>
   </section>
 
@@ -1812,7 +1926,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">61 / 92</span>
+      <span class="slide__no">64 / 95</span>
     </div>
   </section>
 
@@ -1827,7 +1941,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">62 / 92</span>
+      <span class="slide__no">65 / 95</span>
     </div>
   </section>
 
@@ -1852,7 +1966,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">63 / 92</span>
+      <span class="slide__no">66 / 95</span>
     </div>
   </section>
 
@@ -1883,7 +1997,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">64 / 92</span>
+      <span class="slide__no">67 / 95</span>
     </div>
   </section>
 
@@ -1926,7 +2040,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">65 / 92</span>
+      <span class="slide__no">68 / 95</span>
     </div>
   </section>
 
@@ -1947,7 +2061,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">66 / 92</span>
+      <span class="slide__no">69 / 95</span>
     </div>
   </section>
 
@@ -1962,7 +2076,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">67 / 92</span>
+      <span class="slide__no">70 / 95</span>
     </div>
   </section>
 
@@ -1983,7 +2097,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">68 / 92</span>
+      <span class="slide__no">71 / 95</span>
     </div>
   </section>
 
@@ -2019,7 +2133,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">69 / 92</span>
+      <span class="slide__no">72 / 95</span>
     </div>
   </section>
 
@@ -2047,7 +2161,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">70 / 92</span>
+      <span class="slide__no">73 / 95</span>
     </div>
   </section>
 
@@ -2076,7 +2190,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">71 / 92</span>
+      <span class="slide__no">74 / 95</span>
     </div>
   </section>
 
@@ -2120,7 +2234,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">72 / 92</span>
+      <span class="slide__no">75 / 95</span>
     </div>
   </section>
 
@@ -2145,7 +2259,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">73 / 92</span>
+      <span class="slide__no">76 / 95</span>
     </div>
   </section>
 
@@ -2180,7 +2294,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">74 / 92</span>
+      <span class="slide__no">77 / 95</span>
     </div>
   </section>
 
@@ -2207,7 +2321,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">75 / 92</span>
+      <span class="slide__no">78 / 95</span>
     </div>
   </section>
 
@@ -2232,7 +2346,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">76 / 92</span>
+      <span class="slide__no">79 / 95</span>
     </div>
   </section>
 
@@ -2247,7 +2361,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">77 / 92</span>
+      <span class="slide__no">80 / 95</span>
     </div>
   </section>
 
@@ -2278,7 +2392,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">78 / 92</span>
+      <span class="slide__no">81 / 95</span>
     </div>
   </section>
 
@@ -2303,7 +2417,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">79 / 92</span>
+      <span class="slide__no">82 / 95</span>
     </div>
   </section>
 
@@ -2335,7 +2449,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">80 / 92</span>
+      <span class="slide__no">83 / 95</span>
     </div>
   </section>
 
@@ -2374,7 +2488,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">81 / 92</span>
+      <span class="slide__no">84 / 95</span>
     </div>
   </section>
 
@@ -2401,7 +2515,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">82 / 92</span>
+      <span class="slide__no">85 / 95</span>
     </div>
   </section>
 
@@ -2442,7 +2556,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">83 / 92</span>
+      <span class="slide__no">86 / 95</span>
     </div>
   </section>
 
@@ -2476,7 +2590,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">84 / 92</span>
+      <span class="slide__no">87 / 95</span>
     </div>
   </section>
 
@@ -2514,7 +2628,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">85 / 92</span>
+      <span class="slide__no">88 / 95</span>
     </div>
   </section>
 
@@ -2542,7 +2656,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">86 / 92</span>
+      <span class="slide__no">89 / 95</span>
     </div>
   </section>
 
@@ -2557,7 +2671,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">87 / 92</span>
+      <span class="slide__no">90 / 95</span>
     </div>
   </section>
 
@@ -2602,7 +2716,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">88 / 92</span>
+      <span class="slide__no">91 / 95</span>
     </div>
   </section>
 
@@ -2630,7 +2744,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">89 / 92</span>
+      <span class="slide__no">92 / 95</span>
     </div>
   </section>
 
@@ -2651,7 +2765,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">90 / 92</span>
+      <span class="slide__no">93 / 95</span>
     </div>
   </section>
 
@@ -2681,7 +2795,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">91 / 92</span>
+      <span class="slide__no">94 / 95</span>
     </div>
   </section>
 
@@ -2701,7 +2815,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">92 / 92</span>
+      <span class="slide__no">95 / 95</span>
     </div>
   </section>
 

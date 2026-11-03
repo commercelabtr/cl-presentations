@@ -122,7 +122,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">1 / 92</span>
+      <span class="slide__no">1 / 95</span>
     </div>
   </section>
 
@@ -134,7 +134,7 @@
       <table class="xtable xtable--xdense">
         <thead><tr><th>#</th><th>RFP section</th><th>In this deck</th><th>Status</th></tr></thead>
         <tbody>
-          <tr><td>01</td><td>Executive Summary</td><td>Key message, answers to Shaya's priorities, commitment to success criteria</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>01</td><td>Executive Summary</td><td>Key message, answers to Shaya's priorities, metrics summary (engagement, competitor comparison, system performance, integration speed)</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>02</td><td>Company Profile and References</td><td>Who we are, why we differ, reference customers, leadership team, qualifications (§16)</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>03</td><td>Proposed Solution Overview</td><td>Scope and ownership, platform components, channels, product capabilities, checkout, omnichannel, reporting, AI capabilities</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>04</td><td>Functional Fit-Gap Response</td><td>Summary of 69 requirements and section-by-section answers; full matrix in the Excel attachment</td><td><span class="st st--ok">Ready</span></td></tr>
@@ -151,7 +151,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">2 / 92</span>
+      <span class="slide__no">2 / 95</span>
     </div>
   </section>
 
@@ -166,7 +166,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">3 / 92</span>
+      <span class="slide__no">3 / 95</span>
     </div>
   </section>
 
@@ -187,7 +187,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">4 / 92</span>
+      <span class="slide__no">4 / 95</span>
     </div>
   </section>
 
@@ -212,34 +212,148 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">5 / 92</span>
+      <span class="slide__no">5 / 95</span>
     </div>
   </section>
 
-  <!-- SUCCESS CRITERIA -->
+  <!-- METRICS SUMMARY — ENGAGEMENT -->
   <section class="slide">
     <div class="slide__inner">
-      <span class="kicker">Success criteria · RFP §3.3 and §11.1</span>
-      <h2 class="slide-title">Commitments rest on <span class="accent">measured</span> values</h2>
-      <table class="xtable xtable--dense">
-        <thead><tr><th>KPI</th><th>RFP target</th><th>Measured today</th><th>Shaya commitment and measurement</th></tr></thead>
-        <tbody>
-          <tr><td>Uptime</td><td>≥ 99.9% monthly</td><td>99.99% platform availability</td><td>≥ 99.9% monthly, excluding planned maintenance; Uptime Kuma + UptimeRobot report</td></tr>
-          <tr><td>Homepage and PDP load</td><td>&lt; 2 s</td><td>SSR + CDN, no runtime rendering</td><td>&lt; 2 s; device, network and tool (Lighthouse / CrUX) agreed in discovery</td></tr>
-          <tr><td>Checkout load</td><td>&lt; 3 s</td><td>Critical steps over cached APIs; API p95 250 ms</td><td>&lt; 3 s; step-level tracking with New Relic Browser</td></tr>
-          <tr><td>Peak load</td><td>Per volume forecast, load and stress tested</td><td>Campaign profile ×4 stress, ×8 spike; 0 errors</td><td>Tested at multiples of the 280K sessions/day and 5K/hour targets before go-live and every campaign</td></tr>
-          <tr><td>Open critical defects at go-live</td><td>0</td><td>Go/No-Go criterion</td><td>Critical = 0; written workaround for High; M7 pack approved by the Steering Committee</td></tr>
-          <tr><td>UAT</td><td>Approved critical business scenarios complete</td><td>Scenario-based UAT with brand teams</td><td>M6 UAT Sign-Off; scenario list written together in discovery</td></tr>
-        </tbody>
-      </table>
-      <p class="ann"><b>Sources:</b> New Relic APM (Apdex 0.95, 379 ms average), Uptime Kuma, k6 load test October 2026. Details in section 09.</p>
+      <span class="kicker">Metrics summary · Engagement</span>
+      <h2 class="slide-title">After replatforming, conversion <span class="accent">up 35%</span></h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:2.8cqh;">
+          <div class="stat"><span class="num">+35%</span><span class="lab">conversion rate uplift after replatforming</span></div>
+          <div class="stat"><span class="num">+7%</span><span class="lab">average order value (AOV) uplift</span></div>
+          <div class="stat"><span class="num">96.3%</span><span class="lab">payment success; customers who attempt payment and pay, bank declines included</span></div>
+          <div class="stat"><span class="num">99.998%</span><span class="lab">payment steps completed without a platform error</span></div>
+        </div>
+        <div class="two-col" style="flex:0; align-content:start;">
+          <div>
+            <div class="hdr-sub">Page load · by page type</div>
+            <table class="xtable xtable--xdense">
+              <thead><tr><th>Page</th><th>Measured · p75</th><th>RFP target</th></tr></thead>
+              <tbody>
+                <tr><td>Home page</td><td><b>X.X s</b></td><td>&lt; 2 s</td></tr>
+                <tr><td>PLP · product listing</td><td><b>X.X s</b></td><td>—</td></tr>
+                <tr><td>PDP · product detail</td><td><b>X.X s</b></td><td>&lt; 2 s</td></tr>
+                <tr><td>Cart</td><td><b>X.X s</b></td><td>—</td></tr>
+                <tr><td>Checkout</td><td><b>X.X s</b></td><td>&lt; 3 s</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="hdr-sub">UX success · shopping funnel</div>
+            <div class="mini-stats" style="gap:2cqh 2.4cqw;">
+              <div class="stat"><span class="num">78%</span><span class="lab">search success; users moving from search to a product page</span></div>
+              <div class="stat"><span class="num">7.9%</span><span class="lab">add to cart; sessions with an item added</span></div>
+              <div class="stat"><span class="num">62%</span><span class="lab">of checkouts started end in a purchase</span></div>
+              <div class="stat"><span class="num">0.02%</span><span class="lab">oversell; an "out of stock" call after ordering is the exception</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, comparison of the periods before and after replatforming. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026, best-site value; oversell across all channels.</p>
+      </div>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">6 / 92</span>
+      <span class="slide__no">6 / 95</span>
     </div>
   </section>
+
+  <!-- METRICS SUMMARY — COMPETITOR COMPARISON -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Metrics summary · Competitor comparison</span>
+      <h2 class="slide-title">For real users, pages load <span class="accent">in 1 second</span></h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:2.4cqh;">
+          <div class="stat"><span class="num" style="font-size:3.4cqw; line-height:1.25;">All sites</span><span class="lab">pass mobile Core Web Vitals; main competitor 8%</span></div>
+          <div class="stat"><span class="num">1.0 s</span><span class="lab">mobile LCP; main competitor 2.75 s</span></div>
+          <div class="stat"><span class="num">0.4 s</span><span class="lab">mobile TTFB; main competitor 1.35 s</span></div>
+          <div class="stat"><span class="num">169 ms</span><span class="lab">mobile INP; main competitor 241 ms</span></div>
+        </div>
+        <table class="xtable xtable--dense">
+          <thead><tr><th>Measure · p75, real users</th><th>CommerceLab · live sites</th><th>Main competitor · live sites</th><th>Google threshold</th></tr></thead>
+          <tbody>
+            <tr><td>Sites passing mobile Core Web Vitals</td><td><b>All sites</b></td><td>8%</td><td>LCP, INP and CLS all "good"</td></tr>
+            <tr><td>Sites passing desktop Core Web Vitals</td><td><b>71%</b></td><td>8%</td><td></td></tr>
+            <tr><td>Mobile LCP</td><td><b>1.0 s</b></td><td>2.75 s</td><td>≤ 2.5 s</td></tr>
+            <tr><td>Desktop LCP</td><td><b>0.8 s</b></td><td>1.9 s</td><td>≤ 2.5 s</td></tr>
+            <tr><td>Mobile CLS</td><td><b>0.00</b></td><td>0.085</td><td>≤ 0.1</td></tr>
+            <tr><td>Server first byte, lab test from the same network</td><td><b>51 ms</b></td><td>201 ms</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p class="ann">Google CrUX, origin median, 29 October 2026. CommerceLab's live fashion and retail sites against fashion and retail sites running on the main competitor's infrastructure in Türkiye; same period, same measurement.</p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">7 / 95</span>
+    </div>
+  </section>
+
+  <!-- METRICS SUMMARY 1 — SYSTEM PERFORMANCE -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Metrics summary · System performance</span>
+      <h2 class="slide-title">Zero errors, <span class="accent">even at campaign peak</span></h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:2cqh;">
+          <div class="stat"><span class="num">99.99%</span><span class="lab">platform availability (RFP target ≥ 99.9%)</span></div>
+          <div class="stat"><span class="num">379 ms</span><span class="lab">average API response · Apdex 0.95 (New Relic)</span></div>
+          <div class="stat"><span class="num">480M+</span><span class="lab">API requests / month; 20K+ orders a day</span></div>
+          <div class="stat"><span class="num">1.5 min</span><span class="lab">average deploy; rollback in the same time</span></div>
+        </div>
+        <div class="hdr-sub">Latest load test · a Victoria's Secret–scale site · k6, live production environment, October 2026</div>
+        <div class="card card--accent" style="padding:1.2cqh 1.4cqw; margin-bottom:1.2cqh;"><p style="margin:0;">Daily volume tested: <b>650K sessions ≈ 13K orders</b>; 2.3 times Shaya's 280K sessions/day peak target. <b>This is not a limit</b>, it is the volume we tested: capacity grows horizontally via Karpenter and HPA, and the architecture sets no ceiling.</p></div>
+        <table class="xtable xtable--dense">
+          <thead><tr><th>Scenario</th><th>Load applied</th><th>Latency</th><th>Errors</th><th>Outcome</th></tr></thead>
+          <tbody>
+            <tr><td>Campaign peak profile</td><td>11.11 and Black Friday hourly peak; real behaviour mix including cart and checkout</td><td><b>API p95 250 ms · p99 490 ms</b></td><td><b>0</b></td><td>Half the RFP target of p95 &lt; 500 ms</td></tr>
+            <tr><td>Stress ×4</td><td>Three times the hourly campaign peak</td><td>No threshold breached at any step</td><td><b>0</b></td><td>Recovered without waiting for extra scaling</td></tr>
+            <tr><td>Spike ×8</td><td>11,800 requests a minute (~200 req/s) arriving at once</td><td><b>Server p95 30–60 ms</b></td><td><b>0</b></td><td>Spike absorbed with no errors</td></tr>
+          </tbody>
+        </table>
+        <p class="ann"><b>Method:</b> the load profile is calibrated with 11.11 and Black Friday hourly and per-minute peak sessions from GA4. For Shaya the same test is repeated before go-live and every campaign, at multiples of the 280,000 sessions/day peak and the 5K/hour transaction target.</p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">8 / 95</span>
+    </div>
+  </section>
+
+  <!-- METRICS SUMMARY 3 — INTEGRATION SPEED -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Metrics summary · Integration speed</span>
+      <h2 class="slide-title">A channel order reaches the OMS <span class="accent">in 1.2 seconds</span></h2>
+      <div class="fill">
+        <div class="stat-row" style="justify-content:space-between; margin-bottom:3.4cqh;">
+          <div class="stat"><span class="num">1.2 s</span><span class="lab">web and app order in the OMS</span></div>
+          <div class="stat"><span class="num">26 s</span><span class="lab">marketplace order in the OMS</span></div>
+          <div class="stat"><span class="num">925 ms</span><span class="lab">stock change pushed to the channel</span></div>
+          <div class="stat"><span class="num">150 ms</span><span class="lab">stock calculation; safety stock, in-transit and reservations included</span></div>
+        </div>
+        <div class="grid grid-3 compact-cards">
+          <div class="card card--dark"><div class="ix">Oversell</div><h3>0.02%, across all channels</h3><p>Stock is recalculated and pushed to the channel on every change; selling an item that is not in stock stays the exception.</p></div>
+          <div class="card"><div class="ix">Fast lane</div><h3>Critical stock closes in 1.2 s</h3><p>An item down to its last units does not wait for the next batch update; a priority flow takes it off sale on the channel.</p></div>
+          <div class="card"><div class="ix">Control Tower</div><h3>No lost orders</h3><p>An order on the channel but missing in the OMS is caught before the customer notices, and reprocessed.</p></div>
+        </div>
+        <p class="ann" style="margin-top:2cqh;"><b>Source:</b> live customer environment, ComHub and OMS measurements. For Shaya, WinRetail, OMS and CRM flows are built on the same ComHub patterns; details in section 06.</p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Confidential</span>
+      <span class="slide__no">9 / 95</span>
+    </div>
+  </section>
+
 
   <!-- SECTION 02 -->
   <section class="slide slide--ink">
@@ -252,7 +366,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">7 / 92</span>
+      <span class="slide__no">10 / 95</span>
     </div>
   </section>
 
@@ -280,7 +394,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">8 / 92</span>
+      <span class="slide__no">11 / 95</span>
     </div>
   </section>
 
@@ -301,7 +415,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">9 / 92</span>
+      <span class="slide__no">12 / 95</span>
     </div>
   </section>
 
@@ -333,7 +447,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">10 / 92</span>
+      <span class="slide__no">13 / 95</span>
     </div>
   </section>
 
@@ -378,7 +492,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">11 / 92</span>
+      <span class="slide__no">14 / 95</span>
     </div>
   </section>
 
@@ -403,7 +517,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">12 / 92</span>
+      <span class="slide__no">15 / 95</span>
     </div>
   </section>
 
@@ -418,7 +532,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">13 / 92</span>
+      <span class="slide__no">16 / 95</span>
     </div>
   </section>
 
@@ -445,7 +559,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">14 / 92</span>
+      <span class="slide__no">17 / 95</span>
     </div>
   </section>
 
@@ -467,7 +581,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">15 / 92</span>
+      <span class="slide__no">18 / 95</span>
     </div>
   </section>
 
@@ -487,7 +601,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">16 / 92</span>
+      <span class="slide__no">19 / 95</span>
     </div>
   </section>
 
@@ -510,7 +624,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">17 / 92</span>
+      <span class="slide__no">20 / 95</span>
     </div>
   </section>
 
@@ -555,7 +669,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">18 / 92</span>
+      <span class="slide__no">21 / 95</span>
     </div>
   </section>
 
@@ -606,7 +720,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">19 / 92</span>
+      <span class="slide__no">22 / 95</span>
     </div>
   </section>
 
@@ -627,7 +741,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">20 / 92</span>
+      <span class="slide__no">23 / 95</span>
     </div>
   </section>
 
@@ -661,7 +775,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">21 / 92</span>
+      <span class="slide__no">24 / 95</span>
     </div>
   </section>
 
@@ -687,7 +801,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">22 / 92</span>
+      <span class="slide__no">25 / 95</span>
     </div>
   </section>
 
@@ -716,7 +830,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">23 / 92</span>
+      <span class="slide__no">26 / 95</span>
     </div>
   </section>
 
@@ -737,7 +851,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">24 / 92</span>
+      <span class="slide__no">27 / 95</span>
     </div>
   </section>
 
@@ -767,7 +881,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">25 / 92</span>
+      <span class="slide__no">28 / 95</span>
     </div>
   </section>
 
@@ -803,7 +917,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">26 / 92</span>
+      <span class="slide__no">29 / 95</span>
     </div>
   </section>
 
@@ -823,7 +937,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">27 / 92</span>
+      <span class="slide__no">30 / 95</span>
     </div>
   </section>
 
@@ -838,7 +952,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">28 / 92</span>
+      <span class="slide__no">31 / 95</span>
     </div>
   </section>
 
@@ -882,7 +996,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">29 / 92</span>
+      <span class="slide__no">32 / 95</span>
     </div>
   </section>
 
@@ -910,7 +1024,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">30 / 92</span>
+      <span class="slide__no">33 / 95</span>
     </div>
   </section>
 
@@ -948,7 +1062,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">31 / 92</span>
+      <span class="slide__no">34 / 95</span>
     </div>
   </section>
 
@@ -971,7 +1085,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">32 / 92</span>
+      <span class="slide__no">35 / 95</span>
     </div>
   </section>
 
@@ -999,7 +1113,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">33 / 92</span>
+      <span class="slide__no">36 / 95</span>
     </div>
   </section>
 
@@ -1025,7 +1139,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">34 / 92</span>
+      <span class="slide__no">37 / 95</span>
     </div>
   </section>
 
@@ -1051,7 +1165,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">35 / 92</span>
+      <span class="slide__no">38 / 95</span>
     </div>
   </section>
 
@@ -1082,7 +1196,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">36 / 92</span>
+      <span class="slide__no">39 / 95</span>
     </div>
   </section>
 
@@ -1097,7 +1211,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">37 / 92</span>
+      <span class="slide__no">40 / 95</span>
     </div>
   </section>
 
@@ -1147,7 +1261,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">38 / 92</span>
+      <span class="slide__no">41 / 95</span>
     </div>
   </section>
 
@@ -1185,7 +1299,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">39 / 92</span>
+      <span class="slide__no">42 / 95</span>
     </div>
   </section>
 
@@ -1208,7 +1322,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">40 / 92</span>
+      <span class="slide__no">43 / 95</span>
     </div>
   </section>
 
@@ -1233,7 +1347,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">41 / 92</span>
+      <span class="slide__no">44 / 95</span>
     </div>
   </section>
 
@@ -1253,7 +1367,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">42 / 92</span>
+      <span class="slide__no">45 / 95</span>
     </div>
   </section>
 
@@ -1277,7 +1391,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">43 / 92</span>
+      <span class="slide__no">46 / 95</span>
     </div>
   </section>
 
@@ -1302,7 +1416,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">44 / 92</span>
+      <span class="slide__no">47 / 95</span>
     </div>
   </section>
 
@@ -1322,7 +1436,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">45 / 92</span>
+      <span class="slide__no">48 / 95</span>
     </div>
   </section>
 
@@ -1354,7 +1468,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">46 / 92</span>
+      <span class="slide__no">49 / 95</span>
     </div>
   </section>
 
@@ -1382,7 +1496,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">47 / 92</span>
+      <span class="slide__no">50 / 95</span>
     </div>
   </section>
 
@@ -1426,7 +1540,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">48 / 92</span>
+      <span class="slide__no">51 / 95</span>
     </div>
   </section>
 
@@ -1450,7 +1564,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">49 / 92</span>
+      <span class="slide__no">52 / 95</span>
     </div>
   </section>
 
@@ -1469,7 +1583,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">50 / 92</span>
+      <span class="slide__no">53 / 95</span>
     </div>
   </section>
 
@@ -1513,7 +1627,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">51 / 92</span>
+      <span class="slide__no">54 / 95</span>
     </div>
   </section>
 
@@ -1535,7 +1649,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">52 / 92</span>
+      <span class="slide__no">55 / 95</span>
     </div>
   </section>
 
@@ -1589,7 +1703,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">53 / 92</span>
+      <span class="slide__no">56 / 95</span>
     </div>
   </section>
 
@@ -1610,7 +1724,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">54 / 92</span>
+      <span class="slide__no">57 / 95</span>
     </div>
   </section>
 
@@ -1645,7 +1759,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">55 / 92</span>
+      <span class="slide__no">58 / 95</span>
     </div>
   </section>
 
@@ -1660,7 +1774,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">56 / 92</span>
+      <span class="slide__no">59 / 95</span>
     </div>
   </section>
 
@@ -1691,7 +1805,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">57 / 92</span>
+      <span class="slide__no">60 / 95</span>
     </div>
   </section>
 
@@ -1715,7 +1829,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">58 / 92</span>
+      <span class="slide__no">61 / 95</span>
     </div>
   </section>
 
@@ -1741,7 +1855,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">59 / 92</span>
+      <span class="slide__no">62 / 95</span>
     </div>
   </section>
 
@@ -1766,7 +1880,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">60 / 92</span>
+      <span class="slide__no">63 / 95</span>
     </div>
   </section>
 
@@ -1808,7 +1922,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">61 / 92</span>
+      <span class="slide__no">64 / 95</span>
     </div>
   </section>
 
@@ -1823,7 +1937,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">62 / 92</span>
+      <span class="slide__no">65 / 95</span>
     </div>
   </section>
 
@@ -1848,7 +1962,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">63 / 92</span>
+      <span class="slide__no">66 / 95</span>
     </div>
   </section>
 
@@ -1879,7 +1993,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">64 / 92</span>
+      <span class="slide__no">67 / 95</span>
     </div>
   </section>
 
@@ -1922,7 +2036,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">65 / 92</span>
+      <span class="slide__no">68 / 95</span>
     </div>
   </section>
 
@@ -1943,7 +2057,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">66 / 92</span>
+      <span class="slide__no">69 / 95</span>
     </div>
   </section>
 
@@ -1958,7 +2072,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">67 / 92</span>
+      <span class="slide__no">70 / 95</span>
     </div>
   </section>
 
@@ -1979,7 +2093,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">68 / 92</span>
+      <span class="slide__no">71 / 95</span>
     </div>
   </section>
 
@@ -2015,7 +2129,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">69 / 92</span>
+      <span class="slide__no">72 / 95</span>
     </div>
   </section>
 
@@ -2043,7 +2157,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">70 / 92</span>
+      <span class="slide__no">73 / 95</span>
     </div>
   </section>
 
@@ -2072,7 +2186,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">71 / 92</span>
+      <span class="slide__no">74 / 95</span>
     </div>
   </section>
 
@@ -2116,7 +2230,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">72 / 92</span>
+      <span class="slide__no">75 / 95</span>
     </div>
   </section>
 
@@ -2141,7 +2255,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">73 / 92</span>
+      <span class="slide__no">76 / 95</span>
     </div>
   </section>
 
@@ -2176,7 +2290,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">74 / 92</span>
+      <span class="slide__no">77 / 95</span>
     </div>
   </section>
 
@@ -2203,7 +2317,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">75 / 92</span>
+      <span class="slide__no">78 / 95</span>
     </div>
   </section>
 
@@ -2228,7 +2342,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">76 / 92</span>
+      <span class="slide__no">79 / 95</span>
     </div>
   </section>
 
@@ -2243,7 +2357,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">77 / 92</span>
+      <span class="slide__no">80 / 95</span>
     </div>
   </section>
 
@@ -2274,7 +2388,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">78 / 92</span>
+      <span class="slide__no">81 / 95</span>
     </div>
   </section>
 
@@ -2299,7 +2413,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">79 / 92</span>
+      <span class="slide__no">82 / 95</span>
     </div>
   </section>
 
@@ -2331,7 +2445,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">80 / 92</span>
+      <span class="slide__no">83 / 95</span>
     </div>
   </section>
 
@@ -2370,7 +2484,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">81 / 92</span>
+      <span class="slide__no">84 / 95</span>
     </div>
   </section>
 
@@ -2397,7 +2511,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">82 / 92</span>
+      <span class="slide__no">85 / 95</span>
     </div>
   </section>
 
@@ -2438,7 +2552,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">83 / 92</span>
+      <span class="slide__no">86 / 95</span>
     </div>
   </section>
 
@@ -2472,7 +2586,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">84 / 92</span>
+      <span class="slide__no">87 / 95</span>
     </div>
   </section>
 
@@ -2510,7 +2624,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">85 / 92</span>
+      <span class="slide__no">88 / 95</span>
     </div>
   </section>
 
@@ -2538,7 +2652,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">86 / 92</span>
+      <span class="slide__no">89 / 95</span>
     </div>
   </section>
 
@@ -2553,7 +2667,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">87 / 92</span>
+      <span class="slide__no">90 / 95</span>
     </div>
   </section>
 
@@ -2598,7 +2712,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">88 / 92</span>
+      <span class="slide__no">91 / 95</span>
     </div>
   </section>
 
@@ -2626,7 +2740,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">89 / 92</span>
+      <span class="slide__no">92 / 95</span>
     </div>
   </section>
 
@@ -2647,7 +2761,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">90 / 92</span>
+      <span class="slide__no">93 / 95</span>
     </div>
   </section>
 
@@ -2677,7 +2791,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">91 / 92</span>
+      <span class="slide__no">94 / 95</span>
     </div>
   </section>
 
@@ -2697,7 +2811,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">92 / 92</span>
+      <span class="slide__no">95 / 95</span>
     </div>
   </section>
 
