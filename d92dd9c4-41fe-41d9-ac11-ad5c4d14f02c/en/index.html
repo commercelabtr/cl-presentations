@@ -2250,10 +2250,19 @@
           <tr><td>P4 · Low</td><td>UI, content, copy and report requests</td><td>1 business day</td><td>—</td><td>3 business days</td><td>Planned release</td><td>—</td></tr>
         </tbody>
       </table>
-      <div class="grid grid-3 compact-cards" style="margin-top:1.4cqh; gap:1.1cqh 1.3cqw;">
-        <div class="card"><div class="ix">How it is met</div><p>P1/P2 alarms open automatically (Slack + Parny), 24/7 on-call; BestCloudForme first response, tiered escalation to the development team. Response time is alarm speed, not human speed.</p></div>
-        <div class="card"><div class="ix">Support model</div><p>L1 tickets and user support · L2 configuration, data correction, integration analysis · L3 RCA, debugging, hotfix · L4 product bugs, framework and security patches. One channel: the ServiceDesk portal and servicedesk@commercelab.com.tr.</p></div>
-        <div class="card card--dark"><div class="ix">Reporting</div><p>Monthly service report and SLA review; problem management and RCA records; release, patch and upgrade calendar; peak-season support and capacity plan; service credit terms in the commercial proposal.</p></div>
+      <div class="two-col two-col--wide" style="margin-top:1.3cqh; flex:1; align-content:start; gap:1.4cqw;">
+        <div>
+          <div class="hdr-sub">Measured · Jira ServiceDesk, 6 Aug–3 Nov 2026 · 849 requests, ~280 a month</div>
+          <table class="xtable xtable--xdense">
+            <thead><tr><th>SLA clock</th><th>Target (business hours)</th><th>Median</th><th>p75</th><th>p90</th><th>Within target</th></tr></thead>
+            <tbody>
+              <tr><td>First response</td><td>4 h</td><td><b>2.2 h</b></td><td>6.2 h</td><td>14.7 h</td><td><b>64%</b></td></tr>
+              <tr><td>Resolution</td><td>16 h (2 business days)</td><td><b>2.7 h</b></td><td>7.4 h</td><td>17.7 h</td><td><b>89%</b></td></tr>
+            </tbody>
+          </table>
+          <p class="ann">Times count business hours on the Jira SLA calendar; 60% of requests via the portal, 40% by e-mail; 96% of records closed. P1/P2 incidents open by alarm (Slack + Parny, 24/7 on-call, BestCloudForme first response) and do not enter these clocks. Service credit terms are in the commercial proposal.</p>
+        </div>
+        <div class="card card--dark" style="padding:1cqh 1.2cqw; font-size:1.18cqw;"><div class="ix">How to read it</div><p>Service-desk records are the L1–L2 request flow: a single priority class (Medium), the counterpart of the P3–P4 rows above. For Shaya, P1–P4 classes get separate clocks in Jira; the same table is delivered in the monthly service report.</p></div>
       </div>
     </div>
     <div class="slide__footer">

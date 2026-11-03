@@ -2254,10 +2254,19 @@
           <tr><td>P4 · Low</td><td>UI, içerik, metin ve rapor talepleri</td><td>1 iş günü</td><td>—</td><td>3 iş günü</td><td>Planlı sürüm</td><td>—</td></tr>
         </tbody>
       </table>
-      <div class="grid grid-3 compact-cards" style="margin-top:1.4cqh; gap:1.1cqh 1.3cqw;">
-        <div class="card"><div class="ix">Nasıl karşılanır</div><p>P1/P2 alarmları otomatik açılır (Slack + Parny), 7/24 nöbet; BestCloudForme ilk müdahale, geliştirme ekibine kademeli eskalasyon. Yanıt süresi insan değil alarm hızıdır.</p></div>
-        <div class="card"><div class="ix">Destek modeli</div><p>L1 ticket ve kullanıcı desteği · L2 konfigürasyon, veri düzeltme, entegrasyon analizi · L3 RCA, debug, hotfix · L4 ürün bug, framework ve güvenlik yaması. Tek kanal: ServiceDesk portalı ve servicedesk@commercelab.com.tr.</p></div>
-        <div class="card card--dark"><div class="ix">Raporlama</div><p>Aylık servis raporu ve SLA review; problem yönetimi ve RCA kayıtları; release, patch ve upgrade takvimi; peak dönem destek ve kapasite planı; servis kredisi koşulları ticari teklifte.</p></div>
+      <div class="two-col two-col--wide" style="margin-top:1.3cqh; flex:1; align-content:start; gap:1.4cqw;">
+        <div>
+          <div class="hdr-sub">Ölçülen · Jira ServiceDesk, 6 Ağu–3 Kas 2026 · 849 talep, ayda ~280</div>
+          <table class="xtable xtable--xdense">
+            <thead><tr><th>SLA sayacı</th><th>Hedef (iş saati)</th><th>Medyan</th><th>p75</th><th>p90</th><th>Hedef içinde</th></tr></thead>
+            <tbody>
+              <tr><td>İlk yanıt</td><td>4 sa</td><td><b>2,2 sa</b></td><td>6,2 sa</td><td>14,7 sa</td><td><b>%64</b></td></tr>
+              <tr><td>Çözüm</td><td>16 sa (2 iş günü)</td><td><b>2,7 sa</b></td><td>7,4 sa</td><td>17,7 sa</td><td><b>%89</b></td></tr>
+            </tbody>
+          </table>
+          <p class="ann">Süreler Jira SLA takviminde iş saati olarak sayılır; taleplerin %60'ı portal, %40'ı e-posta; kayıtların %96'sı kapanmış. P1/P2 olaylar alarmla açılır (Slack + Parny, 7/24 nöbet, BestCloudForme ilk müdahale) ve bu sayaçlara girmez. Servis kredisi koşulları ticari teklifte.</p>
+        </div>
+        <div class="card card--dark" style="padding:1cqh 1.2cqw; font-size:1.18cqw;"><div class="ix">Nasıl okunmalı</div><p>Servis masası kayıtları L1–L2 talep akışıdır: tek öncelik sınıfı (Medium), yukarıdaki P3–P4 satırlarının karşılığı. Shaya için P1–P4 sınıfları Jira'da ayrı sayaçlarla tanımlanır; aynı tablo aylık servis raporunda verilir.</p></div>
       </div>
     </div>
     <div class="slide__footer">
