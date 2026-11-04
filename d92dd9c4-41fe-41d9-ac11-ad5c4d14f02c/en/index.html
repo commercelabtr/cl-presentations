@@ -147,7 +147,7 @@
           <tr><td>05</td><td>Technical Architecture and Security</td><td>Target architecture, data ownership, MACH-enabled · PBC · multi-tenant · extensibility and engines, stack, AWS topology, security, scaling</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>06</td><td>Integration Strategy</td><td>ComHub model, §8 areas, §8.6 inventory mapping, Control Tower, loyalty checkout</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>07</td><td>Data Migration Strategy</td><td>Scope, three loading paths, rehearsal and reconciliation, SEO migration</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Scope, methodology, 4-month timeline, milestones, RACI, team, testing, risks, deliverables</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Scope, methodology, 5-month timeline, milestones, RACI, team, testing, risks, deliverables</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>09</td><td>Support and SLA Proposal</td><td>Platform KPIs and commitments, SLA table, support model, change management, DR and Multi-AZ architecture</td><td><span class="st st--ok">Ready · DR document attached</span></td></tr>
           <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Commercial structure and headline figures ($55K project, 1% of order value, 3-year TCO), assumptions and exclusions, Infosec evidence pack</td><td><span class="st st--plan">Detail in commercial file</span></td></tr>
           <tr><td>Annex</td><td>Mandatory attachments (§23.2)</td><td>Fit-gap matrix, project plan, reference table and CVs in separate files; the Multi-AZ DR document is linked from this deck</td><td><span class="st st--plan">Separate files</span></td></tr>
@@ -185,7 +185,7 @@
         <div class="card card--dark"><div class="ix">01</div><h3>The whole RFP, and more</h3><p>Every requested item is met by standard platform capability; metric expectations are backed by live production measurements.</p></div>
         <div class="card"><div class="ix">02</div><h3>Existing systems stay in place</h3><p>WinRetail remains the source of product, price and physical stock; the OMS owns the order lifecycle; the CRM owns customer and loyalty. We are the experience and orchestration layer.</p></div>
         <div class="card"><div class="ix">03</div><h3>A partnership that makes money</h3><p>Every sprint produces a measurable business outcome: at a reference customer, conversion +35% and AOV +7% in the first 2 months after replatforming; channel, payment and carrier decisions add 3–5.5 points to P&amp;L.</p></div>
-        <div class="card"><div class="ix">04</div><h3>Ready for what you have not asked for yet</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, multi-country and multi-currency open on the same platform; no re-platforming.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Ready for what you have not asked for yet</h3><p>OMS/WMS, multi-vendor dropship, B2B, multi-country and multi-currency open on the same platform; no re-platforming.</p></div>
         <div class="card"><div class="ix">05</div><h3>An AI-powered platform</h3><p>APIs published as MCP, conversational operations, AI PIM, semantic search and agentic-commerce compatibility today; the ACOMS roadmap towards semi-autonomous operations.</p></div>
         <div class="card"><div class="ix">06</div><h3>Proven infrastructure</h3><p>50K+ orders a day, 1B+ API requests a month; 99.99%+ availability and sub-500 ms response time; $400M+ annual commerce volume on one platform.</p></div>
       </div>
@@ -535,8 +535,9 @@
           <tr><td>Campaign and promotion</td><td>Cart-level rule engine; complements CRM rules rather than duplicating them</td><td>CRM campaign and coupon management</td><td><span class="st st--ok">In scope</span></td></tr>
           <tr><td>Payment</td><td>Payment orchestration, 3D, fraud, multi-tender, reconciliation</td><td>PSPs and banks</td><td><span class="st st--ok">In scope</span></td></tr>
           <tr><td>Marketplaces</td><td>Marketplace Seller: listings, stock, price, orders</td><td>Trendyol, Hepsiburada, Amazon</td><td><span class="st st--ok">In scope</span></td></tr>
-          <tr><td>OMS</td><td>Partly included: the Inventory Engine syncs with the ERP and moves stock very fast; the InStore Commerce module (selling and ordering in the 27 stores) can also be used; +2–3% on total sales</td><td>Retail Markup OMS keeps the order lifecycle</td><td><span class="st st--ok">Partly included</span></td></tr>
-          <tr><td>TMS</td><td>Optional: dispatch, carrier notification, tracking and labelling; 10–15% lower shipping cost, +1–1.5 P&amp;L points</td><td>Existing carrier processes</td><td><span class="st st--plan">Optional</span></td></tr>
+          <tr><td>InStore Commerce</td><td>In scope: selling and ordering items not on hand in the 27 stores, card payment in store; +2–3% on total sales</td><td>Retail Markup OMS keeps the order lifecycle</td><td><span class="st st--ok">In scope</span></td></tr>
+          <tr><td>Inventory Engine</td><td>Optional: available stock computed straight from the ERP, on the channel in 925 ms; faster stock sync</td><td>The OMS keeps computing available inventory</td><td><span class="st st--plan">Optional</span></td></tr>
+          <tr><td>TMS</td><td>In scope, no extra fee: carrier choice, labels, tracking and carrier performance; 10–15% lower shipping cost, +1–1.5 P&amp;L points</td><td>Carriers</td><td><span class="st st--ok">In scope</span></td></tr>
           <tr><td>WMS</td><td>Out of scope</td><td>Existing warehouse system</td><td><span class="st st--plan">Out of scope</span></td></tr>
         </tbody>
       </table>
@@ -558,11 +559,11 @@
         <div class="layer layer--ink"><span class="tag">Experience</span><span class="desc">Headless Experience Layer: decoupled, omnichannel storefronts and native apps; REST / GraphQL</span></div>
         <div class="layer"><span class="tag">Orchestration</span><span class="desc">Commerce Dispatch Engine: routes every purchase context to the right capability</span></div>
         <div class="layer"><span class="tag">Core commerce</span><span class="desc desc--pills"><span class="pill pill--solid">PIM / Catalogue</span> <span class="pill pill--solid">Headless CMS</span> <span class="pill pill--solid">Campaign engine</span> <span class="pill pill--solid">Payment / Checkout</span> <span class="pill pill--solid">Operational CRM</span> <span class="pill pill--solid">Marketplace Seller</span> <span class="pill">Marketplace Operator</span></span></div>
-        <div class="layer"><span class="tag">Supply chain</span><span class="desc desc--pills"><span class="pill pill--solid">OMS · Inventory Engine, InStore Commerce</span> <span class="pill">TMS · optional</span> <span class="pill">WMS</span> &nbsp;OMS partly: ERP-synced stock, in-store sales; TMS optional: dispatch, notification, tracking, labels; WMS out of scope</span></div>
+        <div class="layer"><span class="tag">Supply chain</span><span class="desc desc--pills"><span class="pill pill--solid">InStore Commerce</span> <span class="pill pill--solid">TMS</span> <span class="pill">Inventory Engine · optional</span> <span class="pill">WMS</span> &nbsp;InStore: in-store sales; TMS in scope: carrier choice, labels, tracking; Inventory Engine optional: stock straight from the ERP; WMS out of scope</span></div>
         <div class="layer layer--ink"><span class="tag">Integration</span><span class="desc">ComHub · Orchestration Manager · Control Tower: ERP, OMS, CRM, PSP, marketplaces, carriers, marketing</span></div>
         <div class="layer"><span class="tag">AI</span><span class="desc">APIs published as MCP · conversational operations via LLM Socket · AI PIM · semantic search · conversational and agentic commerce (UCP / ACP) · <b>ACOMS</b>: roadmap to semi-autonomous operations</span></div>
       </div>
-      <p class="ann"><b>Dark badges</b> are the PBCs in the proposal scope: six PBCs plus OMS partly for Shaya; light badges are ready on the same platform, optional for Shaya. Each PBC is an independently versioned Packaged Business Capability.</p>
+      <p class="ann"><b>Dark badges</b> are the PBCs in the proposal scope: six PBCs, InStore Commerce and TMS for Shaya; light badges are ready on the same platform, optional for Shaya. Each PBC is an independently versioned Packaged Business Capability.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
@@ -693,10 +694,10 @@
           </ul>
         </div>
         <div class="card">
-          <div class="ix">Marketplace Seller</div><h3>End-to-end marketplaces</h3>
+          <div class="ix">Marketplace Seller</div><h3>All marketplaces</h3>
           <ul class="flist flist--tight" style="margin-top:0.3cqh;">
             <li><b>Single point</b> for all marketplaces; no product-level definitions.</li>
-            <li><b>Dynamic call rate</b> by velocity of orders, stock and price changes.</li>
+            <li><b>Bestseller routing</b>: fast sellers move off marketplaces to own channels.</li>
             <li><b>Safety stock by channel and hierarchy</b>; stock and price differences auto-fixed.</li>
             <li><b>Reconciliation</b>: delays, cancellations, payments, returns.</li>
           </ul>
@@ -858,10 +859,10 @@
           <tr><td>7</td><td>Conversational commerce</td><td>Chat and voice shopping, LLM-assisted customer assistant</td><td>Assisted shopping on web and app; lower customer-service load</td><td><span class="st st--ok">On the platform</span></td></tr>
           <tr><td>8</td><td>Agentic commerce</td><td>Google UCP and OpenAI ACP compatibility; Claude Commerce Agent and Merchant Agent</td><td>Products are discoverable and purchasable inside AI agents' shopping flows</td><td><span class="st st--plan">Validate before contract</span></td></tr>
           <tr><td>9</td><td>Agentic operations</td><td>Business capabilities exposed to agents; first Turkish company in OnX</td><td>Routine operational steps delegated to agents under approval</td><td><span class="st st--plan">Validate before contract</span></td></tr>
-          <tr><td>10</td><td>AI-assisted carrier selection</td><td>Per-order carrier recommendation (TMS)</td><td>Delivery-time and shipping-cost optimisation</td><td><span class="st st--plan">Optional module</span></td></tr>
+          <tr><td>10</td><td>AI-assisted carrier selection</td><td>Per-order carrier recommendation (TMS)</td><td>Delivery-time and shipping-cost optimisation</td><td><span class="st st--ok">In scope · with TMS</span></td></tr>
           <tr><td>11</td><td>AI-assisted sourcing</td><td>Recommendation of the stock location that fulfils each order</td><td>Store and warehouse sourcing decisions made on data</td><td><span class="st st--plan">Optional module</span></td></tr>
           <tr><td>12</td><td>Prompt-to-page design</td><td>Prompt to page draft on the CMS component library; preview, approval, publishing</td><td>Campaign and landing pages go live without waiting in the design queue</td><td><span class="st st--plan">Via CMS · enabled in project</span></td></tr>
-          <tr><td>13</td><td>Intelligent product routing and reservation</td><td>AI routes products and stock across marketplaces and sales channels; channel-level stock reservation</td><td>Which product sells on which channel, and the stock reserved for it, decided from data</td><td><span class="st st--plan">Future · roadmap</span></td></tr>
+          <tr><td>13</td><td>AI product routing</td><td>Rule-based today; AI-predicted routing and channel-level stock reservation</td><td>Which product sells on which channel, and the stock reserved for it, decided from data</td><td><span class="st st--plan">Future · roadmap</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -919,7 +920,7 @@
         <div class="card card--dark"><div class="ix">ACOMS</div><h3>Semi-autonomous operations</h3><p>Technopark R&amp;D project: daily trade and fulfilment decisions move gradually from advisory to full delegation; rules → optimisation → statistics → ML.</p></div>
         <div class="card"><div class="ix">Channels</div><h3>POS · chat · voice · AI agents</h3><p>Store POS, chat and voice shopping, and AI-agent orders via UCP/ACP are fed by the same Commerce Platform APIs; a new channel does not mean a new integration.</p></div>
       </div>
-      <p class="note"><b>Same platform, same contract:</b> these capabilities are not separate projects; they open on the existing tenant through configuration and short integrations. OMS, TMS and WMS are added the same way when wanted.</p>
+      <p class="note"><b>Same platform, same contract:</b> these capabilities are not separate projects; they open on the existing tenant through configuration and short integrations. OMS and WMS are added the same way when wanted.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
@@ -1167,7 +1168,7 @@
           <tr><td>Multi-enabled global commerce</td><td>Multi-country, brand, site, language, currency, price and warehouse</td><td>Expansion into new markets without changing platform</td><td>Commerce Platform</td></tr>
           <tr><td>B2B / B2B2C / C2C</td><td>Corporate sales and other commerce models beyond B2C</td><td>Architectural flexibility for new sales models</td><td>Commerce Dispatch Engine</td></tr>
           <tr><td>Marketplace Operator / dropshipping</td><td>Multi-vendor, seller onboarding, approval, catalogue and order flows</td><td>Growth with third-party sellers without inventory investment</td><td>Marketplace Operator</td></tr>
-          <tr><td>Marketplace Seller operations</td><td>Single-point integration, channel-level stock buffer, reconciliation, auto-fix</td><td>Lower marketplace operating cost and fewer data inconsistencies; bestseller routing: +1.5–3 P&amp;L points (15–20% of sales, 10–15% commission)</td><td>Marketplace Seller</td></tr>
+          <tr><td>Marketplace Seller operations</td><td>Single-point integration, channel-level stock buffer, reconciliation, auto-fix</td><td>Lower marketplace operating cost and fewer data inconsistencies; rule-based bestseller routing: +1.5–3 P&amp;L points (15–20% of sales, 10–15% commission)</td><td>Marketplace Seller</td></tr>
           <tr><td>AI PIM / product extraction from images</td><td>Attribute extraction from images, content generation, automatic enrichment</td><td>Shorter product onboarding; ~1.5 FTE saved</td><td>PIM + AI</td></tr>
           <tr><td>PIM workflow in front of ERP</td><td>Supplier and merchandising product creation/approval processes</td><td>Better product data quality before ERP</td><td>PIM + ComHub</td></tr>
           <tr><td>MCP / agentic commerce</td><td>Back-office functions published as controlled MCP tools</td><td>LLM-agent-assisted operations and new commerce interfaces</td><td>API / ComHub / AI</td></tr>
@@ -1930,11 +1931,11 @@
       <h2 class="slide-title">What a standard WebShop + AppShop project <span class="accent">contains</span></h2>
       <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
         <div class="card card--dark"><div class="ix">Channels</div><h3>WebShop · AppShop · Marketplace Seller</h3><p>Next.js web, native iOS and Android for both brands; bidirectional marketplace integration with Trendyol, Hepsiburada and Amazon.</p></div>
-        <div class="card"><div class="ix">Commerce modules</div><h3>PIM · CMS · Payment Gateway · CRM · Campaign</h3><p>Product enrichment and channel publishing, drag &amp; drop content, multi-PSP payment orchestration, operational customer management, promotion engine.</p></div>
+        <div class="card"><div class="ix">Commerce modules</div><h3>PIM · CMS · Payment Gateway · CRM · Campaign · TMS</h3><p>Product enrichment and channel publishing, drag &amp; drop content, multi-PSP payment orchestration, operational customer management, promotion engine.</p></div>
         <div class="card"><div class="ix">ComHub</div><h3>Integrations</h3><p>WinRetail ERP, Retail Markup OMS, CRM/Loyalty, PSPs and banks, Retter, marketing and analytics channels (GA4, GTM, Adjust, Personaclick, Setrow, Efilli, İYS, JetSMS).</p></div>
         <div class="card"><div class="ix">Experience</div><h3>UI/UX design and the new mobile design</h3><p>Design system from the brand briefs; shared component library for web and app; accessibility (WCAG) checks.</p></div>
         <div class="card"><div class="ix">Data</div><h3>Migration and SEO transition</h3><p>Products, content, customers, order history and URL mapping; rehearsals and reconciliation.</p></div>
-        <div class="card"><div class="ix">Out of scope</div><h3>OMS · WMS · TMS implementation</h3><p>Existing systems stay in place; their integrations are in scope. They can be opened on the same platform later if required.</p></div>
+        <div class="card"><div class="ix">Out of scope</div><h3>OMS · WMS implementation</h3><p>Existing systems stay in place; their integrations are in scope; the InStore Commerce module is in scope, the Inventory Engine optional. They can be opened on the same platform later if required.</p></div>
       </div>
     </div>
     <div class="slide__footer">
@@ -1984,20 +1985,20 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Timeline · compared with RFP §17</span>
-      <h2 class="slide-title">Both brands live within <span class="accent">4 months</span>: VS week 14, BBW week 16</h2>
+      <h2 class="slide-title">Both brands live within <span class="accent">5 months</span>: VS week 18, BBW week 20</h2>
       <div class="gantt" style="margin-top:0.6cqh;">
         <div class="gantt__h">Phase</div>
-        <div class="gantt__scale"><span style="left:0.0%">W1</span><span style="left:17.6%">W4</span><span style="left:41.2%">W8</span><span style="left:64.7%">W12</span><span style="left:94.1%">W17</span></div>
-        <div class="gantt__name">Discovery &amp; fit-gap<small>workshops · BRD · contracts</small></div><div class="gantt__track"><div class="gantt__bar" style="left:0.0%; width:11.8%"></div></div>
-        <div class="gantt__name">Solution design<small>architecture · security · data · UI/UX</small></div><div class="gantt__track"><div class="gantt__bar" style="left:5.9%; width:17.6%"></div></div>
-        <div class="gantt__name">Development &amp; configuration<small>WebShop · AppShop · PBCs · ComHub</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:11.8%; width:47.1%"></div></div>
-        <div class="gantt__name">Migration rehearsals<small>2 full runs · reconciliation · delta</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--soft" style="left:29.4%; width:41.2%"></div></div>
-        <div class="gantt__name">SIT · UAT<small>SIT W9–W11 · UAT W11–W13</small></div><div class="gantt__track"><div class="gantt__bar" style="left:47.1%; width:29.4%"></div></div>
-        <div class="gantt__name">Cutover &amp; VS go-live<small>runbook · freeze · Go/No-Go · W14</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:76.5%; width:5.9%"></div></div>
-        <div class="gantt__name">VS hypercare · BBW go-live<small>BBW W16 · closure W17</small></div><div class="gantt__track"><div class="gantt__bar" style="left:76.5%; width:23.5%"></div></div>
+        <div class="gantt__scale"><span style="left:0.0%">W1</span><span style="left:13.6%">W4</span><span style="left:31.8%">W8</span><span style="left:50.0%">W12</span><span style="left:68.2%">W16</span><span style="left:95.5%">W22</span></div>
+        <div class="gantt__name">Discovery &amp; fit-gap<small>workshops · BRD · contracts · W1–W3</small></div><div class="gantt__track"><div class="gantt__bar" style="left:0.0%; width:13.6%"></div></div>
+        <div class="gantt__name">Solution design<small>architecture · security · data · UI/UX · W3–W5</small></div><div class="gantt__track"><div class="gantt__bar" style="left:9.1%; width:13.6%"></div></div>
+        <div class="gantt__name">Development &amp; configuration<small>WebShop · AppShop · PBCs · ComHub · W5–W13</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:18.2%; width:40.9%"></div></div>
+        <div class="gantt__name">Migration rehearsals<small>2 full runs · reconciliation · delta · W11–W15</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--soft" style="left:45.5%; width:22.7%"></div></div>
+        <div class="gantt__name">SIT · UAT<small>SIT W13–W15 · UAT W15–W17</small></div><div class="gantt__track"><div class="gantt__bar" style="left:54.5%; width:22.7%"></div></div>
+        <div class="gantt__name">Cutover &amp; VS go-live<small>runbook · freeze · Go/No-Go · W18</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:77.3%; width:4.5%"></div></div>
+        <div class="gantt__name">VS hypercare · BBW go-live<small>VS W18–W21 · BBW W20 · closure W22</small></div><div class="gantt__track"><div class="gantt__bar" style="left:77.3%; width:22.7%"></div></div>
       </div>
       <ul class="flist flist--tight" style="margin-top:1.4cqh; gap:0.7cqh;">
-        <li><b>RFP baseline: week 50</b>; the proposed plan is 17 weeks (M10 closure). The difference comes from ready PBCs and ComHub patterns: configuration-heavy, parallel work packages, integration not left to the last week.</li>
+        <li><b>RFP baseline: week 50</b>; the proposed plan is 22 weeks, 5 months (M10 closure). The difference comes from ready PBCs and ComHub patterns: configuration-heavy, parallel work packages, integration not left to the last week.</li>
         <li><b>Preconditions:</b> access, API contracts and content ready in W1; resource-loaded plan and critical path confirmed at the end of discovery; campaign calendar (BF, SAS, TILI) as blackout. SLA support continues after hypercare.</li>
       </ul>
     </div>
@@ -2017,18 +2018,18 @@
         <thead><tr><th>ID</th><th>Milestone</th><th>Mandatory evidence / deliverable</th><th>Approver</th><th>Proposed week</th></tr></thead>
         <tbody>
           <tr><td>M1</td><td>Project Kickoff</td><td>Project plan, governance, communication plan, RAID</td><td>Sponsor / PM</td><td>W1</td></tr>
-          <tr><td>M2</td><td>Requirements Sign-Off</td><td>BRD, fit-gap, integration and migration scope</td><td>Business Owner</td><td>W2</td></tr>
-          <tr><td>M3</td><td>Solution Design Approval</td><td>Architecture, security, integration and data design</td><td>Architecture / IT</td><td>W4</td></tr>
-          <tr><td>M4</td><td>Development Complete</td><td>Configuration, development, unit tests, documentation</td><td>Vendor PM / Tech Lead</td><td>W10</td></tr>
-          <tr><td>M5</td><td>SIT Sign-Off</td><td>SIT results, defect status, regression</td><td>IT / QA</td><td>W11</td></tr>
-          <tr><td>M6</td><td>UAT Sign-Off</td><td>Business scenarios, training, business-unit approval</td><td>Business Owner</td><td>W13</td></tr>
-          <tr><td>M7</td><td>Go-Live Readiness</td><td>Cutover runbook, rollback, support model, Go/No-Go pack</td><td>Steering Committee</td><td>W13</td></tr>
-          <tr><td>M8</td><td>Infosec</td><td>Security design approval, pentest report and closure actions, Infosec questionnaire</td><td>Shaya security</td><td>W12</td></tr>
-          <tr><td>M9</td><td>Go-Live (VS)</td><td>Deployment, smoke test, transaction validation</td><td>Business + IT</td><td>W14</td></tr>
-          <tr><td>M10</td><td>Hypercare Exit</td><td>Stabilisation report, open-item plan, operations handover; BBW go-live W16</td><td>Service Owner</td><td>W17</td></tr>
+          <tr><td>M2</td><td>Requirements Sign-Off</td><td>BRD, fit-gap, integration and migration scope</td><td>Business Owner</td><td>W3</td></tr>
+          <tr><td>M3</td><td>Solution Design Approval</td><td>Architecture, security, integration and data design</td><td>Architecture / IT</td><td>W5</td></tr>
+          <tr><td>M4</td><td>Development Complete</td><td>Configuration, development, unit tests, documentation</td><td>Vendor PM / Tech Lead</td><td>W13</td></tr>
+          <tr><td>M5</td><td>SIT Sign-Off</td><td>SIT results, defect status, regression</td><td>IT / QA</td><td>W15</td></tr>
+          <tr><td>M6</td><td>UAT Sign-Off</td><td>Business scenarios, training, business-unit approval</td><td>Business Owner</td><td>W17</td></tr>
+          <tr><td>M7</td><td>Go-Live Readiness</td><td>Cutover runbook, rollback, support model, Go/No-Go pack</td><td>Steering Committee</td><td>W17</td></tr>
+          <tr><td>M8</td><td>Infosec</td><td>Security design approval, pentest report and closure actions, Infosec questionnaire</td><td>Shaya security</td><td>W16</td></tr>
+          <tr><td>M9</td><td>Go-Live (VS)</td><td>Deployment, smoke test, transaction validation</td><td>Business + IT</td><td>W18</td></tr>
+          <tr><td>M10</td><td>Hypercare Exit</td><td>Stabilisation report, open-item plan, operations handover; BBW go-live W20</td><td>Service Owner</td><td>W22</td></tr>
         </tbody>
       </table>
-      <p class="ann"><b>Weeks</b> follow the proposed 4-month (17-week) plan; the difference from the RFP baseline (W50) is explained on the previous slide. No gate is passed without written approval; approvals are recorded in Jira.</p>
+      <p class="ann"><b>Weeks</b> follow the proposed 5-month (22-week) plan; the difference from the RFP baseline (W50) is explained on the previous slide. No gate is passed without written approval; approvals are recorded in Jira.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
@@ -2128,7 +2129,7 @@
             <li><b>Runbook</b>: task, duration, dependency and owner based; rehearsed hour by hour.</li>
             <li><b>Go/No-Go criteria</b>: open Critical = 0; written workaround for High; migration reconciled; SEO crawl clean; smoke test passed.</li>
             <li><b>Rollback</b>: decision points and return time in the runbook; back to the old platform via DNS and routing.</li>
-            <li><b>Hypercare</b>: VS 4 weeks, BBW 2 weeks (closure W17), daily stand-up, extended support hours; exit criteria M10.</li>
+            <li><b>Hypercare</b>: VS 4 weeks, BBW 3 weeks (closure W22), daily stand-up, extended support hours; exit criteria M10.</li>
           </ul>
         </div>
       </div>
@@ -2297,7 +2298,7 @@
             <li><b>Problem management</b>: recurring incidents become problem records; RCA within 24 hours (P1) / 2 working days (P2).</li>
             <li><b>Reporting</b>: monthly service report and SLA review; release, patch and upgrade calendar; third-party dependency list.</li>
           </ul>
-          <p class="ann">Hypercare (VS 4 weeks, BBW 2 weeks; closure W17): daily stand-up, extended hours, project team working alongside the support team; M10 and operations handover at exit.</p>
+          <p class="ann">Hypercare (VS 4 weeks, BBW 3 weeks; closure W22): daily stand-up, extended hours, project team working alongside the support team; M10 and operations handover at exit.</p>
         </div>
       </div>
     </div>
@@ -2476,11 +2477,11 @@
       <table class="xtable xtable--xdense">
         <thead><tr><th>ID</th><th>Type</th><th>Description</th><th>Impact</th><th>Owner / closure</th></tr></thead>
         <tbody>
-          <tr><td>A1</td><td>Exclusion</td><td>OMS, WMS and TMS implementation is outside the proposal; the existing Retail Markup OMS and WinRetail are integrated</td><td>Scope</td><td>Proposal statement</td></tr>
+          <tr><td>A1</td><td>Exclusion</td><td>OMS and WMS implementation is outside the proposal (InStore Commerce module in scope, Inventory Engine optional); the existing Retail Markup OMS and WinRetail are integrated</td><td>Scope</td><td>Proposal statement</td></tr>
           <tr><td>A2</td><td>Assumption</td><td>Volume data (44K/21K SKUs, 2.2M members, 450K orders, 70K/280K sessions) is for Victoria's Secret; Bath &amp; Body Works volumes confirmed in discovery</td><td>Capacity, duration</td><td>Shaya · discovery</td></tr>
           <tr><td>A3</td><td>Dependency</td><td>API access, test environments and credentials for WinRetail, OMS, CRM, Retter, PSP and marketplaces come from Shaya and its partners; delays affect the plan</td><td>Timeline</td><td>Shaya IT · M2</td></tr>
           <tr><td>A4</td><td>Assumption</td><td>The CRM remains owner of customer master, points, tiers, coupons and campaign rules; the ERP of products, prices and physical stock; the OMS of available inventory and the order lifecycle</td><td>Design</td><td>Discovery · M3</td></tr>
-          <tr><td>A5</td><td>Assumption</td><td>The timeline (4 months: VS W14, BBW W16, closure W17) is confirmed at the end of discovery with a resource-loaded plan and critical path; campaign periods are blackout</td><td>Timeline</td><td>CommerceLab PM · M2</td></tr>
+          <tr><td>A5</td><td>Assumption</td><td>The timeline (5 months: VS W18, BBW W20, closure W22) is confirmed at the end of discovery with a resource-loaded plan and critical path; campaign periods are blackout</td><td>Timeline</td><td>CommerceLab PM · M2</td></tr>
           <tr><td>A6</td><td>Dependency</td><td>For RPO ≤ 15 min, continuous Mongo and PostgreSQL replicas and a warm standby are set up for the Shaya tenant; cost in recurring items</td><td>Cost</td><td>CommerceLab + BestCloudForme</td></tr>
           <tr><td>A7</td><td>Assumption</td><td>Ticimax data is accessible by export or API; passwords are not migrated, OTP/social login at first sign-in</td><td>Migration</td><td>Shaya · M2</td></tr>
           <tr><td>A8</td><td>Assumption</td><td>"C" answers in the fit-gap matrix are subject to technical sign-off by the product team; closed with evidence (demo/test environment) in discovery</td><td>Scope</td><td>CommerceLab product · M2</td></tr>
