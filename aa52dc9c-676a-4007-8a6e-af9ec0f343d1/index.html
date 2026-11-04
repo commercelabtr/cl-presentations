@@ -88,6 +88,19 @@
   .ann { font-size: 0.98cqw; color: var(--muted); line-height: 1.4; margin-top: 0.9cqh; }
   .ann b { color: var(--ink); }
   .cover-sub a { color: #fff; text-decoration: underline; text-underline-offset: 0.4cqh; }
+
+  /* Ana teklif sunumundan taşınan slaytlar (platform bileşenleri, fit-gap) */
+  .st--plan { background: var(--bone-2); }
+  .xtable td.c { text-align: center; }
+  .desc--pills { line-height: 2 !important; }
+  .desc--pills .pill { font-size: 0.92cqw; padding: 0.25cqh 0.65cqw; vertical-align: middle; white-space: nowrap; }
+  .suite { gap: 1.6cqh; margin-top: 1.2cqh !important; }
+  .suite .layer { padding-top: 1.7cqh; padding-bottom: 1.7cqh; }
+  .suite .desc { font-size: 1.36cqw; }
+  .suite--7 { gap: 1cqh; margin-top: 0.8cqh !important; }
+  .suite--7 .layer { padding-top: 1.1cqh; padding-bottom: 1.1cqh; }
+  .suite--7 .desc { font-size: 1.28cqw; }
+  .suite--7 .desc--pills .pill { font-size: 0.86cqw; padding: 0.2cqh 0.5cqw; }
 </style>
 </head>
 <body>
@@ -107,7 +120,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">1 / 26</span>
+      <span class="slide__no">1 / 29</span>
     </div>
   </section>
 
@@ -120,7 +133,7 @@
         <thead><tr><th>#</th><th>Bölüm</th><th>İçerik</th></tr></thead>
         <tbody>
           <tr><td>01</td><td><b>Yönetici özeti</b></td><td>Mevcut durum anlayışımız, yaklaşımımız, Commerce LAB'i farklılaştıran noktalar, gelir ve kârlılık etkisi, kullanıcı deneyimi kanıtı, SLA taahhütleri</td></tr>
-          <tr><td>02</td><td><b>Çözüm önerimiz</b></td><td>Çözüm topolojisi, merkezde stok, üründen teslimata değer zinciri, kapsam, AI ile back office</td></tr>
+          <tr><td>02</td><td><b>Çözüm önerimiz</b></td><td>Çözüm kapsamı ve sistem sahipliği, fit-gap özeti, platform bileşenleri, kanal katmanı, çözüm topolojisi, merkezde stok, üründen teslimata değer zinciri, kapsam, AI ile back office</td></tr>
           <tr><td>03</td><td><b>Commerce Lab hakkında</b></td><td>Kim olduğumuz, neden farklıyız, referans müşteriler, liderlik ekibi</td></tr>
           <tr><td>04</td><td><b>Ticari teklif</b></td><td>Proje bedeli, aylık platform ve bakım bedelleri, 3 yıllık toplam sahip olma maliyeti (RFP §15); <b>tüm geliştirmeler fiyata dahil</b></td></tr>
           <tr><td>Ek</td><td><b>Tam teklif sunumu</b></td><td>RFP §23.1'in on iki bölümü ve §23.2 zorunlu ekleri: fonksiyonel uyum, mimari, entegrasyon, migrasyon, plan, SLA, ticari yapı, Infosec; ayrı doküman olarak paylaşılır</td></tr>
@@ -130,7 +143,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">2 / 26</span>
+      <span class="slide__no">2 / 29</span>
     </div>
   </section>
 
@@ -145,7 +158,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">3 / 26</span>
+      <span class="slide__no">3 / 29</span>
     </div>
   </section>
 
@@ -187,7 +200,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">4 / 26</span>
+      <span class="slide__no">4 / 29</span>
     </div>
   </section>
 
@@ -207,7 +220,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">5 / 26</span>
+      <span class="slide__no">5 / 29</span>
     </div>
   </section>
 
@@ -229,13 +242,14 @@
           <tr><td>08</td><td><b>Entegrasyon hızı, Control Tower</b></td><td>Sipariş 1,2 sn'de OMS'te; yok satma, gecikme ve pazaryeri mutabakatsızlığı otomatik yakalanır ve düzeltilir</td><td>Yok satma %0,02; satışın %0,5–1'i kadar iptal engellenir, ceza yok</td></tr>
           <tr><td>09</td><td><b>Merkezde stok</b></td><td>OMS yerinde kalır, ERP doğrudan Commerce Lab'e bağlanır (opsiyonel); stok senkronizasyonunda bir ara durak kalkar</td><td>Stok değişimi 925 ms'de kanalda</td></tr>
           <tr><td>10</td><td><b>En iddialı SLA</b></td><td>%99,95 erişilebilirlik, ana sayfa ve ürün sayfası &lt; 1,5 sn, checkout &lt; 2 sn, P1 olayda 15 dk çözüm</td><td>Taahhüt ölçülen %99,99'a dayanır</td></tr>
+          <tr><td>11</td><td><b>Tam fonksiyonel uyum</b></td><td>RFP'nin 69 gereksiniminin 69'u konfigürasyonla karşılanır; özel geliştirme, üçüncü taraf ürün ya da yol haritası bekleyen madde yok</td><td>Fit-gap riski yok; detay teyidi keşifte</td></tr>
         </tbody>
       </table>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">6 / 26</span>
+      <span class="slide__no">6 / 29</span>
     </div>
   </section>
 
@@ -265,7 +279,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">7 / 26</span>
+      <span class="slide__no">7 / 29</span>
     </div>
   </section>
 
@@ -294,7 +308,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">8 / 26</span>
+      <span class="slide__no">8 / 29</span>
     </div>
   </section>
 
@@ -328,7 +342,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">9 / 26</span>
+      <span class="slide__no">9 / 29</span>
     </div>
   </section>
 
@@ -359,7 +373,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">10 / 26</span>
+      <span class="slide__no">10 / 29</span>
     </div>
   </section>
 
@@ -374,7 +388,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">11 / 26</span>
+      <span class="slide__no">11 / 29</span>
     </div>
   </section>
 
@@ -402,7 +416,94 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">12 / 26</span>
+      <span class="slide__no">12 / 29</span>
+    </div>
+  </section>
+
+  <!-- FİT-GAP ÖZETİ (ana teklif sunumu, s. 31) -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Fit-gap özeti · RFP §6, §7 ve Ek A</span>
+      <h2 class="slide-title">69 gereksinim, <span class="accent">69 konfigürasyon</span>; özel geliştirme yok</h2>
+      <div class="two-col two-col--wide" style="flex:1; align-content:center;">
+        <div>
+          <div class="stat-row" style="margin-bottom:2cqh;">
+            <div class="stat"><span class="num">69</span><span class="lab">gereksinim satırı</span></div>
+            <div class="stat"><span class="num">69</span><span class="lab">C · konfigürasyon ile</span></div>
+            <div class="stat"><span class="num">0</span><span class="lab">D geliştirme · T üçüncü taraf · N karşılanmıyor</span></div>
+          </div>
+          <table class="xtable xtable--xdense">
+            <thead><tr><th>RFP bölümü</th><th>Satır</th><th>Ana modül</th></tr></thead>
+            <tbody>
+              <tr><td>6.1 Ürün ve katalog yönetimi</td><td class="c">10</td><td>PIM / Katalog, Search, ComHub</td></tr>
+              <tr><td>6.2 Arama ve navigasyon</td><td class="c">5</td><td>Search / Headless Experience</td></tr>
+              <tr><td>6.3 Ürün detay, sepet ve checkout</td><td class="c">8</td><td>Payment / Checkout, Kampanya, CRM</td></tr>
+              <tr><td>6.5 İçerik, kampanya ve yönetim paneli</td><td class="c">6</td><td>Headless CMS / AppShop</td></tr>
+              <tr><td>6.6 SEO yönetimi (16 alt başlık)</td><td class="c">37</td><td>Headless Experience / SEO, CMS, PIM</td></tr>
+              <tr><td>7 Omnichannel</td><td class="c">3</td><td>Headless Experience, ComHub, OMS</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="card card--dark" style="margin-bottom:1.2cqh;">
+            <div class="ix">Yanıt kodu tanımı</div>
+            <h3>C = standart ürün, konfigürasyonla</h3>
+            <p>Hiçbir satır özel geliştirme, üçüncü taraf ürün ya da yol haritası gerektirmez. Sıralama algoritması (FR-TEXT-004) için proje özelinde özel kural eklenebilir; kupon ve gift card üçüncü taraf sistemdeyse (FR-023) entegrasyon kapsamdadır.</p>
+          </div>
+          <div class="card">
+            <div class="ix">Doğrulama durumu</div>
+            <p>Çoğu satır "doküman destekli"; arama, 3D/fraud, CMS drag &amp; drop ve deeplink satırları ürün ekibi teknik teyidinde; omnichannel satırları OMS arayüz tasarımına bağlı. §6.4 müşteri ve üyelik matriste satır olarak açılmamıştır; karşılığı ayrı slaytta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">13 / 29</span>
+    </div>
+  </section>
+
+  <!-- PLATFORM BİLEŞENLERİ (ana teklif sunumu, s. 17) -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Platform bileşenleri</span>
+      <h2 class="slide-title">On paketlenmiş ürün, <span class="accent">tek ekosistem</span></h2>
+      <div class="stack suite suite--7">
+        <div class="layer"><span class="tag">Kanallar</span><span class="desc">WebShop (Next.js) · AppShop (native iOS, Android) · pazaryeri · ileride POS, chat, voice, agentic</span></div>
+        <div class="layer layer--ink"><span class="tag">Deneyim</span><span class="desc">Headless Experience Layer: ayrık, omnichannel storefront ve native uygulamalar; REST / GraphQL</span></div>
+        <div class="layer"><span class="tag">Orkestrasyon</span><span class="desc">Commerce Dispatch Engine: her satın alma bağlamını (marka, kanal, segment) doğru yeteneğe yönlendirir</span></div>
+        <div class="layer"><span class="tag">Core commerce</span><span class="desc desc--pills"><span class="pill pill--solid">PIM / Katalog</span> <span class="pill pill--solid">Headless CMS</span> <span class="pill pill--solid">Kampanya motoru</span> <span class="pill pill--solid">Payment / Checkout</span> <span class="pill pill--solid">Operasyonel CRM</span> <span class="pill pill--solid">Marketplace Seller</span> <span class="pill">Marketplace Operator</span></span></div>
+        <div class="layer"><span class="tag">Tedarik zinciri</span><span class="desc desc--pills"><span class="pill pill--solid">OMS · Inventory Engine, InStore Commerce</span> <span class="pill">TMS · opsiyonel</span> <span class="pill">WMS</span> &nbsp;OMS kısmen: stok ERP ile senkron, mağazada satış; TMS opsiyon: sevkiyat, bildirim, takip, etiket; WMS kapsam dışı</span></div>
+        <div class="layer layer--ink"><span class="tag">Entegrasyon</span><span class="desc">ComHub · Orchestration Manager · Control Tower: ERP, OMS, CRM, PSP, pazaryeri, kargo, pazarlama, analitik</span></div>
+        <div class="layer"><span class="tag">AI</span><span class="desc">MCP olarak yayınlı API'ler · LLM Socket ile konuşarak operasyon · AI PIM · semantik arama · conversational ve agentic commerce (UCP / ACP) · <b>ACOMS</b>: yarı otonom operasyon yol haritası</span></div>
+      </div>
+      <p class="ann"><b>Koyu rozet</b> teklif kapsamındaki PBC'ler: Shaya için altı PBC ve OMS kısmen; açık rozet aynı platformda hazır, Shaya için opsiyon. Her PBC bağımsız sürümlenen bir Packaged Business Capability'dir.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">14 / 29</span>
+    </div>
+  </section>
+
+  <!-- KANAL KATMANI (ana teklif sunumu, s. 18) -->
+  <section class="slide">
+    <div class="slide__inner">
+      <span class="kicker">Kanal katmanı · RFP §5.1.1</span>
+      <h2 class="slide-title">Dört kanal, <span class="accent">tek Commerce Platform</span></h2>
+      <div class="grid grid-4 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.4cqw;">
+        <div class="card"><div class="ix">Web</div><h3>Next.js · responsive · PWA</h3><p>SSR ve statik üretim; ürün listesi, fiyat ve linkler ilk HTML'de. Çalışma anında render yok, JAMstack dağıtım, CDN önünde. Marka başına ayrı tasarım ve domain.</p></div>
+        <div class="card"><div class="ix">iOS</div><h3>Native uygulama</h3><p>Aynı GraphQL API; yeni tasarıma geçiş kapsamda. CMS bileşenleri uygulama güncellemesi gerektirmeden yayınlanır; deeplink, push, Adjust attribution.</p></div>
+        <div class="card"><div class="ix">Android</div><h3>Native uygulama</h3><p>iOS ile ortak bileşen sözleşmesi; app-only kampanya ve banner; in-app browser ile dış link; mağaza bulucu ve Click &amp; Collect akışları.</p></div>
+        <div class="card card--dark"><div class="ix">Pazaryeri</div><h3>Trendyol · Hepsiburada · Amazon</h3><p>Marketplace Seller ile çift yönlü: ürün kartı, stok, fiyat ve sipariş. Kanal bazlı emniyet stoğu, mutabakat ve otomatik düzeltme; sipariş platformda oluşur, OMS'e devredilir.</p></div>
+      </div>
+      <p class="note"><b>Tüm kanallar</b> aynı katalog, stok, fiyat, kampanya ve müşteri servislerini kullanır; kanal bazlı görünürlük ve içerik farkı konsoldan yönetilir (RFP §6.1 yayın ve görünürlük).</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">15 / 29</span>
     </div>
   </section>
 
@@ -456,7 +557,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">13 / 26</span>
+      <span class="slide__no">16 / 29</span>
     </div>
   </section>
 
@@ -496,7 +597,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">14 / 26</span>
+      <span class="slide__no">17 / 29</span>
     </div>
   </section>
 
@@ -521,7 +622,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">15 / 26</span>
+      <span class="slide__no">18 / 29</span>
     </div>
   </section>
 
@@ -550,7 +651,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">16 / 26</span>
+      <span class="slide__no">19 / 29</span>
     </div>
   </section>
 
@@ -582,7 +683,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">17 / 26</span>
+      <span class="slide__no">20 / 29</span>
     </div>
   </section>
 
@@ -597,7 +698,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">18 / 26</span>
+      <span class="slide__no">21 / 29</span>
     </div>
   </section>
 
@@ -625,7 +726,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">19 / 26</span>
+      <span class="slide__no">22 / 29</span>
     </div>
   </section>
 
@@ -646,7 +747,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">20 / 26</span>
+      <span class="slide__no">23 / 29</span>
     </div>
   </section>
 
@@ -677,7 +778,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">21 / 26</span>
+      <span class="slide__no">24 / 29</span>
     </div>
   </section>
 
@@ -722,7 +823,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">22 / 26</span>
+      <span class="slide__no">25 / 29</span>
     </div>
   </section>
 
@@ -737,7 +838,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">23 / 26</span>
+      <span class="slide__no">26 / 29</span>
     </div>
   </section>
 
@@ -764,7 +865,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">24 / 26</span>
+      <span class="slide__no">27 / 29</span>
     </div>
   </section>
 
@@ -795,7 +896,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">25 / 26</span>
+      <span class="slide__no">28 / 29</span>
     </div>
   </section>
 
@@ -831,7 +932,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Gizli</span>
-      <span class="slide__no">26 / 26</span>
+      <span class="slide__no">29 / 29</span>
     </div>
   </section>
 
