@@ -146,7 +146,7 @@
           <tr><td>05</td><td>Technical Architecture and Security</td><td>Hedef mimari, veri sahipliği, MACH-enabled · PBC · multi-tenant · genişletilebilirlik ve motorlar, yığın, AWS topolojisi, güvenlik, ölçekleme</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>06</td><td>Integration Strategy</td><td>ComHub modeli, §8 alanları, §8.6 envanter eşlemesi, Control Tower, loyalty checkout</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>07</td><td>Data Migration Strategy</td><td>Kapsam, üç aktarım yolu, prova ve mutabakat, SEO geçişi</td><td><span class="st st--ok">Hazır</span></td></tr>
-          <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Kapsam, metodoloji, 4 aylık zaman planı, kilometre taşları, RACI, ekip, test, risk, teslimatlar</td><td><span class="st st--ok">Hazır</span></td></tr>
+          <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Kapsam, metodoloji, 5 aylık zaman planı, kilometre taşları, RACI, ekip, test, risk, teslimatlar</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>09</td><td>Support and SLA Proposal</td><td>Platform KPI'ları ve taahhütler, SLA tablosu, destek modeli, change management, DR ve Multi-AZ mimari</td><td><span class="st st--ok">Hazır · DR dokümanı ekte</span></td></tr>
           <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Ticari teklif yapısı ve özet rakamlar (55K $ proje, sipariş tutarının %1'i, 3 yıllık TCO), varsayım ve kapsam dışı listesi, Infosec kanıt paketi</td><td><span class="st st--plan">Detay ticari dosyada</span></td></tr>
           <tr><td>Ek</td><td>Zorunlu ekler (§23.2)</td><td>Fit-gap matrisi, proje planı, referans tablosu ve CV'ler ayrı dosyalarda; Multi-AZ DR dokümanı bu sunuma bağlı</td><td><span class="st st--plan">Ayrı dosyalar</span></td></tr>
@@ -184,7 +184,7 @@
         <div class="card card--dark"><div class="ix">01</div><h3>RFP'nin tamamı, fazlasıyla</h3><p>Talep edilen her başlık standart platform yeteneğiyle karşılanır; metrik beklentileri canlı üretim ölçümleriyle belgelenir.</p></div>
         <div class="card"><div class="ix">02</div><h3>Mevcut sistemler yerinde kalır</h3><p>WinRetail ürün, fiyat ve fiziksel stoğun; OMS sipariş yaşam döngüsünün; CRM müşteri ve sadakatin kaynağı olmaya devam eder. Biz deneyim ve orkestrasyon katmanıyız.</p></div>
         <div class="card"><div class="ix">03</div><h3>Para kazandıran ortaklık</h3><p>Her sprint ölçülebilir iş çıktısı üretir: referans müşteride replatform sonrası ilk 2 ayda dönüşüm +%35, AOV +%7; kanal, ödeme ve kargo kararlarıyla kâr-zarara +3–5,5 puan.</p></div>
-        <div class="card"><div class="ix">04</div><h3>Bugün istemediğiniz, yarın hazır</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, çoklu ülke ve para birimi aynı platformda açılır; yeniden platform değişikliği gerekmez.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Bugün istemediğiniz, yarın hazır</h3><p>OMS/WMS, multi-vendor dropship, B2B, çoklu ülke ve para birimi aynı platformda açılır; yeniden platform değişikliği gerekmez.</p></div>
         <div class="card"><div class="ix">05</div><h3>AI ile çalışan platform</h3><p>MCP olarak yayınlanmış API'ler, konuşarak operasyon, AI PIM, semantik arama ve agentic commerce uyumu bugün; ACOMS ile yarı otonom operasyon yol haritası.</p></div>
         <div class="card"><div class="ix">06</div><h3>Kanıtlanmış altyapı</h3><p>Günde 50K+ sipariş, ayda 1B+ API isteği; %99,99+ erişilebilirlik ve 500 ms altında yanıt süresi; yılda 400M$+ ticaret hacmi tek platformda.</p></div>
       </div>
@@ -534,8 +534,9 @@
           <tr><td>Kampanya ve promosyon</td><td>Sepet seviyesi kural motoru; CRM kurallarını tekrarlamaz, tamamlar</td><td>CRM kampanya ve kupon yönetimi</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>Ödeme</td><td>Ödeme orkestrasyonu, 3D, fraud, multi-tender, mutabakat</td><td>PSP ve bankalar</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>Pazaryeri</td><td>Marketplace Seller: ürün kartı, stok, fiyat, sipariş</td><td>Trendyol, Hepsiburada, Amazon</td><td><span class="st st--ok">Kapsamda</span></td></tr>
-          <tr><td>OMS</td><td>Kısmen kapsamda: Inventory Engine ERP ile senkron çalışır, stok çok hızlı aktarılır; InStore Commerce modülü (27 mağazada satış ve sipariş) de kullanılabilir; toplam satışa +%2–3</td><td>Retail Markup OMS sipariş yaşam döngüsünün sahibi kalır</td><td><span class="st st--ok">Kısmen kapsamda</span></td></tr>
-          <tr><td>TMS</td><td>Opsiyonel: sevkiyat (dispatch), kargo bildirimi, takip ve etiketleme; kargo giderinde %10–15 iyileşme, kâr-zarara +1–1,5 puan</td><td>Mevcut kargo süreçleri</td><td><span class="st st--plan">Opsiyonel</span></td></tr>
+          <tr><td>InStore Commerce</td><td>Kapsamda: 27 mağazada olmayan ürünün satışı ve siparişi, ödeme mağazada kartla; toplam satışa +%2–3</td><td>Retail Markup OMS sipariş yaşam döngüsünün sahibi kalır</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+          <tr><td>Inventory Engine</td><td>Opsiyonel: satılabilir stok ERP'den doğrudan hesaplanır, kanala 925 ms'de ulaşır; daha hızlı stok senkronu</td><td>OMS satılabilir stok hesabını yapmaya devam eder</td><td><span class="st st--plan">Opsiyonel</span></td></tr>
+          <tr><td>TMS</td><td>Kapsamda, ek bedel yok: kargo firması kararı, etiket, takip ve kargo performansı; kargo giderinde %10–15 iyileşme, kâr-zarara +1–1,5 puan</td><td>Kargo firmaları</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>WMS</td><td>Teklif dışı</td><td>Mevcut depo sistemi</td><td><span class="st st--plan">Kapsam dışı</span></td></tr>
         </tbody>
       </table>
@@ -557,11 +558,11 @@
         <div class="layer layer--ink"><span class="tag">Deneyim</span><span class="desc">Headless Experience Layer: ayrık, omnichannel storefront ve native uygulamalar; REST / GraphQL</span></div>
         <div class="layer"><span class="tag">Orkestrasyon</span><span class="desc">Commerce Dispatch Engine: her satın alma bağlamını (marka, kanal, segment) doğru yeteneğe yönlendirir</span></div>
         <div class="layer"><span class="tag">Core commerce</span><span class="desc desc--pills"><span class="pill pill--solid">PIM / Katalog</span> <span class="pill pill--solid">Headless CMS</span> <span class="pill pill--solid">Kampanya motoru</span> <span class="pill pill--solid">Payment / Checkout</span> <span class="pill pill--solid">Operasyonel CRM</span> <span class="pill pill--solid">Marketplace Seller</span> <span class="pill">Marketplace Operator</span></span></div>
-        <div class="layer"><span class="tag">Tedarik zinciri</span><span class="desc desc--pills"><span class="pill pill--solid">OMS · Inventory Engine, InStore Commerce</span> <span class="pill">TMS · opsiyonel</span> <span class="pill">WMS</span> &nbsp;OMS kısmen: stok ERP ile senkron, mağazada satış; TMS opsiyon: sevkiyat, bildirim, takip, etiket; WMS kapsam dışı</span></div>
+        <div class="layer"><span class="tag">Tedarik zinciri</span><span class="desc desc--pills"><span class="pill pill--solid">InStore Commerce</span> <span class="pill pill--solid">TMS</span> <span class="pill">Inventory Engine · opsiyonel</span> <span class="pill">WMS</span> &nbsp;InStore: mağazada satış; TMS kapsamda: kargo kararı, etiket, takip; Inventory Engine opsiyon: ERP'den doğrudan stok; WMS kapsam dışı</span></div>
         <div class="layer layer--ink"><span class="tag">Entegrasyon</span><span class="desc">ComHub · Orchestration Manager · Control Tower: ERP, OMS, CRM, PSP, pazaryeri, kargo, pazarlama, analitik</span></div>
         <div class="layer"><span class="tag">AI</span><span class="desc">MCP olarak yayınlı API'ler · LLM Socket ile konuşarak operasyon · AI PIM · semantik arama · conversational ve agentic commerce (UCP / ACP) · <b>ACOMS</b>: yarı otonom operasyon yol haritası</span></div>
       </div>
-      <p class="ann"><b>Koyu rozet</b> teklif kapsamındaki PBC'ler: Shaya için altı PBC ve OMS kısmen; açık rozet aynı platformda hazır, Shaya için opsiyon. Her PBC bağımsız sürümlenen bir Packaged Business Capability'dir.</p>
+      <p class="ann"><b>Koyu rozet</b> teklif kapsamındaki PBC'ler: Shaya için altı PBC, InStore Commerce ve TMS; açık rozet aynı platformda hazır, Shaya için opsiyon. Her PBC bağımsız sürümlenen bir Packaged Business Capability'dir.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
@@ -695,7 +696,7 @@
           <div class="ix">Marketplace Seller</div><h3>Uçtan uca pazaryeri</h3>
           <ul class="flist flist--tight" style="margin-top:0.3cqh;">
             <li><b>Tek noktadan</b> tüm pazaryerleri; ürün bazlı tanım gerektirmez.</li>
-            <li><b>Dinamik çağrı hızı</b> sipariş, stok ve fiyat değişim hızına göre.</li>
+            <li><b>Bestseller kanal yönlendirme</b>: tükenecek ürün pazaryerinde kapanır, kendi kanalda satılır.</li>
             <li><b>Kanal ve hiyerarşi bazlı emniyet stoğu</b>; stok ve fiyat farkı otomatik düzeltme.</li>
             <li><b>Mutabakat</b>: gecikme, iptal, ödeme, iade.</li>
           </ul>
@@ -857,10 +858,10 @@
           <tr><td>7</td><td>Conversational commerce</td><td>Sohbet ve sesle alışveriş, LLM destekli müşteri asistanı</td><td>Web ve app'te asistanlı alışveriş; müşteri hizmetleri yükü azalır</td><td><span class="st st--ok">Platformda</span></td></tr>
           <tr><td>8</td><td>Agentic commerce</td><td>Google UCP ve OpenAI ACP uyumu; Claude Commerce Agent ve Merchant Agent</td><td>Ürünler AI agent'ların alışveriş akışlarında bulunur ve satılır</td><td><span class="st st--plan">Sözleşme öncesi teyit</span></td></tr>
           <tr><td>9</td><td>Agentic operations</td><td>İş yetkinlikleri agent'lara açık; OnX üyesi ilk Türk firması</td><td>Rutin operasyon adımları onaylı biçimde agent'lara devredilir</td><td><span class="st st--plan">Sözleşme öncesi teyit</span></td></tr>
-          <tr><td>10</td><td>AI destekli kargo seçimi</td><td>Sipariş bazında kargo firması önerisi (TMS)</td><td>Teslimat süresi ve kargo maliyeti optimizasyonu</td><td><span class="st st--plan">İsteğe bağlı modül</span></td></tr>
+          <tr><td>10</td><td>AI destekli kargo seçimi</td><td>Sipariş bazında kargo firması önerisi (TMS)</td><td>Teslimat süresi ve kargo maliyeti optimizasyonu</td><td><span class="st st--ok">Kapsamda · TMS ile</span></td></tr>
           <tr><td>11</td><td>AI destekli sourcing</td><td>Siparişin hangi stok noktasından karşılanacağı önerisi</td><td>Mağaza ve depo sourcing kararı veriye dayalı verilir</td><td><span class="st st--plan">İsteğe bağlı modül</span></td></tr>
           <tr><td>12</td><td>Prompt ile sayfa tasarımı</td><td>CMS bileşen kütüphanesi üzerinde prompt'tan sayfa taslağı, önizleme, onay ve yayın</td><td>Kampanya ve landing sayfaları tasarım kuyruğu beklemeden yayına çıkar</td><td><span class="st st--plan">CMS ile · projede açılır</span></td></tr>
-          <tr><td>13</td><td>Akıllı ürün yönlendirme</td><td>Kanallar arasında AI ile ürün yönlendirme ve rezervasyon</td><td>Ürün–kanal eşleşmesi ve kanal stoğu veriye dayalı</td><td><span class="st st--plan">Gelecek · yol haritası</span></td></tr>
+          <tr><td>13</td><td>AI ile ürün yönlendirme</td><td>Kural tabanlı bugün; AI tahminli yönlendirme ve kanal rezervasyonu</td><td>Ürün–kanal eşleşmesi ve kanal stoğu veriye dayalı</td><td><span class="st st--plan">Gelecek · yol haritası</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -918,7 +919,7 @@
         <div class="card card--dark"><div class="ix">ACOMS</div><h3>Yarı otonom operasyon</h3><p>Teknopark Ar-Ge projesi: günlük ticaret ve fulfilment kararları danışman modundan tam yetki devrine kademeli taşınır; kural → optimizasyon → istatistik → ML.</p></div>
         <div class="card"><div class="ix">Kanallar</div><h3>POS · sohbet · ses · AI agent'ları</h3><p>Mağaza POS, sohbet ve sesli alışveriş, UCP/ACP üzerinden AI agent siparişleri aynı Commerce Platform API'lerinden beslenir; yeni kanal yeni entegrasyon demek değildir.</p></div>
       </div>
-      <p class="note"><b>Aynı platform, aynı sözleşme:</b> bu yetenekler ayrı proje değil, mevcut tenant üzerinde yapılandırma ve kısa entegrasyonla açılır. OMS, TMS ve WMS de istendiğinde aynı yolla eklenir.</p>
+      <p class="note"><b>Aynı platform, aynı sözleşme:</b> bu yetenekler ayrı proje değil, mevcut tenant üzerinde yapılandırma ve kısa entegrasyonla açılır. OMS ve WMS de istendiğinde aynı yolla eklenir.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
@@ -1166,7 +1167,7 @@
           <tr><td>Multi-enabled global commerce</td><td>Çoklu ülke, marka, site, dil, para birimi, fiyat ve depo</td><td>Yeni pazarlara platform değiştirmeden genişleme</td><td>Commerce Platform</td></tr>
           <tr><td>B2B / B2B2C / C2C</td><td>Kurumsal satış ve farklı ticaret modelleri</td><td>Yeni satış modelleri için mimari esneklik</td><td>Commerce Dispatch Engine</td></tr>
           <tr><td>Marketplace Operator / dropshipping</td><td>Multi-vendor, satıcı onboarding, onay, katalog ve sipariş akışları</td><td>Stok yatırımı yapmadan üçüncü taraf satıcılarla büyüme</td><td>Marketplace Operator</td></tr>
-          <tr><td>Marketplace Seller operasyonu</td><td>Tek noktadan entegrasyon, kanal bazlı stok tamponu, mutabakat, otomatik düzeltme</td><td>Pazaryeri operasyon maliyeti ve veri tutarsızlığı azalır; bestseller kanal yönlendirmesiyle kâr-zarara +1,5–3 puan (satışın %15–20'si, %10–15 komisyon)</td><td>Marketplace Seller</td></tr>
+          <tr><td>Marketplace Seller operasyonu</td><td>Tek noktadan entegrasyon, kanal bazlı stok tamponu, mutabakat, otomatik düzeltme</td><td>Pazaryeri operasyon maliyeti ve veri tutarsızlığı azalır; kural tabanlı bestseller kanal yönlendirmesiyle kâr-zarara +1,5–3 puan (satışın %15–20'si, %10–15 komisyon)</td><td>Marketplace Seller</td></tr>
           <tr><td>AI PIM / görselden ürün çıkarımı</td><td>Görselden nitelik çıkarımı, içerik üretimi, otomatik zenginleştirme</td><td>Ürün onboarding süresi kısalır; ~1,5 kişilik iş yükü kalkar</td><td>PIM + AI</td></tr>
           <tr><td>ERP önünde PIM iş akışı</td><td>Tedarikçi ve merchandising ürün oluşturma/onay süreçleri</td><td>ERP öncesi ürün veri kalitesi</td><td>PIM + ComHub</td></tr>
           <tr><td>MCP / agentic commerce</td><td>Back-office fonksiyonları kontrollü MCP araçları olarak</td><td>LLM agent destekli operasyon ve yeni ticaret arayüzleri</td><td>API / ComHub / AI</td></tr>
@@ -1935,11 +1936,11 @@
       <h2 class="slide-title">Standart WebShop + AppShop projesinin <span class="accent">içeriği</span></h2>
       <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
         <div class="card card--dark"><div class="ix">Kanallar</div><h3>WebShop · AppShop · Marketplace Seller</h3><p>İki marka için Next.js web, native iOS ve Android; Trendyol, Hepsiburada ve Amazon ile çift yönlü pazaryeri entegrasyonu.</p></div>
-        <div class="card"><div class="ix">Ticaret modülleri</div><h3>PIM · CMS · Payment Gateway · CRM · Kampanya</h3><p>Ürün zenginleştirme ve kanal yayını, drag &amp; drop içerik, çoklu PSP ödeme orkestrasyonu, operasyonel müşteri yönetimi, promosyon motoru.</p></div>
+        <div class="card"><div class="ix">Ticaret modülleri</div><h3>PIM · CMS · Payment Gateway · CRM · Kampanya · TMS</h3><p>Ürün zenginleştirme ve kanal yayını, drag &amp; drop içerik, çoklu PSP ödeme orkestrasyonu, operasyonel müşteri yönetimi, promosyon motoru.</p></div>
         <div class="card"><div class="ix">ComHub</div><h3>Entegrasyonlar</h3><p>WinRetail ERP, Retail Markup OMS, CRM/Loyalty, PSP ve bankalar, Retter, pazarlama ve analitik kanalları (GA4, GTM, Adjust, Personaclick, Setrow, Efilli, İYS, JetSMS).</p></div>
         <div class="card"><div class="ix">Deneyim</div><h3>UI/UX tasarım ve yeni mobil tasarım</h3><p>Marka brief'leriyle tasarım sistemi; web ve app için ortak bileşen kütüphanesi; erişilebilirlik (WCAG) kontrolleri.</p></div>
         <div class="card"><div class="ix">Veri</div><h3>Migrasyon ve SEO geçişi</h3><p>Ürün, içerik, müşteri, sipariş geçmişi ve URL eşlemesi; prova ve mutabakat.</p></div>
-        <div class="card"><div class="ix">Kapsam dışı</div><h3>OMS · WMS · TMS kurulumu</h3><p>Mevcut sistemler yerinde kalır, entegrasyonları kapsamdadır. İleride istenirse aynı platformda açılır.</p></div>
+        <div class="card"><div class="ix">Kapsam dışı</div><h3>OMS · WMS kurulumu</h3><p>Mevcut sistemler yerinde kalır, entegrasyonları kapsamdadır; InStore Commerce modülü kapsamda, Inventory Engine opsiyon. İleride istenirse aynı platformda açılır.</p></div>
       </div>
     </div>
     <div class="slide__footer">
@@ -1989,20 +1990,20 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Zaman planı · RFP §17 ile kıyaslı</span>
-      <h2 class="slide-title">İki marka <span class="accent">4 ayda</span> canlıda: VS 14. hafta, BBW 16. hafta</h2>
+      <h2 class="slide-title">İki marka <span class="accent">5 ayda</span> canlıda: VS 18. hafta, BBW 20. hafta</h2>
       <div class="gantt" style="margin-top:0.6cqh;">
         <div class="gantt__h">Faz</div>
-        <div class="gantt__scale"><span style="left:0.0%">H1</span><span style="left:17.6%">H4</span><span style="left:41.2%">H8</span><span style="left:64.7%">H12</span><span style="left:94.1%">H17</span></div>
-        <div class="gantt__name">Keşif &amp; fit-gap<small>çalıştaylar · BRD · sözleşmeler</small></div><div class="gantt__track"><div class="gantt__bar" style="left:0.0%; width:11.8%"></div></div>
-        <div class="gantt__name">Çözüm tasarımı<small>mimari · güvenlik · veri · UI/UX</small></div><div class="gantt__track"><div class="gantt__bar" style="left:5.9%; width:17.6%"></div></div>
-        <div class="gantt__name">Geliştirme &amp; konfigürasyon<small>WebShop · AppShop · PBC'ler · ComHub</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:11.8%; width:47.1%"></div></div>
-        <div class="gantt__name">Migrasyon provaları<small>2 tam prova · mutabakat · delta</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--soft" style="left:29.4%; width:41.2%"></div></div>
-        <div class="gantt__name">SIT · UAT<small>SIT H9–H11 · UAT H11–H13</small></div><div class="gantt__track"><div class="gantt__bar" style="left:47.1%; width:29.4%"></div></div>
-        <div class="gantt__name">Cutover &amp; Go-Live VS<small>runbook · freeze · Go/No-Go · H14</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:76.5%; width:5.9%"></div></div>
-        <div class="gantt__name">Hypercare VS · BBW go-live<small>BBW H16 · kapanış H17</small></div><div class="gantt__track"><div class="gantt__bar" style="left:76.5%; width:23.5%"></div></div>
+        <div class="gantt__scale"><span style="left:0.0%">H1</span><span style="left:13.6%">H4</span><span style="left:31.8%">H8</span><span style="left:50.0%">H12</span><span style="left:68.2%">H16</span><span style="left:95.5%">H22</span></div>
+        <div class="gantt__name">Keşif &amp; fit-gap<small>çalıştaylar · BRD · sözleşmeler · H1–H3</small></div><div class="gantt__track"><div class="gantt__bar" style="left:0.0%; width:13.6%"></div></div>
+        <div class="gantt__name">Çözüm tasarımı<small>mimari · güvenlik · veri · UI/UX · H3–H5</small></div><div class="gantt__track"><div class="gantt__bar" style="left:9.1%; width:13.6%"></div></div>
+        <div class="gantt__name">Geliştirme &amp; konfigürasyon<small>WebShop · AppShop · PBC'ler · ComHub · H5–H13</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:18.2%; width:40.9%"></div></div>
+        <div class="gantt__name">Migrasyon provaları<small>2 tam prova · mutabakat · delta · H11–H15</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--soft" style="left:45.5%; width:22.7%"></div></div>
+        <div class="gantt__name">SIT · UAT<small>SIT H13–H15 · UAT H15–H17</small></div><div class="gantt__track"><div class="gantt__bar" style="left:54.5%; width:22.7%"></div></div>
+        <div class="gantt__name">Cutover &amp; Go-Live VS<small>runbook · freeze · Go/No-Go · H18</small></div><div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:77.3%; width:4.5%"></div></div>
+        <div class="gantt__name">Hypercare VS · BBW go-live<small>VS H18–H21 · BBW H20 · kapanış H22</small></div><div class="gantt__track"><div class="gantt__bar" style="left:77.3%; width:22.7%"></div></div>
       </div>
       <ul class="flist flist--tight" style="margin-top:1.4cqh; gap:0.7cqh;">
-        <li><b>RFP temeli 50. hafta</b>; önerilen plan 17 hafta (M10 kapanış). Fark hazır PBC'ler ve ComHub desenlerinden gelir: konfigürasyon ağırlıklı, paralel iş paketleri, entegrasyon son haftaya kalmaz.</li>
+        <li><b>RFP temeli 50. hafta</b>; önerilen plan 22 hafta, 5 ay (M10 kapanış). Fark hazır PBC'ler ve ComHub desenlerinden gelir: konfigürasyon ağırlıklı, paralel iş paketleri, entegrasyon son haftaya kalmaz.</li>
         <li><b>Ön koşullar:</b> erişimler, API sözleşmeleri ve içerik H1'de hazır; keşif sonunda kaynak yüklü plan ve kritik yol teyidi; kampanya takvimi (BF, SAS, TILI) blackout. Hypercare sonrası SLA desteği devam eder.</li>
       </ul>
     </div>
@@ -2022,18 +2023,18 @@
         <thead><tr><th>ID</th><th>Kilometre taşı</th><th>Zorunlu kanıt / teslimat</th><th>Onaylayan</th><th>Önerilen hafta</th></tr></thead>
         <tbody>
           <tr><td>M1</td><td>Project Kickoff</td><td>Proje planı, governance, iletişim planı, RAID</td><td>Sponsor / PM</td><td>H1</td></tr>
-          <tr><td>M2</td><td>Requirements Sign-Off</td><td>BRD, fit-gap, entegrasyon ve migrasyon kapsamı</td><td>Business Owner</td><td>H2</td></tr>
-          <tr><td>M3</td><td>Solution Design Approval</td><td>Mimari, güvenlik, entegrasyon ve veri tasarımı</td><td>Architecture / IT</td><td>H4</td></tr>
-          <tr><td>M4</td><td>Development Complete</td><td>Konfigürasyon, geliştirme, unit test, dokümantasyon</td><td>Vendor PM / Tech Lead</td><td>H10</td></tr>
-          <tr><td>M5</td><td>SIT Sign-Off</td><td>SIT sonuçları, defect durumu, regresyon</td><td>IT / QA</td><td>H11</td></tr>
-          <tr><td>M6</td><td>UAT Sign-Off</td><td>İş senaryoları, eğitim, iş birimi onayı</td><td>Business Owner</td><td>H13</td></tr>
-          <tr><td>M7</td><td>Go-Live Readiness</td><td>Cutover runbook, rollback, destek modeli, Go/No-Go paketi</td><td>Steering Committee</td><td>H13</td></tr>
-          <tr><td>M8</td><td>Infosec</td><td>Güvenlik tasarım onayı, pentest raporu ve kapanış aksiyonları, Infosec soru seti</td><td>Shaya güvenlik</td><td>H12</td></tr>
-          <tr><td>M9</td><td>Go-Live (VS)</td><td>Deployment, smoke test, işlem validasyonu</td><td>Business + IT</td><td>H14</td></tr>
-          <tr><td>M10</td><td>Hypercare Exit</td><td>Stabilizasyon raporu, açık konu planı, operasyon devri; BBW go-live H16</td><td>Service Owner</td><td>H17</td></tr>
+          <tr><td>M2</td><td>Requirements Sign-Off</td><td>BRD, fit-gap, entegrasyon ve migrasyon kapsamı</td><td>Business Owner</td><td>H3</td></tr>
+          <tr><td>M3</td><td>Solution Design Approval</td><td>Mimari, güvenlik, entegrasyon ve veri tasarımı</td><td>Architecture / IT</td><td>H5</td></tr>
+          <tr><td>M4</td><td>Development Complete</td><td>Konfigürasyon, geliştirme, unit test, dokümantasyon</td><td>Vendor PM / Tech Lead</td><td>H13</td></tr>
+          <tr><td>M5</td><td>SIT Sign-Off</td><td>SIT sonuçları, defect durumu, regresyon</td><td>IT / QA</td><td>H15</td></tr>
+          <tr><td>M6</td><td>UAT Sign-Off</td><td>İş senaryoları, eğitim, iş birimi onayı</td><td>Business Owner</td><td>H17</td></tr>
+          <tr><td>M7</td><td>Go-Live Readiness</td><td>Cutover runbook, rollback, destek modeli, Go/No-Go paketi</td><td>Steering Committee</td><td>H17</td></tr>
+          <tr><td>M8</td><td>Infosec</td><td>Güvenlik tasarım onayı, pentest raporu ve kapanış aksiyonları, Infosec soru seti</td><td>Shaya güvenlik</td><td>H16</td></tr>
+          <tr><td>M9</td><td>Go-Live (VS)</td><td>Deployment, smoke test, işlem validasyonu</td><td>Business + IT</td><td>H18</td></tr>
+          <tr><td>M10</td><td>Hypercare Exit</td><td>Stabilizasyon raporu, açık konu planı, operasyon devri; BBW go-live H20</td><td>Service Owner</td><td>H22</td></tr>
         </tbody>
       </table>
-      <p class="ann"><b>Haftalar</b> önerilen 4 aylık (17 hafta) plana göredir; RFP temeli (H50) ile fark bir önceki slaytta açıklanır. Hiçbir kapı yazılı onay olmadan geçilmez; onaylar Jira'da kayıt altındadır.</p>
+      <p class="ann"><b>Haftalar</b> önerilen 5 aylık (22 hafta) plana göredir; RFP temeli (H50) ile fark bir önceki slaytta açıklanır. Hiçbir kapı yazılı onay olmadan geçilmez; onaylar Jira'da kayıt altındadır.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
@@ -2133,7 +2134,7 @@
             <li><b>Runbook</b>: görev, süre, bağımlılık ve sahip bazlı; saat saat prova edilir.</li>
             <li><b>Go/No-Go kriterleri</b>: açık Critical = 0; High için yazılı workaround; migrasyon mutabakatı; SEO crawl temiz; smoke test geçti.</li>
             <li><b>Rollback</b>: karar noktaları ve geri dönüş süresi runbook'ta; DNS ve yönlendirme ile eski platforma dönüş.</li>
-            <li><b>Hypercare</b>: VS 4 hafta, BBW 2 hafta (H17 kapanış), günlük stand-up, genişletilmiş destek saatleri; çıkış kriteri M10.</li>
+            <li><b>Hypercare</b>: VS 4 hafta, BBW 3 hafta (H22 kapanış), günlük stand-up, genişletilmiş destek saatleri; çıkış kriteri M10.</li>
           </ul>
         </div>
       </div>
@@ -2302,7 +2303,7 @@
             <li><b>Problem yönetimi</b>: tekrarlayan olaylar problem kaydına; RCA 24 saat (P1) / 2 iş günü (P2).</li>
             <li><b>Raporlama</b>: aylık servis raporu ve SLA review; release, patch ve upgrade takvimi; üçüncü taraf bağımlılık listesi.</li>
           </ul>
-          <p class="ann">Hypercare (VS 4 hafta, BBW 2 hafta; H17 kapanış): günlük stand-up, genişletilmiş saatler, proje ekibi destek ekibiyle birlikte; çıkışta M10 ve operasyon devri.</p>
+          <p class="ann">Hypercare (VS 4 hafta, BBW 3 hafta; H22 kapanış): günlük stand-up, genişletilmiş saatler, proje ekibi destek ekibiyle birlikte; çıkışta M10 ve operasyon devri.</p>
         </div>
       </div>
     </div>
@@ -2481,11 +2482,11 @@
       <table class="xtable xtable--xdense">
         <thead><tr><th>ID</th><th>Tür</th><th>Açıklama</th><th>Etki</th><th>Owner / kapanış</th></tr></thead>
         <tbody>
-          <tr><td>A1</td><td>Kapsam dışı</td><td>OMS, WMS ve TMS kurulumu teklif dışıdır; mevcut Retail Markup OMS ve WinRetail entegre edilir</td><td>Kapsam</td><td>Teklif beyanı</td></tr>
+          <tr><td>A1</td><td>Kapsam dışı</td><td>OMS ve WMS kurulumu teklif dışıdır (InStore Commerce modülü kapsamda, Inventory Engine opsiyon); mevcut Retail Markup OMS ve WinRetail entegre edilir</td><td>Kapsam</td><td>Teklif beyanı</td></tr>
           <tr><td>A2</td><td>Varsayım</td><td>Hacim verileri (44K/21K SKU, 2,2M üye, 450K sipariş, 70K/280K oturum) Victoria's Secret içindir; Bath &amp; Body Works hacmi keşifte teyit edilir</td><td>Kapasite, süre</td><td>Shaya · keşif</td></tr>
           <tr><td>A3</td><td>Bağımlılık</td><td>WinRetail, OMS, CRM, Retter, PSP ve pazaryeri API erişimi, test ortamı ve kimlik bilgileri Shaya ve iş ortaklarından; gecikme planı etkiler</td><td>Takvim</td><td>Shaya IT · M2</td></tr>
           <tr><td>A4</td><td>Varsayım</td><td>CRM müşteri master, puan, tier, kupon ve kampanya kurallarının; ERP ürün, fiyat ve fiziksel stoğun; OMS satılabilir stok ve sipariş yaşam döngüsünün sahibi olmaya devam eder</td><td>Tasarım</td><td>Keşif · M3</td></tr>
-          <tr><td>A5</td><td>Varsayım</td><td>Zaman planı (4 ay: VS H14, BBW H16, kapanış H17) keşif sonunda kaynak yüklü plan ve kritik yolla teyit edilir; kampanya dönemleri blackout</td><td>Takvim</td><td>CommerceLab PM · M2</td></tr>
+          <tr><td>A5</td><td>Varsayım</td><td>Zaman planı (5 ay: VS H18, BBW H20, kapanış H22) keşif sonunda kaynak yüklü plan ve kritik yolla teyit edilir; kampanya dönemleri blackout</td><td>Takvim</td><td>CommerceLab PM · M2</td></tr>
           <tr><td>A6</td><td>Bağımlılık</td><td>RPO ≤ 15 dk için Mongo ve PostgreSQL sürekli replika ve warm standby Shaya tenant'ı için kurulur; maliyeti tekrarlayan kalemlerde</td><td>Maliyet</td><td>CommerceLab + BestCloudForme</td></tr>
           <tr><td>A7</td><td>Varsayım</td><td>Ticimax verisine export veya API ile erişim sağlanır; şifreler taşınmaz, ilk girişte OTP/sosyal giriş</td><td>Migrasyon</td><td>Shaya · M2</td></tr>
           <tr><td>A8</td><td>Varsayım</td><td>Fit-gap matrisindeki "C" yanıtları ürün ekibi teknik teyidine tabidir; keşifte kanıt (demo/test ortamı) ile kapatılır</td><td>Kapsam</td><td>CommerceLab ürün · M2</td></tr>
