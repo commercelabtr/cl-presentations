@@ -104,6 +104,7 @@
   .suite--7 .desc--pills .pill { font-size: 0.86cqw; padding: 0.2cqh 0.5cqw; }
   .logowall { grid-template-columns: repeat(6, 1fr); }
 
+  .xtable--tight td { padding-top: 0.28cqh; padding-bottom: 0.28cqh; }
 </style>
 </head>
 <body>
@@ -146,7 +147,7 @@
           <tr><td>07</td><td>Data Migration Strategy</td><td>Kapsam, üç aktarım yolu, prova ve mutabakat, SEO geçişi</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Kapsam, metodoloji, 4 aylık zaman planı, kilometre taşları, RACI, ekip, test, risk, teslimatlar</td><td><span class="st st--ok">Hazır</span></td></tr>
           <tr><td>09</td><td>Support and SLA Proposal</td><td>Platform KPI'ları ve taahhütler, SLA tablosu, destek modeli, change management, DR ve Multi-AZ mimari</td><td><span class="st st--ok">Hazır · DR dokümanı ekte</span></td></tr>
-          <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Ticari teklif yapısı (rakamlar ayrı dosyada), varsayım ve kapsam dışı listesi, Infosec kanıt paketi</td><td><span class="st st--plan">Rakamlar ticari dosyada</span></td></tr>
+          <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Ticari teklif yapısı ve özet rakamlar (55K $ proje, sipariş tutarının %1'i, 3 yıllık TCO), varsayım ve kapsam dışı listesi, Infosec kanıt paketi</td><td><span class="st st--plan">Detay ticari dosyada</span></td></tr>
           <tr><td>Ek</td><td>Zorunlu ekler (§23.2)</td><td>Fit-gap matrisi, proje planı, referans tablosu ve CV'ler ayrı dosyalarda; Multi-AZ DR dokümanı bu sunuma bağlı</td><td><span class="st st--plan">Ayrı dosyalar</span></td></tr>
         </tbody>
       </table>
@@ -181,7 +182,7 @@
       <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
         <div class="card card--dark"><div class="ix">01</div><h3>RFP'nin tamamı, fazlasıyla</h3><p>Talep edilen her başlık standart platform yeteneğiyle karşılanır; metrik beklentileri canlı üretim ölçümleriyle belgelenir.</p></div>
         <div class="card"><div class="ix">02</div><h3>Mevcut sistemler yerinde kalır</h3><p>WinRetail ürün, fiyat ve fiziksel stoğun; OMS sipariş yaşam döngüsünün; CRM müşteri ve sadakatin kaynağı olmaya devam eder. Biz deneyim ve orkestrasyon katmanıyız.</p></div>
-        <div class="card"><div class="ix">03</div><h3>Para kazandıran ortaklık</h3><p>Her sprint ölçülebilir iş çıktısı üretir; performans, dönüşüm ve operasyon KPI'ları tek konsolda izlenir.</p></div>
+        <div class="card"><div class="ix">03</div><h3>Para kazandıran ortaklık</h3><p>Her sprint ölçülebilir iş çıktısı üretir: referans müşteride replatform sonrası ilk 2 ayda dönüşüm +%35, AOV +%7; kanal, ödeme ve kargo kararlarıyla kâr-zarara +3–5,5 puan.</p></div>
         <div class="card"><div class="ix">04</div><h3>Bugün istemediğiniz, yarın hazır</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, çoklu ülke ve para birimi aynı platformda açılır; yeniden platform değişikliği gerekmez.</p></div>
         <div class="card"><div class="ix">05</div><h3>AI ile çalışan platform</h3><p>MCP olarak yayınlanmış API'ler, konuşarak operasyon, AI PIM, semantik arama ve agentic commerce uyumu bugün; ACOMS ile yarı otonom operasyon yol haritası.</p></div>
         <div class="card"><div class="ix">06</div><h3>Kanıtlanmış altyapı</h3><p>Günde 50K+ sipariş, ayda 1B+ API isteği; %99,99+ erişilebilirlik ve 500 ms altında yanıt süresi; yılda 400M$+ ticaret hacmi tek platformda.</p></div>
@@ -226,8 +227,8 @@
       <h2 class="slide-title">Replatform sonrası dönüşümde <span class="accent">+%35</span></h2>
       <div class="fill">
         <div class="stat-row" style="justify-content:space-between; margin-bottom:2.8cqh;">
-          <div class="stat"><span class="num">+%35</span><span class="lab">dönüşüm oranı artışı, replatform sonrası</span></div>
-          <div class="stat"><span class="num">+%7</span><span class="lab">ortalama sepet tutarı (AOV) artışı</span></div>
+          <div class="stat"><span class="num">+%35</span><span class="lab">dönüşüm oranı artışı, replatform sonrası ilk 2 ay</span></div>
+          <div class="stat"><span class="num">+%7</span><span class="lab">ortalama sepet tutarı (AOV) artışı, aynı dönem</span></div>
           <div class="stat"><span class="num">%96,3</span><span class="lab">ödeme başarısı; ödeme deneyen müşterinin ödeyen oranı, banka redleri dahil</span></div>
           <div class="stat"><span class="num">%99,998</span><span class="lab">platform hatası olmadan tamamlanan ödeme adımı</span></div>
         </div>
@@ -256,7 +257,7 @@
             </div>
           </div>
         </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, replatform öncesi ve sonrası dönem karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026; yok satma tüm kanallarda. Sayfa yüklenme: New Relic Browser, gerçek kullanıcı LCP p75, canlı siteler, 27 Ekim–3 Kasım 2026.</p>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Kaynak:</b> dönüşüm ve AOV, referans müşteride replatform sonrası ilk 2 ayın öncesiyle karşılaştırması. Ödeme: OMS ve New Relic PaymentGateway, 27 Ekim–2 Kasım 2026. Huni: GA4, CommerceLab'in canlı moda ve perakende siteleri, 6 Ekim–2 Kasım 2026; yok satma tüm kanallarda. Sayfa yüklenme: New Relic Browser, gerçek kullanıcı LCP p75, canlı siteler, 27 Ekim–3 Kasım 2026.</p>
       </div>
     </div>
     <div class="slide__footer">
@@ -344,7 +345,7 @@
           <div class="stat"><span class="num">150 ms</span><span class="lab">stok hesabı; emniyet stoku, yoldaki stok ve rezervasyon dahil</span></div>
         </div>
         <div class="grid grid-3 compact-cards">
-          <div class="card card--dark"><div class="ix">Yok satma</div><h3>%0,02, tüm kanallarda</h3><p>Stok her değişimde yeniden hesaplanır ve kanala itilir; satılan ürünün stokta olmaması istisna olarak kalır.</p></div>
+          <div class="card card--dark"><div class="ix">Yok satma</div><h3>%0,02, tüm kanallarda</h3><p>Stok her değişimde yeniden hesaplanır ve kanala itilir; satışın ~%0,5'i yok satmadan kurtarılır, pazaryeri cezaları önlenir.</p></div>
           <div class="card"><div class="ix">Hızlı şerit</div><h3>Kritik stok 1,2 sn'de kapanır</h3><p>Son adetlere düşen ürün sıradaki toplu güncellemeyi beklemez, öncelikli akışla kanalda satışa kapanır.</p></div>
           <div class="card"><div class="ix">Control Tower</div><h3>Kayıp sipariş yok</h3><p>Kanalda olup OMS'te olmayan sipariş müşteriden önce yakalanır ve yeniden işlenir.</p></div>
         </div>
@@ -532,8 +533,8 @@
           <tr><td>Kampanya ve promosyon</td><td>Sepet seviyesi kural motoru; CRM kurallarını tekrarlamaz, tamamlar</td><td>CRM kampanya ve kupon yönetimi</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>Ödeme</td><td>Ödeme orkestrasyonu, 3D, fraud, multi-tender, mutabakat</td><td>PSP ve bankalar</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>Pazaryeri</td><td>Marketplace Seller: ürün kartı, stok, fiyat, sipariş</td><td>Trendyol, Hepsiburada, Amazon</td><td><span class="st st--ok">Kapsamda</span></td></tr>
-          <tr><td>OMS</td><td>Kısmen kapsamda: Inventory Engine ERP ile senkron çalışır, stok çok hızlı aktarılır; InStore Commerce modülü (mağazada satış ve sipariş) de kullanılabilir</td><td>Retail Markup OMS sipariş yaşam döngüsünün sahibi kalır</td><td><span class="st st--ok">Kısmen kapsamda</span></td></tr>
-          <tr><td>TMS</td><td>Opsiyonel: sevkiyat (dispatch), kargo bildirimi, takip ve etiketleme</td><td>Mevcut kargo süreçleri</td><td><span class="st st--plan">Opsiyonel</span></td></tr>
+          <tr><td>OMS</td><td>Kısmen kapsamda: Inventory Engine ERP ile senkron çalışır, stok çok hızlı aktarılır; InStore Commerce modülü (mağazada satış ve sipariş) de kullanılabilir; toplam satışa +%2–3</td><td>Retail Markup OMS sipariş yaşam döngüsünün sahibi kalır</td><td><span class="st st--ok">Kısmen kapsamda</span></td></tr>
+          <tr><td>TMS</td><td>Opsiyonel: sevkiyat (dispatch), kargo bildirimi, takip ve etiketleme; kargo giderinde %10–15 iyileşme</td><td>Mevcut kargo süreçleri</td><td><span class="st st--plan">Opsiyonel</span></td></tr>
           <tr><td>WMS</td><td>Teklif dışı</td><td>Mevcut depo sistemi</td><td><span class="st st--plan">Kapsam dışı</span></td></tr>
         </tbody>
       </table>
@@ -1158,20 +1159,20 @@
     <div class="slide__inner">
       <span class="kicker">RFP dışı ek faydalar · Ek Faydalar sayfası</span>
       <h2 class="slide-title">On üç ek yetkinlik, <span class="accent">ek lisans yok</span></h2>
-      <table class="xtable xtable--xdense">
+      <table class="xtable xtable--xdense xtable--tight">
         <thead><tr><th>Ek yetkinlik</th><th>CommerceLab yeteneği</th><th>Shaya için iş değeri</th><th>Ürün</th></tr></thead>
         <tbody>
           <tr><td>Multi-enabled global commerce</td><td>Çoklu ülke, marka, site, dil, para birimi, fiyat ve depo</td><td>Yeni pazarlara platform değiştirmeden genişleme</td><td>Commerce Platform</td></tr>
           <tr><td>B2B / B2B2C / C2C</td><td>Kurumsal satış ve farklı ticaret modelleri</td><td>Yeni satış modelleri için mimari esneklik</td><td>Commerce Dispatch Engine</td></tr>
           <tr><td>Marketplace Operator / dropshipping</td><td>Multi-vendor, satıcı onboarding, onay, katalog ve sipariş akışları</td><td>Stok yatırımı yapmadan üçüncü taraf satıcılarla büyüme</td><td>Marketplace Operator</td></tr>
-          <tr><td>Marketplace Seller operasyonu</td><td>Tek noktadan entegrasyon, kanal bazlı stok tamponu, mutabakat, otomatik düzeltme</td><td>Pazaryeri operasyon maliyeti ve veri tutarsızlığı azalır</td><td>Marketplace Seller</td></tr>
-          <tr><td>AI PIM / görselden ürün çıkarımı</td><td>Görselden nitelik çıkarımı, içerik üretimi, otomatik zenginleştirme</td><td>Ürün onboarding süresi kısalır</td><td>PIM + AI</td></tr>
+          <tr><td>Marketplace Seller operasyonu</td><td>Tek noktadan entegrasyon, kanal bazlı stok tamponu, mutabakat, otomatik düzeltme</td><td>Pazaryeri operasyon maliyeti ve veri tutarsızlığı azalır; bestseller kanal yönlendirmesiyle kâr-zarara +1,5–3 puan</td><td>Marketplace Seller</td></tr>
+          <tr><td>AI PIM / görselden ürün çıkarımı</td><td>Görselden nitelik çıkarımı, içerik üretimi, otomatik zenginleştirme</td><td>Ürün onboarding süresi kısalır; ~1,5 kişilik iş yükü kalkar</td><td>PIM + AI</td></tr>
           <tr><td>ERP önünde PIM iş akışı</td><td>Tedarikçi ve merchandising ürün oluşturma/onay süreçleri</td><td>ERP öncesi ürün veri kalitesi</td><td>PIM + ComHub</td></tr>
           <tr><td>MCP / agentic commerce</td><td>Back-office fonksiyonları kontrollü MCP araçları olarak</td><td>LLM agent destekli operasyon ve yeni ticaret arayüzleri</td><td>API / ComHub / AI</td></tr>
           <tr><td>ACOMS / Commerce Operating System</td><td>Operasyonları birleşik görünümde orkestrasyon ve izleme</td><td>Çok kanallı operasyonda merkezi görünürlük</td><td>ACOMS / ComHub</td></tr>
           <tr><td>MACH-enabled composable yapı / PBC</td><td>API-first, headless, cloud-native, modüler yetenekler</td><td>Daha düşük entegrasyon bağımlılığı, kademeli dönüşüm</td><td>Platform mimarisi</td></tr>
           <tr><td>Gelişmiş kampanya kuralları</td><td>Event-action, best-choice, custom action, scripting, yaşam döngüsü segmentasyonu</td><td>Daha esnek promosyon ve kişiselleştirme</td><td>Kampanya motoru</td></tr>
-          <tr><td>Ödeme orkestrasyonu dayanıklılığı</td><td>Dinamik PSP yönlendirme, failover, auto-fix, fraud skorlama</td><td>Ödeme başarısı ve operasyonel süreklilik</td><td>Payment / Checkout</td></tr>
+          <tr><td>Ödeme orkestrasyonu dayanıklılığı</td><td>Dinamik PSP yönlendirme, failover, auto-fix, fraud skorlama</td><td>Ödeme başarısı ve operasyonel süreklilik; en uygun marjlı bankayla satışın %0,5–1'i tasarruf</td><td>Payment / Checkout</td></tr>
           <tr><td>Omnichannel CRM entegrasyonu</td><td>Harici CRM ile müşteri master, loyalty, kupon, çek, gift card kullanımı</td><td>Mevcut sadakat yatırımı korunur</td><td>Operasyonel CRM</td></tr>
           <tr><td>Mimariyle gelen güvenlik</td><td>Rol bazlı erişim, API güvenliği, şifreleme, izleme, yüksek erişilebilirlik</td><td>Kurumsal güvenlik ve süreklilik</td><td>Altyapı / güvenlik</td></tr>
         </tbody>
@@ -2220,17 +2221,17 @@
         <div class="stat-row" style="justify-content:space-between; margin-bottom:2.6cqh;">
           <div class="stat"><span class="num">50K+</span><span class="lab">sipariş / gün, platform geneli</span></div>
           <div class="stat"><span class="num">1B+</span><span class="lab">API isteği / ay</span></div>
-          <div class="stat"><span class="num">%99,99+</span><span class="lab">erişilebilirlik (RFP hedefi ≥ %99,9)</span></div>
+          <div class="stat"><span class="num">%99,99+</span><span class="lab">erişilebilirlik; taahhüt ≥ %99,95 (RFP hedefi ≥ %99,9)</span></div>
           <div class="stat"><span class="num">&lt; 500 ms</span><span class="lab">API yanıt süresi; ölçülen ortalama 379 ms · Apdex 0,98 (New Relic)</span></div>
         </div>
         <table class="xtable xtable--xdense">
           <thead><tr><th>KPI</th><th>Ölçülen değer</th><th>Kaynak</th><th>Shaya taahhüdü</th></tr></thead>
           <tbody>
-            <tr><td>Page speed · ana sayfa, PDP</td><td>Ana sayfa <b>0,9 sn</b> · PDP <b>0,5 sn</b>; LCP p75, gerçek kullanıcı</td><td>New Relic Browser · CrUX</td><td>&lt; 2 sn; cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
-            <tr><td>Page speed · sepet, checkout</td><td>Sepet <b>0,9 sn</b> · checkout <b>0,7 sn</b>; LCP p75, gerçek kullanıcı</td><td>New Relic Browser</td><td>&lt; 3 sn</td></tr>
+            <tr><td>Page speed · ana sayfa, PDP</td><td>Ana sayfa <b>0,9 sn</b> · PDP <b>0,5 sn</b>; LCP p75, gerçek kullanıcı</td><td>New Relic Browser · CrUX</td><td>&lt; 1,5 sn (RFP hedefi &lt; 2 sn); cihaz, ağ ve ölçüm yöntemi keşifte mutabık kalınır</td></tr>
+            <tr><td>Page speed · sepet, checkout</td><td>Sepet <b>0,9 sn</b> · checkout <b>0,7 sn</b>; LCP p75, gerçek kullanıcı</td><td>New Relic Browser</td><td>&lt; 2 sn (RFP hedefi &lt; 3 sn)</td></tr>
             <tr><td>API speed</td><td>GraphQL p95 <b>250 ms</b>, p99 490 ms (kampanya zirvesi profili); Apdex 0,98 (T 0,5 sn) · 0,99 (T 1 sn)</td><td>k6 + New Relic, Ekim–Kasım 2026</td><td>p95 &lt; 500 ms · Apdex ≥ 0,99; aylık raporlanır</td></tr>
             <tr><td>Payment completion · platform hatasız ödeme adımı</td><td><b>%99,998</b>; 59K çağrıda 1 platform hatası</td><td>New Relic PaymentGateway, 27 Ekim–2 Kasım 2026</td><td>≥ %99,999</td></tr>
-            <tr><td>Robustness · fonksiyonel uptime</td><td><b>%99,99+</b>; pod yeniden başlatma saniyeler, düğüm değişimi dakikalar</td><td>Uptime Kuma · UptimeRobot</td><td>≥ %99,9 aylık, planlı bakım hariç</td></tr>
+            <tr><td>Robustness · fonksiyonel uptime</td><td><b>%99,99+</b>; pod yeniden başlatma saniyeler, düğüm değişimi dakikalar</td><td>Uptime Kuma · UptimeRobot</td><td>≥ %99,95 aylık, planlı bakım hariç (RFP hedefi ≥ %99,9)</td></tr>
             <tr><td>Deploy ve geri alma süresi</td><td>Ortalama <b>1,5 dakika</b>; rollback aynı sürede</td><td>Jenkins</td><td>Kesintisiz yayın</td></tr>
           </tbody>
         </table>
@@ -2251,7 +2252,7 @@
       <table class="xtable xtable--dense">
         <thead><tr><th>Seviye</th><th>Örnek etki</th><th>Yanıt</th><th>Teknik müdahale</th><th>Geçici çözüm</th><th>Kalıcı çözüm</th><th>RCA</th></tr></thead>
         <tbody>
-          <tr><td>P1 · Critical</td><td>Site/app erişilemiyor, sipariş veya ödeme alınamıyor, puanla ödeme ve kampanya servisi hatası</td><td>5 dk</td><td>15 dk</td><td>30 dk</td><td>2 saat</td><td>24 saat</td></tr>
+          <tr><td>P1 · Critical</td><td>Site/app erişilemiyor, sipariş veya ödeme alınamıyor, puanla ödeme ve kampanya servisi hatası</td><td>5 dk</td><td>15 dk</td><td>15 dk</td><td>2 saat</td><td>24 saat</td></tr>
           <tr><td>P2 · High</td><td>OMS entegrasyon kesintisi, siparişlerin aktarılmaması, kargo, sadakat ve stok servisleri</td><td>15 dk</td><td>30 dk</td><td>2 saat</td><td>8 saat</td><td>2 iş günü</td></tr>
           <tr><td>P3 · Medium</td><td>CMS yayın, arama sonucu, yönetim paneli ve müşteri hesabı hataları</td><td>1 saat</td><td>2 saat</td><td>4 saat</td><td>1 iş günü</td><td>—</td></tr>
           <tr><td>P4 · Low</td><td>UI, içerik, metin ve rapor talepleri</td><td>1 iş günü</td><td>—</td><td>3 iş günü</td><td>Planlı sürüm</td><td>—</td></tr>
@@ -2417,7 +2418,7 @@
       <div class="divider-index">10–12</div>
       <span class="kicker">RFP §23.1 · 10, 11, 12 ve §15</span>
       <h2 class="slide-title">Ticari teklif, varsayımlar ve Infosec</h2>
-      <p class="lead">Ticari teklifin yapısı ve TCO yaklaşımı; varsayımlar, bağımlılıklar ve kapsam dışı maddeler; bilgi güvenliği kanıt paketi. Rakamlar ayrı ticari dosyadadır.</p>
+      <p class="lead">Ticari teklifin yapısı ve TCO yaklaşımı; varsayımlar, bağımlılıklar ve kapsam dışı maddeler; bilgi güvenliği kanıt paketi. Özet rakamlar bu bölümde, ayrıntılı ticari dosya ayrıca paylaşılır.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span>
@@ -2433,7 +2434,7 @@
       <h2 class="slide-title">Tek seferlik ve tekrarlayan kalemler, <span class="accent">üç yıllık TCO</span></h2>
       <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
         <div class="card">
-          <div class="ix">Tek seferlik · §15.1</div><h3>Proje bedeli</h3>
+          <div class="ix">Tek seferlik · §15.1</div><h3>Proje bedeli · 55.000 $</h3>
           <ul class="flist flist--tight" style="margin-top:0.3cqh;">
             <li>Discovery ve danışmanlık</li>
             <li>Kurulum ve başlangıç bedelleri</li>
@@ -2443,7 +2444,7 @@
           </ul>
         </div>
         <div class="card card--dark">
-          <div class="ix">Tekrarlayan · §15.2</div><h3>Platform ve servis</h3>
+          <div class="ix">Tekrarlayan · §15.2</div><h3>Platform ve servis · sipariş tutarının %1'i</h3>
           <ul class="flist flist--tight" style="margin-top:0.3cqh;">
             <li>Platform / lisans bedeli (SaaS, tenant bazlı)</li>
             <li>Hosting, CDN ve trafik (AWS, BestCloudForme operasyon)</li>
@@ -2462,7 +2463,7 @@
           </ul>
         </div>
       </div>
-      <p class="note"><b>Rakamlar ayrı ticari dosyada</b>: vergi, kur ve endeksleme, ödeme planı (kilometre taşına bağlı), teklif geçerlilik süresi, üçüncü taraf maliyetleri ve 1./2./3. yıl TCO tablosu (lisans, kurulum, altyapı, destek, üçüncü taraf) hacim bantları ve büyüme senaryolarıyla.</p>
+      <p class="note"><b>Özet teklif rakamları:</b> proje bedeli 55.000 $ tek seferlik (2 marka; uyarlama ve entegrasyonlar dahil, tasarım hariç) · platform kullanımı sipariş tutarının %1'i, pazaryeri siparişlerinde %0,5'i; TMS ücretsiz · barındırma 3.500 $/ay canlı + 500 $/ay test · 3 yıllık TCO 662.196 $, net satışın %1,25'i · KDV hariç, vade 30 gün; tüm geliştirmeler dahil, ek change request faturası yok. Vergi, kur, ödeme planı ve geçerlilik ayrıntısı ticari dosyada.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
