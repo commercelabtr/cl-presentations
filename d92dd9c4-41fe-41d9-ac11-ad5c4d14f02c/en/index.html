@@ -106,6 +106,7 @@
   .suite .desc { font-size: 1.28cqw !important; }
   .xtable--xxdense td { padding: 0.34cqh 0.6cqw 0.34cqh 0; font-size: 0.9cqw; line-height: 1.28; }
 
+  .xtable--tight td { padding-top: 0.28cqh; padding-bottom: 0.28cqh; }
 </style>
 </head>
 <body>
@@ -148,7 +149,7 @@
           <tr><td>07</td><td>Data Migration Strategy</td><td>Scope, three loading paths, rehearsal and reconciliation, SEO migration</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Scope, methodology, 4-month timeline, milestones, RACI, team, testing, risks, deliverables</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>09</td><td>Support and SLA Proposal</td><td>Platform KPIs and commitments, SLA table, support model, change management, DR and Multi-AZ architecture</td><td><span class="st st--ok">Ready · DR document attached</span></td></tr>
-          <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Commercial structure (figures in a separate file), assumptions and exclusions, Infosec evidence pack</td><td><span class="st st--plan">Figures in commercial file</span></td></tr>
+          <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Commercial structure and headline figures ($55K project, 1% of order value, 3-year TCO), assumptions and exclusions, Infosec evidence pack</td><td><span class="st st--plan">Detail in commercial file</span></td></tr>
           <tr><td>Annex</td><td>Mandatory attachments (§23.2)</td><td>Fit-gap matrix, project plan, reference table and CVs in separate files; the Multi-AZ DR document is linked from this deck</td><td><span class="st st--plan">Separate files</span></td></tr>
         </tbody>
       </table>
@@ -183,7 +184,7 @@
       <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
         <div class="card card--dark"><div class="ix">01</div><h3>The whole RFP, and more</h3><p>Every requested item is met by standard platform capability; metric expectations are backed by live production measurements.</p></div>
         <div class="card"><div class="ix">02</div><h3>Existing systems stay in place</h3><p>WinRetail remains the source of product, price and physical stock; the OMS owns the order lifecycle; the CRM owns customer and loyalty. We are the experience and orchestration layer.</p></div>
-        <div class="card"><div class="ix">03</div><h3>A partnership that makes money</h3><p>Every sprint produces a measurable business outcome; performance, conversion and operations KPIs are tracked in a single console.</p></div>
+        <div class="card"><div class="ix">03</div><h3>A partnership that makes money</h3><p>Every sprint produces a measurable business outcome: at a reference customer, conversion +35% and AOV +7% in the first 2 months after replatforming; channel, payment and carrier decisions add 3–5.5 points to P&amp;L.</p></div>
         <div class="card"><div class="ix">04</div><h3>Ready for what you have not asked for yet</h3><p>OMS/TMS/WMS, multi-vendor dropship, B2B, multi-country and multi-currency open on the same platform; no re-platforming.</p></div>
         <div class="card"><div class="ix">05</div><h3>An AI-powered platform</h3><p>APIs published as MCP, conversational operations, AI PIM, semantic search and agentic-commerce compatibility today; the ACOMS roadmap towards semi-autonomous operations.</p></div>
         <div class="card"><div class="ix">06</div><h3>Proven infrastructure</h3><p>50K+ orders a day, 1B+ API requests a month; 99.99%+ availability and sub-500 ms response time; $400M+ annual commerce volume on one platform.</p></div>
@@ -228,8 +229,8 @@
       <h2 class="slide-title">After replatforming, conversion <span class="accent">up 35%</span></h2>
       <div class="fill">
         <div class="stat-row" style="justify-content:space-between; margin-bottom:2.8cqh;">
-          <div class="stat"><span class="num">+35%</span><span class="lab">conversion rate uplift after replatforming</span></div>
-          <div class="stat"><span class="num">+7%</span><span class="lab">average order value (AOV) uplift</span></div>
+          <div class="stat"><span class="num">+35%</span><span class="lab">conversion rate uplift, first 2 months after replatforming</span></div>
+          <div class="stat"><span class="num">+7%</span><span class="lab">average order value (AOV) uplift, same period</span></div>
           <div class="stat"><span class="num">96.3%</span><span class="lab">payment success; customers who attempt payment and pay, bank declines included</span></div>
           <div class="stat"><span class="num">99.998%</span><span class="lab">payment steps completed without a platform error</span></div>
         </div>
@@ -258,7 +259,7 @@
             </div>
           </div>
         </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, comparison of the periods before and after replatforming. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026; oversell across all channels. Page load: New Relic Browser, real-user LCP p75, live sites, 27 October–3 November 2026.</p>
+        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, reference customer, first 2 months after replatforming compared with the period before. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026; oversell across all channels. Page load: New Relic Browser, real-user LCP p75, live sites, 27 October–3 November 2026.</p>
       </div>
     </div>
     <div class="slide__footer">
@@ -346,7 +347,7 @@
           <div class="stat"><span class="num">150 ms</span><span class="lab">stock calculation; safety stock, in-transit and reservations included</span></div>
         </div>
         <div class="grid grid-3 compact-cards">
-          <div class="card card--dark"><div class="ix">Oversell</div><h3>0.02%, across all channels</h3><p>Stock is recalculated and pushed to the channel on every change; selling an item that is not in stock stays the exception.</p></div>
+          <div class="card card--dark"><div class="ix">Oversell</div><h3>0.02%, across all channels</h3><p>Stock is recalculated and pushed to the channel on every change; about 0.5% of sales is rescued from overselling and marketplace penalties are avoided.</p></div>
           <div class="card"><div class="ix">Fast lane</div><h3>Critical stock closes in 1.2 s</h3><p>An item down to its last units does not wait for the next batch update; a priority flow takes it off sale on the channel.</p></div>
           <div class="card"><div class="ix">Control Tower</div><h3>No lost orders</h3><p>An order on the channel but missing in the OMS is caught before the customer notices, and reprocessed.</p></div>
         </div>
@@ -534,8 +535,8 @@
           <tr><td>Campaign and promotion</td><td>Cart-level rule engine; complements CRM rules rather than duplicating them</td><td>CRM campaign and coupon management</td><td><span class="st st--ok">In scope</span></td></tr>
           <tr><td>Payment</td><td>Payment orchestration, 3D, fraud, multi-tender, reconciliation</td><td>PSPs and banks</td><td><span class="st st--ok">In scope</span></td></tr>
           <tr><td>Marketplaces</td><td>Marketplace Seller: listings, stock, price, orders</td><td>Trendyol, Hepsiburada, Amazon</td><td><span class="st st--ok">In scope</span></td></tr>
-          <tr><td>OMS</td><td>Partly included: the Inventory Engine syncs with the ERP and moves stock very fast; the InStore Commerce module (in-store selling and ordering) can also be used</td><td>Retail Markup OMS keeps the order lifecycle</td><td><span class="st st--ok">Partly included</span></td></tr>
-          <tr><td>TMS</td><td>Optional: dispatch, carrier notification, tracking and labelling</td><td>Existing carrier processes</td><td><span class="st st--plan">Optional</span></td></tr>
+          <tr><td>OMS</td><td>Partly included: the Inventory Engine syncs with the ERP and moves stock very fast; the InStore Commerce module (selling and ordering in the 27 stores) can also be used; +2–3% on total sales</td><td>Retail Markup OMS keeps the order lifecycle</td><td><span class="st st--ok">Partly included</span></td></tr>
+          <tr><td>TMS</td><td>Optional: dispatch, carrier notification, tracking and labelling; 10–15% lower shipping cost, +1–1.5 P&amp;L points</td><td>Existing carrier processes</td><td><span class="st st--plan">Optional</span></td></tr>
           <tr><td>WMS</td><td>Out of scope</td><td>Existing warehouse system</td><td><span class="st st--plan">Out of scope</span></td></tr>
         </tbody>
       </table>
@@ -1159,21 +1160,21 @@
   <section class="slide">
     <div class="slide__inner">
       <span class="kicker">Additional benefits beyond the RFP · Ek Faydalar sheet</span>
-      <h2 class="slide-title">Thirteen additional capabilities, <span class="accent">no extra licence</span></h2>
-      <table class="xtable xtable--xdense xtable--xxdense">
+      <h2 class="slide-title">Thirteen capabilities, <span class="accent">no extra licence</span></h2>
+      <table class="xtable xtable--xdense xtable--xxdense xtable--tight">
         <thead><tr><th>Additional capability</th><th>CommerceLab feature</th><th>Business value for Shaya</th><th>Product</th></tr></thead>
         <tbody>
           <tr><td>Multi-enabled global commerce</td><td>Multi-country, brand, site, language, currency, price and warehouse</td><td>Expansion into new markets without changing platform</td><td>Commerce Platform</td></tr>
           <tr><td>B2B / B2B2C / C2C</td><td>Corporate sales and other commerce models beyond B2C</td><td>Architectural flexibility for new sales models</td><td>Commerce Dispatch Engine</td></tr>
           <tr><td>Marketplace Operator / dropshipping</td><td>Multi-vendor, seller onboarding, approval, catalogue and order flows</td><td>Growth with third-party sellers without inventory investment</td><td>Marketplace Operator</td></tr>
-          <tr><td>Marketplace Seller operations</td><td>Single-point integration, channel-level stock buffer, reconciliation, auto-fix</td><td>Lower marketplace operating cost and fewer data inconsistencies</td><td>Marketplace Seller</td></tr>
-          <tr><td>AI PIM / product extraction from images</td><td>Attribute extraction from images, content generation, automatic enrichment</td><td>Shorter product onboarding</td><td>PIM + AI</td></tr>
+          <tr><td>Marketplace Seller operations</td><td>Single-point integration, channel-level stock buffer, reconciliation, auto-fix</td><td>Lower marketplace operating cost and fewer data inconsistencies; bestseller routing: +1.5–3 P&amp;L points (15–20% of sales, 10–15% commission)</td><td>Marketplace Seller</td></tr>
+          <tr><td>AI PIM / product extraction from images</td><td>Attribute extraction from images, content generation, automatic enrichment</td><td>Shorter product onboarding; ~1.5 FTE saved</td><td>PIM + AI</td></tr>
           <tr><td>PIM workflow in front of ERP</td><td>Supplier and merchandising product creation/approval processes</td><td>Better product data quality before ERP</td><td>PIM + ComHub</td></tr>
           <tr><td>MCP / agentic commerce</td><td>Back-office functions published as controlled MCP tools</td><td>LLM-agent-assisted operations and new commerce interfaces</td><td>API / ComHub / AI</td></tr>
           <tr><td>ACOMS / Commerce Operating System</td><td>Orchestration and monitoring of operations in a unified view</td><td>Central visibility across multichannel operations</td><td>ACOMS / ComHub</td></tr>
           <tr><td>MACH-enabled composable architecture / PBC</td><td>API-first, headless, cloud-native, modular capabilities</td><td>Lower integration dependency, gradual transformation</td><td>Platform architecture</td></tr>
           <tr><td>Advanced campaign rules</td><td>Event-action, best-choice, custom action, scripting, lifecycle segmentation</td><td>More flexible promotion and personalisation</td><td>Campaign engine</td></tr>
-          <tr><td>Payment orchestration resilience</td><td>Dynamic PSP routing, failover, auto-fix, fraud scoring</td><td>Payment success and operational continuity</td><td>Payment / Checkout</td></tr>
+          <tr><td>Payment orchestration resilience</td><td>Dynamic PSP routing, failover, auto-fix, fraud scoring</td><td>Payment success and operational continuity; 0.5–1% of sales saved via bank routing, +0.5–1 P&amp;L points</td><td>Payment / Checkout</td></tr>
           <tr><td>Omnichannel CRM integration</td><td>Customer master, loyalty, coupon, cheque and gift-card usage with an external CRM</td><td>Existing loyalty investment preserved</td><td>Operational CRM</td></tr>
           <tr><td>Security by architecture</td><td>Role-based access, API security, encryption, monitoring, high availability</td><td>Enterprise security and continuity</td><td>Infrastructure / security</td></tr>
         </tbody>
@@ -2216,17 +2217,17 @@
         <div class="stat-row" style="justify-content:space-between; margin-bottom:2.6cqh;">
           <div class="stat"><span class="num">50K+</span><span class="lab">orders / day, platform-wide</span></div>
           <div class="stat"><span class="num">1B+</span><span class="lab">API requests / month</span></div>
-          <div class="stat"><span class="num">99.99%+</span><span class="lab">availability (RFP target ≥ 99.9%)</span></div>
+          <div class="stat"><span class="num">99.99%+</span><span class="lab">availability; commitment ≥ 99.95% (RFP target ≥ 99.9%)</span></div>
           <div class="stat"><span class="num">&lt; 500 ms</span><span class="lab">API response time; measured average 379 ms · Apdex 0.98 (New Relic)</span></div>
         </div>
         <table class="xtable xtable--xdense">
           <thead><tr><th>KPI</th><th>Measured value</th><th>Source</th><th>Commitment to Shaya</th></tr></thead>
           <tbody>
-            <tr><td>Page speed · home, PDP</td><td>Home <b>0.9 s</b> · PDP <b>0.5 s</b>; LCP p75, real users</td><td>New Relic Browser · CrUX</td><td>&lt; 2 s; device, network and measurement method agreed in discovery</td></tr>
-            <tr><td>Page speed · cart, checkout</td><td>Cart <b>0.9 s</b> · checkout <b>0.7 s</b>; LCP p75, real users</td><td>New Relic Browser</td><td>&lt; 3 s</td></tr>
+            <tr><td>Page speed · home, PDP</td><td>Home <b>0.9 s</b> · PDP <b>0.5 s</b>; LCP p75, real users</td><td>New Relic Browser · CrUX</td><td>&lt; 1.5 s (RFP target &lt; 2 s); device, network and measurement method agreed in discovery</td></tr>
+            <tr><td>Page speed · cart, checkout</td><td>Cart <b>0.9 s</b> · checkout <b>0.7 s</b>; LCP p75, real users</td><td>New Relic Browser</td><td>&lt; 2 s (RFP target &lt; 3 s)</td></tr>
             <tr><td>API speed</td><td>GraphQL p95 <b>250 ms</b>, p99 490 ms (campaign-peak profile); Apdex 0.98 (T 0.5 s) · 0.99 (T 1 s)</td><td>k6 + New Relic, October–November 2026</td><td>p95 &lt; 500 ms · Apdex ≥ 0.99; reported monthly</td></tr>
             <tr><td>Payment completion · payment steps without a platform error</td><td><b>99.998%</b>; 1 platform error in 59K calls</td><td>New Relic PaymentGateway, 27 October–2 November 2026</td><td>≥ 99.999%</td></tr>
-            <tr><td>Robustness · functional uptime</td><td><b>99.99%+</b>; pod restart in seconds, node replacement in minutes</td><td>Uptime Kuma · UptimeRobot</td><td>≥ 99.9% monthly, excluding planned maintenance</td></tr>
+            <tr><td>Robustness · functional uptime</td><td><b>99.99%+</b>; pod restart in seconds, node replacement in minutes</td><td>Uptime Kuma · UptimeRobot</td><td>≥ 99.95% monthly, excluding planned maintenance (RFP target ≥ 99.9%)</td></tr>
             <tr><td>Deploy and rollback time</td><td>About <b>1.5 minutes</b> on average; rollback in the same time</td><td>Jenkins</td><td>Zero-downtime releases</td></tr>
           </tbody>
         </table>
@@ -2247,7 +2248,7 @@
       <table class="xtable xtable--dense">
         <thead><tr><th>Severity</th><th>Example impact</th><th>Response</th><th>Technical engagement</th><th>Workaround</th><th>Permanent fix</th><th>RCA</th></tr></thead>
         <tbody>
-          <tr><td>P1 · Critical</td><td>Site/app unreachable, orders or payments failing, points payment and campaign service errors</td><td>5 min</td><td>15 min</td><td>30 min</td><td>2 hours</td><td>24 hours</td></tr>
+          <tr><td>P1 · Critical</td><td>Site/app unreachable, orders or payments failing, points payment and campaign service errors</td><td>5 min</td><td>15 min</td><td>15 min</td><td>2 hours</td><td>24 hours</td></tr>
           <tr><td>P2 · High</td><td>OMS integration outage, orders not transferred, shipping, loyalty and stock services</td><td>15 min</td><td>30 min</td><td>2 hours</td><td>8 hours</td><td>2 business days</td></tr>
           <tr><td>P3 · Medium</td><td>CMS publishing, search results, admin panel and customer account errors</td><td>1 hour</td><td>2 hours</td><td>4 hours</td><td>1 business day</td><td>—</td></tr>
           <tr><td>P4 · Low</td><td>UI, content, copy and report requests</td><td>1 business day</td><td>—</td><td>3 business days</td><td>Planned release</td><td>—</td></tr>
@@ -2413,7 +2414,7 @@
       <div class="divider-index">10–12</div>
       <span class="kicker">RFP §23.1 · 10, 11, 12 and §15</span>
       <h2 class="slide-title">Commercial proposal, assumptions and Infosec</h2>
-      <p class="lead">Structure of the commercial proposal and TCO approach; assumptions, dependencies and exclusions; information-security evidence pack. Figures are in a separate commercial file.</p>
+      <p class="lead">Structure of the commercial proposal and TCO approach; assumptions, dependencies and exclusions; information-security evidence pack. Headline figures are in this section; the detailed commercial file is shared separately.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
@@ -2429,7 +2430,7 @@
       <h2 class="slide-title">One-time and recurring items, <span class="accent">three-year TCO</span></h2>
       <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
         <div class="card">
-          <div class="ix">One-time · §15.1</div><h3>Project fee</h3>
+          <div class="ix">One-time · §15.1</div><h3>Project fee · $55,000</h3>
           <ul class="flist flist--tight" style="margin-top:0.3cqh;">
             <li>Discovery and consulting</li>
             <li>Setup and initial fees</li>
@@ -2439,7 +2440,7 @@
           </ul>
         </div>
         <div class="card card--dark">
-          <div class="ix">Recurring · §15.2</div><h3>Platform and services</h3>
+          <div class="ix">Recurring · §15.2</div><h3>Platform and services · 1% of order value</h3>
           <ul class="flist flist--tight" style="margin-top:0.3cqh;">
             <li>Platform / licence fee (SaaS, per tenant)</li>
             <li>Hosting, CDN and traffic (AWS, BestCloudForme operations)</li>
@@ -2458,7 +2459,7 @@
           </ul>
         </div>
       </div>
-      <p class="note"><b>Figures are in a separate commercial file</b>: tax, currency and indexation, payment plan (tied to milestones), proposal validity, third-party costs and the year 1/2/3 TCO table (licence, setup, infrastructure, support, third party) with volume bands and growth scenarios.</p>
+      <p class="note"><b>Headline figures:</b> one-time project fee $55,000 (2 brands; customisation and integrations included, design excluded) · platform usage 1% of order value, 0.5% on marketplace orders; TMS free · hosting $3,500/month production + $500/month test · 3-year TCO $662,196, 1.25% of net sales · VAT excluded, 30-day terms; all development included, no change-request invoices. Tax, currency, payment plan and validity in the commercial file.</p>
     </div>
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
