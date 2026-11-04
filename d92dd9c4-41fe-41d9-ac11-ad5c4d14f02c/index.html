@@ -105,6 +105,7 @@
   .logowall { grid-template-columns: repeat(6, 1fr); }
 
   .xtable--tight td { padding-top: 0.28cqh; padding-bottom: 0.28cqh; }
+  .xtable--xxdense td { padding: 0.34cqh 0.6cqw 0.34cqh 0; font-size: 0.9cqw; line-height: 1.28; }
 </style>
 </head>
 <body>
@@ -533,8 +534,8 @@
           <tr><td>Kampanya ve promosyon</td><td>Sepet seviyesi kural motoru; CRM kurallarını tekrarlamaz, tamamlar</td><td>CRM kampanya ve kupon yönetimi</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>Ödeme</td><td>Ödeme orkestrasyonu, 3D, fraud, multi-tender, mutabakat</td><td>PSP ve bankalar</td><td><span class="st st--ok">Kapsamda</span></td></tr>
           <tr><td>Pazaryeri</td><td>Marketplace Seller: ürün kartı, stok, fiyat, sipariş</td><td>Trendyol, Hepsiburada, Amazon</td><td><span class="st st--ok">Kapsamda</span></td></tr>
-          <tr><td>OMS</td><td>Kısmen kapsamda: Inventory Engine ERP ile senkron çalışır, stok çok hızlı aktarılır; InStore Commerce modülü (mağazada satış ve sipariş) de kullanılabilir; toplam satışa +%2–3</td><td>Retail Markup OMS sipariş yaşam döngüsünün sahibi kalır</td><td><span class="st st--ok">Kısmen kapsamda</span></td></tr>
-          <tr><td>TMS</td><td>Opsiyonel: sevkiyat (dispatch), kargo bildirimi, takip ve etiketleme; kargo giderinde %10–15 iyileşme</td><td>Mevcut kargo süreçleri</td><td><span class="st st--plan">Opsiyonel</span></td></tr>
+          <tr><td>OMS</td><td>Kısmen kapsamda: Inventory Engine ERP ile senkron çalışır, stok çok hızlı aktarılır; InStore Commerce modülü (27 mağazada satış ve sipariş) de kullanılabilir; toplam satışa +%2–3</td><td>Retail Markup OMS sipariş yaşam döngüsünün sahibi kalır</td><td><span class="st st--ok">Kısmen kapsamda</span></td></tr>
+          <tr><td>TMS</td><td>Opsiyonel: sevkiyat (dispatch), kargo bildirimi, takip ve etiketleme; kargo giderinde %10–15 iyileşme, kâr-zarara +1–1,5 puan</td><td>Mevcut kargo süreçleri</td><td><span class="st st--plan">Opsiyonel</span></td></tr>
           <tr><td>WMS</td><td>Teklif dışı</td><td>Mevcut depo sistemi</td><td><span class="st st--plan">Kapsam dışı</span></td></tr>
         </tbody>
       </table>
@@ -1159,20 +1160,20 @@
     <div class="slide__inner">
       <span class="kicker">RFP dışı ek faydalar · Ek Faydalar sayfası</span>
       <h2 class="slide-title">On üç ek yetkinlik, <span class="accent">ek lisans yok</span></h2>
-      <table class="xtable xtable--xdense xtable--tight">
+      <table class="xtable xtable--xdense xtable--xxdense xtable--tight">
         <thead><tr><th>Ek yetkinlik</th><th>CommerceLab yeteneği</th><th>Shaya için iş değeri</th><th>Ürün</th></tr></thead>
         <tbody>
           <tr><td>Multi-enabled global commerce</td><td>Çoklu ülke, marka, site, dil, para birimi, fiyat ve depo</td><td>Yeni pazarlara platform değiştirmeden genişleme</td><td>Commerce Platform</td></tr>
           <tr><td>B2B / B2B2C / C2C</td><td>Kurumsal satış ve farklı ticaret modelleri</td><td>Yeni satış modelleri için mimari esneklik</td><td>Commerce Dispatch Engine</td></tr>
           <tr><td>Marketplace Operator / dropshipping</td><td>Multi-vendor, satıcı onboarding, onay, katalog ve sipariş akışları</td><td>Stok yatırımı yapmadan üçüncü taraf satıcılarla büyüme</td><td>Marketplace Operator</td></tr>
-          <tr><td>Marketplace Seller operasyonu</td><td>Tek noktadan entegrasyon, kanal bazlı stok tamponu, mutabakat, otomatik düzeltme</td><td>Pazaryeri operasyon maliyeti ve veri tutarsızlığı azalır; bestseller kanal yönlendirmesiyle kâr-zarara +1,5–3 puan</td><td>Marketplace Seller</td></tr>
+          <tr><td>Marketplace Seller operasyonu</td><td>Tek noktadan entegrasyon, kanal bazlı stok tamponu, mutabakat, otomatik düzeltme</td><td>Pazaryeri operasyon maliyeti ve veri tutarsızlığı azalır; bestseller kanal yönlendirmesiyle kâr-zarara +1,5–3 puan (satışın %15–20'si, %10–15 komisyon)</td><td>Marketplace Seller</td></tr>
           <tr><td>AI PIM / görselden ürün çıkarımı</td><td>Görselden nitelik çıkarımı, içerik üretimi, otomatik zenginleştirme</td><td>Ürün onboarding süresi kısalır; ~1,5 kişilik iş yükü kalkar</td><td>PIM + AI</td></tr>
           <tr><td>ERP önünde PIM iş akışı</td><td>Tedarikçi ve merchandising ürün oluşturma/onay süreçleri</td><td>ERP öncesi ürün veri kalitesi</td><td>PIM + ComHub</td></tr>
           <tr><td>MCP / agentic commerce</td><td>Back-office fonksiyonları kontrollü MCP araçları olarak</td><td>LLM agent destekli operasyon ve yeni ticaret arayüzleri</td><td>API / ComHub / AI</td></tr>
           <tr><td>ACOMS / Commerce Operating System</td><td>Operasyonları birleşik görünümde orkestrasyon ve izleme</td><td>Çok kanallı operasyonda merkezi görünürlük</td><td>ACOMS / ComHub</td></tr>
           <tr><td>MACH-enabled composable yapı / PBC</td><td>API-first, headless, cloud-native, modüler yetenekler</td><td>Daha düşük entegrasyon bağımlılığı, kademeli dönüşüm</td><td>Platform mimarisi</td></tr>
           <tr><td>Gelişmiş kampanya kuralları</td><td>Event-action, best-choice, custom action, scripting, yaşam döngüsü segmentasyonu</td><td>Daha esnek promosyon ve kişiselleştirme</td><td>Kampanya motoru</td></tr>
-          <tr><td>Ödeme orkestrasyonu dayanıklılığı</td><td>Dinamik PSP yönlendirme, failover, auto-fix, fraud skorlama</td><td>Ödeme başarısı ve operasyonel süreklilik; en uygun marjlı bankayla satışın %0,5–1'i tasarruf</td><td>Payment / Checkout</td></tr>
+          <tr><td>Ödeme orkestrasyonu dayanıklılığı</td><td>Dinamik PSP yönlendirme, failover, auto-fix, fraud skorlama</td><td>Ödeme başarısı ve operasyonel süreklilik; en uygun marjlı bankayla satışın %0,5–1'i tasarruf, +0,5–1 puan</td><td>Payment / Checkout</td></tr>
           <tr><td>Omnichannel CRM entegrasyonu</td><td>Harici CRM ile müşteri master, loyalty, kupon, çek, gift card kullanımı</td><td>Mevcut sadakat yatırımı korunur</td><td>Operasyonel CRM</td></tr>
           <tr><td>Mimariyle gelen güvenlik</td><td>Rol bazlı erişim, API güvenliği, şifreleme, izleme, yüksek erişilebilirlik</td><td>Kurumsal güvenlik ve süreklilik</td><td>Altyapı / güvenlik</td></tr>
         </tbody>
