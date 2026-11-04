@@ -107,6 +107,8 @@
   .xtable--xxdense td { padding: 0.34cqh 0.6cqw 0.34cqh 0; font-size: 0.9cqw; line-height: 1.28; }
 
   .xtable--tight td { padding-top: 0.28cqh; padding-bottom: 0.28cqh; }
+  .xtable tr.row--summary td { background: #fff3bf; }
+  .st--summary { background: #f5c518; border-color: #f5c518; color: #1a1a1a; }
 </style>
 </head>
 <body>
@@ -128,7 +130,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">1 / 85</span>
+      <span class="slide__no">1 / 69</span>
     </div>
   </section>
 
@@ -140,8 +142,8 @@
       <table class="xtable xtable--xdense">
         <thead><tr><th>#</th><th>RFP section</th><th>In this deck</th><th>Status</th></tr></thead>
         <tbody>
-          <tr><td>01</td><td>Executive Summary</td><td>Key message, answers to Shaya's priorities, metrics summary (engagement, competitor comparison, system performance, integration speed)</td><td><span class="st st--ok">Ready</span></td></tr>
-          <tr><td>02</td><td>Company Profile and References</td><td>Who we are, why we differ, reference customers, leadership team</td><td><span class="st st--ok">Ready</span></td></tr>
+          <tr class="row--summary"><td>01</td><td>Executive Summary</td><td>Key message, answers to Shaya's priorities, metrics summary (engagement, competitor comparison, system performance, integration speed)</td><td><span class="st st--summary">Given in the summary proposal</span></td></tr>
+          <tr class="row--summary"><td>02</td><td>Company Profile and References</td><td>Who we are, why we differ, reference customers, leadership team</td><td><span class="st st--summary">Given in the summary proposal</span></td></tr>
           <tr><td>03</td><td>Proposed Solution Overview</td><td>Scope and ownership, platform components, channels, product capabilities, checkout, omnichannel, reporting, AI capabilities</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>04</td><td>Functional Fit-Gap Response</td><td>Summary of 69 requirements and section-by-section answers; full matrix in the Excel attachment</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>05</td><td>Technical Architecture and Security</td><td>Target architecture, data ownership, MACH-enabled · PBC · multi-tenant · extensibility and engines, stack, AWS topology, security, scaling</td><td><span class="st st--ok">Ready</span></td></tr>
@@ -149,7 +151,7 @@
           <tr><td>07</td><td>Data Migration Strategy</td><td>Scope, three loading paths, rehearsal and reconciliation, SEO migration</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>08</td><td>Implementation Plan, Timeline, Resources</td><td>Scope, methodology, 5-month timeline, milestones, RACI, team, testing, risks, deliverables</td><td><span class="st st--ok">Ready</span></td></tr>
           <tr><td>09</td><td>Support and SLA Proposal</td><td>Platform KPIs and commitments, SLA table, support model, change management, DR and Multi-AZ architecture</td><td><span class="st st--ok">Ready · DR document attached</span></td></tr>
-          <tr><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Commercial structure and headline figures ($55K project, 1% of order value, 3-year TCO), assumptions and exclusions, Infosec evidence pack</td><td><span class="st st--plan">Detail in commercial file</span></td></tr>
+          <tr class="row--summary"><td>10–12</td><td>Commercial · Assumptions · Infosec</td><td>Commercial structure and headline figures ($55K project, 1% of order value, 3-year TCO), assumptions and exclusions, Infosec evidence pack</td><td><span class="st st--summary">Given in the summary proposal</span></td></tr>
           <tr><td>Annex</td><td>Mandatory attachments (§23.2)</td><td>Fit-gap matrix, project plan, reference table and CVs in separate files; the Multi-AZ DR document is linked from this deck</td><td><span class="st st--plan">Separate files</span></td></tr>
         </tbody>
       </table>
@@ -157,352 +159,12 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">2 / 85</span>
+      <span class="slide__no">2 / 69</span>
     </div>
   </section>
 
     <!-- SECTION 01 -->
-  <section class="slide slide--ink">
-    <div class="slide__inner" style="justify-content:center;">
-      <div class="divider-index">01</div>
-      <span class="kicker">RFP §23.1 · 1</span>
-      <h2 class="slide-title">Executive summary</h2>
-      <p class="lead">The existing ERP, OMS and CRM stay in place; both brands' web, app and marketplace experience moves to one composable platform. Commitments rest on values measured in live production.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">3 / 85</span>
-    </div>
-  </section>
-
-  <!-- 04 — KEY MESSAGE -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Executive summary · RFP §1</span>
-      <h2 class="slide-title">Not software: an operations platform that works like <span class="accent">your digital IT team</span></h2>
-      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
-        <div class="card card--dark"><div class="ix">01</div><h3>The whole RFP, and more</h3><p>Every requested item is met by standard platform capability; metric expectations are backed by live production measurements.</p></div>
-        <div class="card"><div class="ix">02</div><h3>Existing systems stay in place</h3><p>WinRetail remains the source of product, price and physical stock; the OMS owns the order lifecycle; the CRM owns customer and loyalty. We are the experience and orchestration layer.</p></div>
-        <div class="card"><div class="ix">03</div><h3>A partnership that makes money</h3><p>Every sprint produces a measurable business outcome: at a reference customer, conversion +35% and AOV +7% in the first 2 months after replatforming; channel, payment and carrier decisions add 3–5.5 points to P&amp;L.</p></div>
-        <div class="card"><div class="ix">04</div><h3>Ready for what you have not asked for yet</h3><p>OMS/WMS, multi-vendor dropship, B2B, multi-country and multi-currency open on the same platform; no re-platforming.</p></div>
-        <div class="card"><div class="ix">05</div><h3>An AI-powered platform</h3><p>APIs published as MCP, conversational operations, AI PIM, semantic search and agentic-commerce compatibility today; the ACOMS roadmap towards semi-autonomous operations.</p></div>
-        <div class="card"><div class="ix">06</div><h3>Proven infrastructure</h3><p>50K+ orders a day, 1B+ API requests a month; 99.99%+ availability and sub-500 ms response time; $400M+ annual commerce volume on one platform.</p></div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">4 / 85</span>
-    </div>
-  </section>
-
-    <!-- OBJECTIVES -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Shaya's objectives · RFP §3.1–3.2</span>
-      <h2 class="slide-title">Every objective has a <span class="accent">concrete counterpart</span> on the platform</h2>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>Objective (RFP)</th><th>CommerceLab counterpart</th></tr></thead>
-        <tbody>
-          <tr><td>Improve customer experience and conversion</td><td>New design system with Next.js web and native iOS/Android; SSR + CDN for the sub-2-second page target; search, personalisation and A/B testing infrastructure</td></tr>
-          <tr><td>Simplify checkout, strengthen loyalty integration</td><td>Guest, member, express and mobile checkout in one orchestration; points + card multi-tender; the CRM provision flow is reversible at every step</td></tr>
-          <tr><td>Channel-independent order and customer view</td><td>Unified Order History: web, mobile, marketplace and store orders on one screen; return and exchange requests go to the OMS by event</td></tr>
-          <tr><td>Omnichannel operations, operational efficiency and cost</td><td>Click &amp; Collect, return to store and store stock visibility; Control Tower catches mismatches before the customer does and fixes them automatically</td></tr>
-          <tr><td>Faster campaign and content management; new mobile app design</td><td>Drag &amp; drop CMS shared by web and app; scheduling, deep links, app-only campaigns; publishing without an app update</td></tr>
-          <tr><td>Ready for new brands, countries and channels; central multi-brand management</td><td>Multi-tenant, multi-site/country/currency platform; the second brand opens by configuration; B2B, marketplace operator and agentic commerce on the same core</td></tr>
-          <tr><td>API-first, headless/composable, cloud-ready, observable and testable architecture</td><td>MACH-enabled architecture: every capability an open PBC over REST and GraphQL; auto-scaling on AWS/EKS; CI/CD, quality gates, APM and central logging; no vendor lock-in, full export</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">5 / 85</span>
-    </div>
-  </section>
-
-    <!-- METRICS SUMMARY — ENGAGEMENT -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Metrics summary · Engagement</span>
-      <h2 class="slide-title">After replatforming, conversion <span class="accent">up 35%</span></h2>
-      <div class="fill">
-        <div class="stat-row" style="justify-content:space-between; margin-bottom:2.8cqh;">
-          <div class="stat"><span class="num">+35%</span><span class="lab">conversion rate uplift, first 2 months after replatforming</span></div>
-          <div class="stat"><span class="num">+7%</span><span class="lab">average order value (AOV) uplift, same period</span></div>
-          <div class="stat"><span class="num">96.3%</span><span class="lab">payment success; customers who attempt payment and pay, bank declines included</span></div>
-          <div class="stat"><span class="num">99.998%</span><span class="lab">payment steps completed without a platform error</span></div>
-        </div>
-        <div class="two-col" style="flex:0; align-content:start;">
-          <div>
-            <div class="hdr-sub">Page load · LCP p75, real users</div>
-            <table class="xtable xtable--xdense">
-              <thead><tr><th>Page</th><th>Measured · p75</th><th>RFP target</th></tr></thead>
-              <tbody>
-                <tr><td>Home page</td><td><b>0.9 s</b></td><td>&lt; 2 s</td></tr>
-                <tr><td>PLP · product listing</td><td><b>0.8 s</b></td><td>—</td></tr>
-                <tr><td>PDP · product detail</td><td><b>0.5 s</b></td><td>&lt; 2 s</td></tr>
-                <tr><td>Cart</td><td><b>0.9 s</b></td><td>—</td></tr>
-                <tr><td>Checkout</td><td><b>0.7 s</b></td><td>&lt; 3 s</td></tr>
-              </tbody>
-            </table>
-            <p class="ann" style="margin-top:0.8cqh;"><b>Where the speed comes from:</b> API-level caching · SSR and static site rendering · stateless structure.</p>
-          </div>
-          <div>
-            <div class="hdr-sub">UX success · shopping funnel</div>
-            <div class="mini-stats" style="gap:2cqh 2.4cqw;">
-              <div class="stat"><span class="num">78%</span><span class="lab">search success; users moving from search to a product page</span></div>
-              <div class="stat"><span class="num">7.9%</span><span class="lab">add to cart; sessions with an item added</span></div>
-              <div class="stat"><span class="num">73%</span><span class="lab">of checkouts started end in a purchase</span></div>
-              <div class="stat"><span class="num">0.02%</span><span class="lab">oversell; an "out of stock" call after ordering is the exception</span></div>
-            </div>
-          </div>
-        </div>
-        <p class="ann" style="margin-top:2.4cqh;"><b>Source:</b> conversion and AOV, reference customer, first 2 months after replatforming compared with the period before. Payment: OMS and New Relic PaymentGateway, 27 October–2 November 2026. Funnel: GA4, CommerceLab's live fashion and retail sites, 6 October–2 November 2026; oversell across all channels. Page load: New Relic Browser, real-user LCP p75, live sites, 27 October–3 November 2026.</p>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">6 / 85</span>
-    </div>
-  </section>
-
-    <!-- METRICS SUMMARY — COMPETITOR COMPARISON -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Metrics summary · Competitor comparison</span>
-      <h2 class="slide-title">For real users, pages load <span class="accent">in 1 second</span></h2>
-      <div class="fill">
-        <div class="stat-row" style="justify-content:space-between; margin-bottom:2.4cqh;">
-          <div class="stat"><span class="num" style="font-size:3.4cqw; line-height:1.25;">All sites</span><span class="lab">pass mobile Core Web Vitals; main competitor 8%</span></div>
-          <div class="stat"><span class="num">1.0 s</span><span class="lab">mobile LCP; main competitor 2.75 s</span></div>
-          <div class="stat"><span class="num">0.4 s</span><span class="lab">mobile TTFB; main competitor 1.35 s</span></div>
-          <div class="stat"><span class="num">169 ms</span><span class="lab">mobile INP; main competitor 241 ms</span></div>
-        </div>
-        <table class="xtable xtable--dense">
-          <thead><tr><th>Measure · p75, real users</th><th>CommerceLab · live sites</th><th>Main competitor · live sites</th><th>Google threshold</th></tr></thead>
-          <tbody>
-            <tr><td>Sites passing mobile Core Web Vitals</td><td><b>All sites</b></td><td>8%</td><td>LCP, INP and CLS all "good"</td></tr>
-            <tr><td>Sites passing desktop Core Web Vitals</td><td><b>71%</b></td><td>8%</td><td></td></tr>
-            <tr><td>Mobile LCP</td><td><b>1.0 s</b></td><td>2.75 s</td><td>≤ 2.5 s</td></tr>
-            <tr><td>Desktop LCP</td><td><b>0.8 s</b></td><td>1.9 s</td><td>≤ 2.5 s</td></tr>
-            <tr><td>Mobile CLS</td><td><b>0.00</b></td><td>0.085</td><td>≤ 0.1</td></tr>
-            <tr><td>Server first byte, lab test from the same network</td><td><b>51 ms</b></td><td>201 ms</td><td>—</td></tr>
-          </tbody>
-        </table>
-        <p class="ann">Google CrUX, origin median, 29 October 2026. CommerceLab's live fashion and retail sites against fashion and retail sites running on the main competitor's infrastructure in Türkiye; same period, same measurement.</p>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">7 / 85</span>
-    </div>
-  </section>
-
-    <!-- METRICS SUMMARY 1 — SYSTEM PERFORMANCE -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Metrics summary · System performance</span>
-      <h2 class="slide-title">Zero errors, <span class="accent">even at campaign peak</span></h2>
-      <div class="fill">
-        <div class="stat-row" style="justify-content:space-between; margin-bottom:2cqh;">
-          <div class="stat"><span class="num">50K+</span><span class="lab">orders / day, platform-wide</span></div>
-          <div class="stat"><span class="num">1B+</span><span class="lab">API requests / month</span></div>
-          <div class="stat"><span class="num">99.99%+</span><span class="lab">availability (RFP target ≥ 99.9%)</span></div>
-          <div class="stat"><span class="num">&lt; 500 ms</span><span class="lab">API response time; measured average 379 ms · Apdex 0.98 (New Relic)</span></div>
-        </div>
-        <div class="hdr-sub">Latest load test · a Victoria's Secret–scale site · k6, live production environment, October 2026</div>
-        <div class="card card--accent" style="padding:1.2cqh 1.4cqw; margin-bottom:1.2cqh;"><p style="margin:0;">Daily volume tested: <b>650K sessions ≈ 13K orders</b>; 2.3 times Shaya's 280K sessions/day peak target. <b>This is not a limit</b>, it is the volume we tested: capacity grows horizontally via Karpenter and HPA, and the architecture sets no ceiling.</p></div>
-        <table class="xtable xtable--dense">
-          <thead><tr><th>Scenario</th><th>Load applied</th><th>Latency</th><th>Errors</th><th>Outcome</th></tr></thead>
-          <tbody>
-            <tr><td>Campaign peak profile</td><td>11.11 and Black Friday hourly peak; real behaviour mix including cart and checkout</td><td><b>API p95 250 ms · p99 490 ms</b></td><td><b>0</b></td><td>Half the RFP target of p95 &lt; 500 ms</td></tr>
-            <tr><td>Stress ×4</td><td>Three times the hourly campaign peak</td><td>No threshold breached at any step</td><td><b>0</b></td><td>Recovered without waiting for extra scaling</td></tr>
-            <tr><td>Spike ×8</td><td>11,800 requests a minute (~200 req/s) arriving at once</td><td><b>Server p95 30–60 ms</b></td><td><b>0</b></td><td>Spike absorbed with no errors</td></tr>
-          </tbody>
-        </table>
-        <p class="ann"><b>Method:</b> the load profile is calibrated with 11.11 and Black Friday hourly and per-minute peak sessions from GA4. For Shaya the same test is repeated before go-live and every campaign, at multiples of the 280,000 sessions/day peak and the 5K/hour transaction target.</p>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">8 / 85</span>
-    </div>
-  </section>
-
-    <!-- METRICS SUMMARY 3 — INTEGRATION SPEED -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Metrics summary · Integration speed</span>
-      <h2 class="slide-title">A channel order reaches the OMS <span class="accent">in 1.2 seconds</span></h2>
-      <div class="fill">
-        <div class="stat-row" style="justify-content:space-between; margin-bottom:3.4cqh;">
-          <div class="stat"><span class="num">1.2 s</span><span class="lab">web and app order in the OMS</span></div>
-          <div class="stat"><span class="num">26 s</span><span class="lab">marketplace order in the OMS</span></div>
-          <div class="stat"><span class="num">925 ms</span><span class="lab">stock change pushed to the channel</span></div>
-          <div class="stat"><span class="num">150 ms</span><span class="lab">stock calculation; safety stock, in-transit and reservations included</span></div>
-        </div>
-        <div class="grid grid-3 compact-cards">
-          <div class="card card--dark"><div class="ix">Oversell</div><h3>0.02%, across all channels</h3><p>Stock is recalculated and pushed to the channel on every change; about 0.5% of sales is rescued from overselling and marketplace penalties are avoided.</p></div>
-          <div class="card"><div class="ix">Fast lane</div><h3>Critical stock closes in 1.2 s</h3><p>An item down to its last units does not wait for the next batch update; a priority flow takes it off sale on the channel.</p></div>
-          <div class="card"><div class="ix">Control Tower</div><h3>No lost orders</h3><p>An order on the channel but missing in the OMS is caught before the customer notices, and reprocessed.</p></div>
-        </div>
-        <p class="ann" style="margin-top:2cqh;"><b>Source:</b> live customer environment, ComHub and OMS measurements. For Shaya, WinRetail, OMS and CRM flows are built on the same ComHub patterns; details in section 06.</p>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">9 / 85</span>
-    </div>
-  </section>
-
-    <!-- SECTION 02 -->
-  <section class="slide slide--ink">
-    <div class="slide__inner" style="justify-content:center;">
-      <div class="divider-index">02</div>
-      <span class="kicker">RFP §23.1 · 2 and §16</span>
-      <h2 class="slide-title">Company profile and references</h2>
-      <p class="lead">A team that came out of retail, an end-to-end commerce and operations platform of its own making, live deployments at Türkiye's leading brands.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">10 / 85</span>
-    </div>
-  </section>
-
-    <!-- WHO WE ARE -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Who we are</span>
-      <h2 class="slide-title">Commerce and operations for enterprises, <span class="accent">on one platform</span></h2>
-      <div class="two-col two-col--wide" style="flex:1; align-content:center;">
-        <div>
-          <p class="body-text">CommerceLab is a cloud-based enterprise Commerce &amp; Supply Chain platform. It runs every sales channel, business model and operational need from a single, flexible and scalable system: a Commerce ERP / operating system.</p>
-          <ul class="flist flist--tight" style="margin-top:1.4cqh;">
-            <li><b>Vision:</b> to be one of the leading platform providers in digital commerce and operations.</li>
-            <li><b>Mission:</b> help our customers maximise sales potential while achieving operational excellence at minimal cost.</li>
-            <li><b>Company:</b> Commerce Lab E-Ticaret Çözümleri A.Ş. · two headquarters: Çanakkale Technopark and İstanbul (Windowist Tower, Maslak) · a software product company run by its co-founders.</li>
-          </ul>
-        </div>
-        <div class="stat-row" style="flex-direction:column; gap:2cqh;">
-          <div class="stat"><span class="num">30+</span><span class="lab">specialists; experience at 100+ leading retailers in Türkiye</span></div>
-          <div class="stat"><span class="num">50K+</span><span class="lab">orders a day; $400M+ annual commerce volume (GMV) through the platform</span></div>
-          <div class="stat"><span class="num">1B+</span><span class="lab">API requests a month; 99.99%+ availability · response time under 500 ms</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">11 / 85</span>
-    </div>
-  </section>
-
-    <!-- WHY DIFFERENT -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Positioning</span>
-      <h2 class="slide-title">Why we are <span class="accent">different</span></h2>
-      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
-        <div class="card"><div class="ix">01</div><h3>360° coverage</h3><p>Products spanning the full commerce and supply-chain stack with maximum extensibility. A module you do not use today opens on the same platform tomorrow.</p></div>
-        <div class="card"><div class="ix">02</div><h3>Built by operators</h3><p>A team that built e-commerce and IT at Boyner, Beymen, Koton and Demsa; hands-on retail experience behind every product decision.</p></div>
-        <div class="card card--dark"><div class="ix">03</div><h3>Sales × operations</h3><p>We close the gap between selling and fulfilling end to end: from the experience layer to orders, inventory and logistics.</p></div>
-        <div class="card"><div class="ix">04</div><h3>Your extended team</h3><p>Custom needs are met with a tailor-made approach; we work like your digital IT department rather than shipping software and leaving. Every sprint produces a measurable business outcome.</p></div>
-        <div class="card"><div class="ix">05</div><h3>No vendor lock-in</h3><p>A product company that creates no version complexity and no closed ecosystem; with Open API and full export, data and URLs are always yours.</p></div>
-        <div class="card"><div class="ix">06</div><h3>AI-powered platform</h3><p>Inside the product (AI PIM, search, conversational commerce) and while building it (AI-assisted code, tests and review); ACOMS roadmap towards semi-autonomous operations.</p></div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">12 / 85</span>
-    </div>
-  </section>
-
-    <!-- REFERENCES -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Reference customers</span>
-      <h2 class="slide-title">Fashion, footwear, home, retail and <span class="accent">QSR</span> brands on one platform</h2>
-      <div class="logowall">
-        <div class="cell"><img src="../logos/skechers.svg" alt="Skechers" /></div>
-        <div class="cell"><img src="../logos/sochic.jpg" alt="So Chic" /></div>
-        <div class="cell"><img src="../logos/highfive.svg" alt="HighFive" /></div>
-        <div class="cell"><img src="../logos/klaud.svg" alt="Klaud" /></div>
-        <div class="cell"><img src="../logos/hunter.svg" alt="Hunter" /></div>
-        <div class="cell"><img src="../logos/gracebrands.svg" alt="Grace Brands" /></div>
-        <div class="cell"><img src="../logos/brooks.png" alt="Brooks" /></div>
-        <div class="cell"><img src="../logos/decathlon.png" alt="Decathlon" /></div>
-        <div class="cell"><img src="../logos/asics.png" alt="Asics" /></div>
-        <div class="cell"><img src="../logos/a101.png" alt="A101" /></div>
-        <div class="cell"><img src="../logos/madamecoco.svg" alt="Madame Coco" /></div>
-        <div class="cell"><img src="../logos/kfc.png" alt="KFC" /></div>
-        <div class="cell"><img src="../logos/pidem.svg" alt="Pidem" /></div>
-        <div class="cell"><img src="../logos/hdholding.svg" alt="HD Holding" /></div>
-        <div class="cell"><img src="../logos/mrdiy.svg" alt="MR.DIY" /></div>
-        <div class="cell"><img src="../logos/stevemadden.png" alt="Steve Madden" /></div>
-        <div class="cell"><img src="../logos/on.png" alt="On" /></div>
-        <div class="cell"><img src="../logos/civil.png" alt="Civil" /></div>
-      </div>
-      <p class="note" style="margin-top:1.2cqh;"><b>The RFP §16 reference table</b> (brand, country/sector, scope, go-live, contact person) and customer disclosure permissions are provided in a separate attachment. Global brands' Türkiye operations, multi-brand groups and marketplace sellers run on the same multi-tenant platform.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">13 / 85</span>
-    </div>
-  </section>
-
-    <!-- LEADERSHIP -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Leadership team</span>
-      <h2 class="slide-title">Hands-on leadership, <span class="accent">30+ engineers</span></h2>
-      <div class="grid grid-3 team-grid">
-        <div class="card team-card">
-          <div class="name">Onur Kemer</div><div class="role">Co-founder · CEO</div>
-          <ul class="tlist"><li><b>25 years</b> of industry experience</li><li>Built and led IT and e-commerce departments at Boyner, Demsa and Koton</li><li>Led Boyner Software and Business Development</li><li>ERP and production-planning engineering (iCron, Ariva)</li></ul>
-          <div class="edu">YTÜ Computer Engineering, 2002</div>
-        </div>
-        <div class="card team-card">
-          <div class="name">İsmail Danacı</div><div class="role">Co-founder · CTO</div>
-          <ul class="tlist"><li><b>20 years</b> of industry experience</li><li>Built the CommerceLab e-commerce platform (v1)</li><li>Boyner and Koton e-commerce infrastructure</li><li>Boyner POS systems · ERP engineering (Bilteks)</li></ul>
-          <div class="edu">Sakarya University, Computer Programming, 2008</div>
-        </div>
-        <div class="card team-card">
-          <div class="name">Arif Kula</div><div class="role">CPO · Chief Product Officer</div>
-          <ul class="tlist"><li><b>32 years</b> of industry experience</li><li>Boyner CTO (3 yrs) · Beymen CTO (12 yrs)</li><li>Boyner IT Manager (8 yrs)</li><li>DorukNet, software engineer (4 yrs)</li></ul>
-          <div class="edu">İTÜ Mathematics Engineering, 1992</div>
-        </div>
-        <div class="card team-card">
-          <div class="name">Hakan Gürses</div><div class="role">Software Development Manager · Architect</div>
-          <ul class="tlist"><li><b>21 years</b> of experience</li><li>Built the CommerceLab e-commerce platform (v1)</li><li>Marketplace integration platform (Altınyıldız)</li><li>Boyner CRM · Medical Park stream data processing</li></ul>
-          <div class="edu">Yeditepe Computer Eng., 2005 · Doğuş Univ. PhD, 2014</div>
-        </div>
-        <div class="card team-card">
-          <div class="name">Faruk Öksüz</div><div class="role">Software Development Manager · Architect</div>
-          <ul class="tlist"><li><b>30 years</b> of industry experience</li><li>IBM POS systems, Software Development Director (14 yrs)</li><li>Campaign systems · loyalty · distributed data</li><li>Pfizer software manager</li></ul>
-          <div class="edu">ODTÜ Computer Engineering, 1999</div>
-        </div>
-        <div class="card team-card">
-          <div class="name">Gökhan Koçak</div><div class="role">Software Development Manager · Architect</div>
-          <ul class="tlist"><li><b>22 years</b> of experience</li><li>Built the CommerceLab e-commerce platform (v1)</li><li>5px Software &amp; Project, co-founder</li><li>RND E-Commerce Solutions CTO · launched 30 e-commerce systems</li></ul>
-          <div class="edu">Uludağ University, 2004</div>
-        </div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">14 / 85</span>
-    </div>
-  </section>
+  
 
     <!-- SECTION 03 -->
   <section class="slide slide--ink">
@@ -515,7 +177,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">15 / 85</span>
+      <span class="slide__no">3 / 69</span>
     </div>
   </section>
 
@@ -545,7 +207,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">16 / 85</span>
+      <span class="slide__no">4 / 69</span>
     </div>
   </section>
 
@@ -568,7 +230,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">17 / 85</span>
+      <span class="slide__no">5 / 69</span>
     </div>
   </section>
 
@@ -588,7 +250,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">18 / 85</span>
+      <span class="slide__no">6 / 69</span>
     </div>
   </section>
 
@@ -611,7 +273,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">19 / 85</span>
+      <span class="slide__no">7 / 69</span>
     </div>
   </section>
 
@@ -656,7 +318,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">20 / 85</span>
+      <span class="slide__no">8 / 69</span>
     </div>
   </section>
 
@@ -707,7 +369,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">21 / 85</span>
+      <span class="slide__no">9 / 69</span>
     </div>
   </section>
 
@@ -728,7 +390,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">22 / 85</span>
+      <span class="slide__no">10 / 69</span>
     </div>
   </section>
 
@@ -762,7 +424,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">23 / 85</span>
+      <span class="slide__no">11 / 69</span>
     </div>
   </section>
 
@@ -788,7 +450,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">24 / 85</span>
+      <span class="slide__no">12 / 69</span>
     </div>
   </section>
 
@@ -817,7 +479,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">25 / 85</span>
+      <span class="slide__no">13 / 69</span>
     </div>
   </section>
 
@@ -838,7 +500,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">26 / 85</span>
+      <span class="slide__no">14 / 69</span>
     </div>
   </section>
 
@@ -869,7 +531,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">27 / 85</span>
+      <span class="slide__no">15 / 69</span>
     </div>
   </section>
 
@@ -905,7 +567,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">28 / 85</span>
+      <span class="slide__no">16 / 69</span>
     </div>
   </section>
 
@@ -925,7 +587,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">29 / 85</span>
+      <span class="slide__no">17 / 69</span>
     </div>
   </section>
 
@@ -940,7 +602,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">30 / 85</span>
+      <span class="slide__no">18 / 69</span>
     </div>
   </section>
 
@@ -984,7 +646,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">31 / 85</span>
+      <span class="slide__no">19 / 69</span>
     </div>
   </section>
 
@@ -1012,7 +674,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">32 / 85</span>
+      <span class="slide__no">20 / 69</span>
     </div>
   </section>
 
@@ -1050,7 +712,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">33 / 85</span>
+      <span class="slide__no">21 / 69</span>
     </div>
   </section>
 
@@ -1073,7 +735,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">34 / 85</span>
+      <span class="slide__no">22 / 69</span>
     </div>
   </section>
 
@@ -1101,7 +763,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">35 / 85</span>
+      <span class="slide__no">23 / 69</span>
     </div>
   </section>
 
@@ -1127,7 +789,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">36 / 85</span>
+      <span class="slide__no">24 / 69</span>
     </div>
   </section>
 
@@ -1153,7 +815,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">37 / 85</span>
+      <span class="slide__no">25 / 69</span>
     </div>
   </section>
 
@@ -1184,7 +846,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">38 / 85</span>
+      <span class="slide__no">26 / 69</span>
     </div>
   </section>
 
@@ -1199,7 +861,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">39 / 85</span>
+      <span class="slide__no">27 / 69</span>
     </div>
   </section>
 
@@ -1249,7 +911,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">40 / 85</span>
+      <span class="slide__no">28 / 69</span>
     </div>
   </section>
 
@@ -1287,7 +949,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">41 / 85</span>
+      <span class="slide__no">29 / 69</span>
     </div>
   </section>
 
@@ -1310,7 +972,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">42 / 85</span>
+      <span class="slide__no">30 / 69</span>
     </div>
   </section>
 
@@ -1335,7 +997,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">43 / 85</span>
+      <span class="slide__no">31 / 69</span>
     </div>
   </section>
 
@@ -1355,7 +1017,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">44 / 85</span>
+      <span class="slide__no">32 / 69</span>
     </div>
   </section>
 
@@ -1380,7 +1042,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">45 / 85</span>
+      <span class="slide__no">33 / 69</span>
     </div>
   </section>
 
@@ -1402,7 +1064,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">46 / 85</span>
+      <span class="slide__no">34 / 69</span>
     </div>
   </section>
 
@@ -1431,7 +1093,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">47 / 85</span>
+      <span class="slide__no">35 / 69</span>
     </div>
   </section>
 
@@ -1475,7 +1137,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">48 / 85</span>
+      <span class="slide__no">36 / 69</span>
     </div>
   </section>
 
@@ -1497,7 +1159,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">49 / 85</span>
+      <span class="slide__no">37 / 69</span>
     </div>
   </section>
 
@@ -1551,7 +1213,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">50 / 85</span>
+      <span class="slide__no">38 / 69</span>
     </div>
   </section>
 
@@ -1572,7 +1234,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">51 / 85</span>
+      <span class="slide__no">39 / 69</span>
     </div>
   </section>
 
@@ -1607,7 +1269,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">52 / 85</span>
+      <span class="slide__no">40 / 69</span>
     </div>
   </section>
 
@@ -1622,7 +1284,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">53 / 85</span>
+      <span class="slide__no">41 / 69</span>
     </div>
   </section>
 
@@ -1653,7 +1315,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">54 / 85</span>
+      <span class="slide__no">42 / 69</span>
     </div>
   </section>
 
@@ -1677,7 +1339,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">55 / 85</span>
+      <span class="slide__no">43 / 69</span>
     </div>
   </section>
 
@@ -1703,7 +1365,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">56 / 85</span>
+      <span class="slide__no">44 / 69</span>
     </div>
   </section>
 
@@ -1728,7 +1390,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">57 / 85</span>
+      <span class="slide__no">45 / 69</span>
     </div>
   </section>
 
@@ -1770,7 +1432,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">58 / 85</span>
+      <span class="slide__no">46 / 69</span>
     </div>
   </section>
 
@@ -1785,7 +1447,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">59 / 85</span>
+      <span class="slide__no">47 / 69</span>
     </div>
   </section>
 
@@ -1810,7 +1472,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">60 / 85</span>
+      <span class="slide__no">48 / 69</span>
     </div>
   </section>
 
@@ -1841,7 +1503,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">61 / 85</span>
+      <span class="slide__no">49 / 69</span>
     </div>
   </section>
 
@@ -1884,7 +1546,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">62 / 85</span>
+      <span class="slide__no">50 / 69</span>
     </div>
   </section>
 
@@ -1905,7 +1567,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">63 / 85</span>
+      <span class="slide__no">51 / 69</span>
     </div>
   </section>
 
@@ -1920,7 +1582,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">64 / 85</span>
+      <span class="slide__no">52 / 69</span>
     </div>
   </section>
 
@@ -1941,7 +1603,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">65 / 85</span>
+      <span class="slide__no">53 / 69</span>
     </div>
   </section>
 
@@ -1977,7 +1639,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">66 / 85</span>
+      <span class="slide__no">54 / 69</span>
     </div>
   </section>
 
@@ -2005,7 +1667,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">67 / 85</span>
+      <span class="slide__no">55 / 69</span>
     </div>
   </section>
 
@@ -2034,7 +1696,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">68 / 85</span>
+      <span class="slide__no">56 / 69</span>
     </div>
   </section>
 
@@ -2078,7 +1740,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">69 / 85</span>
+      <span class="slide__no">57 / 69</span>
     </div>
   </section>
 
@@ -2103,7 +1765,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">70 / 85</span>
+      <span class="slide__no">58 / 69</span>
     </div>
   </section>
 
@@ -2138,7 +1800,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">71 / 85</span>
+      <span class="slide__no">59 / 69</span>
     </div>
   </section>
 
@@ -2165,7 +1827,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">72 / 85</span>
+      <span class="slide__no">60 / 69</span>
     </div>
   </section>
 
@@ -2190,7 +1852,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">73 / 85</span>
+      <span class="slide__no">61 / 69</span>
     </div>
   </section>
 
@@ -2205,7 +1867,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">74 / 85</span>
+      <span class="slide__no">62 / 69</span>
     </div>
   </section>
 
@@ -2237,7 +1899,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">75 / 85</span>
+      <span class="slide__no">63 / 69</span>
     </div>
   </section>
 
@@ -2264,7 +1926,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">76 / 85</span>
+      <span class="slide__no">64 / 69</span>
     </div>
   </section>
 
@@ -2305,7 +1967,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">77 / 85</span>
+      <span class="slide__no">65 / 69</span>
     </div>
   </section>
 
@@ -2339,7 +2001,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">78 / 85</span>
+      <span class="slide__no">66 / 69</span>
     </div>
   </section>
 
@@ -2377,7 +2039,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">79 / 85</span>
+      <span class="slide__no">67 / 69</span>
     </div>
   </section>
 
@@ -2405,118 +2067,12 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">80 / 85</span>
+      <span class="slide__no">68 / 69</span>
     </div>
   </section>
 
     <!-- SECTION 10–12 -->
-  <section class="slide slide--ink">
-    <div class="slide__inner" style="justify-content:center;">
-      <div class="divider-index">10–12</div>
-      <span class="kicker">RFP §23.1 · 10, 11, 12 and §15</span>
-      <h2 class="slide-title">Commercial proposal, assumptions and Infosec</h2>
-      <p class="lead">Structure of the commercial proposal and TCO approach; assumptions, dependencies and exclusions; information-security evidence pack. Headline figures are in this section; the detailed commercial file is shared separately.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">81 / 85</span>
-    </div>
-  </section>
-
-    <!-- COMMERCIAL STRUCTURE -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Commercial proposal structure · RFP §15</span>
-      <h2 class="slide-title">One-time and recurring items, <span class="accent">three-year TCO</span></h2>
-      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
-        <div class="card">
-          <div class="ix">One-time · §15.1</div><h3>Project fee · $55,000</h3>
-          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
-            <li>Discovery and consulting</li>
-            <li>Setup and initial fees</li>
-            <li>Design (UI/UX), development and configuration: WebShop, AppShop, PIM, CMS, PGW, CRM, campaign</li>
-            <li>Integrations: ERP, OMS, CRM, PSP, marketplaces, marketing and analytics</li>
-            <li>Data migration, testing and quality, training and knowledge transfer, go-live and hypercare</li>
-          </ul>
-        </div>
-        <div class="card card--dark">
-          <div class="ix">Recurring · §15.2</div><h3>Platform and services · 1% of order value</h3>
-          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
-            <li>Platform / licence fee (SaaS, per tenant)</li>
-            <li>Hosting, CDN and traffic (AWS, BestCloudForme operations)</li>
-            <li>Support and maintenance (by SLA level)</li>
-            <li>Monitoring and additional services (APM, logs, DR replica)</li>
-            <li>Upgrades, releases and managed service</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="ix">Pricing template · §15.3</div><h3>Per line item</h3>
-          <ul class="flist flist--tight" style="margin-top:0.3cqh;">
-            <li>Headless Commerce Platform · website · app · marketplace integration · PIM</li>
-            <li>Integrations · data migration · analysis · testing · reporting</li>
-            <li>Infosec · SLA and maintenance · software development person-days</li>
-            <li>Unit, quantity, unit price, total, assumptions/exclusions on every line</li>
-          </ul>
-        </div>
-      </div>
-      <p class="note"><b>Headline figures:</b> one-time project fee $55,000 (2 brands; customisation and integrations included, design excluded) · platform usage 1% of order value, 0.5% on marketplace orders; TMS free · hosting $3,500/month production + $500/month test · 3-year TCO $662,196, 1.25% of net sales · VAT excluded, 30-day terms; all development included, no change-request invoices. Tax, currency, payment plan and validity in the commercial file.</p>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">82 / 85</span>
-    </div>
-  </section>
-
-    <!-- ASSUMPTIONS -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Assumptions, dependencies and exclusions · RFP §23.1-11 and Annex B</span>
-      <h2 class="slide-title">The <span class="accent">assumptions</span> behind the proposal, written down</h2>
-      <table class="xtable xtable--xdense">
-        <thead><tr><th>ID</th><th>Type</th><th>Description</th><th>Impact</th><th>Owner / closure</th></tr></thead>
-        <tbody>
-          <tr><td>A1</td><td>Exclusion</td><td>OMS and WMS implementation is outside the proposal (InStore Commerce module in scope, Inventory Engine optional); the existing Retail Markup OMS and WinRetail are integrated</td><td>Scope</td><td>Proposal statement</td></tr>
-          <tr><td>A2</td><td>Assumption</td><td>Volume data (44K/21K SKUs, 2.2M members, 450K orders, 70K/280K sessions) is for Victoria's Secret; Bath &amp; Body Works volumes confirmed in discovery</td><td>Capacity, duration</td><td>Shaya · discovery</td></tr>
-          <tr><td>A3</td><td>Dependency</td><td>API access, test environments and credentials for WinRetail, OMS, CRM, Retter, PSP and marketplaces come from Shaya and its partners; delays affect the plan</td><td>Timeline</td><td>Shaya IT · M2</td></tr>
-          <tr><td>A4</td><td>Assumption</td><td>The CRM remains owner of customer master, points, tiers, coupons and campaign rules; the ERP of products, prices and physical stock; the OMS of available inventory and the order lifecycle</td><td>Design</td><td>Discovery · M3</td></tr>
-          <tr><td>A5</td><td>Assumption</td><td>The timeline (5 months: VS W18, BBW W20, closure W22) is confirmed at the end of discovery with a resource-loaded plan and critical path; campaign periods are blackout</td><td>Timeline</td><td>CommerceLab PM · M2</td></tr>
-          <tr><td>A6</td><td>Dependency</td><td>For RPO ≤ 15 min, continuous Mongo and PostgreSQL replicas and a warm standby are set up for the Shaya tenant; cost in recurring items</td><td>Cost</td><td>CommerceLab + BestCloudForme</td></tr>
-          <tr><td>A7</td><td>Assumption</td><td>Ticimax data is accessible by export or API; passwords are not migrated, OTP/social login at first sign-in</td><td>Migration</td><td>Shaya · M2</td></tr>
-          <tr><td>A8</td><td>Assumption</td><td>"C" answers in the fit-gap matrix are subject to technical sign-off by the product team; closed with evidence (demo/test environment) in discovery</td><td>Scope</td><td>CommerceLab product · M2</td></tr>
-          <tr><td>A9</td><td>Exclusion</td><td>Store POS, in-store hardware, WinRetail- and OMS-side development, third-party licences (PSP, Personaclick, Setrow, Efilli, JetSMS) and campaign content production</td><td>Scope</td><td>Proposal statement</td></tr>
-          <tr><td>A10</td><td>Open item</td><td>Multi-AZ DR document attached (BestCloudForme, 3 November 2026); DR drill report shared with the first annual test; Retter API contract and gift-card provider clarified in discovery</td><td>Attachment</td><td>CommerceLab · after proposal</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">83 / 85</span>
-    </div>
-  </section>
-
-    <!-- INFOSEC -->
-  <section class="slide">
-    <div class="slide__inner">
-      <span class="kicker">Infosec · RFP §23.1-12 and §11.2</span>
-      <h2 class="slide-title">Security comes from the architecture, the <span class="accent">evidence pack</span> with the proposal</h2>
-      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.3cqh 1.5cqw;">
-        <div class="card"><div class="ix">Posture</div><h3>Zero trust, end-to-end encryption</h3><p>Segmented VPC, least-privilege security groups, 16-layer WAF and Cloudflare DDoS protection; encryption in transit and at rest; IAM RBAC + mandatory MFA; dynamic secrets in Vault; continuous audit with AWS Security Hub.</p></div>
-        <div class="card"><div class="ix">Application security</div><h3>Secure development lifecycle</h3><p>Mandatory code review and AI-assisted review, SonarQube static analysis, image scanning (ECR), dependency updates; JWT/OAuth API identity; rate limiting; security headers (HSTS and others).</p></div>
-        <div class="card card--dark"><div class="ix">Data and compliance</div><h3>KVKK · DPA · PCI scope</h3><p>Consent management, anonymisation, account deletion, audit trail; a DPA is signed; no card data on the platform, PCI scope reduced via PSP tokenisation; data-residency assumption confirmed in discovery (AWS eu-central-1).</p></div>
-        <div class="card"><div class="ix">Testing and audit</div><h3>Pentest and vulnerability management</h3><p>Regular penetration testing; independent pentest and findings-closure report for Shaya before go-live (M8); continuous vulnerability scanning; third-party risk management; access reviews.</p></div>
-        <div class="card"><div class="ix">Operations</div><h3>Incident response and business continuity</h3><p>Incident response and crisis plan; 24/7 alerting and escalation; DR plan, RPO/RTO commitments and two drills a year; notification times for security incidents in the SLA.</p></div>
-        <div class="card"><div class="ix">Evidence pack</div><h3>Attached to the proposal</h3><p>Infrastructure Security Document (network, WAF rules, IAM, logging), Infosec questionnaire answers, policy summaries, latest pentest summary and DR plan; further questions answered at the start of discovery. Written security sign-off before production (M8).</p></div>
-      </div>
-    </div>
-    <div class="slide__footer">
-      <span class="brand"><img src="../../assets/commercelab-logo.svg" alt="" /></span>
-      <span class="conf">Confidential</span>
-      <span class="slide__no">84 / 85</span>
-    </div>
-  </section>
+  
 
   <!-- 85 — CLOSING -->
   <section class="slide slide--ink slide--cover">
@@ -2534,7 +2090,7 @@
     <div class="slide__footer">
       <span class="brand"><img src="../../assets/commercelab-logo-white.svg" alt="" /></span>
       <span class="conf">Confidential</span>
-      <span class="slide__no">85 / 85</span>
+      <span class="slide__no">69 / 69</span>
     </div>
   </section>
 
