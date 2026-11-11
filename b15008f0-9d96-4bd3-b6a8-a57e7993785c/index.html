@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CommerceLab — E-bebek SAP ve fulfillment akışı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+  .compact-cards .card { padding: 1.5cqh 1.3cqw; gap: 0.5cqh; }
+  .compact-cards .card p { font-size: 1.16cqw; line-height: 1.42; }
+  .compact-cards .card h3 { font-size: 1.5cqw; }
+  .card--dark .flist li { color: rgba(255,255,255,.86); }
+  .card--dark .flist b { color: #fff; }
+  .card .flist { gap: 1.1cqh; }
+  .card .flist li { font-size: 1.28cqw; }
+  .flist--tight { gap: 0.9cqh; }
+  .flist--tight li { font-size: 1.36cqw; }
+
+  /* Tablolar */
+  .xtable { width: 100%; border-collapse: collapse; margin-top: 0.6cqh; }
+  .xtable th { text-align: left; font-family: var(--display); font-weight: 700; font-size: 0.92cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-2); padding: 0 1cqw 0.7cqh 0; border-bottom: 1px solid var(--line-strong); }
+  .xtable td { padding: 0.85cqh 1cqw 0.85cqh 0; font-size: 1.12cqw; color: var(--ink-soft); border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.38; }
+  .xtable td:first-child { font-family: var(--display); font-weight: 700; color: var(--ink); }
+  .xtable td b { color: var(--ink); font-weight: 600; }
+  .xtable--dense td { padding: 0.62cqh 0.8cqw 0.62cqh 0; font-size: 1.04cqw; }
+  .st { display: inline-block; white-space: nowrap; font-family: var(--display); font-weight: 700; font-size: 0.82cqw; letter-spacing: .06em; text-transform: uppercase; padding: 0.3cqh 0.55cqw; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--ink-soft); }
+  .st--ok { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .st--todo { border-color: var(--red); color: var(--red); }
+  .st--plan { background: var(--bone-2); }
+
+  /* Topoloji diyagramı (SVG) */
+  .dg-wrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .dg-wrap svg { width: 100%; height: 100%; display: block; }
+  .dg-t { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
+  .dg-t--w { fill: #fff; }
+  .dg-s { font-family: var(--sans); font-size: 11.5px; fill: var(--muted); }
+  .dg-s--w { fill: rgba(255,255,255,.78); }
+  .dg-zone { font-family: var(--display); font-weight: 700; font-size: 10.5px; letter-spacing: .16em; fill: var(--red); }
+  .dg-box { fill: #ffffff; stroke: #cfccc4; stroke-width: 1.2; }
+  .dg-bone { fill: #f6f4f0; stroke: #e4e1da; stroke-width: 1; }
+  .dg-ink { fill: #1a1a1a; }
+  .dg-red { fill: #d02c2f; }
+  .dg-line { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+  .dg-line--m { stroke: #9a9893; stroke-width: 1.2; fill: none; }
+
+  /* Zaman planı */
+  .gantt { display: grid; grid-template-columns: 17cqw 1fr; row-gap: 0.45cqh; column-gap: 1cqw; align-items: center; }
+  .gantt__h { font-family: var(--display); font-weight: 700; font-size: 0.85cqw; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-2); }
+  .gantt__name { font-family: var(--display); font-weight: 600; font-size: 1.15cqw; color: var(--ink); line-height: 1.2; }
+  .gantt__name small { display: block; font-family: var(--sans); font-weight: 400; font-size: 0.92cqw; color: var(--muted); }
+  .gantt__track { position: relative; height: 2.2cqh; background: var(--bone); border: 1px solid var(--line); border-radius: 4px; }
+  .gantt__bar { position: absolute; top: 0.3cqh; bottom: 0.3cqh; background: var(--ink); border-radius: 3px; }
+  .gantt__bar--red { background: var(--red); }
+  .gantt__bar--soft { background: var(--muted-2); }
+  .gantt__scale { position: relative; height: 1.6cqh; }
+  .gantt__scale span { position: absolute; top: 0; font-size: 0.85cqw; color: var(--muted-2); transform: translateX(-50%); font-variant-numeric: tabular-nums; }
+
+  /* Süreç şeridi (change management) */
+  .steps { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.5cqw; }
+  .step-box { border: 1px solid var(--line-strong); border-radius: 6px; background: var(--paper); padding: 1.1cqh 0.7cqw; display: flex; flex-direction: column; gap: 0.35cqh; min-height: 11cqh; }
+  .step-box .n { font-family: var(--display); font-weight: 800; font-size: 1cqw; color: var(--red); letter-spacing: .06em; }
+  .step-box .t { font-family: var(--display); font-weight: 700; font-size: 1.08cqw; color: var(--ink); line-height: 1.15; }
+  .step-box .d { font-size: 0.9cqw; color: var(--muted); line-height: 1.3; }
+  .step-box--ink { background: var(--ink); border-color: var(--ink); }
+  .step-box--ink .t { color: #fff; }
+  .step-box--ink .d { color: #b9b7b2; }
+  .step-box--ink .n { color: #ff6b6e; }
+
+  .two-col .flist li { font-size: 1.32cqw; }
+  .hdr-sub { font-family: var(--display); font-weight: 700; font-size: 1.05cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 1cqh; }
+  .hdr-sub--ink { color: var(--ink); }
+  .mini-stats { display: flex; gap: 2.4cqw; flex-wrap: wrap; }
+  .mini-stats .stat .num { font-size: 2.9cqw; }
+  .mini-stats .stat .lab { font-size: 1.05cqw; max-width: 15cqw; }
+
+  .ai-q { display: block; border-left: 3px solid var(--red); background: var(--bone-2); padding: 0.75cqh 0.9cqw; margin: 0.7cqh 0 0; font-size: 1.02cqw; line-height: 1.35; color: var(--ink); border-radius: 0 6px 6px 0; }
+  .ai-q small { display: block; color: var(--muted); font-size: 0.86cqw; margin-top: 0.3cqh; }
+  .ai-cards .card h3 { margin-bottom: 0.2cqh; }
+  .ai-flow { margin-top: 1.4cqh; }
+  .ai-flow .node { padding: 1cqh 1.1cqw; }
+  .xtable--xdense td { padding: 0.42cqh 0.7cqw 0.42cqh 0; font-size: 0.96cqw; line-height: 1.3; }
+  .xtable--xdense th { font-size: 0.84cqw; padding-bottom: 0.5cqh; }
+  .xtable td.c { text-align: center; }
+  .kpi-strip .kpi .k { font-size: 2.3cqw; }
+  .cover-meta--wide { gap: 3cqw; }
+  .team-grid .card { padding: 1.1cqh 1.2cqw; }
+  .team-card .tlist li { font-size: 0.98cqw; }
+  .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2cqw; align-items: start; }
+  .logowall { margin-top: 1cqh; }
+  .ann { font-size: 0.98cqw; color: var(--muted); line-height: 1.4; margin-top: 0.9cqh; }
+  .ann b { color: var(--ink); }
+  .desc--pills { line-height: 2 !important; }
+  .desc--pills .pill { font-size: 0.92cqw; padding: 0.25cqh 0.65cqw; vertical-align: middle; white-space: nowrap; }
+  .suite { gap: 1.6cqh; margin-top: 1.2cqh !important; }
+  .suite .layer { padding-top: 1.7cqh; padding-bottom: 1.7cqh; }
+  .suite .desc { font-size: 1.36cqw; }
+  .suite--7 { gap: 1cqh; margin-top: 0.8cqh !important; }
+  .suite--7 .layer { padding-top: 1.1cqh; padding-bottom: 1.1cqh; }
+  .suite--7 .desc { font-size: 1.28cqw; }
+  .suite--7 .desc--pills .pill { font-size: 0.86cqw; padding: 0.2cqh 0.5cqw; }
+  .logowall { grid-template-columns: repeat(6, 1fr); }
+
+  .xtable--tight td { padding-top: 0.28cqh; padding-bottom: 0.28cqh; }
+  .xtable--xxdense td { padding: 0.34cqh 0.6cqw 0.34cqh 0; font-size: 0.9cqw; line-height: 1.28; }
+
+  /* E-bebek teklifleri: özet sunumdan gelen ve yeni eklenen kurallar */
+  .cards-tight .card { padding: 1.3cqh 1.1cqw; }
+  .cards-tight .card p { font-size: 1.04cqw; line-height: 1.38; }
+  .em-key { font-weight: 600; font-style: italic; color: var(--ink); }
+  .xtable tr.total td { border-top: 1px solid var(--line-strong); border-bottom: 0; font-family: var(--display); font-weight: 800; color: var(--ink); }
+  .xtable tr.total td.hit { color: var(--red); font-size: 1.3cqw; white-space: nowrap; }
+  .xtable tr.ratio td { border-bottom: 0; font-family: var(--display); font-weight: 700; color: var(--ink); }
+  .xtable tr.ratio td.hit { color: var(--red); }
+  .incl { display: flex; align-items: center; gap: 1.1cqw; background: var(--ink); color: #fff; border-radius: 6px; padding: 1.3cqh 1.5cqw; font-family: var(--display); font-weight: 700; font-size: 1.35cqw; line-height: 1.3; }
+  .incl::before { content: ""; flex: none; width: 0.8cqw; height: 0.8cqw; background: var(--red); border-radius: 2px; }
+  .incl span { font-family: var(--sans); font-weight: 400; font-size: 1.1cqw; color: #c7c5c0; }
+  .xtable--fees { table-layout: fixed; }
+  .xtable--fees td { padding: 1.05cqh 1.6cqw 1.05cqh 0; font-size: 1.2cqw; line-height: 1.42; vertical-align: middle; }
+
+  /* Topoloji diyagramı ekleri */
+  .dg-b { font-family: var(--display); font-weight: 700; font-size: 10.6px; fill: var(--ink); }
+  .dg-b--w { fill: #fff; }
+  .dg-h { font-family: var(--display); font-weight: 700; font-size: 11.6px; fill: var(--ink); }
+  .dg-h--w { fill: #fff; }
+  .dg-xs { font-family: var(--sans); font-size: 9.6px; fill: var(--muted); }
+  .dg-xs--w { fill: rgba(255,255,255,.86); }
+  .dg-scope { fill: none; stroke: #d02c2f; stroke-width: 1.6; }
+  .dg-dash { stroke: #9a9893; stroke-width: 1.1; stroke-dasharray: 4 3; fill: none; }
+
+  /* Değer zinciri (7 adım) */
+  .vsteps { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.6cqw; }
+  .vstep { border: 1px solid var(--line-strong); border-radius: 6px; background: var(--paper); padding: 1.3cqh 0.8cqw; display: flex; flex-direction: column; gap: 0.5cqh; min-height: 28cqh; }
+  .vstep .n { font-family: var(--display); font-weight: 800; font-size: 1cqw; color: var(--red); letter-spacing: .06em; }
+  .vstep .t { font-family: var(--display); font-weight: 700; font-size: 1.3cqw; color: var(--ink); line-height: 1.15; }
+  .vstep .d { font-size: 1cqw; color: var(--muted); line-height: 1.38; }
+  .vstep .b { margin-top: auto; padding-top: 0.8cqh; border-top: 1px solid var(--line); font-family: var(--display); font-weight: 700; font-size: 1.02cqw; color: var(--ink); line-height: 1.25; }
+  .vstep--ink { background: var(--ink); border-color: var(--ink); }
+  .vstep--ink .t, .vstep--ink .b { color: #fff; }
+  .vstep--ink .d { color: #b9b7b2; }
+  .vstep--ink .b { border-top-color: rgba(255,255,255,.2); }
+  .vstep--ink .n { color: #ff6b6e; }
+
+  /* Faz planı (ay ölçekli) */
+  .gantt--m { grid-template-columns: 31cqw 1fr; row-gap: 1.1cqh; }
+  .gantt--m .gantt__track { height: 2.8cqh; background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(12.5% - 1px), var(--line-strong) calc(12.5% - 1px), var(--line-strong) 12.5%); }
+  .gantt--m .gantt__name { font-size: 1.18cqw; }
+  .gantt--m .gantt__name small { font-size: 0.9cqw; margin-top: 0.15cqh; }
+  .gantt__bar--range { background: repeating-linear-gradient(135deg, var(--ink) 0, var(--ink) 0.3cqw, #b9b7b2 0.3cqw, #b9b7b2 0.6cqw); }
+  .gantt__bar--opt { background: transparent; border: 1.5px dashed var(--red); }
+
+  .suite--tight { gap: 0.8cqh; }
+  .suite--tight .layer { padding-top: 0.85cqh; padding-bottom: 0.85cqh; }
+  .suite--tight .desc { font-size: 1.14cqw; }
+  .suite--tight .desc--pills { line-height: 1.75 !important; }
+
+  .xtable--feesd td { padding-top: 0.7cqh; padding-bottom: 0.7cqh; font-size: 1.12cqw; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 01 KAPAK -->
+<section class="slide slide--ink slide--cover">
+<div class="slide__inner">
+<img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+<span class="kicker">E-bebek · SAP çalışma oturumu</span>
+<h1 class="cover-title">SAP fulfillment'ı yürütmez,<br /><span class="accent">sonucunu kaydeder</span></h1>
+<p class="cover-sub">Siparişten faturaya akış, SAP ile temas noktaları, CAR üzerinden mağaza stoğu, asenkron fatura yapısı ve paketleme uygulaması seçenekleri. Saha ziyaretinde SAP ekibiyle teknik çalışma için hazırlandı.</p>
+<div class="cover-meta" style="margin-top:3.2cqh;">
+<div>Saha ziyareti · <span>Kasım 2026</span></div>
+<div>Sürüm · <span>v1</span></div>
+<div>Kapsam · <span>OMS · TMS · Omnichannel Operations · ComHub</span></div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">1 / 19</span></div>
+</section>
+
+<!-- 02 SORULAR -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Bu oturumda</span>
+<h2 class="slide-title">Dört soruya <span class="accent">kısa cevap</span>, sonra detay</h2>
+<table class="xtable">
+<colgroup><col style="width:5%;" /><col style="width:33%;" /><col /></colgroup>
+<thead><tr><th>#</th><th>Soru</th><th>Kısa cevap</th></tr></thead>
+<tbody>
+<tr><td>01</td><td>Siparişten faturaya kadar SAP'ye nasıl müdahale edilmez?</td><td>Sipariş, rezervasyon, sourcing, toplama, paketleme ve kargo CommerceLab'de yürür. SAP bu sürede <b>hiç çağrılmaz</b>; yalnız paket kargoya verildiğinde sonucu alır.</td></tr>
+<tr><td>02</td><td>Fatura en sonda ve asenkron nasıl oluşur?</td><td>"Paket sevk edildi" olayı kuyruğa yazılır. SAP adaptörü satış, mal çıkışı ve faturayı <b>paket başına tek çağrıda</b> oluşturur; SAP yavaşlasa da paket beklemez.</td></tr>
+<tr><td>03</td><td>Mağaza stokları SAP'den, CAR üzerinden nasıl alınır?</td><td>Açılışta tam stok; gün içinde CAR'daki POS hareketleri ve S/4 mal hareketleriyle <b>delta</b>; gece tam eşitleme. Online siparişin rezervasyonu OMS'te tutulur, stok iki kez düşmez.</td></tr>
+<tr><td>04</td><td>Mevcut paketleme uygulamanız kullanılabilir mi? <span class="st st--plan">Opsiyonel</span></td><td>Evet. Uygulama SAP'ye değil, <b>OMS görev API'sine</b> bağlanır. İsterseniz DC'de mevcut uygulama, mağazalarda bizim uygulama birlikte çalışır.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">2 / 19</span></div>
+</section>
+
+<!-- 03 ROL AYRIMI -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Rol ayrımı</span>
+<h2 class="slide-title">SAP kayıt sistemi olarak kalır, fulfillment <span class="accent">CommerceLab'de yürür</span></h2>
+<div class="grid grid-2" style="margin-top:1.2cqh;">
+<div class="card">
+<span class="ix">SAP'de kalan</span>
+<h3>Ana veri, mali stok, mali belge</h3>
+<ul class="flist">
+<li><b>Ana veri.</b> Malzeme, barkod, fiyat, tesis ve depo yeri, müşteri hesabı.</li>
+<li><b>Fiziksel ve mali stok.</b> Mal kabul, transfer, sayım, mal çıkışı kayıtları.</li>
+<li><b>Satış belgesi ve fatura.</b> Satış, teslimat, fatura, muhasebe kaydı; e-belge tercihe göre.</li>
+<li><b>CAR.</b> POS hareketleri ve mağaza stok görünürlüğü.</li>
+</ul>
+</div>
+<div class="card card--dark">
+<span class="ix">CommerceLab'e taşınan</span>
+<h3>Siparişin yürütülmesi</h3>
+<ul class="flist">
+<li><b>Satılabilir stok.</b> ATP, rezervasyon, emniyet stoğu, kanal bazında yayın.</li>
+<li><b>Sourcing.</b> Hangi kaynak, kaç paket; eksik üründe otomatik yeniden kaynak.</li>
+<li><b>Operasyon.</b> Toplama, paketleme, etiket, kargoya teslim; mağaza ve DC'de.</li>
+<li><b>Teslimat ve statü.</b> Taşıyıcı seçimi, takip, iptal, iade talebi, kanal bildirimi.</li>
+</ul>
+</div>
+</div>
+<p class="ann"><b>Sonuç:</b> SAP'de sipariş başına işlem sayısı düşer, sipariş yaşam döngüsündeki değişiklikler SAP geliştirmesi beklemez, kampanya zirvesi SAP'ye yük bindirmez.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">3 / 19</span></div>
+</section>
+
+<!-- BÖLÜM 01 -->
+<section class="slide slide--ink">
+<div class="slide__inner" style="justify-content:center;">
+<div class="divider-index">01</div>
+<span class="kicker">Uçtan uca akış</span>
+<h2 class="slide-title">Siparişten faturaya</h2>
+<p class="lead">SAP akışın başında ana veri ve stoğu verir, sonunda kaydı alır. Arada kalan her adım CommerceLab'de.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">4 / 19</span></div>
+</section>
+
+<!-- 05 SWIMLANE -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Akış</span>
+<h2 class="slide-title">SAP yalnız <span class="accent">başta ve sonda</span></h2>
+<div class="dg-wrap">
+<svg viewBox="0 0 1200 455" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Siparişten faturaya akış: kanal, CommerceLab, mağaza/DC operasyonu ve SAP şeritleri">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/></marker>
+</defs>
+<rect x="0" y="0" width="1200" height="100" class="dg-bone"/>
+<rect x="0" y="100" width="1200" height="110" fill="#ffffff" stroke="#e4e1da"/>
+<rect x="0" y="210" width="1200" height="100" class="dg-bone"/>
+<rect x="0" y="310" width="1200" height="110" fill="#ffffff" stroke="#e4e1da"/>
+<text x="16" y="45" class="dg-zone">KANAL</text><text x="16" y="62" class="dg-xs">web · app · pazaryeri</text>
+<text x="16" y="150" class="dg-zone">COMMERCELAB</text><text x="16" y="167" class="dg-xs">ComHub · OMS · TMS</text>
+<text x="16" y="255" class="dg-zone">OPERASYON</text><text x="16" y="272" class="dg-xs">mağaza · DC uygulaması</text>
+<text x="16" y="360" class="dg-zone">SAP</text><text x="16" y="377" class="dg-xs">S/4 · CAR</text>
+
+<rect x="306" y="326" width="622" height="78" rx="6" class="dg-scope" stroke-dasharray="6 4"/>
+<text x="617" y="360" text-anchor="middle" class="dg-h" style="fill:#d02c2f;">SAP'ye çağrı yok</text>
+<text x="617" y="378" text-anchor="middle" class="dg-xs">sipariş, rezervasyon, sourcing, toplama, paketleme, etiket, kargoya teslim</text>
+
+<path d="M234,330 V312 H294 V50 H304" class="dg-line" marker-end="url(#ah)"/>
+<path d="M418,50 H426 V155 H432" class="dg-line" marker-end="url(#ah)"/>
+<path d="M546,155 H554 V260 H560" class="dg-line" marker-end="url(#ah)"/>
+<path d="M674,260 H682 V155 H688" class="dg-line" marker-end="url(#ah)"/>
+<path d="M802,155 H809 V260 H815" class="dg-line" marker-end="url(#ah)"/>
+<path d="M929,260 H936 V365 H942" class="dg-line" marker-end="url(#ah)"/>
+<path d="M1056,365 H1063 V50 H1070" class="dg-line" marker-end="url(#ah)"/>
+<text x="942" y="320" class="dg-xs" text-anchor="end">olay · asenkron</text>
+
+<rect x="178" y="330" width="112" height="70" rx="6" class="dg-box"/>
+<text x="234" y="352" text-anchor="middle" class="dg-b">0 · Ana veri, stok</text>
+<text x="234" y="369" text-anchor="middle" class="dg-xs">malzeme · fiyat</text>
+<text x="234" y="383" text-anchor="middle" class="dg-xs">S/4 + CAR → ComHub</text>
+
+<rect x="306" y="15" width="112" height="70" rx="6" class="dg-box"/>
+<text x="362" y="40" text-anchor="middle" class="dg-b">1 · Sipariş</text>
+<text x="362" y="57" text-anchor="middle" class="dg-xs">1,2 sn'de OMS'te</text>
+<text x="362" y="71" text-anchor="middle" class="dg-xs">pazaryeri dahil</text>
+
+<rect x="434" y="120" width="112" height="70" rx="6" class="dg-box"/>
+<text x="490" y="145" text-anchor="middle" class="dg-b">2 · Rezervasyon</text>
+<text x="490" y="162" text-anchor="middle" class="dg-xs">sourcing · paket planı</text>
+<text x="490" y="176" text-anchor="middle" class="dg-xs">OMS · 700 ms</text>
+
+<rect x="562" y="225" width="112" height="70" rx="6" class="dg-box"/>
+<text x="618" y="250" text-anchor="middle" class="dg-b">3 · Topla, paketle</text>
+<text x="618" y="267" text-anchor="middle" class="dg-xs">eksikte yeniden kaynak</text>
+<text x="618" y="281" text-anchor="middle" class="dg-xs">koli · desi</text>
+
+<rect x="690" y="120" width="112" height="70" rx="6" class="dg-box"/>
+<text x="746" y="145" text-anchor="middle" class="dg-b">4 · Etiket, belge</text>
+<text x="746" y="162" text-anchor="middle" class="dg-xs">taşıyıcı etiketi</text>
+<text x="746" y="176" text-anchor="middle" class="dg-xs">e-irsaliye · TMS</text>
+
+<rect x="817" y="225" width="112" height="70" rx="6" class="dg-ink"/>
+<text x="873" y="250" text-anchor="middle" class="dg-b dg-b--w">5 · Kargoya teslim</text>
+<text x="873" y="267" text-anchor="middle" class="dg-xs dg-xs--w">okutma · tutanak</text>
+<text x="873" y="281" text-anchor="middle" class="dg-xs dg-xs--w">"sevk edildi" olayı</text>
+
+<rect x="944" y="330" width="112" height="70" rx="6" class="dg-red"/>
+<text x="1000" y="352" text-anchor="middle" class="dg-b dg-b--w">6 · SAP kaydı</text>
+<text x="1000" y="369" text-anchor="middle" class="dg-xs dg-xs--w">satış · mal çıkışı</text>
+<text x="1000" y="383" text-anchor="middle" class="dg-xs dg-xs--w">fatura · paket başına</text>
+
+<rect x="1072" y="15" width="112" height="70" rx="6" class="dg-box"/>
+<text x="1128" y="40" text-anchor="middle" class="dg-b">7 · Fatura, statü</text>
+<text x="1128" y="57" text-anchor="middle" class="dg-xs">fatura linki</text>
+<text x="1128" y="71" text-anchor="middle" class="dg-xs">müşteri · pazaryeri</text>
+
+<text x="16" y="446" class="dg-xs">Tüm adımlar Control Tower izlemesinde: kanalda olup OMS'te olmayan sipariş, faturalanmayan paket ve stok farkı alarm üretir.</text>
+</svg>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">5 / 19</span></div>
+</section>
+
+<!-- 06 DOKUNULMAYAN BÖLGE -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Soru 01 · SAP'ye müdahale</span>
+<h2 class="slide-title">Sipariş anından kargoya kadar <span class="accent">SAP'ye tek çağrı yok</span></h2>
+<div class="two-col two-col--wide" style="margin-top:1cqh;">
+<table class="xtable xtable--dense">
+<colgroup><col style="width:30%;" /><col /><col style="width:24%;" /></colgroup>
+<thead><tr><th>Olay</th><th>Nerede çözülür</th><th>SAP'ye etkisi</th></tr></thead>
+<tbody>
+<tr><td>Sipariş düştü</td><td>OMS stok rezerve eder, kanallara yeni satılabilir stok gider</td><td>Yok</td></tr>
+<tr><td>Sourcing, paket bölme</td><td>OMS kaynakları puanlar; görev mağazaya ya da DC'ye düşer</td><td>Yok</td></tr>
+<tr><td>Toplamada ürün yok</td><td>Kalem iptal ya da başka kaynağa otomatik yönlendirme</td><td>Yok</td></tr>
+<tr><td>Sevk öncesi iptal</td><td>Rezervasyon açılır, kanala statü gider</td><td>Yok</td></tr>
+<tr><td>Kargo, adres değişimi</td><td>TMS'te yeni etiket, yeni takip</td><td>Yok</td></tr>
+<tr><td>Paket kargoya verildi</td><td>"Sevk edildi" olayı kuyruğa yazılır</td><td><b>Tek kayıt, asenkron</b></td></tr>
+<tr><td>İade kabul edildi</td><td>OMS iade ve geri ödemeyi satır bazında hesaplar</td><td><b>İade belgesi, asenkron</b></td></tr>
+</tbody>
+</table>
+<div class="card card--accent">
+<span class="ix">Neden mümkün</span>
+<h3>Stok kilidi SAP'de değil, OMS'te</h3>
+<p>OMS'in kanala açtığı miktar:</p>
+<p style="font-family:var(--display);font-weight:700;color:var(--ink);">SAP / CAR stoğu − açık rezervasyon − emniyet stoğu</p>
+<p>SAP'nin bir siparişi sevk edilene kadar bilmesine gerek kalmaz. Mal çıkışı SAP'de kaydedilip OMS'e döndüğünde rezervasyon kapanır; aynı adet iki kez düşmez.</p>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">6 / 19</span></div>
+</section>
+
+<!-- 07 ENTEGRASYON SÖZLEŞMESİ -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">SAP temas noktaları</span>
+<h2 class="slide-title">SAP ile yedi akış, <span class="accent">hepsi kuyruklu</span></h2>
+<table class="xtable xtable--dense">
+<colgroup><col style="width:21%;" /><col style="width:14%;" /><col style="width:21%;" /><col /></colgroup>
+<thead><tr><th>Akış</th><th>Yön</th><th>Tetikleme</th><th>SAP tarafında olası arayüz</th></tr></thead>
+<tbody>
+<tr><td>Malzeme, barkod, fiyat</td><td>SAP → ComHub</td><td>Değişiklikte + günlük tam</td><td>IDoc (ARTMAS / MATMAS, COND_A) ya da OData; değişen kayıt kuyruğu bizde hazır</td></tr>
+<tr><td>Tesis ve depo yeri</td><td>SAP → OMS</td><td>Değişiklikte</td><td>Tesis = kaynak (mağaza, DC), depo yeri = kaynak altındaki depo</td></tr>
+<tr><td>Mağaza ve DC stoğu</td><td>S/4 · CAR → OMS</td><td>Açılışta tam, sonra delta</td><td>CAR OData / CDS görünümü, S/4 mal hareketi olayı; detay bölüm 03'te</td></tr>
+<tr><td>Paket sevk edildi</td><td>OMS → SAP</td><td>Olay, asenkron</td><td>Tek Z-RFC ya da BAPI zinciri (satış, teslimat, mal çıkışı, fatura) veya IDoc; detay bölüm 02'de</td></tr>
+<tr><td>Fatura no, e-belge durumu</td><td>SAP → OMS</td><td>Olay ya da sorgu</td><td>Geri bildirim çağrısı; fatura linki kanala ve müşteriye gider</td></tr>
+<tr><td>İade</td><td>OMS → SAP</td><td>İade kabulünde</td><td>İade siparişi, iade teslimatı ve alacak dekontu</td></tr>
+<tr><td>Mağazalar arası transfer</td><td>OMS ↔ SAP</td><td>Sevk ve kabulde</td><td>Stok nakil siparişi (STO) ya da transfer kaydı; yoldaki stok OMS'te izlenir</td></tr>
+</tbody>
+</table>
+<p class="ann">Arayüz adları öneridir. S/4 sürümü, mevcut Z geliştirmeleri, ara katman (PI/PO, CPI) ve SAP ekibinin tercihiyle keşifte seçilir. SAP ve Nebim için canlı müşterilerde çalışan adaptörlerimiz var.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">7 / 19</span></div>
+</section>
+
+<!-- BÖLÜM 02 -->
+<section class="slide slide--ink">
+<div class="slide__inner" style="justify-content:center;">
+<div class="divider-index">02</div>
+<span class="kicker">Soru 02</span>
+<h2 class="slide-title">Asenkron fatura</h2>
+<p class="lead">Fatura akışın son adımıdır. Paket SAP'yi beklemez, SAP de yarım belge üretmez.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">8 / 19</span></div>
+</section>
+
+<!-- 09 ASYNC FATURA -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Asenkron fatura yapısı</span>
+<h2 class="slide-title">Fatura en sonda oluşur, <span class="accent">paket SAP'yi beklemez</span></h2>
+<div class="flow" style="margin:1.4cqh 0 2.2cqh;">
+<div class="node">Kargoya teslim<small>"sevk edildi" olayı</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Giden kuyruk<small>ComHub · anahtar = paket no</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">SAP adaptörü<small>satış · teslimat · mal çıkışı · fatura</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Fatura no döner<small>OMS'te pakete bağlanır</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">e-Fatura / e-Arşiv<small>SAP eDocument ya da entegratör</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--ink">Kanal, müşteri<small>fatura linki · pazaryerine PDF</small></div>
+</div>
+<div class="grid grid-3 compact-cards">
+<div class="card"><span class="ix">01</span><h3>Paket başına tek çağrı</h3><p>Satış belgesi, teslimat, mal çıkışı ve fatura tek mantıksal işlemde oluşur. SAP'de ya hepsi kaydedilir ya hiçbiri; askıda teslimat ya da faturasız mal çıkışı kalmaz.</p></div>
+<div class="card"><span class="ix">02</span><h3>Tekrarsız</h3><p>Paket numarası tekrar anahtarıdır. Aynı mesaj ikinci kez gelirse SAP mevcut belgeyi döner, ikinci fatura oluşmaz. Kısmi sevkte her paket kendi faturasını alır.</p></div>
+<div class="card"><span class="ix">03</span><h3>SAP kapalıyken iş durmaz</h3><p>SAP bakımda ya da yavaşken paketler çıkmaya devam eder, mesajlar kuyrukta bekler. SAP döndüğünde sırayla işlenir; veri kaybolmaz.</p></div>
+</div>
+<p class="ann"><b>Fiyat:</b> satır net fiyatı ve indirimler siparişten gelir. SAP fiyatlandırması yeniden hesaplamaz; tutarlar manuel koşul tipiyle taşınır, fatura tutarı kanaldaki sipariş tutarına eşit olur.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">9 / 19</span></div>
+</section>
+
+<!-- 10 YASAL BELGE -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Paket hangi belgeyle çıkar</span>
+<h2 class="slide-title">Paket <span class="accent">yasal belgesiyle</span> çıkar, fatura kaydı sonra gelir</h2>
+<p class="lead">Faturanın SAP'de asenkron kesilmesi, paketin belgesiz yola çıkması demek değil. İki model var; kanal bazında seçilebilir.</p>
+<div class="grid grid-3 compact-cards" style="margin-top:1.4cqh;">
+<div class="card card--accent">
+<span class="ix">Model A</span>
+<h3>e-İrsaliye ile çıkış</h3>
+<p>Paketleme anında CommerceLab UBL e-irsaliye üretir, etikete QR basılır. Fatura SAP'de sevk sonrası asenkron ve yasal süre içinde kesilir. Sevk anında SAP'ye çağrı yoktur.</p>
+</div>
+<div class="card card--accent">
+<span class="ix">Model B</span>
+<h3>Paketlemede e-Arşiv fatura</h3>
+<p>Fatura paketleme anında e-belge entegratöründen kesilir ve pakete girer. SAP'ye satış, mal çıkışı ve muhasebe kaydı asenkron gider. Pazaryeri faturayı sevkte istiyorsa uygun model.</p>
+</div>
+<div class="card card--dark">
+<span class="ix">Mali işler ve SAP ile karar</span>
+<h3>Netleşecek üç konu</h3>
+<ul class="flist">
+<li><b>Kanal × model.</b> Hangi kanalda A, hangisinde B.</li>
+<li><b>Numara sahibi.</b> Fatura numarasını SAP mı, entegratör mü verir.</li>
+<li><b>e-Belge çözümü.</b> SAP eDocument mı, mevcut entegratör mü.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">10 / 19</span></div>
+</section>
+
+<!-- 11 HATA VE MUTABAKAT -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Hata ve mutabakat</span>
+<h2 class="slide-title">Faturalanmayan paket <span class="accent">kalmaz</span></h2>
+<table class="xtable">
+<colgroup><col style="width:26%;" /><col /></colgroup>
+<thead><tr><th>Durum</th><th>Davranış</th></tr></thead>
+<tbody>
+<tr><td>SAP erişilemiyor</td><td>Mesaj kuyrukta bekler, artan aralıklarla yeniden denenir. Operasyon etkilenmez.</td></tr>
+<tr><td>SAP mesajı reddetti</td><td>Ana veri eksikliği gibi iş hataları dead-letter kuyruğuna düşer, alarm üretir. Düzeltmeden sonra tek tıkla yeniden gönderilir.</td></tr>
+<tr><td>Kısmi sevk, bölünmüş sipariş</td><td>Her paket ayrı mesaj, ayrı fatura. Sipariş bütün paketleri sevk edilene kadar açık kalır.</td></tr>
+<tr><td>Sevk sonrası iptal, teslim edilemeyen</td><td>İade akışına girer: iade belgesi ve alacak dekontu asenkron; stok iade kabulünde geri gelir.</td></tr>
+<tr><td>Günlük mutabakat</td><td>Sevk edilen paket, SAP faturası ve e-belge durumu üç yönlü eşleştirilir; fark raporu e-posta ile gelir.</td></tr>
+<tr><td>Control Tower</td><td>Belirlenen sürede faturalanmayan paket, faturası olup e-belgesi gitmeyen kayıt ve stok farkı alarmı.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">11 / 19</span></div>
+</section>
+
+<!-- BÖLÜM 03 -->
+<section class="slide slide--ink">
+<div class="slide__inner" style="justify-content:center;">
+<div class="divider-index">03</div>
+<span class="kicker">Soru 03</span>
+<h2 class="slide-title">Mağaza stoğu ve CAR</h2>
+<p class="lead">Mağaza stoğu satışa ancak hızlı ve doğru akarsa açılır. CAR, POS hareketini en erken gören katman.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">12 / 19</span></div>
+</section>
+
+<!-- 13 ÜÇ YOL -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Mağaza stoğu</span>
+<h2 class="slide-title">Üç kaynak, tek stok: önerimiz <span class="accent">tam + delta</span></h2>
+<div class="grid grid-3 compact-cards" style="margin-top:1.2cqh;">
+<div class="card card--accent"><span class="ix">01 · CAR</span><h3>POS satışları</h3><p>Kasa satışları ve iadeleri POS DTA ile CAR'a dakikalar içinde düşer. Mağaza stoğu: son S/4 stoğu + sonraki POS hareketleri. OData servisi ya da CDS görünümüyle okunur. Mağazanın en güncel görüntüsü.</p></div>
+<div class="card"><span class="ix">02 · S/4</span><h3>Diğer mal hareketleri</h3><p>Mal kabul, mağaza transferi, sayım farkı, fire gibi POS dışı hareketler S/4'te oluşur. Olay (IDoc ya da iş olayı) olarak ComHub'a gelir, yalnız değişen tesis × malzeme taşınır.</p></div>
+<div class="card"><span class="ix">03 · Gece</span><h3>Tam eşitleme</h3><p>Tesis × depo yeri × malzeme bazında tam stok. Gün içi delta akışında kaçan hareketi yakalar; iki kaynak arasındaki fark raporlanır ve otomatik düzeltilir.</p></div>
+</div>
+<div class="incl" style="margin-top:2cqh;">Açılışta tam yükleme → gün içinde CAR (POS) + S/4 (diğer hareketler) delta → gece tam eşitleme <span>· hesap 150 ms, kanala bildirim 925 ms</span></div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">13 / 19</span></div>
+</section>
+
+<!-- 14 CAR DETAY -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">CAR detayı</span>
+<h2 class="slide-title">CAR'dan mağaza stoğu <span class="accent">nasıl okunur</span></h2>
+<div class="flow" style="margin:1.2cqh 0 2cqh;">
+<div class="node">Mağaza kasası<small>satış · iade · POS TLOG</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">POS DTA<small>CAR'a giriş, dakikalar</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">CAR stok görünümü<small>S/4 stoğu + POS hareketi · HANA</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">OData / CDS<small>OAA ya da özel görünüm</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">ComHub<small>değişen tesis × malzeme</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--ink">OMS ATP<small>rezervasyon ve emniyet düşülür</small></div>
+</div>
+<div class="cols-2">
+<div>
+<div class="hdr-sub">SAP ekibiyle netleşecek</div>
+<ul class="flist flist--tight">
+<li><b>CAR sürümü ve OAA.</b> Omnichannel Article Availability kullanımda mı, yoksa CDS görünümü mü okunacak.</li>
+<li><b>Gecikme.</b> POS'tan CAR'a ve S/4'e P95 süresi; kampanya günü dahil.</li>
+<li><b>Delta işareti.</b> Değişen malzemeyi veren zaman damgası ya da change pointer var mı.</li>
+<li><b>Eşleme.</b> Mağaza = tesis mi; satış alanı ve arka depo hangi depo yerleri.</li>
+</ul>
+</div>
+<div>
+<div class="hdr-sub hdr-sub--ink">CommerceLab tarafında hazır</div>
+<ul class="flist flist--tight">
+<li><b>Değişen kayıt kuyruğu.</b> Yalnız değişen SKU işlenir, çağrı sıklığı stok hızına göre ayarlanır.</li>
+<li><b>Tekrarsız işleme.</b> Mükerrer ya da sırası bozulmuş mesaj stoğu bozmaz.</li>
+<li><b>Kritik stok hattı.</b> Sıfıra yaklaşan ürün sırayı beklemeden kanala gider.</li>
+<li><b>Fark raporu ve auto-fix.</b> CAR stoğu ile OMS stoğu sürekli karşılaştırılır.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">14 / 19</span></div>
+</section>
+
+<!-- 15 ÇİFT DÜŞME YOK -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Rezervasyon ve SAP stoğu</span>
+<h2 class="slide-title">Online sipariş mağaza stoğundan <span class="accent">iki kez düşmez</span></h2>
+<p class="lead">Mağazada toplanan online sipariş bir POS satışı değildir; SAP'deki mal çıkışı sevkten sonra gelir. Aradaki süreyi OMS rezervasyonu kapatır.</p>
+<table class="xtable" style="margin-top:1.2cqh;">
+<colgroup><col style="width:40%;" /><col /><col /><col /></colgroup>
+<thead><tr><th>Adım · tek mağaza, tek ürün</th><th>SAP / CAR stoğu</th><th>OMS açık rezervasyon</th><th>Kanala açılan</th></tr></thead>
+<tbody>
+<tr><td>Başlangıç</td><td>5</td><td>0</td><td>5</td></tr>
+<tr><td>Online sipariş, 1 adet</td><td>5</td><td>1</td><td>4</td></tr>
+<tr><td>Mağazada toplandı, paketlendi</td><td>5</td><td>1</td><td>4</td></tr>
+<tr><td>Kargoya teslim, SAP mal çıkışı asenkron kaydedildi</td><td>4</td><td>0</td><td>4</td></tr>
+<tr><td>Kasada 1 satış (POS → CAR)</td><td>3</td><td>0</td><td>3</td></tr>
+</tbody>
+</table>
+<p class="ann"><b>Kural:</b> rezervasyon, SAP'deki mal çıkışı OMS'e ulaştığında kapanır, önce değil; asenkron gecikme yok satma yaratmaz. Tablo emniyet stoğu sıfır varsayımıyla; gerçekte mağaza, grup, ürün ve kanal bazında emniyet stoğu da düşülür.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">15 / 19</span></div>
+</section>
+
+<!-- BÖLÜM 04 -->
+<section class="slide slide--ink">
+<div class="slide__inner" style="justify-content:center;">
+<div class="divider-index">04</div>
+<span class="kicker">Soru 04 · opsiyonel</span>
+<h2 class="slide-title">Paketleme uygulaması</h2>
+<p class="lead">Toplama ve paketleme hangi uygulamayla yapılırsa yapılsın, SAP'ye giden kayıt aynı olaydan doğar.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">16 / 19</span></div>
+</section>
+
+<!-- 17 PAKETLEME -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Paketleme uygulaması</span>
+<h2 class="slide-title">Mevcut uygulamanız <span class="accent">OMS'e bağlanır</span>, SAP'ye değil</h2>
+<div class="two-col" style="margin-top:1cqh;">
+<div>
+<div class="hdr-sub hdr-sub--ink">Seçenek A · CommerceLab Omnichannel Operations</div>
+<ul class="flist flist--tight">
+<li><b>Mağaza ve DC'de hazır.</b> Pick, sort, pack, label, ship; el terminali ya da telefon kamerası.</li>
+<li><b>Baskı.</b> Bluetooth mobil yazıcı, CPCL / ZPL şablonları, taşıyıcının kendi etiketi.</li>
+<li><b>Eksik ürün.</b> Bulunamayan kalem bildirildiği an OMS yeniden kaynak arar.</li>
+<li><b>Teslim.</b> Kargoya teslim okutması, fotoğraflı tutanak.</li>
+</ul>
+<div class="hdr-sub" style="margin-top:2cqh;">Hibrit</div>
+<p class="body-text">DC'de mevcut uygulama, mağazalarda bizim uygulama. İki taraf da aynı OMS görevlerini görür.</p>
+</div>
+<div>
+<div class="hdr-sub">Seçenek B · e-bebek'in mevcut uygulaması</div>
+<table class="xtable xtable--dense">
+<colgroup><col style="width:34%;" /><col /></colgroup>
+<thead><tr><th>OMS API çağrısı</th><th>Ne taşır</th></tr></thead>
+<tbody>
+<tr><td>Görevleri al</td><td>Kaynağa atanmış paketler, kalemler, barkodlar</td></tr>
+<tr><td>Toplandı / eksik</td><td>Kalem bazında sonuç; eksik kalem yeniden kaynağa gider</td></tr>
+<tr><td>Koli bilgisi</td><td>Koli adedi, desi, ağırlık; gerekirse paketi bölme</td></tr>
+<tr><td>Etiket iste</td><td>TMS taşıyıcı etiketi ve e-irsaliye, ZPL ya da PDF</td></tr>
+<tr><td>Kargoya teslim</td><td>Okutma; "sevk edildi" olayını ve SAP kaydını başlatır</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">17 / 19</span></div>
+</section>
+
+<!-- 18 KEŞİF -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">SAP ekibiyle</span>
+<h2 class="slide-title">Birlikte <span class="accent">netleştireceklerimiz</span></h2>
+<table class="xtable xtable--dense">
+<colgroup><col style="width:16%;" /><col /><col style="width:26%;" /></colgroup>
+<thead><tr><th>Konu</th><th>Soru</th><th>Neyi belirler</th></tr></thead>
+<tbody>
+<tr><td>Sistem</td><td>S/4HANA mı, ECC mi; sürüm, CAR sürümü, ara katman (PI/PO, CPI)</td><td>Arayüz tipi</td></tr>
+<tr><td>Satış belgesi</td><td>E-ticaret sipariş türü, satış organizasyonu, dağıtım kanalı; genel müşteri mi, gerçek müşteri mi</td><td>Fatura ve muhasebe kaydı</td></tr>
+<tr><td>Fiyat</td><td>Net fiyat, kampanya ve kargo bedeli hangi koşul tipleriyle taşınır</td><td>Fatura = sipariş tutarı</td></tr>
+<tr><td>Organizasyon</td><td>Mağaza = tesis mi; DC ve mağaza depo yerleri, satış alanı ve arka depo ayrımı</td><td>Kaynak ve depo eşlemesi</td></tr>
+<tr><td>Stok</td><td>OAA kullanımı, POS gecikmesi, delta işareti, tam stok çekiminin süresi</td><td>Mağaza stoğu hızı</td></tr>
+<tr><td>e-Belge</td><td>SAP eDocument mı, entegratör mü; fatura numarasının sahibi</td><td>Model A / B seçimi</td></tr>
+<tr><td>Transfer, iade</td><td>STO kullanımı, iade sipariş türü, alacak dekontu akışı</td><td>Ters akış mesajları</td></tr>
+<tr><td>İşletim</td><td>Hata izleme, bakım pencereleri, test sistemi ve test verisi</td><td>Kuyruk ve alarm ayarı</td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">18 / 19</span></div>
+</section>
+
+<!-- 19 KAPANIŞ -->
+<section class="slide slide--ink slide--cover">
+<div class="slide__inner">
+<img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+<span class="kicker">Özet</span>
+<h1 class="cover-title">SAP'de kayıt, <span class="accent">CommerceLab'de hareket</span></h1>
+<p class="cover-sub">Sipariş SAP'ye dokunmadan kargoya çıkar; fatura paket başına, asenkron ve tekrarsız oluşur; mağaza stoğu CAR ve S/4'ten tam + delta akar, rezervasyon çift düşmeyi önler.</p>
+<div class="cover-meta" style="margin-top:3.2cqh;">
+<div>Windowist Tower, Maslak · <span>İstanbul</span></div>
+<div><span>info@commercelab.com.tr</span></div>
+<div><span>+90 212 214 73 90</span></div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">19 / 19</span></div>
+</section>
+
+</div>
+
+<div class="toolbar">
+  <button id="presentBtn" type="button" title="Sunum modu (tam ekran)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+    Sun
+  </button>
+  <button type="button" onclick="window.print()" title="PDF olarak kaydet (Cmd/Ctrl+P)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+    PDF indir
+  </button>
+</div>
+<div class="present-bar" id="presentBar"></div>
+<div class="present-hint">Esc ile çık · ok tuşları / tık ile ilerle</div>
+
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    function current() {
+      var mid = window.innerHeight / 2, best = 0, bestD = Infinity;
+      slides.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      return best;
+    }
+    var bar = document.getElementById('presentBar');
+    var presenting = false;
+    var idx = 0;
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      bar.style.width = ((idx + 1) / slides.length * 100) + '%';
+    }
+    function go(delta) {
+      idx = Math.min(slides.length - 1, Math.max(0, idx + delta));
+      render();
+    }
+    function enter() {
+      idx = current();
+      presenting = true;
+      document.body.classList.add('present');
+      render();
+      var el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen().catch(function(){});
+    }
+    function exit() {
+      presenting = false;
+      document.body.classList.remove('present');
+      slides.forEach(function (s) { s.classList.remove('is-active'); });
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+      slides[idx].scrollIntoView({ block: 'center' });
+    }
+    document.getElementById('presentBtn').addEventListener('click', enter);
+    document.addEventListener('fullscreenchange', function () {
+      if (!document.fullscreenElement && presenting) exit();
+    });
+    document.querySelector('.deck').addEventListener('click', function () {
+      if (presenting) go(1);
+    });
+    window.addEventListener('keydown', function (e) {
+      if (presenting) {
+        if (e.key === 'Escape') { e.preventDefault(); exit(); return; }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') {
+          e.preventDefault(); go(-1); return;
+        }
+        e.preventDefault(); go(1); return;
+      }
+      var i = current();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        if (i < slides.length - 1) slides[i + 1].scrollIntoView({ behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        if (i > 0) slides[i - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
