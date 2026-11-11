@@ -176,7 +176,7 @@
 <div>Kapsam · <span>OMS · TMS · Omnichannel Operations · ComHub</span></div>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">1 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">1 / 21</span></div>
 </section>
 
 <!-- 02 SORULAR -->
@@ -188,14 +188,14 @@
 <colgroup><col style="width:5%;" /><col style="width:33%;" /><col /></colgroup>
 <thead><tr><th>#</th><th>Soru</th><th>Kısa cevap</th></tr></thead>
 <tbody>
-<tr><td>01</td><td>Siparişten faturaya kadar SAP'ye nasıl müdahale edilmez?</td><td>Sipariş, rezervasyon, sourcing, toplama, paketleme ve kargo CommerceLab'de yürür. SAP bu sürede <b>hiç çağrılmaz</b>; yalnız paket kargoya verildiğinde sonucu alır.</td></tr>
-<tr><td>02</td><td>Fatura en sonda ve asenkron nasıl oluşur?</td><td>"Paket sevk edildi" olayı kuyruğa yazılır. SAP adaptörü satış, mal çıkışı ve faturayı <b>paket başına anlık ya da belirli aralıklarla toplu</b> oluşturur; SAP yavaşlasa da paket beklemez.</td></tr>
-<tr><td>03</td><td>Mağaza stokları SAP'den, CAR üzerinden nasıl alınır?</td><td>Açılışta tam stok; gün içinde CAR'daki POS hareketleri ve S/4 mal hareketleriyle <b>delta</b>; gece tam eşitleme. Online siparişin rezervasyonu OMS'te tutulur, stok iki kez düşmez.</td></tr>
+<tr><td>01</td><td>Siparişten faturaya kadar SAP'ye nasıl müdahale edilmez?</td><td>Sipariş, rezervasyon, sourcing, toplama, paketleme ve kargo CommerceLab'de yürür. SAP hiçbir adımda <b>beklenmez</b>; yalnız asenkron bilgilendirilir ve sonucu kargoya teslimde alır.</td></tr>
+<tr><td>02</td><td>Fatura en sonda ve asenkron nasıl oluşur?</td><td>"Paket sevk edildi" olayı kuyruğa yazılır. Mağaza siparişi <b>sanal kasa fişiyle CAR'a</b>, DC siparişi S/4 satış zincirine gider; <b>tekil ya da toplu</b>. SAP yavaşlasa da paket beklemez.</td></tr>
+<tr><td>03</td><td>Mağaza stokları SAP'den, CAR üzerinden nasıl alınır?</td><td>Açılışta tam stok; gün içinde CAR'daki POS hareketleri ve S/4 mal hareketleriyle <b>delta</b>; gece tam eşitleme. Mağaza siparişi CAR'da <b>rezervasyonla başlar, fişle kapanır</b>; stok iki kez düşmez.</td></tr>
 <tr><td>04</td><td>Mevcut paketleme uygulamanız kullanılabilir mi? <span class="st st--plan">Opsiyonel</span></td><td>Evet. Uygulama SAP'ye değil, <b>OMS görev API'sine</b> bağlanır. İsterseniz DC'de mevcut uygulama, mağazalarda bizim uygulama birlikte çalışır.</td></tr>
 </tbody>
 </table>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">2 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">2 / 21</span></div>
 </section>
 
 <!-- 03 ROL AYRIMI -->
@@ -227,7 +227,7 @@
 </div>
 <p class="ann"><b>Sonuç:</b> SAP'de sipariş başına işlem sayısı düşer, sipariş yaşam döngüsündeki değişiklikler SAP geliştirmesi beklemez, kampanya zirvesi SAP'ye yük bindirmez.</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">3 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">3 / 21</span></div>
 </section>
 
 <!-- BÖLÜM 01 -->
@@ -238,7 +238,7 @@
 <h2 class="slide-title">Siparişten faturaya</h2>
 <p class="lead">SAP akışın başında ana veri ve stoğu verir, sonunda kaydı alır. Arada kalan her adım CommerceLab'de.</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">4 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">4 / 21</span></div>
 </section>
 
 <!-- 05 SWIMLANE -->
@@ -261,8 +261,8 @@
 <text x="16" y="360" class="dg-zone">SAP</text><text x="16" y="377" class="dg-xs">S/4 · CAR</text>
 
 <rect x="306" y="326" width="622" height="78" rx="6" class="dg-scope" stroke-dasharray="6 4"/>
-<text x="617" y="360" text-anchor="middle" class="dg-h" style="fill:#d02c2f;">SAP'ye çağrı yok</text>
-<text x="617" y="378" text-anchor="middle" class="dg-xs">sipariş, rezervasyon, sourcing, toplama, paketleme, etiket, kargoya teslim</text>
+<text x="617" y="360" text-anchor="middle" class="dg-h" style="fill:#d02c2f;">SAP beklenmez</text>
+<text x="617" y="378" text-anchor="middle" class="dg-xs">sipariş, sourcing, toplama, paketleme, etiket, kargoya teslim · mağaza rezervasyonu CAR'a yalnız bilgi olarak, asenkron</text>
 
 <path d="M234,330 V312 H294 V50 H304" class="dg-line" marker-end="url(#ah)"/>
 <path d="M418,50 H426 V155 H432" class="dg-line" marker-end="url(#ah)"/>
@@ -286,7 +286,7 @@
 <rect x="434" y="120" width="112" height="70" rx="6" class="dg-box"/>
 <text x="490" y="145" text-anchor="middle" class="dg-b">2 · Rezervasyon</text>
 <text x="490" y="162" text-anchor="middle" class="dg-xs">sourcing · paket planı</text>
-<text x="490" y="176" text-anchor="middle" class="dg-xs">OMS · 700 ms</text>
+<text x="490" y="176" text-anchor="middle" class="dg-xs">OMS · CAR'a bilgi</text>
 
 <rect x="562" y="225" width="112" height="70" rx="6" class="dg-box"/>
 <text x="618" y="250" text-anchor="middle" class="dg-b">3 · Topla, paketle</text>
@@ -305,8 +305,8 @@
 
 <rect x="944" y="330" width="112" height="70" rx="6" class="dg-red"/>
 <text x="1000" y="352" text-anchor="middle" class="dg-b dg-b--w">6 · SAP kaydı</text>
-<text x="1000" y="369" text-anchor="middle" class="dg-xs dg-xs--w">satış · mal çıkışı</text>
-<text x="1000" y="383" text-anchor="middle" class="dg-xs dg-xs--w">fatura · tekil ya da toplu</text>
+<text x="1000" y="369" text-anchor="middle" class="dg-xs dg-xs--w">mağaza: CAR fişi</text>
+<text x="1000" y="383" text-anchor="middle" class="dg-xs dg-xs--w">DC: SD · tekil / toplu</text>
 
 <rect x="1072" y="15" width="112" height="70" rx="6" class="dg-box"/>
 <text x="1128" y="40" text-anchor="middle" class="dg-b">7 · Fatura, statü</text>
@@ -317,25 +317,25 @@
 </svg>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">5 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">5 / 21</span></div>
 </section>
 
 <!-- 06 DOKUNULMAYAN BÖLGE -->
 <section class="slide">
 <div class="slide__inner">
 <span class="kicker">Soru 01 · SAP'ye müdahale</span>
-<h2 class="slide-title">Sipariş anından kargoya kadar <span class="accent">SAP'ye tek çağrı yok</span></h2>
+<h2 class="slide-title">Sipariş anından kargoya kadar <span class="accent">SAP'yi bekleyen adım yok</span></h2>
 <div class="two-col two-col--wide" style="margin-top:1cqh;">
 <table class="xtable xtable--dense">
 <colgroup><col style="width:30%;" /><col /><col style="width:24%;" /></colgroup>
 <thead><tr><th>Olay</th><th>Nerede çözülür</th><th>SAP'ye etkisi</th></tr></thead>
 <tbody>
 <tr><td>Sipariş düştü</td><td>OMS stok rezerve eder, kanallara yeni satılabilir stok gider</td><td>Yok</td></tr>
-<tr><td>Sourcing, paket bölme</td><td>OMS kaynakları puanlar; görev mağazaya ya da DC'ye düşer</td><td>Yok</td></tr>
-<tr><td>Toplamada ürün yok</td><td>Kalem iptal ya da başka kaynağa otomatik yönlendirme</td><td>Yok</td></tr>
-<tr><td>Sevk öncesi iptal</td><td>Rezervasyon açılır, kanala statü gider</td><td>Yok</td></tr>
+<tr><td>Sourcing, paket bölme</td><td>OMS kaynakları puanlar; görev mağazaya ya da DC'ye düşer</td><td>Mağazada CAR'a rezervasyon, asenkron</td></tr>
+<tr><td>Toplamada ürün yok</td><td>Kalem iptal ya da başka kaynağa otomatik yönlendirme</td><td>CAR rezervasyonu taşınır</td></tr>
+<tr><td>Sevk öncesi iptal</td><td>Rezervasyon açılır, kanala statü gider</td><td>CAR rezervasyonu silinir</td></tr>
 <tr><td>Kargo, adres değişimi</td><td>TMS'te yeni etiket, yeni takip</td><td>Yok</td></tr>
-<tr><td>Paket kargoya verildi</td><td>"Sevk edildi" olayı kuyruğa yazılır</td><td><b>Tek kayıt, asenkron</b></td></tr>
+<tr><td>Paket kargoya verildi</td><td>"Sevk edildi" olayı kuyruğa yazılır</td><td><b>Mağaza: CAR fişi · DC: SD kaydı</b></td></tr>
 <tr><td>İade kabul edildi</td><td>OMS iade ve geri ödemeyi satır bazında hesaplar</td><td><b>İade belgesi, asenkron</b></td></tr>
 </tbody>
 </table>
@@ -343,19 +343,19 @@
 <span class="ix">Neden mümkün</span>
 <h3>Stok kilidi SAP'de değil, OMS'te</h3>
 <p>OMS'in kanala açtığı miktar:</p>
-<p style="font-family:var(--display);font-weight:700;color:var(--ink);">SAP / CAR stoğu − açık rezervasyon − emniyet stoğu</p>
-<p>SAP'nin bir siparişi sevk edilene kadar bilmesine gerek kalmaz. Mal çıkışı SAP'de kaydedilip OMS'e döndüğünde rezervasyon kapanır; aynı adet iki kez düşmez.</p>
+<p style="font-family:var(--display);font-weight:700;color:var(--ink);">CAR / S/4 fiziksel stok − açık rezervasyon − emniyet stoğu</p>
+<p>SAP'ye giden her şey bilgilendirmedir; hiçbir adım SAP'nin cevabını beklemez. Satış CAR'da (mağaza) ya da S/4'te (DC) işlenip OMS'e döndüğünde rezervasyon kapanır; aynı adet iki kez düşmez.</p>
 </div>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">6 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">6 / 21</span></div>
 </section>
 
 <!-- 07 ENTEGRASYON SÖZLEŞMESİ -->
 <section class="slide">
 <div class="slide__inner">
 <span class="kicker">SAP temas noktaları</span>
-<h2 class="slide-title">SAP ile yedi akış, <span class="accent">hepsi kuyruklu</span></h2>
+<h2 class="slide-title">SAP ile dokuz akış, <span class="accent">hepsi kuyruklu</span></h2>
 <table class="xtable xtable--dense">
 <colgroup><col style="width:21%;" /><col style="width:14%;" /><col style="width:21%;" /><col /></colgroup>
 <thead><tr><th>Akış</th><th>Yön</th><th>Tetikleme</th><th>SAP tarafında olası arayüz</th></tr></thead>
@@ -363,15 +363,17 @@
 <tr><td>Malzeme, barkod, fiyat</td><td>SAP → ComHub</td><td>Değişiklikte + günlük tam</td><td>IDoc (ARTMAS / MATMAS, COND_A) ya da OData; değişen kayıt kuyruğu bizde hazır</td></tr>
 <tr><td>Tesis ve depo yeri</td><td>SAP → OMS</td><td>Değişiklikte</td><td>Tesis = kaynak (mağaza, DC), depo yeri = kaynak altındaki depo</td></tr>
 <tr><td>Mağaza ve DC stoğu</td><td>S/4 · CAR → OMS</td><td>Açılışta tam, sonra delta</td><td>CAR OData / CDS görünümü, S/4 mal hareketi olayı; detay bölüm 03'te</td></tr>
-<tr><td>Paket sevk edildi</td><td>OMS → SAP</td><td>Olay, asenkron</td><td>Tek Z-RFC ya da BAPI zinciri (satış, teslimat, mal çıkışı, fatura) veya IDoc; detay bölüm 02'de</td></tr>
-<tr><td>Fatura no, e-belge durumu</td><td>SAP → OMS</td><td>Olay ya da sorgu</td><td>Geri bildirim çağrısı; fatura linki kanala ve müşteriye gider</td></tr>
-<tr><td>İade</td><td>OMS → SAP</td><td>İade kabulünde</td><td>İade siparişi, iade teslimatı ve alacak dekontu</td></tr>
-<tr><td>Mağazalar arası transfer</td><td>OMS ↔ SAP</td><td>Sevk ve kabulde</td><td>Stok nakil siparişi (STO) ya da transfer kaydı; yoldaki stok OMS'te izlenir</td></tr>
+<tr><td>Mağaza rezervasyonu</td><td>OMS → CAR</td><td>Sourcing, iptal, kaynak değişimi</td><td>OAA rezervasyonu ya da özel servis; keşifte teyit edilecek</td></tr>
+<tr><td>Mağaza satışı</td><td>OMS → CAR</td><td>Kargoya teslim</td><td>Sanal kasa fişi: POS TLOG → POS DTA; S/4'e POS inbound</td></tr>
+<tr><td>DC sevkiyatı</td><td>OMS → S/4</td><td>Olay, asenkron</td><td>Tek Z-RFC ya da BAPI zinciri (satış, teslimat, mal çıkışı, fatura) veya IDoc; detay bölüm 02'de</td></tr>
+<tr><td>Açık rezervasyon toplamı</td><td>OMS → S/4</td><td>Periyodik</td><td>Ürün × tesis bazında; DC ikmali ve transfer planı için</td></tr>
+<tr><td>Fatura no, e-belge durumu</td><td>SAP → OMS</td><td>Olay ya da sorgu</td><td>Geri bildirim; mağaza siparişinde fatura entegratörden gelir</td></tr>
+<tr><td>İade, transfer</td><td>OMS ↔ SAP</td><td>İade kabulü, sevk ve kabul</td><td>Mağazada ters POS fişi; DC'de iade siparişi ve alacak dekontu; STO</td></tr>
 </tbody>
 </table>
 <p class="ann">Arayüz adları öneridir. S/4 sürümü, mevcut Z geliştirmeleri, ara katman (PI/PO, CPI) ve SAP ekibinin tercihiyle keşifte seçilir. SAP ve Nebim için canlı müşterilerde çalışan adaptörlerimiz var.</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">7 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">7 / 21</span></div>
 </section>
 
 <!-- BÖLÜM 02 -->
@@ -382,7 +384,7 @@
 <h2 class="slide-title">Asenkron fatura</h2>
 <p class="lead">Fatura akışın son adımıdır. Paket SAP'yi beklemez, SAP de yarım belge üretmez.</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">8 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">8 / 21</span></div>
 </section>
 
 <!-- 09 ASYNC FATURA -->
@@ -395,7 +397,7 @@
 <div class="arrow">&rarr;</div>
 <div class="node">Giden kuyruk<small>ComHub · anahtar = paket no</small></div>
 <div class="arrow">&rarr;</div>
-<div class="node node--red">SAP adaptörü<small>satış · teslimat · mal çıkışı · fatura</small></div>
+<div class="node node--red">SAP adaptörü<small>DC: satış · teslimat · mal çıkışı · fatura</small></div>
 <div class="arrow">&rarr;</div>
 <div class="node">Fatura no döner<small>OMS'te pakete bağlanır</small></div>
 <div class="arrow">&rarr;</div>
@@ -408,9 +410,9 @@
 <div class="card"><span class="ix">02</span><h3>Tekrarsız</h3><p>Paket numarası tekrar anahtarıdır. Aynı mesaj ikinci kez gelirse SAP mevcut belgeyi döner, ikinci fatura oluşmaz. Kısmi sevkte her paket kendi faturasını alır.</p></div>
 <div class="card"><span class="ix">03</span><h3>SAP kapalıyken iş durmaz</h3><p>SAP bakımda ya da yavaşken paketler çıkmaya devam eder, mesajlar kuyrukta bekler. SAP döndüğünde sırayla işlenir; veri kaybolmaz.</p></div>
 </div>
-<p class="ann"><b>Fiyat:</b> satır net fiyatı ve indirimler siparişten gelir. SAP fiyatlandırması yeniden hesaplamaz; tutarlar manuel koşul tipiyle taşınır, fatura tutarı kanaldaki sipariş tutarına eşit olur.</p>
+<p class="ann"><b>Mağaza siparişi:</b> SAP kaydı sanal kasa fişiyle CAR'dan gider, fatura entegratörden (Model B); yukarıdaki SD akışı DC içindir. <b>Fiyat:</b> satır net fiyatı ve indirimler siparişten gelir. SAP fiyatlandırması yeniden hesaplamaz; tutarlar manuel koşul tipiyle taşınır, fatura tutarı kanaldaki sipariş tutarına eşit olur.</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">9 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">9 / 21</span></div>
 </section>
 
 <!-- 10 YASAL BELGE -->
@@ -428,7 +430,7 @@
 <div class="card card--accent">
 <span class="ix">Model B</span>
 <h3>Paketlemede e-Arşiv fatura</h3>
-<p>Fatura paketleme anında e-belge entegratöründen kesilir ve pakete girer. SAP'ye satış, mal çıkışı ve muhasebe kaydı asenkron gider. Pazaryeri faturayı sevkte istiyorsa uygun model.</p>
+<p>Fatura paketleme anında e-belge entegratöründen kesilir ve pakete girer. SAP'ye satış, mal çıkışı ve muhasebe kaydı asenkron gider. Pazaryeri faturayı sevkte istiyorsa ve mağaza siparişinde (CAR yolu) uygun model.</p>
 </div>
 <div class="card card--dark">
 <span class="ix">Mali işler ve SAP ile karar</span>
@@ -441,7 +443,7 @@
 </div>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">10 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">10 / 21</span></div>
 </section>
 
 <!-- 11 HATA VE MUTABAKAT -->
@@ -462,7 +464,7 @@
 </tbody>
 </table>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">11 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">11 / 21</span></div>
 </section>
 
 <!-- BÖLÜM 03 -->
@@ -473,7 +475,7 @@
 <h2 class="slide-title">Mağaza stoğu ve CAR</h2>
 <p class="lead">Mağaza stoğu satışa ancak hızlı ve doğru akarsa açılır. CAR, POS hareketini en erken gören katman.</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">12 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">12 / 21</span></div>
 </section>
 
 <!-- 13 ÜÇ YOL -->
@@ -488,7 +490,7 @@
 </div>
 <div class="incl" style="margin-top:2cqh;">Açılışta tam yükleme → gün içinde CAR (POS) + S/4 (diğer hareketler) delta → gece tam eşitleme <span>· hesap 150 ms, kanala bildirim 925 ms</span></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">13 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">13 / 21</span></div>
 </section>
 
 <!-- 14 CAR DETAY -->
@@ -530,7 +532,45 @@
 </div>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">14 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">14 / 21</span></div>
+</section>
+
+<!-- MAĞAZA CAR YOLU, DC SD YOLU -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Mağaza ve DC siparişi</span>
+<h2 class="slide-title">Mağaza siparişi <span class="accent">CAR'da başlar, fişle kapanır</span></h2>
+<div class="hdr-sub" style="margin-top:1cqh;">Kaynak mağaza · kasa satışıyla aynı yol</div>
+<div class="flow">
+<div class="node">Sourcing<small>kaynak mağaza seçildi</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">CAR'a rezervasyon<small>asenkron · iptal ve kaynak değişiminde güncellenir</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Topla, paketle<small>mağaza uygulaması</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">Sanal kasa fişi<small>kargoya teslimde · TLOG → POS DTA → CAR</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--ink">S/4 POS inbound<small>kasa satışıyla aynı kayıt</small></div>
+</div>
+<div class="hdr-sub hdr-sub--ink" style="margin-top:1.6cqh;">Kaynak DC · S/4 satış zinciri</div>
+<div class="flow">
+<div class="node">Sourcing<small>kaynak DC seçildi</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">OMS rezervasyonu<small>açık rezervasyon toplamı S/4'e periyodik</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Topla, paketle<small>WMS ya da CommerceLab</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">SD kaydı<small>satış · teslimat · mal çıkışı · fatura</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--ink">Tekil ya da toplu<small>SAP ekibinin seçimi</small></div>
+</div>
+<div class="grid grid-3 compact-cards" style="margin-top:1.6cqh;">
+<div class="card"><span class="ix">01</span><h3>CAR'a tekil ve anlık</h3><p>Her sipariş bir fiş gibi anında CAR'a gider, stok kasa satışıyla aynı hızda düşer. S/4'e POS inbound ayarıyla, toplu ya da fiş bazında ulaşır.</p></div>
+<div class="card"><span class="ix">02</span><h3>Fatura ayrı yoldan</h3><p>CAR fatura sistemi değildir. Fatura paketlemede entegratörden e-Arşiv olarak kesilir (Model B); sanal kasa fişi mali fiş üretmez.</p></div>
+<div class="card"><span class="ix">03</span><h3>SAP beklenmez</h3><p>Rezervasyon ve fiş kuyruktan gider. SAP kapalıyken sipariş akar; mesajlar SAP döndüğünde sırayla işlenir.</p></div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">15 / 21</span></div>
 </section>
 
 <!-- 15 ÇİFT DÜŞME YOK -->
@@ -538,21 +578,42 @@
 <div class="slide__inner">
 <span class="kicker">Rezervasyon ve SAP stoğu</span>
 <h2 class="slide-title">Online sipariş mağaza stoğundan <span class="accent">iki kez düşmez</span></h2>
-<p class="lead">Mağazada toplanan online sipariş bir POS satışı değildir; SAP'deki mal çıkışı sevkten sonra gelir. Aradaki süreyi OMS rezervasyonu kapatır.</p>
+<p class="lead">Sipariş CAR'da rezervasyon olarak başlar, kargoya teslimde sanal kasa fişiyle kapanır. OMS rezervasyonu bir kez düşer; CAR'daki rezervasyon SAP'nin görmesi içindir.</p>
 <table class="xtable" style="margin-top:1.2cqh;">
-<colgroup><col style="width:40%;" /><col /><col /><col /></colgroup>
-<thead><tr><th>Adım · tek mağaza, tek ürün</th><th>SAP / CAR stoğu</th><th>OMS açık rezervasyon</th><th>Kanala açılan</th></tr></thead>
+<colgroup><col style="width:36%;" /><col /><col /><col /><col /></colgroup>
+<thead><tr><th>Adım · tek mağaza, tek ürün</th><th>CAR fiziksel stok</th><th>CAR'da online rezervasyon</th><th>OMS açık rezervasyon</th><th>Kanala açılan</th></tr></thead>
 <tbody>
-<tr><td>Başlangıç</td><td>5</td><td>0</td><td>5</td></tr>
-<tr><td>Online sipariş, 1 adet</td><td>5</td><td>1</td><td>4</td></tr>
-<tr><td>Mağazada toplandı, paketlendi</td><td>5</td><td>1</td><td>4</td></tr>
-<tr><td>Kargoya teslim, SAP mal çıkışı asenkron kaydedildi</td><td>4</td><td>0</td><td>4</td></tr>
-<tr><td>Kasada 1 satış (POS → CAR)</td><td>3</td><td>0</td><td>3</td></tr>
+<tr><td>Başlangıç</td><td>5</td><td>0</td><td>0</td><td>5</td></tr>
+<tr><td>Online sipariş, 1 adet; kaynak bu mağaza</td><td>5</td><td>1</td><td>1</td><td>4</td></tr>
+<tr><td>Mağazada toplandı, paketlendi</td><td>5</td><td>1</td><td>1</td><td>4</td></tr>
+<tr><td>Kargoya teslim, sanal kasa fişi CAR'da işlendi</td><td>4</td><td>0</td><td>0</td><td>4</td></tr>
+<tr><td>Kasada 1 satış (POS → CAR)</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
 </tbody>
 </table>
-<p class="ann"><b>Kural:</b> rezervasyon, SAP'deki mal çıkışı OMS'e ulaştığında kapanır, önce değil; asenkron gecikme yok satma yaratmaz. Tablo emniyet stoğu sıfır varsayımıyla; gerçekte mağaza, grup, ürün ve kanal bazında emniyet stoğu da düşülür.</p>
+<p class="ann"><b>Kural:</b> rezervasyon, fiş CAR'da işlenip OMS'e ulaştığında kapanır, önce değil; asenkron gecikme yok satma yaratmaz. Tablo emniyet stoğu sıfır varsayımıyla; gerçekte mağaza, grup, ürün ve kanal bazında emniyet stoğu da düşülür.</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">15 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">16 / 21</span></div>
+</section>
+
+<!-- REZERVASYON SAP'DE NASIL GÖRÜNÜR -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Rezervasyon görünürlüğü</span>
+<h2 class="slide-title">Online rezervasyonu <span class="accent">SAP de görür</span></h2>
+<p class="lead">Karar OMS'te kalır; SAP'nin kendi planlaması online siparişe ayrılan stoğu bilmeden yanlış hesap yapmasın diye bilgilendirilir.</p>
+<table class="xtable xtable--dense" style="margin-top:1.2cqh;">
+<colgroup><col style="width:22%;" /><col style="width:32%;" /><col /></colgroup>
+<thead><tr><th>Risk</th><th>Bilgilendirilmezse</th><th>Önerimiz</th></tr></thead>
+<tbody>
+<tr><td>DC'den mağazaya ikmal, transfer</td><td>SAP rezerve stoğu serbest görür, mağaza sevkiyatına ayırır</td><td>Açık rezervasyon toplamı ürün × tesis bazında periyodik S/4'e; gerekirse DC'de online kanal kotası</td></tr>
+<tr><td>Mağazada kasa satışı</td><td>Henüz toplanmamış ürün kasadan satılır</td><td>CAR rezervasyonu ve anlık CAR stoğu; yine de çıkarsa OMS otomatik yeniden kaynak arar, emniyet stoğu küçük tutulur</td></tr>
+<tr><td>Paketlendi, SAP kaydı yok</td><td>Sayım farkı, yanlış stok raporu ve ikmal</td><td>Mağaza: rezervasyon CAR'da görünür, fiş teslimde. DC: paketlemede "online sevk" depo yerine asenkron aktarım (ör. 311)</td></tr>
+<tr><td>Tahsilat</td><td>Ödeme siparişte alınır, SAP kaydı sevkte oluşur</td><td>Ödeme kuruluşu aktarımları müşteri avansı olarak eşlenir; OMS'ten günlük tahsilat mutabakat raporu</td></tr>
+</tbody>
+</table>
+<p class="ann"><b>Çift düşme kuralı:</b> OMS, CAR ve S/4'ten rezervasyon hariç fiziksel stoğu okur ve kendi açık rezervasyonunu bir kez düşer. SAP'ye yazılan rezervasyon yalnız SAP'nin ikmal, sayım ve raporu içindir; OMS'in hesabına ikinci kez girmez.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">17 / 21</span></div>
 </section>
 
 <!-- BÖLÜM 04 -->
@@ -563,7 +624,7 @@
 <h2 class="slide-title">Paketleme uygulaması</h2>
 <p class="lead">Toplama ve paketleme hangi uygulamayla yapılırsa yapılsın, SAP'ye giden kayıt aynı olaydan doğar.</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">16 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">18 / 21</span></div>
 </section>
 
 <!-- 17 PAKETLEME -->
@@ -602,7 +663,7 @@
 </div>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">17 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">19 / 21</span></div>
 </section>
 
 <!-- 18 KEŞİF -->
@@ -619,13 +680,15 @@
 <tr><td>Fiyat</td><td>Net fiyat, kampanya ve kargo bedeli hangi koşul tipleriyle taşınır</td><td>Fatura = sipariş tutarı</td></tr>
 <tr><td>Organizasyon</td><td>Mağaza = tesis mi; DC ve mağaza depo yerleri, satış alanı ve arka depo ayrımı</td><td>Kaynak ve depo eşlemesi</td></tr>
 <tr><td>Stok</td><td>OAA kullanımı, POS gecikmesi, delta işareti, tam stok çekiminin süresi</td><td>Mağaza stoğu hızı</td></tr>
+<tr><td>CAR yazma</td><td>Dışarıdan rezervasyon (OAA ya da özel servis); sanal kasa ve mali olmayan POS işlem tipi; POS inbound sıklığı</td><td>Mağaza CAR yolu</td></tr>
+<tr><td>Planlama, tahsilat</td><td>İkmal online rezervasyonu nasıl görür; ciro mağazaya mı kanala mı; ödeme aktarımı ve müşteri avansı eşleşmesi</td><td>DC görünürlüğü, mali kayıt</td></tr>
 <tr><td>e-Belge</td><td>SAP eDocument mı, entegratör mü; fatura numarasının sahibi</td><td>Model A / B seçimi</td></tr>
 <tr><td>Transfer, iade</td><td>STO kullanımı, iade sipariş türü, alacak dekontu akışı</td><td>Ters akış mesajları</td></tr>
 <tr><td>İşletim</td><td>Hata izleme, bakım pencereleri, test sistemi ve test verisi</td><td>Kuyruk ve alarm ayarı</td></tr>
 </tbody>
 </table>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">18 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">20 / 21</span></div>
 </section>
 
 <!-- 19 KAPANIŞ -->
@@ -634,14 +697,14 @@
 <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
 <span class="kicker">Özet</span>
 <h1 class="cover-title">SAP'de kayıt, <span class="accent">CommerceLab'de hareket</span></h1>
-<p class="cover-sub">Sipariş SAP'ye dokunmadan kargoya çıkar; fatura tekil ya da toplu, asenkron ve tekrarsız oluşur; mağaza stoğu CAR ve S/4'ten tam + delta akar, rezervasyon çift düşmeyi önler.</p>
+<p class="cover-sub">Sipariş SAP'yi beklemeden kargoya çıkar; mağaza siparişi CAR'da rezervasyonla başlar ve fişle kapanır, DC siparişi S/4'te tekil ya da toplu kaydedilir; stok CAR ve S/4'ten tam + delta akar, çift düşmez.</p>
 <div class="cover-meta" style="margin-top:3.2cqh;">
 <div>Windowist Tower, Maslak · <span>İstanbul</span></div>
 <div><span>info@commercelab.com.tr</span></div>
 <div><span>+90 212 214 73 90</span></div>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">19 / 19</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">21 / 21</span></div>
 </section>
 
 </div>
