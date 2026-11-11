@@ -189,7 +189,7 @@
 <thead><tr><th>#</th><th>Soru</th><th>Kısa cevap</th></tr></thead>
 <tbody>
 <tr><td>01</td><td>Siparişten faturaya kadar SAP'ye nasıl müdahale edilmez?</td><td>Sipariş, rezervasyon, sourcing, toplama, paketleme ve kargo CommerceLab'de yürür. SAP bu sürede <b>hiç çağrılmaz</b>; yalnız paket kargoya verildiğinde sonucu alır.</td></tr>
-<tr><td>02</td><td>Fatura en sonda ve asenkron nasıl oluşur?</td><td>"Paket sevk edildi" olayı kuyruğa yazılır. SAP adaptörü satış, mal çıkışı ve faturayı <b>paket başına tek çağrıda</b> oluşturur; SAP yavaşlasa da paket beklemez.</td></tr>
+<tr><td>02</td><td>Fatura en sonda ve asenkron nasıl oluşur?</td><td>"Paket sevk edildi" olayı kuyruğa yazılır. SAP adaptörü satış, mal çıkışı ve faturayı <b>paket başına anlık ya da belirli aralıklarla toplu</b> oluşturur; SAP yavaşlasa da paket beklemez.</td></tr>
 <tr><td>03</td><td>Mağaza stokları SAP'den, CAR üzerinden nasıl alınır?</td><td>Açılışta tam stok; gün içinde CAR'daki POS hareketleri ve S/4 mal hareketleriyle <b>delta</b>; gece tam eşitleme. Online siparişin rezervasyonu OMS'te tutulur, stok iki kez düşmez.</td></tr>
 <tr><td>04</td><td>Mevcut paketleme uygulamanız kullanılabilir mi? <span class="st st--plan">Opsiyonel</span></td><td>Evet. Uygulama SAP'ye değil, <b>OMS görev API'sine</b> bağlanır. İsterseniz DC'de mevcut uygulama, mağazalarda bizim uygulama birlikte çalışır.</td></tr>
 </tbody>
@@ -306,7 +306,7 @@
 <rect x="944" y="330" width="112" height="70" rx="6" class="dg-red"/>
 <text x="1000" y="352" text-anchor="middle" class="dg-b dg-b--w">6 · SAP kaydı</text>
 <text x="1000" y="369" text-anchor="middle" class="dg-xs dg-xs--w">satış · mal çıkışı</text>
-<text x="1000" y="383" text-anchor="middle" class="dg-xs dg-xs--w">fatura · paket başına</text>
+<text x="1000" y="383" text-anchor="middle" class="dg-xs dg-xs--w">fatura · tekil ya da toplu</text>
 
 <rect x="1072" y="15" width="112" height="70" rx="6" class="dg-box"/>
 <text x="1128" y="40" text-anchor="middle" class="dg-b">7 · Fatura, statü</text>
@@ -404,7 +404,7 @@
 <div class="node node--ink">Kanal, müşteri<small>fatura linki · pazaryerine PDF</small></div>
 </div>
 <div class="grid grid-3 compact-cards">
-<div class="card"><span class="ix">01</span><h3>Paket başına tek çağrı</h3><p>Satış belgesi, teslimat, mal çıkışı ve fatura tek mantıksal işlemde oluşur. SAP'de ya hepsi kaydedilir ya hiçbiri; askıda teslimat ya da faturasız mal çıkışı kalmaz.</p></div>
+<div class="card"><span class="ix">01</span><h3>Tekil ya da toplu kayıt</h3><p>Paket başına anlık çağrı ya da saatlik / gün sonu toplu gönderim; SAP ekibi seçer. İki modda da satış, mal çıkışı ve fatura birlikte kaydedilir; askıda belge kalmaz.</p></div>
 <div class="card"><span class="ix">02</span><h3>Tekrarsız</h3><p>Paket numarası tekrar anahtarıdır. Aynı mesaj ikinci kez gelirse SAP mevcut belgeyi döner, ikinci fatura oluşmaz. Kısmi sevkte her paket kendi faturasını alır.</p></div>
 <div class="card"><span class="ix">03</span><h3>SAP kapalıyken iş durmaz</h3><p>SAP bakımda ya da yavaşken paketler çıkmaya devam eder, mesajlar kuyrukta bekler. SAP döndüğünde sırayla işlenir; veri kaybolmaz.</p></div>
 </div>
@@ -631,7 +631,7 @@
 <img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
 <span class="kicker">Özet</span>
 <h1 class="cover-title">SAP'de kayıt, <span class="accent">CommerceLab'de hareket</span></h1>
-<p class="cover-sub">Sipariş SAP'ye dokunmadan kargoya çıkar; fatura paket başına, asenkron ve tekrarsız oluşur; mağaza stoğu CAR ve S/4'ten tam + delta akar, rezervasyon çift düşmeyi önler.</p>
+<p class="cover-sub">Sipariş SAP'ye dokunmadan kargoya çıkar; fatura tekil ya da toplu, asenkron ve tekrarsız oluşur; mağaza stoğu CAR ve S/4'ten tam + delta akar, rezervasyon çift düşmeyi önler.</p>
 <div class="cover-meta" style="margin-top:3.2cqh;">
 <div>Windowist Tower, Maslak · <span>İstanbul</span></div>
 <div><span>info@commercelab.com.tr</span></div>
