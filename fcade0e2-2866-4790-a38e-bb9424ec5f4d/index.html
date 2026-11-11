@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CommerceLab — ebebek özet teklif</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+  .compact-cards .card { padding: 1.5cqh 1.3cqw; gap: 0.5cqh; }
+  .compact-cards .card p { font-size: 1.16cqw; line-height: 1.42; }
+  .compact-cards .card h3 { font-size: 1.5cqw; }
+  .card--dark .flist li { color: rgba(255,255,255,.86); }
+  .card--dark .flist b { color: #fff; }
+  .card .flist { gap: 1.1cqh; }
+  .card .flist li { font-size: 1.28cqw; }
+  .flist--tight { gap: 0.9cqh; }
+  .flist--tight li { font-size: 1.36cqw; }
+
+  /* Tablolar */
+  .xtable { width: 100%; border-collapse: collapse; margin-top: 0.6cqh; }
+  .xtable th { text-align: left; font-family: var(--display); font-weight: 700; font-size: 0.92cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-2); padding: 0 1cqw 0.7cqh 0; border-bottom: 1px solid var(--line-strong); }
+  .xtable td { padding: 0.85cqh 1cqw 0.85cqh 0; font-size: 1.12cqw; color: var(--ink-soft); border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.38; }
+  .xtable td:first-child { font-family: var(--display); font-weight: 700; color: var(--ink); }
+  .xtable td b { color: var(--ink); font-weight: 600; }
+  .xtable--dense td { padding: 0.62cqh 0.8cqw 0.62cqh 0; font-size: 1.04cqw; }
+  .st { display: inline-block; white-space: nowrap; font-family: var(--display); font-weight: 700; font-size: 0.82cqw; letter-spacing: .06em; text-transform: uppercase; padding: 0.3cqh 0.55cqw; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--ink-soft); }
+  .st--ok { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .st--todo { border-color: var(--red); color: var(--red); }
+  .st--plan { background: var(--bone-2); }
+
+  /* Topoloji diyagramı (SVG) */
+  .dg-wrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .dg-wrap svg { width: 100%; height: 100%; display: block; }
+  .dg-t { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
+  .dg-t--w { fill: #fff; }
+  .dg-s { font-family: var(--sans); font-size: 11.5px; fill: var(--muted); }
+  .dg-s--w { fill: rgba(255,255,255,.78); }
+  .dg-zone { font-family: var(--display); font-weight: 700; font-size: 10.5px; letter-spacing: .16em; fill: var(--red); }
+  .dg-box { fill: #ffffff; stroke: #cfccc4; stroke-width: 1.2; }
+  .dg-bone { fill: #f6f4f0; stroke: #e4e1da; stroke-width: 1; }
+  .dg-ink { fill: #1a1a1a; }
+  .dg-red { fill: #d02c2f; }
+  .dg-line { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+  .dg-line--m { stroke: #9a9893; stroke-width: 1.2; fill: none; }
+
+  /* Zaman planı */
+  .gantt { display: grid; grid-template-columns: 17cqw 1fr; row-gap: 0.45cqh; column-gap: 1cqw; align-items: center; }
+  .gantt__h { font-family: var(--display); font-weight: 700; font-size: 0.85cqw; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-2); }
+  .gantt__name { font-family: var(--display); font-weight: 600; font-size: 1.15cqw; color: var(--ink); line-height: 1.2; }
+  .gantt__name small { display: block; font-family: var(--sans); font-weight: 400; font-size: 0.92cqw; color: var(--muted); }
+  .gantt__track { position: relative; height: 2.2cqh; background: var(--bone); border: 1px solid var(--line); border-radius: 4px; }
+  .gantt__bar { position: absolute; top: 0.3cqh; bottom: 0.3cqh; background: var(--ink); border-radius: 3px; }
+  .gantt__bar--red { background: var(--red); }
+  .gantt__bar--soft { background: var(--muted-2); }
+  .gantt__scale { position: relative; height: 1.6cqh; }
+  .gantt__scale span { position: absolute; top: 0; font-size: 0.85cqw; color: var(--muted-2); transform: translateX(-50%); font-variant-numeric: tabular-nums; }
+
+  /* Süreç şeridi (change management) */
+  .steps { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.5cqw; }
+  .step-box { border: 1px solid var(--line-strong); border-radius: 6px; background: var(--paper); padding: 1.1cqh 0.7cqw; display: flex; flex-direction: column; gap: 0.35cqh; min-height: 11cqh; }
+  .step-box .n { font-family: var(--display); font-weight: 800; font-size: 1cqw; color: var(--red); letter-spacing: .06em; }
+  .step-box .t { font-family: var(--display); font-weight: 700; font-size: 1.08cqw; color: var(--ink); line-height: 1.15; }
+  .step-box .d { font-size: 0.9cqw; color: var(--muted); line-height: 1.3; }
+  .step-box--ink { background: var(--ink); border-color: var(--ink); }
+  .step-box--ink .t { color: #fff; }
+  .step-box--ink .d { color: #b9b7b2; }
+  .step-box--ink .n { color: #ff6b6e; }
+
+  .two-col .flist li { font-size: 1.32cqw; }
+  .hdr-sub { font-family: var(--display); font-weight: 700; font-size: 1.05cqw; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 1cqh; }
+  .hdr-sub--ink { color: var(--ink); }
+  .mini-stats { display: flex; gap: 2.4cqw; flex-wrap: wrap; }
+  .mini-stats .stat .num { font-size: 2.9cqw; }
+  .mini-stats .stat .lab { font-size: 1.05cqw; max-width: 15cqw; }
+
+  .ai-q { display: block; border-left: 3px solid var(--red); background: var(--bone-2); padding: 0.75cqh 0.9cqw; margin: 0.7cqh 0 0; font-size: 1.02cqw; line-height: 1.35; color: var(--ink); border-radius: 0 6px 6px 0; }
+  .ai-q small { display: block; color: var(--muted); font-size: 0.86cqw; margin-top: 0.3cqh; }
+  .ai-cards .card h3 { margin-bottom: 0.2cqh; }
+  .ai-flow { margin-top: 1.4cqh; }
+  .ai-flow .node { padding: 1cqh 1.1cqw; }
+  .xtable--xdense td { padding: 0.42cqh 0.7cqw 0.42cqh 0; font-size: 0.96cqw; line-height: 1.3; }
+  .xtable--xdense th { font-size: 0.84cqw; padding-bottom: 0.5cqh; }
+  .xtable td.c { text-align: center; }
+  .kpi-strip .kpi .k { font-size: 2.3cqw; }
+  .cover-meta--wide { gap: 3cqw; }
+  .team-grid .card { padding: 1.1cqh 1.2cqw; }
+  .team-card .tlist li { font-size: 0.98cqw; }
+  .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2cqw; align-items: start; }
+  .logowall { margin-top: 1cqh; }
+  .ann { font-size: 0.98cqw; color: var(--muted); line-height: 1.4; margin-top: 0.9cqh; }
+  .ann b { color: var(--ink); }
+  .desc--pills { line-height: 2 !important; }
+  .desc--pills .pill { font-size: 0.92cqw; padding: 0.25cqh 0.65cqw; vertical-align: middle; white-space: nowrap; }
+  .suite { gap: 1.6cqh; margin-top: 1.2cqh !important; }
+  .suite .layer { padding-top: 1.7cqh; padding-bottom: 1.7cqh; }
+  .suite .desc { font-size: 1.36cqw; }
+  .suite--7 { gap: 1cqh; margin-top: 0.8cqh !important; }
+  .suite--7 .layer { padding-top: 1.1cqh; padding-bottom: 1.1cqh; }
+  .suite--7 .desc { font-size: 1.28cqw; }
+  .suite--7 .desc--pills .pill { font-size: 0.86cqw; padding: 0.2cqh 0.5cqw; }
+  .logowall { grid-template-columns: repeat(6, 1fr); }
+
+  .xtable--tight td { padding-top: 0.28cqh; padding-bottom: 0.28cqh; }
+  .xtable--xxdense td { padding: 0.34cqh 0.6cqw 0.34cqh 0; font-size: 0.9cqw; line-height: 1.28; }
+
+  /* ebebek teklifleri: özet sunumdan gelen ve yeni eklenen kurallar */
+  .cards-tight .card { padding: 1.3cqh 1.1cqw; }
+  .cards-tight .card p { font-size: 1.04cqw; line-height: 1.38; }
+  .em-key { font-weight: 600; font-style: italic; color: var(--ink); }
+  .xtable tr.total td { border-top: 1px solid var(--line-strong); border-bottom: 0; font-family: var(--display); font-weight: 800; color: var(--ink); }
+  .xtable tr.total td.hit { color: var(--red); font-size: 1.3cqw; white-space: nowrap; }
+  .xtable tr.ratio td { border-bottom: 0; font-family: var(--display); font-weight: 700; color: var(--ink); }
+  .xtable tr.ratio td.hit { color: var(--red); }
+  .incl { display: flex; align-items: center; gap: 1.1cqw; background: var(--ink); color: #fff; border-radius: 6px; padding: 1.3cqh 1.5cqw; font-family: var(--display); font-weight: 700; font-size: 1.35cqw; line-height: 1.3; }
+  .incl::before { content: ""; flex: none; width: 0.8cqw; height: 0.8cqw; background: var(--red); border-radius: 2px; }
+  .incl span { font-family: var(--sans); font-weight: 400; font-size: 1.1cqw; color: #c7c5c0; }
+  .xtable--fees { table-layout: fixed; }
+  .xtable--fees td { padding: 1.05cqh 1.6cqw 1.05cqh 0; font-size: 1.2cqw; line-height: 1.42; vertical-align: middle; }
+
+  /* Topoloji diyagramı ekleri */
+  .dg-b { font-family: var(--display); font-weight: 700; font-size: 10.6px; fill: var(--ink); }
+  .dg-b--w { fill: #fff; }
+  .dg-h { font-family: var(--display); font-weight: 700; font-size: 11.6px; fill: var(--ink); }
+  .dg-h--w { fill: #fff; }
+  .dg-xs { font-family: var(--sans); font-size: 9.6px; fill: var(--muted); }
+  .dg-xs--w { fill: rgba(255,255,255,.86); }
+  .dg-scope { fill: none; stroke: #d02c2f; stroke-width: 1.6; }
+  .dg-dash { stroke: #9a9893; stroke-width: 1.1; stroke-dasharray: 4 3; fill: none; }
+
+  /* Değer zinciri (7 adım) */
+  .vsteps { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.6cqw; }
+  .vstep { border: 1px solid var(--line-strong); border-radius: 6px; background: var(--paper); padding: 1.3cqh 0.8cqw; display: flex; flex-direction: column; gap: 0.5cqh; min-height: 28cqh; }
+  .vstep .n { font-family: var(--display); font-weight: 800; font-size: 1cqw; color: var(--red); letter-spacing: .06em; }
+  .vstep .t { font-family: var(--display); font-weight: 700; font-size: 1.3cqw; color: var(--ink); line-height: 1.15; }
+  .vstep .d { font-size: 1cqw; color: var(--muted); line-height: 1.38; }
+  .vstep .b { margin-top: auto; padding-top: 0.8cqh; border-top: 1px solid var(--line); font-family: var(--display); font-weight: 700; font-size: 1.02cqw; color: var(--ink); line-height: 1.25; }
+  .vstep--ink { background: var(--ink); border-color: var(--ink); }
+  .vstep--ink .t, .vstep--ink .b { color: #fff; }
+  .vstep--ink .d { color: #b9b7b2; }
+  .vstep--ink .b { border-top-color: rgba(255,255,255,.2); }
+  .vstep--ink .n { color: #ff6b6e; }
+
+  /* Faz planı (ay ölçekli) */
+  .gantt--m { grid-template-columns: 31cqw 1fr; row-gap: 1.1cqh; }
+  .gantt--m .gantt__track { height: 2.8cqh; background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(12.5% - 1px), var(--line-strong) calc(12.5% - 1px), var(--line-strong) 12.5%); }
+  .gantt--m .gantt__name { font-size: 1.18cqw; }
+  .gantt--m .gantt__name small { font-size: 0.9cqw; margin-top: 0.15cqh; }
+  .gantt__bar--range { background: repeating-linear-gradient(135deg, var(--ink) 0, var(--ink) 0.3cqw, #b9b7b2 0.3cqw, #b9b7b2 0.6cqw); }
+  .gantt__bar--opt { background: transparent; border: 1.5px dashed var(--red); }
+
+  .suite--tight { gap: 0.8cqh; }
+  .suite--tight .layer { padding-top: 0.85cqh; padding-bottom: 0.85cqh; }
+  .suite--tight .desc { font-size: 1.14cqw; }
+  .suite--tight .desc--pills { line-height: 1.75 !important; }
+
+  .xtable--feesd td { padding-top: 0.7cqh; padding-bottom: 0.7cqh; font-size: 1.12cqw; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- KAPAK -->
+<section class="slide slide--ink slide--cover">
+<div class="slide__inner">
+<img class="cover-logo" src="../assets/commercelab-logo-white.svg" alt="CommerceLab" />
+<span class="kicker">ebebek</span>
+<h1 class="cover-title">OMS · TMS · Unified Commerce<br /><span class="accent">hizmet teklifi</span></h1>
+<div class="cover-meta" style="margin-top:4cqh;">
+<div><span>Kasım 2026</span></div>
+<div><span>Commerce Lab E-Ticaret Çözümleri A.Ş.</span></div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">1 / 40</span></div>
+</section>
+
+<!-- İÇERİK -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Bu doküman</span>
+<h2 class="slide-title">Kapsam</h2>
+<table class="xtable" style="margin-top:2cqh;">
+<thead><tr><th>#</th><th>Bölüm</th><th>İçerik</th></tr></thead>
+<tbody>
+<tr><td>01</td><td><b>Yönetici özeti</b></td><td>Proje anlayışımız, ebebek ihtiyaçlarının karşılığı, yaklaşımımız, Commerce LAB'i farklılaştıran noktalar, iş faydası ve fayda modeli, entegrasyon hızı, SLA taahhütleri</td></tr>
+<tr><td>02</td><td><b>Çözüm önerimiz</b></td><td>Çözüm kapsamı ve sistem sahipliği, ürün ailesi, çözüm topolojisi; OMS, sourcing, mağaza operasyonu, InStore Commerce, TMS, Marketplace Management, AI ile pazaryeri mapping, ComHub ve Control Tower; ACOMS: KPI seti, otonom yönetim ve AI agent'ları; örnek sipariş senaryosu, faz planı</td></tr>
+<tr><td>03</td><td><b>Commerce Lab hakkında</b> · İngilizce</td><td>Kim olduğumuz, neden farklıyız, referans müşteriler, liderlik ekibi</td></tr>
+<tr><td>04</td><td><b>Ticari teklif</b></td><td>Proje bedeli, aylık bedeller, 3 yıllık toplam sahip olma maliyeti</td></tr>
+<tr><td>Ek</td><td><b>Tam teklif sunumu</b></td><td>Ürün yetkinliklerinin tamamı, teknik mimari ve güvenlik, entegrasyon ve geçiş stratejisi, uygulama planı, destek ve SLA, varsayımlar ve Infosec; ayrı doküman olarak paylaşılır</td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">2 / 40</span></div>
+</section>
+
+<!-- BÖLÜM 01 -->
+<section class="slide slide--ink">
+<div class="slide__inner" style="justify-content:center;">
+<div class="divider-index">01</div>
+<span class="kicker">Yönetici özeti</span>
+<h2 class="slide-title">Proje anlayışı, yaklaşım ve iş değeri</h2>
+<p class="lead">ebebek'in hedeflerini nasıl okuduğumuz, buna nasıl yaklaştığımız ve önerdiğimiz yapının satışa, müşteri memnuniyetine ve operasyon maliyetine katkısı.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">3 / 40</span></div>
+</section>
+
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Proje anlayışımız</span>
+<h2 class="slide-title">Daha çok satış, daha mutlu müşteri, <span class="accent">daha düşük operasyon maliyeti</span></h2>
+<div class="two-col" style="gap:3.4cqw; grid-template-columns:1.5fr 0.9fr;">
+<div style="display:flex; flex-direction:column; gap:1.6cqh;">
+<p class="body-text" style="font-size:1.2cqw; line-height:1.55;">ebebek, 200'ü aşkın mağazası, dağıtım merkezi, kendi dijital kanalları ve pazaryerleriyle Türkiye'nin en geniş anne-bebek perakende ağlarından birini işletiyor. Bu ağın tamamını satışa ve teslimata çalıştırmak, <span class="em-key">dağıtık stok ve sipariş yönetimini mükemmelleştirmekten</span> geçiyor.</p>
+<p class="body-text" style="font-size:1.2cqw; line-height:1.55;">Hedef; tüm mağaza, depo ve vendor stoklarını <span class="em-key">kanallara stok ayırmadan</span> satışa açmak, bunu yaparken yok satma ve gecikme riski yaratmamak, her sepeti <span class="em-key">maliyet, müşteri memnuniyeti, ürünün fırsat maliyeti ve operasyonel kapasiteye</span> göre en doğru kaynaktan ve en az paketle göndermektir.</p>
+<p class="body-text" style="font-size:1.2cqw; line-height:1.55;">Commerce LAB olarak OMS, TMS, Marketplace Management, InStore Commerce, Omnichannel Operations, ComHub ve Control Tower'dan oluşan ürün ailemizle bu ihtiyaçların tamamını <span class="em-key">bugün canlıda çalışan</span> ürünlerle karşılıyoruz; teknik ve ticari kararların her aşamasında ebebek ekipleriyle birlikte çalışarak <span class="em-key">proje faydasını maksimize etmeyi</span> hedefliyoruz.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:2cqh;">
+<div class="card card--dark" style="padding:2cqh 1.8cqw;">
+<div class="ix">Amaç</div>
+<ul class="flist" style="gap:1.3cqh;">
+<li><b>E-ticaret satışlarını maksimize etmek</b></li>
+<li><b>Müşteri memnuniyetini maksimize etmek</b></li>
+<li><b>Operasyon maliyetinin satışa oranını minimize etmek</b></li>
+</ul>
+</div>
+<div>
+<div class="hdr-sub">Strateji</div>
+<ul class="flist flist--tight">
+<li><b>Ürün gamı ve bulunurluk</b> en üst seviyede</li>
+<li><b>Teslimat</b> daha hızlı, daha kaliteli, daha az paketle</li>
+<li><b>Elleçleme, sarf ve kargo</b> maliyetinin siparişe oranı daha düşük</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">4 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">ebebek'in ihtiyaçları</span>
+<h2 class="slide-title">Her ihtiyacın platformda <span class="accent">somut bir karşılığı</span> var</h2>
+<table class="xtable xtable--xxdense">
+<colgroup><col style="width:25%;" /><col /><col style="width:17%;" /></colgroup>
+<thead><tr><th>İhtiyaç</th><th>Commerce LAB karşılığı</th><th>Ürün</th></tr></thead>
+<tbody>
+<tr><td>Tüm mağaza ve depo stokları satışa açılsın</td><td>Depo, mağaza ve vendor kaynak tipleriyle tek stok havuzu; kanallara stok ayırmadan satış</td><td>OMS · Enterprise Inventory</td></tr>
+<tr><td>Yok satma ve gecikme riski oluşmasın</td><td>Emniyet stoku kuralları, rezervasyon ve yoldaki stok; hesap 150 ms, kanala bildirim 925 ms; yok satma ~%0,02</td><td>OMS · ATP · Control Tower</td></tr>
+<tr><td>Sepet en doğru şekilde paketlere bölünsün</td><td>Maliyet, müşteri memnuniyeti, fırsat maliyeti ve kapasiteyi ağırlıklandıran skor bazlı sourcing; sipariş bağlamına göre strateji, özel senaryoya plugin algoritma</td><td>OMS · Sourcing</td></tr>
+<tr><td>Mağazalar dağıtım merkezi yetkinliği kazansın</td><td>Mağazada pick, sort, pack, label, ship; mobil uygulama, yazıcı ve kargo teslim tutanağı</td><td>Omnichannel Operations</td></tr>
+<tr><td>Pazaryerinde paket bölme ve kargo değiştirme</td><td>Trendyol, Hepsiburada, N11 ve Boyner'de paket bölme; kargo ve depo değişimi entegrasyon üzerinden</td><td>Marketplace · Seller</td></tr>
+<tr><td>Vendor stokları dropship ile satışa kazandırılsın</td><td>Vendor onboarding, Seller Portal, ürün onayı, vendor siparişi ve sevkiyatı; katalog stok maliyeti olmadan büyür</td><td>Marketplace · Operator</td></tr>
+<tr><td>Kanallarda yok satma, gecikme, fiyat farkı olmasın</td><td>Stok, fiyat, sipariş ve statü farkları sürekli karşılaştırılır; fark otomatik düzeltilir</td><td>Control Tower · ComHub</td></tr>
+<tr><td>Instore Ordering, Endless Aisle, Unified Checkout</td><td>Mobile ve Fix POS, mağazada olmayan ürünün satışı, mağazada kartla ödeme (card present)</td><td>InStore Commerce</td></tr>
+<tr><td>Best seller ürünler en kârlı kanala yönlensin</td><td>Satış hızı ve stok devir skoru; kanal bazlı emniyet stoku ve kanal satış durumu yönetimi</td><td>OMS · Marketplace</td></tr>
+<tr><td>Omnichannel fonksiyonlar</td><td>Reserve &amp; Collect (mevcut), Click &amp; Collect, Ship From Store, Instore Ordering, Store Return &amp; Exchange</td><td>OMS · Omnichannel Ops</td></tr>
+<tr><td>Tüm kargolar, teslimat çeşitliliği, dinamik ücret</td><td>30+ kargo tek entegrasyonda; aynı gün, ertesi gün, randevulu; lokasyon, desi, kargo ve hizmete göre ücret; kural ve performans bazlı atama</td><td>TMS</td></tr>
+<tr><td>Orijinal kargo etiketi ve mutabakat</td><td>Kargonun kendi etiketi paketleme anında basılır; kargo, komisyon ve SLA mutabakatı</td><td>TMS · Marketplace</td></tr>
+<tr><td>Otomatik Order Cart yönetimi</td><td>Auto cancel, auto re-sourcing, auto partial shipment; operasyon yükü azalır</td><td>OMS · Order Cart</td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">5 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Yaklaşımımız</span>
+<h2 class="slide-title">Yazılım değil, operasyonu birlikte <span class="accent">sahiplenen</span> bir iş ortağı</h2>
+<p class="lead" style="max-width:none; font-size:1.32cqw; line-height:1.5;">Hedefimiz, ebebek'in stok ve mağaza ağının tamamını satış ve fulfillment kapasitesine dönüştüren, satışı ve operasyonu aynı hedefe çalıştıran bir Unified Commerce modeli kurmaktır. Bu modelde kendimizi bir yazılım tedarikçisi değil, ebebek'in kendi IT ve operasyon ekibi gibi çalışan, ticari hedefleri sahiplenen bir iş ortağı olarak konumluyoruz.</p>
+<div class="grid grid-4 compact-cards cards-tight" style="flex:1; align-content:center; gap:1.2cqw; margin-bottom:1.6cqh;">
+<div class="card"><div class="ix">01 · Tek stok, tüm kanallar</div><h3>Kanala stok ayırmadan satış</h3><p>Depo, mağaza ve vendor stoku tek havuzda; web, uygulama, pazaryeri ve mağaza aynı satılabilir stoktan beslenir, emniyet kuralları kanal bazında korur.</p></div>
+<div class="card"><div class="ix">02 · Optimizasyon, kural değil</div><h3>Her sipariş için en iyi senaryo</h3><p>Sourcing; maliyet, müşteri memnuniyeti, fırsat maliyeti ve kapasiteyi ebebek'in verdiği ağırlıklarla puanlar, en yüksek puanlı gönderim senaryosunu seçer.</p></div>
+<div class="card"><div class="ix">03 · Mağaza bir hub</div><h3>Her mağaza mini fulfillment merkezi</h3><p>Ship From Store, Click &amp; Collect, transfer ve mağaza içi satış aynı mobil uygulamada; mağaza stoku ve iş gücü online siparişe çalışır.</p></div>
+<div class="card card--dark"><div class="ix">04 · Çalışma modeli</div><h3>IT departmanınız gibi</h3><p>Bir kez proje yapıp her yeni isteği ayrı projeye çevirmiyoruz. Fazlar hızlı kazanımla başlar; her fazın faydası ebebek verisiyle ölçülür.</p></div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">6 / 40</span></div>
+</section>
+
+<!-- NEDEN COMMERCE LAB -->
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Neden Commerce Lab</span>
+<h2 class="slide-title">Commerce LAB'i <span class="accent">farklılaştıran</span> noktalar</h2>
+<table class="xtable xtable--dense">
+<thead><tr><th>#</th><th>Fark</th><th>Ne demek</th><th>ebebek için</th></tr></thead>
+<tbody>
+<tr><td>01</td><td><b>ACOMS: KPI ve otonom yönetim</b></td><td>352 KPI'lık BI seti; sapmayı yakalayan alarm, aksiyon üreten kural ve akıllı sistemler; OMS, TMS ve Marketplace kararları için AI agent'ları</td><td>Operasyon rapora bakılarak değil, hedefe göre kendiliğinden yönetilir</td></tr>
+<tr><td>02</td><td><b>Uçtan uca ürün ailesi</b></td><td>OMS, TMS, PIM, Marketplace Management (Seller ve Operator), InStore Commerce, Omnichannel Operations, ComHub ve Control Tower tek platformda, bugün canlıda</td><td>Yeni ihtiyaç, yeni tedarikçi ve yeni entegrasyon demek değil</td></tr>
+<tr><td>03</td><td><b>Optimizasyon bazlı sourcing</b></td><td>Maliyet, müşteri memnuniyeti, fırsat maliyeti ve kapasiteyi ağırlıklandıran skor; sipariş bağlamına göre strateji; plugin algoritma</td><td>Çoklu mağaza siparişlerinde %50'ye yakın daha az paket</td></tr>
+<tr><td>04</td><td><b>Entegrasyon hızı</b></td><td>Sipariş 1,2 sn'de OMS'te; stok 150 ms'de hesaplanır, 925 ms'de kanalda; sourcing 700 ms</td><td>Yok satma ~%0,02</td></tr>
+<tr><td>05</td><td><b>ERP soketleri</b></td><td>Stok ve hareketleri ERP katmanından en hızlı ve hatasız çekmek için geliştirdiğimiz yapı</td><td>Mağaza stokları güvenle satışa açılır</td></tr>
+<tr><td>06</td><td><b>TMS dahil</b></td><td>30+ kargo tek entegrasyonda; kural ve performans bazlı atama, orijinal etiket, maliyet ve SLA mutabakatı</td><td>Kargo maliyetinde %15–20+, teslimat süresinde %20+ iyileşme</td></tr>
+<tr><td>07</td><td><b>Mağaza bir hub</b></td><td>Pick, sort, pack, label, ship; Click &amp; Collect, Ship From Store, transfer ve Store B2B aynı mobil uygulamada</td><td>200+ mağaza fulfillment kapasitesine dönüşür</td></tr>
+<tr><td>08</td><td><b>Pazaryerinde tam kontrol</b></td><td>13 pazaryeri; AI ile kategori, nitelik ve değer eşleme; paket bölme, kanal emniyet stoku, auto-fix, mutabakat</td><td>Eşleme iş yükü, ceza ve iptal azalır</td></tr>
+<tr><td>09</td><td><b>Best seller yönlendirme</b></td><td>Satış hızına göre tükenecek ürünler en uygun marjlı kanala otomatik yönlenir</td><td>P&amp;L'e ~%2 katkı</td></tr>
+<tr><td>10</td><td><b>Control Tower</b></td><td>Veri farkı, entegrasyon kesintisi ve gecikme müşteriden önce yakalanır ve otomatik düzeltilir</td><td>Kanallar arasında yok satma, gecikme ve fiyat farkı izlenir</td></tr>
+<tr><td>11</td><td><b>IT departmanınız gibi</b></td><td>Teknik ve ticari kararların her aşamasında ebebek ekipleriyle birlikte; fayda ebebek verisiyle ölçülür</td><td>Hızlı kazanımla başlayan fazlı plan: TMS 1–1,5 ayda</td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">7 / 40</span></div>
+</section>
+
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Metrik özeti · müşterilerimizdeki kazanımlar</span>
+<h2 class="slide-title">Daha az paket, daha düşük kargo maliyeti, <span class="accent">daha hızlı teslimat</span></h2>
+<div class="fill">
+<div class="stat-row" style="justify-content:space-between; margin-bottom:2.4cqh;">
+<div class="stat"><span class="num">~%50</span><span class="lab">daha az paket; çoklu mağaza siparişlerinde</span></div>
+<div class="stat"><span class="num">%15–20+</span><span class="lab">toplam kargo maliyetinde azalma (TMS)</span></div>
+<div class="stat"><span class="num">%20+</span><span class="lab">teslimat süresinde iyileşme; aynı teslimat rotasında</span></div>
+<div class="stat"><span class="num">~%2</span><span class="lab">P&amp;L'e katkı; best seller kanal yönlendirmesi</span></div>
+</div>
+<table class="xtable xtable--dense">
+<thead><tr><th>Kaldıraç</th><th>Nasıl</th><th>Müşterilerimizde ölçülen etki</th></tr></thead>
+<tbody>
+<tr><td>Sourcing</td><td>Tüm olası gönderim senaryoları maliyet, müşteri memnuniyeti, fırsat maliyeti ve kapasite ağırlıklarıyla puanlanır; en iyi seçenek 700 ms'de belirlenir</td><td><b>Çoklu mağaza siparişlerinde %50'ye yakın paket azalması</b></td></tr>
+<tr><td>Kargo kararı · TMS</td><td>30+ kargo tek entegrasyonda; atama kural ve fiyat/performans bazlı; desi, kota ve kara liste yönetimi</td><td><b>Toplam kargo maliyetinde %15–20 üzeri azalma</b>; aynı rotada <b>%20 üzeri</b> daha hızlı teslimat</td></tr>
+<tr><td>Kanal yönlendirme</td><td>Satış hızına göre tükenecek best seller ürünler en uygun marjlı satış kanalına otomatik yönlenir</td><td><b>P&amp;L'e %2'ye yakın katkı</b></td></tr>
+<tr><td>Stok doğruluğu ve hız</td><td>Stok değişimi 150 ms'de hesaplanır, 925 ms'de kanala bildirilir; farklar Control Tower'da otomatik düzeltilir</td><td><b>Tüm kanallarda yok satma ~%0,02</b></td></tr>
+</tbody>
+</table>
+<p class="ann"><b>Kaynak:</b> Commerce LAB müşteri uygulamaları. Sonuçlar kanal karması, sepet yapısı ve taşıyıcı anlaşmalarına göre değişir; ebebek için baz değerler keşifte alınır ve kazanım aynı veri setiyle ölçülür. Sourcing, TMS ve kanal yönlendirme etkileri birbirine eklenmemelidir.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">8 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Fayda modeli · birim maliyetler</span>
+<h2 class="slide-title">Önlenen her paket <span class="accent">~125–140 TL</span>, her gönderi ~18–24 TL</h2>
+<div class="fill">
+<table class="xtable xtable--dense">
+<thead><tr><th>Kaldıraç</th><th>Birim maliyet varsayımı</th><th>Mekanizma</th><th>Birim etki</th></tr></thead>
+<tbody>
+<tr><td>Daha az paket · Sourcing</td><td>Paket başına kargo ~120 TL + koli 20 TL ya da torba 4,5 TL</td><td>Çok kaynaklı siparişte sepet daha az pakete bölünür; müşterilerimizde çoklu mağaza siparişlerinde %50'ye yakın paket azalması</td><td><b>Önlenen paket başına ~125–140 TL</b></td></tr>
+<tr><td>Kargo kararı · TMS</td><td>Gönderi başına kargo ~120 TL (4 desi 95,9 · 6 desi 105,95 · 8 desi 150,9 TL)</td><td>Kural ve fiyat/performans bazlı taşıyıcı ataması; toplam kargo maliyetinde %15–20 üzeri azalma</td><td><b>Gönderi başına ~18–24 TL</b></td></tr>
+<tr><td>Kanal yönlendirme</td><td>Kanal komisyon ve marj farkı</td><td>Tükenecek best seller ürünler en uygun marjlı kanalda satılır</td><td><b>P&amp;L'e ~%2 katkı</b></td></tr>
+<tr><td>Yok satma ve iptal</td><td>İptal edilen siparişin kaybı ve pazaryeri cezası</td><td>Stok 925 ms'de kanalda; farklar otomatik düzeltilir</td><td><b>Yok satma ~%0,02</b></td></tr>
+<tr><td>Operasyon yükü</td><td>Elleçleme ~15 TL / ürün (stoklama dahil)</td><td>Auto cancel, auto re-sourcing, auto partial shipment; manuel müdahale azalır</td><td>Manuel müdahale oranı keşifte ölçülür</td></tr>
+</tbody>
+</table>
+<div class="grid grid-2 compact-cards" style="margin-top:2.2cqh; gap:1.2cqh 1.6cqw;">
+<div class="card"><div class="ix">Yıllık etki · paket</div><h3>Çok kaynaklı sipariş × önlenen paket × ~125–140 TL</h3><p>ebebek'in çok kalemli ve çok kaynaklı sipariş adedi keşifte alınır; aynı sipariş ve stok veri setiyle kural bazlı yaklaşıma karşı simülasyonla ölçülür.</p></div>
+<div class="card"><div class="ix">Yıllık etki · kargo</div><h3>Gönderi adedi × ~18–24 TL</h3><p>Taşıyıcı tarifeleri, kota ve bölge kırılımı keşifte alınır; Faz 1'de TMS mevcut yapıda devreye girdiğinde baz döneme karşı ölçülür.</p></div>
+</div>
+<p class="ann"><b>Kaba tahmin:</b> birim maliyetler çalışma varsayımıdır; ebebek'in gerçek birim maliyetleri ve sipariş hacmiyle keşifte güncellenir. Sourcing, TMS ve kanal yönlendirme etkileri birbirine eklenmemelidir.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">9 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Metrik özeti · entegrasyon hızı</span>
+<h2 class="slide-title">Sipariş <span class="accent">1,2 saniyede</span> içeride, stok 925 ms'de kanalda</h2>
+<div class="fill">
+<div class="stat-row" style="justify-content:space-between; margin-bottom:2.4cqh;">
+<div class="stat"><span class="num">1,2 sn</span><span class="lab">kendi kanal (web, app) siparişi OMS'te</span></div>
+<div class="stat"><span class="num">150 ms</span><span class="lab">stok değişimi hesabı; emniyet stoku, yoldaki stok ve rezervasyon dahil</span></div>
+<div class="stat"><span class="num">925 ms</span><span class="lab">stok değişimi kendi kanala bildirildi</span></div>
+<div class="stat"><span class="num">700 ms</span><span class="lab">sourcing kararı / sipariş</span></div>
+</div>
+<table class="xtable xtable--dense">
+<thead><tr><th>Akış</th><th>Ölçülen süre</th><th>Kapsam</th></tr></thead>
+<tbody>
+<tr><td>Sipariş çekme · kendi kanal</td><td><b>1,2 sn</b></td><td>Web ve uygulama siparişinin OMS'e alınması</td></tr>
+<tr><td>Sipariş çekme · pazaryerleri</td><td><b>26 sn</b></td><td>Pazaryeri siparişinin OMS'e alınması</td></tr>
+<tr><td>Stok değişimi hesabı</td><td><b>150 ms</b></td><td>Emniyet stoku, on-transit ve rezervasyon hesabı sonrası satılabilir stok</td></tr>
+<tr><td>Stok bildirimi · kendi kanal</td><td><b>925 ms</b></td><td>Hesaplanan değişimin web ve uygulamaya bildirimi</td></tr>
+<tr><td>Stok bildirimi · pazaryeri, kritik stok</td><td><b>1,2 sn</b></td><td>Stok 2 ve altına düştüğünde öncelikli hat</td></tr>
+<tr><td>Stok bildirimi · pazaryeri, genel</td><td><b>6 sn</b></td><td>Genel stok bildirim akışı</td></tr>
+</tbody>
+</table>
+<p class="ann"><b>Kaynak:</b> canlı müşteri ortamı, ComHub ve OMS ölçümleri. Bu hızların ön koşulu ERP katmanından stok ve hareketlerin hızlı ve hatasız alınmasıdır; bunun için geliştirdiğimiz soket yapısı ve ebebek ERP entegrasyonu 06. bölümde.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">10 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">SLA taahhütleri</span>
+<h2 class="slide-title">Operasyon durduğunda <span class="accent">5 dakikada</span> yanıt</h2>
+<div class="fill">
+<div class="stat-row" style="justify-content:space-between; margin-bottom:2.4cqh;">
+<div class="stat"><span class="num">%99,95</span><span class="lab">aylık erişilebilirlik taahhüdü; bugün ölçülen %99,99</span></div>
+<div class="stat"><span class="num">5 dk</span><span class="lab">P1 olayda yanıt</span></div>
+<div class="stat"><span class="num">15 dk</span><span class="lab">P1 olayda geçici çözüm</span></div>
+<div class="stat"><span class="num">7/24</span><span class="lab">P1 ve P2 için nöbet</span></div>
+</div>
+<table class="xtable xtable--dense">
+<thead><tr><th>Seviye</th><th>Örnek etki</th><th>Yanıt</th><th>Müdahale</th><th>Geçici çözüm</th><th>Kalıcı çözüm</th></tr></thead>
+<tbody>
+<tr><td>P1 · Critical</td><td>Sipariş alınamıyor, stok yayınlanamıyor ya da etiket üretilemiyor; operasyon duruyor</td><td><b>5 dk</b></td><td>15 dk</td><td><b>15 dk</b></td><td>2 saat</td></tr>
+<tr><td>P2 · High</td><td>Tek kanal, tek pazaryeri ya da tek taşıyıcı entegrasyonu kesik; mağaza uygulaması erişim sorunu</td><td><b>15 dk</b></td><td>30 dk</td><td>2 saat</td><td>8 saat</td></tr>
+<tr><td>P3 · Medium</td><td>Konsol ekranı, rapor ya da tekil sipariş hataları; workaround mevcut</td><td>1 saat</td><td>2 saat</td><td>4 saat</td><td>1 iş günü</td></tr>
+<tr><td>P4 · Low</td><td>Metin, etiket şablonu ve rapor talepleri</td><td>1 iş günü</td><td>—</td><td>3 iş günü</td><td>Planlı sürüm</td></tr>
+</tbody>
+</table>
+<p class="ann">P1/P2 alarmları otomatik açılır, 7/24 nöbet; aylık servis raporu ve SLA review. Servis kredisi koşulları sözleşmede.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">11 / 40</span></div>
+</section>
+
+<!-- BÖLÜM 02 -->
+<section class="slide slide--ink">
+<div class="slide__inner" style="justify-content:center;">
+<div class="divider-index">02</div>
+<span class="kicker">Çözüm önerimiz</span>
+<h2 class="slide-title">Tek stok, tek sipariş, tek operasyon</h2>
+<p class="lead">Satış kanalları ve dış sistemler ComHub ile bağlanır; OMS, TMS, Marketplace Management ve mağaza uygulamaları aynı platformda çalışır; ERP, WMS, POS ve CRM yerinde kalır.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">12 / 40</span></div>
+</section>
+
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Çözüm kapsamı ve sistem sahipliği</span>
+<h2 class="slide-title">Ne biz yapıyoruz, ne <span class="accent">yerinde kalıyor</span></h2>
+<table class="xtable xtable--xdense">
+<thead><tr><th>Bileşen</th><th>Commerce LAB rolü</th><th>Mevcut sistem / sahiplik</th><th>Teklif durumu</th></tr></thead>
+<tbody>
+<tr><td>OMS</td><td>Kurumsal envanter, satılabilir stok (ATP), rezervasyon, sourcing, sipariş, iade ve geri ödeme</td><td>ebebek.com, uygulama, pazaryerleri; ERP stok ve hareketleri</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>TMS</td><td>Checkout teslimat seçenekleri, taşıyıcı seçimi, etiket, takip, iade ve mutabakat</td><td>Kargo firmaları ve anlaşmaları</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>Marketplace · Seller</td><td>Dış pazaryerlerinde ürün, stok, fiyat, sipariş, iade ve mutabakat</td><td>Pazaryeri hesapları</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>Omnichannel Operations</td><td>Mağazada pick, sort, pack, label, ship; Click &amp; Collect, Reserve &amp; Collect, Ship From Store, transfer</td><td>Mağaza ekipleri, cihaz ve yazıcılar</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>Store B2B Operations</td><td>Mal kabul ve sevk, sayım, raf, etiket, iç transfer, mağaza ikmali</td><td>ERP mağaza stok kayıtları</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>InStore Commerce</td><td>Mobile ve Fix POS, mağazadan sipariş, Endless Aisle, card present ödeme</td><td>Mevcut POS, ödeme cihazı ve mali belge altyapısı</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>Marketplace · Operator</td><td>Vendor onboarding, Seller Portal, ürün onayı, vendor siparişi, komisyon ve settlement</td><td>ebebek Marketplace</td><td><span class="st">Opsiyonel</span></td></tr>
+<tr><td>ComHub</td><td>Kanal ve dış sistem entegrasyonu, veri dönüşümü, süreç orkestrasyonu</td><td>—</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>Control Tower</td><td>Veri tutarlılığı, entegrasyon sağlığı, operasyonel izleme ve alarm</td><td>—</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>ERP · WMS · POS · CRM · finans</td><td>ComHub üzerinden çift yönlü entegrasyon</td><td>ebebek'te kalır; ana veri ve mali kayıt sahibi</td><td><span class="st st--ok">Entegrasyon</span></td></tr>
+<tr><td>PIM</td><td>ERP ürününün zenginleştirilmesi, AI destekli pazaryeri kategori, nitelik ve değer eşlemesi, kanala yayın</td><td>ERP ürün ana verisi</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>ACOMS</td><td>KPI seti, alarm ve aksiyon yönetimi; OMS, TMS ve Marketplace kararları için AI agent'ları (yol haritası)</td><td>—</td><td><span class="st st--ok">Kapsamda</span></td></tr>
+<tr><td>Storefront · CMS · ödeme</td><td>Teklif dışı; ileride aynı platformda açılabilir</td><td>ebebek mevcut sistemleri</td><td><span class="st st--plan">Kapsam dışı</span></td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">13 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Ürün ailesi</span>
+<h2 class="slide-title">Dokuz ürün, <span class="accent">tek operasyon modeli</span></h2>
+<div class="stack suite suite--7 suite--tight">
+<div class="layer"><span class="tag">Kanallar</span><span class="desc">ebebek.com · ebebek App · 200+ mağaza · pazaryerleri · ebebek Marketplace · kurumsal müşteriler (B2B) · dijital kanallar</span></div>
+<div class="layer layer--ink"><span class="tag">ComHub</span><span class="desc">API Management · Channel Connectors · Data Transformation · Process Orchestration · Event Streaming · Connector Library</span></div>
+<div class="layer"><span class="tag">Sipariş ve stok</span><span class="desc desc--pills"><span class="pill pill--solid">OMS</span> Enterprise Inventory · Safety Stock · ATP · Reservation &amp; On-Transit · Order Orchestration / Sourcing · Automated Order Cart · Return · Refund · Customer Notifications · Customer Services</span></div>
+<div class="layer"><span class="tag">Teslimat</span><span class="desc desc--pills"><span class="pill pill--solid">TMS</span> Carrier Integrations / Hub · Check Out Service · Dispatch Service · Labeling Service · Return Management · Tracking &amp; Reporting · Reconciliation Service</span></div>
+<div class="layer"><span class="tag">Mağaza</span><span class="desc desc--pills"><span class="pill pill--solid">InStore Commerce</span> <span class="pill pill--solid">Omnichannel Operations</span> <span class="pill pill--solid">Store B2B Operations</span> POS, mağazadan satış, pick-pack-ship, C&amp;C, SFS, transfer, sayım, ikmal</span></div>
+<div class="layer"><span class="tag">Ürün ve pazaryeri</span><span class="desc desc--pills"><span class="pill pill--solid">PIM</span> <span class="pill pill--solid">Marketplace · Seller</span> <span class="pill">Marketplace · Operator</span> AI mapping, entegrasyon, fiyat, komisyon; vendor onboarding, settlement</span></div>
+<div class="layer layer--ink"><span class="tag">Control Tower · ACOMS</span><span class="desc">Kanal, uygulama ve dış sistem izleme · proaktif alarm · 352 KPI'lık BI seti · otonom yönetim ve AI agent'ları</span></div>
+</div>
+<p class="ann"><b>Koyu rozet</b> teklif kapsamındaki ürünler; açık rozet opsiyonel faz (Multi-Vendor · MP Operator).</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">14 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Çözüm topolojisi</span>
+<h2 class="slide-title">Kanaldan kaynağa <span class="accent">tek omurga</span></h2>
+<div class="dg-wrap">
+<svg viewBox="0 0 1140 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ebebek çözüm topolojisi">
+<!-- Satış kanalları -->
+<text x="20" y="14" class="dg-zone">SATIŞ KANALLARI</text>
+<g>
+<rect x="20" y="22" width="119" height="46" rx="5" class="dg-box"/><text x="79.5" y="41" text-anchor="middle" class="dg-h">ebebek.com</text><text x="79.5" y="57" text-anchor="middle" class="dg-xs">Web Store</text>
+<rect x="147" y="22" width="119" height="46" rx="5" class="dg-box"/><text x="206.5" y="41" text-anchor="middle" class="dg-h">ebebek App</text><text x="206.5" y="57" text-anchor="middle" class="dg-xs">Mobile App</text>
+<rect x="274" y="22" width="119" height="46" rx="5" class="dg-box"/><text x="333.5" y="41" text-anchor="middle" class="dg-h">Physical Stores</text><text x="333.5" y="57" text-anchor="middle" class="dg-xs">200+ mağaza</text>
+<rect x="401" y="22" width="119" height="46" rx="5" class="dg-box"/><text x="460.5" y="41" text-anchor="middle" class="dg-h">Marketplaces</text><text x="460.5" y="57" text-anchor="middle" class="dg-xs">Seller · dış platformlar</text>
+<rect x="528" y="22" width="119" height="46" rx="5" class="dg-box"/><text x="587.5" y="41" text-anchor="middle" class="dg-h">ebebek Marketplace</text><text x="587.5" y="57" text-anchor="middle" class="dg-xs">Operator · 3rd party</text>
+<rect x="655" y="22" width="119" height="46" rx="5" class="dg-box"/><text x="714.5" y="41" text-anchor="middle" class="dg-h">Corporate Customers</text><text x="714.5" y="57" text-anchor="middle" class="dg-xs">B2B Sales</text>
+<rect x="782" y="22" width="118" height="46" rx="5" class="dg-box"/><text x="841" y="41" text-anchor="middle" class="dg-h">Digital Channels</text><text x="841" y="57" text-anchor="middle" class="dg-xs">Chat · Call Center · AI</text>
+</g>
+<!-- Ürün kapsamı çerçevesi -->
+<rect x="13" y="78" width="894" height="356" rx="8" class="dg-scope"/>
+<!-- ComHub üst -->
+<rect x="20" y="85" width="880" height="34" rx="5" class="dg-ink"/>
+<text x="32" y="107" class="dg-h dg-h--w">ComHub · Integration &amp; Orchestration</text>
+<text x="888" y="107" text-anchor="end" class="dg-xs dg-xs--w">API Management · Channel Connectors · Data Transformation · Process Orchestration · Event Streaming · Connector Library</text>
+<!-- Uygulamalar -->
+<text x="20" y="137" class="dg-zone">COMMERCE LAB ÜRÜNLERİ · MANAGED OPERATIONS</text>
+<!-- MMP -->
+<rect x="20" y="144" width="244" height="186" rx="5" class="dg-box"/>
+<text x="30" y="162" class="dg-h">Marketplace Management Platform</text>
+<line x1="142" y1="172" x2="142" y2="322" stroke="#e4e1da" stroke-width="1"/>
+<text x="30" y="181" class="dg-b">Seller · ebebek</text>
+<text x="30" y="197" class="dg-xs">Product &amp; Catalog Man.</text>
+<text x="30" y="211" class="dg-xs">Marketplace Integrations</text>
+<text x="30" y="225" class="dg-xs">Pricing &amp; Promotion</text>
+<text x="30" y="239" class="dg-xs">Commission &amp; Payment</text>
+<text x="30" y="253" class="dg-xs">Performance Tracking</text>
+<text x="150" y="181" class="dg-b">Operator · 3rd party</text>
+<text x="150" y="197" class="dg-xs">Vendor Onboarding</text>
+<text x="150" y="211" class="dg-xs">Seller Portal</text>
+<text x="150" y="225" class="dg-xs">Product Management</text>
+<text x="150" y="239" class="dg-xs">Order &amp; Fulfillment</text>
+<text x="150" y="253" class="dg-xs">Commission &amp; Settlement</text>
+<text x="150" y="267" class="dg-xs">SLA &amp; Performance Mon.</text>
+<!-- OMS -->
+<rect x="270" y="144" width="160" height="186" rx="5" class="dg-red"/>
+<text x="280" y="162" class="dg-h dg-h--w">OMS</text><text x="420" y="162" text-anchor="end" class="dg-xs dg-xs--w">Order Management</text>
+<text x="280" y="181" class="dg-xs dg-xs--w">Enterprise Inventory Man.</text>
+<text x="280" y="195" class="dg-xs dg-xs--w">Safety Stock Man.</text>
+<text x="280" y="209" class="dg-xs dg-xs--w">ATP Man.</text>
+<text x="280" y="223" class="dg-xs dg-xs--w">Reservation &amp; On-Transit Man.</text>
+<text x="280" y="237" class="dg-xs dg-xs--w">Order Orchestration / Sourcing</text>
+<text x="280" y="251" class="dg-xs dg-xs--w">Automated Order Cart Man.</text>
+<text x="280" y="265" class="dg-xs dg-xs--w">Return Man.</text>
+<text x="280" y="279" class="dg-xs dg-xs--w">Refund Man.</text>
+<text x="280" y="293" class="dg-xs dg-xs--w">Customer Notifications</text>
+<text x="280" y="307" class="dg-xs dg-xs--w">Customer Services</text>
+<text x="280" y="323" class="dg-b dg-b--w" style="font-size:9.2px;">tüm kanalların siparişi</text>
+<!-- TMS -->
+<rect x="436" y="144" width="142" height="186" rx="5" class="dg-box"/>
+<text x="446" y="162" class="dg-h">TMS</text><text x="568" y="162" text-anchor="end" class="dg-xs">Transport Man.</text>
+<text x="446" y="181" class="dg-xs">Carrier Integrations / Hub</text>
+<text x="446" y="195" class="dg-xs">Check Out Service</text>
+<text x="446" y="209" class="dg-xs">Dispatch Service</text>
+<text x="446" y="223" class="dg-xs">Labeling Service</text>
+<text x="446" y="237" class="dg-xs">Return Man.</text>
+<text x="446" y="251" class="dg-xs">Tracking &amp; Reporting</text>
+<text x="446" y="265" class="dg-xs">Reconciliation Service</text>
+<text x="446" y="323" class="dg-b" style="font-size:9.2px;">DC · Store · Vendor</text>
+<!-- InStore -->
+<rect x="584" y="144" width="150" height="186" rx="5" class="dg-box"/>
+<text x="594" y="162" class="dg-h">InStore Commerce</text>
+<text x="594" y="181" class="dg-xs">Mobile &amp; Fix POS</text>
+<text x="594" y="195" class="dg-xs">Instore Ordering &amp; Selling</text>
+<text x="594" y="209" class="dg-xs">Card Present Transaction</text>
+<text x="594" y="223" class="dg-xs">Unified Customer View</text>
+<text x="594" y="237" class="dg-xs">Unified Loyalty &amp; Promotions</text>
+<text x="594" y="251" class="dg-xs">Customer Operations</text>
+<text x="594" y="265" class="dg-xs">Cancel &amp; Return Management</text>
+<text x="594" y="323" class="dg-b" style="font-size:9.2px;">Store Associate Experience</text>
+<!-- Omnichannel + Store B2B -->
+<rect x="740" y="144" width="160" height="186" rx="5" class="dg-box"/>
+<text x="750" y="162" class="dg-h">Omnichannel Operations</text>
+<text x="750" y="178" class="dg-xs">Pick, Sort, Pack, Label, Ship</text>
+<text x="750" y="191" class="dg-xs">Click &amp; Collect</text>
+<text x="750" y="204" class="dg-xs">Reserve &amp; Collect</text>
+<text x="750" y="217" class="dg-xs">SFS (Ship From Store)</text>
+<text x="750" y="230" class="dg-xs">Transfer &amp; Hub Ops.</text>
+<text x="750" y="249" class="dg-b">Store B2B Operations</text>
+<text x="750" y="263" class="dg-xs">Goods Receipt &amp; Dispatch</text>
+<text x="750" y="276" class="dg-xs">Stock Counting</text>
+<text x="750" y="289" class="dg-xs">Warehouse &amp; Shelf Man.</text>
+<text x="750" y="302" class="dg-xs">Label Printing</text>
+<text x="750" y="315" class="dg-xs">Transfers · Replenishment</text>
+<!-- Kaynaklar -->
+<text x="20" y="348" class="dg-zone">STOK VE FULFILLMENT KAYNAKLARI</text>
+<rect x="20" y="355" width="214" height="36" rx="5" class="dg-bone"/><text x="127" y="371" text-anchor="middle" class="dg-h">Central Distribution Center</text><text x="127" y="384" text-anchor="middle" class="dg-xs">ebebek · ana stok</text>
+<rect x="242" y="355" width="214" height="36" rx="5" class="dg-bone"/><text x="349" y="371" text-anchor="middle" class="dg-h">E-Commerce Warehouse</text><text x="349" y="384" text-anchor="middle" class="dg-xs">online sipariş karşılama</text>
+<rect x="464" y="355" width="214" height="36" rx="5" class="dg-bone"/><text x="571" y="371" text-anchor="middle" class="dg-h">Physical Store Inventories</text><text x="571" y="384" text-anchor="middle" class="dg-xs">tüm mağazalar</text>
+<rect x="686" y="355" width="214" height="36" rx="5" class="dg-bone"/><text x="793" y="371" text-anchor="middle" class="dg-h">Vendor Warehouses</text><text x="793" y="384" text-anchor="middle" class="dg-xs">pazaryeri vendor'ları · 3rd party</text>
+<!-- ComHub alt -->
+<rect x="20" y="397" width="880" height="30" rx="5" class="dg-ink"/>
+<text x="32" y="417" class="dg-h dg-h--w">ComHub · Integration &amp; Orchestration</text>
+<text x="888" y="417" text-anchor="end" class="dg-xs dg-xs--w">tek entegrasyon ve orkestrasyon platformu · aynı hub'ın dış sistem bağlantı noktası</text>
+<!-- Dış sistemler -->
+<text x="20" y="454" class="dg-zone">DIŞ SİSTEMLER · EBEBEK'TE KALIR</text>
+<g>
+<rect x="20" y="461" width="104" height="46" rx="5" class="dg-box"/><text x="72" y="480" text-anchor="middle" class="dg-h">ERP</text><text x="72" y="496" text-anchor="middle" class="dg-xs">ürün · fiyat · finans</text>
+<rect x="131" y="461" width="104" height="46" rx="5" class="dg-box"/><text x="183" y="480" text-anchor="middle" class="dg-h">WMS</text><text x="183" y="496" text-anchor="middle" class="dg-xs">depo yönetimi</text>
+<rect x="242" y="461" width="104" height="46" rx="5" class="dg-box"/><text x="294" y="480" text-anchor="middle" class="dg-h">POS</text><text x="294" y="496" text-anchor="middle" class="dg-xs">mağaza operasyonu</text>
+<rect x="353" y="461" width="104" height="46" rx="5" class="dg-box"/><text x="405" y="480" text-anchor="middle" class="dg-h">Finance</text><text x="405" y="496" text-anchor="middle" class="dg-xs">fatura · ödeme</text>
+<rect x="464" y="461" width="104" height="46" rx="5" class="dg-box"/><text x="516" y="480" text-anchor="middle" class="dg-h">CRM</text><text x="516" y="496" text-anchor="middle" class="dg-xs">müşteri yönetimi</text>
+<rect x="575" y="461" width="104" height="46" rx="5" class="dg-box"/><text x="627" y="480" text-anchor="middle" class="dg-h">Marketplaces</text><text x="627" y="496" text-anchor="middle" class="dg-xs">TY · HB · N11 · Amazon</text>
+<rect x="686" y="461" width="104" height="46" rx="5" class="dg-box"/><text x="738" y="480" text-anchor="middle" class="dg-h">Carriers</text><text x="738" y="496" text-anchor="middle" class="dg-xs">tüm lojistik firmaları</text>
+<rect x="797" y="461" width="103" height="46" rx="5" class="dg-box"/><text x="848.5" y="480" text-anchor="middle" class="dg-h">Diğer</text><text x="848.5" y="496" text-anchor="middle" class="dg-xs">BI · raporlama</text>
+</g>
+<!-- Dikey bağlantılar -->
+<line x1="79.5" y1="68" x2="79.5" y2="85" class="dg-line"/><line x1="206.5" y1="68" x2="206.5" y2="85" class="dg-line"/><line x1="333.5" y1="68" x2="333.5" y2="85" class="dg-line"/><line x1="460.5" y1="68" x2="460.5" y2="85" class="dg-line"/><line x1="587.5" y1="68" x2="587.5" y2="85" class="dg-line"/><line x1="714.5" y1="68" x2="714.5" y2="85" class="dg-line"/><line x1="841" y1="68" x2="841" y2="85" class="dg-line"/>
+<line x1="350" y1="119" x2="350" y2="144" class="dg-line"/><line x1="507" y1="119" x2="507" y2="144" class="dg-line"/><line x1="659" y1="119" x2="659" y2="144" class="dg-line"/><line x1="820" y1="119" x2="820" y2="144" class="dg-line"/><line x1="142" y1="119" x2="142" y2="144" class="dg-line"/>
+<line x1="350" y1="330" x2="350" y2="355" class="dg-line"/><line x1="571" y1="330" x2="571" y2="355" class="dg-line"/><line x1="793" y1="330" x2="793" y2="355" class="dg-line"/><line x1="127" y1="330" x2="127" y2="355" class="dg-line"/>
+<line x1="72" y1="427" x2="72" y2="461" class="dg-line"/><line x1="183" y1="427" x2="183" y2="461" class="dg-line"/><line x1="294" y1="427" x2="294" y2="461" class="dg-line"/><line x1="405" y1="427" x2="405" y2="461" class="dg-line"/><line x1="516" y1="427" x2="516" y2="461" class="dg-line"/><line x1="627" y1="427" x2="627" y2="461" class="dg-line"/><line x1="738" y1="427" x2="738" y2="461" class="dg-line"/><line x1="848.5" y1="427" x2="848.5" y2="461" class="dg-line"/>
+<!-- Control Tower -->
+<rect x="924" y="22" width="196" height="485" rx="8" class="dg-box" style="stroke:#d02c2f; stroke-width:1.8;"/>
+<text x="1022" y="46" text-anchor="middle" class="dg-t">Control Tower</text>
+<text x="1022" y="62" text-anchor="middle" class="dg-xs">End-to-end visibility</text>
+<text x="1022" y="75" text-anchor="middle" class="dg-xs">&amp; operational monitoring</text>
+<line x1="938" y1="88" x2="1106" y2="88" stroke="#e4e1da" stroke-width="1"/>
+<text x="938" y="108" class="dg-b">Sales Channel Monitoring</text>
+<text x="938" y="124" class="dg-xs">Channel Health</text>
+<text x="938" y="138" class="dg-xs">API &amp; Integration Status</text>
+<text x="938" y="152" class="dg-xs">Order Flow Monitoring</text>
+<text x="938" y="182" class="dg-b">Application Monitoring</text>
+<text x="938" y="198" class="dg-xs">OMS · TMS · Marketplace</text>
+<text x="938" y="212" class="dg-xs">InStore · Omnichannel</text>
+<text x="938" y="226" class="dg-xs">Performance &amp; SLA</text>
+<text x="938" y="240" class="dg-xs">Business KPIs &amp; Dashboards</text>
+<text x="938" y="270" class="dg-b">External System Monitoring</text>
+<text x="938" y="286" class="dg-xs">ERP · WMS · POS · Carriers</text>
+<text x="938" y="300" class="dg-xs">Marketplace Integrations</text>
+<text x="938" y="314" class="dg-xs">Error Handling &amp; Alerts</text>
+<rect x="938" y="340" width="168" height="44" rx="5" class="dg-bone"/><text x="1022" y="359" text-anchor="middle" class="dg-b">Proactive Alerts</text><text x="1022" y="374" text-anchor="middle" class="dg-xs">&amp; Anomaly Detection</text>
+<rect x="938" y="394" width="168" height="44" rx="5" class="dg-bone"/><text x="1022" y="413" text-anchor="middle" class="dg-b">Real-time Reporting</text><text x="1022" y="428" text-anchor="middle" class="dg-xs">&amp; SLA Tracking</text>
+<text x="1022" y="462" text-anchor="middle" class="dg-xs">Kırmızı çerçeve: Commerce LAB</text>
+<text x="1022" y="475" text-anchor="middle" class="dg-xs">ürün kapsamı · kesikli çizgi:</text>
+<text x="1022" y="488" text-anchor="middle" class="dg-xs">izleme ve telemetri</text>
+<line x1="900" y1="45" x2="924" y2="45" class="dg-dash"/><line x1="907" y1="102" x2="924" y2="102" class="dg-dash"/><line x1="907" y1="237" x2="924" y2="237" class="dg-dash"/><line x1="907" y1="373" x2="924" y2="373" class="dg-dash"/><line x1="907" y1="412" x2="924" y2="412" class="dg-dash"/><line x1="900" y1="484" x2="924" y2="484" class="dg-dash"/>
+</svg>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">15 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">OMS · Order Management System</span>
+<h2 class="slide-title">Siparişin tüm yaşam döngüsü, <span class="accent">tek stok görünümü</span></h2>
+<div class="two-col" style="flex:1; align-content:center; grid-template-columns:0.9fr 1.1fr;">
+<div style="display:flex; flex-direction:column; gap:1.2cqh;">
+<div class="card"><div class="ix">Nedir</div><p>Sipariş girişinden stok yönetimine, sipariş takibinden ERP ve diğer kurumsal sistemlerle entegrasyona kadar tüm sipariş sürecini otomatikleştirir.</p></div>
+<div class="card"><div class="ix">Neden farklı</div><p>Çok depolu yapı, adaptif gerçek zamanlı envanter yönetimi ve dinamik sourcing ve allocation algoritmaları aynı üründe.</p></div>
+<div class="card card--dark"><div class="ix">Etki</div><p>OMS uygulaması, sipariş doğruluğundaki iyileşmeyle satış gelirinde %10–20 artış sağlayabilir.</p></div>
+</div>
+<div>
+<div class="hdr-sub">Topolojideki on yetkinlik</div>
+<table class="xtable xtable--xdense">
+<tbody>
+<tr><td>Enterprise Inventory Man.</td><td>Depo, mağaza ve vendor stoklarının tek görünümü</td></tr>
+<tr><td>Safety Stock Man.</td><td>Depo grubu × ürün hiyerarşisi × kanal bazında emniyet stoku</td></tr>
+<tr><td>ATP Man.</td><td>Kanala uygun satılabilir stok hesabı</td></tr>
+<tr><td>Reservation &amp; On-Transit Man.</td><td>Rezervasyon ve yoldaki siparişlerin stok etkisi</td></tr>
+<tr><td>Order Orchestration / Sourcing</td><td>Siparişi en doğru kaynağa, en az paketle atama</td></tr>
+<tr><td>Automated Order Cart Man.</td><td>Auto cancel, re-sourcing, split ve kısmi sevkiyat</td></tr>
+<tr><td>Return Man.</td><td>İade talebi, RMA, iade paketi onayı</td></tr>
+<tr><td>Refund Man.</td><td>Satır bazında geri ödeme hesabı, otomatik ve manuel iade</td></tr>
+<tr><td>Customer Notifications</td><td>Sipariş, statü, iptal ve iade bildirimleri; webhook</td></tr>
+<tr><td>Customer Services</td><td>Müşteri hizmetleri için sipariş, paket ve müdahale ekranları</td></tr>
+</tbody>
+</table>
+<p class="ann">ebebek, Marketplace ve omnichannel siparişlerinin tamamını destekler.</p>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">16 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">OMS · Order <span lang="en">Orchestration</span> / <span lang="en">Sourcing</span></span>
+<h2 class="slide-title">Kural değil, <span class="accent">ağırlıklı optimizasyon</span></h2>
+<div class="fill">
+<div class="grid grid-4 compact-cards" style="gap:1.2cqh 1.3cqw;">
+<div class="card"><div class="ix">Kriter 01</div><h3>Maliyet</h3><p>Paket sayısı, kargo maliyeti, mesafe-desi maliyet matrisi, paketleme kaynağı ve sarf.</p></div>
+<div class="card"><div class="ix">Kriter 02</div><h3>Müşteri memnuniyeti</h3><p>Teslimat süresi, tek pakette gönderim, müşteriye yakınlık, teslimat sözü.</p></div>
+<div class="card"><div class="ix">Kriter 03</div><h3>Ürünün fırsat maliyeti</h3><p>Satış hızı ve stok devir skoru: ürün, satılma olasılığı düşük olan lokasyondan çıkar.</p></div>
+<div class="card"><div class="ix">Kriter 04</div><h3>Operasyonel kapasite</h3><p>Mağaza ve depo kapasitesi, iş yükü dengeleme, çalışma saatleri ve cut-off.</p></div>
+</div>
+<div class="flow" style="margin-top:2.2cqh;">
+<div class="node">Sipariş<small>sepet · adres · kanal</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Tüm senaryolar<small>olası kaynak ve paket kombinasyonları</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">Puanlama<small>ebebek'in ağırlıklarıyla skor / maliyet formülü</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--ink">En iyi seçenek<small>700 ms / sipariş</small></div>
+</div>
+<div class="stat-row" style="justify-content:space-between; margin-top:2.4cqh;">
+<div class="stat"><span class="num">700 ms</span><span class="lab">sourcing kararı / sipariş</span></div>
+<div class="stat"><span class="num">~%50</span><span class="lab">daha az paket; çoklu mağaza siparişlerinde</span></div>
+<div class="stat"><span class="num">4</span><span class="lab">kriter; ağırlıkları ebebek belirler, konfigüre edilebilir skor çarpanları</span></div>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">17 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker"><span lang="en">Omnichannel</span> <span lang="en">Operations</span> · Process Management &amp; <span lang="en">Execution</span></span>
+<h2 class="slide-title">Her mağaza bir <span class="accent">mini fulfillment merkezi</span></h2>
+<div class="fill">
+<div class="flow" style="margin-bottom:2.4cqh;">
+<div class="node">Pick<small>mobil uygulamada görev</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Sort<small>koli / kasa bazında ayırma</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Pack<small>toplama sırasında kalite kontrol</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">Label<small>kargo etiketi ve irsaliye</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--ink">Ship<small>kargo teslim tutanağı</small></div>
+</div>
+<div class="grid grid-4 compact-cards" style="gap:1.2cqh 1.3cqw;">
+<div class="card"><div class="ix">SFS · Ship From Store</div><h3>Mağazadan kargo</h3><p>Online sipariş toplama, koli bazlı toplama, kamera ve el terminaliyle barkod okuma, Bluetooth mobil yazıcı, şablonlu CPCL/ZPL baskı, pakette iade etiketi, hediye notu.</p></div>
+<div class="card"><div class="ix">Click &amp; Collect</div><h3>Mağazadan teslim</h3><p>Mağaza ve teslim noktası seçimi, C&amp;C paketinin mağazada kabulü, müşteriye OTP ile teslim, C&amp;C iadeleri.</p></div>
+<div class="card"><div class="ix">Reserve &amp; Collect</div><h3>Mevcut akış korunur</h3><p>Bugün çalışan Reserve &amp; Collect aynı stok ve rezervasyon altyapısına taşınır; rezervasyon süresi ve serbest bırakma kuralları OMS'te.</p></div>
+<div class="card card--dark"><div class="ix">Transfer &amp; Hub Ops.</div><h3>Mağazalar arası akış</h3><p>Omnichannel transfer sevkiyatı, depodan depoya transfer, koli toplama ve transfer gönderimi; mağaza, sipariş için hub görevi görür.</p></div>
+</div>
+<p class="ann" style="margin-top:1.6cqh;">Çok markalı mağaza desteği, mağaza görev yönetimi ve mağaza toplama raporu dahil. İş akışı: sipariş görevi, hazırlama adımları, belge / etiket ve teslim veya transfer teyidi.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">18 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">InStore Commerce · Store <span lang="en">Associate</span> <span lang="en">Experience</span></span>
+<h2 class="slide-title">Endless Aisle: <span class="accent">rafta olmayan</span> da satılır</h2>
+<div class="two-col" style="flex:1; align-content:center; grid-template-columns:1.1fr 0.9fr;">
+<div>
+<table class="xtable xtable--dense">
+<thead><tr><th>Topolojideki yetkinlik</th><th>Ne yapar</th></tr></thead>
+<tbody>
+<tr><td>Mobile &amp; Fix POS</td><td>Mağaza sepeti ve satış ekranı; mobil cihazda ve sabit kasada; mağaza satışı OMS'e kaydedilir</td></tr>
+<tr><td>Instore Ordering &amp; Selling</td><td>Mağazada olmayan ürün için eve teslim siparişi; satılabilir stok kontrolü; teslimat ve fatura adresi, kurumsal fatura</td></tr>
+<tr><td>Card Present Transaction</td><td>Mağazada checkout ödeme akışı; kartla ödeme mağazada alınır; QR ile ödeme</td></tr>
+<tr><td>Unified Customer View</td><td>Müşterinin online ve mağaza siparişleri tek görünümde</td></tr>
+<tr><td>Unified Loyalty &amp; Promotions</td><td>Sepet fiyat ve indirim hesabı ERP / POS kampanyalarıyla; omnichannel fiyat ve promosyon entegrasyonu</td></tr>
+<tr><td>Customer Operations</td><td>Satış temsilcisi atama, mağaza görevi, müşteri işlemleri</td></tr>
+<tr><td>Cancel &amp; Return Management</td><td>Mağazada kısmi veya tam iptal ve iade; iade için sipariş sorgulama</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="card card--dark" style="margin-bottom:1.2cqh;">
+<div class="ix">Platform ve cihazlar</div>
+<ul class="flist flist--tight" style="margin-top:0.3cqh;">
+<li><b>Giriş</b>: şirket / şube seçimi ve PIN; yetkiye göre dinamik menü.</li>
+<li><b>Cihaz</b>: cihaz onayı, cihaz ve kiracı ayarları, uygulama içi güncelleme.</li>
+<li><b>Dayanıklılık</b>: offline yerel veri deposu; API kullanım izleme.</li>
+<li><b>Entegrasyon</b>: port / endpoint entegrasyon motoru, görsel akış editörü.</li>
+</ul>
+</div>
+<div class="card">
+<div class="ix">Kiosk</div>
+<p>InStore kiosk storefront (PWA), kiosk cihaz kaydı ve onayı, hareketsizlik zaman aşımı, kiosktan mağaza görevi. ebebek için kiosk kapsamı Faz 6 keşfinde kararlaştırılır.</p>
+</div>
+</div>
+</div>
+<p class="ann"><b>Yol haritası:</b> gider pusulası baskısı, fatura görüntüleme ve fiş / e-fatura baskısı ile push bildirim planlıdır; mevcut POS, ödeme cihazı ve mali belge altyapısıyla entegrasyon sınırı keşifte netleşir.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">19 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">TMS · <span lang="en">Transportation</span> Management System</span>
+<h2 class="slide-title">30+ kargo, <span class="accent">tek entegrasyon</span></h2>
+<div class="two-col" style="flex:1; align-content:center; grid-template-columns:0.9fr 1.1fr;">
+<div style="display:flex; flex-direction:column; gap:1.2cqh;">
+<div class="card"><div class="ix">Nedir</div><p>Taşıyıcı seçimi, sevkiyat takibi ve performans analitiğini kapsar; OMS ve ERP ile entegre çalışarak kargo maliyetini düşürür, teslimat doğruluğunu artırır.</p></div>
+<div class="card"><div class="ix">Neden farklı</div><p>Çok lokasyondan çıkış, çok lokasyona varış, kısmi sevkiyat ve tek gönderide çok paket desteklenir; başka OMS ve ERP sistemleriyle de çalışır.</p></div>
+<div class="card card--dark"><div class="ix">Etki</div><p>Kargo giderinde %10–20 tasarruf, teslimat performansında %20 iyileşme. Müşterilerimizde toplam maliyette %15–20 üzeri azalma ölçüldü.</p></div>
+</div>
+<div>
+<div class="hdr-sub">Topolojideki yedi yetkinlik</div>
+<table class="xtable xtable--xdense">
+<tbody>
+<tr><td>Carrier Integrations / Hub</td><td>Tüm kargolar için tek noktadan entegrasyon; yeni kargo 2 haftada</td></tr>
+<tr><td>Check Out Service</td><td>Müşteri seçimi: lokasyon, segment ve sepete göre teslimat seçenekleri, fiyat bilgisiyle</td></tr>
+<tr><td>Dispatch Service</td><td>Satıcı seçimi: kural bazlı ve performans bazlı taşıyıcı ataması</td></tr>
+<tr><td>Labeling Service</td><td>Tek etiket çözümü, kendi etiket tasarımı, offline baskı; operasyon durmaz</td></tr>
+<tr><td>Return Management</td><td>RMA: iade kodu, iade alımı, karar kuralları</td></tr>
+<tr><td>Tracking &amp; Reporting</td><td>Statü toplama, takip sayfası, bildirim, raporlar</td></tr>
+<tr><td>Reconciliation Service</td><td>Performans, SLA ve maliyet mutabakatı</td></tr>
+</tbody>
+</table>
+<p class="ann">Tüm fulfillment modellerini destekler: DC, mağaza ve vendor çıkışlı gönderiler. ebebek planında ilk faz: TMS mevcut yapıda 1–1,5 ayda devrede.</p>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">20 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Marketplace Management · Seller</span>
+<h2 class="slide-title">Tüm pazaryerleri, <span class="accent">tek bağlantı</span></h2>
+<div class="two-col" style="flex:1; align-content:center; grid-template-columns:0.9fr 1.1fr;">
+<div style="display:flex; flex-direction:column; gap:1.2cqh;">
+<div class="card"><div class="ix">Nedir</div><p>ebebek'in dış pazaryerlerindeki satışını uçtan uca tek platformda yöneten, pazaryeri operasyonu için gereken stratejik ve operasyonel işleri kapsayan ürün.</p></div>
+<div class="card"><div class="ix">Neden farklı</div><p>Tek noktadan tüm pazaryerlerine en sağlıklı entegrasyon; maksimum ürün bulunurluğu, minimum yok satma ve ceza.</p></div>
+<div class="card card--dark"><div class="ix">Etki</div><p>Commerce LAB altyapısıyla iyi yönetilen pazaryeri operasyonu, alternatiflere göre %35'e varan verimlilik sağlayabilir.</p></div>
+</div>
+<div>
+<div class="hdr-sub">Topolojideki beş yetkinlik ve fazlası</div>
+<ul class="flist flist--tight">
+<li><b>Product &amp; Catalog Management</b>: ürün gönderimi, kategori ve nitelik eşleme; ürün seviyesinde tanım gerekmez.</li>
+<li><b>Marketplace Integrations</b>: 13 pazaryeri; sipariş, iptal, iade, paket bölme, kargo ve depo değişimi.</li>
+<li><b>Pricing &amp; Promotion</b>: fiyat grubuna göre kanal fiyatı, fiyat eşiği onayı, buybox kontrolü.</li>
+<li><b>Commission &amp; Payment Management</b>: pazaryeri cari hesap ve hakediş kayıtları, hakediş mutabakatı.</li>
+<li><b>Performance Tracking</b>: kanal bazında aktif / kapalı ürün, gecikme ve iptal raporları.</li>
+<li><b>Dynamic API call</b>: sipariş, stok, fiyat ve ürün hızına göre çağrı sıklığı; kritik stokta 1,2 sn.</li>
+<li><b>Auto Fix Layer</b>: stok, fiyat, sipariş, ürün ve statü farklarını tespit eder, bildirir, düzeltir.</li>
+<li><b>Detailed Reconciliation</b>: gecikme, iptal, ödeme ve iade mutabakatı.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">21 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Intelligent PIM · AI ile pazaryeri mapping</span>
+<h2 class="slide-title">Pazaryeri eşlemesini <span class="accent">AI önerir</span>, ekip onaylar</h2>
+<div class="fill">
+<div class="flow" style="margin-bottom:1.6cqh;">
+<div class="node">PIM ürünü<small>kategori · nitelik · görsel</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Aday bulma<small>pazaryeri taksonomisinde embedding ile</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">AI önerisi<small>kategori, nitelik ve değer eşleme</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Onay<small>güven eşiği üstü otomatik, altı ekipte</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--ink">Kanala yayın<small>uygulama geçmişi kayıtlı</small></div>
+</div>
+<div class="grid grid-3 compact-cards cards-tight" style="gap:1cqh 1.3cqw;">
+<div class="card card--dark"><div class="ix">Kategori eşleme</div><h3>PIM ağacından pazaryeri ağacına</h3><p>PIM kategorileri pazaryeri kategori ağacına model ile eşlenir; toplu iş olarak başlatılır, izlenir, iptal edilir, yeniden önerilir.</p></div>
+<div class="card"><div class="ix">Nitelik ve değer eşleme</div><h3>Zorunlu alanlar kendiliğinden dolar</h3><p>Pazaryerinin nitelik ve değerlerine eşleme önerisi; AI çıktısı izin verilen değerlere normalize edilir, eşleşmeyen onaya düşer.</p></div>
+<div class="card"><div class="ix">Alias sözlüğü</div><h3>Bir kez öğrenir, hep hatırlar</h3><p>AI etiketleri PIM niteliklerine kalıcı alias ile bağlanır; gerekirse yeni PIM niteliği oluşturulur. Her yeni pazaryerinde eşleme daha az iş ister.</p></div>
+<div class="card"><div class="ix">Görselden nitelik</div><h3>Fotoğraftan ürün kartı</h3><p>Görsel hattı: tespit, kategorize, çıkar, normalize, içerik üret. Tek ürün için anlık ya da toplu iş olarak; satır satır seçim.</p></div>
+<div class="card"><div class="ix">İçerik üretimi</div><h3>Açıklama, başlık, SEO, çeviri</h3><p>Ürün verisi ve görsellerden açıklama üretir, mevcut metni iyileştirir ya da çevirir; başlık, kısa açıklama ve SEO anahtar kelimeleri.</p></div>
+<div class="card"><div class="ix">Kontrol</div><h3>Onay akışı ve güven eşiği</h3><p>Öneriler konsolda onaylanır ya da reddedilir, seçilenler tek seferde uygulanır. Güven eşiği (0,95 / 0,90 / 0,80) üstü öneriler otomatik onaylanabilir; varsayılan kapalı.</p></div>
+</div>
+<p class="ann" style="margin-top:1.4cqh;">Faz 3'teki "MP mappings" işi bu akışla yürür; ekip yalnızca istisnaları yönetir. Nitelik eşleme önerisinin bir bölümü bugün kısmi kapsamdadır.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">22 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Marketplace Management · Operator · opsiyonel faz</span>
+<h2 class="slide-title">Vendor ağı da <span class="accent">aynı omurgada</span></h2>
+<div class="two-col" style="flex:1; align-content:center; grid-template-columns:0.85fr 1.15fr;">
+<div style="display:flex; flex-direction:column; gap:1.2cqh;">
+<div class="card"><div class="ix">Nedir</div><p>Üçüncü taraf vendor'ları ebebek'in satış ekosistemine dahil eden, çok satıcılı pazaryerini kurup işletmek için gereken operasyonu yöneten ürün.</p></div>
+<div class="card"><div class="ix">Neden farklı</div><p>Karmaşık, çok satıcılı ticaret ortamları için esnek ve composable mimari; vendor siparişi ve stoku OMS ve TMS ile aynı akışta.</p></div>
+<div class="card card--dark"><div class="ix">Etki</div><p>GMV büyümesi, daha geniş ürün gamı, stok maliyeti olmadan katalog; müşteri yaşam boyu değeri ve dönüşüm artışı.</p></div>
+</div>
+<div>
+<table class="xtable xtable--xdense">
+<thead><tr><th>Topolojideki yetkinlik</th><th>Ne yapar</th></tr></thead>
+<tbody>
+<tr><td>Vendor Onboarding</td><td>Bayi başvuru formu, satıcı kaydı, sözleşme ve doküman, lokasyon, iletişim ve kullanıcılar, alt tedarikçiler, kargo anlaşmaları</td></tr>
+<tr><td>Seller Portal</td><td>Dashboard, ürün listesi ve düzenleme, toplu ürün ve stok yükleme, sipariş ve paket yönetimi, iptal talepleri, iade paketleri, raporlar, destek talepleri, duyurular</td></tr>
+<tr><td>Product Management</td><td>Satıcı ürün onay havuzu, onay ve ret, gönderilen ve onaylanan sürüm karşılaştırma, satıcı bazlı otomatik onay, fiyat ve değişiklik geçmişi</td></tr>
+<tr><td>Order &amp; Fulfillment Management</td><td>Vendor siparişi ve paketi, drop-ship satırları, satıcı gönderisi ve iade gönderisi TMS'te; satıcı konfigürasyonu TMS'e iletilir</td></tr>
+<tr><td>Commission &amp; Settlement</td><td>Satıcı komisyon oranı; hakediş ve settlement süreçleri</td></tr>
+<tr><td>SLA &amp; Performance Monitoring</td><td>Sipariş çekmeyen satıcı kontrolü, satıcı dashboard verisi, gecikme ve iptal izleme</td></tr>
+</tbody>
+</table>
+<p class="ann">Seller API'leri Trendyol uyumludur; vendor kendi entegratörüyle bağlanabilir. Komisyon ve settlement'ın ebebek finans süreçlerine uyarlanması opsiyonel fazın keşif konusudur.</p>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">23 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">ComHub · <span lang="en">Integration</span> &amp; <span lang="en">Orchestration</span></span>
+<h2 class="slide-title">Kanallar ve sistemler için <span class="accent">tek hub</span></h2>
+<div class="two-col" style="flex:1; align-content:center; grid-template-columns:0.9fr 1.1fr;">
+<div style="display:flex; flex-direction:column; gap:1.2cqh;">
+<div class="card"><div class="ix">Nedir</div><p>API entegrasyonlarının seçimden bakıma tüm yaşam döngüsünü yöneten, satış kanalları ile dış sistemleri aynı hub'da birleştiren entegrasyon ve orkestrasyon platformu.</p></div>
+<div class="card"><div class="ix">Neden farklı</div><p>Entegrasyonu yalnızca taşımaz; Auto Fix modülüyle hatayı tespit eder, düzeltir ve bildirir. Event bazlı yapı, scripting ve eşleme konsoldan yönetilir.</p></div>
+<div class="card card--dark"><div class="ix">Etki</div><p>Entegrasyonlarda tek hata noktasını ortadan kaldırmak, satışın %5–10'una varan gelir kaybını önleyebilir.</p></div>
+</div>
+<div>
+<div class="hdr-sub">Topolojideki altı yetkinlik</div>
+<ul class="flist flist--tight">
+<li><b>API Management</b>: kanal ve sistem API'lerinin tek noktadan yönetimi; rate limit, kimlik, loglama.</li>
+<li><b>Channel Connectors</b>: web, uygulama, mağaza ve pazaryeri kanalları için hazır bağlayıcılar.</li>
+<li><b>Data Transformation</b>: alan, değer ve kategori eşleme; otomatik eşleme ve kural sihirbazı.</li>
+<li><b>Process Orchestration</b>: event bazlı kural motoru, workflow ve zamanlanmış işler.</li>
+<li><b>Event Streaming</b>: RabbitMQ kuyrukları, webhook yayını ve abonelik; hızına göre dinamik çağrı sıklığı.</li>
+<li><b>Connector Library</b>: ERP, pazaryeri, kargo ve e-belge için tak-çalıştır entegratör mimarisi.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">24 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Control Tower · End-to-end <span lang="en">visibility</span> &amp; <span lang="en">operational</span> <span lang="en">monitoring</span></span>
+<h2 class="slide-title">Her KPI, her alarm <span class="accent">tek konsolda</span></h2>
+<div class="grid grid-3 compact-cards" style="gap:1.3cqh 1.4cqw;">
+<div class="card"><div class="ix">Sales Channel Monitoring</div><h3>Kanal sağlığı</h3><p>Channel Health · API &amp; Integration Status · Order Flow Monitoring. Kanal karşılaştırma raporu, kanal fiyat ve stok farkı tespiti, canlı stok ve sipariş sorgusu.</p></div>
+<div class="card"><div class="ix">Application Monitoring</div><h3>Uygulama ve iş KPI'ları</h3><p>OMS, TMS, Marketplace · InStore, Omnichannel · Performance &amp; SLA · Business KPIs &amp; Dashboards. Toplama KPI'ı, akış süreleri, iptal ve iade oranı, kaynağı bulunamayan sipariş oranı.</p></div>
+<div class="card"><div class="ix">External System Monitoring</div><h3>Dış sistemler</h3><p>ERP, WMS, POS, Carriers · Marketplace Integrations · Error Handling &amp; Alerts. Entegrasyon mesaj kuralları, kuyruk izleme ve yeniden kuyruğa alma, entegrasyon logları.</p></div>
+</div>
+<div class="two-col" style="margin-top:2cqh; flex:0 1 auto;">
+<div>
+<div class="hdr-sub"><span lang="en">Proactive</span> Alerts &amp; Anomaly <span lang="en">Detection</span></div>
+<ul class="flist flist--tight">
+<li><b>Mismatch kontrol ve auto-fix</b>: stok, sipariş, ürün ve iade farkları; stok ve sipariş farkı otomatik düzeltilir.</li>
+<li><b>Operasyon alarmları</b>: toplanmayan sipariş, toplanıp faturalanmayan, faturalanıp sevk edilmeyen, eksik irsaliye.</li>
+<li><b>Saatlik kritik alarm</b>; alarmda otomatik destek talebi; fark e-posta aboneliği.</li>
+</ul>
+</div>
+<div>
+<div class="hdr-sub"><span lang="en">Real-time</span> <span lang="en">Reporting</span> &amp; SLA <span lang="en">Tracking</span></div>
+<ul class="flist flist--tight">
+<li><b>Günlük SLA raporu</b>, günlük teslimat raporu, taşıyıcı teslim alma zamanlaması.</li>
+<li><b>Operasyon KPI raporları</b>: e-posta ve CSV; kayıtlı raporlar; zamanlanmış rapor e-postası.</li>
+<li><b>Gözlemlenebilirlik</b>: Grafana panoları, New Relic APM, merkezi log, servis sağlık kontrolleri.</li>
+</ul>
+</div>
+</div>
+<p class="ann">Fiyat farkı kontrolü ve otomatik düzeltmesi ile pazaryeri hakediş mutabakatı bugün kısmi kapsamdadır. ebebek odağı: veri farkını ve kesintiyi müşteri deneyimine yansımadan görünür kılmak.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">25 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">ACOMS · Autonomous Commerce &amp; <span lang="en">Operations</span> Management System</span>
+<h2 class="slide-title">Temel farkımız: KPI'ı <span class="accent">kendisi izleyen ve yöneten</span> operasyon</h2>
+<div class="two-col" style="flex:1; align-content:center; grid-template-columns:1.05fr 0.95fr;">
+<div>
+<p class="body-text" style="font-size:1.22cqw; line-height:1.5;">ACOMS, otonom bir aracın çevresini sürekli algılayıp anlık karar vermesi gibi; ticaret ve operasyonu kesintisiz izleyen, KPI sapmasını yakalayan, aksiyon üreten ve her karardan öğrenen yönetim katmanımızdır. OMS, TMS, Marketplace Management ve PIM'in üzerinde çalışır.</p>
+<div class="hdr-sub" style="margin-top:1.6cqh;">Dört katmanlı karar mimarisi</div>
+<div class="stack suite suite--7 suite--tight" style="margin-top:0 !important;">
+<div class="layer layer--ink"><span class="tag">Autopilot</span><span class="desc">Tüm katmanları koordine eden orkestrasyon; hedefe göre hangi aksiyonun ne zaman çalışacağına karar verir</span></div>
+<div class="layer"><span class="tag">AI / ML</span><span class="desc">Tahmin, anomali tespiti ve adaptasyon; kararların gerekçesini açıklayan yapı</span></div>
+<div class="layer"><span class="tag">Optimizasyon</span><span class="desc">Yöneylem araştırması: kural uzayı içinde en iyi kararı üretir (sourcing, taşıyıcı ataması, stok tahsisi)</span></div>
+<div class="layer"><span class="tag">Kural motoru</span><span class="desc">İş politikaları, yasal kısıtlar ve operasyonel eşikler; tamamen konfigüre edilebilir</span></div>
+</div>
+</div>
+<div>
+<div class="stat-row" style="justify-content:space-between; margin-bottom:1.8cqh;">
+<div class="stat"><span class="num">352</span><span class="lab">KPI, 12 süreç alanında</span></div>
+<div class="stat"><span class="num">54</span><span class="lab">akıllı sistem tanımı</span></div>
+<div class="stat"><span class="num">3</span><span class="lab">otonomi seviyesi</span></div>
+</div>
+<div class="card card--dark" style="margin-bottom:1.2cqh;">
+<div class="ix">Otonomi seviyesi ebebek'in elinde</div>
+<ul class="flist flist--tight" style="margin-top:0.3cqh;">
+<li><b>Danışman</b>: sistem yalnızca öneri üretir.</li>
+<li><b>Yarı otonom</b>: kritik kararlar insan onayından geçer.</li>
+<li><b>Tam otonom</b>: tanımlı sınırlar içinde aksiyon kendiliğinden alınır.</li>
+</ul>
+</div>
+<div class="card">
+<div class="ix">Güvence</div>
+<p>Governance Layer, AI kararlarının iş kuralları ve kısıtlarla uyumunu denetler; her karar gerekçesiyle kayıt altındadır. KPI tabanlı geri besleme döngüsü sonuçları modellere geri taşır.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">26 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">ACOMS · BI ve KPI sistemi</span>
+<h2 class="slide-title">Strateji, KPI, alarm, aksiyon: <span class="accent">tek zincir</span></h2>
+<div class="fill">
+<div class="flow" style="margin-bottom:2.2cqh;">
+<div class="node">Strateji<small>hedef: gelir, gider, kâr, stok devir</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">KPI<small>formül · boyut · hedef · sorumlu ekip</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Rapor ve analitik<small>mukayese · kırılım</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--red">Alarm<small>tetikleyici koşul · frekans</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node">Aksiyon<small>kural · beklenen etki</small></div>
+<div class="arrow">&rarr;</div>
+<div class="node node--ink">Akıllı sistem<small>karar mantığı · öğrenme</small></div>
+</div>
+<div class="two-col two-col--wide" style="flex:0 1 auto; align-content:start;">
+<table class="xtable xtable--xdense">
+<thead><tr><th>Süreç alanı</th><th>KPI</th><th>Örnek göstergeler</th></tr></thead>
+<tbody>
+<tr><td>Lojistik ve operasyon</td><td class="c"><b>70</b></td><td>Perfect Order Rate, Pick Accuracy, teslim süresi, kargo ve depo birim maliyeti</td></tr>
+<tr><td>Envanter yönetimi</td><td class="c"><b>9</b></td><td>Stockout Rate, Stok Doğruluk Oranı, Backorder Rate</td></tr>
+<tr><td>Sevkiyat ve teslimat</td><td class="c"><b>7</b></td><td>On-time Delivery Rate, Lead Time, son kilometre maliyet oranı</td></tr>
+<tr><td>İade süreci</td><td class="c"><b>9</b></td><td>Return Rate, ortalama iade süresi, operasyon kaynaklı iade</td></tr>
+<tr><td>Sipariş alma</td><td class="c"><b>5</b></td><td>Toplam Cancel Item Rate, ödeme onay süresi, tekli sipariş oranı</td></tr>
+<tr><td>Ürün yönetimi ve satış hazırlığı</td><td class="c">36</td><td>Yok satma, Product Availability, Inventory Turnover, ürün aktifleşme süresi</td></tr>
+<tr><td>Satış sonrası ve müşteri deneyimi</td><td class="c">19</td><td>CSAT, FCR, ilk yanıt süresi, şikayet oranı</td></tr>
+<tr><td>Finans ve performans yönetimi</td><td class="c">11</td><td>Kârsız sipariş oranı, operasyonel kâr, mutabakat süresi</td></tr>
+<tr><td>Pazarlama, müşteri yolculuğu, IT</td><td class="c">186</td><td>Dönüşüm, CLV, Core Web Vitals, API hata oranı</td></tr>
+<tr class="total"><td>Toplam</td><td class="c hit">352</td><td></td></tr>
+</tbody>
+</table>
+<div>
+<div class="card card--dark" style="margin-bottom:1.2cqh;">
+<div class="ix">Her KPI'ın kimliği var</div>
+<p>Tanım, formül, kanal, ürün ve platform boyutu, mukayese (dönem, hedef, bütçe), hedef değer, sorumlu ekip, veri kaynağı, alarm adı, tetikleyici koşul ve frekans. KPI tanımsız kalmaz, sahipsiz kalmaz.</p>
+</div>
+<div class="card">
+<div class="ix">Katalog</div>
+<p>42 strateji, 37 alarm, 51 aksiyon kuralı ve 54 akıllı sistem tanımı KPI'larla ilişkili hazır gelir; ebebek hedefleriyle keşifte uyarlanır.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">27 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">ACOMS · otonom yönetim</span>
+<h2 class="slide-title">KPI saptığında <span class="accent">rapor değil, aksiyon</span></h2>
+<table class="xtable xtable--xdense">
+<thead><tr><th>KPI</th><th>Alarm koşulu · örnek</th><th>Aksiyon</th><th>Devreye giren akıllı sistem</th></tr></thead>
+<tbody>
+<tr><td>Stok Doğruluk Oranı</td><td>%98'in altına inerse · günlük</td><td>İlgili lokasyonda acil sayım görevi; emniyet stoku geçici yükseltilir</td><td>Gerçek zamanlı stok anomali tespiti</td></tr>
+<tr><td>Stockout Rate · Kritik Gün Aşımı</td><td>Kritik stok gününe yaklaşılırsa</td><td>Transfer ya da ikmal siparişi önerilir; kanal bazlı stok koruması açılır</td><td>Otomatik stok tamamlama zamanlayıcı · stok transfer tahminleyici</td></tr>
+<tr><td>Kargo Zamanında Teslim %</td><td>Taşıyıcı × bölge hedefin altına düşerse</td><td>Dispatch kuralında taşıyıcı önceliği ve kotası değişir</td><td>Dinamik kargo firması atama motoru</td></tr>
+<tr><td>Toplam Fatura Başı Kargo Maliyeti</td><td>Hedefin üzerine çıkarsa</td><td>Sourcing ağırlıkları ve konsolidasyon simüle edilir, yeni ağırlık önerilir</td><td>Coğrafi bazlı lojistik optimizasyonu</td></tr>
+<tr><td>Kaynağı Bulunamayan Sipariş Oranı</td><td>Eşiği aşarsa · saatlik</td><td>Kapalı kaynaklar ve emniyet kuralları gözden geçirilir; re-sourcing tetiklenir</td><td>Kaçan satış tahmin ve önleme sistemi</td></tr>
+<tr><td>Mağaza Görev Ret Oranı</td><td>Mağaza bazında eşik üstü</td><td>Mağaza kapasitesi düşürülür, stok doğruluğu denetimi açılır</td><td>Mağaza kapasite ve iş yükü dengeleme</td></tr>
+<tr><td>Warehouse Utilization Rate</td><td>%95'i geçerse · günlük</td><td>Düşük hareketli stok için transfer planı</td><td>Depo yerleşim optimizasyon motoru</td></tr>
+<tr><td>Return Rate · Operasyon Kaynaklı İade %</td><td>Kategori bazında hedef üstü</td><td>Riskli siparişler işaretlenir; iade en hızlı çözüm kanalına yönlenir</td><td>İade oranı azaltma modeli · dinamik iade yönlendirme</td></tr>
+<tr><td>Pazaryeri Stok Kaynaklı İptal %</td><td>Kanal bazında eşik üstü</td><td>Kanal emniyet stoku yükselir; fark otomatik düzeltilir</td><td>Mismatch kontrol ve auto-fix</td></tr>
+</tbody>
+</table>
+<p class="ann">Örnek zincirlerdir; eşikler, frekans ve otonomi seviyesi (öneri, onaylı, otomatik) her alarm için ayrı ayarlanır. ebebek projesinde KPI seti ve alarmlar ilk fazlardan itibaren baz ölçümle devreye girer; aksiyonlar danışman modunda başlar, güven oluştukça otonomi artırılır.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">28 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">ACOMS · AI agent'ları · yol haritası</span>
+<h2 class="slide-title">OMS, TMS ve Marketplace kararlarını <span class="accent">agent'lar</span> alacak</h2>
+<table class="xtable xtable--xxdense">
+<colgroup><col style="width:7%;" /><col style="width:17%;" /><col style="width:30%;" /><col /><col style="width:11%;" /></colgroup>
+<thead><tr><th>Ürün</th><th>Agent</th><th>Neyi izler</th><th>Hangi kararı alır</th><th>Başlangıç modu</th></tr></thead>
+<tbody>
+<tr><td>OMS</td><td><b>Sourcing Agent</b></td><td>Sipariş başına paket, teslim süresi, kargo maliyeti</td><td>Sourcing ağırlıklarını simüle eder, strateji değişikliği önerir ya da uygular</td><td>Danışman</td></tr>
+<tr><td>OMS</td><td><b>Inventory Agent</b></td><td>Yok satma, stok doğruluğu, kritik gün, pasif stok</td><td>Emniyet stoku kuralı, transfer ve ikmal; stok anomalisinde sayım görevi</td><td>Yarı otonom</td></tr>
+<tr><td>OMS</td><td><b>Order Exception Agent</b></td><td>Bekleyen, geciken ve kaynağı bulunamayan siparişler</td><td>Re-sourcing, kısmi sevkiyat ya da iptal; kök nedeni açıklar</td><td>Yarı otonom</td></tr>
+<tr><td>OMS</td><td><b>Store Fulfillment Agent</b></td><td>Mağaza hazırlama süresi, ret oranı, iş yükü</td><td>Mağaza kapasitesini ve görev dağılımını ayarlar; mağazaya yol gösterir</td><td>Danışman</td></tr>
+<tr><td>OMS</td><td><b>Return &amp; Refund Agent</b></td><td>İade talepleri, geri ödeme süresi, iade nedenleri</td><td>İade onayı ve yönlendirmesi, uygun geri ödemeleri toplu onaya sunar</td><td>Yarı otonom</td></tr>
+<tr><td>TMS</td><td><b>Carrier Dispatch Agent</b></td><td>Taşıyıcı SLA uyumu, maliyet, kota doluluğu</td><td>Taşıyıcı önceliği, kota ve kara liste değişikliği</td><td>Yarı otonom</td></tr>
+<tr><td>TMS</td><td><b>Shipment Tracking Agent</b></td><td>Yoldaki gönderiler, gecikme riski, sorunlu kargo</td><td>Gecikmeyi öngörür; müşteriyi bilgilendirir, yeniden atar ya da eskale eder</td><td>Otonom</td></tr>
+<tr><td>TMS</td><td><b>Freight Reconciliation Agent</b></td><td>Kargo faturaları, desi ve ücret farkları</td><td>Faturayı beklenen maliyetle eşleştirir, farkı itiraz listesine alır</td><td>Otonom</td></tr>
+<tr><td>MP</td><td><b>Listing &amp; Mapping Agent</b></td><td>Yeni ve reddedilen ürünler, eksik zorunlu alanlar</td><td>Kategori, nitelik ve değer eşlemesini kurar; reddi düzeltip yeniden gönderir</td><td>Yarı otonom</td></tr>
+<tr><td>MP</td><td><b>Channel Routing Agent</b></td><td>Satış hızı, stok günü, kanal komisyon ve marjı</td><td>Tükenecek best seller ürünü en uygun marjlı kanala yönlendirir</td><td>Danışman</td></tr>
+<tr><td>MP</td><td><b>Marketplace Health Agent</b></td><td>Stok, fiyat ve statü farkları; geç kargolama, ceza riski</td><td>Farkı düzeltir, riskli siparişi öne alır, hakedişi mutabık kılar</td><td>Otonom</td></tr>
+<tr><td>MP</td><td><b>Vendor Performance Agent</b></td><td>Vendor zamanında sevk, iptal, ürün onay kuyruğu</td><td>Vendor'ı uyarır, ürün onayını önceliklendirir, kuralı sıkılaştırır</td><td>Danışman</td></tr>
+<tr><td>Tümü</td><td><b>Operations Analyst Agent</b></td><td>Tüm KPI seti, loglar, Control Tower</td><td>Soruyu yanıtlar, kök neden analizi yapar, ilgili ekibe yönlendirir</td><td>Danışman</td></tr>
+</tbody>
+</table>
+<p class="ann"><b>Yol haritasıdır:</b> agent'lar ACOMS Autopilot üzerinde, kullanıma hazır roller olarak eklenecek; her biri yukarıdaki KPI'ları izler ve yetkisi dahilinde karar alır. Bugün canlı olan temel: MCP olarak yayınlı OMS, PIM ve rapor API'leri, pazaryeri-OMS statü karşılaştırma agent'ı ve destek agent'ı. Devreye alma sırası ve başlangıç modu ebebek ile birlikte belirlenir.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">29 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Örnek sipariş senaryosu</span>
+<h2 class="slide-title">Karma bir sepet, <span class="accent">uçtan uca</span></h2>
+<p class="lead" style="max-width:none;">Bir müşteri ebebek.com'dan üç ürün alıyor: biri depoda, biri yalnızca mağazada, biri vendor ürünü.</p>
+<div class="fill">
+<div class="vsteps">
+<div class="vstep"><span class="n">01</span><span class="t">Sipariş</span><span class="d">ComHub siparişi 1,2 sn'de OMS'e aktarır; stok rezerve edilir, kanallar güncellenir.</span><span class="b">ComHub · OMS</span></div>
+<div class="vstep vstep--ink"><span class="n">02</span><span class="t">Sourcing</span><span class="d">Olası senaryolar puanlanır: depo + en yakın uygun mağaza + vendor; en az paket, en düşük maliyet.</span><span class="b">700 ms</span></div>
+<div class="vstep"><span class="n">03</span><span class="t">Hazırlama</span><span class="d">Depo görevi WMS'e, mağaza görevi mobil uygulamaya, vendor siparişi Seller Portal'a düşer.</span><span class="b">Omnichannel Ops · Operator</span></div>
+<div class="vstep"><span class="n">04</span><span class="t">Taşıyıcı</span><span class="d">TMS her paket için bölge, desi, kota ve performansa göre taşıyıcıyı seçer; orijinal etiket basılır.</span><span class="b">TMS · Dispatch · Label</span></div>
+<div class="vstep"><span class="n">05</span><span class="t">Takip</span><span class="d">Paket statüleri birlikte izlenir; müşteriye bildirim, kanala statü ve takip numarası gider.</span><span class="b">OMS · TMS</span></div>
+<div class="vstep"><span class="n">06</span><span class="t">İade</span><span class="d">İade kodu üretilir; mağazaya veya kargoyla iade, satır bazında geri ödeme hesaplanır.</span><span class="b">RMA · Refund</span></div>
+<div class="vstep"><span class="n">07</span><span class="t">Mutabakat</span><span class="d">Kargo maliyeti ve SLA, vendor komisyonu ve pazaryeri hakedişi kontrol edilir.</span><span class="b">Reconciliation</span></div>
+</div>
+<p class="ann" style="margin-top:2cqh;">Tüm adımlar Control Tower'ın izlemesinde: veri farkı ve entegrasyon sorunu müşteriye yansımadan yakalanır. Önerilen demo senaryosudur; karma sepet, bölme ve vendor fulfillment kuralları ebebek iş kurallarıyla doğrulanır.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">30 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Faz planı</span>
+<h2 class="slide-title">İlk kazanım <span class="accent">1–1,5 ayda</span>, mağazalar 4. ayda</h2>
+<div class="fill">
+<div class="gantt gantt--m">
+<div class="gantt__h">Faz</div>
+<div class="gantt__scale"><span style="left:6.25%">1. ay</span><span style="left:18.75%">2. ay</span><span style="left:31.25%">3. ay</span><span style="left:43.75%">4. ay</span><span style="left:56.25%">5. ay</span><span style="left:68.75%">6. ay</span><span style="left:81.25%">7. ay</span><span style="left:93.75%">8. ay</span></div>
+<div class="gantt__name">1 · TMS kullanımı mevcut yapıda<small>hızlı kazanım · 1–1,5. ay</small></div>
+<div class="gantt__track"><div class="gantt__bar gantt__bar--red" style="left:0; width:12.5%;"></div><div class="gantt__bar gantt__bar--range" style="left:12.5%; width:6.25%;"></div></div>
+<div class="gantt__name">2 · DC üzerinden ebebek geçişi<small>ürün, ERP stok ve sipariş entegrasyonu · 2. ay</small></div>
+<div class="gantt__track"><div class="gantt__bar" style="left:0; width:25%;"></div></div>
+<div class="gantt__name">3 · DC üzerinden pazaryerleri geçişi<small>hesap tanımları, MP mappings, Return Operations · 2,5–3. ay</small></div>
+<div class="gantt__track"><div class="gantt__bar" style="left:0; width:31.25%;"></div><div class="gantt__bar gantt__bar--range" style="left:31.25%; width:6.25%;"></div></div>
+<div class="gantt__name">4 · Mağaza açılması · ebebek<small>mağaza stok entegrasyonu, transfer, SFS, split, omnichannel · 4. ay</small></div>
+<div class="gantt__track"><div class="gantt__bar" style="left:0; width:50%;"></div></div>
+<div class="gantt__name">5 · Mağaza açılması · pazaryerleri<small>transfer, intelligent inventory allocation, SFS, split · 5. ay</small></div>
+<div class="gantt__track"><div class="gantt__bar" style="left:0; width:62.5%;"></div></div>
+<div class="gantt__name">6 · InStore Commerce geçişi<small>Mobile POS, Endless Aisle, omnichannel fiyat ve promosyon · 6. ay</small></div>
+<div class="gantt__track"><div class="gantt__bar" style="left:0; width:75%;"></div></div>
+<div class="gantt__name">7 · Multi-Vendor · MP Operator<small>opsiyonel · 8. ay</small></div>
+<div class="gantt__track"><div class="gantt__bar gantt__bar--opt" style="left:0; width:100%;"></div></div>
+</div>
+<p class="ann" style="margin-top:2cqh;">Ay ekseni proje başlangıcından itibaren sayılır; çubuğun ucu fazın hedef bitişidir. <b>Taralı bölüm</b> bitiş aralığını (ör. 1–1,5. ay), <b>kesikli çerçeve</b> opsiyonel fazı gösterir. Fazlar paralel yürür; takvim keşif sonunda kampanya dönemleri ve ebebek kaynak planıyla kesinleşir.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">31 / 40</span></div>
+</section>
+
+<!-- BÖLÜM 03 -->
+<section class="slide slide--ink" lang="en">
+<div class="slide__inner" style="justify-content:center;">
+<div class="divider-index">03</div>
+<span class="kicker">About Commerce Lab</span>
+<h2 class="slide-title">Who we are and who runs on us</h2>
+<p class="lead">A team that ran e-commerce and IT at Türkiye's largest retailers, now building the platform they always wanted to buy.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">32 / 40</span></div>
+</section>
+
+<section class="slide" lang="en">
+    <div class="slide__inner">
+      <span class="kicker">Who we are</span>
+      <h2 class="slide-title">One platform to sell, fulfil and <span class="accent">operate</span></h2>
+      <div class="two-col two-col--wide" style="flex:1; align-content:center;">
+        <div>
+          <p class="body-text">CommerceLab is the operating system for enterprise commerce: every sales channel, every business model and the operations behind them, on a single cloud platform.</p>
+          <ul class="flist flist--tight" style="margin-top:1.4cqh;">
+            <li><b>Vision:</b> the platform enterprises choose when commerce and operations have to work as one.</li>
+            <li><b>Mission:</b> grow our customers' sales while taking cost out of every order.</li>
+            <li><b>Company:</b> Commerce Lab E-Ticaret Çözümleri A.Ş. · two headquarters: Çanakkale Technopark and İstanbul (Windowist Tower, Maslak) · a software product company run by its co-founders.</li>
+          </ul>
+        </div>
+        <div class="stat-row" style="flex-direction:column; gap:2cqh;">
+          <div class="stat"><span class="num">30+</span><span class="lab">specialists; experience at 100+ leading retailers in Türkiye</span></div>
+          <div class="stat"><span class="num">50K+</span><span class="lab">orders a day; $400M+ annual commerce volume (GMV) through the platform</span></div>
+          <div class="stat"><span class="num">1B+</span><span class="lab">API requests a month; 99.99%+ availability · response time under 500 ms</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">33 / 40</span>
+    </div>
+  </section>
+<section class="slide" lang="en">
+    <div class="slide__inner">
+      <span class="kicker">Positioning</span>
+      <h2 class="slide-title">What sets us <span class="accent">apart</span></h2>
+      <div class="grid grid-3 compact-cards" style="flex:1; align-content:center; gap:1.4cqh 1.6cqw;">
+        <div class="card"><div class="ix">01</div><h3>The whole stack</h3><p>Storefront to last mile on one platform. The module you skip today switches on tomorrow: no new vendor, no new integration.</p></div>
+        <div class="card"><div class="ix">02</div><h3>Built by operators</h3><p>We ran e-commerce and IT at Boyner, Beymen, Koton and Demsa. Every product decision comes from having done the job.</p></div>
+        <div class="card card--dark"><div class="ix">03</div><h3>Sales meets operations</h3><p>Most platforms stop at the order. Ours starts there: inventory, sourcing, stores and carriers answer to the same sales goal.</p></div>
+        <div class="card"><div class="ix">04</div><h3>Your team, not a ticket queue</h3><p>We work as your digital IT department. Custom needs get built, not quoted; every sprint ends in a business result you can measure.</p></div>
+        <div class="card"><div class="ix">05</div><h3>No lock-in</h3><p>Open APIs, full export, no version maze. Your data and URLs are yours on day one and on the last day.</p></div>
+        <div class="card"><div class="ix">06</div><h3>AI that does the work</h3><p>In the product: AI PIM, semantic search, agents. In how we build: AI-assisted code, tests and review. ACOMS takes it further, to operations that manage themselves.</p></div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">34 / 40</span>
+    </div>
+  </section>
+<section class="slide" lang="en">
+    <div class="slide__inner">
+      <span class="kicker">Reference customers</span>
+      <h2 class="slide-title">The brands that <span class="accent">run on it</span></h2>
+      <div class="logowall">
+        <div class="cell"><img src="logos/skechers.svg" alt="Skechers" /></div>
+        <div class="cell"><img src="logos/sochic.jpg" alt="So Chic" /></div>
+        <div class="cell"><img src="logos/highfive.svg" alt="HighFive" /></div>
+        <div class="cell"><img src="logos/klaud.svg" alt="Klaud" /></div>
+        <div class="cell"><img src="logos/hunter.svg" alt="Hunter" /></div>
+        <div class="cell"><img src="logos/gracebrands.svg" alt="Grace Brands" /></div>
+        <div class="cell"><img src="logos/brooks.png" alt="Brooks" /></div>
+        <div class="cell"><img src="logos/decathlon.png" alt="Decathlon" /></div>
+        <div class="cell"><img src="logos/asics.png" alt="Asics" /></div>
+        <div class="cell"><img src="logos/a101.png" alt="A101" /></div>
+        <div class="cell"><img src="logos/madamecoco.svg" alt="Madame Coco" /></div>
+        <div class="cell"><img src="logos/kfc.png" alt="KFC" /></div>
+        <div class="cell"><img src="logos/pidem.svg" alt="Pidem" /></div>
+        <div class="cell"><img src="logos/hdholding.svg" alt="HD Holding" /></div>
+        <div class="cell"><img src="logos/mrdiy.svg" alt="MR.DIY" /></div>
+        <div class="cell"><img src="logos/stevemadden.png" alt="Steve Madden" /></div>
+        <div class="cell"><img src="logos/on.png" alt="On" /></div>
+        <div class="cell"><img src="logos/civil.png" alt="Civil" /></div>
+      </div>
+      <p class="note" style="margin-top:1.2cqh;"><b>A reference table</b> (brand, country/sector, scope, go-live, contact person) and customer disclosure permissions are provided in a separate attachment. Global brands' Türkiye operations, multi-brand groups and marketplace sellers run on the same multi-tenant platform.</p>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">35 / 40</span>
+    </div>
+  </section>
+<section class="slide" lang="en">
+    <div class="slide__inner">
+      <span class="kicker">Leadership team</span>
+      <h2 class="slide-title">Hands-on leadership, <span class="accent">30+ engineers</span></h2>
+      <div class="grid grid-3 team-grid">
+        <div class="card team-card">
+          <div class="name">Onur Kemer</div><div class="role">Co-founder · CEO</div>
+          <ul class="tlist"><li><b>25 years</b> of industry experience</li><li>Built and led IT and e-commerce departments at Boyner, Demsa and Koton</li><li>Led Boyner Software and Business Development</li><li>ERP and production-planning engineering (iCron, Ariva)</li></ul>
+          <div class="edu">YTÜ Computer Engineering, 2002</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">İsmail Danacı</div><div class="role">Co-founder · CTO</div>
+          <ul class="tlist"><li><b>20 years</b> of industry experience</li><li>Built the CommerceLab e-commerce platform (v1)</li><li>Boyner and Koton e-commerce infrastructure</li><li>Boyner POS systems · ERP engineering (Bilteks)</li></ul>
+          <div class="edu">Sakarya University, Computer Programming, 2008</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">Arif Kula</div><div class="role">CPO · Chief Product Officer</div>
+          <ul class="tlist"><li><b>32 years</b> of industry experience</li><li>Boyner CTO (3 yrs) · Beymen CTO (12 yrs)</li><li>Boyner IT Manager (8 yrs)</li><li>DorukNet, software engineer (4 yrs)</li></ul>
+          <div class="edu">İTÜ Mathematics Engineering, 1992</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">Hakan Gürses</div><div class="role">Software Development Manager · Architect</div>
+          <ul class="tlist"><li><b>21 years</b> of experience</li><li>Built the CommerceLab e-commerce platform (v1)</li><li>Marketplace integration platform (Altınyıldız)</li><li>Boyner CRM · Medical Park stream data processing</li></ul>
+          <div class="edu">Yeditepe Computer Eng., 2005 · Doğuş Univ. PhD, 2014</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">Faruk Öksüz</div><div class="role">Software Development Manager · Architect</div>
+          <ul class="tlist"><li><b>30 years</b> of industry experience</li><li>IBM POS systems, Software Development Director (14 yrs)</li><li>Campaign systems · loyalty · distributed data</li><li>Pfizer software manager</li></ul>
+          <div class="edu">ODTÜ Computer Engineering, 1999</div>
+        </div>
+        <div class="card team-card">
+          <div class="name">Gökhan Koçak</div><div class="role">Software Development Manager · Architect</div>
+          <ul class="tlist"><li><b>22 years</b> of experience</li><li>Built the CommerceLab e-commerce platform (v1)</li><li>5px Software &amp; Project, co-founder</li><li>RND E-Commerce Solutions CTO · launched 30 e-commerce systems</li></ul>
+          <div class="edu">Uludağ University, 2004</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span>
+      <span class="conf">Gizli</span>
+      <span class="slide__no">36 / 40</span>
+    </div>
+  </section>
+
+<!-- BÖLÜM 04 -->
+<section class="slide slide--ink">
+<div class="slide__inner" style="justify-content:center;">
+<div class="divider-index">04</div>
+<span class="kicker">Ticari teklif</span>
+<h2 class="slide-title">Ticari teklif</h2>
+<p class="lead">Tek seferlik proje bedeli, ürün bazında aylık bedeller ve 3 yıllık toplam sahip olma maliyeti.</p>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">37 / 40</span></div>
+</section>
+
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Proje bedeli · tek seferlik</span>
+<h2 class="slide-title">Proje bedeli <span class="accent">faz bazında</span>, her faz kendi kabul kapısıyla</h2>
+<div class="fill">
+<table class="xtable xtable--xdense">
+<thead><tr><th>#</th><th>Ürün ve hizmet</th><th>Faz</th><th>Teklif</th><th>Açıklama</th></tr></thead>
+<tbody>
+<tr><td>1.1</td><td><b>TMS</b> kurulum ve taşıyıcı entegrasyonları</td><td>1</td><td><span class="st st--todo">Netleşecek</span></td><td>ebebek taşıyıcı listesi, dispatch kuralları, etiket ve mutabakat</td></tr>
+<tr><td>1.2</td><td><b>OMS</b> uyarlama ve entegrasyon</td><td>2 · 4</td><td><span class="st st--todo">Netleşecek</span></td><td>ERP, WMS ve kanal entegrasyonları; envanter, sourcing ve sipariş akışları</td></tr>
+<tr><td>1.3</td><td><b>Marketplace Management · Seller</b></td><td>3 · 5</td><td><span class="st st--todo">Netleşecek</span></td><td>Hesap tanımları, eşlemeler, iade operasyonu, mağaza stokunun pazaryerine açılması</td></tr>
+<tr><td>1.4</td><td><b>Omnichannel Operations ve Store B2B</b></td><td>4</td><td><span class="st st--todo">Netleşecek</span></td><td>Mağaza stok entegrasyonu, Ship From Store, Click &amp; Collect, transfer; pilot ve yaygınlaştırma</td></tr>
+<tr><td>1.5</td><td><b>InStore Commerce</b></td><td>6</td><td><span class="st st--todo">Netleşecek</span></td><td>Mobile POS, Endless Aisle, POS ile fiyat ve promosyon entegrasyonu</td></tr>
+<tr><td>1.6</td><td><b>ComHub ve Control Tower</b></td><td>Tüm fazlar</td><td><span class="st st--todo">Netleşecek</span></td><td>Entegrasyon platformu, izleme, mismatch kontrol ve auto-fix</td></tr>
+<tr><td>1.7</td><td><b>Marketplace Management · Operator</b></td><td>7 · opsiyonel</td><td><span class="st st--todo">Netleşecek</span></td><td>Multi-Vendor: vendor onboarding, Seller Portal, komisyon ve settlement</td></tr>
+<tr><td>1.9</td><td><b>PIM ve AI mapping</b></td><td>2 · 3</td><td><span class="st st--todo">Netleşecek</span></td><td>ERP ürün aktarımı, pazaryeri kategori, nitelik ve değer eşlemesi, içerik üretimi</td></tr>
+<tr><td>1.10</td><td><b>ACOMS</b> · KPI seti ve otonom yönetim</td><td>Tüm fazlar</td><td><span class="st st--todo">Netleşecek</span></td><td>KPI ve alarm kurulumu, aksiyon kuralları; AI agent'ları devreye girdikçe</td></tr>
+<tr><td>1.8</td><td><b>İş geliştirme ve yönetim danışmanlığı</b></td><td>Tüm fazlar</td><td><span class="st st--todo">Netleşecek</span></td><td>İhtiyaç analizi, tasarım ve yol haritasında danışmanlık</td></tr>
+<tr class="total"><td></td><td>Toplam</td><td></td><td class="hit">—</td><td></td></tr>
+</tbody>
+</table>
+<div class="incl" style="margin-top:2cqh;">Taslak · bedeller netleşecek <span>Ticari değerler keşif girdileri (hacim, kanal, mağaza ve taşıyıcı sayısı) ile birlikte bu tabloya işlenecektir.</span></div>
+<p class="ann">Fiyatlara KDV dahil değildir.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">38 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">Aylık bedeller</span>
+<h2 class="slide-title">Aylık bedeller <span class="accent">ürün bazında</span></h2>
+<div class="fill">
+<table class="xtable xtable--fees xtable--feesd">
+<colgroup><col style="width:30%;" /><col style="width:20%;" /><col /></colgroup>
+<thead><tr><th>Kalem</th><th>Bedel</th><th>Kapsam</th></tr></thead>
+<tbody>
+<tr><td>OMS</td><td><span class="st st--todo">Netleşecek</span></td><td rowspan="5">Ürünlere gelen yeni özellikler; 2 haftalık periyotlarla devreye alım; 7/24 kullanıcı bakım ve destek</td></tr>
+<tr><td>TMS</td><td><span class="st st--todo">Netleşecek</span></td></tr>
+<tr><td>Marketplace Management · Seller</td><td><span class="st st--todo">Netleşecek</span></td></tr>
+<tr><td>PIM ve AI mapping</td><td><span class="st st--todo">Netleşecek</span></td></tr>
+<tr><td>InStore Commerce · Omnichannel Operations · Store B2B</td><td><span class="st st--todo">Netleşecek</span></td></tr>
+<tr><td>Marketplace Management · Operator</td><td><span class="st st--todo">Netleşecek</span></td><td>Opsiyonel faz; Multi-Vendor devreye alındığında</td></tr>
+<tr><td>ACOMS · KPI seti, otonom yönetim, AI agent'ları</td><td><span class="st st--todo">Netleşecek</span></td><td>KPI, alarm ve aksiyon yönetimi; agent'lar yol haritasına göre devreye girdikçe</td></tr>
+<tr><td>Sistem barındırma · canlı</td><td><span class="st st--todo">Netleşecek</span></td><td rowspan="2">AWS üzerinde anında ölçeklenen yapı; tüm entegrasyonlar ve uygulamalar 7/24 proaktif izlenir ve çözümlenir</td></tr>
+<tr><td>Sistem barındırma · test</td><td><span class="st st--todo">Netleşecek</span></td></tr>
+</tbody>
+</table>
+<div class="incl" style="margin-top:2cqh;">Taslak · bedeller netleşecek <span>Fiyat modeli (sipariş tutarına ya da adedine bağlı, sabit ya da karma) ve geliştirme taleplerinin kapsamı ticari görüşmede belirlenir.</span></div>
+<p class="ann">Fiyatlara KDV dahil değildir.</p>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">39 / 40</span></div>
+</section>
+<section class="slide">
+<div class="slide__inner">
+<span class="kicker">3 yıllık toplam sahip olma maliyeti</span>
+<h2 class="slide-title">TCO · <span class="accent">üç yıllık</span> görünüm</h2>
+<div class="fill">
+<div class="hdr-sub">Varsayımlar · keşifte alınacak girdiler</div>
+<table class="xtable xtable--xdense">
+<thead><tr><th>Parametre</th><th>1. yıl</th><th>2. yıl</th><th>3. yıl</th></tr></thead>
+<tbody>
+<tr><td>Sipariş adedi ve tutarı · kanal kırılımı (kendi kanal, pazaryeri, mağaza)</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Gönderi adedi · DC, mağaza ve vendor çıkışlı</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Kapsamdaki mağaza, depo ve pazaryeri hesabı sayısı</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>USD/TL kuru</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+<div class="hdr-sub" style="margin-top:2.4cqh;">3 yıllık toplam sahip olma maliyeti</div>
+<table class="xtable xtable--dense">
+<thead><tr><th>Kalem</th><th>1. yıl</th><th>2. yıl</th><th>3. yıl</th><th>3 yıl toplam</th></tr></thead>
+<tbody>
+<tr><td>Proje bedeli · tek seferlik</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Platform kullanımı · ürün bazında</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sistem barındırma · canlı ve test</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr class="total"><td>Toplam</td><td>—</td><td>—</td><td>—</td><td class="hit">—</td></tr>
+<tr class="ratio"><td>Net satışa oranı</td><td>—</td><td>—</td><td>—</td><td class="hit">—</td></tr>
+</tbody>
+</table>
+<div class="incl" style="margin-top:2cqh;">Taslak · TCO hacim girdileriyle hesaplanacak <span>Beklenen fayda (paket, kargo, kanal yönlendirme) aynı tabloda TCO ile yan yana gösterilecektir.</span></div>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli</span><span class="slide__no">40 / 40</span></div>
+</section>
+
+
+
+  
+
+</div>
+
+<div class="toolbar">
+  <button id="presentBtn" type="button" title="Sunum modu (tam ekran)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+    Sun
+  </button>
+  <button type="button" onclick="window.print()" title="PDF olarak kaydet (Cmd/Ctrl+P)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+    PDF indir
+  </button>
+</div>
+<div class="present-bar" id="presentBar"></div>
+<div class="present-hint">Esc ile çık · ok tuşları / tık ile ilerle</div>
+
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    function current() {
+      var mid = window.innerHeight / 2, best = 0, bestD = Infinity;
+      slides.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      return best;
+    }
+    var bar = document.getElementById('presentBar');
+    var presenting = false;
+    var idx = 0;
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      bar.style.width = ((idx + 1) / slides.length * 100) + '%';
+    }
+    function go(delta) {
+      idx = Math.min(slides.length - 1, Math.max(0, idx + delta));
+      render();
+    }
+    function enter() {
+      idx = current();
+      presenting = true;
+      document.body.classList.add('present');
+      render();
+      var el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen().catch(function(){});
+    }
+    function exit() {
+      presenting = false;
+      document.body.classList.remove('present');
+      slides.forEach(function (s) { s.classList.remove('is-active'); });
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+      slides[idx].scrollIntoView({ block: 'center' });
+    }
+    document.getElementById('presentBtn').addEventListener('click', enter);
+    document.addEventListener('fullscreenchange', function () {
+      if (!document.fullscreenElement && presenting) exit();
+    });
+    document.querySelector('.deck').addEventListener('click', function () {
+      if (presenting) go(1);
+    });
+    window.addEventListener('keydown', function (e) {
+      if (presenting) {
+        if (e.key === 'Escape') { e.preventDefault(); exit(); return; }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') {
+          e.preventDefault(); go(-1); return;
+        }
+        e.preventDefault(); go(1); return;
+      }
+      var i = current();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        if (i < slides.length - 1) slides[i + 1].scrollIntoView({ behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        if (i > 0) slides[i - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
