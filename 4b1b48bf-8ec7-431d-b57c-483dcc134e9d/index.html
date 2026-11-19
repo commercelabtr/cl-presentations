@@ -83,6 +83,7 @@
   .shots--r1:not(.shots--phone) .shot figcaption { font-size: 1.15cqw; }
   .shots--r1:not(.shots--phone) { grid-template-rows: auto; align-content: center; }
   .shots--r1:not(.shots--phone) .shot__frame { flex: none; aspect-ratio: 16 / 10; max-height: 54cqh; }
+  .shots--r1[style*="--cols:4"] .shot__frame { aspect-ratio: 3 / 4; max-height: 56cqh; }
 
   /* Bölüm başları ve belge bağlantıları */
   .slide--divider .slide__inner { justify-content: center; }
@@ -156,7 +157,7 @@
 <p class="lead">PIM, OMS, InStore, TMS, Marketplace, Control Tower ve ACOMS: teklifteki her ürünün yönetim ekranları, sekme sekme.</p>
 <p class="cover-meta">Kasım 2026 · CommerceLab</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">01 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">01 / 68</span></div>
 </section>
 
 <section class="slide ">
@@ -170,16 +171,16 @@
   <div class="card"><span class="ix">Belgeler</span><h3>docs.commercelab.com.tr</h3><p>Ekranların kullanım rehberleri, adım adım anlatım ve API belgeleri çevrimiçi yardım merkezinde. Bağlantılar bölüm başlarında ve son sayfada.</p></div>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">02 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">02 / 68</span></div>
 </section>
 
 <section class="slide ">
 <div class="slide__inner">
 <span class="kicker">İçindekiler</span>
 <h2 class="slide-title">Sekiz bölüm</h2>
-<ol class="toc"><li><a href="#sec-pim"><span class="toc__no">I</span><span class="toc__t">PIM &amp; Katalog</span><span class="toc__s">Ürün ana verisi, kategori ve nitelikler; pazaryeri eşleme ve AI ile zenginleştirme.</span></a></li><li><a href="#sec-oms"><span class="toc__no">II</span><span class="toc__t">OMS</span><span class="toc__s">Temel tanımlar, envanter, sipariş karşılama (sourcing), sipariş yönetimi ve mağaza uygulamaları.</span></a></li><li><a href="#sec-instore"><span class="toc__no">III</span><span class="toc__t">InStore uygulamaları</span><span class="toc__s">Mağazanın tüm operasyonu tek el terminalinde: satış, ödeme, iade, stok, sevkiyat ve omni channel.</span></a></li><li><a href="#sec-tms"><span class="toc__no">IV</span><span class="toc__t">TMS</span><span class="toc__s">Taşıyıcı seçimi, teslimat, etiket, iade ve mağaza B2B rotaları.</span></a></li><li><a href="#sec-seller"><span class="toc__no">V</span><span class="toc__t">Marketplace · Satıcı</span><span class="toc__s">Pazaryerlerinde satıcı olarak satış: kanal bağlantıları, ürün/stok/fiyat gönderimi, pazaryeri siparişleri ve uyuşmazlık kontrolü.</span></a></li><li><a href="#sec-operator"><span class="toc__no">VI</span><span class="toc__t">Marketplace · Operatör</span><span class="toc__s">Kendi pazaryerinizi işletme: satıcıları açma, ürün onayı, satıcı ayarları ve satıcının kullandığı panel.</span></a></li><li><a href="#sec-ct"><span class="toc__no">VII</span><span class="toc__t">Control Tower</span><span class="toc__s">Kanal başına stok, sipariş, fiyat ve ürün uyuşmazlıkları; entegrasyon logları.</span></a></li><li><a href="#sec-acoms"><span class="toc__no">VIII</span><span class="toc__t">ACOMS</span><span class="toc__s">KPI → alarm → aksiyon → görev döngüsü; Sales &amp; Trading Cockpit ve operasyon KPI listeleri.</span></a></li></ol>
+<ol class="toc"><li><a href="#sec-pim"><span class="toc__no">I</span><span class="toc__t">PIM &amp; Katalog</span><span class="toc__s">Ürün ana verisi, kategori ve nitelikler; pazaryeri eşleme ve AI ile zenginleştirme.</span></a></li><li><a href="#sec-oms"><span class="toc__no">II</span><span class="toc__t">OMS</span><span class="toc__s">Temel tanımlar, envanter, sipariş karşılama (sourcing), sipariş yönetimi ve mağaza uygulamaları.</span></a></li><li><a href="#sec-instore"><span class="toc__no">III</span><span class="toc__t">InStore uygulamaları</span><span class="toc__s">Mağazanın tüm operasyonu tek el terminalinde: satış, ödeme, iade, stok, sevkiyat ve omni channel.</span></a></li><li><a href="#sec-tms"><span class="toc__no">IV</span><span class="toc__t">TMS</span><span class="toc__s">Taşıyıcılar, kargo yönlendirme kuralları, teslimat, iade, mutabakat, B2B mağaza sevkiyatı ve raporlar.</span></a></li><li><a href="#sec-seller"><span class="toc__no">V</span><span class="toc__t">Marketplace · Satıcı</span><span class="toc__s">Pazaryerlerinde satıcı olarak satış: kanal bağlantıları, ürün/stok/fiyat gönderimi, pazaryeri siparişleri ve uyuşmazlık kontrolü.</span></a></li><li><a href="#sec-operator"><span class="toc__no">VI</span><span class="toc__t">Marketplace · Operatör</span><span class="toc__s">Kendi pazaryerinizi işletme (multi vendor / drop shipment): satıcı siparişleri, satıcıları açma, ürün onayı, satıcı ayarları ve satıcının kullandığı panel.</span></a></li><li><a href="#sec-ct"><span class="toc__no">VII</span><span class="toc__t">Control Tower</span><span class="toc__s">Kanal başına stok, sipariş, fiyat ve ürün uyuşmazlıkları; entegrasyon logları.</span></a></li><li><a href="#sec-acoms"><span class="toc__no">VIII</span><span class="toc__t">ACOMS</span><span class="toc__s">KPI → alarm → aksiyon → görev döngüsü; Sales &amp; Trading Cockpit ve operasyon KPI listeleri.</span></a></li></ol>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">03 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">03 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--divider" id="sec-pim">
@@ -190,7 +191,7 @@
 <p class="lead">Ürün ana verisi, kategori ve nitelikler; pazaryeri eşleme ve AI ile zenginleştirme.</p>
 <div class="doclinks"><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/pim" target="_blank" rel="noopener">PIM &amp; Katalog rehberleri <span aria-hidden="true">↗</span></a><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/comhub" target="_blank" rel="noopener">ComHub: kanal ve eşleme rehberleri <span aria-hidden="true">↗</span></a></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">04 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">04 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -215,7 +216,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">05 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">05 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -254,7 +255,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">06 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">06 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -307,7 +308,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">07 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">07 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -346,7 +347,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">08 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">08 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -399,7 +400,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">09 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">09 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -424,7 +425,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">10 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">10 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -463,7 +464,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">11 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">11 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -502,7 +503,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">12 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">12 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--divider" id="sec-oms">
@@ -513,7 +514,7 @@
 <p class="lead">Temel tanımlar, envanter, sipariş karşılama (sourcing), sipariş yönetimi ve mağaza uygulamaları.</p>
 <div class="doclinks"><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/oms" target="_blank" rel="noopener">OMS rehberleri <span aria-hidden="true">↗</span></a><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/inventory" target="_blank" rel="noopener">Envanter rehberleri <span aria-hidden="true">↗</span></a><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/oms/guides/oms-instore-app" target="_blank" rel="noopener">InStore App rehberi <span aria-hidden="true">↗</span></a></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">13 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">13 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -566,7 +567,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">14 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">14 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -605,7 +606,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">15 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">15 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -658,7 +659,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">16 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">16 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -697,7 +698,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">17 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">17 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -743,7 +744,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">18 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">18 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -796,14 +797,14 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">19 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">19 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
 <div class="slide__inner">
 <span class="kicker">OMS · Emniyet stoku</span>
-<h2 class="slide-title">Emniyet stoku <span class="accent">dört seviyede</span> tanımlanır</h2>
-<p class="lead">Kanal, kural grubu, kaynak/depo ve SKU düzeyinde; kanala gönderilen stoktan düşülecek adet kural bazında belirlenir.</p>
+<h2 class="slide-title">Emniyet stoğu <span class="accent">altı seviyede</span> tanımlanabilir</h2>
+<p class="lead">Emniyet stoğu satış kanalı, satış kanalı grubu, depo, depo grubu, ürün grubu ve SKU seviyelerinde tanımlanabilir; kanala gönderilen stoktan düşülecek adet kural bazında belirlenir.</p>
 <div class="shots shots--r2" style="--cols:2">
 <figure class="shot">
   <button type="button" class="shot__frame" data-full="img/s-inv-safety-rules.ca2e3a832a.webp" data-cap="Güvenlik (emniyet) stoğu kuralları: uygulama seviyesi, kanal, kural grubu, kaynak ve depo" aria-label="Büyüt: Güvenlik (emniyet) stoğu kuralları: uygulama seviyesi, kanal, kural grubu, kaynak ve depo">
@@ -835,7 +836,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">20 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">20 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -881,7 +882,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">21 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">21 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -934,7 +935,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">22 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">22 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -987,7 +988,32 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">23 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">23 / 68</span></div>
+</section>
+
+<section class="slide slide--gallery">
+<div class="slide__inner">
+<span class="kicker">OMS · Order Sourcing (DOM)</span>
+<h2 class="slide-title">Sourcing <span class="accent">simülasyonu</span>: sipariş nereden karşılanır</h2>
+<p class="lead">Siparişin kaynağı deneme amaçlı hesaplanır, sipariş değişmez: formüller, olası paketler, paket başına kaynak ve kargo maliyetleri, kalem bazında stok ve iş yükü çarpanları.</p>
+<div class="shots shots--r1" style="--cols:2">
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/s-src-sim-01-result.3b416f2c9e.webp" data-cap="Simülasyon sonucu: satır, koli ve sipariş formülü; olasılık #1, paket sayısı ve sipariş maliyeti" aria-label="Büyüt: Simülasyon sonucu: satır, koli ve sipariş formülü; olasılık #1, paket sayısı ve sipariş maliyeti">
+    <img src="img/t/s-src-sim-01-result.3b416f2c9e.webp" alt="Simülasyon sonucu: satır, koli ve sipariş formülü; olasılık #1, paket sayısı ve sipariş maliyeti" loading="lazy" width="2048" height="1600" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Simülasyon sonucu: satır, koli ve sipariş formülü; olasılık #1, paket sayısı ve sipariş maliyeti</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/s-src-sim-02-lines.b7a11be3ca.webp" data-cap="Paket ve kalem detayı: paketleme kaynağı, önerilen kargo, kargo maliyetleri, stok, iş sayısı ve çarpanlar" aria-label="Büyüt: Paket ve kalem detayı: paketleme kaynağı, önerilen kargo, kargo maliyetleri, stok, iş sayısı ve çarpanlar">
+    <img src="img/t/s-src-sim-02-lines.b7a11be3ca.webp" alt="Paket ve kalem detayı: paketleme kaynağı, önerilen kargo, kargo maliyetleri, stok, iş sayısı ve çarpanlar" loading="lazy" width="2048" height="1600" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Paket ve kalem detayı: paketleme kaynağı, önerilen kargo, kargo maliyetleri, stok, iş sayısı ve çarpanlar</figcaption>
+</figure>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">24 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1019,7 +1045,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">24 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">25 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1072,7 +1098,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">25 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">26 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1082,11 +1108,11 @@
 
 <div class="shots shots--r2" style="--cols:3">
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/s-oms-order-07-operation.98caa43eff.webp" data-cap="Operasyon: siparişe uygulanabilen işlemler" aria-label="Büyüt: Operasyon: siparişe uygulanabilen işlemler">
-    <img src="img/t/s-oms-order-07-operation.98caa43eff.webp" alt="Operasyon: siparişe uygulanabilen işlemler" loading="lazy" width="2400" height="1500" />
+  <button type="button" class="shot__frame" data-full="img/s-oms-order-07-operation.e31be48dc2.webp" data-cap="Operasyon: ürün bilgileri, toplama kayıtları (paketleme ve toplama merkezi, durum); sourcing simülasyonu ve tetikleme" aria-label="Büyüt: Operasyon: ürün bilgileri, toplama kayıtları (paketleme ve toplama merkezi, durum); sourcing simülasyonu ve tetikleme">
+    <img src="img/t/s-oms-order-07-operation.e31be48dc2.webp" alt="Operasyon: ürün bilgileri, toplama kayıtları (paketleme ve toplama merkezi, durum); sourcing simülasyonu ve tetikleme" loading="lazy" width="2048" height="1600" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
-  <figcaption>Operasyon: siparişe uygulanabilen işlemler</figcaption>
+  <figcaption>Operasyon: ürün bilgileri, toplama kayıtları (paketleme ve toplama merkezi, durum); sourcing simülasyonu ve tetikleme</figcaption>
 </figure>
 <figure class="shot">
   <button type="button" class="shot__frame" data-full="img/s-oms-order-08-other.470dcfeb93.webp" data-cap="Diğer siparişleri: aynı müşterinin diğer siparişleri" aria-label="Büyüt: Diğer siparişleri: aynı müşterinin diğer siparişleri">
@@ -1118,7 +1144,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">26 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">27 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1164,7 +1190,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">27 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">28 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1196,7 +1222,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">28 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">29 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1228,7 +1254,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">29 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">30 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--divider" id="sec-instore">
@@ -1239,7 +1265,7 @@
 <p class="lead">Mağazanın tüm operasyonu tek el terminalinde: satış, ödeme, iade, stok, sevkiyat ve omni channel.</p>
 <div class="doclinks"><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/oms/guides/oms-instore-app" target="_blank" rel="noopener">InStore App rehberi <span aria-hidden="true">↗</span></a></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">30 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">31 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1285,7 +1311,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">31 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">32 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1338,7 +1364,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">32 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">33 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1391,7 +1417,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">33 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">34 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1437,7 +1463,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">34 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">35 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1490,7 +1516,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">35 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">36 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1543,7 +1569,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">36 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">37 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1596,7 +1622,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">37 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">38 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--divider" id="sec-tms">
@@ -1604,141 +1630,382 @@
 <span class="divider-index">IV</span>
 <span class="kicker">Bölüm IV</span>
 <h2 class="slide-title">TMS</h2>
-<p class="lead">Taşıyıcı seçimi, teslimat, etiket, iade ve mağaza B2B rotaları.</p>
+<p class="lead">Taşıyıcılar, kargo yönlendirme kuralları, teslimat, iade, mutabakat, B2B mağaza sevkiyatı ve raporlar.</p>
 <div class="doclinks"><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/tms" target="_blank" rel="noopener">TMS rehberleri <span aria-hidden="true">↗</span></a></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">38 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">39 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
 <div class="slide__inner">
-<span class="kicker">TMS · Kurulum</span>
-<h2 class="slide-title">Lokasyon ve gönderi kuralları</h2>
-
-<div class="shots shots--r2" style="--cols:2">
+<span class="kicker">TMS · Taşıyıcılar ve lokasyonlar</span>
+<h2 class="slide-title">Tüm kargo firmaları <span class="accent">tek listede</span></h2>
+<p class="lead">Anlaşmalı taşıyıcılar, depo ve mağaza lokasyonları ile adres tanımları.</p>
+<div class="shots shots--r1" style="--cols:3">
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-35.3c324e16b0.webp" data-cap="Lokasyonlar: depo ve mağaza kodları taşıma tarafında da aynı" aria-label="Büyüt: Lokasyonlar: depo ve mağaza kodları taşıma tarafında da aynı">
-    <img src="img/t/t-35.3c324e16b0.webp" alt="Lokasyonlar: depo ve mağaza kodları taşıma tarafında da aynı" loading="lazy" width="1600" height="1014" />
+  <button type="button" class="shot__frame" data-full="img/u-7.0245d3bb24.webp" data-cap="Taşıyıcılar: tüm kargo firmaları, kod ve açıklama" aria-label="Büyüt: Taşıyıcılar: tüm kargo firmaları, kod ve açıklama">
+    <img src="img/t/u-7.0245d3bb24.webp" alt="Taşıyıcılar: tüm kargo firmaları, kod ve açıklama" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Taşıyıcılar: tüm kargo firmaları, kod ve açıklama</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-1.0f23ae55e2.webp" data-cap="Lokasyonlar: depo ve mağaza kodları taşıma tarafında da aynı" aria-label="Büyüt: Lokasyonlar: depo ve mağaza kodları taşıma tarafında da aynı">
+    <img src="img/t/u-1.0f23ae55e2.webp" alt="Lokasyonlar: depo ve mağaza kodları taşıma tarafında da aynı" loading="lazy" width="1600" height="995" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
   <figcaption>Lokasyonlar: depo ve mağaza kodları taşıma tarafında da aynı</figcaption>
 </figure>
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-36.62c3de4760.webp" data-cap="Gönderi konfigürasyonu: varsayılan lokasyon ve taşıyıcı, adres eşleştirme" aria-label="Büyüt: Gönderi konfigürasyonu: varsayılan lokasyon ve taşıyıcı, adres eşleştirme">
-    <img src="img/t/t-36.62c3de4760.webp" alt="Gönderi konfigürasyonu: varsayılan lokasyon ve taşıyıcı, adres eşleştirme" loading="lazy" width="1600" height="1002" />
+  <button type="button" class="shot__frame" data-full="img/u-2.abf395d249.webp" data-cap="Adres tanımları: hesap, organizasyon ve lokasyon adresleri" aria-label="Büyüt: Adres tanımları: hesap, organizasyon ve lokasyon adresleri">
+    <img src="img/t/u-2.abf395d249.webp" alt="Adres tanımları: hesap, organizasyon ve lokasyon adresleri" loading="lazy" width="1600" height="995" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
-  <figcaption>Gönderi konfigürasyonu: varsayılan lokasyon ve taşıyıcı, adres eşleştirme</figcaption>
-</figure>
-<figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-37.b6bd943131.webp" data-cap="Taşıyıcı konfigürasyonu: lokasyon ve pazaryerine göre öncelik" aria-label="Büyüt: Taşıyıcı konfigürasyonu: lokasyon ve pazaryerine göre öncelik">
-    <img src="img/t/t-37.b6bd943131.webp" alt="Taşıyıcı konfigürasyonu: lokasyon ve pazaryerine göre öncelik" loading="lazy" width="1600" height="1002" />
-    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
-  </button>
-  <figcaption>Taşıyıcı konfigürasyonu: lokasyon ve pazaryerine göre öncelik</figcaption>
-</figure>
-<figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-44.9aa69f7547.webp" data-cap="Taşıyıcı kataloğu, maliyet, mesafe ve performans tanımları" aria-label="Büyüt: Taşıyıcı kataloğu, maliyet, mesafe ve performans tanımları">
-    <img src="img/t/t-44.9aa69f7547.webp" alt="Taşıyıcı kataloğu, maliyet, mesafe ve performans tanımları" loading="lazy" width="1600" height="1000" />
-    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
-  </button>
-  <figcaption>Taşıyıcı kataloğu, maliyet, mesafe ve performans tanımları</figcaption>
+  <figcaption>Adres tanımları: hesap, organizasyon ve lokasyon adresleri</figcaption>
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">39 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">40 / 68</span></div>
+</section>
+
+<section class="slide slide--gallery">
+<div class="slide__inner">
+<span class="kicker">TMS · Kargo yönlendirme</span>
+<h2 class="slide-title">Kargo <span class="accent">yönlendirme kuralları</span></h2>
+<p class="lead">Lokasyon, pazaryeri ve sipariş özelliklerine göre taşıyıcı seçilir; özel kural yoksa taşıyıcı önceliği uygulanır.</p>
+<div class="shots shots--r2" style="--cols:3">
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-3a.367aec4799.webp" data-cap="Gönderi konfigürasyonu: hesap bazında" aria-label="Büyüt: Gönderi konfigürasyonu: hesap bazında">
+    <img src="img/t/u-3a.367aec4799.webp" alt="Gönderi konfigürasyonu: hesap bazında" loading="lazy" width="1600" height="983" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Gönderi konfigürasyonu: hesap bazında</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-3c.57b04599ca.webp" data-cap="Taşıyıcı konfigürasyonu: lokasyon, taşıyıcı, öncelik ve pazaryeri" aria-label="Büyüt: Taşıyıcı konfigürasyonu: lokasyon, taşıyıcı, öncelik ve pazaryeri">
+    <img src="img/t/u-3c.57b04599ca.webp" alt="Taşıyıcı konfigürasyonu: lokasyon, taşıyıcı, öncelik ve pazaryeri" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Taşıyıcı konfigürasyonu: lokasyon, taşıyıcı, öncelik ve pazaryeri</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-10a.fabbd4681c.webp" data-cap="Özelleştirilmiş gönderi kuralları: taşıyıcı, öncelik, adres ve ürün bilgisine göre" aria-label="Büyüt: Özelleştirilmiş gönderi kuralları: taşıyıcı, öncelik, adres ve ürün bilgisine göre">
+    <img src="img/t/u-10a.fabbd4681c.webp" alt="Özelleştirilmiş gönderi kuralları: taşıyıcı, öncelik, adres ve ürün bilgisine göre" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Özelleştirilmiş gönderi kuralları: taşıyıcı, öncelik, adres ve ürün bilgisine göre</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-10b.3b2c5efd6f.webp" data-cap="Kural ekle: çıkış/gideceği lokasyon, il/ilçe, ödeme yöntemi, desi, fiyat, müşteri segmenti" aria-label="Büyüt: Kural ekle: çıkış/gideceği lokasyon, il/ilçe, ödeme yöntemi, desi, fiyat, müşteri segmenti">
+    <img src="img/t/u-10b.3b2c5efd6f.webp" alt="Kural ekle: çıkış/gideceği lokasyon, il/ilçe, ödeme yöntemi, desi, fiyat, müşteri segmenti" loading="lazy" width="1600" height="998" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Kural ekle: çıkış/gideceği lokasyon, il/ilçe, ödeme yöntemi, desi, fiyat, müşteri segmenti</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-10c.1d9c7a5f98.webp" data-cap="Kural ekle (devam): ürün özelliği, kampanya, gün ve saat aralığı" aria-label="Büyüt: Kural ekle (devam): ürün özelliği, kampanya, gün ve saat aralığı">
+    <img src="img/t/u-10c.1d9c7a5f98.webp" alt="Kural ekle (devam): ürün özelliği, kampanya, gün ve saat aralığı" loading="lazy" width="1600" height="998" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Kural ekle (devam): ürün özelliği, kampanya, gün ve saat aralığı</figcaption>
+</figure>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">41 / 68</span></div>
+</section>
+
+<section class="slide slide--gallery">
+<div class="slide__inner">
+<span class="kicker">TMS · Kargo yönlendirme</span>
+<h2 class="slide-title">Kural yoksa <span class="accent">performans ve maliyet</span> ağırlığı</h2>
+<p class="lead">Gönderi konfigürasyonunda kargo seçimi fiyat ve performansa göre yapılabilir; taşıyıcı kimlik bilgileri gizlenmiştir.</p>
+<div class="shots shots--r1" style="--cols:3">
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-3b.e90260432f.webp" data-cap="Gönderi konfigürasyonu: siparişteki taşıyıcı ya da fiyat/performansa göre kargo seçimi" aria-label="Büyüt: Gönderi konfigürasyonu: siparişteki taşıyıcı ya da fiyat/performansa göre kargo seçimi">
+    <img src="img/t/u-3b.e90260432f.webp" alt="Gönderi konfigürasyonu: siparişteki taşıyıcı ya da fiyat/performansa göre kargo seçimi" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Gönderi konfigürasyonu: siparişteki taşıyıcı ya da fiyat/performansa göre kargo seçimi</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-3d.afc2cbc0a0.webp" data-cap="Taşıyıcı konfigürasyonu düzenle: hesap, lokasyon, ödeme tipi, entegrasyon bilgileri" aria-label="Büyüt: Taşıyıcı konfigürasyonu düzenle: hesap, lokasyon, ödeme tipi, entegrasyon bilgileri">
+    <img src="img/t/u-3d.afc2cbc0a0.webp" alt="Taşıyıcı konfigürasyonu düzenle: hesap, lokasyon, ödeme tipi, entegrasyon bilgileri" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Taşıyıcı konfigürasyonu düzenle: hesap, lokasyon, ödeme tipi, entegrasyon bilgileri</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-3e.ad4902bf55.webp" data-cap="Planlı teslimatlar: teslimat tipi ve zamanı" aria-label="Büyüt: Planlı teslimatlar: teslimat tipi ve zamanı">
+    <img src="img/t/u-3e.ad4902bf55.webp" alt="Planlı teslimatlar: teslimat tipi ve zamanı" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Planlı teslimatlar: teslimat tipi ve zamanı</figcaption>
+</figure>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">42 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
 <div class="slide__inner">
 <span class="kicker">TMS · Teslimat</span>
-<h2 class="slide-title">Teslimatlar tek listeden; kargo kararı <span class="accent">nedeniyle</span> kaydedilir</h2>
+<h2 class="slide-title">Teslimatlar tek listeden; her teslimat <span class="accent">sekme sekme</span></h2>
 
-<div class="shots shots--r2" style="--cols:2">
+<div class="shots shots--r2" style="--cols:3">
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-38.0c3703f741.webp" data-cap="Teslimatlar: filtreler; statü, adres, taşıyıcı, desi değiştirme, yeniden etiket, SMS" aria-label="Büyüt: Teslimatlar: filtreler; statü, adres, taşıyıcı, desi değiştirme, yeniden etiket, SMS">
-    <img src="img/t/t-38.0c3703f741.webp" alt="Teslimatlar: filtreler; statü, adres, taşıyıcı, desi değiştirme, yeniden etiket, SMS" loading="lazy" width="1600" height="1014" />
+  <button type="button" class="shot__frame" data-full="img/u-4a.46ad47b09e.webp" data-cap="Teslimatlar: filtreler; statü, adres, taşıyıcı, desi değiştirme, yeniden etiket, SMS" aria-label="Büyüt: Teslimatlar: filtreler; statü, adres, taşıyıcı, desi değiştirme, yeniden etiket, SMS">
+    <img src="img/t/u-4a.46ad47b09e.webp" alt="Teslimatlar: filtreler; statü, adres, taşıyıcı, desi değiştirme, yeniden etiket, SMS" loading="lazy" width="1600" height="995" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
   <figcaption>Teslimatlar: filtreler; statü, adres, taşıyıcı, desi değiştirme, yeniden etiket, SMS</figcaption>
 </figure>
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-39.0da8b01455.webp" data-cap="Etiket önizleme ve yazdırma (alıcı bilgisi gizli)" aria-label="Büyüt: Etiket önizleme ve yazdırma (alıcı bilgisi gizli)">
-    <img src="img/t/t-39.0da8b01455.webp" alt="Etiket önizleme ve yazdırma (alıcı bilgisi gizli)" loading="lazy" width="1600" height="1002" />
+  <button type="button" class="shot__frame" data-full="img/u-4b.d842acfe4c.webp" data-cap="Teslimat detayı" aria-label="Büyüt: Teslimat detayı">
+    <img src="img/t/u-4b.d842acfe4c.webp" alt="Teslimat detayı" loading="lazy" width="1600" height="1000" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
-  <figcaption>Etiket önizleme ve yazdırma (alıcı bilgisi gizli)</figcaption>
+  <figcaption>Teslimat detayı</figcaption>
 </figure>
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-40.ec1903365d.webp" data-cap="Kargo kararı: seçilen taşıyıcı, tetikleyici ve sebep" aria-label="Büyüt: Kargo kararı: seçilen taşıyıcı, tetikleyici ve sebep">
-    <img src="img/t/t-40.ec1903365d.webp" alt="Kargo kararı: seçilen taşıyıcı, tetikleyici ve sebep" loading="lazy" width="1600" height="1002" />
+  <button type="button" class="shot__frame" data-full="img/u-4c.2de641dfc4.webp" data-cap="Teslimat dokümanları" aria-label="Büyüt: Teslimat dokümanları">
+    <img src="img/t/u-4c.2de641dfc4.webp" alt="Teslimat dokümanları" loading="lazy" width="1600" height="1000" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
-  <figcaption>Kargo kararı: seçilen taşıyıcı, tetikleyici ve sebep</figcaption>
+  <figcaption>Teslimat dokümanları</figcaption>
 </figure>
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-41.8b071e1228.webp" data-cap="Süreler: her kargo çağrısının adım adım süresi" aria-label="Büyüt: Süreler: her kargo çağrısının adım adım süresi">
-    <img src="img/t/t-41.8b071e1228.webp" alt="Süreler: her kargo çağrısının adım adım süresi" loading="lazy" width="1600" height="1002" />
+  <button type="button" class="shot__frame" data-full="img/u-4d.3b80d9b9bb.webp" data-cap="Etiket önizleme (alıcı bilgisi gizli)" aria-label="Büyüt: Etiket önizleme (alıcı bilgisi gizli)">
+    <img src="img/t/u-4d.3b80d9b9bb.webp" alt="Etiket önizleme (alıcı bilgisi gizli)" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Etiket önizleme (alıcı bilgisi gizli)</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-4e.f6c9a7934d.webp" data-cap="Kargo kararı: seçilen taşıyıcı ve sebebi" aria-label="Büyüt: Kargo kararı: seçilen taşıyıcı ve sebebi">
+    <img src="img/t/u-4e.f6c9a7934d.webp" alt="Kargo kararı: seçilen taşıyıcı ve sebebi" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Kargo kararı: seçilen taşıyıcı ve sebebi</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-4f.c5726ad211.webp" data-cap="Süreler: her kargo çağrısının adım adım süresi" aria-label="Büyüt: Süreler: her kargo çağrısının adım adım süresi">
+    <img src="img/t/u-4f.c5726ad211.webp" alt="Süreler: her kargo çağrısının adım adım süresi" loading="lazy" width="1600" height="1000" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
   <figcaption>Süreler: her kargo çağrısının adım adım süresi</figcaption>
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">40 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">43 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
 <div class="slide__inner">
-<span class="kicker">TMS · İade ve B2B</span>
-<h2 class="slide-title">İade kuralları ve mağaza sevkiyat rotaları</h2>
+<span class="kicker">TMS · İade</span>
+<h2 class="slide-title">İade kuralları ve iadeler</h2>
 
 <div class="shots shots--r2" style="--cols:3">
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-42.9558ac01ae.webp" data-cap="İade konfigürasyonu: lokasyon ve taşıyıcı bazında iade kuralları" aria-label="Büyüt: İade konfigürasyonu: lokasyon ve taşıyıcı bazında iade kuralları">
-    <img src="img/t/t-42.9558ac01ae.webp" alt="İade konfigürasyonu: lokasyon ve taşıyıcı bazında iade kuralları" loading="lazy" width="1600" height="1002" />
+  <button type="button" class="shot__frame" data-full="img/u-5a.73a91126e3.webp" data-cap="İade konfigürasyonu" aria-label="Büyüt: İade konfigürasyonu">
+    <img src="img/t/u-5a.73a91126e3.webp" alt="İade konfigürasyonu" loading="lazy" width="1600" height="983" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
-  <figcaption>İade konfigürasyonu: lokasyon ve taşıyıcı bazında iade kuralları</figcaption>
+  <figcaption>İade konfigürasyonu</figcaption>
 </figure>
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-43.9a83187e27.webp" data-cap="İadeler: iade kodu, sipariş, lokasyon ve statüler" aria-label="Büyüt: İadeler: iade kodu, sipariş, lokasyon ve statüler">
-    <img src="img/t/t-43.9a83187e27.webp" alt="İadeler: iade kodu, sipariş, lokasyon ve statüler" loading="lazy" width="1600" height="1002" />
+  <button type="button" class="shot__frame" data-full="img/u-5b.a4a64097ce.webp" data-cap="İade konfigürasyonu düzenle: varsayılan iade lokasyonu, kod öneki, iade kargosu" aria-label="Büyüt: İade konfigürasyonu düzenle: varsayılan iade lokasyonu, kod öneki, iade kargosu">
+    <img src="img/t/u-5b.a4a64097ce.webp" alt="İade konfigürasyonu düzenle: varsayılan iade lokasyonu, kod öneki, iade kargosu" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>İade konfigürasyonu düzenle: varsayılan iade lokasyonu, kod öneki, iade kargosu</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-5c.8a830e770f.webp" data-cap="Taşıyıcı iade konfigürasyonu: lokasyon, taşıyıcı ve öncelik" aria-label="Büyüt: Taşıyıcı iade konfigürasyonu: lokasyon, taşıyıcı ve öncelik">
+    <img src="img/t/u-5c.8a830e770f.webp" alt="Taşıyıcı iade konfigürasyonu: lokasyon, taşıyıcı ve öncelik" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Taşıyıcı iade konfigürasyonu: lokasyon, taşıyıcı ve öncelik</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-5d.f1be2f11b0.webp" data-cap="İade kargo konfigürasyonu düzenle (kimlik bilgileri gizli)" aria-label="Büyüt: İade kargo konfigürasyonu düzenle (kimlik bilgileri gizli)">
+    <img src="img/t/u-5d.f1be2f11b0.webp" alt="İade kargo konfigürasyonu düzenle (kimlik bilgileri gizli)" loading="lazy" width="1600" height="1000" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>İade kargo konfigürasyonu düzenle (kimlik bilgileri gizli)</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-6.cbcdc14ffe.webp" data-cap="İadeler: iade kodu, sipariş, lokasyon ve statüler" aria-label="Büyüt: İadeler: iade kodu, sipariş, lokasyon ve statüler">
+    <img src="img/t/u-6.cbcdc14ffe.webp" alt="İadeler: iade kodu, sipariş, lokasyon ve statüler" loading="lazy" width="1600" height="983" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
   <figcaption>İadeler: iade kodu, sipariş, lokasyon ve statüler</figcaption>
 </figure>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">44 / 68</span></div>
+</section>
+
+<section class="slide slide--gallery">
+<div class="slide__inner">
+<span class="kicker">TMS · Mutabakat ve rapor</span>
+<h2 class="slide-title">Kargo <span class="accent">mutabakatı</span> ve raporlar</h2>
+<p class="lead">Kargo firmasının faturası teslimat verisiyle karşılaştırılır; raporlar arka planda üretilir ve geçmişten indirilir.</p>
+<div class="shots shots--r2" style="--cols:2">
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-45.b2b6fd56aa.webp" data-cap="B2B teslimatlar: çıkış/varış lokasyonu, aktarma ve rota" aria-label="Büyüt: B2B teslimatlar: çıkış/varış lokasyonu, aktarma ve rota">
-    <img src="img/t/t-45.b2b6fd56aa.webp" alt="B2B teslimatlar: çıkış/varış lokasyonu, aktarma ve rota" loading="lazy" width="1600" height="1000" />
+  <button type="button" class="shot__frame" data-full="img/u-10d.f7e17414c9.webp" data-cap="Mutabakat verileri listesi: teslimat anahtarı, desi, kargo tutarı ve tarihler" aria-label="Büyüt: Mutabakat verileri listesi: teslimat anahtarı, desi, kargo tutarı ve tarihler">
+    <img src="img/t/u-10d.f7e17414c9.webp" alt="Mutabakat verileri listesi: teslimat anahtarı, desi, kargo tutarı ve tarihler" loading="lazy" width="1600" height="982" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
-  <figcaption>B2B teslimatlar: çıkış/varış lokasyonu, aktarma ve rota</figcaption>
+  <figcaption>Mutabakat verileri listesi: teslimat anahtarı, desi, kargo tutarı ve tarihler</figcaption>
 </figure>
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-46.d1b5e5b3bf.webp" data-cap="Rota listesi: bölge bazında rotalar" aria-label="Büyüt: Rota listesi: bölge bazında rotalar">
-    <img src="img/t/t-46.d1b5e5b3bf.webp" alt="Rota listesi: bölge bazında rotalar" loading="lazy" width="1600" height="1000" />
+  <button type="button" class="shot__frame" data-full="img/u-10g.bbcfd9e010.webp" data-cap="Mutabakat raporu sorgulama" aria-label="Büyüt: Mutabakat raporu sorgulama">
+    <img src="img/t/u-10g.bbcfd9e010.webp" alt="Mutabakat raporu sorgulama" loading="lazy" width="1600" height="982" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
-  <figcaption>Rota listesi: bölge bazında rotalar</figcaption>
+  <figcaption>Mutabakat raporu sorgulama</figcaption>
 </figure>
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-47.665e0e6ff0.webp" data-cap="Teslim tesellüm rapor geçmişi (şoför adları gizli)" aria-label="Büyüt: Teslim tesellüm rapor geçmişi (şoför adları gizli)">
-    <img src="img/t/t-47.665e0e6ff0.webp" alt="Teslim tesellüm rapor geçmişi (şoför adları gizli)" loading="lazy" width="1600" height="1000" />
+  <button type="button" class="shot__frame" data-full="img/u-10e.7160d4568c.webp" data-cap="Dosya numaralı mutabakat raporu" aria-label="Büyüt: Dosya numaralı mutabakat raporu">
+    <img src="img/t/u-10e.7160d4568c.webp" alt="Dosya numaralı mutabakat raporu" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Dosya numaralı mutabakat raporu</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-10f.70264048fa.webp" data-cap="Rapor tarihçesi: üretilen raporlar ve durumu" aria-label="Büyüt: Rapor tarihçesi: üretilen raporlar ve durumu">
+    <img src="img/t/u-10f.70264048fa.webp" alt="Rapor tarihçesi: üretilen raporlar ve durumu" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Rapor tarihçesi: üretilen raporlar ve durumu</figcaption>
+</figure>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">45 / 68</span></div>
+</section>
+
+<section class="slide slide--gallery">
+<div class="slide__inner">
+<span class="kicker">TMS · B2B</span>
+<h2 class="slide-title">Mağaza sevkiyatları: <span class="accent">B2B teslimat</span></h2>
+<p class="lead">Depodan mağazaya ve mağazalar arası sevkiyat rota, araç ve şoförle planlanır.</p>
+<div class="shots shots--r2" style="--cols:3">
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-8a.a94d9251f4.webp" data-cap="B2B teslimatlar: çıkış ve varış lokasyonu, aktarma rotası ve rota" aria-label="Büyüt: B2B teslimatlar: çıkış ve varış lokasyonu, aktarma rotası ve rota">
+    <img src="img/t/u-8a.a94d9251f4.webp" alt="B2B teslimatlar: çıkış ve varış lokasyonu, aktarma rotası ve rota" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>B2B teslimatlar: çıkış ve varış lokasyonu, aktarma rotası ve rota</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-8d.a6bf85dfbc.webp" data-cap="Rota listesi" aria-label="Büyüt: Rota listesi">
+    <img src="img/t/u-8d.a6bf85dfbc.webp" alt="Rota listesi" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Rota listesi</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-8c.479e8a7813.webp" data-cap="Araçlar: plaka, araç tipi ve kapasite" aria-label="Büyüt: Araçlar: plaka, araç tipi ve kapasite">
+    <img src="img/t/u-8c.479e8a7813.webp" alt="Araçlar: plaka, araç tipi ve kapasite" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Araçlar: plaka, araç tipi ve kapasite</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-8b.62836d295c.webp" data-cap="Şoförler (kişisel bilgiler gizli)" aria-label="Büyüt: Şoförler (kişisel bilgiler gizli)">
+    <img src="img/t/u-8b.62836d295c.webp" alt="Şoförler (kişisel bilgiler gizli)" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Şoförler (kişisel bilgiler gizli)</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-8e.a3e281ee6b.webp" data-cap="Araç–şoför–rota eşlemesi (sürücü adları gizli)" aria-label="Büyüt: Araç–şoför–rota eşlemesi (sürücü adları gizli)">
+    <img src="img/t/u-8e.a3e281ee6b.webp" alt="Araç–şoför–rota eşlemesi (sürücü adları gizli)" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Araç–şoför–rota eşlemesi (sürücü adları gizli)</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-8h.3f3fd22287.webp" data-cap="Mağaza kullanıcıları" aria-label="Büyüt: Mağaza kullanıcıları">
+    <img src="img/t/u-8h.3f3fd22287.webp" alt="Mağaza kullanıcıları" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Mağaza kullanıcıları</figcaption>
+</figure>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">46 / 68</span></div>
+</section>
+
+<section class="slide slide--gallery">
+<div class="slide__inner">
+<span class="kicker">TMS · Teslim tesellüm</span>
+<h2 class="slide-title">Teslim tesellüm: depo, şoför ve mağaza</h2>
+<p class="lead">Şoför seferi başlatır, rotadaki her lokasyonda paketleri barkodla teslim alır ve imzayla teslim eder.</p>
+<div class="shots shots--r1" style="--cols:3">
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-8i.4933996c9b.webp" data-cap="Teslim tesellüm kayıtları: kargo, lokasyon, rota ve araç" aria-label="Büyüt: Teslim tesellüm kayıtları: kargo, lokasyon, rota ve araç">
+    <img src="img/t/u-8i.4933996c9b.webp" alt="Teslim tesellüm kayıtları: kargo, lokasyon, rota ve araç" loading="lazy" width="1600" height="982" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Teslim tesellüm kayıtları: kargo, lokasyon, rota ve araç</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-8f.35c0eb0db6.webp" data-cap="Teslim tesellüm rapor geçmişi (şoför adları gizli)" aria-label="Büyüt: Teslim tesellüm rapor geçmişi (şoför adları gizli)">
+    <img src="img/t/u-8f.35c0eb0db6.webp" alt="Teslim tesellüm rapor geçmişi (şoför adları gizli)" loading="lazy" width="1600" height="982" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
   <figcaption>Teslim tesellüm rapor geçmişi (şoför adları gizli)</figcaption>
 </figure>
 <figure class="shot">
-  <button type="button" class="shot__frame" data-full="img/t-48.bb4b5b5ed0.webp" data-cap="Şoför paneli: sefer, barkodla teslim alma ve imzalı teslim" aria-label="Büyüt: Şoför paneli: sefer, barkodla teslim alma ve imzalı teslim">
-    <img src="img/t/t-48.bb4b5b5ed0.webp" alt="Şoför paneli: sefer, barkodla teslim alma ve imzalı teslim" loading="lazy" width="1600" height="1000" />
+  <button type="button" class="shot__frame" data-full="img/u-8g.764c1f218f.webp" data-cap="Mağaza personeli (iletişim bilgileri gizli)" aria-label="Büyüt: Mağaza personeli (iletişim bilgileri gizli)">
+    <img src="img/t/u-8g.764c1f218f.webp" alt="Mağaza personeli (iletişim bilgileri gizli)" loading="lazy" width="1600" height="982" />
     <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
   </button>
-  <figcaption>Şoför paneli: sefer, barkodla teslim alma ve imzalı teslim</figcaption>
+  <figcaption>Mağaza personeli (iletişim bilgileri gizli)</figcaption>
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">41 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">47 / 68</span></div>
+</section>
+
+<section class="slide slide--gallery">
+<div class="slide__inner">
+<span class="kicker">TMS · Şoför paneli</span>
+<h2 class="slide-title">Şoför <span class="accent">mobil panelden</span> teslim alır ve teslim eder</h2>
+<p class="lead">Şoför seferi başlatır; rotadaki her lokasyonda teslim alınacak ve edilecek paket sayısını görür, paketleri barkodla okutur ve teslimatı imzayla tamamlar.</p>
+<div class="shots shots--r1" style="--cols:4">
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-9a.57adb2d7c8.webp" data-cap="Sefer ve rota: lokasyon başına teslim alınacak/edilecek paket" aria-label="Büyüt: Sefer ve rota: lokasyon başına teslim alınacak/edilecek paket">
+    <img src="img/t/u-9a.57adb2d7c8.webp" alt="Sefer ve rota: lokasyon başına teslim alınacak/edilecek paket" loading="lazy" width="749" height="1600" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Sefer ve rota: lokasyon başına teslim alınacak/edilecek paket</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-9b.2b637890bf.webp" data-cap="Rota (devamı)" aria-label="Büyüt: Rota (devamı)">
+    <img src="img/t/u-9b.2b637890bf.webp" alt="Rota (devamı)" loading="lazy" width="749" height="1600" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Rota (devamı)</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-9c.0b71735e0d.webp" data-cap="Teslim alınacak paketleri okutma" aria-label="Büyüt: Teslim alınacak paketleri okutma">
+    <img src="img/t/u-9c.0b71735e0d.webp" alt="Teslim alınacak paketleri okutma" loading="lazy" width="749" height="1600" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Teslim alınacak paketleri okutma</figcaption>
+</figure>
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/u-9d.b9054c7ac5.webp" data-cap="Teslim edilecek paketler" aria-label="Büyüt: Teslim edilecek paketler">
+    <img src="img/t/u-9d.b9054c7ac5.webp" alt="Teslim edilecek paketler" loading="lazy" width="749" height="1600" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Teslim edilecek paketler</figcaption>
+</figure>
+</div>
+</div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">48 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--divider" id="sec-seller">
@@ -1749,7 +2016,7 @@
 <p class="lead">Pazaryerlerinde satıcı olarak satış: kanal bağlantıları, ürün/stok/fiyat gönderimi, pazaryeri siparişleri ve uyuşmazlık kontrolü.</p>
 <div class="doclinks"><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/comhub" target="_blank" rel="noopener">ComHub: satış kanalı ve eşleme rehberleri <span aria-hidden="true">↗</span></a><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/pim" target="_blank" rel="noopener">PIM &amp; Katalog rehberleri <span aria-hidden="true">↗</span></a></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">42 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">49 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1788,7 +2055,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">43 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">50 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1827,7 +2094,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">44 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">51 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1866,7 +2133,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">45 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">52 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--divider" id="sec-operator">
@@ -1874,10 +2141,10 @@
 <span class="divider-index">VI</span>
 <span class="kicker">Bölüm VI</span>
 <h2 class="slide-title">Marketplace · Operatör</h2>
-<p class="lead">Kendi pazaryerinizi işletme: satıcıları açma, ürün onayı, satıcı ayarları ve satıcının kullandığı panel.</p>
+<p class="lead">Kendi pazaryerinizi işletme (multi vendor / drop shipment): satıcı siparişleri, satıcıları açma, ürün onayı, satıcı ayarları ve satıcının kullandığı panel.</p>
 <div class="doclinks"><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/vendor-operator" target="_blank" rel="noopener">Satıcı Yönetimi rehberleri <span aria-hidden="true">↗</span></a><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/vendor-merchant" target="_blank" rel="noopener">Satıcı Paneli rehberleri <span aria-hidden="true">↗</span></a></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">46 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">53 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1885,7 +2152,14 @@
 <span class="kicker">Marketplace Management · Operator</span>
 <h2 class="slide-title">Satıcılar ve <span class="accent">ürün onayı</span></h2>
 <p class="lead">Pazaryerindeki üçüncü taraf satıcılar ve yükledikleri ürünlerin onay akışı. Satıcı adları gizlenmiştir.</p>
-<div class="shots shots--r1" style="--cols:3">
+<div class="shots shots--r2" style="--cols:2">
+<figure class="shot">
+  <button type="button" class="shot__frame" data-full="img/s-vo-orders.18ee8ad1d9.webp" data-cap="Siparişler: kendi ve satıcı (multi vendor / drop shipment) siparişleri tek listede, satıcı sütunuyla" aria-label="Büyüt: Siparişler: kendi ve satıcı (multi vendor / drop shipment) siparişleri tek listede, satıcı sütunuyla">
+    <img src="img/t/s-vo-orders.18ee8ad1d9.webp" alt="Siparişler: kendi ve satıcı (multi vendor / drop shipment) siparişleri tek listede, satıcı sütunuyla" loading="lazy" width="2400" height="1500" />
+    <span class="shot__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Büyüt</span>
+  </button>
+  <figcaption>Siparişler: kendi ve satıcı (multi vendor / drop shipment) siparişleri tek listede, satıcı sütunuyla</figcaption>
+</figure>
 <figure class="shot">
   <button type="button" class="shot__frame" data-full="img/s-vo-vendors.83a7c1bc07.webp" data-cap="Satıcılar: onay, otomatik ürün onayı, segment ve performans puanı" aria-label="Büyüt: Satıcılar: onay, otomatik ürün onayı, segment ve performans puanı">
     <img src="img/t/s-vo-vendors.83a7c1bc07.webp" alt="Satıcılar: onay, otomatik ürün onayı, segment ve performans puanı" loading="lazy" width="2400" height="1500" />
@@ -1909,7 +2183,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">47 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">54 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1941,7 +2215,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">48 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">55 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -1966,7 +2240,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">49 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">56 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--divider" id="sec-ct">
@@ -1977,7 +2251,7 @@
 <p class="lead">Kanal başına stok, sipariş, fiyat ve ürün uyuşmazlıkları; entegrasyon logları.</p>
 <div class="doclinks"><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/comhub" target="_blank" rel="noopener">ComHub ve Control Tower rehberleri <span aria-hidden="true">↗</span></a></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">50 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">57 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -2002,7 +2276,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">51 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">58 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -2041,7 +2315,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">52 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">59 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--divider" id="sec-acoms">
@@ -2052,7 +2326,7 @@
 <p class="lead">KPI → alarm → aksiyon → görev döngüsü; Sales &amp; Trading Cockpit ve operasyon KPI listeleri.</p>
 <div class="doclinks"><a class="doclink" href="https://docs.commercelab.com.tr/tr/m/acoms" target="_blank" rel="noopener">ACOMS rehberleri <span aria-hidden="true">↗</span></a></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">53 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">60 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -2091,7 +2365,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">54 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">61 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -2130,7 +2404,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">55 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">62 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -2169,7 +2443,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">56 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">63 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -2201,7 +2475,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">57 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">64 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -2233,7 +2507,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">58 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">65 / 68</span></div>
 </section>
 
 <section class="slide slide--gallery">
@@ -2265,7 +2539,7 @@
 </figure>
 </div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">59 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">66 / 68</span></div>
 </section>
 
 <section class="slide ">
@@ -2275,7 +2549,7 @@
 <p class="lead">Her ekranın kullanım rehberi ve API belgeleri: <a href="https://docs.commercelab.com.tr/tr/modules" target="_blank" rel="noopener">docs.commercelab.com.tr</a></p>
 <div class="grid grid-4 doccards"><div class="card doccard"><span class="ix">I</span><h3>PIM &amp; Katalog</h3><a href="https://docs.commercelab.com.tr/tr/m/pim" target="_blank" rel="noopener">PIM &amp; Katalog rehberleri ↗</a><a href="https://docs.commercelab.com.tr/tr/m/comhub" target="_blank" rel="noopener">ComHub: kanal ve eşleme rehberleri ↗</a></div><div class="card doccard"><span class="ix">II</span><h3>OMS</h3><a href="https://docs.commercelab.com.tr/tr/m/oms" target="_blank" rel="noopener">OMS rehberleri ↗</a><a href="https://docs.commercelab.com.tr/tr/m/inventory" target="_blank" rel="noopener">Envanter rehberleri ↗</a><a href="https://docs.commercelab.com.tr/tr/m/oms/guides/oms-instore-app" target="_blank" rel="noopener">InStore App rehberi ↗</a></div><div class="card doccard"><span class="ix">III</span><h3>InStore uygulamaları</h3><a href="https://docs.commercelab.com.tr/tr/m/oms/guides/oms-instore-app" target="_blank" rel="noopener">InStore App rehberi ↗</a></div><div class="card doccard"><span class="ix">IV</span><h3>TMS</h3><a href="https://docs.commercelab.com.tr/tr/m/tms" target="_blank" rel="noopener">TMS rehberleri ↗</a></div><div class="card doccard"><span class="ix">V</span><h3>Marketplace · Satıcı</h3><a href="https://docs.commercelab.com.tr/tr/m/comhub" target="_blank" rel="noopener">ComHub: satış kanalı ve eşleme rehberleri ↗</a><a href="https://docs.commercelab.com.tr/tr/m/pim" target="_blank" rel="noopener">PIM &amp; Katalog rehberleri ↗</a></div><div class="card doccard"><span class="ix">VI</span><h3>Marketplace · Operatör</h3><a href="https://docs.commercelab.com.tr/tr/m/vendor-operator" target="_blank" rel="noopener">Satıcı Yönetimi rehberleri ↗</a><a href="https://docs.commercelab.com.tr/tr/m/vendor-merchant" target="_blank" rel="noopener">Satıcı Paneli rehberleri ↗</a></div><div class="card doccard"><span class="ix">VII</span><h3>Control Tower</h3><a href="https://docs.commercelab.com.tr/tr/m/comhub" target="_blank" rel="noopener">ComHub ve Control Tower rehberleri ↗</a></div><div class="card doccard"><span class="ix">VIII</span><h3>ACOMS</h3><a href="https://docs.commercelab.com.tr/tr/m/acoms" target="_blank" rel="noopener">ACOMS rehberleri ↗</a></div></div>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">60 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">67 / 68</span></div>
 </section>
 
 <section class="slide slide--ink slide--cover">
@@ -2285,7 +2559,7 @@
 <p class="lead">Ekranları canlı demo ile birlikte gözden geçirmekten memnuniyet duyarız.</p>
 <p class="cover-meta">Windowist Tower, Maslak — İstanbul · info@commercelab.com.tr · +90 212 214 73 90</p>
 </div>
-<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">61 / 61</span></div>
+<div class="slide__footer"><span class="brand"><img src="../assets/commercelab-logo-white.svg" alt="" /></span><span class="conf">Gizli · E-bebek için hazırlanmıştır</span><span class="slide__no">68 / 68</span></div>
 </section>
 
 </div>
